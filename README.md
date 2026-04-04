@@ -1,6 +1,6 @@
 # Personal AI Context
 
-> 🧠 这是建委的个人信息档案，专为 AI 助手设计。
+> 🧠 这是建委（杨建委）的个人信息档案，专为 AI 助手设计。
 > 阅读这些文件可以快速了解我的背景、偏好和当前状态。
 
 ## 📖 如何使用（For AI Assistants）
@@ -10,7 +10,7 @@
 1. `identity.md` — 我是谁（核心人设，变化频率低）
 2. `current.md` — 我现在在做什么（常更新）
 3. `preferences.md` — 沟通偏好和工作方式
-4. `knowledge/` — 技术栈、领域知识、技能详情
+4. `knowledge/` — 技能、知识库、荣誉成果
 
 **需要深入了解时：**
 - `projects/` — 当前项目详情
@@ -20,10 +20,12 @@
 
 | 项目 | 内容 |
 |------|------|
-| 名字 | 建委 |
+| 姓名 | 杨建委（称呼：建委） |
+| 身份 | AIGC 实战落地专家 & 资深跨界设计师 |
 | 时区 | Asia/Shanghai (UTC+8) |
 | 语言 | 中文为主，英文可读写 |
-| 角色 | 自媒体创作者、设计师、AI从业者 |
+| 核心能力 | 设计（科班）、AIGC 应用、AI 培训 |
+| 编程水平 | 零基础程序员，主要靠 AI 编程工具 |
 | GitHub | [MouMou-Eleven](https://github.com/MouMou-Eleven) |
 
 ## 📁 文件结构
@@ -32,16 +34,17 @@
 ai-context/
 ├── README.md           ← 你正在读的（入口文件）
 ├── identity.md         ← 我是谁
-├── current.md          ← 现在在做什么
+├── current.md          ← 现在在做什么（常更新）
 ├── preferences.md      ← 沟通偏好 & 工作方式
 ├── knowledge/          ← 技能 & 知识库
-│   ├── tech-stack.md   ← 技术栈
+│   ├── tech-stack.md   ← 技术栈（设计为核心）
 │   ├── tools.md        ← 常用工具
-│   └── interests.md    ← 兴趣领域 & 关注方向
+│   ├── interests.md    ← 兴趣领域 & 关注方向
+│   └── achievements.md ← 荣誉 & 成果 & 客户
 ├── projects/           ← 项目详情
-│   └── .gitkeep
+│   └── README.md
 └── history/            ← 时间线 & 里程碑
-    └── .gitkeep
+    └── timeline.md
 ```
 
 ## ⚠️ 注意事项
@@ -52,4 +55,4 @@ ai-context/
 
 ---
 
-*最后更新：2026-04-05*
+*最后更新：2026-04-05T03:17:00+08:00*
