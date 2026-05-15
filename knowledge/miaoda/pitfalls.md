@@ -151,3 +151,97 @@ https://dejinzhoujin.com/payment/
 **修复**：把"PC 端 Native 不要动一行"写到提示词最前面。改完后必须两端都测一遍。
 
 **预防**：提示词里红线段第一条就是"不要修改 X 任何代码"，并要求改完汇报"PC 流程涉及哪些文件，如何确保零修改"。
+
+---
+
+## #10 用户没有 Supabase 控制台访问权 → 想"对比"做不到
+
+**症状**：调试时想对比"秒哒新建的字段是否真的加上了"、"两个 Edge Function 实际生效的 Secrets 列表是否一致"、"某条 SQL 跑出来什么结果"，但发现自己根本没有 Supabase 后台的访问权限。
+
+**根因**：秒哒应用底层确实是 Supabase（Postgres + Edge Functions + Auth），但用户**没有**原生 Supabase 控制台账号——拿不到 Project URL、anon key、service_role key、SQL Editor、Logs Explorer 这些标准工具。
+
+**替代手段**：秒哒应用编辑器侧栏内置的「**后端服务**」面板，4 个 Tab：
+- **数据表管理**：看表结构、改字段值（一张张点开，无 schema 总览图）
+- **用户管理**：看应用用户列表
+- **后端函数**：看 Edge Functions 列表（有时只读源码）
+- **密钥管理**：增删改全局密钥，但**写入后只显示 `••••`**，不能查看当前值
+
+**做不到的事**（必记，避免反复尝试）：
+- ❌ 直接在 SQL Editor 里跑 SELECT/UPDATE
+- ❌ 看某个 Edge Function 当前实际生效的 Secrets 名字与值
+- ❌ 看 Postgres 索引、约束、触发器的细节
+- ❌ 看 Edge Function 集中的运行日志（要靠秒哒应用编辑器的"调试"按钮）
+
+**预防/应对**：
+1. 让秒哒做加字段、修脏数据这种操作时，**强制要求它执行后回贴 schema 字段列表 + SELECT 样例数据**，否则你看不到改动效果
+2. 涉及环境变量的事故，**别浪费时间猜**——直接让 Edge Function 在入口处 `console.log(Object.keys(Deno.env.toObject()))`，几秒锁定真实变量名（见 #11、#12）
+
+详见 [platform-basics.md](./platform-basics.md) 第七节。
+
+---
+
+## #11 Supabase Functions Secrets 是按 Function 级别隔离的 → 新建函数读不到老函数的密钥
+
+**症状**：在某个老 Edge Function（如 `jsapi-pay`）里 `YUNGOUOS_PARTNER_KEY` 工作正常；秒哒新建一个 Edge Function（如 `yungouos-refund`），同样代码读这个变量却拿到 `undefined`，导致函数报"支付配置不完整"等内部错误。
+
+**根因**：Supabase Functions 的 Secrets 默认是**按 Function 级别**配置的——给 Function A 添加的密钥并不会自动可见于 Function B（除非配在 Project-level secrets，且秒哒「密钥管理」面板里把它标为全局可见）。秒哒新建函数后没有自动复制密钥配置，自然读不到。
+
+**修复**：到秒哒「后端服务 > 密钥管理」面板，把变量名一致的 Secret 也加到新 Function 上；或确认它是 Project-level Secret 且已对所有 Function 可见。
+
+**预防**：
+- 任何新建的 Edge Function，**先**在入口处加 `console.log("[fnname] env keys:", Object.keys(Deno.env.toObject()))` 验证读得到再写业务逻辑
+- 提示词里强制要求："新建任何 Edge Function 时，必须显式声明它依赖的 Secret 名称清单，并验证读取成功后再写业务逻辑"
+
+---
+
+## #12 秒哒新建 Edge Function 时把环境变量名拼错 → 读出 undefined 当作"配置不完整"
+
+**症状**：明明 Supabase 已经配好了 `YUNGOUOS_PARTNER_KEY`，老 Function 都正常，但新建的 `yungouos-refund` 死活报 `{"success":false,"error":"支付配置不完整"}`。
+
+**根因（真实案例）**：秒哒新建函数时，凭印象把变量名写成了 `DEJIN_YUNGUOUOS_PARTNER_KEY`（多了 `DEJIN_` 前缀，且 `yungouos` 错拼成 `yungUouos` 多一个 u）。Secrets 里只有正确名字 `YUNGOUOS_PARTNER_KEY`，所以 `Deno.env.get(...)` 返回 `undefined`，函数自检失败抛"配置不完整"。
+
+**为什么这种坑很难发现**：
+- 错误文案是秒哒**自己写的**（"支付配置不完整"），不是 YunGouOS 或 Supabase 的标准报错，所以表面看不出根因
+- Secrets 面板写入后只显示 `••••`，肉眼对比变量名时容易"看上去对"
+- 其他老 Function 跑得正常，让你误以为密钥本身没问题
+
+**诊断手法**（5 秒搞定）：在出问题的 Function 入口加：
+```typescript
+const partnerKey = Deno.env.get("YUNGOUOS_PARTNER_KEY");
+console.log("[fnname] env diag:", {
+  expected_var_exists: !!partnerKey,
+  expected_var_length: partnerKey?.length ?? 0,
+  candidate_keys: Object.keys(Deno.env.toObject())
+    .filter(k => k.toLowerCase().includes("yungouos") || k.toLowerCase().includes("partner")),
+});
+```
+看输出里 `candidate_keys` 数组里实际存在的变量名，就能立刻发现拼错。
+
+**修复**：让秒哒**在所有需要读密钥的 Edge Function 中，统一变量名常量**（例如 `const ENV_KEY = "YUNGOUOS_PARTNER_KEY"`），并在写入新 Function 时直接复用此常量，而不是凭记忆敲一遍。
+
+**预防**：提示词里写明"读取环境变量必须使用确切的变量名 `YUNGOUOS_PARTNER_KEY`，**禁止**添加任何前缀（如 `DEJIN_`、`PROD_`）或后缀；改完后请打印 `Object.keys(Deno.env.toObject())` 自查"。
+
+---
+
+## #13 多通道并存时退款被错误路由到另一个通道 → "订单不存在"
+
+**症状**：手机端 JSAPI 通道下的订单，管理员后台触发退款时报 `Failed to load resource: 500` + `{"success":false,"error":"微信退款失败: 订单不存在"}`。请求路径形如 `/v1/wechat_refund`。
+
+**根因**：网站同时有两条支付通道：PC 端走秒哒自带的"微信官方支付"插件、手机端走自定义的 YunGouOS JSAPI。秒哒生成退款入口时**无脑调了官方插件的 `/v1/wechat_refund`**，但订单是 YunGouOS 通道下的，微信官方账上自然没有这笔订单的记录，于是报"订单不存在"。
+
+**修复要点**：
+1. 在 `orders` 表加字段 `pay_channel` 区分通道（取值如 `wxpay_official` / `yungouos`），下单时按通道写入
+2. 退款入口先查 `orders.pay_channel`，按值分流：
+   ```typescript
+   if (order.pay_channel === "yungouos") {
+     return await invoke("yungouos-refund", {...});
+   } else {
+     return await invoke("wechat_refund", {...});  // 原有官方退款,一行不动
+   }
+   ```
+3. 历史订单回填策略：有 `open_id` 字段非空 → 大概率是 yungouos；其他默认 `wxpay_official`。回填前先 SELECT 看分布
+
+**预防**：
+- 多通道并存的项目里，**任何**涉及"按订单查支付状态/退款/对账"的操作，都必须先按 `pay_channel` 分流
+- 提示词里写明"现有 PC 端 Native 退款保持不变，新增 YunGouOS 退款分支"，避免秒哒重构原有逻辑
+- 上线前必须两条通道各跑一遍退款测试

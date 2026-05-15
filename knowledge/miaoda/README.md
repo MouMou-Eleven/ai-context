@@ -7,9 +7,9 @@
 
 | 文件 | 内容 | 何时该读 |
 |---|---|---|
-| [platform-basics.md](./platform-basics.md) | 秒哒平台的基础认知：四套运行时、自定义技能机制、与应用层的关系、文档与实现差异等 | 第一次接触秒哒、或要做技术决策前 |
+| [platform-basics.md](./platform-basics.md) | 秒哒平台的基础认知：四套运行时、自定义技能机制、与应用层的关系、文档与实现差异、「后端服务」面板（用户能看到数据库的唯一入口）等 | 第一次接触秒哒、或要做技术决策前 |
 | [skill-development.md](./skill-development.md) | 自定义技能（.zip 包）开发指南：目录结构、SKILL.md frontmatter、脚本约定、环境变量 | 要为秒哒开发自定义技能时 |
-| [pitfalls.md](./pitfalls.md) | 9 个真实踩坑清单：MD5 Web Crypto 死路、密钥泄漏、嵌套目录、AI 自动重写签名 等 | 遇到怪异报错、或想预防性避雷时 |
+| [pitfalls.md](./pitfalls.md) | 13 个真实踩坑清单：MD5 Web Crypto 死路、密钥泄漏、嵌套目录、AI 自动重写签名、无 Supabase 控制台、按 Function 隔离的 Secrets、变量名拼错、多通道退款误路由 等 | 遇到怪异报错、或想预防性避雷时 |
 | [prompt-patterns.md](./prompt-patterns.md) | 与秒哒 AI 协作的提示词模板：@技能调用风格、红线前置、分工边界、设备识别函数注入等 | 要写一段让秒哒按计划执行的提示词时 |
 | [case-yungouos-jsapi.md](./case-yungouos-jsapi.md) | 完整接入案例：YunGouOS 微信 JSAPI 支付从需求到上线的全过程，含每轮失败与修复 | 做支付接入、或想看一个端到端样板时 |
 
