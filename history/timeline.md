@@ -4,6 +4,19 @@
 
 ## 2026
 
+### 2026-05-22
+
+**06:07:55+08:00** `1779401275020`
+- 重构 `knowledge/` 目录：新增 `ai-programming/` 大类子目录，将原 `knowledge/miaoda/` 整体迁移到 `knowledge/ai-programming/miaoda/`（git mv 保留历史）；为后续 Cursor / Claude Code / v0 等 AI 编程类工具实战经验预留同级位置
+- 在 `knowledge/ai-programming/miaoda/` 下补充 4 个新文档（事实均经百度官方文档核验）：
+  - [`disambiguation.md`](../knowledge/ai-programming/miaoda/disambiguation.md)：百度秒哒 MIAODA 与飞书妙搭 Spark 同名产品辨析
+  - [`version-features.md`](../knowledge/ai-programming/miaoda/version-features.md)：26 年版本节点速查（V3.0 → V1.3 倒序）
+  - [`publish-channels.md`](../knowledge/ai-programming/miaoda/publish-channels.md)：4 种发布渠道能力边界（含微信小程序 web-view 限制：禁付款/禁朋友圈/禁文件下载/域名白名单）
+  - [`skill-as-callable.md`](../knowledge/ai-programming/miaoda/skill-as-callable.md)：V2.5 反向能力——秒哒打包为 Skill 被 OpenClaw / Claude Code 调用
+- 同步更新 [`STRUCTURE.md`](../STRUCTURE.md)：在结构图与结构规则中加入 `knowledge/<大类>/<工具>/` 三层模式说明
+- 同步更新 [`knowledge/ai-programming/miaoda/README.md`](../knowledge/ai-programming/miaoda/README.md) 索引：从 5 行扩到 9 行覆盖全部新文档
+- 维护原则：现有 6 个 miaoda 高质量文件（platform-basics / skill-development / pitfalls / prompt-patterns / case-yungouos-jsapi / 旧 README）仅 README.md 作为索引追加新条目，其余实质内容未改动
+
 ### 2026-05-21
 
 **20:09:00+08:00** `1779365340000`

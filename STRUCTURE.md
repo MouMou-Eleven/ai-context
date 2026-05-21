@@ -29,7 +29,10 @@ ai-context/                          ← 仓库根目录
 │   ├── achievements.md              ← 成就、奖项、荣誉
 │   ├── interests.md                 ← 兴趣方向
 │   ├── tech-stack.md                ← 技术栈
-│   └── tools.md                     ← 工具清单
+│   ├── tools.md                     ← 工具清单
+│   └── ai-programming/              ← AI 编程类工具子目录（按工具拆子目录）
+│       ├── README.md                ← AI 编程大类入口
+│       └── miaoda/                  ← 百度秒哒（MIAODA）实战经验库
 │
 ├── history/                         ← 历史记录
 │   └── timeline.md                  ← 事件时间线（按时间倒序追加）
@@ -53,6 +56,7 @@ ai-context/                          ← 仓库根目录
 3. **项目目录名用 kebab-case**：全小写，单词间用连字符（如 `feishu-efficient-office`）
 4. **项目目录内必须有 README.md**：作为该项目的入口（渐进式披露第一层）
 5. **knowledge/ 按主题拆文件**：每个主题一个 .md，不要合并成一个大文件
+6. **knowledge/ 下允许有大类子目录**：当某主题下沉淀的内容增多（多文件 + 多工具），可以建大类子目录（如 `ai-programming/`），子目录内按工具再分（如 `ai-programming/miaoda/`），子目录必须有 README.md 作为大类入口；新增 AI 编程类工具（如 Cursor、Claude Code、v0 等的实战经验）应放在 `ai-programming/<工具名>/` 下
 
 ---
 
@@ -166,4 +170,4 @@ ai-context/                          ← 仓库根目录
 
 ---
 
-*本规范随仓库演进持续更新。最后更新：2026年5月10日。*
+*本规范随仓库演进持续更新。最后更新：2026年5月22日。*

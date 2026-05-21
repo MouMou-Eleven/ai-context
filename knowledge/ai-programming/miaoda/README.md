@@ -1,14 +1,19 @@
 # 秒哒（Miaoda）实战经验库
 
-> 本目录沉淀建委在使用百度秒哒（MIAODA）平台过程中积累的实战经验、踩坑记录、提示词模板和接入案例。
-> 所有内容来自真实项目（非官方文档复述），用于让未来的 AI 协作者快速建立对秒哒的实战认知，避免重复踩坑。
+> 本目录沉淀建委在使用百度秒哒（MIAODA）平台过程中积累的实战经验、踩坑记录、提示词模板、接入案例，以及对官方版本/渠道/Skill 反向能力的事实归类。
+
+> 注意：中文「miǎodā」存在多个同名产品，进入正文前先看 [disambiguation.md](./disambiguation.md) 确认上下文。本目录所有文件指**百度秒哒 MIAODA**（miaoda.cn）。
 
 ## 文档索引
 
 | 文件 | 内容 | 何时该读 |
 |---|---|---|
+| [disambiguation.md](./disambiguation.md) | 同名产品辨析：百度秒哒 MIAODA vs 飞书妙搭 Spark，含路由判断表 | 用户提到「秒哒/妙搭」但没说清是哪个时（必读） |
 | [platform-basics.md](./platform-basics.md) | 秒哒平台的基础认知：四套运行时、自定义技能机制、与应用层的关系、文档与实现差异、「后端服务」面板（用户能看到数据库的唯一入口）等 | 第一次接触秒哒、或要做技术决策前 |
+| [version-features.md](./version-features.md) | 版本节点速查表：每个版本上线的能力（V3.0 → V1.3，倒序），附官方更新日志 URL | 判断「某能力是否已上线」、给某能力定位时间锚点时 |
+| [publish-channels.md](./publish-channels.md) | 4 种发布渠道（Web / 秒哒官方小程序 web-view / 用户自有原生小程序 / 原生 APP）的能力边界、限制、选型建议 | 用户问「我的应用要不要做小程序/做 APP」时 |
 | [skill-development.md](./skill-development.md) | 自定义技能（.zip 包）开发指南：目录结构、SKILL.md frontmatter、脚本约定、环境变量 | 要为秒哒开发自定义技能时 |
+| [skill-as-callable.md](./skill-as-callable.md) | 反向能力：秒哒被打包为 Skill，可被 OpenClaw / Claude Code 等外部 Agent 调用（V2.5 上线） | 想把秒哒嵌进更大的 Agent 工作流、或做应用批量化生产时 |
 | [pitfalls.md](./pitfalls.md) | 13 个真实踩坑清单：MD5 Web Crypto 死路、密钥泄漏、嵌套目录、AI 自动重写签名、无 Supabase 控制台、按 Function 隔离的 Secrets、变量名拼错、多通道退款误路由 等 | 遇到怪异报错、或想预防性避雷时 |
 | [prompt-patterns.md](./prompt-patterns.md) | 与秒哒 AI 协作的提示词模板：@技能调用风格、红线前置、分工边界、设备识别函数注入等 | 要写一段让秒哒按计划执行的提示词时 |
 | [case-yungouos-jsapi.md](./case-yungouos-jsapi.md) | 完整接入案例：YunGouOS 微信 JSAPI 支付从需求到上线的全过程，含每轮失败与修复 | 做支付接入、或想看一个端到端样板时 |
