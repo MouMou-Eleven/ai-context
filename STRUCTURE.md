@@ -157,17 +157,4 @@ ai-context/                          ← 仓库根目录
 
 ---
 
-## 五、旧项目文件迁移说明
-
-> 以下项目已从单文件迁移到目录结构，旧文件保留但标记为 deprecated。
-
-| 旧文件 | 新位置 | 状态 |
-|-------|-------|------|
-| `projects/feishu-book.md` | `projects/feishu-efficient-office/` | 已迁移，旧文件保留 |
-| `projects/openclaw-agent.md` | `projects/openclaw-agent/` | 待迁移 |
-| `projects/videoai.md` | `projects/videoai/` | 待迁移 |
-| `projects/ai-context-management.md` | 并入根目录档案 | 待迁移 |
-
----
-
 *本规范随仓库演进持续更新。最后更新：2026年5月22日。*

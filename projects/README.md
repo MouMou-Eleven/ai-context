@@ -12,7 +12,6 @@
 | 飞书高效办公（书稿） | [`feishu-efficient-office/`](./feishu-efficient-office/) | 🔄 进行中 | AI时代职场人的效率翻倍实战指南 |
 | VideoAI | [`videoai/`](./videoai/) | ✅ 已上线 | AI驱动的营销视频自动化创作平台 |
 | OpenClaw Agent | [`openclaw-agent/`](./openclaw-agent/) | 🔄 进行中 | 本地AI助手系统，接入飞书等渠道 |
-| AI Context 管理 | [`ai-context-management.md`](./ai-context-management.md) | ✅ 稳定 | 本仓库自身的管理说明 |
 
 ---
 

@@ -6,6 +6,13 @@
 
 ### 2026-05-22
 
+**06:38:59+08:00** `1779403139970`
+- 完成历史遗留待办清理：
+  - 删除 `projects/ai-context-management.md`（旧单文件，唯一独特信息「飞书科普文档链接」迁入根 [`README.md`](../README.md) 的「对外科普版」章节）
+  - 同步更新 [`projects/README.md`](../projects/README.md) 项目索引：移除已迁移条目
+  - 移除 [`STRUCTURE.md`](../STRUCTURE.md) 第五节「旧项目文件迁移说明」整块（feishu-book.md / openclaw-agent.md / videoai.md / ai-context-management.md 均已实际删除，"待迁移"标注与现实矛盾）
+  - 修复 [`history/timeline.md`](../history/timeline.md) 末尾历史粘贴遗留的重复块（2026-04-05 与 2026-03-18 条目误重复）
+
 **06:07:55+08:00** `1779401275020`
 - 重构 `knowledge/` 目录：新增 `ai-programming/` 大类子目录，将原 `knowledge/miaoda/` 整体迁移到 `knowledge/ai-programming/miaoda/`（git mv 保留历史）；为后续 Cursor / Claude Code / v0 等 AI 编程类工具实战经验预留同级位置
 - 在 `knowledge/ai-programming/miaoda/` 下补充 4 个新文档（事实均经百度官方文档核验）：
@@ -71,18 +78,6 @@
 - 微课设计作品获国家级、省级、市级一等奖及部级精品微课
 - 获安徽省环境设计大赛二等奖
 - 为哈尔滨工业大学、东北大学、江南大学等高校提供创赛视频设计服务
-
-**03:17:00+08:00** `1775330220000`
-- 完善 AI Context 仓库内容，基于详细个人信息全面更新 identity / preferences / tech-stack / knowledge 等文件
-
-**03:00:00+08:00** `1775329200000`
-- 在 GitHub 创建私有仓库 `MouMou-Eleven/ai-context`
-- 安装 GitHub CLI (gh v2.89.0)，完成首次 push
-
-### 2026-03-18
-
-- OpenClaw AI Agent 首次上线运行
-
 
 ---
 

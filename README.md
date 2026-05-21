@@ -45,3 +45,11 @@
 | 核心能力 | 设计（科班）、AIGC 应用、AI 培训 |
 | 编程水平 | 零基础程序员，主要靠 AI 编程工具 |
 | GitHub | [MouMou-Eleven](https://github.com/MouMou-Eleven) |
+
+---
+
+## 📰 对外科普版
+
+本仓库背后的方法论（"AI 时代如何让模型快速了解你"）已整理为完整文章发布在飞书 AIGC 知识库（含思维导图、流程图、对比表格）：
+
+- 飞书文档：<https://www.feishu.cn/wiki/PqSHwL1nniP2pOkML25cZx2bnSb>
