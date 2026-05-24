@@ -128,6 +128,64 @@ rmdir /s /q F:\AppData_Migrated\<app>
 - 迁移日志：`F:\AppData_Migrated\migration.log`
 - 索引说明：`F:\AppData_Migrated\README.txt`（迁移脚本自动生成）
 
+## 八、与 AI 助手的协作约定（卸载/清理流程）
+
+> 给后续接入这台电脑的 AI 助手看的：用户卸载/清理软件时该怎么帮他查残留。
+
+**触发条件**：用户说类似这些话："我要卸载 XXX"、"帮我清理 XXX 残留"、"XXX 是不是没卸载干净"、"看看电脑里 XXX 还有没有东西"。
+
+### 第一步：定位是否在迁移清单里
+
+读 `F:\AppData_Migrated\migration.log` 或 `F:\AppData_Migrated\README.txt`，确认这个软件是否做过 Junction 迁移。
+
+### 第二步：扫描残留位置（不要漏）
+
+| 位置 | 命令 |
+|---|---|
+| Junction 是否还活着 | `dir /AL <C:Junction路径>` 或 `Get-Item <路径>` 看 LinkType |
+| AppData 三个目录 | `C:\Users\Administrator\AppData\{Roaming,Local,LocalLow}\<app名>` |
+| Program Files | `C:\Program Files\<app>` 和 `C:\Program Files (x86)\<app>` |
+| ProgramData | `C:\ProgramData\<app>` |
+| 注册表 | `HKCU\Software\<app>` 和 `HKLM\Software\<app>` |
+| 启动项 | `Get-CimInstance Win32_StartupCommand` 过滤 |
+| 服务 | `Get-Service` 过滤 |
+| 计划任务 | `Get-ScheduledTask` 过滤 |
+| 进程占用 | `Get-CimInstance Win32_Process` 看 ExecutablePath/CommandLine |
+| F 盘孤儿数据 | `F:\AppData_Migrated\<目标>` 是否还在 |
+
+### 第三步：报告给用户，让他决定
+
+**列清单 → 让用户看 → 用户说删 → 才删。** 不要主动执行 `rmdir /s`、`Remove-Item -Recurse`、`del /s`、`reg delete` 等破坏性命令。
+
+### 第四步：如果用户确认要删，按安全顺序
+
+迁移过的软件必须按这个顺序，避免穿透 Junction 误删：
+
+```cmd
+# 1. 检查 C 盘 Junction 是否残留
+dir /AL C:\Users\Administrator\AppData\Roaming\<app>
+
+# 2. 只删 Junction（不加 /s 是关键）
+rmdir C:\Users\Administrator\AppData\Roaming\<app>
+
+# 3. 再删 F 盘真实数据
+rmdir /s /q F:\AppData_Migrated\<目标>
+
+# 4. 其他普通残留再清（注册表、Program Files 等）
+```
+
+**绝对禁止**：`del /s /q C:\junction路径\*` —— `del /s` 会穿透 Junction 删 F 盘真实数据，如果 F 盘上还有别的没卸载的应用数据，可能误伤。
+
+### 第五步：扫"bug 和漏洞"
+
+用户问"有没有 bug、漏洞"时，重点查这些异常状态：
+
+- **死 Junction**：C 盘 Junction 还在，但 F 盘目标已被删 → `Get-Item <Junction路径>` 看 Target 是否存在
+- **僵尸进程**：进程还在占用一个已被卸载的可执行文件路径
+- **孤儿服务/计划任务**：服务/任务还在尝试启动一个不存在的程序
+- **启动项指向已删文件**：登录时报错或者拖慢开机
+- **注册表 uninstall 残留**：`HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\` 下还有项但程序已不在
+
 ---
 
 *记录时间：2026-05-24*
