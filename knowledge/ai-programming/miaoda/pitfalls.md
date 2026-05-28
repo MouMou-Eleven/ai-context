@@ -248,122 +248,34 @@ console.log("[fnname] env diag:", {
 
 ---
 
-## #14 秒哒预览域名 *.miaoda.cn 下大视频上传：CORS 把前端直传堵死、Edge Function 又装不下整文件 → 正解是「分片留在 Storage 不合并 + serve 函数用 HTTP Range 流式代理」
+## #14 秒哒预览域名 `*.miaoda.cn` 下大视频上传：CORS / Edge Function 资源 / Storage 全局上限三层叠加
 
-> 本条经验是反复踩坑后**已在生产成功**的方案，三个函数源码已沉淀到 `references/video-chunked-upload/` 三个文件，可直接复用。
+> 这是反复踩坑后**已在生产成功**的方案。本条只保留发现叙事 + 根因；
+> 完整实现规范见 [patterns/large-video-upload.md](./patterns/large-video-upload.md)，
+> 可直接抄走的三段源码见 [references/video-chunked-upload/](../../../references/video-chunked-upload/)，
+> 写提示词喂秒哒的模板见 [prompt-patterns.md](./prompt-patterns.md#视频上传分片不合并--httpRange-代理)。
 
-**症状（按出现顺序）**：
+**症状（四种死法按出现顺序）**：
 
-1. 前端代码用 supabase-js 直传 Storage：浏览器控制台直接 CORS 拦截
+1. 前端 supabase-js 直传 Storage → 浏览器 CORS 拦截
    ```
    Access to fetch at 'https://xxxx.supabase.co/storage/v1/object/...'
    from origin 'https://app-XXX.miaoda.cn' has been blocked by CORS policy
    ```
+2. 改"切 5MB 分片传到 Edge Function，最后合并成完整 mp4 写回 Storage" → 合并步骤稳定报
+   `WorkerRequestCancelled: request has been cancelled by supervisor`（文件越大越早死，>200MB 几乎必中）。
+3. 改 TUS / 一次性大上传 → nginx `413 Request Entity Too Large`（实测 178MB 上限）。
+4. 改 `ReadableStream` 流式合并写回 Storage → 仍然 413（写"合并文件"瞬间撞平台级 `storageFileSizeLimit`）。
 
-2. 改成"前端切 5MB 分片传到 Edge Function `video-upload-chunk`，最后调 `video-upload-complete` 把分片合并成一个完整 mp4 写回 Storage"：分片传输全成功，但合并步骤稳定报
-   ```
-   WorkerRequestCancelled: request has been cancelled by supervisor
-   ```
-   （文件越大越早死，>200MB 几乎必中）
+**根因（三层叠加，缺一不可，修一层另两层照样死）**：
 
-3. 改用 TUS / 一次性大请求绕过分片：到达边缘网关被 nginx 截断 `413 Request Entity Too Large`（实测 178MB 上限）。
-
-4. 即使在 `video-upload-complete` 里改用 `ReadableStream` 流式合并写回 Storage：仍然失败——平台全局 `storageFileSizeLimit = Math.min(global, bucket)` 远小于实际视频体积，写"合并文件"时还是触发 413（这条来自成功代码注释里的明确说明）。
-
-**根因（三层叠加，缺一不可）**：
-
-- **CORS 层**：秒哒预览域名 `*.miaoda.cn` 在底层 Supabase **Storage 端点**的 CORS 白名单里**没有**，但在 **Edge Function 端点**的 CORS 白名单里**有**。所以"前端 → Storage"被浏览器协议层拒绝，"前端 → Edge Function"通行。这是协议层的拒绝，前端代码改不动。
-- **Edge Function 资源层**：单个 Edge Function 的内存/CPU 都很有限（百兆级内存、数百秒 wall-time，被 supervisor 强制 kill）。把几百 MB 的分片在函数里 concat / 流式拼一份完整文件再写回 Storage，**几乎必然**触发 `WorkerRequestCancelled`。
-- **Storage 全局上限层**：平台层有 `storageFileSizeLimit = Math.min(global, bucket)` 的硬上限，并发桶级 limit 调大也没用——合并后的整文件在写入瞬间被网关 413 拒掉。
-
-> 进一步：上述任意单层即便修掉，剩下两层也会让"前端直传 / 合并大文件" 100% 死。所以从单点优化里逃不出来。
-
-**正解（已在生产成功、用户已验证、三段源码完整保存在 [references/video-chunked-upload/](../../../references/video-chunked-upload/) 目录）**：永远别把分片合并成一个大文件。让分片留在 Storage 里，靠一个 serve 代理函数用 HTTP Range/206 假装它是一个完整视频。
-
-架构上需要 **3 个 Edge Function + 1 个 bucket + 1 张元数据表**：
-
-```
-bucket:  video-chunks               # 只放分片,不放合并后的完整文件
-                                    # 每个分片以路径 `<upload_id>/<chunk_index>` 存放
-
-table:   video_uploads              # 元数据表,字段(实测验证):
-                                    #   id (uuid, PK)         — 即 upload_id
-                                    #   user_id (uuid)        — 上传者
-                                    #   filename (text)
-                                    #   total_size (int8)     — 全文件总字节数
-                                    #   mime_type (text)
-                                    #   chunk_count (int)     — 总分片数
-                                    #   uploaded_chunks (int) — 已上传分片数
-                                    #   status (text)         — uploading / completed
-                                    #   storage_path (text)
-                                    #   created_at, completed_at (timestamptz)
-
-Edge Functions (顶层 CORS 头都带 Access-Control-Allow-Origin: *):
-
-  video-upload-chunk     # POST multipart/form-data: { upload_id, chunk_index, chunk(File) }
-                         # 鉴权: Authorization Bearer + 管理员角色校验 (profiles.role === 'admin' || is_super_admin)
-                         # 单分片硬上限 5MB + 128KB 容差(常量 CHUNK_MAX_BYTES)
-                         # 落盘路径: video-chunks/<upload_id>/<chunk_index>
-                         # upsert: true 允许重传同一片
-                         # 写完递增 video_uploads.uploaded_chunks
-                         #   - 走 Edge Function 端点,CORS 通过
-                         #   - 单分片 ≈ 5MB,远低于 nginx 178MB / Edge Function 内存上限
-                         #   - 前端可多路并发提速
-
-  video-upload-complete  # POST JSON: { upload_id }
-                         # 鉴权同上
-                         # 关键:**只校验 + 改状态,不读分片内容、不做任何合并**
-                         #   1. storage.list(upload_id) 拿到已落盘分片列表
-                         #   2. 校验 0..chunk_count-1 全部到位,缺片返回 missing_chunks 数组
-                         #   3. UPDATE video_uploads SET status='completed', completed_at=now()
-                         #   4. 返回 { public_url, file_path }, public_url 形如:
-                         #      `${SUPABASE_URL}/functions/v1/video-serve?id=${upload_id}`
-                         # 幂等: 已 completed 直接返回同一 serve URL
-
-  video-serve            # GET /functions/v1/video-serve?id=<upload_id>
-                         # **不鉴权**:upload_id 是 UUID 不可猜,且视频是课程公开内容
-                         # 浏览器 <video> 标签发起请求,带 `Range: bytes=START-END` 头
-                         # 流程:
-                         #   1. 查 video_uploads 拿 total_size / chunk_count / mime_type / status
-                         #   2. 解析 Range,算出 firstChunkIdx / lastChunkIdx / 首片要跳过的字节数
-                         #         firstChunkIdx    = floor(rangeStart / CHUNK_SIZE)
-                         #         lastChunkIdx     = min(floor(rangeEnd / CHUNK_SIZE), chunk_count-1)
-                         #         skipBytesInFirst = rangeStart - firstChunkIdx * CHUNK_SIZE
-                         #   3. 对覆盖到的每个分片调 storage.from('video-chunks').createSignedUrl(`${id}/${i}`, 3600)
-                         #   4. 用 ReadableStream 逐分片 fetch → 切片 → enqueue,边读边推
-                         #   5. 命中 Range 时返回 `206 Partial Content` + Content-Range,
-                         #      未带 Range 返回 200,响应头始终带 `Accept-Ranges: bytes`
-                         # 浏览器看到 206 + Content-Range 就当成一个完整可拖动进度条的视频文件。
-```
-
-**为什么这套方案三层都能过**：
-
-| 限制层 | 失败方案为何死 | 本方案为何活 |
+| 限制层 | 触发位置 | 为何把"前端直传 / 合并大文件"全堵死 |
 |---|---|---|
-| Storage CORS 白名单不含 `*.miaoda.cn` | 前端直传被浏览器拦 | 前端**永远不直接打 Storage 端点**,全程只与 Edge Function 通信 |
-| Edge Function 内存/CPU/wall-time | 合并大文件被 supervisor kill | 上传时每次只处理一个 ~5MB 分片;播放时 video-serve 一次也只代理 Range 命中的几个分片,且边 fetch 边 enqueue 不积压在内存里 |
-| Storage 全局 `storageFileSizeLimit` + nginx 178MB | 一次性大请求 / 合并写回都被 413 | 单次写入 Storage 的对象始终是 5MB 分片,永不接近上限;**永不写入合并后的完整文件** |
+| CORS 白名单 | 浏览器 → Storage 端点 | 秒哒预览域名 `*.miaoda.cn` 在 **Storage 端点**白名单**没有**，但在 **Edge Function 端点**白名单**有**。协议层拒绝，前端代码改不动。 |
+| Edge Function 资源 | 单函数内存 / CPU / wall-time | 几百 MB 文件 concat 或流式拼装超过百兆级内存或数百秒 wall-time，被 supervisor 强制 kill。 |
+| Storage 全局上限 | 平台级 `storageFileSizeLimit = Math.min(global, bucket)` | 合并后的整文件在写入瞬间被网关 413，调大桶级 limit 也没用。 |
 
-**前端配合的关键参数**（必须与 Edge Function 一致，否则 Range 算错）：
+**正解一句话**：永远不把分片合并成完整文件。分片以路径 `<upload_id>/<chunk_index>` 永久留在 Storage 桶 `video-chunks` 里，新增一个 `video-serve` Edge Function 用 HTTP Range / 206 Partial Content 把这堆分片**伪装成**一个可拖进度条的完整视频文件。三层全过：前端永不直打 Storage（绕 CORS）、单次操作只读写一片 5MB（绕 Edge Function 资源）、永不写合并文件（绕 storageFileSizeLimit）。架构图 / 表结构 / 函数契约 / 全部源码 → [patterns/large-video-upload.md](./patterns/large-video-upload.md)。
 
-- 前端切片大小 `CHUNK_SIZE` **必须 = 5 \* 1024 \* 1024**（5 MB），与 `video-serve` 顶部常量保持一致
-- 前端可 3 路并发上传分片以提速（不是必需，但实测能显著缩短大视频上传耗时）
-- 上传完调一次 `video-upload-complete` 拿 `public_url`，写入业务表（如 `course_videos.video_url`）
-- 业务页面播放：`<video src="{public_url}" controls />` 即可，浏览器自动协商 Range
-
-**反模式（实测都不行，别再走弯路）**：
-
-- ❌ 让秒哒"申请 Storage 签名直传 URL"——签名 URL 仍然指向 Storage 端点，CORS 照样拦。
-- ❌ 把分片在 `video-upload-complete` 里 in-memory `concat` 后 `upload`——内存爆，`WorkerRequestCancelled`。
-- ❌ 改成 `ReadableStream` 流式合并写回 Storage——单函数 wall-time/CPU 不够，且写"合并文件"还撞 `storageFileSizeLimit` 413。
-- ❌ 走 TUS 协议 / multipart 一次性大上传——nginx 178MB 卡死。
-- ❌ 在前端用 IndexedDB 暂存再合并——浏览器内存与持久化都顶不住几百 MB 视频，且最后还是要面对 CORS。
-- ❌ 把 `video-serve` 写成 200 全文返回——浏览器 `<video>` 拖进度条/移动端会卡死，且 Edge Function wall-time 不够推完整文件。
-
-**预防 / 写提示词时怎么落**（建议复制进 [prompt-patterns.md](./prompt-patterns.md)）：
-
-1. 红线段第一条：**禁止合并分片为完整文件**、**禁止前端代码直接调用 Storage 端点（含 createSignedUploadUrl/直传/TUS）**。
-2. 强制要求秒哒落 3 个函数：`video-upload-chunk` / `video-upload-complete` / `video-serve`，并把 `video-serve` 必须实现 `Range` / `206` 这条单独列出来——很多 AI 默认写 200 全文返回，那样浏览器没法拖进度条、移动端也加载不动。
-3. 前端 `<video>` 标签的 `src` 必须指向 `video-serve` 这个 Edge Function 路径，**不要**指向 Storage 公网 URL。
-4. `video_uploads` 表至少要有：`id` / `user_id` / `total_size` / `mime_type` / `chunk_count` / `uploaded_chunks` / `status` / `storage_path` / `created_at` / `completed_at`，否则 `video-serve` 算不出 Range 该读哪几片的哪几个字节。
-5. 直接把 [references/video-chunked-upload/](../../../references/video-chunked-upload/) 三个 ts 文件作为「禁止重写、必须照抄」的参考实现喂给秒哒，杜绝它"按印象自己写一遍"翻车（参考 #5：秒哒会无视已提供实现自己另写一份）。
+**对秒哒喂提示词时务必带上**（详见 [prompt-patterns.md](./prompt-patterns.md#视频上传分片不合并--httpRange-代理)）：
+红线"禁止合并分片"+"禁止前端直接调 Storage 端点（含 createSignedUploadUrl / TUS）"+"video-serve 必须返回 206 + Content-Range，不允许 200 全文" + 把 `references/video-chunked-upload/` 三个 ts 作为"禁止重写、必须照抄"的参考实现塞给它（参考 #5：秒哒会无视已提供实现自己另写一份）。
