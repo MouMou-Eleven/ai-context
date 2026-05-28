@@ -253,7 +253,7 @@ console.log("[fnname] env diag:", {
 > 这是反复踩坑后**已在生产成功**的方案。本条只保留发现叙事 + 根因；
 > 完整实现规范见 [patterns/large-video-upload.md](./patterns/large-video-upload.md)，
 > 可直接抄走的三段源码见 [references/video-chunked-upload/](../../../references/video-chunked-upload/)，
-> 写提示词喂秒哒的模板见 [prompt-patterns.md](./prompt-patterns.md#视频上传分片不合并--httpRange-代理)。
+> 写提示词喂秒哒的模板见 [prompt-patterns.md](./prompt-patterns.md#视频上传分片不合并--http-range-代理)。
 
 **症状（四种死法按出现顺序）**：
 
@@ -277,5 +277,5 @@ console.log("[fnname] env diag:", {
 
 **正解一句话**：永远不把分片合并成完整文件。分片以路径 `<upload_id>/<chunk_index>` 永久留在 Storage 桶 `video-chunks` 里，新增一个 `video-serve` Edge Function 用 HTTP Range / 206 Partial Content 把这堆分片**伪装成**一个可拖进度条的完整视频文件。三层全过：前端永不直打 Storage（绕 CORS）、单次操作只读写一片 5MB（绕 Edge Function 资源）、永不写合并文件（绕 storageFileSizeLimit）。架构图 / 表结构 / 函数契约 / 全部源码 → [patterns/large-video-upload.md](./patterns/large-video-upload.md)。
 
-**对秒哒喂提示词时务必带上**（详见 [prompt-patterns.md](./prompt-patterns.md#视频上传分片不合并--httpRange-代理)）：
+**对秒哒喂提示词时务必带上**（详见 [prompt-patterns.md](./prompt-patterns.md#视频上传分片不合并--http-range-代理)）：
 红线"禁止合并分片"+"禁止前端直接调 Storage 端点（含 createSignedUploadUrl / TUS）"+"video-serve 必须返回 206 + Content-Range，不允许 200 全文" + 把 `references/video-chunked-upload/` 三个 ts 作为"禁止重写、必须照抄"的参考实现塞给它（参考 #5：秒哒会无视已提供实现自己另写一份）。
