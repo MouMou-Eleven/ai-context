@@ -201,6 +201,6 @@ videoEl.src = public_url;
 
 ## 给秒哒喂提示词时的红线
 
-写提示词的完整模板见 [`prompt-patterns.md` § 视频上传分片不合并 + HTTP Range 代理](../prompt-patterns.md#视频上传分片不合并--httpRange-代理)。
+写提示词的完整模板见 [`prompt-patterns.md` § 视频上传分片不合并 + HTTP Range 代理](../prompt-patterns.md#视频上传分片不合并--http-range-代理)。
 
 不要让秒哒"重新设计一版"——它会重写一份合并版的，又会撞 #14 描述的三层墙。把 `references/video-chunked-upload/` 三个 ts 作为"必须照抄"的源码喂给它。
