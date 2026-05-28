@@ -4,19 +4,26 @@
 
 > 注意：中文「miǎodā」存在多个同名产品，进入正文前先看 [disambiguation.md](./disambiguation.md) 确认上下文。本目录所有文件指**百度秒哒 MIAODA**（miaoda.cn）。
 
+> AI Agent 进入本目录请先读 [llms.txt](./llms.txt)，它按"查 / 建 / 抄"三种意图路由到具体文件。
+
 ## 文档索引
 
 | 文件 | 内容 | 何时该读 |
 |---|---|---|
+| [llms.txt](./llms.txt) | AI Agent 入口索引：按"查 / 建 / 抄"路由 | AI 第一次进入本目录时 |
 | [disambiguation.md](./disambiguation.md) | 同名产品辨析：百度秒哒 MIAODA vs 飞书妙搭 Spark，含路由判断表 | 用户提到「秒哒/妙搭」但没说清是哪个时（必读） |
 | [platform-basics.md](./platform-basics.md) | 秒哒平台的基础认知：四套运行时、自定义技能机制、与应用层的关系、文档与实现差异、「后端服务」面板（用户能看到数据库的唯一入口）等 | 第一次接触秒哒、或要做技术决策前 |
 | [version-features.md](./version-features.md) | 版本节点速查表：每个版本上线的能力（V3.0 → V1.3，倒序），附官方更新日志 URL | 判断「某能力是否已上线」、给某能力定位时间锚点时 |
 | [publish-channels.md](./publish-channels.md) | 4 种发布渠道（Web / 秒哒官方小程序 web-view / 用户自有原生小程序 / 原生 APP）的能力边界、限制、选型建议 | 用户问「我的应用要不要做小程序/做 APP」时 |
 | [skill-development.md](./skill-development.md) | 自定义技能（.zip 包）开发指南：目录结构、SKILL.md frontmatter、脚本约定、环境变量 | 要为秒哒开发自定义技能时 |
 | [skill-as-callable.md](./skill-as-callable.md) | 反向能力：秒哒被打包为 Skill，可被 OpenClaw / Claude Code 等外部 Agent 调用（V2.5 上线） | 想把秒哒嵌进更大的 Agent 工作流、或做应用批量化生产时 |
-| [pitfalls.md](./pitfalls.md) | 13 个真实踩坑清单：MD5 Web Crypto 死路、密钥泄漏、嵌套目录、AI 自动重写签名、无 Supabase 控制台、按 Function 隔离的 Secrets、变量名拼错、多通道退款误路由 等 | 遇到怪异报错、或想预防性避雷时 |
-| [prompt-patterns.md](./prompt-patterns.md) | 与秒哒 AI 协作的提示词模板：@技能调用风格、红线前置、分工边界、设备识别函数注入等 | 要写一段让秒哒按计划执行的提示词时 |
+| [pitfalls.md](./pitfalls.md) | 14 个真实踩坑清单：MD5 Web Crypto 死路、密钥泄漏、嵌套目录、AI 自动重写签名、无 Supabase 控制台、按 Function 隔离的 Secrets、变量名拼错、多通道退款误路由、**大视频上传三层墙**等 | 遇到怪异报错、或想预防性避雷时 |
+| [prompt-patterns.md](./prompt-patterns.md) | 与秒哒 AI 协作的提示词模板：@技能调用风格、红线前置、分工边界、设备识别函数注入、**视频上传分片不合并 + HTTP Range 代理**等 | 要写一段让秒哒按计划执行的提示词时 |
+| [patterns/large-video-upload.md](./patterns/large-video-upload.md) | 大视频上传（≥50MB）的处方实现：架构 / 表 schema / 三个函数契约 / 前端契约 / 不可变常量速查 | 要落地视频上传功能时（[pitfalls.md #14](./pitfalls.md) 的实施指南） |
 | [case-yungouos-jsapi.md](./case-yungouos-jsapi.md) | 完整接入案例：YunGouOS 微信 JSAPI 支付从需求到上线的全过程，含每轮失败与修复 | 做支付接入、或想看一个端到端样板时 |
+
+外部引用：
+- [`references/video-chunked-upload/`](../../../references/video-chunked-upload/) — 大视频上传的三个 Edge Function 源码（chunk / complete / serve），生产已验证，可直接抄
 
 ## 重要原则（来自实战）
 
@@ -30,5 +37,6 @@
 - 每次完成一次有价值的秒哒实战，把"非官方文档可得"的经验追加到对应文件里
 - 新增踩坑记录到 [pitfalls.md](./pitfalls.md)
 - 新增提示词模板到 [prompt-patterns.md](./prompt-patterns.md)
+- 重复实施 ≥ 2 次的复杂方案，沉淀为 `patterns/<name>.md`（处方）+ 配套的可抄源码到 `references/<name>/`
 - 完整端到端案例新建一个 `case-<name>.md` 并在本 README 索引里加一行
 - 已经写进 [skill-development.md](./skill-development.md) 的内容不要重复散落到其他文件
