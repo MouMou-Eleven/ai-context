@@ -1,0 +1,58 @@
+# llms.txt — 秒哒（Miaoda）实战经验库
+
+> 本目录沉淀的是百度秒哒 MIAODA 平台的实战经验。AI Agent 读取本文件可快速定位"该看哪个文件"。
+> 命名澄清：中文「秒哒/妙搭」存在多个同名产品，本目录所有文件指 **百度秒哒 MIAODA（miaoda.cn）**。
+> 仓库根：https://github.com/MouMou-Eleven/ai-context
+
+## 按意图路由
+
+### 查（遇到问题想查根因）
+- 怪异报错 / 平台行为不符合直觉 → [pitfalls.md](./pitfalls.md)
+- 不确定是百度秒哒还是飞书妙搭 Spark → [disambiguation.md](./disambiguation.md)
+- 某能力是否已上线 / 在哪个版本上线 → [version-features.md](./version-features.md)
+- 平台基础认知（四套运行时、技能机制、数据库入口） → [platform-basics.md](./platform-basics.md)
+
+### 建（要开始写代码 / 部署）
+- 写给秒哒 AI 的提示词模板 → [prompt-patterns.md](./prompt-patterns.md)
+- 大视频上传（≥50MB）落地处方 → [patterns/large-video-upload.md](./patterns/large-video-upload.md)
+- 微信 JSAPI 支付端到端样板 → [case-yungouos-jsapi.md](./case-yungouos-jsapi.md)
+- 自定义技能 .zip 包开发 → [skill-development.md](./skill-development.md)
+- 把秒哒作为 Skill 被外部 Agent 调用 → [skill-as-callable.md](./skill-as-callable.md)
+- 决定做 Web / 小程序 / APP → [publish-channels.md](./publish-channels.md)
+
+### 抄（要直接复用源码）
+- 大视频上传三个 Edge Function（生产已验证） → [../../../references/video-chunked-upload/](../../../references/video-chunked-upload/)
+
+## 进入正文的建议顺序
+
+1. 第一次接触：[platform-basics.md](./platform-basics.md) → [pitfalls.md](./pitfalls.md) 通读
+2. 要写提示词：[prompt-patterns.md](./prompt-patterns.md) 找到最接近的片段 → 直接改用
+3. 要落地大功能：先读对应的 `patterns/*.md` 拿到契约 → 再从 `references/*` 直接抄源码 → 配套提示词把"必须照抄不许重写"塞进去
+
+## 核心原则（违反必踩坑）
+
+1. 秒哒文档与实际行为有差异（如 SKILL.md 必须有 YAML frontmatter，官方文档没写）。永远以实际报错为准。
+2. 「技能运行时」与「应用运行时」是两个独立环境，密钥、环境变量、语言不互通。
+3. 秒哒 AI 是「指令式执行」，不能多轮讨论。提示词必须一次写到位、把红线放最前。
+4. 秒哒 AI 容易"自由发挥"。不在提示词里明确禁止"自己实现某功能"，它就会绕过你提供的实现自己另写一份并大概率翻车——**特别是涉及大文件/支付/签名的场景，必须把参考实现路径作为"必须照抄"塞给它**。
+
+## 文件层级速查
+
+```
+miaoda/
+├── README.md              人类可读的索引（看本目录干啥用）
+├── llms.txt               本文件（AI 路由）
+├── disambiguation.md      百度秒哒 vs 飞书妙搭
+├── platform-basics.md     平台基础认知
+├── version-features.md    版本能力速查
+├── publish-channels.md    发布渠道
+├── skill-development.md   开发自定义技能
+├── skill-as-callable.md   秒哒作为外部 Skill
+├── pitfalls.md            真实踩坑清单（含 #14 大视频上传三层墙）
+├── prompt-patterns.md     提示词模板（含"视频上传分片不合并 + HTTP Range 代理"）
+├── patterns/
+│   └── large-video-upload.md   #14 的处方实现（架构 / 表 / 函数契约 / 前端契约 / 常量速查）
+├── case-yungouos-jsapi.md      微信 JSAPI 支付端到端
+└── ../../../references/
+    └── video-chunked-upload/   #14 的可直接抄走的源码（chunk / complete / serve 三个 ts + README）
+```
