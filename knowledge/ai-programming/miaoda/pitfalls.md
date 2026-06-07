@@ -245,3 +245,37 @@ console.log("[fnname] env diag:", {
 - 多通道并存的项目里，**任何**涉及"按订单查支付状态/退款/对账"的操作，都必须先按 `pay_channel` 分流
 - 提示词里写明"现有 PC 端 Native 退款保持不变，新增 YunGouOS 退款分支"，避免秒哒重构原有逻辑
 - 上线前必须两条通道各跑一遍退款测试
+
+---
+
+## #14 秒哒预览域名 `*.miaoda.cn` 下大视频上传：CORS / Edge Function 资源 / Storage 全局上限三层叠加
+
+> 这是反复踩坑后**已在生产成功**的方案。本条只保留发现叙事 + 根因；
+> 完整实现规范见 [patterns/large-video-upload.md](./patterns/large-video-upload.md)，
+> 可直接抄走的三段源码见 [references/video-chunked-upload/](../../../references/video-chunked-upload/)，
+> 写提示词喂秒哒的模板见 [prompt-patterns.md](./prompt-patterns.md#视频上传分片不合并--http-range-代理)。
+
+**症状（四种死法按出现顺序）**：
+
+1. 前端 supabase-js 直传 Storage → 浏览器 CORS 拦截
+   ```
+   Access to fetch at 'https://xxxx.supabase.co/storage/v1/object/...'
+   from origin 'https://app-XXX.miaoda.cn' has been blocked by CORS policy
+   ```
+2. 改"切 5MB 分片传到 Edge Function，最后合并成完整 mp4 写回 Storage" → 合并步骤稳定报
+   `WorkerRequestCancelled: request has been cancelled by supervisor`（文件越大越早死，>200MB 几乎必中）。
+3. 改 TUS / 一次性大上传 → nginx `413 Request Entity Too Large`（实测 178MB 上限）。
+4. 改 `ReadableStream` 流式合并写回 Storage → 仍然 413（写"合并文件"瞬间撞平台级 `storageFileSizeLimit`）。
+
+**根因（三层叠加，缺一不可，修一层另两层照样死）**：
+
+| 限制层 | 触发位置 | 为何把"前端直传 / 合并大文件"全堵死 |
+|---|---|---|
+| CORS 白名单 | 浏览器 → Storage 端点 | 秒哒预览域名 `*.miaoda.cn` 在 **Storage 端点**白名单**没有**，但在 **Edge Function 端点**白名单**有**。协议层拒绝，前端代码改不动。 |
+| Edge Function 资源 | 单函数内存 / CPU / wall-time | 几百 MB 文件 concat 或流式拼装超过百兆级内存或数百秒 wall-time，被 supervisor 强制 kill。 |
+| Storage 全局上限 | 平台级 `storageFileSizeLimit = Math.min(global, bucket)` | 合并后的整文件在写入瞬间被网关 413，调大桶级 limit 也没用。 |
+
+**正解一句话**：永远不把分片合并成完整文件。分片以路径 `<upload_id>/<chunk_index>` 永久留在 Storage 桶 `video-chunks` 里，新增一个 `video-serve` Edge Function 用 HTTP Range / 206 Partial Content 把这堆分片**伪装成**一个可拖进度条的完整视频文件。三层全过：前端永不直打 Storage（绕 CORS）、单次操作只读写一片 5MB（绕 Edge Function 资源）、永不写合并文件（绕 storageFileSizeLimit）。架构图 / 表结构 / 函数契约 / 全部源码 → [patterns/large-video-upload.md](./patterns/large-video-upload.md)。
+
+**对秒哒喂提示词时务必带上**（详见 [prompt-patterns.md](./prompt-patterns.md#视频上传分片不合并--http-range-代理)）：
+红线"禁止合并分片"+"禁止前端直接调 Storage 端点（含 createSignedUploadUrl / TUS）"+"video-serve 必须返回 206 + Content-Range，不允许 200 全文" + 把 `references/video-chunked-upload/` 三个 ts 作为"禁止重写、必须照抄"的参考实现塞给它（参考 #5：秒哒会无视已提供实现自己另写一份）。

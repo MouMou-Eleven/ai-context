@@ -155,3 +155,55 @@ Deno/浏览器 Web Crypto 拒绝 MD5，必抛 NotSupportedError，
 ## 正面教材：完整接入提示词
 
 见 [case-yungouos-jsapi.md](./case-yungouos-jsapi.md) 的"最终可用提示词"小节。
+
+## 视频上传分片不合并 + HTTP Range 代理
+
+**背景**：秒哒预览域名 `*.miaoda.cn` 下上传 ≥50MB 大视频会同时撞三层墙——CORS（Storage 端点白名单不包括 miaoda.cn）、Edge Function 资源（合并大文件超内存/wall-time 被 supervisor kill）、Storage 全局上限（合并文件写入瞬间 413）。完整复盘见 [pitfalls.md #14](./pitfalls.md)，处方见 [patterns/large-video-upload.md](./patterns/large-video-upload.md)，源码见 [references/video-chunked-upload/](../../../references/video-chunked-upload/)。
+
+**核心：永远不让秒哒重新设计。它会原地另写一份合并版，必然再撞同一面墙。**
+
+**提示词模板**：
+
+```
+@<秒哒后端技能> 我现在需要给后台加大视频上传。请打起十二分的精神专心执行！！
+
+红线（必须严格遵守，违反必死）：
+- ❌ 禁止前端通过 supabase-js 直接调 Storage 端点（含 createSignedUploadUrl / TUS / upload）——
+  秒哒预览域名 *.miaoda.cn 不在 Storage 端点 CORS 白名单内，浏览器会直接拦
+- ❌ 禁止把分片在 Edge Function 里合并成完整 mp4 写回 Storage——
+  上传合并文件瞬间会被平台 storageFileSizeLimit 在 413 层堵死（已实测，TUS / ReadableStream 流式合并都没用）
+- ❌ 禁止重写下述三个函数的逻辑或常量——参考实现已在生产验证
+- ✅ 必须用三函数架构：video-upload-chunk（5MB 一片）+ video-upload-complete（验全 + 标完成）+ video-serve（Range 流式代理）
+- ✅ 视频 URL 必须指向 video-serve 函数地址，不允许是 Storage 公开 URL
+- ✅ video-serve 必须返回 206 + Content-Range + Accept-Ranges: bytes，禁止 200 全文返回
+
+参考实现（必须照抄、不允许另写）：
+- references/video-chunked-upload/video-upload-chunk.ts
+- references/video-chunked-upload/video-upload-complete.ts
+- references/video-chunked-upload/video-serve.ts
+直接原样部署到 supabase/functions/video-upload-chunk、video-upload-complete、video-serve。
+
+不可变常量（前后端必须同步）：
+- 分片大小 = 5 * 1024 * 1024（前端 + video-serve.ts L21）
+- 桶名 = video-chunks（三个函数硬编码）
+- 路径格式 = <upload_id>/<chunk_index>（三个函数硬编码）
+
+表 schema 见 references/video-chunked-upload/README.md。
+前端切片循环、断点续传 UI、video_uploads 行的创建端点需要你自己实现（这三个函数不管）。
+
+测试场景：上传一个 200MB 的 mp4，complete 返回的 public_url 在 <video> 标签里能正常拖进度条。
+```
+
+**为什么必须把"禁止合并"放红线**：秒哒看到"分片不合并"会本能反应"那最后怎么播？"，然后自动加上"合并步骤"。提示词不写禁止 → 它一定加，加完一定撞 413，然后回滚改方案，浪费一晚上。
+
+**为什么必须把 references 路径塞进提示词**：参考 [片段 3](#片段-3强制使用参考实现而非另写)，秒哒会无视已提供实现自己另写一份。把三个 ts 路径作为"必须照抄"的源码喂给它是唯一能让它停下来的方式。
+
+**反面教材**：
+
+```
+❌ 帮我加大视频上传功能，最好支持断点续传
+❌ 用 Supabase Storage 实现 mp4 上传
+❌ 切片上传完后合并成完整视频写回 Storage
+```
+
+为什么失败：没有禁止合并、没有指明 video-serve 架构、没有引用已有实现。秒哒会按 Supabase 官方教程做"切片→合并→直传"，三层墙各撞一遍。
