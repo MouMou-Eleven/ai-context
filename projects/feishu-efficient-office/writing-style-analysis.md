@@ -206,3 +206,71 @@
 - 超过一屏必须用分栏/表格/callout 打破
 - 一页 callout 不超过 3 个连续出现
 - 列表每项不超过两行
+
+---
+
+## 附录：飞书文档视觉元素实现
+
+### 1. 彩色 Callout 实现
+
+**紫色主题**（核心观点、开篇总结）：
+```markdown
+<callout background-color="rgb(246,241,254)" border-color="rgb(205,178,250)" emoji="💡">
+<b>核心观点</b>：一句话提炼要点
+
+详细说明文字...
+</callout>
+```
+
+**蓝色主题**（章节引导、操作提示）：
+```markdown
+<callout background-color="rgb(240,244,255)" emoji="📱">
+<b>本节要解决的问题：</b> 具体痛点描述
+
+<b>解决方案：</b> 三步操作流程
+</callout>
+```
+
+### 2. Mermaid 流程图
+
+```markdown
+```mermaid
+graph LR
+    A[起点] --> B[步骤1]
+    B --> C[步骤2]
+    C --> D[终点]
+    
+    style A fill:#f5f5f5
+    style D fill:#e8f5e9
+```
+```
+
+### 3. 分隔线
+
+章节间用 `<hr/>` 分隔，增强视觉呼吸感。
+
+### 4. 加粗强调
+
+- Markdown 正文：用 `**关键词**`
+- Callout 内：用 `<b>关键词</b>`（飞书 XML 标签）
+
+### 5. 分栏对比
+
+```markdown
+<grid>
+<column>
+<h3>传统方式</h3>
+- 痛点1
+- 痛点2
+</column>
+<column>
+<h3>使用飞书后</h3>
+- 优势1
+- 优势2
+</column>
+</grid>
+```
+
+---
+
+**参考文档**：[OpenClaw 实战使用场景全记录](https://my.feishu.cn/wiki/FGf9wzJJLiKj9NkloLpc5ICSnYg) — 视觉风格黄金标准
