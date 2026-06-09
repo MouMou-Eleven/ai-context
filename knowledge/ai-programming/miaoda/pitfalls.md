@@ -279,3 +279,22 @@ console.log("[fnname] env diag:", {
 
 **对秒哒喂提示词时务必带上**（详见 [prompt-patterns.md](./prompt-patterns.md#视频上传分片不合并--http-range-代理)）：
 红线"禁止合并分片"+"禁止前端直接调 Storage 端点（含 createSignedUploadUrl / TUS）"+"video-serve 必须返回 206 + Content-Range，不允许 200 全文" + 把 `references/video-chunked-upload/` 三个 ts 作为"禁止重写、必须照抄"的参考实现塞给它（参考 #5：秒哒会无视已提供实现自己另写一份）。
+
+---
+
+## #15 只改 `index.html` / `useSEO` → SPA 页面级 `keywords` 容易漏
+
+> 完整处方见 [patterns/seo-optimization.md](./patterns/seo-optimization.md)，提示词片段见 [prompt-patterns.md](./prompt-patterns.md#片段-8全站-seo-优化不漏-keywords)。
+
+**症状**：让秒哒“做 SEO”后，它的 Summary 看起来完成了 `index.html`、`title`、`description`、`robots.txt`、`sitemap.xml` 等任务，但继续检查每个页面时发现：部分路由没有 `meta[name="keywords"]`，或页面切换后 `keywords` 没有跟着变。
+
+**根因**：React SPA 的 `<head>` 是运行时状态，不是只看 `index.html`。秒哒第一轮容易用 `useSEO` 或手动 DOM 操作分散修改 `title` / `description`，但漏掉 `keywords`；多页面路由越多，越容易出现“首页有、Navigate / About / Feedback 没有”的不一致。
+
+**修复**：
+1. 用 `react-helmet-async` 包住应用根部。
+2. 建统一 `SEOHead` 组件，组件参数必须包含 `title`、`description`、`keywords`。
+3. Home / Navigate / About / Feedback 等每个路由页面都显式渲染 `<SEOHead />`。
+4. Settings 增加 `site_keywords`，与 `site_description` 一起保存、加载、回显。
+5. 改完后逐页检查 `document.title`、`meta[name="description"]`、`meta[name="keywords"]`。
+
+**预防**：提示词里不要只写“帮我做 SEO”。要明确要求秒哒按“页面矩阵 × 字段矩阵”验收：每个页面都要有 `title` / `description` / `keywords`，并要求它回报逐页检查表。

@@ -14,6 +14,7 @@
 
 ### 建（要开始写代码 / 部署）
 - 写给秒哒 AI 的提示词模板 → [prompt-patterns.md](./prompt-patterns.md)
+- 站点 SEO（title / description / keywords / robots / sitemap）→ [patterns/seo-optimization.md](./patterns/seo-optimization.md)
 - 大视频上传（≥50MB）落地处方 → [patterns/large-video-upload.md](./patterns/large-video-upload.md)
 - 微信 JSAPI 支付端到端样板 → [case-yungouos-jsapi.md](./case-yungouos-jsapi.md)
 - 自定义技能 .zip 包开发 → [skill-development.md](./skill-development.md)
@@ -48,9 +49,10 @@ miaoda/
 ├── publish-channels.md    发布渠道
 ├── skill-development.md   开发自定义技能
 ├── skill-as-callable.md   秒哒作为外部 Skill
-├── pitfalls.md            真实踩坑清单（含 #14 大视频上传三层墙）
-├── prompt-patterns.md     提示词模板（含"视频上传分片不合并 + HTTP Range 代理"）
+├── pitfalls.md            真实踩坑清单（含 #14 大视频上传三层墙、#15 SPA SEO 漏 keywords）
+├── prompt-patterns.md     提示词模板（含"全站 SEO 不漏 keywords"、"视频上传分片不合并 + HTTP Range 代理"）
 ├── patterns/
+│   ├── seo-optimization.md     秒哒站点 SEO 优化处方（SEOHead / keywords / robots / sitemap）
 │   └── large-video-upload.md   #14 的处方实现（架构 / 表 / 函数契约 / 前端契约 / 常量速查）
 ├── case-yungouos-jsapi.md      微信 JSAPI 支付端到端
 └── ../../../references/

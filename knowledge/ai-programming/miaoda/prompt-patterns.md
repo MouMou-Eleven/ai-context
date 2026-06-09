@@ -127,6 +127,40 @@ Deno/浏览器 Web Crypto 拒绝 MD5，必抛 NotSupportedError，
 
 **进阶版**：把日志同时写入数据库一张 `client_logs` 表（按 `user_id` + `session_id` + `created_at` 索引），管理员后台可按用户查询历史，更适合非现场远程支持。
 
+### 片段 8：全站 SEO 优化不漏 keywords
+
+**背景**：一次真实对话里，第一轮让秒哒“做 SEO”后，它完成了 `index.html`、`useSEO`、`robots.txt`、`sitemap.xml` 和 Settings 的部分改动；第二轮继续追问每个页面的 `keywords` 是否都补齐，才改成 `SEOHead` + `react-helmet-async` 的统一管理方式。经验是：SEO 必须按“页面矩阵 × 字段矩阵”验收。
+
+**适用场景**：秒哒生成的 React/Vite 网站需要补全站 SEO，尤其是有 Home / Navigate / About / Feedback 这类多页面路由时。
+
+**提示词**：
+
+```text
+我现在需要你对整个网站做一次完整 SEO 优化，请打起十二分的精神专心执行。
+
+红线（必须遵守）：
+- 不要只改 index.html，React 页面切换后的 head 也必须正确。
+- 不要只处理 title 和 description，keywords 必须每个页面都有。
+- 不要在每个页面散落重复 DOM 操作，必须用统一 SEOHead 组件或等价统一入口管理。
+- 不要破坏现有路由、数据加载、分类筛选、反馈提交、后台设置保存逻辑。
+
+目标：
+1. 安装并使用 react-helmet-async（如果项目已安装则复用）。
+2. 在应用根部增加 HelmetProvider。
+3. 新建 src/components/SEOHead.tsx，统一输出 title、description、keywords。
+4. index.html 中补齐站点级兜底 title、description、keywords。
+5. Home、Navigate、About、Feedback 每个页面都必须渲染 SEOHead。
+6. Settings 中新增 site_keywords 配置项，和已有 site_description 一起保存、加载、回显。
+7. Home 页 SEO 要能结合 site_keywords、当前分类名 selectedCategoryName、站点数据关键词生成。
+8. 检查 robots.txt 和 sitemap.xml；没有就创建，有就补全核心路径。
+
+验收要求：
+改完后请逐页检查并回报表格，列出每个页面实际生效的 title、description、keywords。
+尤其检查 meta[name="keywords"]，不能为空，不能只在首页存在。
+```
+
+完整处方见 [patterns/seo-optimization.md](./patterns/seo-optimization.md)。
+
 ## 不要做的事
 
 - ❌ 不要写"先告诉我你将怎么做，等我确认再动手"——秒哒是指令式执行，会忽略这段或生成多余说明文档浪费 token
