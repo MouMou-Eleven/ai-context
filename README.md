@@ -23,11 +23,12 @@
 
 **首次对话时，请按以下顺序阅读：**
 
-1. `STRUCTURE.md` — 仓库规范（写入前必读）
-2. `identity.md` — 我是谁（核心人设，变化频率低）
-3. `current.md` — 我现在在做什么（常更新）
-4. `preferences.md` — 沟通偏好和工作方式
-5. `knowledge/` — 技能、知识库、荣誉成果
+1. `llms.txt` — AI 路由入口，先判断该读哪里
+2. `STRUCTURE.md` — 仓库规范（写入前必读）
+3. `identity.md` — 我是谁（核心人设，变化频率低）
+4. `current.md` — 我现在在做什么（常更新）
+5. `preferences.md` — 沟通偏好和工作方式
+6. `knowledge/` — 技能、知识库、荣誉成果
 
 **需要深入了解时：**
 - `projects/README.md` — 项目索引（按需选择具体项目）

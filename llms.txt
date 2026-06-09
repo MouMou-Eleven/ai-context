@@ -1,0 +1,41 @@
+# llms.txt — Personal AI Context 路由入口
+
+> 这是给 AI Agent 的最小入口文件。目标是先判断“该读哪里”，不要一次性加载整个仓库。
+
+## 第一原则
+
+- 写入或修改任何文件前，必须先读 [STRUCTURE.md](./STRUCTURE.md)。
+- 需要了解建委是谁：读 [identity.md](./identity.md)。
+- 需要了解当前状态：读 [current.md](./current.md)。
+- 需要了解沟通偏好：读 [preferences.md](./preferences.md)。
+- 需要了解项目资料：先读 [projects/README.md](./projects/README.md)，再按项目入口深入。
+- 需要了解知识/工具经验：先按主题进入 [knowledge/](./knowledge/)。
+
+## 重点消歧：百度秒哒 vs 飞书妙搭
+
+中文里的“秒哒 / 妙搭 / miǎodā”非常容易混淆。**不要凭读音或中文名推断产品。**
+
+| 线索 | 应路由到 |
+|---|---|
+| 百度秒哒、MIAODA、miaoda.cn、appmiaoda.com、百度智能云、千帆插件、Skill、Supabase 风格后端 | [knowledge/ai-programming/miaoda/](./knowledge/ai-programming/miaoda/) |
+| 飞书妙搭、飞书 Spark、miaoda.feishu.cn、feishu.cn、多维表格、审批、IM、飞书生态低代码 | 未来单独建立 `knowledge/ai-programming/feishu-spark/`，不要写进百度秒哒目录 |
+| 用户只说“秒哒/妙搭/miǎodā”，没有更多线索 | 必须先问清楚，不要假设 |
+
+百度秒哒的完整消歧文件见：[knowledge/ai-programming/miaoda/disambiguation.md](./knowledge/ai-programming/miaoda/disambiguation.md)。
+
+## AI 编程工具经验
+
+- AI 编程总入口：[knowledge/ai-programming/README.md](./knowledge/ai-programming/README.md)
+- 百度秒哒实战经验库：[knowledge/ai-programming/miaoda/README.md](./knowledge/ai-programming/miaoda/README.md)
+- 百度秒哒 AI 路由文件：[knowledge/ai-programming/miaoda/llms.txt](./knowledge/ai-programming/miaoda/llms.txt)
+
+## 本文件什么时候更新
+
+本文件不是日志，不需要每次新增笔记都更新。只有以下情况才需要改：
+
+1. 新增顶层目录或改变仓库结构。
+2. 新增一个重要知识包，如 `knowledge/ai-programming/feishu-spark/`。
+3. 新增一个长期项目，并且它需要在全局入口里被快速发现。
+4. 出现新的高风险同名/近名概念，需要放到入口层消歧。
+
+普通项目细节、单次经验、提示词模板、踩坑记录，不写在这里，只更新对应目录的 README 或 llms 文件。

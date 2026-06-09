@@ -3,6 +3,7 @@
 > 本目录沉淀建委在使用百度秒哒（MIAODA）平台过程中积累的实战经验、踩坑记录、提示词模板、接入案例，以及对官方版本/渠道/Skill 反向能力的事实归类。
 
 > 注意：中文「miǎodā」存在多个同名产品，进入正文前先看 [disambiguation.md](./disambiguation.md) 确认上下文。本目录所有文件指**百度秒哒 MIAODA**（miaoda.cn）。
+> **不要把飞书妙搭 Spark 的经验写进本目录。** 飞书妙搭属于飞书生态低代码/无代码工具，未来应单独放到 `knowledge/ai-programming/feishu-spark/`。
 
 > AI Agent 进入本目录请先读 [llms.txt](./llms.txt)，它按"查 / 建 / 抄"三种意图路由到具体文件。
 

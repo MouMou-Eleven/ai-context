@@ -20,6 +20,7 @@
 ```
 ai-context/                          ← 仓库根目录
 ├── README.md                        ← 仓库入口，简要介绍 + 引导 AI 读 STRUCTURE.md
+├── llms.txt                         ← AI 路由入口，最小化读取 + 高风险同名概念消歧
 ├── STRUCTURE.md                     ← 📌 你正在读的文件（仓库规范）
 ├── identity.md                      ← 个人身份信息（变化频率：低）
 ├── current.md                       ← 当前状态（变化频率：高）
@@ -67,16 +68,19 @@ ai-context/                          ← 仓库根目录
 ### 读取顺序
 
 ```
-第1步：README.md（仓库入口，~1KB）
+第1步：llms.txt（AI 路由入口，~1KB）
+  → 先判断该读哪里，避免一次性加载整个仓库
+
+第2步：README.md（人类可读入口，~1KB）
   → 了解仓库是什么、有哪些目录
   
-第2步：根据任务选择
+第3步：根据任务选择
   → 了解建委是谁？→ 读 identity.md
   → 了解当前状态？→ 读 current.md  
   → 了解某个项目？→ 读 projects/README.md（项目索引）
   → 了解写作风格？→ 读对应项目的 README.md 中的索引
   
-第3步：深入
+第4步：深入
   → 按项目 README.md 的指引，读取具体文件
 ```
 
