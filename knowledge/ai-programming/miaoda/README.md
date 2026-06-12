@@ -21,6 +21,7 @@
 | [pitfalls.md](./pitfalls.md) | 15 个真实踩坑清单：MD5 Web Crypto 死路、密钥泄漏、嵌套目录、AI 自动重写签名、无 Supabase 控制台、多通道退款误路由、**大视频上传三层墙**、**SPA SEO 漏 keywords**等 | 遇到怪异报错、或想预防性避雷时 |
 | [prompt-patterns.md](./prompt-patterns.md) | 与秒哒 AI 协作的提示词模板：@技能调用风格、红线前置、分工边界、设备识别函数注入、**全站 SEO 不漏 keywords**、**视频上传分片不合并 + HTTP Range 代理**等 | 要写一段让秒哒按计划执行的提示词时 |
 | [patterns/seo-optimization.md](./patterns/seo-optimization.md) | 秒哒站点 SEO 优化处方：`index.html`、`SEOHead`、`react-helmet-async`、每页 `keywords` / `description`、`robots.txt` / `sitemap.xml` 检查 | 要给秒哒生成的网站做全站 SEO 时 |
+| [patterns/content-rectification-prompts.md](./patterns/content-rectification-prompts.md) | 秒哒内容整改提示词拆分处方：备案主体一致性、品牌/协会/人物口径、SEO/分享隐藏文案、栏目名称、商品详情经营主体说明 | 要让秒哒分批修改网站公开文案、主体口径或备案整改内容时 |
 | [patterns/large-video-upload.md](./patterns/large-video-upload.md) | 大视频上传（≥50MB）的处方实现：架构 / 表 schema / 三个函数契约 / 前端契约 / 不可变常量速查 | 要落地视频上传功能时（[pitfalls.md #14](./pitfalls.md) 的实施指南） |
 | [case-yungouos-jsapi.md](./case-yungouos-jsapi.md) | 完整接入案例：YunGouOS 微信 JSAPI 支付从需求到上线的全过程，含每轮失败与修复 | 做支付接入、或想看一个端到端样板时 |
 
