@@ -10,18 +10,18 @@
 - 怪异报错 / 平台行为不符合直觉 → [pitfalls.md](./pitfalls.md)
 - 不确定是百度秒哒还是飞书妙搭 Spark → [disambiguation.md](./disambiguation.md)
 - 某能力是否已上线 / 在哪个版本上线 → [version-features.md](./version-features.md)
-- 平台基础认知（四套运行时、技能机制、数据库入口） → [platform-basics.md](./platform-basics.md)
+- 平台基础认知（四套运行时、技能机制、数据库入口、首轮应用形态与后端存储决策） → [platform-basics.md](./platform-basics.md)
 
 ### 建（要开始写代码 / 部署）
 - Codex 先分析秒哒问题、拆批写提示词，再由用户粘贴到秒哒执行的通用工作流 → [patterns/codex-assisted-workflow.md](./patterns/codex-assisted-workflow.md)
-- 写给秒哒 AI 的提示词模板 → [prompt-patterns.md](./prompt-patterns.md)
+- 写给秒哒 AI 的提示词模板（含首轮形态/后端存储、小程序上传、登录修复） → [prompt-patterns.md](./prompt-patterns.md)
 - 站点 SEO（title / description / keywords / robots / sitemap）→ [patterns/seo-optimization.md](./patterns/seo-optimization.md)
 - 内容整改 / 备案主体一致性 / 品牌协会人物口径统一 / 公开文案分批修改 → [patterns/content-rectification-prompts.md](./patterns/content-rectification-prompts.md)
 - 大视频上传（≥50MB）落地处方 → [patterns/large-video-upload.md](./patterns/large-video-upload.md)
 - 微信 JSAPI 支付端到端样板 → [case-yungouos-jsapi.md](./case-yungouos-jsapi.md)
 - 自定义技能 .zip 包开发 → [skill-development.md](./skill-development.md)
 - 把秒哒作为 Skill 被外部 Agent 调用 → [skill-as-callable.md](./skill-as-callable.md)
-- 决定做 Web / 小程序 / APP → [publish-channels.md](./publish-channels.md)
+- 决定做 Web / 小程序 / APP，或处理小程序提审/上传/缓存问题 → [publish-channels.md](./publish-channels.md)
 
 ### 抄（要直接复用源码）
 - 大视频上传三个 Edge Function（生产已验证） → [../../../references/video-chunked-upload/](../../../references/video-chunked-upload/)
@@ -46,13 +46,13 @@ miaoda/
 ├── README.md              人类可读的索引（看本目录干啥用）
 ├── llms.txt               本文件（AI 路由）
 ├── disambiguation.md      百度秒哒 vs 飞书妙搭
-├── platform-basics.md     平台基础认知
+├── platform-basics.md     平台基础认知（含首轮形态与后端存储决策）
 ├── version-features.md    版本能力速查
 ├── publish-channels.md    发布渠道
 ├── skill-development.md   开发自定义技能
 ├── skill-as-callable.md   秒哒作为外部 Skill
-├── pitfalls.md            真实踩坑清单（含 #14 大视频上传三层墙、#15 SPA SEO 漏 keywords）
-├── prompt-patterns.md     提示词模板（含"全站 SEO 不漏 keywords"、"视频上传分片不合并 + HTTP Range 代理"）
+├── pitfalls.md            真实踩坑清单（含 #14 大视频上传三层墙、#15 SPA SEO 漏 keywords、#16-#20 首轮存储/形态/小程序/登录坑）
+├── prompt-patterns.md     提示词模板（含"全站 SEO 不漏 keywords"、"视频上传分片不合并 + HTTP Range 代理"、"首轮形态 + 真实后端存储"）
 ├── patterns/
 │   ├── codex-assisted-workflow.md   Codex 辅助秒哒开发工作流（问题分析 / 拆批提示词 / 粘贴执行 / 反馈迭代）
 │   ├── seo-optimization.md     秒哒站点 SEO 优化处方（SEOHead / keywords / robots / sitemap）
