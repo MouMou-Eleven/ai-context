@@ -29,6 +29,10 @@
 - 百度秒哒实战经验库：[knowledge/ai-programming/miaoda/README.md](./knowledge/ai-programming/miaoda/README.md)
 - 百度秒哒 AI 路由文件：[knowledge/ai-programming/miaoda/llms.txt](./knowledge/ai-programming/miaoda/llms.txt)
 
+## 长期项目快速入口
+
+- 付费社群课程研发：[projects/paid-community-course/README.md](./projects/paid-community-course/README.md)。当任务涉及付费社群、课程研发、AI 编程课程、自媒体流量入口、口播稿或课程教程沉淀时，先读该项目入口。
+
 ## 本文件什么时候更新
 
 本文件不是日志，不需要每次新增笔记都更新。只有以下情况才需要改：

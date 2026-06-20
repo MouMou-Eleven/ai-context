@@ -13,6 +13,7 @@
 | VideoAI | [`videoai/`](./videoai/) | ✅ 已上线 | AI驱动的营销视频自动化创作平台 |
 | OpenClaw Agent | [`openclaw-agent/`](./openclaw-agent/) | 🔄 进行中 | 本地AI助手系统，接入飞书等渠道 |
 | Inshan POPUPIANO | [`inshan-popupiano/`](./inshan-popupiano/) | 🔄 进行中 | POPUPIANO 智能钢琴键盘海外冷启动（独立站+Amazon 双线） |
+| 付费社群课程研发 | [`paid-community-course/`](./paid-community-course/) | 🔄 进行中 | 399 元 / 3 个月的付费社群课程项目，首期聚焦 AI 编程 |
 
 ---
 
