@@ -4,6 +4,14 @@
 
 ## 2026
 
+### 2026-06-26
+
+**16:02:18+08:00** `1782460938631`
+- 重新读取《飞书高效办公》最新目录文档（wiki `CmiXwFmaCiejwEkegnBc9d6an9g`，doc `GByFdVLr7odeW1xX5JlcQNvJn7b`，revision 79），纠正此前误读的目录口径：当前目录包含第9章“AI操作飞书：智能伙伴、Agent与CLI”，第1章应为“飞书协作模式：AI时代的高效工作方式”。
+- 明确建委当前负责第2章、第3章、第8章；当前优先推进第2章、第3章。
+- 将旧第4章素材拆分为新版第2章、第3章草稿，并在飞书中为两章分别建立独立截图与素材清单；仓库记录见 [`projects/feishu-efficient-office/revisions/2026-06-26-current-outline-and-ch2-ch3-split.md`](../projects/feishu-efficient-office/revisions/2026-06-26-current-outline-and-ch2-ch3-split.md)。
+- 复核第2章、第3章正文和图片块元信息：第2章 doc `JmKCdZfR9owhjcxiklOc2Mo2nig` 更新到 revision 28，第3章 doc `CmYKd3tqHoSRlLxfjsNcXrOynxa` 更新到 revision 15；已清理旧 `图4-x` 图片 caption/alt，并验证正文未出现作者备注、待截图说明或旧章节口径。
+
 ### 2026-06-20
 
 **22:56:08+08:00** `1781967368758`
