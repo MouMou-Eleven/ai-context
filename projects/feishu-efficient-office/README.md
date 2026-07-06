@@ -45,7 +45,7 @@
 | 第5章 内容排期管理：用多维表格实现任务流转 | 另一位作者 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第6章 项目从启动到复盘：飞书的全流程协作实践 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第7章 客户跟进管理：用多维表格搭建轻量业务系统 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
-| 第8章 重复工作自动化：用自动化与AI工作流提升效率 | 建委 | 后续负责 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
+| 第8章 重复工作自动化：用自动化与AI工作流提升效率 | 建委 | 截图融合与素材清单已处理 | [正文](https://my.feishu.cn/wiki/UZyHw8RFCicH30kihDGcFJTZnPf) / [截图清单](https://my.feishu.cn/wiki/FzmVwHZJPiVb9EkNSgrcH1fRnKh) |
 | 第9章 AI操作飞书：智能伙伴、Agent与CLI | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 附录（可选） | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 
@@ -65,6 +65,7 @@
 | 旧第4章 每天被琐事淹没：普通职场人如何用飞书每天省下2小时 | ✅ 历史素材，已审阅多轮 | ~16,000字 | 飞书文档 | 2026-05-11 |
 | 第2章 晨间工作梳理：用消息分组和智能伙伴整理任务 | 🔄 拆分稿已建，待补图与扩写 | 待统计 | 飞书文档 | 2026-06-26 |
 | 第3章 方案撰写实战：用模板、AI与评论协作完成文档 | 🔄 拆分稿已建，待补图与扩写 | 待统计 | 飞书文档 | 2026-06-26 |
+| 第8章 重复工作自动化：用自动化与AI工作流提升效率 | 🔄 正文已有3张图，截图清单与素材 Base 已整理 | 待统计 | 飞书文档 | 2026-07-07 |
 
 ## 文件索引
 
@@ -85,6 +86,7 @@
 | `revisions/2026-06-30-ch2-language-and-screenshot-list-polish.md` | 第2章语言口吻与截图清单复核记录——记录“恢复上下文”“直接产出结果”“帮助中心口吻”等问题修正、重复表达合并、定时任务编号修复和补图优先级 | **继续修改第2章前必读**，防止再次出现 AI 式抽象表达、老板口吻、重复扩写和截图清单重复项 |
 | `revisions/2026-07-01-ch2-heading-and-image-integration.md` | 第2章标题层级与截图融合记录——记录补充原则降为四级标题、新增置顶/任务详情/今日筛选/aily局部图、图号顺延和取消 aily 结果展示图补图要求 | **继续修改第2章标题、截图或素材清单前必读**，防止步骤标题混级、图号错位和继续按旧清单补不需要的结果图 |
 | `revisions/2026-07-02-ch3-heading-aily-and-screenshot-plan.md` | 第3章标题层级、飞书 aily 叫法与截图执行清单记录——记录补充原则降为四级标题、章内术语统一、第三章可截图示例文档与截图清单直达链接 | **继续修改第3章标题、飞书 aily 术语或截图清单前必读**，防止步骤混级、产品叫法混乱和截图建议停留在模糊待办 |
+| `revisions/2026-07-07-ch8-screenshot-material-cleanup.md` | 第8章截图融合、素材清单与重复图片处理记录——记录图8-1至图8-3正文融合、截图清单更新、已创建素材 Base、避免复用第2章 aily 图和 lark-cli 中文乱码修复规则 | **继续修改第8章正文、截图清单或飞书写入内容前必读**，防止重复用图、图文脱节和中文写入乱码 |
 
 ## 使用指南
 
