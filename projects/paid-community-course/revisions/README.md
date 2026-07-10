@@ -6,7 +6,7 @@
 
 - 产品主体：**AI 超级个体陪跑社群**。
 - 价格周期：399 元 / 3 个月。
-- 第一季度主题：AI 编程系统实战；课程是社群的阶段性交付，不是产品全部。
+- 第一季度内部课程主线：AI 编程系统实战；海报对外主题：用 AI 做出你的专属小工具。
 - 课程资料必须先区分讲师、学员、招生用户、合作方或内部团队。
 - 第一节课先用职业场景解释 AI 编程与普通人的关系，再进入工具地图。
 
@@ -14,6 +14,7 @@
 
 | 日期 | 文件 | 有效性 | 主要影响 |
 |---|---|---|---|
+| 2026-07-10 | [`2026-07-10-poster-scenario-first-positioning.md`](./2026-07-10-poster-scenario-first-positioning.md) | 当前有效，覆盖第一季度对外标题 | 内部课程名与海报销售名拆分；海报先讲人群和结果，再讲技术链路 |
 | 2026-07-09 | [`2026-07-09-ai-programming-career-scenario-opening.md`](./2026-07-09-ai-programming-career-scenario-opening.md) | 当前有效，增量规则 | 第一节课先讲职业场景，再讲工具；AI 编程是每个职业多一种解决问题的能力 |
 | 2026-07-07 | [`2026-07-07-community-product-hierarchy-refinement.md`](./2026-07-07-community-product-hierarchy-refinement.md) | 当前核心口径 | 社群是主体，课程是阶段性交付；产品名确定为“AI 超级个体陪跑社群” |
 | 2026-07-07 | [`2026-07-07-community-positioning-and-cognitive-bias.md`](./2026-07-07-community-positioning-and-cognitive-bias.md) | 部分被同日后续修订取代 | 建立“不要卖抽象工具，要翻译具体场景”原则；旧产品名不再使用 |
