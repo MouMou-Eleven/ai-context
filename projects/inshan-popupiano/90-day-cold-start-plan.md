@@ -5,6 +5,8 @@
 > **原始文档**：[Inshan海外电商冷启动方案_POPUPIANO智能钢琴键盘.docx](./Inshan海外电商冷启动方案_POPUPIANO智能钢琴键盘.docx)
 > **修订日志**：[revisions/2026-05-24-agency-pivot.md](./revisions/2026-05-24-agency-pivot.md)
 
+> **AI 读取边界**：正文仍保留部分修订前的“分销商 / 弹唱 / AI 产品卖点”分析，用于说明当时为什么改方向。这些旧段落不是当前建议。涉及当前合作模式、海外叙事和待确认事项时，以项目 [`README.md`](./README.md) 和 [`revisions/README.md`](./revisions/README.md) 为准。
+
 > 🔄 **2026-05-24 修订总览**（全文以本次修订版为准）：
 > 1. 合作模式从「分销商」修正为「授权经销 + 自建店铺 + 代运营」
 > 2. 价格自主权确认，定价倒挂从核心矛盾变为可调杠杆

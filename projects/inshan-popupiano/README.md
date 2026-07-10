@@ -2,7 +2,11 @@
 
 > 状态：🔄 进行中（Phase 0：合作细则澄清 + 独立站建设）
 > 类型：长期项目，持续迭代
-> 最后更新：2026-05-24
+> 业务口径最后确认：2026-05-24
+> 活跃状态最近记录：2026-07-08（见根目录 `current.md`）
+> 索引最后整理：2026-07-10
+
+> ⚠️ 里程碑和待澄清项自 2026-05-24 后没有新的结果记录。回答“现在做到哪一步”前，需要向建委确认，不能把下方“未开始”自动视为 2026-07-10 的实时进度。
 
 ## 一句话介绍
 
@@ -59,8 +63,9 @@
 | [`README.md`](./README.md) | 项目总览（本文件）+ 文件索引 + 待澄清清单 + 进度 | **任何时候，作为入口** |
 | [`90-day-cold-start-plan.md`](./90-day-cold-start-plan.md) | 90 天冷启动方案（含 2026-05-24 修订标注） | 查方案细节、Phase 任务、红人模板 |
 | [`competitive-references.md`](./competitive-references.md) | 竞品 / 可复刻案例库（首条 = DJ Kartier 拆解） | 查参考案例、对手分析、博主合作历史 |
+| [`revisions/README.md`](./revisions/README.md) | 方向修订索引与新旧口径使用边界 | 进入修订记录前先读 |
 | [`revisions/2026-05-24-agency-pivot.md`](./revisions/2026-05-24-agency-pivot.md) | 方向修订日志（分销商→代运营） | 想了解为什么方案是现在这样 |
-| `Inshan海外电商冷启动方案_POPUPIANO智能钢琴键盘.docx` | 原始 docx（建委本地版） | 团队分享原版 / 打印 |
+| `Inshan海外电商冷启动方案_POPUPIANO智能钢琴键盘.docx` | 2026-05-24 修订前的历史原始稿 | 仅用于追溯或查看原版排版；不得覆盖 Markdown 修订版 |
 
 ## 待品牌方澄清的 6 个问题
 
@@ -131,10 +136,11 @@
 **对于 AI**：
 
 - 进入此项目先读本 README，了解整体定位、6 大未澄清问题、4 个未定项、当前进度
+- 需要判断新旧口径时先读 [`revisions/README.md`](./revisions/README.md)，再进入具体修订
 - 想了解为什么方案是现在这样（修订原因）→ 读 [`revisions/2026-05-24-agency-pivot.md`](./revisions/2026-05-24-agency-pivot.md)
 - 需要方案细节（Phase 任务、红人话术、SEO）→ 读 [`90-day-cold-start-plan.md`](./90-day-cold-start-plan.md)，注意文中带 🔄 的章节是修订后版本
 - 想要参考案例（特别是 DJ Kartier 模式）→ 读 [`competitive-references.md`](./competitive-references.md)
-- docx 文件不需要读取（markdown 版是同一份内容更新版）
+- docx 是修订前历史原稿，日常任务不要读取；Markdown README、修订和方案文件优先
 
 **对于建委**：
 

@@ -1,28 +1,30 @@
-# Projects — 项目档案
+# Projects — 长期项目索引
 
-> 每个项目一个独立目录，包含 README.md 入口和相关文件。
-> **新增项目前，请先阅读仓库根目录的 [`STRUCTURE.md`](../STRUCTURE.md)。**
+> 先从本页确定项目，再进入项目 README。状态来自仓库当前记录，不等于所有里程碑都已在当天重新核实。
 
----
+## 项目索引
 
-## 📌 项目索引
+| 项目 | 状态 | 当前口径 / 最近记录 | 一句话介绍 | 首读入口 |
+|---|---|---|---|---|
+| 飞书高效办公（书稿） | 进行中 | 2026-07-07 | 建委负责新版第2、3、8章，正文在飞书，仓库保存写作规范和修订记录 | [`feishu-efficient-office/README.md`](./feishu-efficient-office/README.md) |
+| 付费社群课程研发 | 进行中 | 2026-07-09 | 399 元 / 3 个月 AI 超级个体陪跑社群，第一季度为 AI 编程系统实战 | [`paid-community-course/README.md`](./paid-community-course/README.md) |
+| 星火映果州 VR 交互课件 | 进行中 | 2026-07-03 | 基于 Nibiru 场景跳转逻辑的红色历史 VR 交互课件 | [`xinghuo-ying-guozhou-vr-courseware/README.md`](./xinghuo-ying-guozhou-vr-courseware/README.md) |
+| Inshan POPUPIANO | 进行中 | 业务口径 2026-05-24；`current.md` 于 2026-07-08 仍列为进行中 | 授权经销 + 自建独立站/Amazon 店铺 + 内容代运营 | [`inshan-popupiano/README.md`](./inshan-popupiano/README.md) |
+| VideoAI | 已上线，持续迭代 | 活跃状态见 2026-07-08 `current.md`；产品细节最后记录 2026-05 | AI 驱动的营销视频自动化创作平台 | [`videoai/README.md`](./videoai/README.md) |
+| OpenClaw Agent | 持续调优 | 活跃状态见 2026-07-08 `current.md`；技术细节最后记录 2026-05 | 接入飞书等渠道的本地 AI 助手系统 | [`openclaw-agent/README.md`](./openclaw-agent/README.md) |
 
-| 项目 | 目录 | 状态 | 一句话介绍 |
-|-----|------|------|-----------|
-| 飞书高效办公（书稿） | [`feishu-efficient-office/`](./feishu-efficient-office/) | 🔄 进行中 | AI时代职场人的效率翻倍实战指南 |
-| VideoAI | [`videoai/`](./videoai/) | ✅ 已上线 | AI驱动的营销视频自动化创作平台 |
-| OpenClaw Agent | [`openclaw-agent/`](./openclaw-agent/) | 🔄 进行中 | 本地AI助手系统，接入飞书等渠道 |
-| Inshan POPUPIANO | [`inshan-popupiano/`](./inshan-popupiano/) | 🔄 进行中 | POPUPIANO 智能钢琴键盘海外冷启动（独立站+Amazon 双线） |
-| 付费社群课程研发 | [`paid-community-course/`](./paid-community-course/) | 🔄 进行中 | 399 元 / 3 个月 AI 超级个体陪跑社群，第一季度以 AI 编程系统实战打样 |
-| 星火映果州 VR 交互课件 | [`xinghuo-ying-guozhou-vr-courseware/`](./xinghuo-ying-guozhou-vr-courseware/) | 🔄 进行中 | 基于 Nibiru 场景跳转逻辑的红色历史 VR 交互课件 |
+## AI 使用规则
 
----
+- 项目 README 是当前入口；出现方向变化时再读 `revisions/README.md`。
+- 不要因为某个项目状态为“进行中”，就把数月前的里程碑、价格或技术栈当成今天仍已核实。
+- 只读取当前任务需要的专题文件。长方案、全部修订和二进制附件不默认加载。
+- 当前项目列表与优先级还要结合根目录 [`current.md`](../current.md)。
 
-## 📋 新增项目流程
+## 新增项目流程
 
-1. 在 `projects/` 下创建目录（kebab-case，如 `my-new-project`）
-2. 在目录中创建 `README.md`，必须包含：概述、文件索引表、使用指南
-3. 在上方的项目索引表中添加新条目
-4. 按需创建其他文件，并在项目 README.md 的文件索引表中登记
+1. 先读根目录 [`STRUCTURE.md`](../STRUCTURE.md)。
+2. 创建 `projects/<kebab-case>/README.md`，写当前口径、文件索引、待确认事项和使用指南。
+3. 在本页增加项目入口；重要长期项目同时更新根 `llms.txt`。
+4. 发生方向变化时创建 `revisions/YYYY-MM-DD-<slug>.md`，并维护 `revisions/README.md`。
 
-**详细规范见 [`STRUCTURE.md`](../STRUCTURE.md) 的「写入规范」章节。**
+*索引最后整理：2026-07-10*

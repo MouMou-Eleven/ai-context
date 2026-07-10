@@ -4,6 +4,12 @@
 
 ## 2026
 
+### 2026-07-10
+
+- 对 `ai-context` 进行全仓库架构审计与入口升级：新增 `AGENTS.md`、`open-questions.md`、`knowledge/README.md`、`history/README.md`、`references/README.md` 和维护校验脚本，重构根 README、`llms.txt` 与 `STRUCTURE.md` 的渐进式读取规则。
+- 为飞书书籍、付费社群课程和 Inshan POPUPIANO 增加 `revisions/README.md`，明确当前有效、增量有效和已被后续口径取代的修订，降低 AI 混用历史资料的风险。
+- 建委明确确认百度文旅 AI 短视频大赛正确名次为“全国第三名（爆款人气奖）”；此前课程修订中出现的“全国第一名”反馈为错误口径，已在全局冲突登记和课程运营资料中纠正。
+
 ### 2026-06-26
 
 **16:02:18+08:00** `1782460938631`

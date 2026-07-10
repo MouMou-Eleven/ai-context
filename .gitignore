@@ -1,0 +1,16 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Office temporary files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Local scratch files
+*.tmp
+*.bak

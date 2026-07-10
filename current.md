@@ -2,18 +2,19 @@
 
 > ⚠️ 此文件更新频率较高，反映建委最近的关注和进展。
 > 最后更新：2026-07-08T00:06:32+08:00
+> 项目入口链接整理：2026-07-10（不代表业务进度在该日重新确认）
 
 ## 🔥 正在做的事
 
 - [x] 建立个人 AI Context 系统（GitHub 私有仓库）← 2026-04-05T03:33:00+08:00 完成
 - [x] AI Context 方法论整理为飞书文档（含思维导图/流程图/对比表格）
-- [ ] OpenClaw AI Agent 日常使用和调优
+- [ ] [OpenClaw AI Agent](./projects/openclaw-agent/README.md) 日常使用和调优
 - [ ] AI 线下活动运营（济南）
-- [ ] VideoAI 产品持续迭代（AI营销视频自动化平台）
+- [ ] [VideoAI](./projects/videoai/README.md) 产品持续迭代（AI营销视频自动化平台）
 - [ ] 时尚服饰电商网站开发
-- [ ] Inshan POPUPIANO 海外电商冷启动（独立站 + Amazon 双线，与 PopuMusic 合作）
-- [ ] 付费社群课程研发（399 元 / 3 个月 AI 超级个体陪跑社群，第一季度以 AI 编程系统实战打样，长期覆盖 AI 办公、AI 设计、AI 视频和真实问题答疑）
-- [ ] 《飞书高效办公》书稿继续推进：按最新 9 章目录，建委当前负责第2章、第3章、第8章；第2/3章已从旧第4章拆分出正文草稿和独立截图清单。
+- [ ] [Inshan POPUPIANO](./projects/inshan-popupiano/README.md) 海外电商冷启动（独立站 + Amazon 双线，与 PopuMusic 合作）
+- [ ] [付费社群课程研发](./projects/paid-community-course/README.md)（399 元 / 3 个月 AI 超级个体陪跑社群，第一季度以 AI 编程系统实战打样，长期覆盖 AI 办公、AI 设计、AI 视频和真实问题答疑）
+- [ ] [《飞书高效办公》书稿](./projects/feishu-efficient-office/README.md)继续推进：按最新 9 章目录，建委当前负责第2章、第3章、第8章；第2/3章已从旧第4章拆分出正文草稿和独立截图清单。
 
 ## 📍 当前坐标
 
