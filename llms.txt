@@ -28,7 +28,7 @@
 |---|---|---|
 | 飞书书籍、书稿、第2/3/8章、编辑反馈 | [`projects/feishu-efficient-office/README.md`](./projects/feishu-efficient-office/README.md) | `writing-style-analysis.md` + `revisions/README.md`；原始培训素材才读 `all-docs.md` |
 | Inshan、POPUPIANO、Amazon、独立站、海外电商 | [`projects/inshan-popupiano/README.md`](./projects/inshan-popupiano/README.md) | `revisions/README.md` + 最新方向修订 + `competitive-references.md` |
-| 付费社群、课程研发、AI 编程课程、自媒体引流 | [`projects/paid-community-course/README.md`](./projects/paid-community-course/README.md) | 课程结构读 `curriculum-design.md`；运营读 `operations-playbook.md`；脚本读 `script-patterns.md` |
+| 付费社群、课程研发、AI 编程课程、自媒体引流 | [`projects/paid-community-course/README.md`](./projects/paid-community-course/README.md) | 具体飞书课程资料读 `course-materials-index.md`；课程结构读 `curriculum-design.md`；运营读 `operations-playbook.md`；脚本读 `script-patterns.md` |
 | VideoAI、营销视频自动化、成本、协会定价 | [`projects/videoai/README.md`](./projects/videoai/README.md) | 成本读 `cost-analysis.md`；定价读 `pricing-plan-association.md`，使用前先核对文档日期 |
 | OpenClaw、本地 AI Agent | [`projects/openclaw-agent/README.md`](./projects/openclaw-agent/README.md) | 当前仅有入口文件，细节不足时向建委确认 |
 | 星火映果州、Nibiru、VR 课件 | [`projects/xinghuo-ying-guozhou-vr-courseware/README.md`](./projects/xinghuo-ying-guozhou-vr-courseware/README.md) | 交互设计读 `interaction-logic.md` |
