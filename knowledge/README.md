@@ -19,6 +19,7 @@
 |---|---|---|
 | [`ai-programming/`](./ai-programming/) | AI 编程平台、实战方法、踩坑和案例 | [`ai-programming/README.md`](./ai-programming/README.md) |
 | [`ai-video/`](./ai-video/) | 企业宣传片、电影/电视叙事画面、分镜与提示词 | [`ai-video/README.md`](./ai-video/README.md) |
+| [`tutorial-writing/`](./tutorial-writing/) | 面向普通用户的保姆级教程、经验帖与学员资料写作方法 | [`tutorial-writing/README.md`](./tutorial-writing/README.md) |
 
 ## 归档原则
 
@@ -27,4 +28,4 @@
 - 工具版本、价格、平台规则等时效性事实必须写来源和确认日期。
 - 具体源码或可直接复用的原始材料放 `references/`，知识文件只解释为什么和怎么用。
 
-*索引最后整理：2026-07-10*
+*索引最后整理：2026-07-13*
