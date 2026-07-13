@@ -7,7 +7,7 @@
 | 范围 | 优先读取 |
 |---|---|
 | 全书目录、建委负责章节、第2/3章来源 | `2026-06-26-current-outline-and-ch2-ch3-split.md` |
-| 第2章正文、标题、语言和截图 | 6月30日、7月1日两份修订；需要追溯来源时再读 6月27日文件 |
+| 第2章正文、标题、语言和截图 | 优先读 7月14日编辑反馈应用记录；需要追溯此前截图融合再读 7月1日、6月30日文件 |
 | 第3章正文、标题、飞书 aily 和截图 | 7月2日修订；需要追溯扩写和编码修复时再读 6月27日文件 |
 | 第8章截图、素材 Base 和重复用图 | 7月7日修订 |
 | 从旧第4章复用编辑批注 | 6月27日 `ch4-v4-word-feedback-applied-to-ch2-ch3.md` |
@@ -16,6 +16,7 @@
 
 | 日期 | 文件 | 当前作用 |
 |---|---|---|
+| 2026-07-14 | [`2026-07-14-ch2-editor-0713-feedback-applied.md`](./2026-07-14-ch2-editor-0713-feedback-applied.md) | 第2章最新编辑批注、逐段修订、飞书 aily 口径和全量校验 |
 | 2026-07-07 | [`2026-07-07-ch8-screenshot-material-cleanup.md`](./2026-07-07-ch8-screenshot-material-cleanup.md) | 第8章截图融合、素材清单、重复图片处理和中文写入校验 |
 | 2026-07-02 | [`2026-07-02-ch3-heading-aily-and-screenshot-plan.md`](./2026-07-02-ch3-heading-aily-and-screenshot-plan.md) | 第3章标题层级、飞书 aily 叫法和截图执行清单 |
 | 2026-07-01 | [`2026-07-01-ch2-heading-and-image-integration.md`](./2026-07-01-ch2-heading-and-image-integration.md) | 第2章标题层级、截图融合和图号调整 |
