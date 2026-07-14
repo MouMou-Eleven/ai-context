@@ -28,7 +28,7 @@ AI 视频制作经验必须按片子类型区分，不要混用。
 |---|---|---|
 | 企业宣传片 / 形象片 / 战略片 | 传递企业信息、数据、业务板块、荣誉和价值观 | `enterprise-promo-production.md` |
 | 电影 / 电视叙事画面 / 短片 | 角色、场景、动作、道具、情绪、剪辑节奏和电影摄影质感 | `cinematic-narrative-production.md` |
-| Seedance 2.0 生成执行 | 主体与场景资产、简洁提示词、声音策略、镜头编号和分辨率选择 | `seedance-2-practical-workflow.md` |
+| Seedance 2.0 生成执行 | 主体与场景资产、简洁提示词、声音策略、镜头编号和分辨率选择 | `seedance-2-practical-workflow.md`；需要可调用角色模板时再读 `seedance-2-prompt-templates.md` |
 
 判断原则：
 
@@ -44,6 +44,7 @@ AI 视频制作经验必须按片子类型区分，不要混用。
 | `enterprise-promo-production.md` | AI 企业宣传片制作经验：导演思维、AE 包装、逐镜头提示词、素材索要和质量检查 | 制作企业宣传片、形象片、战略片，或复盘客户修改意见时读取 |
 | `cinematic-narrative-production.md` | AI 电影/电视叙事画面制作经验：角色与场景设定、电影摄影质感、逐镜头分镜、资产库、失败修正和剪辑检查 | 制作剧情短片、电影感画面、电视画面、角色动作戏、荒诞喜剧或非企业宣传片叙事视频时读取 |
 | `seedance-2-practical-workflow.md` | Seedance 2.0 实战：主体/场景资产、四段式 Prompt、只生成音效、镜头编号、720p 测试与 Topaz 放大 | 使用 Seedance 2.0 生成多镜头叙事素材，或排查提示词过长、时间戳、故事板和清晰度问题时读取 |
+| `seedance-2-prompt-templates.md` | 三套去重校正后的可调用模板：通用创意导演、战斗场面动作导演、15 秒视觉叙事架构师 | 需要让 AI 根据模糊想法、角色图或素材生成一套可复制的 Seedance Prompt 时读取 |
 
 ## 使用指南
 
@@ -53,6 +54,7 @@ AI 视频制作经验必须按片子类型区分，不要混用。
 - 需要制作企业宣传片时，再读取 `enterprise-promo-production.md`。
 - 需要制作电影感、电视感、剧情短片、角色动作或荒诞喜剧画面时，再读取 `cinematic-narrative-production.md`。
 - 使用 Seedance 2.0 时，再读取 `seedance-2-practical-workflow.md`；其中时间戳、分辨率等结论属于当前版本经验，平台更新后应复测。
+- 需要直接调用角色 Prompt 时，再读取 `seedance-2-prompt-templates.md`；不要同时加载三份本地原始模板。
 - 不要把企业宣传片的 AE 包装逻辑直接套到电影/电视叙事画面里；也不要把电影短片的角色动作逻辑直接套到企业数据包装里。
 - 不要把 Seedance 2.0 的“简短 Prompt、不依赖时间戳”无条件推广到所有视频模型；先判断任务类型和工具。
 - 不要把本目录内容与 `projects/videoai/` 混淆；`projects/videoai/` 是一个具体产品项目，本目录是 AI 视频制作知识库。
