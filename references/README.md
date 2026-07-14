@@ -8,6 +8,7 @@
 |---|---|---|
 | [`feishu-doc-style.md`](./feishu-doc-style.md) | 飞书文档的视觉结构、callout、图表和时间落款规范 | 创建或改写飞书文档时 |
 | [`video-chunked-upload/`](./video-chunked-upload/) | 生产验证过的大视频分片上传与 Range 流式播放源码 | 秒哒项目需要实现大视频上传时，先读目录 README |
+| [`creative-frontend-prompts/`](./creative-frontend-prompts/) | 五类创意前端完整提示词原文，覆盖视频逐帧、空间画廊、个人作品集与 3D 首屏 | 设计动效密集型展示站并需要查阅执行级样例时 |
 
 ## 使用边界
 
@@ -16,4 +17,4 @@
 - 新增参考包时必须包含 README，写清来源、验证状态、不可变约束和已知边界。
 - 原始附件若已被 Markdown 新版取代，必须在最近一层 README 标成历史材料。
 
-*索引最后整理：2026-07-10*
+*索引最后整理：2026-07-15*

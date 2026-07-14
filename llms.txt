@@ -38,6 +38,7 @@
 | 场景 | 首读 |
 |---|---|
 | AI 编程工具 | [`knowledge/ai-programming/README.md`](./knowledge/ai-programming/README.md) |
+| 创意前端、滚动叙事、视频逐帧、3D 首屏、空间画廊提示词 | [`knowledge/ai-programming/creative-frontend-prompt-patterns.md`](./knowledge/ai-programming/creative-frontend-prompt-patterns.md) |
 | 百度秒哒 MIAODA | [`knowledge/ai-programming/miaoda/llms.txt`](./knowledge/ai-programming/miaoda/llms.txt) |
 | AI 企业宣传片、电影感视频、分镜 | [`knowledge/ai-video/README.md`](./knowledge/ai-video/README.md) |
 | 商业增长、自媒体经营、产品信息化、渠道、信任、对标拆解 | [`knowledge/business-growth.md`](./knowledge/business-growth.md) |
