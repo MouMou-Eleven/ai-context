@@ -24,6 +24,16 @@
 5. 后台配置里补 `site_keywords`，和 `site_description` 一起进入页面 SEO 计算。
 6. 检查 `robots.txt`、`sitemap.xml`，确保核心页面可被抓取。
 
+## V3.5 内置 SEO Agent
+
+> 来源：[秒哒 3.5 官方发布文章](https://mp.weixin.qq.com/s/y2_ip4MYlJQPpTJ2a_O26A?scene=1)，2026-07-16。
+
+V3.5 新增 SEO Agent。它可以预览页面在搜索结果中的标题、摘要和链接展示，逐页检查 `title`、`description`、`keywords` 等要素，把问题转成可理解的建议，并支持单项修复、一键修复和重新检查。
+
+这与本文件的代码级 SEO 处方不冲突：SEO Agent 适合作为第一轮诊断和基础修复；React SPA 的路由级 `<head>`、`keywords` 覆盖、`robots.txt`、`sitemap.xml` 仍应按本文件的验收矩阵复核。官方文章没有说明 Agent 会自动处理这些工程细节，不能仅凭“已一键修复”就跳过验收。
+
+推荐顺序：先用 SEO Agent 诊断并修复，再执行本文件「验收清单」的逐页检查；只要有一页 `keywords`、描述或标题为空，就继续按本文件的统一 `SEOHead` 方案补齐。
+
 ## 推荐文件改动清单
 
 | 文件 | 目的 |

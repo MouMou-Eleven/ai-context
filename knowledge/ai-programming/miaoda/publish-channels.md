@@ -15,6 +15,7 @@
 | 5 分钟上线微信小程序 | [https://cloud.baidu.com/doc/MIAODA/s/rmla9utp7](https://cloud.baidu.com/doc/MIAODA/s/rmla9utp7) |
 | 提交代码失败常见错误及修复 | [https://cloud.baidu.com/doc/MIAODA/s/mmknf9ork](https://cloud.baidu.com/doc/MIAODA/s/mmknf9ork) |
 | 生成 APP | [https://cloud.baidu.com/doc/MIAODA/s/Amoy50baf](https://cloud.baidu.com/doc/MIAODA/s/Amoy50baf) |
+| 秒哒 3.5 iOS 打包与分发 | [秒哒3.5 更简单 更全能：6大升级](https://mp.weixin.qq.com/s/y2_ip4MYlJQPpTJ2a_O26A?scene=1) |
 | 应用广场 | [https://cloud.baidu.com/doc/MIAODA/s/Pmck9hefk](https://cloud.baidu.com/doc/MIAODA/s/Pmck9hefk) |
 | 应用更新与下线 | [https://cloud.baidu.com/doc/MIAODA/s/tmcjx5q55](https://cloud.baidu.com/doc/MIAODA/s/tmcjx5q55) |
 
@@ -27,7 +28,7 @@
 | **网页类型应用** | Web 应用 | V1.x（一直都有） | ✅ 自定义域名 | ✅（应用集成微信支付，V1.6 起） | — | — |
 | **秒哒官方微信小程序**（web-view 接入） | 嵌在秒哒官方小程序里的 Web 应用 | V1.4 一键发布 / 2025.11.11 起新发应用自动开启 | ❌（域名只能在白名单内） | ❌（web-view 限制） | ❌（web-view 限制） | ✅ 可分享给好友 |
 | **用户自有微信小程序**（原生小程序） | 微信原生小程序 | V1.6（2025.10.01）首次生成 / V2.4 起支持体验版调试 | — | ✅（原生小程序生态） | ✅（V2.4 起每页默认） | ✅（V2.4 起每页默认） |
-| **原生 APP** | iOS / Android 原生 APP | V3.0（2026.05.13） | — | 看具体集成 | — | — |
+| **原生 APP** | iOS / Android 原生 APP | V3.0（2026.05.13）生成；V3.5（2026.07.16）补齐 iOS 打包/分发路径 | — | 看具体集成 | — | — |
 
 > 「✅」「❌」反映的是各渠道的官方能力边界，不是"建议要不要做"。
 
@@ -144,6 +145,10 @@ V3.0（2026.05.13）里程碑能力。自然语言生成原生 APP，覆盖 iOS 
   - Android 应用包打包
   - 在线调试
   - APP 热更新
+- **V3.5 iOS 打包与分发**（来自[秒哒 3.5 官方发布文章](https://mp.weixin.qq.com/s/y2_ip4MYlJQPpTJ2a_O26A?scene=1)）：
+  - 无 Apple Developer Program 账号时，可由平台在线生成 IPA，适合个人体验、功能验证和 Demo 展示
+  - 有 Apple Developer Program 账号时，配置 API Key 后，平台可自动完成证书申请、在线构建和签名打包
+  - 支持 Ad Hoc 真机测试、TestFlight 内测和 App Store 上架流程；正式上架仍需通过苹果审核
 - **何时选这条路**：
   - 需要原生 APP 的独立分发能力（应用商店）
   - 需要原生 APP 才能用的设备能力（推送、深度系统集成等）
@@ -187,4 +192,4 @@ V3.0（2026.05.13）里程碑能力。自然语言生成原生 APP，覆盖 iOS 
 
 ---
 
-*最后更新：2026-07-09*
+*最后更新：2026-07-16*
