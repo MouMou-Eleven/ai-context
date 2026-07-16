@@ -416,3 +416,34 @@ curl -i https://域名/<file>.txt
 - 在继续使用当前秒哒绑定域名链路的前提下，秒哒应用代码层暂时无法独立解决；需要秒哒官方/平台人员在服务端路由层排除该 txt 路径，或走微信“仅提交证明材料”的人工兜底。
 
 **预防**：任何“站长验证 txt 文件”类任务，都不要以“项目里创建了文件”为验收标准；必须以公网 URL 的实际响应为准。
+
+---
+
+## #22 手机号未做唯一身份规范化 → `+86` 与裸号变成两个账户 / 登录失败
+
+> **风险等级：最高危。** 来源：建委 2026-07-16 提供的真实秒哒应用问题。完整可执行提示词见 [prompt-patterns.md](./prompt-patterns.md#手机号注册登录先规范化再查用户)。
+
+**症状**：
+
+1. 用户用 `13xxxxxxxxx` 注册后，再用 `+8613xxxxxxxxx` 登录，系统把两种写法当成不同身份；重复注册会产生两个账户。
+2. 手机号登录时，`getUserByPhone` RPC 因网络抖动等异常进入 catch 块，兜底代码用原始 `input` 拼 Auth email。输入含 `+86` 时，email 与注册时的规范化手机号映射不一致，最终误报“密码错误”。
+3. 旧用户兼容分支调用 `getUserByUsername(input)`，并用原始 `input` 拼 email；`+86` 输入同样无法命中原账户。
+4. 注册成功但 Supabase 未返回 session 时，只提示“请手动登录”，却清空表单且不切换登录 Tab，用户不知道应输入什么。
+
+**根因**：手机号在注册、主登录、RPC 异常兜底、旧用户兼容和注册后 UI 这五条路径中被重复处理。部分分支使用原始输入，部分分支使用去掉 `+86` 的号码，且 email 映射公式没有收口为一个函数。
+
+**修复**：
+
+1. 在 `Login.tsx` 入口只做一次手机号规范化：当前中国手机号场景中，把前后空格、连接符清理掉；若以 `+86` 开头则去掉此前缀，最终只接受 11 位 `1` 开头的手机号。后续逻辑只使用 `normalizedInput`。
+2. 把“规范化手机号 → Auth email”的规则提取为唯一 helper。注册、正常登录、catch 兜底和旧用户兼容路径都调用它，**禁止**各分支手写 `${input}@miaoda.com` 或其他拼接。
+3. 主路径的 `getUserByPhone`、旧用户路径的 `getUserByUsername` 都必须传 `normalizedInput`；catch 块和旧用户登录都必须用 `toPhoneAuthEmail(normalizedInput)`。
+4. 注册成功但 session 为 `null` 时，自动切换到登录 Tab，并把 `normalizedInput` 预填到现有“用户名/手机号”字段；只让用户补输密码。
+5. 注册前按规范化手机号检查既有账户，避免 `+86` 与裸号再次创建两条身份记录。已经存在的重复账户不要在同一修复中自动合并，必须先核验用户身份、业务数据和 Auth 记录后单独迁移。
+
+**投产前必核**：本次问题描述中同时出现 `phone_<手机号>@miaoda.com` 与 `<手机号>@miaoda.com` 两种示例。修改前必须检查当前注册分支和真实已注册用户使用的 email 公式；helper 必须复用已生效的公式，不能为了“统一”而改写旧用户 email。
+
+**预防**：
+
+- 手机号是身份键，不是展示字符串；数据库、RPC、Auth email 和表单预填都以同一份规范化值为准。
+- 所有登录分支共用同一组 helper，例如 `normalizeChinaPhone(raw)` 与 `toPhoneAuthEmail(normalizedPhone)`；代码审查时搜索 `input`、`@miaoda.com`、`getUserByPhone`、`getUserByUsername`，逐一确认没有绕过 helper。
+- 回归测试至少覆盖：裸号注册后用 `+86` 登录、`+86` 注册后用裸号登录、RPC 抛异常后的 catch 兜底、旧用户兼容路径、session 为 `null` 的注册完成页，以及重复注册拦截。
