@@ -13,7 +13,7 @@
 - [ ] [VideoAI](./projects/videoai/README.md) 产品持续迭代（AI营销视频自动化平台）
 - [ ] 时尚服饰电商网站开发
 - [ ] [Inshan POPUPIANO](./projects/inshan-popupiano/README.md) 海外电商冷启动（独立站 + Amazon 双线，与 PopuMusic 合作）
-- [ ] [付费社群课程研发](./projects/paid-community-course/README.md)（499 元长期有效会员卡 AI 超级个体陪跑社群，第一季度以 AI 编程系统实战打样，长期覆盖 AI 办公、AI 设计、AI 视频和真实问题答疑）
+- [ ] [付费社群课程研发](./projects/paid-community-course/README.md)（499 元 / 年 AI 超级个体陪跑社群年度会员，第一季度以 AI 编程系统实战打样，长期覆盖 AI 办公、AI 设计、AI 视频和真实问题答疑）
 - [ ] [《飞书高效办公》书稿](./projects/feishu-efficient-office/README.md)继续推进：按最新 9 章目录，建委当前负责第2章、第3章、第8章；第2/3章已从旧第4章拆分出正文草稿和独立截图清单。
 
 ## 📍 当前坐标
