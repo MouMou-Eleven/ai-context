@@ -6,6 +6,7 @@
 > 文档 token：`CmYKd3tqHoSRlLxfjsNcXrOynxa`
 > 修改前版本：`revision_id=123`
 > 最终版本：`revision_id=214`
+> 后续状态：建委确认图3-1采用“飞书 aily 起草初稿”节点，正文同步使用相同口径；清理章首旧称后，第三章最新版本为 `revision_id=216`。Word交付信息见同日 [`2026-07-18-ch3-word-and-ch8-editor-rule-reaudit.md`](./2026-07-18-ch3-word-and-ch8-editor-rule-reaudit.md)。
 
 ## 一、提取范围
 

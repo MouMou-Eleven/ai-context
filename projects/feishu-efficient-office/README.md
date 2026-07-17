@@ -11,7 +11,7 @@
 
 - **目标读者**：非技术背景的职场人，日常工作中涉及文档、表格、PPT、数据汇报
 - **差异化**：设计师视角（不是程序员教AI）、真实培训验证（线下讲过）、变现闭环（市面上极少）
-- **当前进度**：第2章已完成编辑反馈、括号序号纠正和 Word 清洁交付版；第3章已于 2026-07-18 完成编辑 0713 版的 41 条批注、487 处文本修订、黑白图文、序号和官方事实核验，并在二次全盘复核中纠正图3-1画板节点与一处文本遗漏；第8章已完成首批截图融合、素材 Base 和重复用图清理。
+- **当前进度**：第2章已完成编辑反馈、括号序号纠正和 Word 清洁交付版；第3章已完成编辑反馈、图3-1最终口径和 Word 交付版；第8章已结合第2、3章编辑规则完成全文复核，表题、序号、语言、功能边界和案例状态已经统一，图8-2、图8-3待交稿前重截。
 
 ## 写作铁律（所有 AI 工具必须遵守）
 
@@ -45,12 +45,12 @@
 | 前言 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第1章 飞书协作模式：AI时代的高效工作方式 | 另一位作者 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第2章 晨间工作梳理：用消息分组和飞书 aily 整理任务 | 建委 | 编辑反馈、括号序号与Word交付版已完成 | [正文](https://my.feishu.cn/wiki/HBdBwRwcTikxd8k6J4ScIHMEn7c) / [截图清单](https://my.feishu.cn/wiki/XK2CwerKFiwXOrkh6OLcU2Jwnbd) |
-| 第3章 方案撰写实战：用模板、AI与评论协作完成文档 | 建委 | 0713编辑反馈已应用；二次全盘复核与图3-1画板纠正已完成 | [正文](https://my.feishu.cn/wiki/QjUfwODpLipOg6kKZ96c8n5YnSQ) / [截图清单](https://my.feishu.cn/wiki/APJKw9CtwigBP1kfBXYcL5k8nKd) |
+| 第3章 方案撰写实战：用模板、AI与评论协作完成文档 | 建委 | 编辑反馈、图3-1最终口径和Word交付版已完成 | [正文](https://my.feishu.cn/wiki/QjUfwODpLipOg6kKZ96c8n5YnSQ) / [截图清单](https://my.feishu.cn/wiki/APJKw9CtwigBP1kfBXYcL5k8nKd) |
 | 第4章 会议闭环管理：用妙记与任务推进会后跟进 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第5章 内容排期管理：用多维表格实现任务流转 | 另一位作者 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第6章 项目从启动到复盘：飞书的全流程协作实践 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第7章 客户跟进管理：用多维表格搭建轻量业务系统 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
-| 第8章 重复工作自动化：用自动化与AI工作流提升效率 | 建委 | 截图融合与素材清单已处理 | [正文](https://my.feishu.cn/wiki/UZyHw8RFCicH30kihDGcFJTZnPf) / [截图清单](https://my.feishu.cn/wiki/FzmVwHZJPiVb9EkNSgrcH1fRnKh) |
+| 第8章 重复工作自动化：用自动化与AI工作流提升效率 | 建委 | 编辑规则复核已完成；图8-2、图8-3待重截 | [正文](https://my.feishu.cn/wiki/UZyHw8RFCicH30kihDGcFJTZnPf) / [截图清单](https://my.feishu.cn/wiki/FzmVwHZJPiVb9EkNSgrcH1fRnKh) |
 | 第9章 AI操作飞书：智能伙伴、Agent与CLI | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 附录（可选） | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 
@@ -69,8 +69,8 @@
 |------|------|------|----------|----------|
 | 旧第4章 每天被琐事淹没：普通职场人如何用飞书每天省下2小时 | ✅ 历史素材，已审阅多轮 | ~16,000字 | 飞书文档 | 2026-05-11 |
 | 第2章 晨间工作梳理：用消息分组和飞书 aily 整理任务 | ✅ 编辑反馈、括号序号、XML校验与Word交付版已完成 | 待统计 | 飞书文档 + F盘桌面Word | 2026-07-14 |
-| 第3章 方案撰写实战：用模板、AI与评论协作完成文档 | ✅ 0713编辑反馈、黑白图文、序号、官方核验与二次全盘复核已完成 | 待统计 | 飞书文档 | 2026-07-18 |
-| 第8章 重复工作自动化：用自动化与AI工作流提升效率 | 🔄 正文已有3张图，截图清单与素材 Base 已整理 | 待统计 | 飞书文档 | 2026-07-07 |
+| 第3章 方案撰写实战：用模板、AI与评论协作完成文档 | ✅ 编辑反馈、图文、序号、官方核验与Word交付版已完成 | 待统计 | 飞书文档 + F盘桌面Word | 2026-07-18 |
+| 第8章 重复工作自动化：用自动化与AI工作流提升效率 | 🔄 全文编辑规则复核已完成；图8-2、图8-3待交稿前重截 | 待统计 | 飞书文档 + 素材 Base | 2026-07-18 |
 
 ## 文件索引
 
@@ -88,6 +88,7 @@
 | [`revisions/2026-07-14-ch2-parenthetical-numbering-and-word-delivery.md`](./revisions/2026-07-14-ch2-parenthetical-numbering-and-word-delivery.md) | 第2章括号序号纠正、飞书最终版本、Word交付文件信息和逐页校验结果 | **处理列表体例或重新生成第2章Word前必读** |
 | [`revisions/2026-07-18-ch3-editor-0713-feedback-applied.md`](./revisions/2026-07-18-ch3-editor-0713-feedback-applied.md) | 第3章41条批注、487处修订、黑白图文、序号、官方核验和Word格式规则 | **继续修改第3章或生成第3章Word前必读** |
 | [`revisions/2026-07-18-ch3-full-reaudit-and-figure3-1-correction.md`](./revisions/2026-07-18-ch3-full-reaudit-and-figure3-1-correction.md) | 第3章图3-1画板漏检纠正、41条批注二次复核、修订残留扫描和画板语义校验规则 | **继续修改第3章、处理画板流程图或复核编辑批注前必读** |
+| [`revisions/2026-07-18-ch3-word-and-ch8-editor-rule-reaudit.md`](./revisions/2026-07-18-ch3-word-and-ch8-editor-rule-reaudit.md) | 第3章图3-1最终口径与Word交付；第8章结合第2、3章编辑规则的全文复核、截图清单调整和最终校验 | **使用第3章最终Word、继续修改第8章或重截图8-2/8-3前必读** |
 | [`revisions/README.md`](./revisions/README.md) | 第2、3、8章和旧第4章相关修订的任务路由、时间线与适用范围 | **修改章节前先读**，再选择与当前章节直接相关的修订，避免一次性加载全部记录 |
 
 ## 使用指南

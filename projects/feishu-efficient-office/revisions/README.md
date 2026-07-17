@@ -8,14 +8,15 @@
 |---|---|
 | 全书目录、建委负责章节、第2/3章来源 | `2026-06-26-current-outline-and-ch2-ch3-split.md` |
 | 第2章正文、标题、语言、序号和 Word 交付 | 先读 7月14日括号序号与 Word 交付记录，再读同日编辑反馈应用记录；需要追溯此前截图融合再读 7月1日、6月30日文件 |
-| 第3章正文、编辑反馈、序号、黑白图文和 Word 规则 | 先读 7月18日全盘复核与图3-1纠正，再读同日编辑反馈应用记录；需要追溯此前标题、飞书 aily 和截图素材再读 7月2日文件 |
-| 第8章截图、素材 Base 和重复用图 | 7月7日修订 |
+| 第3章正文、编辑反馈、序号、黑白图文和 Word 规则 | 先读 7月18日第3章Word与第8章复核记录，再读同日全盘复核和编辑反馈应用记录；需要追溯此前标题、飞书 aily 和截图素材再读 7月2日文件 |
+| 第8章正文、截图、素材 Base 和重复用图 | 先读 7月18日第3章Word与第8章复核记录，再读7月7日截图素材清理记录 |
 | 从旧第4章复用编辑批注 | 6月27日 `ch4-v4-word-feedback-applied-to-ch2-ch3.md` |
 
 ## 修订时间线
 
 | 日期 | 文件 | 当前作用 |
 |---|---|---|
+| 2026-07-18 | [`2026-07-18-ch3-word-and-ch8-editor-rule-reaudit.md`](./2026-07-18-ch3-word-and-ch8-editor-rule-reaudit.md) | 第3章图3-1最终口径、Word交付校验，以及第8章表题、序号、语言、功能边界、案例和截图清单复核 |
 | 2026-07-18 | [`2026-07-18-ch3-full-reaudit-and-figure3-1-correction.md`](./2026-07-18-ch3-full-reaudit-and-figure3-1-correction.md) | 第3章图3-1画板漏检纠正、41条批注二次复核、487处修订残留扫描与画板语义校验规则 |
 | 2026-07-18 | [`2026-07-18-ch3-editor-0713-feedback-applied.md`](./2026-07-18-ch3-editor-0713-feedback-applied.md) | 第3章41条批注、487处修订、黑白图文、序号、官方核验与Word格式规则 |
 | 2026-07-14 | [`2026-07-14-ch2-parenthetical-numbering-and-word-delivery.md`](./2026-07-14-ch2-parenthetical-numbering-and-word-delivery.md) | 第2章“（1）”序号纠正、飞书最终版本和 Word 清洁交付版校验 |
