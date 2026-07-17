@@ -4,6 +4,7 @@
 > 资料类型：根据建委提供的三份本地提示词模板去重、校正后形成的可调用版本。
 > 使用边界：这里保存“让 AI 帮忙设计视频 Prompt”的角色模板，不重复讲 Seedance 基础工作流。生成前先读 [`seedance-2-practical-workflow.md`](./seedance-2-practical-workflow.md)。
 > 时效提醒：`@图片`、`@视频`、`@音频` 等引用能力必须以当前即梦界面实际支持情况为准，模板不能代替平台能力核验。
+> 实测参考：需要学习已经获得较好效果的完整 Prompt 时，读取 [`seedance-2-prompt-cases.md`](./seedance-2-prompt-cases.md)。
 
 ## 模板选择
 
@@ -175,6 +176,7 @@
 - 多镜头故事、角色连续性和《丧尸清道夫》案例，以 [`cinematic-narrative-production.md`](./cinematic-narrative-production.md) 为准。
 - 企业数据、荣誉、业务和 AE 包装，以 [`enterprise-promo-production.md`](./enterprise-promo-production.md) 为准。
 - 本文件只保存可调用的角色 Prompt，不重复保存三份本地 txt 原文。
+- 完整实测 Prompt、效果判断与失败风险统一进入 `seedance-2-prompt-cases.md`，不继续堆进模板正文。
 
 ## 后续维护
 
