@@ -7,7 +7,7 @@
 | 入口 | 内容 | 何时读取 |
 |---|---|---|
 | [`feishu-doc-style.md`](./feishu-doc-style.md) | 飞书文档的视觉结构、callout、图表和时间落款规范 | 创建或改写飞书文档时 |
-| [`video-chunked-upload/`](./video-chunked-upload/) | 生产验证过的大视频分片上传与 Range 流式播放源码 | 秒哒项目需要实现大视频上传时，先读目录 README |
+| [`video-chunked-upload/`](./video-chunked-upload/) | 旧秒哒后端环境生产验证过的永久分片与 Range 代理兼容源码 | 当前环境 200MB 能力测试仍出现 CORS / 413 / supervisor kill 时再读 |
 | [`creative-frontend-prompts/`](./creative-frontend-prompts/) | 五类创意前端完整提示词原文，覆盖视频逐帧、空间画廊、个人作品集与 3D 首屏 | 设计动效密集型展示站并需要查阅执行级样例时 |
 
 ## 使用边界

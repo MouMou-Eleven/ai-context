@@ -248,12 +248,16 @@ console.log("[fnname] env diag:", {
 
 ---
 
-## #14 秒哒预览域名 `*.miaoda.cn` 下大视频上传：CORS / Edge Function 资源 / Storage 全局上限三层叠加
+## #14 [历史兼容] 旧后端大视频上传：CORS / Edge Function 资源 / Storage 上限三层叠加
 
-> 这是反复踩坑后**已在生产成功**的方案。本条只保留发现叙事 + 根因；
+> **状态：已被 2026-07-15 更新部分取代。** 旧环境中这是反复踩坑后已在生产成功的方案；新公告已取消“应用内 50MB 文件上传上限”，但没有公布新的单请求、CORS、413、函数资源限制。本条保留历史发现和旧环境兼容方案，不再作为新项目默认架构。
+>
+> 新项目先按 [patterns/large-video-upload.md](./patterns/large-video-upload.md) 做 200MB 能力测试；只有当前环境仍复现下列问题时，才启用本条的兼容实现。
+>
+> 本条只保留发现叙事 + 根因；
 > 完整实现规范见 [patterns/large-video-upload.md](./patterns/large-video-upload.md)，
 > 可直接抄走的三段源码见 [references/video-chunked-upload/](../../../references/video-chunked-upload/)，
-> 写提示词喂秒哒的模板见 [prompt-patterns.md](./prompt-patterns.md#视频上传分片不合并--http-range-代理)。
+> 新环境测试与旧环境兼容提示词见 [prompt-patterns.md](./prompt-patterns.md#大文件上传先测新环境旧分片代理只兜底)。
 
 **症状（四种死法按出现顺序）**：
 
@@ -275,9 +279,9 @@ console.log("[fnname] env diag:", {
 | Edge Function 资源 | 单函数内存 / CPU / wall-time | 几百 MB 文件 concat 或流式拼装超过百兆级内存或数百秒 wall-time，被 supervisor 强制 kill。 |
 | Storage 全局上限 | 平台级 `storageFileSizeLimit = Math.min(global, bucket)` | 合并后的整文件在写入瞬间被网关 413，调大桶级 limit 也没用。 |
 
-**正解一句话**：永远不把分片合并成完整文件。分片以路径 `<upload_id>/<chunk_index>` 永久留在 Storage 桶 `video-chunks` 里，新增一个 `video-serve` Edge Function 用 HTTP Range / 206 Partial Content 把这堆分片**伪装成**一个可拖进度条的完整视频文件。三层全过：前端永不直打 Storage（绕 CORS）、单次操作只读写一片 5MB（绕 Edge Function 资源）、永不写合并文件（绕 storageFileSizeLimit）。架构图 / 表结构 / 函数契约 / 全部源码 → [patterns/large-video-upload.md](./patterns/large-video-upload.md)。
+**旧环境兼容解法**：不把分片合并成完整文件。分片以路径 `<upload_id>/<chunk_index>` 永久留在 Storage 桶 `video-chunks` 里，新增一个 `video-serve` Edge Function 用 HTTP Range / 206 Partial Content 把分片伪装成可拖进度条的完整视频文件。它绕开旧环境的 CORS、函数资源和 Storage 上限，但架构复杂、占用对象数量多，不应在新环境未经测试就直接采用。架构图 / 表结构 / 函数契约 / 源码见 [patterns/large-video-upload.md](./patterns/large-video-upload.md)。
 
-**对秒哒喂提示词时务必带上**（详见 [prompt-patterns.md](./prompt-patterns.md#视频上传分片不合并--http-range-代理)）：
+**只有新环境测试仍失败时才使用兼容提示词**（详见 [prompt-patterns.md](./prompt-patterns.md#大文件上传先测新环境旧分片代理只兜底)）：
 红线"禁止合并分片"+"禁止前端直接调 Storage 端点（含 createSignedUploadUrl / TUS）"+"video-serve 必须返回 206 + Content-Range，不允许 200 全文" + 把 `references/video-chunked-upload/` 三个 ts 作为"禁止重写、必须照抄"的参考实现塞给它（参考 #5：秒哒会无视已提供实现自己另写一份）。
 
 ---

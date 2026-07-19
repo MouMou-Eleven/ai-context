@@ -1,10 +1,12 @@
-# video-chunked-upload — 生产已验证的三段源码
+# video-chunked-upload — 旧环境兼容源码
 
-> 这三个 `.ts` 是 [knowledge/ai-programming/miaoda/pitfalls.md #14](../../knowledge/ai-programming/miaoda/pitfalls.md) 的处方实现。
+> **状态：参考实现 / 非当前默认。** 这三个 `.ts` 是 [knowledge/ai-programming/miaoda/pitfalls.md #14](../../knowledge/ai-programming/miaoda/pitfalls.md) 在旧后端环境中的处方实现，历史生产已验证。
+>
+> 2026-07-15 起秒哒已取消“应用内 50MB 文件上传上限”。新项目必须先按 [`patterns/large-video-upload.md`](../../knowledge/ai-programming/miaoda/patterns/large-video-upload.md) 做 200MB 能力测试；只有仍复现 CORS / 413 / supervisor kill 时才使用本目录。
 >
 > 完整的"为什么这样写、契约长什么样"在 [`patterns/large-video-upload.md`](../../knowledge/ai-programming/miaoda/patterns/large-video-upload.md)。
 >
-> 本目录的角色：**给 AI 喂"必须照抄、禁止重写"的参考实现**。
+> 本目录的角色：**旧环境兼容时给 AI 喂“必须照抄、禁止重写”的参考实现**。
 
 ---
 

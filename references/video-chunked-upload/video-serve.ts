@@ -1,6 +1,9 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 
 // ---------------------------------------------------------------------------
+// STATUS: Legacy compatibility path for old Miaoda backends. Since 2026-07-15,
+// test native 200MB upload first and use this only if CORS/413/timeouts remain.
+//
 // video-serve — 分片流式代理（彻底绕过 Supabase Storage 全局大文件限制）
 //
 // 架构背景：

@@ -1,3 +1,6 @@
+// Legacy compatibility path for old Miaoda backends. Since 2026-07-15 the
+// platform no longer documents a 50MB in-app upload cap. Test native 200MB
+// upload first; use this permanent-chunk design only if CORS/413/timeouts remain.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 
 const corsHeaders = {

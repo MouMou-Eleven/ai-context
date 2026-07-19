@@ -13,22 +13,22 @@
 |---|---|---|
 | [llms.txt](./llms.txt) | AI Agent 入口索引：按"查 / 建 / 抄"路由 | AI 第一次进入本目录时 |
 | [disambiguation.md](./disambiguation.md) | 同名产品辨析：百度秒哒 MIAODA vs 飞书妙搭 Spark，含路由判断表 | 用户提到「秒哒/妙搭」但没说清是哪个时（必读） |
-| [platform-basics.md](./platform-basics.md) | 秒哒平台的基础认知：四套运行时、自定义技能机制、与应用层的关系、文档与实现差异、「后端服务」面板、首轮应用的形态/存储/环境决策、共享后端、资源分级、定时任务等 | 第一次接触秒哒、或要做技术决策前 |
-| [version-features.md](./version-features.md) | 版本节点速查表：每个版本上线的能力（V3.5 / 最新更新速报 / V3.2 / V3.1 → V1.3，倒序），附官方来源；未收录官方日志的速报会标注来源 | 判断「某能力是否已上线」、给某能力定位时间锚点时 |
+| [platform-basics.md](./platform-basics.md) | 秒哒平台的基础认知：四套运行时、自定义技能机制、与应用层的关系、后端服务、首轮形态/存储/环境决策、共享后端、资源套餐、快速/深度计费、定时任务等 | 第一次接触秒哒、或要做技术决策前 |
+| [version-features.md](./version-features.md) | 版本节点速查表：每个版本上线的能力（V3.5 / 2026.07.15 后端与计费调整 / V3.2 → V1.3，倒序），附官方或建委提供的来源 | 判断「某能力是否已上线」、给某能力定位时间锚点时 |
 | [publish-channels.md](./publish-channels.md) | 4 种发布渠道（Web / 秒哒官方小程序 web-view / 用户自有原生小程序 / 原生 APP）的能力边界、限制、选型建议；含 V3.5 iOS 打包/分发与自定义分享网址 | 用户问「我的应用要不要做小程序/做 APP」或「分享链接/域名怎么做」时 |
 | [skill-development.md](./skill-development.md) | 自定义技能开发指南：.zip 包结构、SKILL.md frontmatter、脚本约定、环境变量，以及 V3.5 的对话创建、导入和 API 文档创建入口 | 要为秒哒开发自定义技能时 |
 | [skill-as-callable.md](./skill-as-callable.md) | 反向能力：秒哒被打包为 Skill，可被 OpenClaw / Claude Code 等外部 Agent 调用（V2.5 上线） | 想把秒哒嵌进更大的 Agent 工作流、或做应用批量化生产时 |
-| [pitfalls.md](./pitfalls.md) | 22 个真实踩坑清单：MD5 Web Crypto 死路、密钥泄漏、嵌套目录、AI 自动重写签名、无 Supabase 控制台、多通道退款误路由、**大视频上传三层墙**、**SPA SEO 漏 keywords**、**微信恢复访问 txt 校验失败**、**浏览器缓存伪存储**、**应用形态强转**、**小程序上传 invalid filepath**、**登录自写 Edge Function**、**+86 手机号身份重复/登录失败**等 | 遇到怪异报错、或想预防性避雷时 |
-| [prompt-patterns.md](./prompt-patterns.md) | 与秒哒 AI 协作的提示词模板：@技能调用风格、红线前置、分工边界、设备识别函数注入、**全站 SEO 不漏 keywords**、**视频上传分片不合并 + HTTP Range 代理**、**首轮应用形态 + 真实后端存储**、**小程序上传修复**、**Supabase Auth 登录修复**、**+86 手机号身份标准化**等 | 要写一段让秒哒按计划执行的提示词时 |
+| [pitfalls.md](./pitfalls.md) | 22 个真实踩坑清单：MD5 Web Crypto 死路、密钥泄漏、无 Supabase 控制台、多通道退款误路由、**旧后端大视频上传三层墙**、**SPA SEO 漏 keywords**、**微信恢复访问 txt 校验失败**、**浏览器缓存伪存储**、**应用形态强转**、**登录自写 Edge Function**、**+86 手机号身份重复/登录失败**等 | 遇到怪异报错、或想预防性避雷时 |
+| [prompt-patterns.md](./prompt-patterns.md) | 与秒哒 AI 协作的提示词模板：@技能调用、红线前置、**全站 SEO**、**大文件先测试 + 旧分片代理兜底**、**首轮形态 + 真实后端存储**、小程序上传、Supabase Auth、+86 手机号标准化等 | 要写一段让秒哒按计划执行的提示词时 |
 | [patterns/codex-assisted-workflow.md](./patterns/codex-assisted-workflow.md) | Codex 辅助秒哒开发工作流：用户把秒哒问题交给 Codex，Codex 拆成低风险提示词，用户逐批粘贴到秒哒执行并反馈结果 | 以后遇到任何秒哒开发/修复/整改需求，想让 Codex 先出方案和提示词时 |
 | [patterns/seo-optimization.md](./patterns/seo-optimization.md) | 秒哒站点 SEO 优化处方：V3.5 SEO Agent、`index.html`、`SEOHead`、`react-helmet-async`、每页 `keywords` / `description`、`robots.txt` / `sitemap.xml` 检查 | 要给秒哒生成的网站做全站 SEO 时 |
 | [patterns/wechat-urlsec-verification.md](./patterns/wechat-urlsec-verification.md) | 微信内置浏览器安全弹窗恢复访问验证处方：根目录 txt 验证、公网 `curl` 验收、SPA fallback 排查 | 微信访问网站出现“无法确认该网页的安全性”，或恢复访问验证文件校验失败时 |
 | [patterns/content-rectification-prompts.md](./patterns/content-rectification-prompts.md) | 秒哒内容整改提示词拆分处方：备案主体一致性、品牌/协会/人物口径、SEO/分享隐藏文案、栏目名称、商品详情经营主体说明 | 要让秒哒分批修改网站公开文案、主体口径或备案整改内容时 |
-| [patterns/large-video-upload.md](./patterns/large-video-upload.md) | 大视频上传（≥50MB）的处方实现：架构 / 表 schema / 三个函数契约 / 前端契约 / 不可变常量速查 | 要落地视频上传功能时（[pitfalls.md #14](./pitfalls.md) 的实施指南） |
+| [patterns/large-video-upload.md](./patterns/large-video-upload.md) | 大文件上传决策：7月15日后先做 200MB 能力测试；原生上传优先，旧分片 + Range 代理仅作兼容兜底 | 要落地大视频上传或判断旧 50MB 限制是否仍适用时 |
 | [case-yungouos-jsapi.md](./case-yungouos-jsapi.md) | 完整接入案例：YunGouOS 微信 JSAPI 支付从需求到上线的全过程，含每轮失败与修复 | 做支付接入、或想看一个端到端样板时 |
 
 外部引用：
-- [`references/video-chunked-upload/`](../../../references/video-chunked-upload/) — 大视频上传的三个 Edge Function 源码（chunk / complete / serve），生产已验证，可直接抄
+- [`references/video-chunked-upload/`](../../../references/video-chunked-upload/) — 旧环境永久分片 + Range 代理的三个 Edge Function，历史生产已验证；仅在当前环境仍复现旧限制时使用
 
 ## 重要原则（来自实战）
 

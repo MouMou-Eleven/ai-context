@@ -19,7 +19,7 @@
 - 站点 SEO 或 V3.5 SEO Agent（title / description / keywords / robots / sitemap）→ [patterns/seo-optimization.md](./patterns/seo-optimization.md)
 - 微信内置浏览器安全弹窗 / “申请恢复访问”根目录 txt 验证 / 校验失败排查 → [patterns/wechat-urlsec-verification.md](./patterns/wechat-urlsec-verification.md)
 - 内容整改 / 备案主体一致性 / 品牌协会人物口径统一 / 公开文案分批修改 → [patterns/content-rectification-prompts.md](./patterns/content-rectification-prompts.md)
-- 大视频上传（≥50MB）落地处方 → [patterns/large-video-upload.md](./patterns/large-video-upload.md)
+- 大文件上传 / 200MB 视频 / 旧 50MB 限制是否仍存在 → [patterns/large-video-upload.md](./patterns/large-video-upload.md)
 - 微信 JSAPI 支付端到端样板 → [case-yungouos-jsapi.md](./case-yungouos-jsapi.md)
 - 自定义技能（对话创建、`.zip` / `SKILL.md` 导入、API 文档创建）→ [skill-development.md](./skill-development.md)
 - 把秒哒作为 Skill 被外部 Agent 调用 → [skill-as-callable.md](./skill-as-callable.md)
@@ -39,7 +39,7 @@
 1. 秒哒文档与实际行为有差异（如 SKILL.md 必须有 YAML frontmatter，官方文档没写）。永远以实际报错为准。
 2. 「技能运行时」与「应用运行时」是两个独立环境，密钥、环境变量、语言不互通。
 3. 秒哒 AI 是「指令式执行」，不能多轮讨论。提示词必须一次写到位、把红线放最前。
-4. 秒哒 AI 容易"自由发挥"。不在提示词里明确禁止"自己实现某功能"，它就会绕过你提供的实现自己另写一份并大概率翻车——**特别是涉及大文件/支付/签名的场景，必须把参考实现路径作为"必须照抄"塞给它**。
+4. 秒哒 AI 容易"自由发挥"。涉及支付/签名或已经选定并验证的兼容实现时，必须把参考实现路径作为"必须照抄"塞给它；大文件上传先验证当前平台能力，不要默认套旧参考实现。
 
 ## 文件层级速查
 
@@ -54,7 +54,7 @@ miaoda/
 ├── skill-development.md   开发自定义技能（对话/导入/API 文档）
 ├── skill-as-callable.md   秒哒作为外部 Skill
 ├── pitfalls.md            真实踩坑清单（含 #14 大视频上传三层墙、#15 SPA SEO 漏 keywords、#16-#20 首轮存储/形态/小程序/登录坑、#21 微信恢复访问 txt 校验失败、#22 +86 手机号身份重复）
-├── prompt-patterns.md     提示词模板（含"全站 SEO 不漏 keywords"、"视频上传分片不合并 + HTTP Range 代理"、"首轮形态 + 真实后端存储"、"+86 手机号身份标准化"）
+├── prompt-patterns.md     提示词模板（含"全站 SEO 不漏 keywords"、"大文件先测试 + 旧分片代理兜底"、"首轮形态 + 真实后端存储"、"+86 手机号身份标准化"）
 ├── patterns/
 │   ├── codex-assisted-workflow.md   Codex 辅助秒哒开发工作流（问题分析 / 拆批提示词 / 粘贴执行 / 反馈迭代）
 │   ├── seo-optimization.md     秒哒站点 SEO 优化处方（SEOHead / keywords / robots / sitemap）
