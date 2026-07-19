@@ -1,7 +1,7 @@
 # 飞书课程资料索引
 
 > 当前有效
-> 索引最后整理：2026-07-13
+> 索引最后整理：2026-07-19
 
 本文件只登记课程资料的入口、受众、用途、状态和对应修订。教程正文继续维护在飞书，不复制到 GitHub 上下文仓库。
 
@@ -9,7 +9,7 @@
 
 | 资料 | 飞书正文 | 受众 | 所属与用途 | 当前状态 | 最近修订 |
 |---|---|---|---|---|---|
-| 【02】AI时代技术词典（补充基础知识专用） | [飞书文档](https://my.feishu.cn/wiki/MODXwIqpOiE7wqkk3s3cZQ17nid) | 第一季度课程学员，以非程序员为主 | AI 编程基础补充资料；帮助学员理解页面、数据、登录、后台、环境和上线分别处于什么位置 | 已发布：2026-07-13 完成重构并回读验证，飞书 revision 78 | [`revisions/2026-07-12-ai-era-technical-dictionary-restructure.md`](./revisions/2026-07-12-ai-era-technical-dictionary-restructure.md) |
+| 【02】AI时代技术词典：普通人从开发前到上线后的关键节点 | [飞书文档](https://my.feishu.cn/wiki/MODXwIqpOiE7wqkk3s3cZQ17nid) | 第一季度课程学员，以非程序员为主 | AI 编程基础与开发流程指南；按开发前、开发中、上线前、上线后解释自主搭建项目的关键节点、高频词、风险和验收方法 | 已发布：2026-07-19 完成四阶段重构、导航与画板回读验证，飞书 revision 117 | [2026-07-19 修订](./revisions/2026-07-19-ai-era-technical-dictionary-lifecycle-rebuild.md) |
 
 ## 使用规则
 

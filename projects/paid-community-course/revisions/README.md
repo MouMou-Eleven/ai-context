@@ -9,15 +9,16 @@
 - 第一季度内部课程主线：AI 编程系统实战；海报对外主题：用 AI 做出你的专属小工具。
 - 课程资料必须先区分讲师、学员、招生用户、合作方或内部团队。
 - 第一节课先用职业场景解释 AI 编程与普通人的关系，再进入工具地图。
-- 学员技术基础资料先讲 AI 与人的分工、普通人能理解的完整路线和学习索引，再按实际场景解释高频技术词。
+- 学员技术基础资料先讲 AI 与人的分工和 AI 时代学习重点，再按开发前、开发中、上线前、上线后组织自主搭建项目的关键节点、高频词、风险和验收。
 
 ## 修订时间线
 
 | 日期 | 文件 | 有效性 | 主要影响 |
 |---|---|---|---|
+| 2026-07-19 | [2026-07-19-ai-era-technical-dictionary-lifecycle-rebuild.md](./2026-07-19-ai-era-technical-dictionary-lifecycle-rebuild.md) | 当前有效，覆盖 2026-07-12 的文档结构 | 技术词典改为四阶段全流程指南；外部服务和文件媒体并入真实开发阶段；补齐备案、安全、性能、运维、成本与流量增长；飞书 revision 117 |
 | 2026-07-17 | [`2026-07-17-annual-membership-model.md`](./2026-07-17-annual-membership-model.md) | 当前核心口径 | 会员模式修正为 499 元 / 年；一年内课程持续更新，回放、资料和知识库随时观看 |
 | 2026-07-17 | [`2026-07-17-long-term-membership-card-model.md`](./2026-07-17-long-term-membership-card-model.md) | 已被同日后续修订取代 | 曾改为 499 元长期有效会员卡，后修正为 499 元 / 年 |
-| 2026-07-12 | [`2026-07-12-ai-era-technical-dictionary-restructure.md`](./2026-07-12-ai-era-technical-dictionary-restructure.md) | 当前有效，已于 2026-07-13 写入飞书 | 学员技术词典改为非程序员理解路径；学习路线和工具环境前移，选择题改问答，删除延伸入口 |
+| 2026-07-12 | [`2026-07-12-ai-era-technical-dictionary-restructure.md`](./2026-07-12-ai-era-technical-dictionary-restructure.md) | 表达原则仍有效，文档结构已被 2026-07-19 修订取代 | 建立非程序员理解路径、AI 与人的分工、场景解释和结果验收原则 |
 | 2026-07-10 | [`2026-07-10-poster-scenario-first-positioning.md`](./2026-07-10-poster-scenario-first-positioning.md) | 当前有效，覆盖第一季度对外标题 | 内部课程名与海报销售名拆分；海报先讲人群和结果，再讲技术链路 |
 | 2026-07-09 | [`2026-07-09-ai-programming-career-scenario-opening.md`](./2026-07-09-ai-programming-career-scenario-opening.md) | 当前有效，增量规则 | 第一节课先讲职业场景，再讲工具；AI 编程是每个职业多一种解决问题的能力 |
 | 2026-07-07 | [`2026-07-07-community-product-hierarchy-refinement.md`](./2026-07-07-community-product-hierarchy-refinement.md) | 当前核心口径 | 社群是主体，课程是阶段性交付；产品名确定为“AI 超级个体陪跑社群” |
