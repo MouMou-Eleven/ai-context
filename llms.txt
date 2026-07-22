@@ -42,6 +42,7 @@
 | 百度秒哒 MIAODA | [`knowledge/ai-programming/miaoda/llms.txt`](./knowledge/ai-programming/miaoda/llms.txt) |
 | AI 企业宣传片、电影感视频、分镜 | [`knowledge/ai-video/README.md`](./knowledge/ai-video/README.md) |
 | 商业增长、自媒体经营、产品信息化、渠道、信任、对标拆解 | [`knowledge/business-growth.md`](./knowledge/business-growth.md) |
+| 课程、文章、技术科普、视频口播稿、减少 AI 味 | [`knowledge/tutorial-writing/README.md`](./knowledge/tutorial-writing/README.md) → [`references/writing-style/feitian-shanke/style-profile.md`](./references/writing-style/feitian-shanke/style-profile.md) |
 | 微课、教育课件、哞哞微课 | [`knowledge/microcourse.md`](./knowledge/microcourse.md) |
 | 工具清单、飞书表单图片选项经验 | [`knowledge/tools.md`](./knowledge/tools.md) |
 | Windows Junction 迁移与卸载清理 | [`knowledge/windows-junction-migration.md`](./knowledge/windows-junction-migration.md) |
