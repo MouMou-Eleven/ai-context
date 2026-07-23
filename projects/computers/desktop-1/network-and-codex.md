@@ -123,7 +123,15 @@ tool_output_token_limit = 12000
 4. `%USERPROFILE%/.codex/plugins` 的注册状态与实际缓存是否一致。
 5. 最后才考虑重新安装插件或为单个已核验文件添加火绒放行。
 
-## 六、变更和验证边界
+## 六、2026-07-24 chatgptshare.com 复核
+
+2026-07-24 对 `https://chatgptshare.com/list/?partner=6iwhbhzxFqH` 做了 DNS、直连、Clash 代理和多节点对照：阿里 DNS、Cloudflare DNS、Google DNS 均返回 `154.26.186.65`；本机 TCP 80/443 均失败；Clash 代理 HTTPS 握手失败并返回 502；香港、日本、新加坡、美国、欧洲节点的独立 delay 测试全部失败；Globalping 的 5 个独立公网 HTTP 探针也全部失败。对照测试中 Google 204 和 GitHub 200 正常。
+
+运行时规则最后是 `DomainKeyword . -> 🐟 漏网之鱼` 与 `Match -> 🐟 漏网之鱼`，不是 `DIRECT`。持久 `profileParsersText` 中虽有 `chatgptshare.com -> 🔰 选择节点`，当前运行内核尚未加载这条专用规则；这属于配置同步问题，但不是本次故障主因，因为 catch-all 已经走代理，而目标源站 80/443 本身不可达。
+
+因此本次不切换节点、不重启 Clash、不改 hosts。源站恢复后再做一次 `/rules` 命中和页面验证；若仍失败，再继续检查节点与规则。完整记录见 [`revisions/2026-07-24-chatgptshare-outage.md`](./revisions/2026-07-24-chatgptshare-outage.md)。
+
+## 七、变更和验证边界
 
 - 本次没有重启 Codex、CC Switch 或 Clash，也没有切换节点。
 - 修改前已在本机 `.codex` 目录创建配置和脚本备份；备份不进入 GitHub。
