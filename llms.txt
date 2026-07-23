@@ -32,6 +32,7 @@
 | VideoAI、营销视频自动化、成本、协会定价 | [`projects/videoai/README.md`](./projects/videoai/README.md) | 成本读 `cost-analysis.md`；定价读 `pricing-plan-association.md`，使用前先核对文档日期 |
 | OpenClaw、本地 AI Agent | [`projects/openclaw-agent/README.md`](./projects/openclaw-agent/README.md) | 当前仅有入口文件，细节不足时向建委确认 |
 | 星火映果州、Nibiru、VR 课件 | [`projects/xinghuo-ying-guozhou-vr-courseware/README.md`](./projects/xinghuo-ying-guozhou-vr-courseware/README.md) | 交互设计读 `interaction-logic.md` |
+| 电脑故障、Windows、网络、VPN、Clash、Codex、CC Switch、Codex++、插件 | [`projects/computers/README.md`](./projects/computers/README.md) | 先确认设备名称；当前电脑读 `desktop-1/README.md`，网络与 Codex 细节再读 `desktop-1/network-and-codex.md` |
 
 ## 知识路由
 

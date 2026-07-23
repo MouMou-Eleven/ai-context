@@ -60,6 +60,15 @@
 
 涉及付费社群、课程研发、自媒体引流或 AI 编程课程时，先读 `projects/paid-community-course/README.md`，再按任务只读取一到两个专题文件。历史名称和旧营销口径只存在于修订记录，不得覆盖当前“AI 超级个体陪跑社群”口径。
 
+### 电脑、网络与本地 AI 工具
+
+涉及电脑故障、Windows、网络、VPN、Clash、Codex、CC Switch、Codex++、插件或本地代理时，先读：
+
+- `projects/computers/README.md`
+- 对应设备的 `README.md`；当前设备是 `projects/computers/desktop-1/README.md`
+
+正在执行 Codex 任务时，不得直接重启 Codex、CC Switch、Clash 或切换代理节点。先做只读诊断并保存回滚点；确需中断连接的变更，必须等安全窗口并明确说明。不得把 API Key、Token、Cookie、局域网地址或机器真实主机名写入仓库。
+
 ## 完成标准
 
 - 当前事实有明确来源，冲突没有被掩盖。
