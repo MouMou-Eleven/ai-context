@@ -131,7 +131,13 @@ tool_output_token_limit = 12000
 
 因此本次不切换节点、不重启 Clash、不改 hosts。源站恢复后再做一次 `/rules` 命中和页面验证；若仍失败，再继续检查节点与规则。完整记录见 [`revisions/2026-07-24-chatgptshare-outage.md`](./revisions/2026-07-24-chatgptshare-outage.md)。
 
-## 七、变更和验证边界
+## 七、2026-08-01 项目信任与插件加载修复
+
+Codex 配置页出现“将当前项目添加为 trusted project”提示时，活动 `config.toml` 缺少 `new-chat` 项目段。已补回 `trust_level = "trusted"`，并将该段加入插件持久化守护脚本的必要块，避免后续配置同步再次删除。`codex doctor` 确认 TOML 解析正常，`codex plugin list` 确认插件注册和安装缓存完整。本次不是 Clash 或插件下载故障。
+
+详细记录见 [`revisions/2026-08-01-codex-project-trust.md`](./revisions/2026-08-01-codex-project-trust.md)。
+
+## 八、变更和验证边界
 
 - 本次没有重启 Codex、CC Switch 或 Clash，也没有切换节点。
 - 修改前已在本机 `.codex` 目录创建配置和脚本备份；备份不进入 GitHub。
