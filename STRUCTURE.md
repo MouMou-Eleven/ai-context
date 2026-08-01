@@ -2,163 +2,169 @@
 
 > 仅在准备写入、移动文件或调整结构时读取。本文件不属于日常问答的默认上下文。
 
-## 一、仓库定位
+## 一、设计目标
 
-本仓库同时承担四类职责：
+仓库按“先大后小”的树形逻辑组织。一级目录只表达稳定的大类，具体资料逐层落到工作领域、项目、专题、来源或修订中。
 
-1. **当前事实层**：建委是谁、现在做什么、偏好什么。
-2. **项目决策层**：长期项目的当前口径、文件入口和修订历史。
-3. **专业知识层**：可复用的方法、工具经验、案例与源码参考。
-4. **历史追溯层**：旧版本、重要事件和方向变化，保留但不冒充当前事实。
+设计原则：
 
-设计目标是“入口轻、正文深、历史可追溯”。任何新增内容都必须能从一个 README 或 `llms.txt` 被找到。
+1. 根目录只保留人类入口、AI 规则、AI 路由和结构规范。
+2. 个人、表达、项目、认知、治理、历史六棵树各自负责一种信息。
+3. 当前入口只保留当前口径，旧口径进入修订或历史。
+4. 原始资料跟随使用它的领域保存，不建立脱离上下文的全局资料堆。
+5. 每份资料都能从最近一层 README 找到。
 
 ## 二、当前目录结构
 
 ```text
 ai-context/
-├── AGENTS.md                 AI 协作规则、事实优先级、特殊项目规则
-├── README.md                 人类入口和全局内容地图
-├── llms.txt                  AI 最小路由入口
-├── STRUCTURE.md              结构与写入规范
-├── identity.md               稳定个人身份
-├── current.md                当前状态与进行中事项
-├── preferences.md            沟通和工作偏好
-├── open-questions.md         跨文件事实冲突与待确认事项
-├── knowledge/
-│   ├── README.md             知识总索引
-│   ├── achievements.md       荣誉、案例和影响力数据
-│   ├── interests.md          长期关注方向
-│   ├── tech-stack.md         能力与技术边界
-│   ├── tools.md              工具清单和工具实操经验
-│   ├── microcourse.md        微课业务知识
-│   ├── windows-junction-migration.md
-│   ├── ai-programming/       AI 编程知识包
-│   └── ai-video/             AI 视频知识包
-├── projects/
-│   ├── README.md             长期项目总索引
-│   └── <project>/
-│       ├── README.md         项目当前口径和文件路由
-│       ├── revisions/
-│       │   ├── README.md     修订索引与有效性说明
-│       │   └── YYYY-MM-DD-<slug>.md
-│       └── <topic>.md        具体方案、方法、数据或复盘
-├── history/
-│   ├── README.md             历史入口和使用边界
-│   ├── timeline.md           跨项目重要里程碑
-│   └── archived-projects/    已归档项目的完整资料与入口
-├── references/
-│   ├── README.md             规范、源码与外部材料索引
-│   └── <reference-package>/
-└── scripts/
-    ├── README.md             维护工具说明
-    └── validate-context.ps1  断链、漏索引和目录检查
+├── README.md                         人类总入口
+├── AGENTS.md                         AI 协作与事实规则
+├── llms.txt                          AI 最小读取路由
+├── STRUCTURE.md                      结构与写入规范
+├── personal/                         建委本人
+│   ├── README.md
+│   ├── identity.md                   稳定身份与经历
+│   ├── current-focus.md              当前重点与阶段状态
+│   ├── achievements.md               荣誉与代表成果
+│   ├── capabilities.md               能力边界
+│   ├── interests.md                  长期关注方向
+│   ├── toolbox.md                    常用工具入口
+│   └── open-questions.md             跨文件冲突与待确认事实
+├── expression/                       表达、写作与知识讲解
+│   ├── README.md
+│   ├── communication-preferences.md  沟通与去 AI 味偏好
+│   ├── methods/                      按作用命名的可调用方法
+│   ├── tutorial-writing/             教程与学员资料写法
+│   └── source-materials/              外部优秀原始材料与来源
+├── projects/                         工作领域与长期项目
+│   ├── README.md
+│   ├── ai-design/                    AI 设计工作领域
+│   ├── ai-programming/               AI 编程工作领域，含秒哒
+│   ├── ai-video/                     AI 视频工作领域
+│   ├── ai-training/                  AI 培训与讲师工作领域
+│   ├── microcourse/                  微课与教育课件工作领域
+│   ├── paid-community-course/        付费社群课程项目
+│   ├── feishu-efficient-office/      飞书书籍项目与飞书专属规范
+│   ├── inshan-popupiano/             Inshan POPUPIANO 项目
+│   └── computers/                    电脑与本地环境档案
+├── knowledge/                        跨项目认知
+│   ├── README.md
+│   ├── thinking/                     第一性原理与思维方法
+│   └── business-growth.md            商业增长与经营认知
+├── repository/                       仓库治理
+│   ├── README.md
+│   ├── versioned-knowledge-policy.md 动态产品知识治理
+│   └── maintenance/                  校验工具与维护说明
+└── history/                          历史与追溯
+    ├── README.md
+    ├── timeline.md                   跨项目重要里程碑
+    └── archived-projects/            已退出主线的完整项目
 ```
 
-## 三、文件职责与权威顺序
+## 三、一级目录职责
 
-| 文件类型 | 负责什么 | 不负责什么 |
+| 一级目录 | 负责什么 | 不负责什么 |
 |---|---|---|
-| `current.md` | 当前进行中事项、近期业务方向 | 完整履历和历史事件 |
-| `identity.md` | 稳定身份、教育背景、核心能力 | 实时项目进度 |
-| `open-questions.md` | 跨文件冲突和确认动作 | 项目内部普通待办 |
-| 项目 `README.md` | 项目当前口径、状态、边界、入口 | 保存每次变化的全部细节 |
-| `revisions/*.md` | 记录为什么变、旧新差异 | 直接充当当前入口 |
-| `knowledge/*.md` | 可复用知识和经过验证的经验 | 单个项目的临时进度 |
-| `history/timeline.md` | 跨项目重要里程碑 | 每次提交或日常流水账 |
-| `history/archived-projects/` | 已退出主线维护的完整项目资料 | 当前进行中的项目入口 |
-| `references/` | 可直接复用的规范、源码和原始材料 | 当前业务事实 |
+| `personal/` | 建委本人的稳定事实、当前状态、能力和冲突 | 写作方法、项目过程和产品知识 |
+| `expression/` | 怎样表达、解释、写教程和学习优秀案例 | 培训课程设计、微课制作或项目事实 |
+| `projects/` | 工作领域、长期项目、工具经验、案例和迭代 | 与任何项目无关的长期认知 |
+| `knowledge/` | 跨多个项目仍成立的思维与经营认知 | 单个项目的进度、工具版本或客户资料 |
+| `repository/` | 仓库维护、版本治理、校验和安全 | 业务知识正文 |
+| `history/` | 旧项目、旧口径和跨项目里程碑 | 当前事实入口 |
 
-冲突处理遵循 [`AGENTS.md`](./AGENTS.md) 的事实优先级。特别注意：修订记录可能包含已失效口径；原始材料可能比 Markdown 当前版更旧。
+## 四、工作领域与具体项目
 
-## 四、渐进式读取
+`projects/` 下允许两种同级目录：
 
-### 日常读取
+- 工作领域：持续积累一种长期工作的经验，例如 AI 设计、AI 编程、AI 视频、AI 培训、微课。
+- 具体项目：有明确产品、客户、书稿或经营目标，例如付费社群、飞书书籍、Inshan。
 
-```text
-llms.txt
-  → 选择身份 / 当前状态 / 项目 / 知识入口
-  → 读取目标 README 或单个专题文件
-  → 只有任务需要时才进入修订、历史、长素材或源码
-```
+工作领域之间按主要交付物划分，不按“是否使用 AI”或“是否出现课程”划分：
 
-### 默认读取预算
+| 场景 | 正确位置 |
+|---|---|
+| 建委作为讲师开展企业培训、公开课、备课和授课 | `projects/ai-training/` |
+| 为教师制作微课、精品课、参赛课和教育交互课件 | `projects/microcourse/` |
+| 开发网站、应用、自动化或记录秒哒经验 | `projects/ai-programming/` |
+| 制作宣传片、AI 影片或沉淀视频流程 | `projects/ai-video/` |
+| 制作商业视觉、PPT、UI 或设计方法 | `projects/ai-design/` |
 
-- 简单问答：1 个入口文件。
-- 对外简介或事实核对：2-3 个文件，并检查 `open-questions.md`。
-- 项目任务：项目 README + 1-2 个专题文件。
-- 复杂项目修订：项目 README + `revisions/README.md` + 与任务直接相关的修订。
-
-不要为了“完整”自动加载 `all-docs.md`、全部 revisions、整个 history 或源码包。
+同一任务跨领域时，指定一个主归属，其他领域用相对链接引用，不复制两份正文。
 
 ## 五、项目 README 标准
 
-每个项目 README 至少包含：
+每个长期工作领域或项目 README 至少说明：
 
 ```markdown
-# 项目名称
+# 名称
 
-> 状态：进行中 / 已上线 / 暂停 / 已完成
+> 状态：进行中 / 长期沉淀 / 暂停 / 已完成
 > 当前口径确认：YYYY-MM-DD 或“未标注”
-> 索引最后整理：YYYY-MM-DD
 
-## 一句话介绍
-
+## 定位与边界
 ## 当前确认事实
-
 ## 文件索引
-| 文件 | 内容 | 何时读取 |
-
+## AI 调用规则
 ## 待确认事项
-
-## 使用指南
 ```
 
-规则：
+“当前口径确认”表示业务事实何时被确认；“索引最后整理”只表示文档维护时间，两者不能混写。README 保持可快速读取，大量历史和长素材放入专题文件。
 
-- “当前口径确认”表示业务事实何时被确认；“索引最后整理”只表示文档维护时间，两者不能混写。
-- 有方向变化时必须建立 `revisions/`；修订超过 1 个时必须增加 `revisions/README.md`。
-- README 保持可快速读取。大量历史说明、完整方案和长清单放到专题文件，通过索引进入。
+## 六、修订与动态产品
 
-## 六、写入位置
+- 重要方向变化写入 `revisions/YYYY-MM-DD-<slug>.md`，并更新 `revisions/README.md`。
+- 当前 README 只保留最新有效口径，修订记录解释为什么变和旧口径是什么。
+- 秒哒、飞书、Codex、模型、平台 API、价格和界面路径等动态知识必须遵守 [`repository/versioned-knowledge-policy.md`](./repository/versioned-knowledge-policy.md)。
+- 动态事实必须记录适用版本或环境、来源、核验日期和取代关系。
+- 历史不能无痕删除，但不能与当前规则并列成同等有效。
+
+## 七、表达来源与方法提炼
+
+- 原始文章、逐字稿和作者材料进入 `expression/source-materials/<source>/`。
+- 可长期调用的方法进入 `expression/methods/`，按作用命名，不按作者姓名命名。
+- 用户用“参考仓库里的语言表达习惯”等通用语义即可触发方法，不要求记住作者。
+- 只学习叙事、拆解、逻辑和知识传达方式，不复制标志性措辞，不把来源中的事实写成建委事实。
+
+## 八、写入判断
 
 | 新信息 | 写入位置 | 同步动作 |
 |---|---|---|
-| 当前正在做的新事项 | `current.md` | 必要时更新项目 README |
-| 稳定身份或长期能力 | `identity.md` / `knowledge/` | 对外数据有冲突时更新 `open-questions.md` |
-| 新长期项目 | `projects/<name>/README.md` | 更新 `projects/README.md` 和 `llms.txt` |
-| 项目方向变化 | `projects/<name>/revisions/YYYY-MM-DD-*.md` | 更新项目 README 和 `revisions/README.md` |
-| 可复用方法论 | `knowledge/<topic>/` | 更新最近一层 README |
-| 可直接复制的源码/规范 | `references/<package>/` | 更新 `references/README.md` 和调用方索引 |
-| 跨项目重要里程碑 | `history/timeline.md` | 最新日期写在前面 |
-| 已退出主线的完整项目 | `history/archived-projects/<project>/` | 更新 `history/archived-projects/README.md`、`history/timeline.md`，并移出当前项目索引 |
+| 当前重点变化 | `personal/current-focus.md` | 必要时更新项目 README 和时间线 |
+| 稳定身份、能力或荣誉 | `personal/` 对应文件 | 冲突时更新 `personal/open-questions.md` |
+| 新工作领域或长期项目 | `projects/<name>/README.md` | 更新 `projects/README.md` 和 `llms.txt` |
+| 项目方向变化 | 项目 `revisions/` | 更新项目 README 和修订索引 |
+| 项目或工具经验 | 对应项目或工作领域 | 更新最近一层 README |
+| 跨项目思维与经营认知 | `knowledge/` | 保留验证来源或项目链接 |
+| 优秀表达原始材料 | `expression/source-materials/` | 提炼方法时更新 `expression/methods/` |
+| 跨项目重要里程碑 | `history/timeline.md` | 最新日期在前 |
+| 已退出主线项目 | `history/archived-projects/` | 更新归档索引、时间线和 `llms.txt` |
 
-## 七、状态与历史标记
+## 九、渐进式读取
 
-长材料和旧口径必须在文件开头使用清晰标记：
+```text
+llms.txt
+  → 选择 personal / expression / projects / knowledge / repository / history
+  → 读取目标 README
+  → 读取 1-2 个直接相关专题
+  → 只有追溯或核对来源时进入 revisions、history、source-materials
+```
 
-- `当前有效`：可以作为当前事实使用。
-- `历史材料`：仅供追溯，不得覆盖当前 README。
-- `已被取代`：必须指出替代文件或最新修订。
-- `待确认`：不得对外写成确定事实。
-- `参考实现`：可用于执行，但仍需检查适用环境和日期。
+- 简单问答：1 个入口。
+- 对外简介：2-3 个个人文件，并检查待确认事实。
+- 项目任务：项目 README + 1-2 个专题。
+- 复杂修订：项目 README + 修订索引 + 直接相关修订。
 
-## 八、格式与安全
+不要为了完整自动加载全部修订、时间线、原始资料或源码包。
 
-- 文件名和目录名使用 kebab-case；日期化修订使用 `YYYY-MM-DD-slug.md`。
+## 十、格式、安全与提交
+
+- 文件和目录使用 kebab-case；日期化修订使用 `YYYY-MM-DD-slug.md`。
 - Markdown 使用 UTF-8、LF、相对链接和单一 H1。
-- 技术术语可用英文，正文以中文为主。
-- 不写入 API Key、Token、Cookie、密码、私密联系方式或可直接利用的凭证。
-- 二进制原稿可以保留，但 README 必须说明它是当前版、历史版还是仅供打印分享。
-- 不创建无人索引的文件；不创建空目录；不为了分类而制造只有一个句子的文件。
+- 不写入 API Key、Token、Cookie、密码、私密联系方式、内部地址或可直接利用的凭证。
+- 不创建无人索引的文件、空目录或只为分类而存在的一句话文件。
+- 提交前运行 `powershell -ExecutionPolicy Bypass -File repository/maintenance/validate-context.ps1`。
+- 查看 `git status --short` 和差异范围，确认没有无关文件或敏感信息。
+- 推送后验证远端分支和对应文件存在。
 
-## 九、提交前检查
-
-1. 运行 `powershell -ExecutionPolicy Bypass -File scripts/validate-context.ps1`。
-2. 查看 `git status --short`，确认没有无关文件。
-3. 检查新文件是否进入最近一层 README。
-4. 检查是否需要新增修订记录或更新时间线。
-5. 检查文件整理日期是否被误写成事实确认日期。
-6. 推送后再通过远端文件列表或 GitHub 页面确认文件存在。
-
-*最后整理：2026-07-10*
+*最后整理：2026-08-02*

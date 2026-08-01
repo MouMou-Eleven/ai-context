@@ -1,68 +1,71 @@
 # llms.txt — Personal AI Context 最小路由
 
-> 默认只读本文件。根据任务选择 1-3 个入口文件，不要一次性加载整个仓库。
+> 默认只读本文件。先判断任务属于个人、表达、项目、认知、治理还是历史，再读取 1-3 个入口，不一次性加载整个仓库。
 
-## 事实判断规则
+## 事实优先级
 
-- 当前状态看 [`current.md`](./current.md)，稳定身份看 [`identity.md`](./identity.md)。
-- 项目事实先看项目 `README.md`，方向变化再看该项目 `revisions/README.md`。
-- 对外身份、荣誉和数字必须检查 [`open-questions.md`](./open-questions.md)。
-- 历史资料、旧修订、原始素材和 docx 只能用于追溯，不能覆盖当前入口口径。
-- 写入前才读 [`STRUCTURE.md`](./STRUCTURE.md)；纯读取任务不必加载结构规范。
+1. 用户在当前对话中的最新明确确认。
+2. [`personal/open-questions.md`](./personal/open-questions.md) 中尚未解决的冲突。
+3. [`personal/current-focus.md`](./personal/current-focus.md) 的当前状态。
+4. 对应项目 README 和最新有效修订。
+5. [`personal/identity.md`](./personal/identity.md) 等稳定个人档案。
+6. 工作领域知识、跨项目知识和表达方法。
+7. 历史、旧修订、原始材料和二进制附件。
 
-## 常见任务的最小读取包
+## 常见任务
 
-| 任务 | 读取文件 |
+| 任务 | 最小读取包 |
 |---|---|
-| 个人简介、讲师介绍、合作背书 | [`identity.md`](./identity.md) + [`knowledge/achievements.md`](./knowledge/achievements.md) + [`open-questions.md`](./open-questions.md) |
-| 最近在做什么、当前优先级 | [`current.md`](./current.md) |
-| 沟通、写作、交付风格 | [`preferences.md`](./preferences.md)；制作飞书文档时再读 [`references/feishu-doc-style.md`](./references/feishu-doc-style.md) |
-| 某个长期项目 | [`projects/README.md`](./projects/README.md) → 对应项目 `README.md` |
-| 专业能力、工具、知识经验 | [`knowledge/README.md`](./knowledge/README.md) → 对应专题入口 |
-| 追溯某次决策 | 项目 `revisions/README.md` 或 [`history/README.md`](./history/README.md) |
-| 修改仓库结构或写入新资料 | [`AGENTS.md`](./AGENTS.md) + [`STRUCTURE.md`](./STRUCTURE.md) + 目标目录 README |
+| 个人简介、讲师介绍、合作背书 | `personal/identity.md` + `personal/achievements.md` + `personal/open-questions.md` |
+| 最近在做什么、当前优先级 | `personal/current-focus.md` |
+| 能力判断、工具和长期兴趣 | `personal/README.md` → 对应单文件 |
+| 参考仓库里的语言表达习惯 | `expression/README.md` + `expression/communication-preferences.md` + `expression/methods/README.md` |
+| 保姆级教程、经验帖、学员资料 | `expression/tutorial-writing/README.md`；技术难点再读表达方法 |
+| AI 培训、企业培训、公开课、讲师备课和培训课件 | `projects/ai-training/README.md` + `teaching-and-course-design.md` |
+| 教师微课、精品课、参赛课、VR 交互课件 | `projects/microcourse/README.md` |
+| 第一性原理、头脑风暴、个人认知 | `knowledge/thinking/README.md` |
+| 商业增长、自媒体经营、渠道与对标 | `knowledge/business-growth.md` |
 
-## 长期项目路由
+## 项目路由
 
-| 触发词 / 场景 | 首读 | 按需继续读 |
+| 场景 | 首读 | 按需继续读 |
 |---|---|---|
-| 飞书书籍、书稿、第2/3/8章、编辑反馈 | [`projects/feishu-efficient-office/README.md`](./projects/feishu-efficient-office/README.md) | `writing-style-analysis.md` + `revisions/README.md`；原始培训素材才读 `all-docs.md` |
-| Inshan、POPUPIANO、Amazon、独立站、海外电商 | [`projects/inshan-popupiano/README.md`](./projects/inshan-popupiano/README.md) | `revisions/README.md` + 最新方向修订 + `competitive-references.md` |
-| 付费社群、课程研发、AI 编程课程、自媒体引流 | [`projects/paid-community-course/README.md`](./projects/paid-community-course/README.md) | 具体飞书课程资料读 `course-materials-index.md`；课程结构读 `curriculum-design.md`；运营读 `operations-playbook.md`；脚本读 `script-patterns.md`；课程开发/课件设计读 `knowledge/course-design/README.md` |
-| VideoAI、营销视频自动化、OpenClaw、本地 AI Agent、星火映果州、Nibiru、VR 课件 | [`history/archived-projects/README.md`](./history/archived-projects/README.md) | 仅在明确需要历史追溯时进入对应目录；不得作为当前项目口径 |
-| 电脑故障、Windows、网络、VPN、Clash、Codex、CC Switch、Codex++、插件 | [`projects/computers/README.md`](./projects/computers/README.md) | 先确认设备名称；当前电脑读 `desktop-1/README.md`，网络与 Codex 细节再读 `desktop-1/network-and-codex.md` |
+| AI 设计、商业视觉、PPT、UI | `projects/ai-design/README.md` | 对应项目或后续方法文件 |
+| AI 编程、网站、应用、自动化 | `projects/ai-programming/README.md` | 选择工具子目录或方法文件 |
+| 百度秒哒 MIAODA | `projects/ai-programming/miaoda/llms.txt` | 当前专题；历史版本只在追溯时读 |
+| 创意前端、视频逐帧、3D 首屏 | `projects/ai-programming/creative-frontend-prompt-patterns.md` | 原始样例在 `reference-materials/` |
+| AI 视频、宣传片、电影叙事、Seedance | `projects/ai-video/README.md` | 根据片型选择单个专题 |
+| AI 培训、企业培训、公开课、讲师备课、培训课件 | `projects/ai-training/README.md` | `teaching-and-course-design.md` |
+| 微课、精品课、参赛课、教师委托、VR 交互课件 | `projects/microcourse/README.md` | 当前 README；追溯边界时读 `revisions/` |
+| 付费社群、课程产品、自媒体引流 | `projects/paid-community-course/README.md` | 课程结构、运营、脚本或转化文件 |
+| 飞书书稿、编辑反馈、截图 | `projects/feishu-efficient-office/README.md` | `writing-style-analysis.md` + 对应修订 |
+| 飞书文档视觉或多维表格表单 | 飞书书籍项目对应规范文件 | 执行前核验飞书当前能力 |
+| Inshan、POPUPIANO、Amazon、独立站 | `projects/inshan-popupiano/README.md` | 修订索引 + 最新修订 + 竞品参考 |
+| Windows、网络、Codex、Clash、本地工具 | `projects/computers/README.md` | 先确认设备，再读设备 README |
 
-## 知识路由
+## 表达触发规则
 
-| 场景 | 首读 |
-|---|---|
-| AI 编程工具 | [`knowledge/ai-programming/README.md`](./knowledge/ai-programming/README.md) |
-| 创意前端、滚动叙事、视频逐帧、3D 首屏、空间画廊提示词 | [`knowledge/ai-programming/creative-frontend-prompt-patterns.md`](./knowledge/ai-programming/creative-frontend-prompt-patterns.md) |
-| 百度秒哒 MIAODA | [`knowledge/ai-programming/miaoda/llms.txt`](./knowledge/ai-programming/miaoda/llms.txt) |
-| AI 企业宣传片、电影感视频、分镜 | [`knowledge/ai-video/README.md`](./knowledge/ai-video/README.md) |
-| 商业增长、自媒体经营、产品信息化、渠道、信任、对标拆解 | [`knowledge/business-growth.md`](./knowledge/business-growth.md) |
-| 课程、文章、技术科普、视频口播稿、减少 AI 味 | [`knowledge/tutorial-writing/README.md`](./knowledge/tutorial-writing/README.md) → [`references/writing-style/feitian-shanke/style-profile.md`](./references/writing-style/feitian-shanke/style-profile.md) |
-| 判断外部作者风格是否适合当前交付物 | [`knowledge/writing-style/README.md`](./knowledge/writing-style/README.md) |
-| 课程开发、课件设计、讲师备课、教学活动 | [`knowledge/course-design/README.md`](./knowledge/course-design/README.md) |
-| 微课、教育课件、哞哞微课 | [`knowledge/microcourse.md`](./knowledge/microcourse.md) |
-| 工具清单、飞书表单图片选项经验 | [`knowledge/tools.md`](./knowledge/tools.md) |
-| Windows Junction 迁移与卸载清理 | [`knowledge/windows-junction-migration.md`](./knowledge/windows-junction-migration.md) |
+- “参考仓库里的语言表达习惯”“参考我沉淀的讲解经验”“减少 AI 味”均进入 `expression/`。
+- 不需要用户说出飞天闪客或其他作者姓名。作者名只用于来源追溯。
+- 原始逐字稿默认不读取；先使用已经提炼的 `expression/methods/`。
+- 培训课程先服从 AI 培训规则；教师微课先服从微课规则；社群口播先服从社群项目规则；书稿先服从书稿项目规则。
+- 只出现“课程”或“课件”且上下文无法判断服务对象时，不混合加载 AI 培训与微课，先确认对象和交付物。
 
-## 重点消歧：百度秒哒 vs 飞书妙搭
+## 动态产品规则
 
-| 线索 | 路由 |
-|---|---|
-| 百度秒哒、MIAODA、miaoda.cn、appmiaoda.com、百度智能云、Supabase 风格后端 | [`knowledge/ai-programming/miaoda/`](./knowledge/ai-programming/miaoda/) |
-| 飞书妙搭、飞书 Spark、miaoda.feishu.cn、飞书生态低代码 | 当前尚无独立知识包；不要写进百度秒哒目录 |
-| 只说“秒哒 / 妙搭 / miǎodā” | 先问清楚，禁止猜测 |
+- 秒哒、飞书、Codex、AI 模型、API、价格和界面路径都属于动态知识。
+- 当前问题先读当前入口并重新核验，不能从历史版本时间线直接回答。
+- 新功能替代旧功能时，当前入口只保留新口径，旧口径进入修订并写明取代关系。
+- 完整规则见 `repository/versioned-knowledge-policy.md`。
+
+## 历史与归档
+
+VideoAI、OpenClaw Agent 和星火映果州 VR 课件位于 `history/archived-projects/`。只有明确追溯旧项目时读取，不得当成当前项目。
 
 ## 默认不要读取
 
-- `projects/feishu-efficient-office/all-docs.md`：历史培训资料摘要，不是当前事实库。
-- 全部 `revisions/*.md`：先读 `revisions/README.md`，只选与任务相关的修订。
-- `history/timeline.md`：只有追溯历史时读取。
-- `references/` 源码和 `.docx`：只有执行或核对原始材料时读取。
-
-## 更新本文件的条件
-
-只有新增顶层入口、长期项目、重要知识包或高风险消歧时更新本文件。普通项目细节只更新对应 README。
+- 全部 `revisions/*.md`，先读修订索引。
+- `history/timeline.md`，除非追溯历史。
+- `expression/source-materials/` 原始逐字稿。
+- `reference-materials/` 原始提示词和源码，除非执行方案明确需要。
+- 飞书书稿 `all-docs.md` 和历史 `.docx`。

@@ -12,8 +12,9 @@
 | 类型 | 归属 | 作用 |
 |---|---|---|
 | 社群产品与运营 | `projects/paid-community-course/` | 记录产品、用户、课程主题、自媒体承接、招生与运营 |
-| 写作表达参考 | `knowledge/writing-style/` + `references/writing-style/` | 记录外部作者的表达逻辑、技术科普叙事和调用边界 |
-| 课程开发与课件设计 | `knowledge/course-design/` | 记录建委作为 AI 讲师可跨项目复用的课程与课件规则 |
+| 写作表达参考 | `expression/` | 记录沟通偏好、外部优秀来源和提炼后的表达、讲解方法 |
+| AI 培训与培训课件 | `projects/ai-training/` | 记录建委作为 AI 讲师可跨培训项目复用的备课、授课与课件规则 |
+| 微课工作 | `projects/microcourse/` | 独立记录教师微课、精品课、参赛课和教育交互课件业务 |
 
 ## 关键边界
 

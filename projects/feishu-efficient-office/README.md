@@ -83,6 +83,8 @@
 | [`revisions/2026-07-19-ch8-case-dedup-and-quality-audit.md`](./revisions/2026-07-19-ch8-case-dedup-and-quality-audit.md) | 第8章8.5完整案例去重、表格与正文分工、示例Base字段对齐和案例写作硬规则 | **撰写或修改任何章节的完整案例前必读** |
 | [`revisions/2026-07-19-ch8-automation-depth-expansion.md`](./revisions/2026-07-19-ch8-automation-depth-expansion.md) | 第8章官方自动化资料核验、深度扩写、图8-4至图8-6来源、截图清单变化和最终校验 | **继续扩写第8章、替换截图或导出Word前必读** |
 | `writing-style-analysis.md` | 建委写作风格说明书（给AI的风格Prompt） | **生成任何书稿内容前必读**，确保风格一致 |
+| [`feishu-doc-style.md`](./feishu-doc-style.md) | 飞书文档的视觉结构、callout、图表和时间落款偏好 | 创建或改写飞书文档时读取；出版书稿仍以出版规则优先 |
+| [`feishu-base-form-experience.md`](./feishu-base-form-experience.md) | 多维表格表单选项表达、二维码图片和 API 能力边界 | 创建或调整飞书表单时读取 |
 | `all-docs.md` | 34 篇 AIGC 培训文档的抓取摘要与来源索引（仓库文件约 1 万字符，不是 20 万字全文） | 需要定位历史培训素材和来源文档时读取；不得当作当前事实库 |
 | `ch4-editor-feedback.md` | 第4章编辑反馈汇总+修改方案+章节交叉分析 | **改稿前必读**，了解编辑诉求和与其他章节的边界 |
 | `ch4-v3-editor-feedback.md` | 第4章 v3 修订稿编辑反馈汇总——标题压缩、出版书面语、图表编号、图文匹配、截图清晰度、术语一致等精修规则 | **第4章二次改稿前必读**，尤其处理截图、图号、读者视角正文时读取 |

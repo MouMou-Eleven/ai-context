@@ -1,30 +1,37 @@
-# Projects — 长期项目索引
+# Projects — 工作领域与长期项目
 
-> 先从本页确定项目，再进入项目 README。状态来自仓库当前记录，不等于所有里程碑都已在当天重新核实。
+> 项目按“长期工作领域”和“具体长期项目”两级组织。先判断属于哪类工作，再进入具体项目或工具，不把所有经验平铺在同一层。
 
-## 项目索引
+## 长期工作领域
 
-| 项目 | 状态 | 当前口径 / 最近记录 | 一句话介绍 | 首读入口 |
-|---|---|---|---|---|
-| 电脑环境档案 | 持续维护 | 台式电脑1 于 2026-07-23 核验 | 按设备记录 Windows、网络、代理、Codex 与插件故障，供后续 AI 排查前首读 | [`computers/README.md`](./computers/README.md) |
-| 飞书高效办公（书稿） | 进行中 | 2026-07-07 | 建委负责新版第2、3、8章，正文在飞书，仓库保存写作规范和修订记录 | [`feishu-efficient-office/README.md`](./feishu-efficient-office/README.md) |
-| 付费社群课程研发 | 当前重点 | 产品口径 2026-07-17；维护边界 2026-08-01 | 499 元 / 年 AI 超级个体陪跑社群年度会员；围绕课程研发、自媒体内容与长期知识沉淀持续维护 | [`paid-community-course/README.md`](./paid-community-course/README.md) |
-| Inshan POPUPIANO | 进行中 | 业务口径 2026-05-24；`current.md` 于 2026-07-08 仍列为进行中 | 授权经销 + 自建独立站/Amazon 店铺 + 内容代运营 | [`inshan-popupiano/README.md`](./inshan-popupiano/README.md) |
+| 领域 | 状态 | 包含什么 | 首读入口 |
+|---|---|---|---|
+| AI 设计 | 持续沉淀 | 商业视觉、平面、PPT、UI、AI 辅助设计项目与复盘 | [`ai-design/README.md`](./ai-design/README.md) |
+| AI 编程 | 持续沉淀 | 网站、应用、自动化工具、百度秒哒、创意前端和开发经验 | [`ai-programming/README.md`](./ai-programming/README.md) |
+| AI 视频 | 持续沉淀 | 企业宣传片、电影叙事、Seedance、分镜、提示词和制作复盘 | [`ai-video/README.md`](./ai-video/README.md) |
+| AI 培训 | 当前高频 | 企业培训、公开课、讲师备课、培训课程、培训课件和授课复盘 | [`ai-training/README.md`](./ai-training/README.md) |
+| 微课 | 常态业务 | 教师微课、精品课、参赛课、VR 交互课件、哞哞微课和教育案例 | [`microcourse/README.md`](./microcourse/README.md) |
 
-已归档项目见 [`history/archived-projects/README.md`](../history/archived-projects/README.md)。归档项目不得作为当前主线项目读取，除非任务明确需要追溯。
+## 具体长期项目
 
-## AI 使用规则
+| 项目 | 状态 | 当前口径 | 首读入口 |
+|---|---|---|---|
+| 付费社群课程研发 | 当前重点 | 499 元 / 年 AI 超级个体陪跑社群；课程、自媒体、运营和转化持续维护 | [`paid-community-course/README.md`](./paid-community-course/README.md) |
+| 《飞书高效办公》书稿 | 进行中 | 建委负责新版第2、3、8章；仓库保存书稿规则、编辑反馈和修订 | [`feishu-efficient-office/README.md`](./feishu-efficient-office/README.md) |
+| Inshan POPUPIANO | 进行中，状态需复核 | 授权经销 + 自建独立站/Amazon 店铺 + 内容代运营 | [`inshan-popupiano/README.md`](./inshan-popupiano/README.md) |
 
-- 项目 README 是当前入口；出现方向变化时再读 `revisions/README.md`。
-- 不要因为某个项目状态为“进行中”，就把数月前的里程碑、价格或技术栈当成今天仍已核实。
-- 只读取当前任务需要的专题文件。长方案、全部修订和二进制附件不默认加载。
-- 当前项目列表与优先级还要结合根目录 [`current.md`](../current.md)。
+## 环境与设备档案
 
-## 新增项目流程
+| 档案 | 作用 | 首读入口 |
+|---|---|---|
+| 电脑环境 | Windows、网络、代理、Codex、本地工具和设备级排障 | [`computers/README.md`](./computers/README.md) |
 
-1. 先读根目录 [`STRUCTURE.md`](../STRUCTURE.md)。
-2. 创建 `projects/<kebab-case>/README.md`，写当前口径、文件索引、待确认事项和使用指南。
-3. 在本页增加项目入口；重要长期项目同时更新根 `llms.txt`。
-4. 发生方向变化时创建 `revisions/YYYY-MM-DD-<slug>.md`，并维护 `revisions/README.md`。
+## 项目与经验的关系
 
-*索引最后整理：2026-08-01*
+- 项目 README 保存当前事实、边界、进度和文件路由。
+- 项目执行中产生的案例、技巧、工具经验先留在对应项目。
+- 同一经验在多个项目重复验证后，可以提炼到工作领域或 `knowledge/`，原项目保留来源链接，不复制两份正文。
+- 重大方向变化进入 `revisions/YYYY-MM-DD-<slug>.md`，当前入口只保留最新有效口径。
+- 已退出主线的项目见 [`../history/archived-projects/README.md`](../history/archived-projects/README.md)。
+
+*索引最后整理：2026-08-02*

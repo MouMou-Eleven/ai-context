@@ -22,5 +22,6 @@
 - [`desktop-1/README.md`](./desktop-1/README.md)：台式电脑1当前入口、配置摘要和操作边界。
 - [`desktop-1/network-and-codex.md`](./desktop-1/network-and-codex.md)：网络、Clash、CC Switch、Codex 上下文与插件排障细节。
 - [`desktop-1/revisions/README.md`](./desktop-1/revisions/README.md)：台式电脑1的重要修订索引。
+- [`windows-junction-migration.md`](./windows-junction-migration.md)：本机 AppData Junction 迁移、安全清理和卸载边界。
 
 *文件最后整理：2026-07-23；设备事实最后核验：2026-07-23*

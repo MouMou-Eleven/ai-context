@@ -5,7 +5,7 @@
 > 整理于 2026年5月10日，基于 9 篇 AIGC 培训文档（约 20 万字）的风格提炼。
 > 这里的“约 20 万字”指当时用于分析的原始来源文档总量；仓库内 `all-docs.md` 只是 34 篇资料的摘要与来源索引，不是这些原文的完整副本。
 
-> **📌 关联文档**：本文档是《飞书高效办公》书籍项目的写作风格分析。通用飞书文档创建风格偏好见 [preferences.md](../../preferences.md#飞书文档创建风格偏好)。
+> **关联文档**：本文档只负责《飞书高效办公》书稿的写作规则。通用沟通偏好见 [`../../expression/communication-preferences.md`](../../expression/communication-preferences.md)，飞书文档视觉偏好见 [`feishu-doc-style.md`](./feishu-doc-style.md)。
 
 ---
 

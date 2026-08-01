@@ -25,9 +25,9 @@
 | 内容 | 放在哪里 | 什么时候调用 |
 |---|---|---|
 | 产品定位、课程主题、用户、运营、招生、自媒体承接 | 本项目目录 | 当前任务与 AI 超级个体陪跑社群有关时 |
-| 自媒体表达、作者风格、技术科普叙事 | [`../../knowledge/writing-style/README.md`](../../knowledge/writing-style/README.md) | 写文章、技术讲解或口播时，按交付物选择 |
-| 课程开发、课件设计、讲师与学员资料边界 | [`../../knowledge/course-design/README.md`](../../knowledge/course-design/README.md) | 设计课程、课件、教学活动或讲师交付时 |
-| 面向学员的保姆级教程写法 | [`../../knowledge/tutorial-writing/README.md`](../../knowledge/tutorial-writing/README.md) | 写给学员或普通读者的步骤教程时 |
+| 自媒体表达、语言逻辑、技术科普叙事 | [`../../expression/README.md`](../../expression/README.md) | 写文章、技术讲解或口播时，按交付物选择 |
+| AI 讲师备课、培训课程、培训课件与受众边界 | [`../ai-training/README.md`](../ai-training/README.md) | 为本社群设计培训课程、课件、教学活动或讲师交付时 |
+| 面向学员的保姆级教程写法 | [`../../expression/tutorial-writing/README.md`](../../expression/tutorial-writing/README.md) | 写给学员或普通读者的步骤教程时 |
 
 课程设计只适用于课程相关交付。外部作者的表达方法只影响解释和叙事，不自动改变课程设计、销售话术或任何其他写作任务。
 
@@ -75,8 +75,9 @@
 - 如果任务是查找具体课程资料、飞书教程或某篇正文的最新修订，继续读 `course-materials-index.md`，不要只凭仓库记忆判断飞书内容。
 - 如果任务是写直播方案、私聊转化、社群运营或 30 天执行计划，继续读 `operations-playbook.md`。
 - 如果任务是写短视频脚本、账号定位、内容选题、流量转化路径，继续读 `media-growth.md`。
-- 如果任务需要判断某位博主的表达方法是否适合当前内容，继续读 [`../../knowledge/writing-style/README.md`](../../knowledge/writing-style/README.md)；不要把任何一种外部风格设为全部文稿的默认语气。
-- 如果任务是课程大纲、讲师备课、课件设计、教学活动或课程复盘，继续读 [`../../knowledge/course-design/README.md`](../../knowledge/course-design/README.md)。具体规则尚未确认时，按建委当次要求执行，不自行虚构固定标准。
+- 如果任务需要调用仓库沉淀的语言表达和知识讲解方法，继续读 [`../../expression/README.md`](../../expression/README.md)；不要把任何一种外部来源设为全部文稿的默认语气。
+- 如果任务是本社群的课程大纲、讲师备课、培训课件、教学活动或课程复盘，继续读 [`../ai-training/README.md`](../ai-training/README.md)。AI 培训提供通用讲师方法，本项目 README 和课程文件决定具体产品事实。
+- 本社群的培训课程不等于教师微课业务；只有任务明确涉及教师微课、精品课、参赛课或教育交互课件时，才进入 [`../microcourse/README.md`](../microcourse/README.md)。
 - 如果任务涉及口播结构、PREP、SCQA、爆款脚本、完播率、故事性、信息密度、推力结构，继续读 `script-patterns.md`。
 - 如果任务涉及评论区引导、领取资料、进群交流、从短视频导向社群或课程，继续读 `conversion-path.md`。
 - 需要追溯旧产品名、定位和营销原则时，先读 `revisions/README.md`，只选择相关修订。
