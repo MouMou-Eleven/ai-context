@@ -4,6 +4,17 @@
 
 ## 2026
 
+### 2026-08-02
+
+- 将仓库重组为 `personal/`、`expression/`、`projects/`、`knowledge/`、`repository/`、`history/` 六个一级入口，根目录只保留 README、AGENTS、llms 和结构规范。身份、当前状态、沟通偏好和待确认事实迁入各自树中，原始参考材料跟随使用领域保存。
+- 建委明确纠正：微课是与 AI 设计、AI 编程、AI 视频、AI 培训并列的独立工作领域，不属于 AI 培训。当前入口为 [`projects/microcourse/`](../projects/microcourse/README.md)，AI 培训入口为 [`projects/ai-training/`](../projects/ai-training/README.md)。
+- 新增动态产品知识治理规则和修订机制，秒哒的 `version-features.md` 明确为历史时间线，当前能力必须回到产品 README、当前专题和最新官方或实际环境核验。
+
+### 2026-08-01
+
+- 建委确认 VideoAI、星火映果州 VR 交互课件和 OpenClaw Agent 后续提及与持续维护概率较低，退出当前主线项目列表，完整资料移入 [`history/archived-projects/`](./archived-projects/README.md) 保留追溯。
+- 明确付费社群课程研发为当前重点项目。围绕该项目，后续分别沉淀自媒体与写作表达参考，以及建委作为 AI 讲师可跨项目复用的课程开发、课件设计规则；两类知识独立维护，按任务调用，不互相默认套用。
+
 ### 2026-07-10
 
 - 对 `ai-context` 进行全仓库架构审计与入口升级：新增 `AGENTS.md`、`open-questions.md`、`knowledge/README.md`、`history/README.md`、`references/README.md` 和维护校验脚本，重构根 README、`llms.txt` 与 `STRUCTURE.md` 的渐进式读取规则。
@@ -28,7 +39,7 @@
 ### 2026-05-24
 
 **01:33:29+08:00** `1779557609951`
-- 在 [`knowledge/microcourse.md`](../knowledge/microcourse.md) 中新增「业务官网：哞哞微课」章节，沉淀两件事：
+- 在当时的 `knowledge/microcourse.md`（现已迁移到 [`projects/microcourse/README.md`](../projects/microcourse/README.md)）中新增「业务官网：哞哞微课」章节，沉淀两件事：
   - 平台事实：建委的微课设计业务有了对外官网「**哞哞微课 AI 教育案例展示平台**」（用 AI 编程工具自建，含管理后台）。**注意定位**：这不是 `projects/` 下的独立编程项目，而是微课业务本身的展示门面/官网入口
   - **案例描述写作规范**（重要约定）：每个新案例的简介必须遵循一段话/三要素/技术加粗/200 字内/不分点的格式，并附两条已沉淀范例（《大班健康活动：闽超小将》《快乐购物小超市》）作为模板对照
 - 目的：建委后续上传新案例时，AI 看到本档案即可直接按规范生成对应简介，无需反复口头描述要求
@@ -37,7 +48,7 @@
 
 **06:49:33+08:00** `1779403773263`
 - 澄清「VR + AI + 交互教育」的归位：经建委本人口述确认，它**不是独立平台/项目**，而是微课设计业务下的 VR 交互课件案例之一
-- 新建 [`knowledge/microcourse.md`](../knowledge/microcourse.md) 系统记录「微课设计业务」全景（建委的常态业务之一，给老师做参赛微课），含微课形态矩阵：精品课 / PPT 微课 / 万彩微课 / AI 视频微课 / VR 交互课件 / Coze 智能体微课 / VBA 制作 PPT
+- 新建当时的 `knowledge/microcourse.md`（现为 [`projects/microcourse/README.md`](../projects/microcourse/README.md)）系统记录「微课设计业务」全景（建委的常态业务之一，给老师做参赛微课），含微课形态矩阵：精品课 / PPT 微课 / 万彩微课 / AI 视频微课 / VR 交互课件 / Coze 智能体微课 / VBA 制作 PPT
 - 修正 2026-05-21 条目中「⚠️ 缺口」标注为「✅ 已澄清」
 
 **06:38:59+08:00** `1779403139970`
@@ -50,12 +61,12 @@
 **06:07:55+08:00** `1779401275020`
 - 重构 `knowledge/` 目录：新增 `ai-programming/` 大类子目录，将原 `knowledge/miaoda/` 整体迁移到 `knowledge/ai-programming/miaoda/`（git mv 保留历史）；为后续 Cursor / Claude Code / v0 等 AI 编程类工具实战经验预留同级位置
 - 在 `knowledge/ai-programming/miaoda/` 下补充 4 个新文档（事实均经百度官方文档核验）：
-  - [`disambiguation.md`](../knowledge/ai-programming/miaoda/disambiguation.md)：百度秒哒 MIAODA 与飞书妙搭 Spark 同名产品辨析
-  - [`version-features.md`](../knowledge/ai-programming/miaoda/version-features.md)：26 年版本节点速查（V3.0 → V1.3 倒序）
-  - [`publish-channels.md`](../knowledge/ai-programming/miaoda/publish-channels.md)：4 种发布渠道能力边界（含微信小程序 web-view 限制：禁付款/禁朋友圈/禁文件下载/域名白名单）
-  - [`skill-as-callable.md`](../knowledge/ai-programming/miaoda/skill-as-callable.md)：V2.5 反向能力——秒哒打包为 Skill 被 OpenClaw / Claude Code 调用
+  - [`disambiguation.md`](../projects/ai-programming/miaoda/disambiguation.md)：百度秒哒 MIAODA 与飞书妙搭 Spark 同名产品辨析
+  - [`version-features.md`](../projects/ai-programming/miaoda/version-features.md)：26 年版本节点速查（V3.0 → V1.3 倒序）
+  - [`publish-channels.md`](../projects/ai-programming/miaoda/publish-channels.md)：4 种发布渠道能力边界（含微信小程序 web-view 限制：禁付款/禁朋友圈/禁文件下载/域名白名单）
+  - [`skill-as-callable.md`](../projects/ai-programming/miaoda/skill-as-callable.md)：V2.5 反向能力——秒哒打包为 Skill 被 OpenClaw / Claude Code 调用
 - 同步更新 [`STRUCTURE.md`](../STRUCTURE.md)：在结构图与结构规则中加入 `knowledge/<大类>/<工具>/` 三层模式说明
-- 同步更新 [`knowledge/ai-programming/miaoda/README.md`](../knowledge/ai-programming/miaoda/README.md) 索引：从 5 行扩到 9 行覆盖全部新文档
+- 同步更新当时的 `knowledge/ai-programming/miaoda/README.md`（现为 [`projects/ai-programming/miaoda/README.md`](../projects/ai-programming/miaoda/README.md)）索引：从 5 行扩到 9 行覆盖全部新文档
 - 维护原则：现有 6 个 miaoda 高质量文件（platform-basics / skill-development / pitfalls / prompt-patterns / case-yungouos-jsapi / 旧 README）仅 README.md 作为索引追加新条目，其余实质内容未改动
 
 ### 2026-05-21
@@ -64,9 +75,9 @@
 - 受邀向「万融汇金 OPC 社区」展厅提供个人 & 公司展示资料（OPC 大赛一等奖后续延伸合作；展厅装修中，需展示十一创公司介绍 + 个人简介 + 代表案例）
 - 整理输出展厅资料 Word 文档：[`万融汇金OPC社区展厅-十一创动画科技有限公司展示资料.docx`](f:/桌面文件/万融汇金OPC社区展厅-十一创动画科技有限公司展示资料.docx)（本地，未入库）
 - 展厅展示的代表案例选定为四类：① VideoAI（AI 编程落地）② VR + AI + 交互教育平台 ③ AI 视频创作 ④ AI 设计
-- ✅ 2026-05-22 澄清：「VR + AI + 交互教育」不是独立平台/项目，而是建委微课设计业务下的 VR 交互课件案例之一。已新建 [`knowledge/microcourse.md`](../knowledge/microcourse.md) 系统化记录微课业务全景（精品课/PPT 微课/万彩微课/AI 视频微课/VR 交互课件/Coze 智能体微课/VBA 制作 PPT 等形态），原"projects/ 下尚无 VR + AI + 交互教育平台"的缺口标注作废
-- 副产物：沉淀「对外简练版个人介绍」模板（聊天侧产出，含一句话定位「用 AI 帮企业把想法变成产品，把培训变成产值」）→ 后续可考虑迁入 `identity.md` 或新建 `pitch.md`
-- 关联引用：公司/个人/荣誉信息全部在 [`identity.md`](../identity.md) 与 [`knowledge/achievements.md`](../knowledge/achievements.md) 已有；OPC 大赛获奖见下方 2026-05-08 条目
+- ✅ 2026-05-22 澄清：「VR + AI + 交互教育」不是独立平台/项目，而是建委微课设计业务下的 VR 交互课件案例之一。该业务现由 [`projects/microcourse/README.md`](../projects/microcourse/README.md) 系统记录，原“projects/ 下尚无 VR + AI + 交互教育平台”的缺口标注作废。
+- 副产物：沉淀「对外简练版个人介绍」模板（聊天侧产出，含一句话定位「用 AI 帮企业把想法变成产品，把培训变成产值」）→ 后续可考虑迁入 `personal/identity.md` 或新建个人介绍专题。
+- 关联引用：公司、个人与荣誉信息现归入 [`personal/identity.md`](../personal/identity.md) 与 [`personal/achievements.md`](../personal/achievements.md)；OPC 大赛获奖见下方 2026-05-08 条目。
 
 ### 2026-05-08 ~ 2026-05-09
 
