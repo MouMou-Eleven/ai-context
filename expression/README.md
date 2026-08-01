@@ -8,6 +8,7 @@
 
 | 入口 | 内容 | 何时读取 |
 |---|---|---|
+| [`trigger-rules.md`](./trigger-rules.md) | 自然语言触发词、业务词和表达词的组合调用规则 | 判断“语言风格、自媒体、培训、微课”等说法应读取什么时 |
 | [`communication-preferences.md`](./communication-preferences.md) | 沟通语气、自然表达、去 AI 味和文字选项偏好 | 任何需要生成对外文字或长期协作时 |
 | [`tutorial-writing/README.md`](./tutorial-writing/README.md) | 面向普通人的教程、经验帖、学员资料和操作说明 | 写保姆级教程或学员正文时 |
 | [`methods/README.md`](./methods/README.md) | 已从多个优秀案例中提炼、可直接调用的表达与讲解方法 | 用户要求参考仓库里的表达习惯、讲解经验或写作逻辑时 |
@@ -17,6 +18,9 @@
 
 用户出现以下表达时，不需要再追问某位作者姓名，默认读取本目录：
 
+- “参考我 GitHub 仓库里的语言风格。”
+- “参考语言表达习惯。”
+- “参考语言类案例。”
 - “参考仓库里的语言表达习惯。”
 - “按我沉淀的表达和讲解经验来写。”
 - “减少 AI 味，讲得像人一点。”
@@ -26,11 +30,14 @@
 默认读取顺序：
 
 ```text
-communication-preferences.md
+trigger-rules.md
+→ communication-preferences.md
 → methods/README.md
 → 选择与任务匹配的一种方法
 → 只有需要核对来源时才进入 source-materials/
 ```
+
+当表达词与“自媒体文案、培训学员、AI 培训、微课”等领域词同时出现时，按 [`trigger-rules.md`](./trigger-rules.md) 组合读取，不让某一种语言风格覆盖业务规则。
 
 ## 按交付物选择
 

@@ -33,6 +33,7 @@ ai-context/
 │   └── open-questions.md             跨文件冲突与待确认事实
 ├── expression/                       表达、写作与知识讲解
 │   ├── README.md
+│   ├── trigger-rules.md              自然语言触发与组合调用
 │   ├── communication-preferences.md  沟通与去 AI 味偏好
 │   ├── methods/                      按作用命名的可调用方法
 │   ├── tutorial-writing/             教程与学员资料写法
@@ -124,6 +125,7 @@ ai-context/
 - 原始文章、逐字稿和作者材料进入 `expression/source-materials/<source>/`。
 - 可长期调用的方法进入 `expression/methods/`，按作用命名，不按作者姓名命名。
 - 用户用“参考仓库里的语言表达习惯”等通用语义即可触发方法，不要求记住作者。
+- “语言风格、语言表达习惯、语言类案例”等表达词可以与“自媒体、AI 培训、微课”等领域词组合，详细规则以 `expression/trigger-rules.md` 为准。
 - 只学习叙事、拆解、逻辑和知识传达方式，不复制标志性措辞，不把来源中的事实写成建委事实。
 
 ## 八、写入判断

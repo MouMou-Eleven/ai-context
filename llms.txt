@@ -19,7 +19,7 @@
 | 个人简介、讲师介绍、合作背书 | `personal/identity.md` + `personal/achievements.md` + `personal/open-questions.md` |
 | 最近在做什么、当前优先级 | `personal/current-focus.md` |
 | 能力判断、工具和长期兴趣 | `personal/README.md` → 对应单文件 |
-| 参考仓库里的语言表达习惯 | `expression/README.md` + `expression/communication-preferences.md` + `expression/methods/README.md` |
+| 参考 GitHub 仓库语言风格、语言表达习惯、语言类案例 | `expression/trigger-rules.md` + `expression/communication-preferences.md` + `expression/methods/README.md` |
 | 保姆级教程、经验帖、学员资料 | `expression/tutorial-writing/README.md`；技术难点再读表达方法 |
 | AI 培训、企业培训、公开课、讲师备课和培训课件 | `projects/ai-training/README.md` + `teaching-and-course-design.md` |
 | 教师微课、精品课、参赛课、VR 交互课件 | `projects/microcourse/README.md` |
@@ -45,11 +45,14 @@
 
 ## 表达触发规则
 
-- “参考仓库里的语言表达习惯”“参考我沉淀的讲解经验”“减少 AI 味”均进入 `expression/`。
+- “参考我 GitHub 仓库里的语言风格”“参考语言表达习惯”“参考语言类案例”“参考我沉淀的讲解经验”“减少 AI 味”均进入 `expression/`。
 - 不需要用户说出飞天闪客或其他作者姓名。作者名只用于来源追溯。
 - 原始逐字稿默认不读取；先使用已经提炼的 `expression/methods/`。
+- “自媒体文案、自媒体内容、短视频口播、口播脚本、选题”等词触发当前自媒体项目和脚本规则；再按需叠加 `expression/`。
+- “培训学员、培训课程、AI 培训、企业培训、讲师备课、培训课件”等词触发 `projects/ai-training/`；表达词同时出现时叠加 `expression/`。
 - 培训课程先服从 AI 培训规则；教师微课先服从微课规则；社群口播先服从社群项目规则；书稿先服从书稿项目规则。
 - 只出现“课程”或“课件”且上下文无法判断服务对象时，不混合加载 AI 培训与微课，先确认对象和交付物。
+- 完整的近义触发词、组合顺序和歧义处理见 `expression/trigger-rules.md`。
 
 ## 动态产品规则
 
