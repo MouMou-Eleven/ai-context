@@ -4,6 +4,11 @@
 
 ## 2026
 
+### 2026-08-01
+
+- 建委确认 VideoAI、星火映果州 VR 交互课件和 OpenClaw Agent 后续提及与持续维护概率较低，退出当前主线项目列表，完整资料移入 [`history/archived-projects/`](./archived-projects/README.md) 保留追溯。
+- 明确付费社群课程研发为当前重点项目。围绕该项目，后续分别沉淀自媒体与写作表达参考，以及建委作为 AI 讲师可跨项目复用的课程开发、课件设计规则；两类知识独立维护，按任务调用，不互相默认套用。
+
 ### 2026-07-10
 
 - 对 `ai-context` 进行全仓库架构审计与入口升级：新增 `AGENTS.md`、`open-questions.md`、`knowledge/README.md`、`history/README.md`、`references/README.md` 和维护校验脚本，重构根 README、`llms.txt` 与 `STRUCTURE.md` 的渐进式读取规则。

@@ -13,6 +13,8 @@
 | [`microcourse.md`](./microcourse.md) | 微课业务、教育课件形态、案例写法 | 涉及教师、微课、VR/AI 教育时 | 业务入口最后确认见文件头尾 |
 | [`business-growth.md`](./business-growth.md) | 商业增长、自媒体经营、产品信息化、渠道选择、信任闭环与对标拆解 | 做产品营销、内容经营、渠道规划、商业诊断或同行研究时 | 方法于 2026-07-15 整理；平台规则、市场数据和案例结果仍需当前核验 |
 | [`windows-junction-migration.md`](./windows-junction-migration.md) | Windows AppData Junction 迁移与安全清理 | 迁移磁盘、卸载软件、查残留时 | 与本机路径强相关，只用于这台 Windows 设备 |
+| [`writing-style/`](./writing-style/README.md) | 外部作者表达参考的分类、边界与调用规则 | 判断某种写作风格能否用于当前内容时 | 当前已收录飞天闪客技术科普参考 |
+| [`course-design/`](./course-design/README.md) | 作为 AI 讲师的可复用课程开发、课件设计知识入口 | 设计课程、课件或教学活动时 | 具体规则待后续按主题持续沉淀 |
 
 ## 专题知识包
 
@@ -29,4 +31,4 @@
 - 工具版本、价格、平台规则等时效性事实必须写来源和确认日期。
 - 具体源码或可直接复用的原始材料放 `references/`，知识文件只解释为什么和怎么用。
 
-*索引最后整理：2026-07-15*
+*索引最后整理：2026-08-01*

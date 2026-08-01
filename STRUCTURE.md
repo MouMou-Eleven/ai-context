@@ -45,7 +45,8 @@ ai-context/
 │       └── <topic>.md        具体方案、方法、数据或复盘
 ├── history/
 │   ├── README.md             历史入口和使用边界
-│   └── timeline.md           跨项目重要里程碑
+│   ├── timeline.md           跨项目重要里程碑
+│   └── archived-projects/    已归档项目的完整资料与入口
 ├── references/
 │   ├── README.md             规范、源码与外部材料索引
 │   └── <reference-package>/
@@ -65,6 +66,7 @@ ai-context/
 | `revisions/*.md` | 记录为什么变、旧新差异 | 直接充当当前入口 |
 | `knowledge/*.md` | 可复用知识和经过验证的经验 | 单个项目的临时进度 |
 | `history/timeline.md` | 跨项目重要里程碑 | 每次提交或日常流水账 |
+| `history/archived-projects/` | 已退出主线维护的完整项目资料 | 当前进行中的项目入口 |
 | `references/` | 可直接复用的规范、源码和原始材料 | 当前业务事实 |
 
 冲突处理遵循 [`AGENTS.md`](./AGENTS.md) 的事实优先级。特别注意：修订记录可能包含已失效口径；原始材料可能比 Markdown 当前版更旧。
@@ -129,6 +131,7 @@ llms.txt
 | 可复用方法论 | `knowledge/<topic>/` | 更新最近一层 README |
 | 可直接复制的源码/规范 | `references/<package>/` | 更新 `references/README.md` 和调用方索引 |
 | 跨项目重要里程碑 | `history/timeline.md` | 最新日期写在前面 |
+| 已退出主线的完整项目 | `history/archived-projects/<project>/` | 更新 `history/archived-projects/README.md`、`history/timeline.md`，并移出当前项目索引 |
 
 ## 七、状态与历史标记
 

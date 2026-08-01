@@ -28,10 +28,8 @@
 |---|---|---|
 | 飞书书籍、书稿、第2/3/8章、编辑反馈 | [`projects/feishu-efficient-office/README.md`](./projects/feishu-efficient-office/README.md) | `writing-style-analysis.md` + `revisions/README.md`；原始培训素材才读 `all-docs.md` |
 | Inshan、POPUPIANO、Amazon、独立站、海外电商 | [`projects/inshan-popupiano/README.md`](./projects/inshan-popupiano/README.md) | `revisions/README.md` + 最新方向修订 + `competitive-references.md` |
-| 付费社群、课程研发、AI 编程课程、自媒体引流 | [`projects/paid-community-course/README.md`](./projects/paid-community-course/README.md) | 具体飞书课程资料读 `course-materials-index.md`；课程结构读 `curriculum-design.md`；运营读 `operations-playbook.md`；脚本读 `script-patterns.md` |
-| VideoAI、营销视频自动化、成本、协会定价 | [`projects/videoai/README.md`](./projects/videoai/README.md) | 成本读 `cost-analysis.md`；定价读 `pricing-plan-association.md`，使用前先核对文档日期 |
-| OpenClaw、本地 AI Agent | [`projects/openclaw-agent/README.md`](./projects/openclaw-agent/README.md) | 当前仅有入口文件，细节不足时向建委确认 |
-| 星火映果州、Nibiru、VR 课件 | [`projects/xinghuo-ying-guozhou-vr-courseware/README.md`](./projects/xinghuo-ying-guozhou-vr-courseware/README.md) | 交互设计读 `interaction-logic.md` |
+| 付费社群、课程研发、AI 编程课程、自媒体引流 | [`projects/paid-community-course/README.md`](./projects/paid-community-course/README.md) | 具体飞书课程资料读 `course-materials-index.md`；课程结构读 `curriculum-design.md`；运营读 `operations-playbook.md`；脚本读 `script-patterns.md`；课程开发/课件设计读 `knowledge/course-design/README.md` |
+| VideoAI、营销视频自动化、OpenClaw、本地 AI Agent、星火映果州、Nibiru、VR 课件 | [`history/archived-projects/README.md`](./history/archived-projects/README.md) | 仅在明确需要历史追溯时进入对应目录；不得作为当前项目口径 |
 | 电脑故障、Windows、网络、VPN、Clash、Codex、CC Switch、Codex++、插件 | [`projects/computers/README.md`](./projects/computers/README.md) | 先确认设备名称；当前电脑读 `desktop-1/README.md`，网络与 Codex 细节再读 `desktop-1/network-and-codex.md` |
 
 ## 知识路由
@@ -44,6 +42,8 @@
 | AI 企业宣传片、电影感视频、分镜 | [`knowledge/ai-video/README.md`](./knowledge/ai-video/README.md) |
 | 商业增长、自媒体经营、产品信息化、渠道、信任、对标拆解 | [`knowledge/business-growth.md`](./knowledge/business-growth.md) |
 | 课程、文章、技术科普、视频口播稿、减少 AI 味 | [`knowledge/tutorial-writing/README.md`](./knowledge/tutorial-writing/README.md) → [`references/writing-style/feitian-shanke/style-profile.md`](./references/writing-style/feitian-shanke/style-profile.md) |
+| 判断外部作者风格是否适合当前交付物 | [`knowledge/writing-style/README.md`](./knowledge/writing-style/README.md) |
+| 课程开发、课件设计、讲师备课、教学活动 | [`knowledge/course-design/README.md`](./knowledge/course-design/README.md) |
 | 微课、教育课件、哞哞微课 | [`knowledge/microcourse.md`](./knowledge/microcourse.md) |
 | 工具清单、飞书表单图片选项经验 | [`knowledge/tools.md`](./knowledge/tools.md) |
 | Windows Junction 迁移与卸载清理 | [`knowledge/windows-junction-migration.md`](./knowledge/windows-junction-migration.md) |
