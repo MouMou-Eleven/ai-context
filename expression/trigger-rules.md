@@ -57,6 +57,8 @@ expression/README.md
 → 涉及承接与转化时再读 conversion-path.md
 ```
 
+涉及“成果展示、用户动机、观点和知识怎样结合、知识内容为什么没人看”时，增加读取 `self-media-outcome-and-motivation.md`。
+
 如果用户明确指定了其他项目，自媒体内容优先服从该项目，不自动套用付费社群的产品事实和转化规则。
 
 ## 四、AI 培训类触发词

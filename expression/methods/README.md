@@ -7,6 +7,7 @@
 | 方法 | 解决的问题 | 适用场景 |
 |---|---|---|
 | [`problem-driven-technical-explanation.md`](./problem-driven-technical-explanation.md) | 不从定义硬讲，而是从现象、旧办法和真实问题推导新概念 | 技术科普、AI 概念、课程中的抽象知识、解释型口播 |
+| [`spoken-argument-and-transition.md`](./spoken-argument-and-transition.md) | 用成果、反问、例子和关键词重复完成口语化论证与前后承接 | 短视频口播、直播讲解、演讲稿、观点解释 |
 
 ## 调用规则
 

@@ -7,6 +7,7 @@
 | 来源 | 包含内容 | 提炼去向 |
 |---|---|---|
 | [`feitian-shanke/`](./feitian-shanke/README.md) | 两篇技术科普视频逐字稿、来源说明和使用边界 | [`../methods/problem-driven-technical-explanation.md`](../methods/problem-driven-technical-explanation.md) |
+| [`short-video-outcome-and-motivation/`](./short-video-outcome-and-motivation/README.md) | 两段成果展示型、观点论证型短视频逐字稿 | [`../methods/spoken-argument-and-transition.md`](../methods/spoken-argument-and-transition.md)；自媒体策略进入付费社群项目 |
 
 ## 新增规则
 

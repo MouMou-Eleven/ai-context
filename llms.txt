@@ -25,6 +25,7 @@
 | 教师微课、精品课、参赛课、VR 交互课件 | `projects/microcourse/README.md` |
 | 第一性原理、头脑风暴、个人认知 | `knowledge/thinking/README.md` |
 | 商业增长、自媒体经营、渠道与对标 | `knowledge/business-growth.md` |
+| 成果展示、用户动机、观点与知识怎样结合 | `projects/paid-community-course/self-media-outcome-and-motivation.md` + `expression/methods/spoken-argument-and-transition.md` |
 
 ## 项目路由
 
