@@ -12,6 +12,7 @@
 | [`communication-preferences.md`](./communication-preferences.md) | 沟通语气、自然表达、去 AI 味和文字选项偏好 | 任何需要生成对外文字或长期协作时 |
 | [`tutorial-writing/README.md`](./tutorial-writing/README.md) | 面向普通人的教程、经验帖、学员资料和操作说明 | 写保姆级教程或学员正文时 |
 | [`methods/README.md`](./methods/README.md) | 已从多个优秀案例中提炼、可直接调用的表达与讲解方法 | 用户要求参考仓库里的表达习惯、讲解经验或写作逻辑时 |
+| [`revisions/README.md`](./revisions/README.md) | 表达路由、体裁边界和方法调用规则的重要修订 | 需要追溯规则为什么变化时 |
 | [`source-materials/README.md`](./source-materials/README.md) | 外部作者逐字稿、原始文章和来源说明 | 需要核对方法来源、语句节奏或补充新案例时 |
 
 ## 默认触发语义
@@ -49,6 +50,20 @@ trigger-rules.md
 | 普通文章、报告、说明 | 沟通偏好 + 对应方法 | 不强制套用短视频或课程结构 |
 | 飞书书稿 | 飞书书籍项目的专属规则 | 不自动叠加本目录全部方法 |
 | 招生海报、私聊成交 | 对应项目运营规则 | 不用长篇科普节奏拖慢转化 |
+
+## 体裁边界与优先级
+
+“写入飞书文档”只说明交付平台，不等于“写飞书书稿”。判断表达规则时，必须先确认交付物和用途：
+
+| 交付物 | 主规则 | 可叠加的表达方法 |
+|---|---|---|
+| 出版社书稿 | `projects/feishu-efficient-office/` 的书稿规则 | 仅按书稿需要叠加，不能外溢到日常文章 |
+| 普通文章、技术科普、经验帖 | `expression/` 通用规则 | `communication-preferences.md` + 匹配的 `methods/` |
+| 自媒体文案、口播、公众号内容 | 自媒体对应项目规则 | `expression/` + `spoken-argument-and-transition.md` 等 |
+| AI 培训、讲师稿、培训课件 | `projects/ai-training/` | 按需叠加 `expression/` 方法 |
+| 教师微课、精品课、参赛课 | `projects/microcourse/` | 按需叠加 `expression/` 方法 |
+
+飞书只是承载内容的工具。除非用户明确说“飞书书籍”“出版社书稿”或指定书稿章节，否则不得因为出现飞书链接就读取或套用 `projects/feishu-efficient-office/writing-style-analysis.md`。如果用户要求参考飞天闪客等来源，先使用已经提炼的通用方法；来源原稿仅在需要核对表达节奏或继续提炼时读取。
 
 ## 融会贯通规则
 
