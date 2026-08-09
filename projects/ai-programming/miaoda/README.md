@@ -20,9 +20,10 @@
 | [publish-channels.md](./publish-channels.md) | 4 种发布渠道（Web / 秒哒官方小程序 web-view / 用户自有原生小程序 / 原生 APP）的能力边界、限制、选型建议；含 V3.5 iOS 打包/分发与自定义分享网址 | 用户问「我的应用要不要做小程序/做 APP」或「分享链接/域名怎么做」时 |
 | [skill-development.md](./skill-development.md) | 自定义技能开发指南：.zip 包结构、SKILL.md frontmatter、脚本约定、环境变量，以及 V3.5 的对话创建、导入和 API 文档创建入口 | 要为秒哒开发自定义技能时 |
 | [skill-as-callable.md](./skill-as-callable.md) | 反向能力：秒哒被打包为 Skill，可被 OpenClaw / Claude Code 等外部 Agent 调用（V2.5 上线） | 想把秒哒嵌进更大的 Agent 工作流、或做应用批量化生产时 |
-| [pitfalls.md](./pitfalls.md) | 22 个真实踩坑清单：MD5 Web Crypto 死路、密钥泄漏、无 Supabase 控制台、多通道退款误路由、**旧后端大视频上传三层墙**、**SPA SEO 漏 keywords**、**微信恢复访问 txt 校验失败**、**浏览器缓存伪存储**、**应用形态强转**、**登录自写 Edge Function**、**+86 手机号身份重复/登录失败**等 | 遇到怪异报错、或想预防性避雷时 |
+| [pitfalls.md](./pitfalls.md) | 25 个真实踩坑清单：含旧后端大视频上传、SPA SEO、微信验证、缓存伪存储、应用形态、登录身份，以及源码分包导入的 Next.js、对象存储和 PRD 漏项 | 遇到怪异报错、或想预防性避雷时 |
 | [prompt-patterns.md](./prompt-patterns.md) | 与秒哒 AI 协作的提示词模板：@技能调用、红线前置、**全站 SEO**、**大文件先测试 + 旧分片代理兜底**、**首轮形态 + 真实后端存储**、小程序上传、Supabase Auth、+86 手机号标准化等 | 要写一段让秒哒按计划执行的提示词时 |
 | [patterns/codex-assisted-workflow.md](./patterns/codex-assisted-workflow.md) | Codex 辅助秒哒开发工作流：用户把秒哒问题交给 Codex，Codex 拆成低风险提示词，用户逐批粘贴到秒哒执行并反馈结果 | 以后遇到任何秒哒开发/修复/整改需求，想让 Codex 先出方案和提示词时 |
+| [patterns/codex-source-package-deployment.md](./patterns/codex-source-package-deployment.md) | Codex 本地完成源码后，做对抗式审查、按限制分包，再导入秒哒对象存储/数据库并构建部署的端到端处方 | 本地已有权威源码，要交给秒哒继续生成、部署或增量修复时 |
 | [patterns/seo-optimization.md](./patterns/seo-optimization.md) | 秒哒站点 SEO 优化处方：V3.5 SEO Agent、`index.html`、`SEOHead`、`react-helmet-async`、每页 `keywords` / `description`、`robots.txt` / `sitemap.xml` 检查 | 要给秒哒生成的网站做全站 SEO 时 |
 | [patterns/wechat-urlsec-verification.md](./patterns/wechat-urlsec-verification.md) | 微信内置浏览器安全弹窗恢复访问验证处方：根目录 txt 验证、公网 `curl` 验收、SPA fallback 排查 | 微信访问网站出现“无法确认该网页的安全性”，或恢复访问验证文件校验失败时 |
 | [patterns/content-rectification-prompts.md](./patterns/content-rectification-prompts.md) | 秒哒内容整改提示词拆分处方：备案主体一致性、品牌/协会/人物口径、SEO/分享隐藏文案、栏目名称、商品详情经营主体说明 | 要让秒哒分批修改网站公开文案、主体口径或备案整改内容时 |

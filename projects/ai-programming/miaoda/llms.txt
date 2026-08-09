@@ -15,6 +15,7 @@
 
 ### 建（要开始写代码 / 部署）
 - Codex 先分析秒哒问题、拆批写提示词，再由用户粘贴到秒哒执行的通用工作流 → [patterns/codex-assisted-workflow.md](./patterns/codex-assisted-workflow.md)
+- Codex 已在本地完成源码，需要分包上传秒哒、接对象存储/数据库并构建部署 → [patterns/codex-source-package-deployment.md](./patterns/codex-source-package-deployment.md)
 - 写给秒哒 AI 的提示词模板（含首轮形态/后端存储、小程序上传、Supabase Auth 登录修复、`+86` 手机号身份标准化） → [prompt-patterns.md](./prompt-patterns.md)
 - 站点 SEO 或 V3.5 SEO Agent（title / description / keywords / robots / sitemap）→ [patterns/seo-optimization.md](./patterns/seo-optimization.md)
 - 微信内置浏览器安全弹窗 / “申请恢复访问”根目录 txt 验证 / 校验失败排查 → [patterns/wechat-urlsec-verification.md](./patterns/wechat-urlsec-verification.md)
@@ -53,10 +54,11 @@ miaoda/
 ├── publish-channels.md    发布渠道
 ├── skill-development.md   开发自定义技能（对话/导入/API 文档）
 ├── skill-as-callable.md   秒哒作为外部 Skill
-├── pitfalls.md            真实踩坑清单（含 #14 大视频上传三层墙、#15 SPA SEO 漏 keywords、#16-#20 首轮存储/形态/小程序/登录坑、#21 微信恢复访问 txt 校验失败、#22 +86 手机号身份重复）
+├── pitfalls.md            真实踩坑清单（#14-#22 大文件/SEO/存储/形态/登录，#23-#25 源码导入/对象存储/PRD）
 ├── prompt-patterns.md     提示词模板（含"全站 SEO 不漏 keywords"、"大文件先测试 + 旧分片代理兜底"、"首轮形态 + 真实后端存储"、"+86 手机号身份标准化"）
 ├── patterns/
 │   ├── codex-assisted-workflow.md   Codex 辅助秒哒开发工作流（问题分析 / 拆批提示词 / 粘贴执行 / 反馈迭代）
+│   ├── codex-source-package-deployment.md   Codex 本地源码审查 / 分包 / 秒哒对象存储与数据库 / 构建部署
 │   ├── seo-optimization.md     秒哒站点 SEO 优化处方（SEOHead / keywords / robots / sitemap）
 │   ├── wechat-urlsec-verification.md   微信内置浏览器安全弹窗恢复访问验证处方（根目录 txt / curl 验收 / SPA fallback）
 │   ├── content-rectification-prompts.md   内容/备案整改提示词拆分处方（分批执行 / 主体口径 / 不动后端）
