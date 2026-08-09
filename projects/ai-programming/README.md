@@ -14,6 +14,7 @@
 
 | 文件 | 内容 | 何时读取 |
 |---|---|---|
+| [source-repositories.md](./source-repositories.md) | 独立 AI 编程源码仓库索引；区分源码仓库与 `ai-context` 的职责，并指向混世魔牛游戏和杨建委个人网站 | 要拉取、继续开发、二次加工或定位项目源码时 |
 | [creative-frontend-prompt-patterns.md](./creative-frontend-prompt-patterns.md) | 创意前端提示词的结构、五类案例评估、视频/3D/空间画廊选型和可复用总模板 | 要生成动效密集、滚动叙事、视频或 3D 展示站时 |
 | [`reference-materials/`](./reference-materials/README.md) | 创意网站原始提示词等可追溯参考材料 | 核对方法来源、组件组合或原始提示词时 |
 
@@ -53,4 +54,4 @@
 
 ---
 
-*最后更新：2026-07-15*
+*最后更新：2026-08-10*

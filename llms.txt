@@ -32,6 +32,7 @@
 |---|---|---|
 | AI 设计、商业视觉、PPT、UI | `projects/ai-design/README.md` | 对应项目或后续方法文件 |
 | AI 编程、网站、应用、自动化 | `projects/ai-programming/README.md` | 选择工具子目录或方法文件 |
+| AI 编程源码仓库、混世魔牛游戏、杨建委个人网站 | `projects/ai-programming/source-repositories.md` | 进入独立源码仓库的对应项目 README；不要从 `ai-context` 查找完整源码 |
 | 百度秒哒 MIAODA | `projects/ai-programming/miaoda/llms.txt` | 当前专题；历史版本只在追溯时读 |
 | 创意前端、视频逐帧、3D 首屏 | `projects/ai-programming/creative-frontend-prompt-patterns.md` | 原始样例在 `reference-materials/` |
 | AI 视频、宣传片、电影叙事、Seedance | `projects/ai-video/README.md` | 根据片型选择单个专题 |
