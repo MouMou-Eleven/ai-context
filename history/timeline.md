@@ -4,6 +4,11 @@
 
 ## 2026
 
+### 2026-08-13
+
+- 新增长期项目档案 [`projects/yancut-ai/`](../projects/yancut-ai/README.md)：确立“言剪 AI（YanCut）”网页优先、中文优先、自然语言 AI 剪辑、个人声音库和视频包装的开发基线。项目以 OpenCut v0.3.0 为剪辑底座，但通过独立产品层和适配层维护差异与上游兼容。
+- 本轮已完成主要业务页面、剪辑工作台改造、结构化 AI 计划、模型与本地兜底规划器、声音库接口边界、Remotion 包装和 HyperFrames provider 预留；生产构建、AI 单元测试、真实模型调用与浏览器视觉验收通过。独立源码远端、生产声音服务和渲染服务仍待确认。
+
 ### 2026-08-02
 
 - 将仓库重组为 `personal/`、`expression/`、`projects/`、`knowledge/`、`repository/`、`history/` 六个一级入口，根目录只保留 README、AGENTS、llms 和结构规范。身份、当前状态、沟通偏好和待确认事实迁入各自树中，原始参考材料跟随使用领域保存。

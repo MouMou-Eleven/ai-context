@@ -19,6 +19,7 @@
 | 付费社群课程研发 | 当前重点 | 499 元 / 年 AI 超级个体陪跑社群；课程、自媒体、运营和转化持续维护 | [`paid-community-course/README.md`](./paid-community-course/README.md) |
 | 《飞书高效办公》书稿 | 进行中 | 建委负责新版第2、3、8章；仓库保存书稿规则、编辑反馈和修订 | [`feishu-efficient-office/README.md`](./feishu-efficient-office/README.md) |
 | Inshan POPUPIANO | 进行中，状态需复核 | 授权经销 + 自建独立站/Amazon 店铺 + 内容代运营 | [`inshan-popupiano/README.md`](./inshan-popupiano/README.md) |
+| 言剪 AI（YanCut） | 开发中（比赛原型） | 中文优先的自然语言视频剪辑网页应用；个人声音库 + AI 计划 + 视频包装 | [`yancut-ai/README.md`](./yancut-ai/README.md) |
 
 ## 环境与设备档案
 
@@ -34,4 +35,4 @@
 - 重大方向变化进入 `revisions/YYYY-MM-DD-<slug>.md`，当前入口只保留最新有效口径。
 - 已退出主线的项目见 [`../history/archived-projects/README.md`](../history/archived-projects/README.md)。
 
-*索引最后整理：2026-08-02*
+*索引最后整理：2026-08-13*

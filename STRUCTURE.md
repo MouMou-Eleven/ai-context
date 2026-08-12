@@ -48,6 +48,7 @@ ai-context/
 │   ├── paid-community-course/        付费社群课程项目
 │   ├── feishu-efficient-office/      飞书书籍项目与飞书专属规范
 │   ├── inshan-popupiano/             Inshan POPUPIANO 项目
+│   ├── yancut-ai/                    言剪 AI 视频剪辑项目
 │   └── computers/                    电脑与本地环境档案
 ├── knowledge/                        跨项目认知
 │   ├── README.md

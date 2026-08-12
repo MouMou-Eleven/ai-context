@@ -1,0 +1,76 @@
+# 言剪 AI 架构与上游兼容策略
+
+> 当前适用：OpenCut v0.3.0 基线；核验日期 2026-08-13。
+
+## 一、分层结构
+
+```text
+用户界面
+  首页 / 创作台 / 素材库 / 模板 / 项目 / 声音库 / 帮助 / 价格
+      ↓
+言剪 AI 产品层
+  中英双语 / AI 对话 / 计划确认 / 个人声音选择 / 视频包装入口
+      ↓
+能力适配层
+  OpenCut 编辑命令 / Voice provider / Remotion / HyperFrames provider
+      ↓
+基础设施
+  浏览器本地项目 / 模型 API / 声音 API / 独立渲染服务（后两者生产方案待定）
+```
+
+## 二、与 OpenCut 的边界
+
+### 尽量复用
+
+- 素材导入、项目数据、画布预览、多轨时间线、属性调整和导出骨架。
+- OpenCut 修复的浏览器兼容、媒体处理和编辑器稳定性改进。
+
+### 言剪 AI 自有
+
+- `features/yancut/` 下的品牌、双语、AI 计划、声音库、包装 provider 和 OpenCut 命令适配。
+- `/studio` 产品壳及业务页面。
+- `/api/yancut/*` 服务接口。
+- `packages/yancut-remotion` 包装模板。
+
+### 兼容原则
+
+1. 不直接重写 OpenCut 核心数据结构；通过适配层调用编辑器能力。
+2. 新功能优先放在 YanCut 命名空间，降低上游升级冲突。
+3. 修改上游共享文件时保持改动小而明确；每次升级先对比 release 与 changelog。
+4. 锁定上游 tag 和 commit，不直接追随不稳定开发分支。
+5. 升级顺序：建立临时升级分支 → 合并新 tag → 解决共享文件冲突 → 运行构建、AI 测试、编辑器冒烟测试 → 写修订记录。
+
+## 三、AI 规划与安全
+
+- 模型只返回受 Zod Schema 约束的命令，不允许执行任意代码。
+- 不允许模型构造“删除全部元素”命令。
+- 缺少声音、标题或其他必要选择时使用 `request_input`，不能擅自编造。
+- 模型输出先展示计划，用户确认后再执行。
+- 模型不可用或未配置时使用本地规划器，保证演示不完全依赖外网。
+
+测试环境变量：
+
+- `YANCUT_LLM_BASE_URL`
+- `YANCUT_LLM_API_KEY`
+- `YANCUT_LLM_MODEL`
+- `YANCUT_LLM_REASONING_EFFORT`
+
+任何真实 Key 只进入本地忽略文件或部署平台密钥，不进入 Git。
+
+## 四、声音库与视频包装
+
+- 声音对象同时保存本地展示信息和供应商 voice ID；模型只能使用用户当前明确选择的 voice ID。
+- 声音克隆必须增加授权确认、用途说明、删除能力和供应商数据政策提示。
+- Remotion 适合 React 组件化、参数稳定的视频包装，当前作为主实现。
+- HyperFrames 适合 HTML/CSS/GSAP 组合方向，但生产调用方式、版本与服务端渲染能力必须重新核验；当前只保留 provider 接口，不声称已经生产可用。
+
+## 五、版本与来源
+
+| 动态事实 | 当前记录 | 来源 | 核验日期 |
+|---|---|---|---|
+| OpenCut 基线 | v0.3.0 / `f4bd689...` | OpenCut release 与本地 Git | 2026-08-13 |
+| OpenCut License | MIT | 上游 `LICENSE` | 2026-08-13 |
+| 测试中转接口 | OpenAI 兼容 `/v1/chat/completions` | <https://api.shuaiapi.com/llms-full.txt> 与实测 | 2026-08-13 |
+| 测试模型 | `gpt-5.6-sol`，reasoning `high` | 用户指定与实测 | 2026-08-13 |
+
+这些动态事实后续使用前必须重新核验，不能把本表永久当作当前真相。

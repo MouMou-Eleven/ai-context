@@ -42,6 +42,7 @@
 | 飞书书稿、编辑反馈、截图 | `projects/feishu-efficient-office/README.md` | `writing-style-analysis.md` + 对应修订 |
 | 飞书文档视觉或多维表格表单 | 飞书书籍项目对应规范文件 | 执行前核验飞书当前能力 |
 | Inshan、POPUPIANO、Amazon、独立站 | `projects/inshan-popupiano/README.md` | 修订索引 + 最新修订 + 竞品参考 |
+| 言剪 AI、YanCut、AI 剪辑、OpenCut 二次开发 | `projects/yancut-ai/README.md` | 架构、路线图；方向追溯时读修订索引 |
 | Windows、网络、Codex、Clash、本地工具 | `projects/computers/README.md` | 先确认设备，再读设备 README |
 
 ## 表达触发规则
