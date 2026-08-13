@@ -29,6 +29,7 @@
 - 言剪 AI 品牌与蓝紫渐变视觉体系。
 - 中文优先的工作台及主要业务页面。
 - 基于 OpenCut 真实素材、预览、时间线和导出结构的剪辑台改造。
+- 剪辑台中文主界面与原创“AI 指令工作室”结构：顶部自然语言命令栏、中文工具轨、预览舞台、AI 创作副驾和主生产时间线。
 - AI 计划 Schema、本地兜底规划器、模型规划器、安全校验与 OpenCut 命令映射层。
 - 个人声音库界面与服务接口边界。
 - Remotion 包装包和 HyperFrames provider 预留。
@@ -51,6 +52,7 @@
 | [`roadmap.md`](./roadmap.md) | 后续开发顺序、比赛演示闭环与上线前条件 |
 | [`revisions/README.md`](./revisions/README.md) | 重要方向变化索引 |
 | [`revisions/2026-08-13-initial-development-baseline.md`](./revisions/2026-08-13-initial-development-baseline.md) | 本轮从讨论进入实际开发的基线记录 |
+| [`revisions/2026-08-13-editor-localization-and-original-redesign.md`](./revisions/2026-08-13-editor-localization-and-original-redesign.md) | 剪辑台中文化、原创重设计、Superdesign 画布与验证记录 |
 
 ## AI 调用规则
 
