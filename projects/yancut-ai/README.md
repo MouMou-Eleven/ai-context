@@ -1,7 +1,7 @@
 # 言剪 AI（YanCut）
 
 > 状态：开发中（比赛原型阶段）
-> 当前口径确认：2026-08-13
+> 当前口径确认：2026-08-15
 
 ## 定位与边界
 
@@ -21,6 +21,8 @@
 - 测试模型：2026-08-13 通过兼容 OpenAI Chat Completions 的测试中转调用 `gpt-5.6-sol`，推理强度 `high`。这只是开发测试配置，不构成生产供应商承诺。
 - 本地开发目录：`F:\桌面文件\言剪AI`（2026-08-13 迁移并完成构建、启动验证）。
 - 代码现状：本地开发分支存在完整工作区改动，但尚未确认独立源码仓库及远端地址；`ai-context` 只保存项目上下文，不保存完整源码。
+- 开发与部署分工：采用“本地权威源码 + 百度秒哒云端接管”。前端、业务逻辑、价格权益、数据库 Schema、接口合同、Mock 和自动化测试先在本地完成；验证通过后按编号压缩包交付百度秒哒，由秒哒接入 Auth、Postgres、对象存储、Edge Function、短信能力和部署。
+- 秒哒兼容边界：当前本地基线是 Next.js 16.1.3，而已记录的秒哒稳定 Web 导入形态是 React + Vite。正式交付前必须重新核验平台能力；若仍不支持 Next.js，需提供 React + Vite 兼容构建，不能直接上传当前源码并宣称可部署。
 
 ## 当前进度
 
@@ -38,7 +40,7 @@
 
 尚未完成：
 
-- 生产级账号、云端项目同步、计费与额度系统。
+- 生产级账号、云端项目同步、计费与额度系统的本地完整实现和秒哒云端接线。
 - 声音克隆供应商的正式生产配置、授权留痕和完整试听回写。
 - AI 自动剪辑对长视频、复杂多轨和失败回滚的系统验证。
 - Remotion/HyperFrames 独立渲染服务的生产部署与成本测试。
@@ -53,6 +55,7 @@
 | [`revisions/README.md`](./revisions/README.md) | 重要方向变化索引 |
 | [`revisions/2026-08-13-initial-development-baseline.md`](./revisions/2026-08-13-initial-development-baseline.md) | 本轮从讨论进入实际开发的基线记录 |
 | [`revisions/2026-08-13-editor-localization-and-original-redesign.md`](./revisions/2026-08-13-editor-localization-and-original-redesign.md) | 剪辑台中文化、原创重设计、Superdesign 画布与验证记录 |
+| [`revisions/2026-08-15-local-first-miaoda-cloud-handoff.md`](./revisions/2026-08-15-local-first-miaoda-cloud-handoff.md) | 本地优先开发、数据库与计费合同、编号压缩包和百度秒哒云端交接边界 |
 
 ## AI 调用规则
 
@@ -64,13 +67,15 @@
 4. 涉及模型、API、价格、声音克隆供应商或 HyperFrames 能力时，必须重新核验当前官方资料，记录来源和核验日期。
 5. 不在仓库中写入 API Key、Token、Cookie 或可直接利用的内部地址；只记录环境变量名和公共文档地址。
 6. 产品叙事始终围绕大众化自然语言剪辑和个体可完成，避免重新扩成过窄行业工具或过重知识库项目。
+7. 涉及百度秒哒交付时，同时读取本项目最新修订和 `projects/ai-programming/miaoda/patterns/codex-source-package-deployment.md`；先校验技术栈和附件限制，再生成分包。
 
 ## 待确认事项
 
 - 言剪 AI 独立源码仓库名称、远端地址与是否公开。
 - 参赛的最终赛道、报名材料口径和演示时长。
 - 声音克隆正式供应商、收费策略和用户授权流程。
-- 云端存储、用户登录、支付与模型成本的生产方案。
+- 百度秒哒当期对 Next.js/React + Vite、手机号登录插件、短信服务、对象存储和长任务的实际支持情况。
+- 正式支付渠道、套餐价格、模型与渲染成本、退款和发票策略。
 - 上线版本是否继续保留 OpenCut 上游入口，以及具体的署名展示位置。
 
-*索引最后整理：2026-08-13*
+*索引最后整理：2026-08-15*
