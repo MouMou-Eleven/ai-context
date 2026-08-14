@@ -37,6 +37,8 @@
 - Remotion 包装包和 HyperFrames provider 预留。
 - 真实测试中转连通性和网站内部 `/api/yancut/ai/plan` 端到端验证。
 - 生产构建、AI 单元测试和浏览器视觉验收。
+- AI 计划能力预检、项目版本冲突保护、有界执行回执与本地失败回滚。
+- 2026-08-15 重新核验 OpenCut：最新稳定版仍为 `v0.3.0`；重写中的 `main` 不并入当前比赛基线。
 
 尚未完成：
 
@@ -56,6 +58,7 @@
 | [`revisions/2026-08-13-initial-development-baseline.md`](./revisions/2026-08-13-initial-development-baseline.md) | 本轮从讨论进入实际开发的基线记录 |
 | [`revisions/2026-08-13-editor-localization-and-original-redesign.md`](./revisions/2026-08-13-editor-localization-and-original-redesign.md) | 剪辑台中文化、原创重设计、Superdesign 画布与验证记录 |
 | [`revisions/2026-08-15-local-first-miaoda-cloud-handoff.md`](./revisions/2026-08-15-local-first-miaoda-cloud-handoff.md) | 本地优先开发、数据库与计费合同、编号压缩包和百度秒哒云端交接边界 |
+| [`revisions/2026-08-15-upstream-audit-and-agent-safety.md`](./revisions/2026-08-15-upstream-audit-and-agent-safety.md) | OpenCut 与三项参考项目核验、许可证边界和 AI 执行安全整合记录 |
 
 ## AI 调用规则
 
