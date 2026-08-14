@@ -20,8 +20,8 @@
 | [publish-channels.md](./publish-channels.md) | 4 种发布渠道（Web / 秒哒官方小程序 web-view / 用户自有原生小程序 / 原生 APP）的能力边界、限制、选型建议；含 V3.5 iOS 打包/分发与自定义分享网址 | 用户问「我的应用要不要做小程序/做 APP」或「分享链接/域名怎么做」时 |
 | [skill-development.md](./skill-development.md) | 自定义技能开发指南：.zip 包结构、SKILL.md frontmatter、脚本约定、环境变量，以及 V3.5 的对话创建、导入和 API 文档创建入口 | 要为秒哒开发自定义技能时 |
 | [skill-as-callable.md](./skill-as-callable.md) | 反向能力：秒哒被打包为 Skill，可被 OpenClaw / Claude Code 等外部 Agent 调用（V2.5 上线） | 想把秒哒嵌进更大的 Agent 工作流、或做应用批量化生产时 |
-| [pitfalls.md](./pitfalls.md) | 25 个真实踩坑清单：含旧后端大视频上传、SPA SEO、微信验证、缓存伪存储、应用形态、登录身份，以及源码分包导入的 Next.js、对象存储和 PRD 漏项 | 遇到怪异报错、或想预防性避雷时 |
-| [prompt-patterns.md](./prompt-patterns.md) | 与秒哒 AI 协作的提示词模板：@技能调用、红线前置、**全站 SEO**、**大文件先测试 + 旧分片代理兜底**、**首轮形态 + 真实后端存储**、小程序上传、Supabase Auth、+86 手机号标准化等 | 要写一段让秒哒按计划执行的提示词时 |
+| [pitfalls.md](./pitfalls.md) | 26 个真实踩坑清单：含旧后端大视频上传、SPA SEO、微信验证、缓存伪存储、应用形态、登录身份、源码分包导入，以及误把 Codex 浏览器调试能力写进秒哒提示词 | 遇到怪异报错、或想预防性避雷时 |
+| [prompt-patterns.md](./prompt-patterns.md) | 与秒哒 AI 协作的提示词模板：@技能调用、红线前置、**应用内诊断日志面板**、**全站 SEO**、**大文件先测试 + 旧分片代理兜底**、**首轮形态 + 真实后端存储**、小程序上传、Supabase Auth、+86 手机号标准化等 | 要写一段让秒哒按计划执行的提示词时 |
 | [patterns/codex-assisted-workflow.md](./patterns/codex-assisted-workflow.md) | Codex 辅助秒哒开发工作流：用户把秒哒问题交给 Codex，Codex 拆成低风险提示词，用户逐批粘贴到秒哒执行并反馈结果 | 以后遇到任何秒哒开发/修复/整改需求，想让 Codex 先出方案和提示词时 |
 | [patterns/codex-source-package-deployment.md](./patterns/codex-source-package-deployment.md) | Codex 本地完成源码后，做对抗式审查、按限制分包，再导入秒哒对象存储/数据库并构建部署的端到端处方 | 本地已有权威源码，要交给秒哒继续生成、部署或增量修复时 |
 | [patterns/seo-optimization.md](./patterns/seo-optimization.md) | 秒哒站点 SEO 优化处方：V3.5 SEO Agent、`index.html`、`SEOHead`、`react-helmet-async`、每页 `keywords` / `description`、`robots.txt` / `sitemap.xml` 检查 | 要给秒哒生成的网站做全站 SEO 时 |
@@ -38,6 +38,7 @@
 2. **秒哒的"技能运行时"与"应用运行时"是两个独立环境**——密钥、环境变量、运行的语言都不互通。
 3. **秒哒 AI 是"指令式执行"**——不能像 Claude/ChatGPT 那样多轮讨论后再动手，发指令就直接改代码。所以提示词必须一次写到位。
 4. **秒哒 AI 容易自由发挥**——如果不在提示词里明确禁止它"自己实现某功能"，它会绕过你提供的技能/参考代码，自己另写一遍，且大概率翻车。
+5. **秒哒云端执行不等于 Codex 浏览器验收**——秒哒可在云端修改源码、做静态检查和构建发布，但不能替用户控制真实浏览器或手机复现动态问题。运行时问题应由秒哒加入应用内可复制日志面板，用户手动复现并把日志交给 Codex 分析。
 
 ## 维护约定
 
