@@ -2,8 +2,8 @@
 
 > 建委著 | 状态：进行中
 > 当前目录口径确认：2026-06-26
-> 最近项目记录：2026-08-10
-> 索引最后整理：2026-08-10
+> 最近项目记录：2026-08-14
+> 索引最后整理：2026-08-14
 
 ## 概述
 
@@ -11,7 +11,7 @@
 
 - **目标读者**：非技术背景的职场人，日常工作中涉及文档、表格、PPT、数据汇报
 - **差异化**：设计师视角（不是程序员教AI）、真实培训验证（线下讲过）、变现闭环（市面上极少）
-- **当前进度**：第2章已完成编辑反馈、括号序号纠正和 Word 清洁交付版；第3章已完成编辑反馈、图3-1最终口径和 Word 交付版；第8章已对最新编辑反馈进行二次全量复核，38个修订段落和35条批注全部通过独立验收，飞书正文更新至 `revision_id=271`，19页Word交付终稿已重新生成并逐页校验。
+- **当前进度**：第2章已完成编辑反馈、括号序号纠正和 Word 清洁交付版；第3章已完成编辑反馈、图3-1最终口径和 Word 交付版；第8章已全部接受0814编辑稿的26条修订，飞书正文更新至 `revision_id=396`，21页Word终稿已完成修订残留、高清图片哈希和逐页校验。
 
 ## 写作铁律（所有 AI 工具必须遵守）
 
@@ -51,7 +51,7 @@
 | 第5章 内容排期管理：用多维表格实现任务流转 | 另一位作者 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第6章 项目从启动到复盘：飞书的全流程协作实践 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第7章 客户跟进管理：用多维表格搭建轻量业务系统 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
-| 第8章 重复工作自动化：用自动化与 AI 工作流提升效率 | 建委 | 编辑反馈二次全量复核完成；飞书 `revision_id=271`，38/38个修订段和35/35条批注通过，19页Word终稿已重建 | [正文](https://my.feishu.cn/wiki/UZyHw8RFCicH30kihDGcFJTZnPf) / [截图清单](https://my.feishu.cn/wiki/FzmVwHZJPiVb9EkNSgrcH1fRnKh) |
+| 第8章 重复工作自动化：用自动化与 AI 工作流提升效率 | 建委 | 0814编辑稿26条修订已全部接受；飞书 `revision_id=396`，21页Word终稿、8张高清图和修订残留校验通过 | [正文](https://my.feishu.cn/wiki/UZyHw8RFCicH30kihDGcFJTZnPf) / [截图清单](https://my.feishu.cn/wiki/FzmVwHZJPiVb9EkNSgrcH1fRnKh) |
 | 第9章 AI操作飞书：智能伙伴、Agent与CLI | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 附录（可选） | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 
@@ -71,12 +71,13 @@
 | 旧第4章 每天被琐事淹没：普通职场人如何用飞书每天省下2小时 | ✅ 历史素材，已审阅多轮 | ~16,000字 | 飞书文档 | 2026-05-11 |
 | 第2章 晨间工作梳理：用消息分组和飞书 aily 整理任务 | ✅ 编辑反馈、括号序号、XML校验与Word交付版已完成 | 待统计 | 飞书文档 + F盘桌面Word | 2026-07-14 |
 | 第3章 方案撰写实战：用模板、AI与评论协作完成文档 | ✅ 编辑反馈、图文、序号、官方核验与Word交付版已完成 | 待统计 | 飞书文档 + F盘桌面Word | 2026-07-18 |
-| 第8章 重复工作自动化：用自动化与 AI 工作流提升效率 | ✅ 编辑反馈二次全量复核、遗漏纠正、飞书第271版和Word重建已完成 | 约0.97万中文字符 | 飞书文档 + F盘桌面Word + 素材 Base | 2026-08-10 |
+| 第8章 重复工作自动化：用自动化与 AI 工作流提升效率 | ✅ 0814编辑修订全部接受；飞书第396版、21页Word终稿和高清图片校验已完成 | 约0.97万中文字符 | 飞书文档 + F盘桌面Word + 素材 Base | 2026-08-14 |
 
 ## 文件索引
 
 | 文件 | 内容 | 何时读取 |
 |-----|------|---------|
+| [`revisions/2026-08-14-ch8-editor-revisions-accepted.md`](./revisions/2026-08-14-ch8-editor-revisions-accepted.md) | 第8章0814编辑稿26条修订全部接受、格式修订、阶段存档、飞书第396版和21页Word终稿校验 | **当前第8章版本依据；继续修改、重新导出Word或处理空格和编号格式前首先读取** |
 | [`revisions/2026-08-10-ch8-editor-feedback-full-reaudit-correction.md`](./revisions/2026-08-10-ch8-editor-feedback-full-reaudit-correction.md) | 第8章编辑反馈遗漏根因、13段重新合并、38/38修订和35/35批注验收、飞书第271版及Word重建结果 | **继续修改第8章、处理任何编辑反馈或重新生成Word前优先读取** |
 | [`revisions/2026-08-10-ch8-editor-feedback-applied.md`](./revisions/2026-08-10-ch8-editor-feedback-applied.md) | 第8章首次应用编辑反馈的历史记录；其中“已全部落实”的结论已被同日二次复核记录纠正 | **仅用于追溯首次误判和此前第258版，不再作为当前完成依据** |
 | [`revisions/2026-07-19-ch8-final-editor-word-delivery.md`](./revisions/2026-07-19-ch8-final-editor-word-delivery.md) | 第8章图8-7/8-8归位、编辑规则全文复核、素材清单同步、Word交付信息和逐页校验 | **使用或重建第8章编辑审阅Word、继续修改第8章前优先读取** |
