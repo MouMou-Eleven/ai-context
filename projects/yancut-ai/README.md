@@ -39,6 +39,9 @@
 - 生产构建、AI 单元测试和浏览器视觉验收。
 - AI 计划能力预检、项目版本冲突保护、有界执行回执与本地失败回滚。
 - 2026-08-15 重新核验 OpenCut：最新稳定版仍为 `v0.3.0`；重写中的 `main` 不并入当前比赛基线。
+- Studio 已停止用演示数据冒充用户内容：素材库使用本浏览器真实上传与持久化，模板作为内置起始方案创建真实项目，项目页只展示项目管理器中的真实项目。
+- 素材上传/预览/筛选/删除、模板收藏/使用、项目搜索/视图切换/删除已形成可操作闭环；虚构素材统计、虚构协作动态和每日 AI 次数已移除。
+- 剪辑台深层属性、贴纸、设置和删除流程继续中文化；时间线 hydration 错误和项目媒体时间单位错误已修复。
 
 尚未完成：
 
@@ -59,6 +62,7 @@
 | [`revisions/2026-08-13-editor-localization-and-original-redesign.md`](./revisions/2026-08-13-editor-localization-and-original-redesign.md) | 剪辑台中文化、原创重设计、Superdesign 画布与验证记录 |
 | [`revisions/2026-08-15-local-first-miaoda-cloud-handoff.md`](./revisions/2026-08-15-local-first-miaoda-cloud-handoff.md) | 本地优先开发、数据库与计费合同、编号压缩包和百度秒哒云端交接边界 |
 | [`revisions/2026-08-15-upstream-audit-and-agent-safety.md`](./revisions/2026-08-15-upstream-audit-and-agent-safety.md) | OpenCut 与三项参考项目核验、许可证边界和 AI 执行安全整合记录 |
+| [`revisions/2026-08-15-real-data-interactions-and-localization-hardening.md`](./revisions/2026-08-15-real-data-interactions-and-localization-hardening.md) | 真实素材/模板/项目交互、深层中文化、项目时长与 hydration 修复记录 |
 
 ## AI 调用规则
 
