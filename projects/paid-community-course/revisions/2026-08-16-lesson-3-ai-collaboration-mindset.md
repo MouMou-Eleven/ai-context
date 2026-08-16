@@ -1,8 +1,8 @@
 # 2026-08-16：第3课重构为 AI 时代协作心法
 
-> 状态：当前有效
+> 状态：已被同日第二轮扩写取代，保留作历史版本
 > 飞书正文：<https://hv21wf9uao9.feishu.cn/wiki/VsvFwdyHRiHuDIkxx5gcM6nanmh>
-> 飞书写入版本：revision 9
+> 飞书写入版本：revision 9（已被 revision 18 取代）
 > 受众：第一季度课程学员，以非程序员和 AI 协作初学者为主
 
 ## 修订原因

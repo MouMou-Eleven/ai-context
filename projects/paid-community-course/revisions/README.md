@@ -16,7 +16,8 @@
 
 | 日期 | 文件 | 有效性 | 主要影响 |
 |---|---|---|---|
-| 2026-08-16 | [`2026-08-16-lesson-3-ai-collaboration-mindset.md`](./2026-08-16-lesson-3-ai-collaboration-mindset.md) | 当前有效 | 第3课从名词说明页重构为 AI 协作心法；补齐重要性、Prompt 优化器、Skill 生命周期、MCP 组件库与数据库场景、CLI/API 区分、Harness 验收框架；学员正文不默认写分段时长 |
+| 2026-08-16 | [`2026-08-16-lesson-3-ai-collaboration-mindset-expansion.md`](./2026-08-16-lesson-3-ai-collaboration-mindset-expansion.md) | 当前有效 | 根据建委反馈第二轮扩写第3课；新增 AI 能力边界与交叉线、4S 类比、多模态 Prompt 演变与视频复现、Context、Skill 生命周期、MCP 组件库/数据库深讲和完整 Harness 运行系统；飞书 revision 18 |
+| 2026-08-16 | [`2026-08-16-lesson-3-ai-collaboration-mindset.md`](./2026-08-16-lesson-3-ai-collaboration-mindset.md) | 已被同日第二轮扩写取代 | 第3课第一次重构：建立 AI 协作心法、Prompt 优化器、Skill、MCP、CLI/API 和 Harness 的基础结构；保留作为历史版本 |
 | 2026-08-01 | [`2026-08-01-priority-and-knowledge-boundaries.md`](./2026-08-01-priority-and-knowledge-boundaries.md) | 当前有效 | 明确项目为当前重点；分离产品运营、写作表达参考与课程开发/课件设计知识，建立调用边界 |
 | 2026-07-19 | [2026-07-19-ai-era-technical-dictionary-lifecycle-rebuild.md](./2026-07-19-ai-era-technical-dictionary-lifecycle-rebuild.md) | 当前有效，覆盖 2026-07-12 的文档结构 | 技术词典改为四阶段全流程指南；外部服务和文件媒体并入真实开发阶段；补齐备案、安全、性能、运维、成本与流量增长；飞书 revision 117 |
 | 2026-07-17 | [`2026-07-17-annual-membership-model.md`](./2026-07-17-annual-membership-model.md) | 当前核心口径 | 会员模式修正为 499 元 / 年；一年内课程持续更新，回放、资料和知识库随时观看 |
