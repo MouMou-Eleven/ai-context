@@ -1,6 +1,6 @@
 # 2026-08-16：第3课第二轮扩写：AI 交叉线、多模态 Prompt 与 Harness
 
-> 状态：当前有效
+> 状态：已被同日第三轮接口关系与 DeepSeek Harness 修订取代
 > 飞书正文：<https://hv21wf9uao9.feishu.cn/wiki/VsvFwdyHRiHuDIkxx5gcM6nanmh>
 > 飞书写入版本：revision 18
 > 前一版本：[`2026-08-16-lesson-3-ai-collaboration-mindset.md`](./2026-08-16-lesson-3-ai-collaboration-mindset.md)

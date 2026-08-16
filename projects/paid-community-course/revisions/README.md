@@ -16,7 +16,8 @@
 
 | 日期 | 文件 | 有效性 | 主要影响 |
 |---|---|---|---|
-| 2026-08-16 | [`2026-08-16-lesson-3-ai-collaboration-mindset-expansion.md`](./2026-08-16-lesson-3-ai-collaboration-mindset-expansion.md) | 当前有效 | 根据建委反馈第二轮扩写第3课；新增 AI 能力边界与交叉线、4S 类比、多模态 Prompt 演变与视频复现、Context、Skill 生命周期、MCP 组件库/数据库深讲和完整 Harness 运行系统；飞书 revision 18 |
+| 2026-08-16 | [`2026-08-16-lesson-3-interfaces-and-deepseek-harness.md`](./2026-08-16-lesson-3-interfaces-and-deepseek-harness.md) | 当前有效 | 第3课第三轮调整；区分终端、CLI 交互和具体 CLI 工具，重写 CLI/API/MCP 的关系与选择条件，删除 Function Calling，降低 MCP 与 Harness 技术密度，加入 DeepSeek Harness 官方案例；飞书 revision 125 |
+| 2026-08-16 | [`2026-08-16-lesson-3-ai-collaboration-mindset-expansion.md`](./2026-08-16-lesson-3-ai-collaboration-mindset-expansion.md) | 已被同日第三轮修订取代 | 根据建委反馈第二轮扩写第3课；新增 AI 能力边界与交叉线、4S 类比、多模态 Prompt 演变与视频复现、Context、Skill 生命周期、MCP 组件库/数据库深讲和完整 Harness 运行系统；飞书 revision 18 |
 | 2026-08-16 | [`2026-08-16-lesson-3-ai-collaboration-mindset.md`](./2026-08-16-lesson-3-ai-collaboration-mindset.md) | 已被同日第二轮扩写取代 | 第3课第一次重构：建立 AI 协作心法、Prompt 优化器、Skill、MCP、CLI/API 和 Harness 的基础结构；保留作为历史版本 |
 | 2026-08-01 | [`2026-08-01-priority-and-knowledge-boundaries.md`](./2026-08-01-priority-and-knowledge-boundaries.md) | 当前有效 | 明确项目为当前重点；分离产品运营、写作表达参考与课程开发/课件设计知识，建立调用边界 |
 | 2026-07-19 | [2026-07-19-ai-era-technical-dictionary-lifecycle-rebuild.md](./2026-07-19-ai-era-technical-dictionary-lifecycle-rebuild.md) | 当前有效，覆盖 2026-07-12 的文档结构 | 技术词典改为四阶段全流程指南；外部服务和文件媒体并入真实开发阶段；补齐备案、安全、性能、运维、成本与流量增长；飞书 revision 117 |

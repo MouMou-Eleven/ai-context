@@ -10,7 +10,7 @@
 | 资料 | 飞书正文 | 受众 | 所属与用途 | 当前状态 | 最近修订 |
 |---|---|---|---|---|---|
 | 【02】AI时代技术词典：普通人从开发前到上线后的关键节点 | [飞书文档](https://my.feishu.cn/wiki/MODXwIqpOiE7wqkk3s3cZQ17nid) | 第一季度课程学员，以非程序员为主 | AI 编程基础与开发流程指南；按开发前、开发中、上线前、上线后解释自主搭建项目的关键节点、高频词、风险和验收方法 | 已发布：2026-07-19 完成四阶段重构、导航与画板回读验证，飞书 revision 117 | [2026-07-19 修订](./revisions/2026-07-19-ai-era-technical-dictionary-lifecycle-rebuild.md) |
-| 【05】第3课 · AI时代的协作心法：从 Prompt 到 Skill、MCP、CLI、API 与 Harness | [飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/VsvFwdyHRiHuDIkxx5gcM6nanmh) | 第一季度课程学员，以非程序员和 AI 协作初学者为主 | AI 编程工具地图与协作方法；从 AI 能力边界和交叉线进入，解释多模态 Prompt、Skill、MCP、CLI、API 与 Harness，并用组件库、数据库和网站开发场景串联 | 已发布：2026-08-16 完成第二轮扩写，飞书 revision 18，已回读目录、篇幅、核心关键词和时长词扫描 | [2026-08-16 第二轮扩写](./revisions/2026-08-16-lesson-3-ai-collaboration-mindset-expansion.md) |
+| 【05】第3课 · AI时代的协作心法：从 Prompt 到 Skill、MCP、CLI、API 与 Harness | [飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/VsvFwdyHRiHuDIkxx5gcM6nanmh) | 第一季度课程学员，以非程序员和 AI 协作初学者为主 | AI 编程工具地图与协作方法；从 AI 能力边界和交叉线进入，解释多模态 Prompt、Skill、MCP、CLI、API 与 Harness；重点区分终端、CLI 工具、API 与 MCP 的关系和选择条件，并用 DeepSeek Harness 说明模型与运行系统的区别 | 已发布：2026-08-16 完成第三轮调整，飞书 revision 125；已回读目录、保护链接、表格列宽、Function Calling 清理和 DeepSeek Harness 官方链接 | [2026-08-16 第三轮调整](./revisions/2026-08-16-lesson-3-interfaces-and-deepseek-harness.md) |
 
 ## 使用规则
 
