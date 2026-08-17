@@ -1,6 +1,6 @@
 # 2026-08-17：第3课真实授课后的演示驱动重构
 
-> 状态：当前有效
+> 状态：已被 2026-08-18 学习理由与学员视角修订取代
 > 飞书正文：<https://hv21wf9uao9.feishu.cn/wiki/VsvFwdyHRiHuDIkxx5gcM6nanmh>
 > 飞书写入版本：revision 151
 > 前一版本：[`2026-08-16-lesson-3-interfaces-and-deepseek-harness.md`](./2026-08-16-lesson-3-interfaces-and-deepseek-harness.md)
