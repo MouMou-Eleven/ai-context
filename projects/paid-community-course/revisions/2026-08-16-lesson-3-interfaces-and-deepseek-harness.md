@@ -1,6 +1,6 @@
 # 2026-08-16：第3课第三轮调整：接口关系与 DeepSeek Harness
 
-> 状态：当前有效
+> 状态：已被 2026-08-17 真实授课后的演示驱动重构取代
 > 飞书正文：<https://hv21wf9uao9.feishu.cn/wiki/VsvFwdyHRiHuDIkxx5gcM6nanmh>
 > 飞书写入版本：revision 125
 > 前一版本：[`2026-08-16-lesson-3-ai-collaboration-mindset-expansion.md`](./2026-08-16-lesson-3-ai-collaboration-mindset-expansion.md)
