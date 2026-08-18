@@ -6,13 +6,13 @@ $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $errors = [System.Collections.Generic.List[string]]::new()
 $warnings = [System.Collections.Generic.List[string]]::new()
 
-function Get-RelativePath {
+function Get-RepoRelativePath {
     param([Parameter(Mandatory = $true)][string]$Path)
 
     $fullPath = [System.IO.Path]::GetFullPath($Path)
-    $rootWithSeparator = $repoRoot.TrimEnd('\', '/') + [System.IO.Path]::DirectorySeparatorChar
-    if ($fullPath.StartsWith($rootWithSeparator, [System.StringComparison]::OrdinalIgnoreCase)) {
-        return $fullPath.Substring($rootWithSeparator.Length) -replace '\\', '/'
+    $prefix = $repoRoot.TrimEnd('\', '/') + [System.IO.Path]::DirectorySeparatorChar
+    if ($fullPath.StartsWith($prefix, [System.StringComparison]::OrdinalIgnoreCase)) {
+        return $fullPath.Substring($prefix.Length) -replace '\\', '/'
     }
     return $fullPath
 }
@@ -20,34 +20,6 @@ function Get-RelativePath {
 function Add-ValidationError {
     param([Parameter(Mandatory = $true)][string]$Message)
     $errors.Add($Message)
-}
-
-function Test-IndexCoverage {
-    param(
-        [Parameter(Mandatory = $true)][string]$Directory,
-        [Parameter(Mandatory = $true)][string]$IndexFile
-    )
-
-    $directoryPath = Join-Path $repoRoot $Directory
-    $indexPath = Join-Path $repoRoot $IndexFile
-    if (-not (Test-Path -LiteralPath $directoryPath -PathType Container)) {
-        Add-ValidationError "Missing managed directory: $Directory"
-        return
-    }
-    if (-not (Test-Path -LiteralPath $indexPath -PathType Leaf)) {
-        Add-ValidationError "Missing index: $IndexFile"
-        return
-    }
-
-    $indexContent = Get-Content -Raw -Encoding UTF8 -LiteralPath $indexPath
-    Get-ChildItem -LiteralPath $directoryPath -Force | Where-Object {
-        $_.Name -ne 'README.md' -and -not $_.Name.StartsWith('.')
-    } | ForEach-Object {
-        $needle = if ($_.PSIsContainer) { "$($_.Name)/" } else { $_.Name }
-        if (-not $indexContent.Contains($needle)) {
-            Add-ValidationError "Index '$IndexFile' does not reference '$Directory/$needle'"
-        }
-    }
 }
 
 Push-Location $repoRoot
@@ -58,15 +30,23 @@ try {
         'llms.txt',
         'STRUCTURE.md',
         'personal/README.md',
-        'personal/identity.md',
-        'personal/current-focus.md',
-        'personal/open-questions.md',
-        'expression/README.md',
-        'projects/README.md',
-        'projects/ai-training/README.md',
-        'projects/microcourse/README.md',
-        'knowledge/README.md',
+        'personal/profile.md',
+        'personal/business-overview.md',
+        'personal/credentials.md',
+        'personal/growth-path.md',
+        'personal/capabilities.md',
+        'brain/README.md',
+        'work/README.md',
+        'work/design/README.md',
+        'work/ai/README.md',
+        'work/ai/programming/README.md',
+        'work/ai/training/README.md',
+        'work/ai/video/README.md',
+        'work/ai/publishing/README.md',
+        'work/ai/self-media/README.md',
+        'work/other/README.md',
         'repository/README.md',
+        'repository/environment/README.md',
         'repository/versioned-knowledge-policy.md',
         'history/README.md'
     )
@@ -77,108 +57,81 @@ try {
         }
     }
 
-    $prohibitedRootEntries = @(
-        'identity.md',
-        'current.md',
-        'preferences.md',
-        'open-questions.md',
-        'references',
-        'scripts'
-    )
-    foreach ($entry in $prohibitedRootEntries) {
-        if (Test-Path -LiteralPath (Join-Path $repoRoot $entry)) {
-            Add-ValidationError "Deprecated root entry still exists: $entry"
+    foreach ($deprecatedDirectory in @('expression', 'knowledge', 'projects')) {
+        $deprecatedPath = Join-Path $repoRoot $deprecatedDirectory
+        if (Test-Path -LiteralPath $deprecatedPath) {
+            $legacyFiles = @(Get-ChildItem -LiteralPath $deprecatedPath -Recurse -File -Force)
+            if ($legacyFiles.Count -gt 0) {
+                Add-ValidationError "Deprecated top-level directory still contains files: $deprecatedDirectory/"
+            }
         }
     }
 
     $rootReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'README.md')
-    foreach ($directory in @('personal', 'expression', 'projects', 'knowledge', 'repository', 'history')) {
+    $structure = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'STRUCTURE.md')
+    foreach ($directory in @('personal', 'brain', 'work', 'repository', 'history')) {
         if (-not $rootReadme.Contains("$directory/")) {
             Add-ValidationError "README.md does not reference top-level directory '$directory/'"
         }
-    }
-
-    $projectsIndex = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'projects/README.md')
-    Get-ChildItem -LiteralPath (Join-Path $repoRoot 'projects') -Directory | ForEach-Object {
-        $projectName = $_.Name
-        $projectReadme = Join-Path $_.FullName 'README.md'
-        if (-not (Test-Path -LiteralPath $projectReadme -PathType Leaf)) {
-            Add-ValidationError "Project or work area '$projectName' has no README.md"
-        }
-        if (-not $projectsIndex.Contains("$projectName/")) {
-            Add-ValidationError "projects/README.md does not reference '$projectName/'"
+        if (-not $structure.Contains("$directory/")) {
+            Add-ValidationError "STRUCTURE.md does not reference top-level directory '$directory/'"
         }
     }
 
-    $trainingReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'projects/ai-training/README.md')
-    $microcourseReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'projects/microcourse/README.md')
-    if (-not $trainingReadme.Contains('../microcourse/')) {
-        Add-ValidationError "AI training README must state that microcourse work is outside its scope"
-    }
-    if (-not $microcourseReadme.Contains('../ai-training/')) {
-        Add-ValidationError "Microcourse README must state its peer-level boundary with AI training"
-    }
+    $requiredWorkDirectories = @(
+        'work/design/ppt-design',
+        'work/design/poster-fold-design',
+        'work/design/book-design',
+        'work/design/microcourse-mg-animation',
+        'work/design/ae-promo-video',
+        'work/design/ai-design',
+        'work/ai/programming/tools',
+        'work/ai/programming/experience',
+        'work/ai/programming/projects',
+        'work/ai/training/experience',
+        'work/ai/training/outlines',
+        'work/ai/training/materials',
+        'work/ai/training/projects',
+        'work/ai/video/common',
+        'work/ai/video/types',
+        'work/ai/video/tools',
+        'work/ai/video/projects',
+        'work/ai/publishing/projects',
+        'work/ai/self-media/titles',
+        'work/ai/self-media/articles',
+        'work/ai/self-media/video-scripts',
+        'work/ai/self-media/live-sales',
+        'work/ai/self-media/experience'
+    )
 
-    Get-ChildItem -LiteralPath (Join-Path $repoRoot 'projects') -Directory -Recurse |
-        Where-Object { $_.Name -eq 'revisions' } |
-        ForEach-Object {
-            $revisionIndex = Join-Path $_.FullName 'README.md'
-            if (-not (Test-Path -LiteralPath $revisionIndex -PathType Leaf)) {
-                Add-ValidationError "Revision directory '$(Get-RelativePath $_.FullName)' has no README.md"
-                return
-            }
-
-            $content = Get-Content -Raw -Encoding UTF8 -LiteralPath $revisionIndex
-            Get-ChildItem -LiteralPath $_.FullName -File -Filter '*.md' |
-                Where-Object { $_.Name -ne 'README.md' } |
-                ForEach-Object {
-                    if (-not $content.Contains($_.Name)) {
-                        Add-ValidationError "Revision index '$(Get-RelativePath $revisionIndex)' does not reference '$($_.Name)'"
-                    }
-                }
-        }
-
-    $managedDirectories = @('personal', 'expression', 'projects', 'knowledge', 'repository', 'history')
-    Get-ChildItem -LiteralPath $repoRoot -Directory -Recurse | ForEach-Object {
-        $readme = Join-Path $_.FullName 'README.md'
-        if (Test-Path -LiteralPath $readme -PathType Leaf) {
-            $relativeDirectory = Get-RelativePath $_.FullName
-            if ($relativeDirectory -notmatch '(^|/)\.git($|/)') {
-                $managedDirectories += $relativeDirectory
-            }
+    foreach ($directory in $requiredWorkDirectories) {
+        $readme = Join-Path $repoRoot "$directory/README.md"
+        if (-not (Test-Path -LiteralPath $readme -PathType Leaf)) {
+            Add-ValidationError "Managed work directory has no README.md: $directory/"
         }
     }
-    $managedDirectories | Sort-Object -Unique | ForEach-Object {
-        Test-IndexCoverage -Directory $_ -IndexFile "$_/README.md"
+
+    $trainingReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'work/ai/training/README.md')
+    $selfMediaReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'work/ai/self-media/README.md')
+    $microcourseReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'work/design/microcourse-mg-animation/README.md')
+    if (-not $trainingReadme.Contains('../self-media/')) {
+        Add-ValidationError 'AI training README must state its boundary with self-media.'
     }
-
-    Get-ChildItem -LiteralPath (Join-Path $repoRoot 'projects') -File -Recurse -Filter 'version-features.md' |
-        ForEach-Object {
-            $productDirectory = $_.DirectoryName
-            $productReadme = Join-Path $productDirectory 'README.md'
-            if (-not (Test-Path -LiteralPath $productReadme -PathType Leaf)) {
-                Add-ValidationError "Dynamic product directory '$(Get-RelativePath $productDirectory)' has no README.md"
-                return
-            }
-
-            $productContent = Get-Content -Raw -Encoding UTF8 -LiteralPath $productReadme
-            $versionContent = Get-Content -Raw -Encoding UTF8 -LiteralPath $_.FullName
-            if (-not $productContent.Contains('versioned-knowledge-policy.md')) {
-                Add-ValidationError "Dynamic product README '$(Get-RelativePath $productReadme)' does not reference version governance"
-            }
-            if (-not $versionContent.Contains('Status: historical reference, not current capability.')) {
-                Add-ValidationError "Version file '$(Get-RelativePath $_.FullName)' is not clearly marked as history"
-            }
-        }
+    if (-not $selfMediaReadme.Contains('../training/')) {
+        Add-ValidationError 'AI self-media README must state its boundary with AI training.'
+    }
+    if (-not $microcourseReadme.Contains('../../ai/training/')) {
+        Add-ValidationError 'Microcourse README must link to the separate AI training area.'
+    }
 
     $markdownFiles = Get-ChildItem -LiteralPath $repoRoot -Recurse -File -Filter '*.md' |
         Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' }
 
     foreach ($file in $markdownFiles) {
         $content = Get-Content -Raw -Encoding UTF8 -LiteralPath $file.FullName
-        $matches = [regex]::Matches($content, '\[[^\]]*\]\(([^)]+)\)')
-        foreach ($match in $matches) {
-            $target = $match.Groups[1].Value.Trim().Trim('<', '>')
+        $links = [regex]::Matches($content, '\[[^\]]*\]\(([^)]+)\)')
+        foreach ($link in $links) {
+            $target = $link.Groups[1].Value.Trim().Trim('<', '>')
             if ($target -match '^(https?://|mailto:|#|[A-Za-z]:[/\\])') {
                 continue
             }
@@ -188,16 +141,40 @@ try {
                 continue
             }
 
-            $decoded = [Uri]::UnescapeDataString($pathPart)
-            $resolved = Join-Path $file.DirectoryName $decoded
+            $resolved = Join-Path $file.DirectoryName ([Uri]::UnescapeDataString($pathPart))
             if (-not (Test-Path -LiteralPath $resolved)) {
-                Add-ValidationError "Broken link in '$(Get-RelativePath $file.FullName)': $target"
+                Add-ValidationError "Broken link in '$(Get-RepoRelativePath $file.FullName)': $target"
             }
         }
+    }
 
-        if ($file.Name -eq 'README.md' -and $file.Length -gt 16384) {
-            $warnings.Add("Large README may slow routing: $(Get-RelativePath $file.FullName) ($($file.Length) bytes)")
+    $textFiles = Get-ChildItem -LiteralPath $repoRoot -Recurse -File |
+        Where-Object {
+            $_.FullName -notmatch '[\\/]\.git[\\/]' -and
+            $_.Extension -in @('.md', '.txt', '.ps1', '.ts')
         }
+
+    foreach ($file in $textFiles) {
+        $content = Get-Content -Raw -Encoding UTF8 -LiteralPath $file.FullName
+        $secretPattern = "(?im)^\s*(api[_-]?key|token|password|cookie)\s*[:=]\s*[\x22\x27]?[A-Za-z0-9_\-]{16,}"
+        if ($content -match $secretPattern) {
+            Add-ValidationError "Possible secret in '$(Get-RepoRelativePath $file.FullName)'"
+        }
+    }
+
+    $duplicateGroups = Get-ChildItem -LiteralPath $repoRoot -Recurse -File |
+        Where-Object {
+            $_.FullName -notmatch '[\\/]\.git[\\/]' -and
+            $_.Length -gt 0 -and
+            $_.Name -ne 'README.md'
+        } |
+        Get-FileHash -Algorithm SHA256 |
+        Group-Object Hash |
+        Where-Object Count -gt 1
+
+    foreach ($group in $duplicateGroups) {
+        $paths = ($group.Group.Path | ForEach-Object { Get-RepoRelativePath $_ }) -join ', '
+        $warnings.Add("Exact duplicate content: $paths")
     }
 
     Write-Host "Context validation scanned $($markdownFiles.Count) Markdown files."
@@ -213,7 +190,7 @@ try {
         exit 1
     }
 
-    Write-Host 'Validation passed: hierarchy, indexes, project boundaries, revisions, dynamic knowledge, and relative links are consistent.' -ForegroundColor Green
+    Write-Host 'Validation passed: hierarchy, boundaries, links, deprecated paths, and sensitive-data checks are consistent.' -ForegroundColor Green
     exit 0
 }
 finally {

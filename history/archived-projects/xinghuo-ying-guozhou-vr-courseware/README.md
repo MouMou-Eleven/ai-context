@@ -11,7 +11,7 @@
 
 - 仅在用户明确需要追溯《星火映果州》案例或 Nibiru 场景跳转逻辑时读取本目录。
 - 这里保存的是一个具体项目的历史交互方案，不自动代表建委当前的通用课程设计或课件设计规则。
-- 后续教师微课与教育交互课件的可复用规则应进入 `projects/microcourse/`；建委作为讲师的培训课件规则进入 `projects/ai-training/`，不能混用，也不能回写为本项目仍在进行。
+- 后续教师微课与教育交互课件的可复用规则进入 [`../../../work/design/microcourse-mg-animation/`](../../../work/design/microcourse-mg-animation/README.md)；建委作为讲师的培训课件规则进入 [`../../../work/ai/training/`](../../../work/ai/training/README.md)，不能混用，也不能回写为本项目仍在进行。
 
 ## 项目概述
 

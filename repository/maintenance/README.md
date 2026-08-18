@@ -4,7 +4,7 @@
 
 | 文件 | 作用 | 使用时机 |
 |---|---|---|
-| [`validate-context.ps1`](./validate-context.ps1) | 检查必需入口、项目 README、修订索引、目录索引覆盖和 Markdown 相对链接 | 每次结构调整或提交前运行 |
+| [`validate-context.ps1`](./validate-context.ps1) | 检查必需入口、工作层级、旧目录残留、Markdown 相对链接和敏感信息线索 | 每次结构调整或提交前运行 |
 
 ## 运行方式
 

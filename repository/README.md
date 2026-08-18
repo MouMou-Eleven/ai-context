@@ -9,8 +9,10 @@
 | [`../STRUCTURE.md`](../STRUCTURE.md) | 全仓目录、文件职责、写入位置和状态规范 | 新增、移动或重构文件前 |
 | [`../AGENTS.md`](../AGENTS.md) | AI 协作、事实优先级和特殊项目规则 | AI 进入仓库时 |
 | [`../llms.txt`](../llms.txt) | AI 最小读取路由 | 每次任务开始时 |
+| [`environment/README.md`](./environment/README.md) | 电脑、网络和本地工具环境入口 | 处理本机环境问题时 |
 | [`versioned-knowledge-policy.md`](./versioned-knowledge-policy.md) | 秒哒等动态产品知识的新旧版本治理 | 记录产品功能、价格、界面、API 或平台规则时 |
 | [`maintenance/README.md`](./maintenance/README.md) | 校验脚本和提交前检查方法 | 修改仓库后 |
+| [`revisions/README.md`](./revisions/README.md) | 仓库级信息架构和治理变化索引 | 追溯仓库结构变化时 |
 
 ## 根目录例外
 

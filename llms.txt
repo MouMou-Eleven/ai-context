@@ -1,76 +1,72 @@
-# llms.txt — Personal AI Context 最小路由
+# llms.txt - 最小读取路由
 
-> 默认只读本文件。先判断任务属于个人、表达、项目、认知、治理还是历史，再读取 1-3 个入口，不一次性加载整个仓库。
+默认只读本文件。先识别一个最具体领域，再读取该领域 README；除非用户明确要求组合，不得并行激活多个领域。
 
-## 事实优先级
+## 事实顺序
 
-1. 用户在当前对话中的最新明确确认。
-2. [`personal/open-questions.md`](./personal/open-questions.md) 中尚未解决的冲突。
-3. [`personal/current-focus.md`](./personal/current-focus.md) 的当前状态。
-4. 对应项目 README 和最新有效修订。
-5. [`personal/identity.md`](./personal/identity.md) 等稳定个人档案。
-6. 工作领域知识、跨项目知识和表达方法。
-7. 历史、旧修订、原始材料和二进制附件。
+当前对话最新确认 > 当前领域/项目 README > 当前专题或实际核验 > personal 稳定事实 > 领域经验/brain > history/归档/Git 历史。
 
-## 常见任务
+## 一级路由
 
-| 任务 | 最小读取包 |
+| 用户要解决的问题 | 首读 |
 |---|---|
-| 个人简介、讲师介绍、合作背书 | `personal/identity.md` + `personal/achievements.md` + `personal/open-questions.md` |
-| 最近在做什么、当前优先级 | `personal/current-focus.md` |
-| 能力判断、工具和长期兴趣 | `personal/README.md` → 对应单文件 |
-| 参考 GitHub 仓库语言风格、语言表达习惯、语言类案例 | `expression/trigger-rules.md` + `expression/communication-preferences.md` + `expression/methods/README.md` |
-| 保姆级教程、经验帖、学员资料 | `expression/tutorial-writing/README.md`；技术难点再读表达方法 |
-| AI 培训、企业培训、公开课、讲师备课和培训课件 | `projects/ai-training/README.md` + `teaching-and-course-design.md` |
-| 教师微课、精品课、参赛课、VR 交互课件 | `projects/microcourse/README.md` |
-| 第一性原理、头脑风暴、个人认知 | `knowledge/thinking/README.md` |
-| 商业增长、自媒体经营、渠道与对标 | `knowledge/business-growth.md` |
+| 建委是谁、个人简介、业务概要、项目概要、荣誉、成长、能力 | `personal/README.md` |
+| 建委本人的认知、思考习惯、口语和个人表达 | `brain/README.md` |
+| 工作领域或具体项目 | `work/README.md` |
+| 仓库结构、写入、清理、版本治理、电脑环境 | `repository/README.md` |
+| 历史时间或归档项目 | `history/README.md` |
 
-## 项目路由
+## 设计路由
 
-| 场景 | 首读 | 按需继续读 |
+| 任务 | 首读 |
+|---|---|
+| PPT 设计 | `work/design/ppt-design/README.md` |
+| 海报、折页、平面物料 | `work/design/poster-fold-design/README.md` |
+| 书籍装帧、版式设计 | `work/design/book-design/README.md` |
+| 微课、精品课、参赛课、MG 动画、教师委托、VR 交互课件 | `work/design/microcourse-mg-animation/README.md` |
+| AE 宣传视频 | `work/design/ae-promo-video/README.md` |
+| AI 设计、AI 辅助视觉、AI 商业设计 | `work/design/ai-design/README.md` |
+
+AI 设计仍归设计。微课与 AI 培训并列，不能混用。
+
+## AI 路由
+
+| 任务 | 首读 | 按需继续 |
 |---|---|---|
-| AI 设计、商业视觉、PPT、UI | `projects/ai-design/README.md` | 对应项目或后续方法文件 |
-| AI 编程、网站、应用、自动化 | `projects/ai-programming/README.md` | 选择工具子目录或方法文件 |
-| AI 编程源码仓库、混世魔牛游戏、杨建委个人网站 | `projects/ai-programming/source-repositories.md` | 进入独立源码仓库的对应项目 README；不要从 `ai-context` 查找完整源码 |
-| 百度秒哒 MIAODA | `projects/ai-programming/miaoda/llms.txt` | 当前专题；历史版本只在追溯时读 |
-| 创意前端、视频逐帧、3D 首屏 | `projects/ai-programming/creative-frontend-prompt-patterns.md` | 原始样例在 `reference-materials/` |
-| AI 视频、宣传片、电影叙事、Seedance | `projects/ai-video/README.md` | 根据片型选择单个专题 |
-| AI 培训、企业培训、公开课、讲师备课、培训课件 | `projects/ai-training/README.md` | `teaching-and-course-design.md` |
-| 微课、精品课、参赛课、教师委托、VR 交互课件 | `projects/microcourse/README.md` | 当前 README；追溯边界时读 `revisions/` |
-| 付费社群、课程产品、自媒体引流 | `projects/paid-community-course/README.md` | 课程结构、运营、脚本或转化文件 |
-| 飞书书稿、编辑反馈、截图 | `projects/feishu-efficient-office/README.md` | `writing-style-analysis.md` + 对应修订 |
-| 飞书文档视觉或多维表格表单 | 飞书书籍项目对应规范文件 | 执行前核验飞书当前能力 |
-| Inshan、POPUPIANO、Amazon、独立站 | `projects/inshan-popupiano/README.md` | 修订索引 + 最新修订 + 竞品参考 |
-| 言剪 AI、YanCut、AI 剪辑、OpenCut 二次开发 | `projects/yancut-ai/README.md` | 架构、路线图；方向追溯时读修订索引 |
-| Windows、网络、Codex、Clash、本地工具 | `projects/computers/README.md` | 先确认设备，再读设备 README |
+| AI 编程、网站、应用、自动化、开发经验 | `work/ai/programming/README.md` | `experience/` 或 `projects/` |
+| 百度秒哒 MIAODA | `work/ai/programming/tools/miaoda/llms.txt` | basics、development、experience 或 updates 中一个分支 |
+| 言剪 AI、YanCut、OpenCut 二次开发 | `work/ai/programming/projects/yancut-ai/README.md` | architecture、roadmap；追溯时才读 history |
+| AI 培训、企业培训、公开课、讲师备课、培训课件、反馈复盘 | `work/ai/training/README.md` | experience、outlines、materials 或 projects 中一个分支 |
+| AI 超级个体陪跑社群、会员社群、社群课程 | `work/ai/training/projects/paid-community-course/README.md` | 只读当前任务对应文件 |
+| AI 视频通用制作 | `work/ai/video/README.md` | common |
+| 漫剧、企业宣传片、真人实拍故事 | `work/ai/video/types/README.md` | 对应单个类型 |
+| Seedance | `work/ai/video/tools/seedance/README.md` | 对应单个专题 |
+| AI 书籍出版 | `work/ai/publishing/README.md` | 对应项目 |
+| 《飞书高效办公》书稿 | `work/ai/publishing/projects/feishu-efficient-office/README.md` | `writing-style-analysis.md` + 当前章节文件 |
+| AI 自媒体、标题、文章、口播、直播销售、账号增长 | `work/ai/self-media/README.md` | titles、articles、video-scripts、live-sales 或 experience 中一个分支 |
 
-## 表达触发规则
+## 其他项目
 
-- “参考我 GitHub 仓库里的语言风格”“参考语言表达习惯”“参考语言类案例”“参考我沉淀的讲解经验”“减少 AI 味”均进入 `expression/`。
-- 不需要用户说出飞天闪客或其他作者姓名。作者名只用于来源追溯。
-- 原始逐字稿默认不读取；先使用已经提炼的 `expression/methods/`。
-- “自媒体文案、自媒体内容、短视频口播、口播脚本、选题”等词触发当前自媒体项目和脚本规则；再按需叠加 `expression/`。
-- “培训学员、培训课程、AI 培训、企业培训、讲师备课、培训课件”等词触发 `projects/ai-training/`；表达词同时出现时叠加 `expression/`。
-- 培训课程先服从 AI 培训规则；教师微课先服从微课规则；社群口播先服从社群项目规则；书稿先服从书稿项目规则。
-- 只出现“课程”或“课件”且上下文无法判断服务对象时，不混合加载 AI 培训与微课，先确认对象和交付物。
-- 完整的近义触发词、组合顺序和歧义处理见 `expression/trigger-rules.md`。
+| 任务 | 首读 | 按需继续 |
+|---|---|---|
+| Inshan、POPUPIANO、海外电商、Amazon、独立站、代运营 | `work/other/inshan-popupiano/README.md` | `competitive-references.md` 或 `90-day-cold-start-plan.md` |
 
-## 动态产品规则
+## 严格组合规则
 
-- 秒哒、飞书、Codex、AI 模型、API、价格和界面路径都属于动态知识。
-- 当前问题先读当前入口并重新核验，不能从历史版本时间线直接回答。
-- 新功能替代旧功能时，当前入口只保留新口径，旧口径进入修订并写明取代关系。
-- 完整规则见 `repository/versioned-knowledge-policy.md`。
+- 只说“AI 自媒体”：只读 `work/ai/self-media/`，不读 AI 培训，也不读 brain。
+- 只说“AI 培训”：只读 `work/ai/training/`，不自动读自媒体或微课。
+- 只说“按建委本人的风格”：读 `brain/personal-expression.md`；若同时指定书稿、培训或自媒体，以领域规则为主体，个人表达只作为显式附加层。
+- 只有用户明确说“结合”“综合调用”或同时交付多个独立成果时，才组合多个入口。
+- “课程/课件”不明确时先判断对象：建委授课属于 AI 培训；给教师制作成品属于微课设计。
 
-## 历史与归档
+## 动态知识
 
-VideoAI、OpenClaw Agent 和星火映果州 VR 课件位于 `history/archived-projects/`。只有明确追溯旧项目时读取，不得当成当前项目。
+秒哒、飞书、Codex、AI 模型、API、价格、界面路径和平台规则会变化。先读当前入口，再核验官方资料或实际环境；历史文件不能直接作为当前答案。
 
-## 默认不要读取
+## 默认不读取
 
-- 全部 `revisions/*.md`，先读修订索引。
-- `history/timeline.md`，除非追溯历史。
-- `expression/source-materials/` 原始逐字稿。
-- `reference-materials/` 原始提示词和源码，除非执行方案明确需要。
-- 飞书书稿 `all-docs.md` 和历史 `.docx`。
+- 项目 `history.md`，除非用户追问为什么变化或旧版本。
+- `history/timeline.md`，除非追溯时间和成长路径。
+- `history/archived-projects/`，除非明确提到归档项目。
+- `reference-materials/`、`source-materials/`、`raw/`，除非当前任务需要原始证据。
+- 飞书项目 `all-docs.md` 和历史 `.docx`。

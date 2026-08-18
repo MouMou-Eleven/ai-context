@@ -1,0 +1,30 @@
+# 百度秒哒最小路由
+
+默认只读本文件和 README.md，再按单一意图选择一个分支。
+
+## 查平台
+
+- 同名产品：disambiguation.md
+- 平台基础：basics/platform-basics.md
+- 发布渠道：basics/publish-channels.md
+- 当前功能：先查官方资料或实际环境；updates/ 只用于追溯
+
+## 做开发
+
+- 自定义 Skill：development/skill-development.md
+- 外部 Agent 调用秒哒：development/skill-as-callable.md
+- 写执行提示词：experience/prompt-patterns.md
+- 避坑排错：experience/pitfalls.md
+- 完整支付案例：experience/cases/yungouos-jsapi.md
+
+## 复用方案
+
+- 重复验证的处方：experience/patterns/
+- 旧环境兼容源码：experience/reference-materials/
+
+## 严格规则
+
+- 只读取当前问题对应分支，不默认加载全部文件。
+- 不把飞书妙搭经验写入本目录。
+- 不从版本时间线直接回答当前能力。
+- 只有当前环境测试仍复现旧限制时，才读取旧兼容源码。
