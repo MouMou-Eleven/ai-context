@@ -25,6 +25,8 @@ function Add-ValidationError {
 Push-Location $repoRoot
 try {
     $requiredFiles = @(
+        '.gitattributes',
+        '.gitignore',
         'README.md',
         'AGENTS.md',
         'llms.txt',

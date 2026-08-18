@@ -6,6 +6,8 @@
 
 ```text
 ai-context/
+├── .gitattributes                                  Git 文本属性与换行规范
+├── .gitignore                                      Git 忽略规则，排除不应入库的本地文件
 ├── README.md                                      仓库总入口与五个一级目录说明
 ├── AGENTS.md                                      AI 协作、读取、写入和提交规则
 ├── llms.txt                                       AI 最小读取与单领域激活路由
