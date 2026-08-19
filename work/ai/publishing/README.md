@@ -23,3 +23,7 @@ publishing/
 - 书籍视觉版式进入 [`../../design/book-design/`](../../design/book-design/README.md)。
 - 只提“文章、自媒体”时不读取书籍出版。
 - 飞书菜单、按钮和功能路径必须重新核验官方资料或实际界面。
+
+## 语言质量规则
+
+书稿保留亲切感，但必须校准主谓宾和动词搭配。“稳”用于稳定性、可靠性和审慎判断，不用于“先把话说稳一点”这种观点开场；“接住”不能代替解决具体问题。正式正文应改成“先说结论”“帮助读者判断下一步”“把问题解决掉”等准确表达。完整修订记录见 [`repository/revisions/2026-08-20-language-precision.md`](../../../repository/revisions/2026-08-20-language-precision.md)。
