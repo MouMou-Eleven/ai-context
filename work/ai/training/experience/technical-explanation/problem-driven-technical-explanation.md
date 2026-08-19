@@ -3,7 +3,7 @@
 > 状态：当前有效的通用表达方法
 > 提炼日期：2026-07-23
 > 适用范围：AI 课程、技术科普文章、视频口播稿、面向普通人的概念讲解
-> 首个提炼来源：[`source-materials/feitian-shanke/raw/feitian-shanke-transcript.txt`](./source-materials/feitian-shanke/raw/feitian-shanke-transcript.txt)
+> 首个提炼来源：[`../../../../../brain/ai-expression/chinese-datasets/feitian-shanke/raw/feitian-shanke-transcript.txt`](../../../../../brain/ai-expression/chinese-datasets/feitian-shanke/raw/feitian-shanke-transcript.txt)
 > 使用方式：按方法调用，不以作者姓名作为日常触发词；后续可继续吸收其他优秀来源修订本方法。
 
 ## 一句话原则

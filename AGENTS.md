@@ -25,17 +25,19 @@
 ## 3. 一级目录职责
 
 - `personal/`：个人概要，回答建委是谁、业务概要、项目概要、背书、成长路径和能力。不得写具体项目过程。
-- `brain/`：建委本人的认知、思考方式、口语习惯和个人表达。不得收纳某个工作领域专用的语言规则。
+- `brain/`：建委本人的认知，以及所有 AI 中文内容默认调用的 AI 表达基础层。不得把具体领域的专业规则混入 AI 表达。
 - `work/`：设计、AI 和其他领域的工作经验、工具与项目。
 - `repository/`：仓库治理、版本规则、电脑环境和校验工具。
 - `history/`：跨领域时间线与已归档项目，不作为当前事实入口。
 
 ## 4. 严格激活规则
 
-- 默认只激活一个最具体的领域。用户说“AI 自媒体”，只读 `work/ai/self-media/`，不得加载 AI 培训。
-- 用户说“AI 培训”，只读 `work/ai/training/`；只有明确提到某个培训项目，才继续进入该项目。
-- 用户说“参考建委本人的思考或说话方式”，才读 `brain/`。
-- 用户要求“结合多个领域”或提示中明确出现多个独立任务时，才组合读取，并说明组合了哪些入口。
+- 只要任务要求 AI 生成、改写、润色、翻译或组织中文内容，默认先读 `brain/ai-expression/README.md`、`brain/ai-expression/cross-domain-rules.md` 和 `brain/ai-expression/experience/README.md`，再按交付形式选择口语化或书面化规则。
+- 默认只激活一个最具体的专业领域。用户说“AI 自媒体”，读取 `brain/ai-expression/` + `work/ai/self-media/`，不得加载 AI 培训。
+- 用户说“AI 培训”，读取 `brain/ai-expression/` + `work/ai/training/`；只有明确提到某个培训项目，才继续进入该项目。
+- 用户说“参考建委本人的思考方式”，才读 `brain/thinking-and-decisions.md` 或 `brain/business-cognition.md`；AI 表达不等于建委个人口吻。
+- 用户要求“结合多个领域”或提示中明确出现多个独立任务时，才组合多个专业领域；AI 表达基础层只加载一次。
+- 只查询事实、运行代码、整理文件、检查结构或执行测试时，不因出现“中文”而自动读取全部 AI 表达经验。
 - “课程”或“课件”语义不明时，先判断服务对象和交付物：建委作为讲师属于 AI 培训；为教师制作成品微课属于设计下的微课与 MG 动画。
 
 ## 5. 工作归属
@@ -49,10 +51,10 @@
 ### AI
 
 - AI 编程：`work/ai/programming/`，内部再分工具、经验、项目。百度秒哒是工具；言剪 AI 是项目。
-- AI 培训：`work/ai/training/`，内部再分经验、大纲、资料、项目。付费会员社群属于培训项目。
+- AI 培训：`work/ai/training/`，内部再分经验、大纲、资料、项目。付费会员社群属于培训项目；生成培训中文内容时必须叠加 AI 表达。
 - AI 视频：`work/ai/video/`，内部再分通用方法、类型、工具、项目。
 - AI 书籍出版：`work/ai/publishing/`，飞书书籍项目在此。
-- AI 自媒体：`work/ai/self-media/`，标题、文章、口播、直播销售和增长经验均在此，不归 AI 培训。
+- AI 自媒体：`work/ai/self-media/`，标题、文章、口播、直播销售和增长经验均在此，不归 AI 培训；生成自媒体中文内容时必须叠加 AI 表达。
 
 ### 其他
 
@@ -67,7 +69,7 @@
 - `work/ai/publishing/projects/feishu-efficient-office/README.md`
 - `work/ai/publishing/projects/feishu-efficient-office/writing-style-analysis.md`
 
-飞书菜单名、按钮名、功能路径必须通过官方文档或实际界面核验。面向小白写细步骤，禁止凭经验推断。只在需要追溯版本变化时读取项目 `history.md`。
+飞书菜单名、按钮名、功能路径必须通过官方文档或实际界面核验。面向小白写细步骤，禁止凭经验推断。生成书稿中文内容时先调用 `brain/ai-expression/`，再叠加本项目的出版规则；只在需要追溯版本变化时读取项目 `history.md`。
 
 ### Inshan / POPUPIANO
 
@@ -86,7 +88,7 @@
 
 - 每个长期领域、工具或项目必须有 `README.md` 作为入口。
 - 新文件必须被最近一层 README 索引；禁止出现无法路由的孤岛文件。
-- 先去重、去旧、合并同义内容。当前入口只保留当前有效结论。
+- 先去重、去旧、合并同义内容。当前入口只保留当前有效结论；跨领域中文表达规则统一进入 `brain/ai-expression/`，专项目录只写专项差异和事实。
 - 重大变化先更新项目 README，再把必要的原因、新旧差异和日期追加到项目 `history.md`。普通小改动只留在 Git 提交，不单独建修订文件。
 - 历史细节由 Git 保留。不要为了“完整”让大量失效版本继续出现在当前读取树中。
 - 动态产品、功能、价格、界面和 API 遵守 `repository/versioned-knowledge-policy.md`，回答前重新核验。

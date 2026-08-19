@@ -41,4 +41,4 @@
 - 对 AI 新工具和新方向保持强烈好奇，但不把追新本身当作结果。
 - 核心专业基础是设计；AI 是持续扩展的实践能力。
 
-个人语言、思考和表达习惯以 [`../brain/`](../brain/README.md) 为准。
+个人思维认知以 [`../brain/`](../brain/README.md) 为准；AI 中文内容的通用质量以 [`../brain/ai-expression/`](../brain/ai-expression/README.md) 为准。

@@ -1,24 +1,40 @@
 # llms.txt - 最小读取路由
 
-默认只读本文件。先识别一个最具体领域，再读取该领域 README；除非用户明确要求组合，不得并行激活多个领域。
+默认只读本文件。先判断任务是否生成中文内容，再选择一个最具体的专业领域。除非用户明确要求组合，不得同时激活多个专业领域。
 
 ## 事实顺序
 
-当前对话最新确认 > 当前领域/项目 README > 当前专题或实际核验 > personal 稳定事实 > 领域经验/brain > history/归档/Git 历史。
+当前对话最新确认 > 当前领域 / 项目 README > 当前专题或实际核验 > personal 稳定事实 > 领域经验 / brain 认知 > history / 归档 / Git 历史。
 
-## 一级路由
+AI 表达只负责中文质量，不能覆盖上面的事实优先级。
+
+## 第一步：是否生成中文内容
+
+| 任务类型 | AI 表达读取方式 |
+|---|---|
+| 生成、改写、润色、翻译、压缩、扩写或组织中文内容 | 必须先读 `brain/ai-expression/README.md` + `brain/ai-expression/cross-domain-rules.md` + `brain/ai-expression/experience/README.md` |
+| 口播、直播、授课逐字稿、对话和旁白 | 再读 `brain/ai-expression/oral-expression/README.md` |
+| 文章、书稿、教程、方案、项目文档和正式说明 | 再读 `brain/ai-expression/written-expression/README.md` |
+| 中文质量复核、语病、逻辑、搭配和跨领域规则 | 在默认基础上重点复核 `brain/ai-expression/cross-domain-rules.md` |
+| 只查事实、文件位置、项目状态，或执行代码、测试和文件整理 | 不默认加载 AI 表达；需要生成中文说明时再加载 |
+
+中文数据集目录的治理索引随 AI 表达基础层查看；原始数据默认不读取。只有需要追溯表达来源、提炼经验或执行经授权的数据任务时，才进入 `brain/ai-expression/chinese-datasets/` 的具体数据集。
+
+## 第二步：选择一个专业领域
+
+### 一级路由
 
 | 用户要解决的问题 | 首读 |
 |---|---|
 | 建委是谁、个人简介、业务概要、项目概要、荣誉、成长、能力 | `personal/README.md` |
-| 建委本人的认知、思考习惯、口语和个人表达 | `brain/README.md` |
+| 建委怎样思考、判断问题或看待商业 | `brain/README.md` |
 | 工作领域或具体项目 | `work/README.md` |
 | 仓库结构、写入、清理、版本治理、电脑环境 | `repository/README.md` |
 | 历史时间或归档项目 | `history/README.md` |
 
-## 设计路由
+### 设计路由
 
-| 任务 | 首读 |
+| 任务 | 专项入口 |
 |---|---|
 | PPT 设计 | `work/design/ppt-design/README.md` |
 | 海报、折页、平面物料 | `work/design/poster-fold-design/README.md` |
@@ -27,11 +43,11 @@
 | AE 宣传视频 | `work/design/ae-promo-video/README.md` |
 | AI 设计、AI 辅助视觉、AI 商业设计 | `work/design/ai-design/README.md` |
 
-AI 设计仍归设计。微课与 AI 培训并列，不能混用。
+生成设计文案时读取“AI 表达 + 对应设计专项”。AI 设计仍归设计；微课与 AI 培训并列，不能混用。
 
-## AI 路由
+### AI 路由
 
-| 任务 | 首读 | 按需继续 |
+| 任务 | 专项入口 | 按需继续 |
 |---|---|---|
 | AI 编程、网站、应用、自动化、开发经验 | `work/ai/programming/README.md` | `experience/` 或 `projects/` |
 | 百度秒哒 MIAODA | `work/ai/programming/tools/miaoda/llms.txt` | basics、development、experience 或 updates 中一个分支 |
@@ -45,26 +61,31 @@ AI 设计仍归设计。微课与 AI 培训并列，不能混用。
 | 《飞书高效办公》书稿 | `work/ai/publishing/projects/feishu-efficient-office/README.md` | `writing-style-analysis.md` + 当前章节文件 |
 | AI 自媒体、标题、文章、口播、直播销售、账号增长 | `work/ai/self-media/README.md` | titles、articles、video-scripts、live-sales 或 experience 中一个分支 |
 
-## 其他项目
+生成上述中文内容时，专项入口之前必须先调用 AI 表达。
 
-| 任务 | 首读 | 按需继续 |
+### 其他项目
+
+| 任务 | 专项入口 | 按需继续 |
 |---|---|---|
 | Inshan、POPUPIANO、海外电商、Amazon、独立站、代运营 | `work/other/inshan-popupiano/README.md` | `competitive-references.md` 或 `90-day-cold-start-plan.md` |
 
 ## 严格组合规则
 
-- 只说“AI 自媒体”：只读 `work/ai/self-media/`，不读 AI 培训，也不读 brain。
-- 只说“AI 培训”：只读 `work/ai/training/`，不自动读自媒体或微课。
-- 只说“按建委本人的风格”：读 `brain/personal-expression.md`；若同时指定书稿、培训或自媒体，以领域规则为主体，个人表达只作为显式附加层。
-- 只有用户明确说“结合”“综合调用”或同时交付多个独立成果时，才组合多个入口。
-- “课程/课件”不明确时先判断对象：建委授课属于 AI 培训；给教师制作成品属于微课设计。
+- AI 培训内容 = AI 表达 + AI 培训；不自动读 AI 自媒体。
+- AI 自媒体内容 = AI 表达 + AI 自媒体；不自动读 AI 培训。
+- 飞书书稿 = AI 表达 + AI 书籍出版 + 飞书书籍项目；不自动读自媒体销售规则。
+- 微课案例文案 = AI 表达 + 微课设计；不自动读 AI 培训。
+- 只有用户明确说“结合”“综合调用”或同时交付多个独立成果时，才组合多个专业领域。
+- “课程 / 课件”不明确时先判断对象：建委授课属于 AI 培训；给教师制作成品属于微课设计。
+- AI 表达是中文内容基础层，不计作一个额外业务领域，也不能触发无关项目。
 
 ## 动态知识
 
-秒哒、飞书、Codex、AI 模型、API、价格、界面路径和平台规则会变化。先读当前入口，再核验官方资料或实际环境；历史文件不能直接作为当前答案。
+秒哒、飞书、Codex、AI 模型、API、价格、界面路径和平台规则会变化。先读当前入口，再核验官方资料或实际环境；AI 表达只能改善语言，不能替代事实核验。
 
 ## 默认不读取
 
+- `brain/ai-expression/chinese-datasets/` 原始数据，除非追溯来源或执行授权范围内的数据任务。
 - 项目 `history.md`，除非用户追问为什么变化或旧版本。
 - `history/timeline.md`，除非追溯时间和成长路径。
 - `history/archived-projects/`，除非明确提到归档项目。

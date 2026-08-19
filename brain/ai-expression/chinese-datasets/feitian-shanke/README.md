@@ -8,26 +8,27 @@
 
 这套材料用于帮助 AI 学习更像真人的技术科普表达：先提出真实问题，再推导技术为什么出现；用具体场景和日常比喻解释抽象概念；保留判断、体验和不完美细节，减少空泛排比、概念堆砌和模板化总结。
 
-它是写作方法参考，不是当前技术事实库，也不是要求所有文章模仿同一种语气。后续编写课程、文章、视频口播稿或技术科普内容时，应先读取建委的当前写作偏好和对应内容规范，再按需使用本参考包。
+它是中文表达参考数据，不是当前技术事实库，也不是要求所有内容模仿同一种语气。后续编写课程、文章、视频口播稿或技术科普内容时，应先读取 AI 表达库和对应领域规范，再按需使用本参考包。
 
 ## 推荐读取顺序
 
-1. 先读 [`../../README.md`](../../README.md)，确定交付物类型和表达方法。
-2. 再读 [`../../problem-driven-technical-explanation.md`](../../problem-driven-technical-explanation.md)，吸收已经提炼的叙事和讲解规则。
+1. 先读 [`../README.md`](../README.md)，确认数据集用途、来源和使用边界。
+2. 再读 [`../../experience/README.md`](../../experience/README.md)，优先使用已经提炼的 AI 表达经验。
 3. 只有需要观察完整上下文、句式节奏或案例展开时，才读 [`raw/feitian-shanke-transcript.txt`](./raw/feitian-shanke-transcript.txt)。
 
 ## 文件索引
 
 | 文件 | 内容 | 何时读取 |
 |---|---|---|
-| [`../../problem-driven-technical-explanation.md`](../../problem-driven-technical-explanation.md) | 从本资料和后续优秀案例持续提炼的培训技术讲解方法 | 编写课程知识解释时 |
+| [`../../experience/README.md`](../../experience/README.md) | AI 表达经验索引和提炼规则 | 需要把数据集经验转成通用表达规则时 |
+| [`../../../../work/ai/training/experience/technical-explanation/problem-driven-technical-explanation.md`](../../../../work/ai/training/experience/technical-explanation/problem-driven-technical-explanation.md) | 从本资料提炼的培训技术讲解方法 | 编写 AI 培训中的技术概念说明时 |
 | [`raw/feitian-shanke-transcript.txt`](./raw/feitian-shanke-transcript.txt) | 用户提供的两篇视频逐字稿及原分析全文 | 需要观察原始表达、节奏和完整推导时 |
 
 ## 来源说明
 
 - 参考作者：公开视频创作者“飞天闪客”（来自用户提供材料中的标注）。
 - 材料包含两篇视频逐字稿，主题分别涉及 Kimi K3 架构与长上下文模型技术。
-- 原始网络链接、发布日期和转载授权状态未随本地材料提供，当前不能补写或猜测。
+- 原始网络链接、发布日期和转载授权状态未随本地材料提供，当前不能补写或猜测；因此只可内部分析和方法提炼，不得声明为可训练或可公开转载的数据集。
 - 原始文稿中的模型参数、排行榜、版本和产品能力具有时效性，不得直接当作当前事实引用。
 
 ## 使用边界

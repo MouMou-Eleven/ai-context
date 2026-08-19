@@ -1,5 +1,7 @@
 # 2026-08-18 信息架构重构
 
+> 后续变化：其中“建委个人表达”的结构已由 [`2026-08-20-ai-expression-default-layer.md`](./2026-08-20-ai-expression-default-layer.md) 修订为所有中文内容默认调用的 AI 表达基础层。本文件仅用于追溯 2026-08-18 当时的重构口径。
+
 ## 原因
 
 旧结构把个人资料、表达方式、跨项目认知和工作项目分散在 `personal/`、`expression/`、`knowledge/`、`projects/` 等入口中，层级关系不清晰，也容易让 AI 同时加载无关领域。

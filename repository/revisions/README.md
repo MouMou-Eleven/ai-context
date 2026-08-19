@@ -4,7 +4,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
-| 2026-08-20 | [`language-precision.md`](./2026-08-20-language-precision.md) | 统一 AI 培训、自媒体和书籍写作的中文搭配规则，明确“稳”和“接住”的使用边界 |
+| 2026-08-20 | [`ai-expression-default-layer.md`](./2026-08-20-ai-expression-default-layer.md) | 将个人表达重构为所有中文内容默认调用的 AI 表达基础层，并统一跨领域语言规则与数据集边界 |
 | 2026-08-18 | [`information-architecture-rebuild.md`](./2026-08-18-information-architecture-rebuild.md) | 从零散六目录重构为个人、建委大脑、工作、仓库治理、历史五个一级入口 |
 
 当前目录和写入规则始终以根目录 [`STRUCTURE.md`](../../STRUCTURE.md) 为准。

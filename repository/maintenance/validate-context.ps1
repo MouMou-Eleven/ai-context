@@ -38,6 +38,14 @@ try {
         'personal/growth-path.md',
         'personal/capabilities.md',
         'brain/README.md',
+        'brain/thinking-and-decisions.md',
+        'brain/business-cognition.md',
+        'brain/ai-expression/README.md',
+        'brain/ai-expression/cross-domain-rules.md',
+        'brain/ai-expression/oral-expression/README.md',
+        'brain/ai-expression/written-expression/README.md',
+        'brain/ai-expression/experience/README.md',
+        'brain/ai-expression/chinese-datasets/README.md',
         'work/README.md',
         'work/design/README.md',
         'work/ai/README.md',
@@ -69,7 +77,13 @@ try {
         }
     }
 
+    if (Test-Path -LiteralPath (Join-Path $repoRoot 'brain/personal-expression.md')) {
+        Add-ValidationError 'Legacy personal-expression.md still exists; current Chinese expression rules belong under brain/ai-expression/.'
+    }
+
     $rootReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'README.md')
+    $agents = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'AGENTS.md')
+    $llms = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'llms.txt')
     $structure = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'STRUCTURE.md')
     foreach ($directory in @('personal', 'brain', 'work', 'repository', 'history')) {
         if (-not $rootReadme.Contains("$directory/")) {
@@ -78,6 +92,25 @@ try {
         if (-not $structure.Contains("$directory/")) {
             Add-ValidationError "STRUCTURE.md does not reference top-level directory '$directory/'"
         }
+    }
+
+    foreach ($routingFile in @(
+        @{ Name = 'AGENTS.md'; Content = $agents },
+        @{ Name = 'llms.txt'; Content = $llms }
+    )) {
+        if (-not $routingFile.Content.Contains('brain/ai-expression/README.md')) {
+            Add-ValidationError "$($routingFile.Name) does not define the AI expression default entry."
+        }
+        if (-not $routingFile.Content.Contains('brain/ai-expression/cross-domain-rules.md')) {
+            Add-ValidationError "$($routingFile.Name) does not define the default cross-domain Chinese quality rules."
+        }
+        if (-not $routingFile.Content.Contains('brain/ai-expression/experience/README.md')) {
+            Add-ValidationError "$($routingFile.Name) does not define the default AI expression experience index."
+        }
+    }
+
+    if (-not $structure.Contains('ai-expression/')) {
+        Add-ValidationError 'STRUCTURE.md does not include the AI expression hierarchy.'
     }
 
     $requiredWorkDirectories = @(
@@ -115,6 +148,7 @@ try {
 
     $trainingReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'work/ai/training/README.md')
     $selfMediaReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'work/ai/self-media/README.md')
+    $publishingReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'work/ai/publishing/README.md')
     $microcourseReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'work/design/microcourse-mg-animation/README.md')
     if (-not $trainingReadme.Contains('../self-media/')) {
         Add-ValidationError 'AI training README must state its boundary with self-media.'
@@ -124,6 +158,16 @@ try {
     }
     if (-not $microcourseReadme.Contains('../../ai/training/')) {
         Add-ValidationError 'Microcourse README must link to the separate AI training area.'
+    }
+
+    foreach ($domainReadme in @(
+        @{ Name = 'AI training'; Content = $trainingReadme },
+        @{ Name = 'AI self-media'; Content = $selfMediaReadme },
+        @{ Name = 'AI publishing'; Content = $publishingReadme }
+    )) {
+        if (-not $domainReadme.Content.Contains('brain/ai-expression/')) {
+            Add-ValidationError "$($domainReadme.Name) README must compose its rules with the AI expression base layer."
+        }
     }
 
     $markdownFiles = Get-ChildItem -LiteralPath $repoRoot -Recurse -File -Filter '*.md' |

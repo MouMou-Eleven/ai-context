@@ -27,10 +27,11 @@ training/
 
 ## 与其他领域的边界
 
+- 生成培训课件、逐字稿、讲解说明或学员资料时，必须先调用 [`../../../brain/ai-expression/`](../../../brain/ai-expression/README.md) 负责中文质量，再调用本目录负责课程逻辑、内容呈现和培训适配。
 - 微课、精品课、MG动画和教育交互课件是设计交付，进入 [`../../design/microcourse-mg-animation/`](../../design/microcourse-mg-animation/README.md)。
 - 自媒体标题、文章、口播和直播销售进入 [`../self-media/`](../self-media/README.md)。
 - AI 编程课程属于培训；只有需要真实开发事实时才按需组合 [`../programming/`](../programming/README.md)。
-- 建委个人语言习惯只在明确要求时从 [`../../../brain/`](../../../brain/README.md) 叠加。
+- AI 表达默认叠加；建委的思维认知只有用户明确要求时才从 [`../../../brain/`](../../../brain/README.md) 读取。
 
 ## 严格激活
 
@@ -41,6 +42,6 @@ training/
 
 ## 语言质量规则
 
-培训逐字稿、课件标题和讲解说明必须做中文搭配校准。不要把“稳”当作引出观点的语气词；“先给大家说一个真实观点”“先说结论”才是合适的开场。面对安装、报错、配置等具体困难，使用“帮你判断下一步”“把问题解决掉”等明确动作，不用“把问题接住”这类不自然搭配。完整修订记录见 [`repository/revisions/2026-08-20-language-precision.md`](../../../repository/revisions/2026-08-20-language-precision.md)。
+中文搭配、逻辑和语境统一服从 [`../../../brain/ai-expression/cross-domain-rules.md`](../../../brain/ai-expression/cross-domain-rules.md)，不在培训目录复制维护。培训目录只补充培训专项：受众、课程逻辑、课件结构、演示方式、讲师与学员资料边界、反馈和复盘。
 
-*结构确认：2026-08-18*
+*结构确认：2026-08-20*

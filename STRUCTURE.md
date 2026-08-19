@@ -24,8 +24,23 @@ ai-context/
 ├── brain/                                         一级目录：建委大脑
 │   ├── README.md                                  建委大脑入口、边界与激活条件
 │   ├── thinking-and-decisions.md                  思维认知、判断习惯与决策方式
-│   ├── personal-expression.md                     建委本人的口语、表达逻辑和语言习惯
-│   └── business-cognition.md                      建委长期形成的商业与增长认知
+│   ├── business-cognition.md                      建委长期形成的商业与增长认知
+│   └── ai-expression/                             二级目录：AI 中文表达基础层
+│       ├── README.md                              AI 表达总入口、默认激活与组合规则
+│       ├── cross-domain-rules.md                  跨领域中文质量、逻辑与搭配规则
+│       ├── oral-expression/                       三级目录：口语化表达
+│       │   └── README.md                          口播、直播、授课和对话表达规则
+│       ├── written-expression/                    三级目录：书面化表达
+│       │   └── README.md                          书稿、教程、方案和文档表达规则
+│       ├── experience/                            三级目录：AI 表达经验
+│       │   └── README.md                          跨领域表达经验索引与提炼规则
+│       └── chinese-datasets/                      三级目录：高质量中文数据集
+│           ├── README.md                          数据来源、授权、清洗和使用规则
+│           └── feitian-shanke/                    四级目录：中文技术科普参考材料
+│               ├── README.md                      材料用途、来源状态和授权边界
+│               └── raw/                          五级目录：未经改写的原始逐字稿
+│                   └── feitian-shanke-transcript.txt
+│                                                 仅内部分析，不声明为可训练数据
 │
 ├── work/                                          一级目录：工作领域与项目
 │   ├── README.md                                  工作总入口：设计、AI、其他
@@ -132,13 +147,7 @@ ai-context/
 │   │   │   │   └── technical-explanation/         五级目录：技术解释方法
 │   │   │   │       ├── README.md                  方法索引
 │   │   │   │       ├── problem-driven-technical-explanation.md
-│   │   │   │       │                             问题驱动的技术解释方法
-│   │   │   │       └── source-materials/          六级目录：来源材料
-│   │   │   │           ├── README.md              来源材料索引
-│   │   │   │           └── feitian-shanke/
-│   │   │   │               ├── README.md          飞天闪客材料用途与边界
-│   │   │   │               └── raw/
-│   │   │   │                   └── feitian-shanke-transcript.txt
+│   │   │   │                                     问题驱动的技术解释方法
 │   │   │   ├── outlines/                          四级目录：培训大纲
 │   │   │   │   └── README.md                      大纲入口，当前无独立通用大纲
 │   │   │   ├── materials/                         四级目录：培训资料
@@ -151,7 +160,11 @@ ai-context/
 │   │   │           ├── curriculum-design.md       课程结构与直播节奏
 │   │   │           ├── course-materials-index.md  飞书课程资料索引
 │   │   │           ├── operations-playbook.md     招生、运营与转化执行
-│   │   │           └── history.md                 已清洗的关键演进摘要
+│   │   │           ├── history.md                 已清洗的关键演进摘要
+│   │   │           └── revisions/                 六级目录：课程关键修订
+│   │   │               ├── README.md              修订索引与读取边界
+│   │   │               └── 2026-08-19-lesson-4-student-material-boundary.md
+│   │   │                                             第 4 节学员资料边界修订
 │   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
@@ -238,8 +251,10 @@ ai-context/
 │   │   └── validate-context.ps1                   结构、索引与链接校验脚本
 │   └── revisions/                                 二级目录：仓库级重大修订
 │       ├── README.md                              仓库修订索引
-│       └── 2026-08-18-information-architecture-rebuild.md
-│                                                 本次信息架构重构记录
+│       ├── 2026-08-18-information-architecture-rebuild.md
+│       │                                         五个一级入口的信息架构重构记录
+│       └── 2026-08-20-ai-expression-default-layer.md
+│                                                 AI 表达默认层和语言规则修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界
@@ -262,7 +277,7 @@ ai-context/
 新增资料前依次判断：
 
 1. 是建委本人的概要事实吗？是则进入 `personal/`。
-2. 是建委本人跨场景稳定的思考或个人表达吗？是则进入 `brain/`。
+2. 是建委本人跨场景稳定的思维认知，或所有中文内容共用的 AI 表达规则吗？是则进入 `brain/` 对应分支。
 3. 是某个工作领域的经验、工具或项目吗？是则进入 `work/` 对应最具体分支。
 4. 是仓库维护、设备或运行环境吗？是则进入 `repository/`。
 5. 只剩历史追溯价值、已经退出主线吗？是则进入 `history/`。
@@ -292,7 +307,7 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 当前 README 只保留当前有效口径，不堆叠相互冲突的旧结论。
 - 重大变化写入项目 `history.md`，只保留日期、原因、新旧差异和当前结论。
 - 普通编辑、格式修改和过程日志只保留在 Git 提交历史中。
-- 原始材料放在 `source-materials/`、`reference-materials/` 或 `raw/`，必须有上层 README 说明用途，默认不激活。
+- 原始材料放在最具体主题下的 `reference-materials/` 或 `raw/`；中文表达语料统一进入 `brain/ai-expression/chinese-datasets/`。必须有上层 README 说明来源、授权和用途，默认不激活。
 - 已退出主线的完整项目进入 `history/archived-projects/`，只有明确追溯时读取。
 
 ## 六、命名、安全与提交
@@ -302,4 +317,4 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 不保存密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
 - 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效。
 
-*结构最后确认：2026-08-18*
+*结构最后确认：2026-08-20*

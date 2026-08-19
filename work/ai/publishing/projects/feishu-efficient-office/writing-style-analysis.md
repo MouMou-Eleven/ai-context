@@ -1,13 +1,13 @@
 # 建委写作风格说明书（给 AI 的风格 Prompt）
 
-> 语言精度补充：不要把“稳”当作无意义的观点开场，不写“先把话说稳一点”；不要用“接住”泛指解决安装、报错或配置问题。动词必须与对象匹配，完整规则见 [`../../../../../repository/revisions/2026-08-20-language-precision.md`](../../../../../repository/revisions/2026-08-20-language-precision.md)。
+> 中文基础质量统一服从 [`../../../../../brain/ai-expression/cross-domain-rules.md`](../../../../../brain/ai-expression/cross-domain-rules.md)。本文件只维护《飞书高效办公》的出版专项写作规则，不重复保存跨领域语言搭配。
 
 > 把这份内容喂给任何 AI，它就能理解建委的写作风格，并按此风格生成内容。
 > 
 > 整理于 2026年5月10日，基于 9 篇 AIGC 培训文档（约 20 万字）的风格提炼。
 > 这里的“约 20 万字”指当时用于分析的原始来源文档总量；仓库内 `all-docs.md` 只是 34 篇资料的摘要与来源索引，不是这些原文的完整副本。
 
-> **关联文档**：本文档只负责《飞书高效办公》书稿的写作规则。建委个人表达见 [`../../../../../brain/personal-expression.md`](../../../../../brain/personal-expression.md)，飞书文档视觉偏好见 [`feishu-doc-style.md`](./feishu-doc-style.md)。除非用户明确要求模仿建委本人，否则不要自动加载个人表达规则。
+> **关联文档**：本文档只负责《飞书高效办公》书稿的出版专项规则。中文基础质量默认来自 [`../../../../../brain/ai-expression/`](../../../../../brain/ai-expression/README.md)，飞书文档视觉偏好见 [`feishu-doc-style.md`](./feishu-doc-style.md)。
 
 ---
 
