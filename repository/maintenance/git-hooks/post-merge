@@ -1,0 +1,4 @@
+#!/bin/sh
+# post-merge desktop structure sync
+repo_root="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$repo_root/repository/maintenance/sync-desktop-structure.ps1" || true

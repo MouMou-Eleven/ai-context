@@ -13,9 +13,12 @@ ai-expression/
 ├── written-expression/      书面化表达：准确、完整、适合文档与正式交付
 │   └── README.md             书面化表达规则与检查清单
 ├── chinese-datasets/         中文数据集索引与数据治理
-│   └── README.md             高质量中文数据集的来源、授权、清洗和使用规则
+│   ├── README.md             高质量中文数据集的来源、授权、清洗和使用规则
+│   ├── feitian-shanke/       技术科普中文参考材料
+│   └── short-video-outcome-and-motivation/  短视频口语参考材料
 └── experience/               AI 表达实践经验
-    └── README.md             经验索引、问题类型和复盘入口
+    ├── README.md             经验索引、问题类型和复盘入口
+    └── spoken-argument-and-transition.md  口语化论证与前后承接
 ```
 
 ## 默认激活规则
@@ -86,4 +89,4 @@ AI 表达是所有中文内容的基础层，领域规则是专项适配层。�
 
 AI 内容生成时：默认读取本 README、`cross-domain-rules.md`、`experience/README.md`，以及 `oral-expression/README.md` 或 `written-expression/README.md` 中与交付形式匹配的一个；`chinese-datasets/README.md` 用于确认数据治理边界，原始数据只有在来源、授权和任务用途都明确时才读取。
 
-*规则确认：2026-08-20*
+*规则确认：2026-08-21*

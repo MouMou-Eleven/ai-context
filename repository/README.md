@@ -17,3 +17,9 @@
 ## 根目录例外
 
 根目录只保留 `README.md`、`AGENTS.md`、`llms.txt` 和 `STRUCTURE.md` 四个机器与人类都需要快速发现的入口。它们是路由文件，不承担零碎内容沉淀。
+
+## 发布与桌面同步
+
+- 建委要求沉淀到 GitHub 时，默认校验后直接提交并推送 `main`，不创建 PR。
+- 每次结构变化先更新 `STRUCTURE.md`，再由 [`maintenance/sync-desktop-structure.ps1`](./maintenance/sync-desktop-structure.ps1) 同步到 `F:\桌面文件\GitHub仓库完整结构.md`。
+- 桌面文件是只读镜像；仓库 `STRUCTURE.md` 始终是唯一权威来源。

@@ -48,6 +48,8 @@
 | 复盘真实案例 | 场景冲突 + 故事 |
 | 同时留人并建立信任 | SCQA 开头 + PREP 主体 |
 
+当内容涉及成果展示、用户动机、知识为什么没人看或课程知识怎样转成前端内容时，继续读取 [`../experience/outcome-and-motivation.md`](../experience/outcome-and-motivation.md)。观点负责建立相关性，知识和案例负责建立信任，不能用情绪观点替代真实交付。
+
 ## 给 AI 的输入字段
 
 ```text

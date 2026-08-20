@@ -95,10 +95,16 @@
 - 重大变化先更新项目 README，再把必要的原因、新旧差异和日期追加到项目 `history.md`。普通小改动只留在 Git 提交，不单独建修订文件。
 - 历史细节由 Git 保留。不要为了“完整”让大量失效版本继续出现在当前读取树中。
 - 动态产品、功能、价格、界面和 API 遵守 `repository/versioned-knowledge-policy.md`，回答前重新核验。
+- 任何目录新增、移动、重命名或删除都必须同步更新 `STRUCTURE.md`，并运行 `repository/maintenance/sync-desktop-structure.ps1`，保证 `F:\桌面文件\GitHub仓库完整结构.md` 与仓库权威结构完全一致。
 
 ## 8. 提交标准
+
+<!-- publish-policy: direct-main-no-pr -->
 
 - 使用 UTF-8、LF、相对链接，英文路径采用 kebab-case。
 - 提交前检查 `git status --short`，确认没有无关文件和敏感信息。
 - 运行 `repository/maintenance/validate-context.ps1`。
 - 推送后验证远端分支和对应文件存在。
+- 建委要求把内容沉淀到 GitHub 时，默认在校验通过后直接提交并推送到 `main`，不创建 PR，也不等待第二次“提交”指令；只有建委明确要求 PR、审阅分支或暂不提交时才改变流程。
+- 直接提交时只暂存本次任务明确涉及的文件；如果工作区存在无关改动，不得一并提交。
+- 已完成迁移、已被 `main` 覆盖或已经合并的临时分支和 PR 应及时清理，避免旧架构继续被误读。

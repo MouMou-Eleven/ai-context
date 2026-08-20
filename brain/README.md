@@ -18,12 +18,18 @@ brain/
     │   └── README.md           书面化表达经验与检查清单
     ├── chinese-datasets/       高质量中文数据集
     │   ├── README.md           数据集来源、授权、清洗和使用规则
-    │   └── feitian-shanke/     中文技术科普表达参考数据集
-    │       ├── README.md       数据集用途、来源和使用边界
-    │       └── raw/            原始逐字稿，只在需要时读取
-    │           └── feitian-shanke-transcript.txt
-    └── experience/              AI 表达实践经验
-        └── README.md            经验索引和提炼规则
+    │   ├── feitian-shanke/     中文技术科普表达参考数据集
+    │   │   ├── README.md       数据集用途、来源和使用边界
+    │   │   └── raw/            原始逐字稿，只在需要时读取
+    │   │       └── feitian-shanke-transcript.txt
+    │   └── short-video-outcome-and-motivation/
+    │       ├── README.md       短视频逐字稿来源、核验和使用边界
+    │       └── raw/
+    │           └── two-video-transcripts.md
+    └── experience/             AI 表达实践经验
+        ├── README.md           经验索引和提炼规则
+        └── spoken-argument-and-transition.md
+                               口语化论证与前后承接方法
 ```
 
 ## 建委大脑的两层结构
@@ -69,4 +75,4 @@ AI 表达不等于“建委本人说话方式”。它是一套用于提升中�
 - 建委本人的长期思维认知进入本目录根部的认知文件。
 - 一次性修改意见只有在多个任务中验证或由建委明确确认后，才提炼为 AI 表达规则。
 
-*边界确认：2026-08-20*
+*边界确认：2026-08-21*

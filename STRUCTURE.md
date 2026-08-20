@@ -33,14 +33,19 @@ ai-context/
 │       ├── written-expression/                    三级目录：书面化表达
 │       │   └── README.md                          书稿、教程、方案和文档表达规则
 │       ├── experience/                            三级目录：AI 表达经验
-│       │   └── README.md                          跨领域表达经验索引与提炼规则
+│       │   ├── README.md                          跨领域表达经验索引与提炼规则
+│       │   └── spoken-argument-and-transition.md 口语化论证与前后承接方法
 │       └── chinese-datasets/                      三级目录：高质量中文数据集
 │           ├── README.md                          数据来源、授权、清洗和使用规则
-│           └── feitian-shanke/                    四级目录：中文技术科普参考材料
-│               ├── README.md                      材料用途、来源状态和授权边界
-│               └── raw/                          五级目录：未经改写的原始逐字稿
-│                   └── feitian-shanke-transcript.txt
-│                                                 仅内部分析，不声明为可训练数据
+│           ├── feitian-shanke/                    四级目录：中文技术科普参考材料
+│           │   ├── README.md                      材料用途、来源状态和授权边界
+│           │   └── raw/                          五级目录：未经改写的原始逐字稿
+│           │       └── feitian-shanke-transcript.txt
+│           └── short-video-outcome-and-motivation/
+│               ├── README.md                      短视频口语材料来源、核验和使用边界
+│               └── raw/
+│                   └── two-video-transcripts.md  两段原始短视频逐字稿
+│                                                 两套材料均仅供内部分析，不声明可训练
 │
 ├── work/                                          一级目录：工作领域与项目
 │   ├── README.md                                  工作总入口：设计、AI、其他
@@ -160,6 +165,7 @@ ai-context/
 │   │   │           ├── curriculum-design.md       课程结构与直播节奏
 │   │   │           ├── course-materials-index.md  飞书课程资料索引
 │   │   │           ├── operations-playbook.md     招生、运营与转化执行
+│   │   │           ├── competitive-references.md 外部会员社群案例与可迁移经验
 │   │   │           ├── history.md                 已清洗的关键演进摘要
 │   │   │           └── revisions/                 六级目录：课程关键修订
 │   │   │               ├── README.md              修订索引与读取边界
@@ -229,7 +235,8 @@ ai-context/
 │   │       │   └── conversion-path.md             内容到评论、资料和社群的承接
 │   │       └── experience/
 │   │           ├── README.md                      自媒体经验索引
-│   │           └── media-growth.md                账号增长与内容规划
+│   │           ├── media-growth.md                账号增长与内容规划
+│   │           └── outcome-and-motivation.md      成果展示、用户动机与知识分层
 │   │
 │   └── other/                                     二级目录：其他领域
 │       ├── README.md                              其他项目索引与准入条件
@@ -254,14 +261,22 @@ ai-context/
 │   │           ├── network-and-codex.md           网络、Clash 与 Codex 排障
 │   │           └── history.md                     已清洗的关键修复摘要
 │   ├── maintenance/                               二级目录：维护工具
-│   │   ├── README.md                              校验工具说明
-│   │   └── validate-context.ps1                   结构、索引与链接校验脚本
+│   │   ├── README.md                              校验与桌面同步说明
+│   │   ├── validate-context.ps1                   结构、索引与链接校验脚本
+│   │   ├── sync-desktop-structure.ps1             将权威结构同步到 F 盘桌面
+│   │   └── git-hooks/                             本机自动同步触发器
+│   │       ├── post-commit                        提交后同步桌面结构
+│   │       └── post-merge                         拉取或合并后同步桌面结构
 │   └── revisions/                                 二级目录：仓库级重大修订
 │       ├── README.md                              仓库修订索引
 │       ├── 2026-08-18-information-architecture-rebuild.md
 │       │                                         五个一级入口的信息架构重构记录
-│       └── 2026-08-20-ai-expression-default-layer.md
-│                                                 AI 表达默认层和语言规则修订
+│       ├── 2026-08-20-ai-expression-default-layer.md
+│       │                                         AI 表达默认层和语言规则修订
+│       ├── 2026-08-21-commercial-delivery-domain.md
+│       │                                         商业化与对外交付边界层修订
+│       └── 2026-08-21-direct-main-and-desktop-sync.md
+│                                                 直推 main、旧分支清理与桌面同步修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界
@@ -323,6 +338,6 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 目录和普通文件采用小写 kebab-case；固定入口保留 `README.md`、`AGENTS.md`、`STRUCTURE.md`、`llms.txt`。
 - Markdown 使用 UTF-8、LF 和相对链接。
 - 不保存密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
-- 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效。
+- 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；再运行 `repository/maintenance/sync-desktop-structure.ps1`，保证 F 盘桌面镜像与本文件完全一致。
 
-*结构最后确认：2026-08-20*
+*结构最后确认：2026-08-21*

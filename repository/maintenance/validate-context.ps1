@@ -58,6 +58,9 @@ try {
         'repository/README.md',
         'repository/environment/README.md',
         'repository/versioned-knowledge-policy.md',
+        'repository/maintenance/sync-desktop-structure.ps1',
+        'repository/maintenance/git-hooks/post-commit',
+        'repository/maintenance/git-hooks/post-merge',
         'history/README.md'
     )
 
@@ -111,6 +114,27 @@ try {
 
     if (-not $structure.Contains('ai-expression/')) {
         Add-ValidationError 'STRUCTURE.md does not include the AI expression hierarchy.'
+    }
+
+    if (-not $agents.Contains('publish-policy: direct-main-no-pr')) {
+        Add-ValidationError 'AGENTS.md does not define the user-confirmed direct-to-main publishing rule.'
+    }
+
+    $desktopSetting = (Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders').Desktop
+    $desktopDirectory = [Environment]::ExpandEnvironmentVariables($desktopSetting)
+    $desktopStructureFileName = 'GitHub' + [char]0x4ED3 + [char]0x5E93 + [char]0x5B8C + [char]0x6574 + [char]0x7ED3 + [char]0x6784 + '.md'
+    $desktopStructurePath = Join-Path $desktopDirectory $desktopStructureFileName
+    if (Test-Path -LiteralPath $desktopDirectory -PathType Container) {
+        if (-not (Test-Path -LiteralPath $desktopStructurePath -PathType Leaf)) {
+            Add-ValidationError "Missing desktop structure mirror: $desktopStructurePath"
+        }
+        else {
+            $sourceStructureHash = (Get-FileHash -LiteralPath (Join-Path $repoRoot 'STRUCTURE.md') -Algorithm SHA256).Hash
+            $desktopStructureHash = (Get-FileHash -LiteralPath $desktopStructurePath -Algorithm SHA256).Hash
+            if ($sourceStructureHash -ne $desktopStructureHash) {
+                Add-ValidationError "Desktop structure mirror is not synchronized: $desktopStructurePath"
+            }
+        }
     }
 
     $requiredWorkDirectories = @(

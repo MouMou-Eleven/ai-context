@@ -22,7 +22,7 @@ self-media/
 | 图文、文章、公众号内容 | [`articles/README.md`](./articles/README.md) |
 | 短视频口播和脚本 | [`video-scripts/README.md`](./video-scripts/README.md) |
 | 直播销售、评论关键词、资料与社群承接 | [`live-sales/README.md`](./live-sales/README.md) |
-| 账号规划、内容测试和复盘 | [`experience/README.md`](./experience/README.md) |
+| 账号规划、成果展示、用户动机、内容测试和复盘 | [`experience/README.md`](./experience/README.md) |
 
 ## 严格激活规则
 
@@ -44,4 +44,4 @@ self-media/
 - 没有真实数据时明确写“待验证”，不编造案例和效果。
 - 旧平台技巧失效后退出当前文件，必要时用 Git 历史追溯。
 
-*结构确认：2026-08-20*
+*结构确认：2026-08-21*
