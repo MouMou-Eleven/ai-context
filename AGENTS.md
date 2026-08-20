@@ -35,6 +35,8 @@
 - 只要任务要求 AI 生成、改写、润色、翻译或组织中文内容，默认先读 `brain/ai-expression/README.md`、`brain/ai-expression/cross-domain-rules.md` 和 `brain/ai-expression/experience/README.md`，再按交付形式选择口语化或书面化规则。
 - 默认只激活一个最具体的专业领域。用户说“AI 自媒体”，读取 `brain/ai-expression/` + `work/ai/self-media/`，不得加载 AI 培训。
 - 用户说“AI 培训”，读取 `brain/ai-expression/` + `work/ai/training/`；只有明确提到某个培训项目，才继续进入该项目。
+- 用户说“给客户看、发给客户、客户审阅、对外发送、正式交付、交付版”等含义，或交付物显然代表建委或公司对外呈现时，读取 `brain/ai-expression/` + `work/ai/commercial/` + 一个最具体的专业领域或项目。商业交付是边界层，不计作第二个专业领域。
+- 对外成品默认不出现“客户版、客户审阅版、给客户看的”等接收者身份标签，也不把“建议采用、可以考虑、待客户确认、供客户参考”等内部商议词写入正文。已确认内容写成确定陈述；未确认内容先在内部向建委核实。只有当前提示明确要求这些角色或建议形式时才例外。
 - 用户说“参考建委本人的思考方式”，才读 `brain/thinking-and-decisions.md` 或 `brain/business-cognition.md`；AI 表达不等于建委个人口吻。
 - 用户要求“结合多个领域”或提示中明确出现多个独立任务时，才组合多个专业领域；AI 表达基础层只加载一次。
 - 只查询事实、运行代码、整理文件、检查结构或执行测试时，不因出现“中文”而自动读取全部 AI 表达经验。
@@ -55,6 +57,7 @@
 - AI 视频：`work/ai/video/`，内部再分通用方法、类型、工具、项目。
 - AI 书籍出版：`work/ai/publishing/`，飞书书籍项目在此。
 - AI 自媒体：`work/ai/self-media/`，标题、文章、口播、直播销售和增长经验均在此，不归 AI 培训；生成自媒体中文内容时必须叠加 AI 表达。
+- AI 商业化与对外交付：`work/ai/commercial/`，保存商业项目交付经验和内外部稿件边界；与培训、视频、设计、出版或具体项目中的一个专项组合使用。
 
 ### 其他
 

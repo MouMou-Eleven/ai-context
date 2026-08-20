@@ -166,6 +166,13 @@ ai-context/
 │   │   │               └── 2026-08-19-lesson-4-student-material-boundary.md
 │   │   │                                             第 4 节学员资料边界修订
 │   │   │
+│   │   ├── commercial/                            三级目录：AI 商业化与对外交付
+│   │   │   ├── README.md                          商业交付总入口、触发规则与内外部边界
+│   │   │   └── experience/                        四级目录：商业交付经验
+│   │   │       ├── README.md                      商业交付经验索引
+│   │   │       └── external-deliverable-language.md
+│   │   │                                             对外成品与内部工作稿的语言边界
+│   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
 │   │   │   ├── common/
@@ -294,6 +301,7 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 工具不是项目，例如百度秒哒位于 `programming/tools/`。
 - 项目不是通用经验，例如言剪 AI 位于 `programming/projects/`。
 - 使用 AI 不自动改变业务归属：AI 设计仍在设计，AI 视频微课仍以微课交付归入设计。
+- `work/ai/commercial/` 是对外交付边界层，可与一个最具体的专业领域或项目组合，不计作第二个专业领域。
 
 ## 四、README 与文件索引
 
