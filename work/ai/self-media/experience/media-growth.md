@@ -38,4 +38,4 @@
 6. 用户行动后是否被有效承接。
 7. 下一轮只保留、修改或停止哪些变量。
 
-需要商业分析时可按需读取 [`../../../../brain/business-cognition.md`](../../../../brain/business-cognition.md)；这不代表每个自媒体任务都自动激活建委大脑。
+需要结合建委商业判断时可按需读取 [`../../../../brain/cognition/business-cognition.md`](../../../../brain/cognition/business-cognition.md)；这不代表每个自媒体任务都自动激活建委认知。需要设计内容获客、产品价值解释和商业承接时，读取 [`../../../other/commercial/experience/content-demand-and-conversion.md`](../../../other/commercial/experience/content-demand-and-conversion.md)。

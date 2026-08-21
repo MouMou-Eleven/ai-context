@@ -4,6 +4,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-08-22 | [`cognition-and-content-commercialization.md`](./2026-08-22-cognition-and-content-commercialization.md) | 将思维与商业认知归入“建委认知”，并把多份内容销售资料提炼为跨行业的需求识别与商业承接方法 |
 | 2026-08-21 | [`chinese-quality-and-source-governance.md`](./2026-08-21-chinese-quality-and-source-governance.md) | 建立默认中文语法与病句检查，明确开源资源、数据集和多位创作者经验的去重、冲突与激活规则 |
 | 2026-08-21 | [`desktop-sync-resilience.md`](./2026-08-21-desktop-sync-resilience.md) | 加固桌面 HTML 同步的重试、非阻断延后和 Git 操作自愈机制 |
 | 2026-08-21 | [`commercial-delivery-relocation.md`](./2026-08-21-commercial-delivery-relocation.md) | 将商业化与对外交付从 AI 移到其他领域，明确其跨设计与 AI 的商业规范定位 |

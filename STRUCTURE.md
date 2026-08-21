@@ -24,8 +24,10 @@ ai-context/
 │
 ├── brain/                                         一级目录：建委大脑
 │   ├── README.md                                  建委大脑入口、边界与激活条件
-│   ├── thinking-and-decisions.md                  思维认知、判断习惯与决策方式
-│   ├── business-cognition.md                      建委长期形成的商业与增长认知
+│   ├── cognition/                                 二级目录：建委认知
+│   │   ├── README.md                              认知入口、读取路由与写入边界
+│   │   ├── thinking-and-decisions.md              思维、判断、框架拆解、学习与决策方式
+│   │   └── business-cognition.md                  商业、增长、内容经营与经营判断
 │   └── ai-expression/                             二级目录：AI 中文表达基础层
 │       ├── README.md                              AI 表达总入口、默认激活与组合规则
 │       ├── cross-domain-rules.md                  跨领域中文质量、逻辑与搭配规则
@@ -236,11 +238,13 @@ ai-context/
 │   └── other/                                     二级目录：其他领域与项目
 │       ├── README.md                              其他领域与项目索引及准入条件
 │       ├── commercial/                            三级目录：商业化与对外交付
-│       │   ├── README.md                          跨领域商业规范、触发规则与边界
-│       │   └── experience/                        四级目录：商业交付经验
-│       │       ├── README.md                      商业交付经验索引
+│       │   ├── README.md                          跨行业商业方法、触发规则与交付边界
+│       │   └── experience/                        四级目录：商业经验与交付方法
+│       │       ├── README.md                      内容经营与商业交付经验索引
+│       │       ├── content-demand-and-conversion.md
+│       │       │                                  内容驱动的需求识别与商业承接
 │       │       └── external-deliverable-language.md
-│       │                                             对外成品与内部工作稿的语言边界
+│       │                                          对外成品与内部工作稿的语言边界
 │       └── inshan-popupiano/                      三级目录：海外电商项目
 │           ├── README.md                          当前合作模式、事实和待澄清项
 │           ├── 90-day-cold-start-plan.md          90 天冷启动执行方案
@@ -289,8 +293,10 @@ ai-context/
 │       │                                         桌面 HTML 同步稳定性加固
 │       ├── 2026-08-21-direct-main-and-desktop-sync.md
 │       │                                         直推 main、旧分支清理与桌面同步修订
-│       └── 2026-08-21-interactive-html-structure-viewer.md
-│                                                 交互式 HTML 结构查看与自动同步修订
+│       ├── 2026-08-21-interactive-html-structure-viewer.md
+│       │                                         交互式 HTML 结构查看与自动同步修订
+│       └── 2026-08-22-cognition-and-content-commercialization.md
+│                                                 建委认知归组与跨行业内容经营修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界
@@ -330,7 +336,7 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 工具不是项目，例如百度秒哒位于 `programming/tools/`。
 - 项目不是通用经验，例如言剪 AI 位于 `programming/projects/`。
 - 使用 AI 不自动改变业务归属：AI 设计仍在设计，AI 视频微课仍以微课交付归入设计。
-- `work/other/commercial/` 是跨设计、AI 和其他项目复用的商业规范与对外交付边界层，可与一个最具体的专业领域或项目组合，不计作第二个专业领域；它不属于商业认知。
+- `work/other/commercial/` 是跨设计、AI 和其他项目复用的内容经营、商业规范与对外交付边界层，可与一个最具体的专业领域或项目组合，不计作第二个专业领域；建委个人的商业认知仍在 `brain/cognition/`。
 
 ## 四、README 与文件索引
 

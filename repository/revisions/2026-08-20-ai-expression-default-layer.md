@@ -8,7 +8,7 @@
 
 ## 本次确认
 
-- `brain/thinking-and-decisions.md` 和 `brain/business-cognition.md` 继续保存建委本人的思维认知。
+- 当前路径为 `brain/cognition/thinking-and-decisions.md` 和 `brain/cognition/business-cognition.md`，继续保存建委本人的思维与商业认知；2026-08-22 仅调整了归组位置，没有把 AI 表达重新改回个人口吻。
 - 原个人表达入口改为 `brain/ai-expression/`，定位为所有中文 AI 内容的默认基础层，不再声明为建委个人口吻。
 - AI 表达下设中文数据集、AI 表达经验、口语化表达和书面化表达；跨领域语言质量规则在该目录统一维护。
 - 任何中文生成、改写、润色、翻译或内容组织任务，先调用 AI 表达，再叠加一个最具体的专业领域。

@@ -6,12 +6,12 @@
 
 | 类型 | 入口 | 定位 |
 |---|---|---|
-| 商业化与对外交付 | [`commercial/`](./commercial/README.md) | 跨设计、AI 和其他项目复用的商业规范、交付经验、注意事项及内外部稿件边界；不保存商业认知 |
+| 商业化与对外交付 | [`commercial/`](./commercial/README.md) | 跨设计、AI 和其他项目复用的内容经营方法、商业规范、交付经验及内外部稿件边界；不保存建委个人认知 |
 | Inshan POPUPIANO | [`inshan-popupiano/`](./inshan-popupiano/README.md) | 授权经销、自建店铺与内容代运营的海外电商项目 |
 
 ## 写入规则
 
 - 只有确认无法归入设计或 AI 时才进入本目录。
-- 商业化入口只保存可执行的商业规范、经验和注意事项；建委本人的商业判断仍属于 `brain/business-cognition.md`。
+- 商业化入口只保存可执行的商业规范、内容经营方法、经验和注意事项；建委本人的商业判断仍属于 [`../../brain/cognition/business-cognition.md`](../../brain/cognition/business-cognition.md)。
 - 不建立“其他经验”杂物堆；每个独立领域或项目必须有 README。
 - 领域或项目增加后，必须更新本索引。

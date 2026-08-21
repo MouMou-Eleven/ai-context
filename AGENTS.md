@@ -35,9 +35,9 @@
 - 只要任务要求 AI 生成、改写、润色、翻译或组织中文内容，默认先读 `brain/ai-expression/README.md`、`brain/ai-expression/cross-domain-rules.md`、`brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md` 和 `brain/ai-expression/experience/README.md`，再按交付形式选择口语化或书面化规则。
 - 默认只激活一个最具体的专业领域。用户说“AI 自媒体”，读取 `brain/ai-expression/` + `work/ai/self-media/`，不得加载 AI 培训。
 - 用户说“AI 培训”，读取 `brain/ai-expression/` + `work/ai/training/`；只有明确提到某个培训项目，才继续进入该项目。
-- 用户说“给客户看、发给客户、客户审阅、对外发送、正式交付、交付版”等含义，或交付物显然代表建委或公司对外呈现时，读取 `brain/ai-expression/` + `work/other/commercial/` + 一个最具体的专业领域或项目。商业交付是跨领域边界层，不计作第二个专业领域。
+- 用户说“给客户看、发给客户、客户审阅、对外发送、正式交付、交付版”等含义，或交付物显然代表建委或公司对外呈现时，读取 `brain/ai-expression/` + `work/other/commercial/` + 一个最具体的专业领域或项目。用户说“内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化或内容承接”时，也进入 `work/other/commercial/experience/content-demand-and-conversion.md`。商业层是跨领域边界，不计作第二个专业领域。
 - 对外成品默认不出现“客户版、客户审阅版、给客户看的”等接收者身份标签，也不把“建议采用、可以考虑、待客户确认、供客户参考”等内部商议词写入正文。已确认内容写成确定陈述；未确认内容先在内部向建委核实。只有当前提示明确要求这些角色或建议形式时才例外。
-- 用户说“参考建委本人的思考方式”，才读 `brain/thinking-and-decisions.md` 或 `brain/business-cognition.md`；AI 表达不等于建委个人口吻。
+- 用户说“参考建委本人的思考方式、判断或商业认知”，才先读 `brain/cognition/README.md`，再进入对应认知文件；AI 表达不等于建委个人口吻。
 - 用户要求“结合多个领域”或提示中明确出现多个独立任务时，才组合多个专业领域；AI 表达基础层只加载一次。
 - 只查询事实、运行代码、整理文件、检查结构或执行测试时，不因出现“中文”而自动读取全部 AI 表达经验。
 - “课程”或“课件”语义不明时，先判断服务对象和交付物：建委作为讲师属于 AI 培训；为教师制作成品微课属于设计下的微课与 MG 动画。
@@ -60,7 +60,7 @@
 
 ### 其他
 
-- 商业化与对外交付进入 `work/other/commercial/`，保存跨设计、AI 和其他项目复用的商业规范、经验、注意事项及内外部稿件边界；它不属于 AI、设计或建委的商业认知。
+- 商业化与对外交付进入 `work/other/commercial/`，保存跨设计、AI 和其他项目复用的内容经营、商业规范、交付经验、注意事项及内外部稿件边界；它不属于 AI、设计或建委的商业认知。
 - 海外电商等不属于设计或 AI 的项目进入 `work/other/`。
 
 ## 6. 特殊项目

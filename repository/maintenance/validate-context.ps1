@@ -53,8 +53,9 @@ try {
         'personal/growth-path.md',
         'personal/capabilities.md',
         'brain/README.md',
-        'brain/thinking-and-decisions.md',
-        'brain/business-cognition.md',
+        'brain/cognition/README.md',
+        'brain/cognition/thinking-and-decisions.md',
+        'brain/cognition/business-cognition.md',
         'brain/ai-expression/README.md',
         'brain/ai-expression/cross-domain-rules.md',
         'brain/ai-expression/oral-expression/README.md',
@@ -73,6 +74,7 @@ try {
         'work/other/README.md',
         'work/other/commercial/README.md',
         'work/other/commercial/experience/README.md',
+        'work/other/commercial/experience/content-demand-and-conversion.md',
         'work/other/commercial/experience/external-deliverable-language.md',
         'repository/README.md',
         'repository/environment/README.md',
@@ -108,6 +110,12 @@ try {
         Add-ValidationError 'Legacy personal-expression.md still exists; current Chinese expression rules belong under brain/ai-expression/.'
     }
 
+    foreach ($legacyCognitionFile in @('brain/thinking-and-decisions.md', 'brain/business-cognition.md')) {
+        if (Test-Path -LiteralPath (Join-Path $repoRoot $legacyCognitionFile)) {
+            Add-ValidationError "Legacy cognition file still exists at the brain root: $legacyCognitionFile"
+        }
+    }
+
     if (Test-Path -LiteralPath (Join-Path $repoRoot 'work/ai/commercial')) {
         Add-ValidationError 'Commercial delivery still exists under work/ai/; the current location is work/other/commercial/.'
     }
@@ -140,6 +148,12 @@ try {
         }
         if (-not $routingFile.Content.Contains('brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md')) {
             Add-ValidationError "$($routingFile.Name) does not define the default Chinese grammar and error checklist."
+        }
+        if (-not $routingFile.Content.Contains('brain/cognition/README.md')) {
+            Add-ValidationError "$($routingFile.Name) does not define the current cognition entry."
+        }
+        if (-not $routingFile.Content.Contains('work/other/commercial/experience/content-demand-and-conversion.md')) {
+            Add-ValidationError "$($routingFile.Name) does not define the cross-industry content demand and conversion method."
         }
     }
 
