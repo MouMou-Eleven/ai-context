@@ -12,13 +12,13 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 
 | 任务类型 | AI 表达读取方式 |
 |---|---|
-| 生成、改写、润色、翻译、压缩、扩写或组织中文内容 | 必须先读 `brain/ai-expression/README.md` + `brain/ai-expression/cross-domain-rules.md` + `brain/ai-expression/experience/README.md` |
+| 生成、改写、润色、翻译、压缩、扩写或组织中文内容 | 必须先读 `brain/ai-expression/README.md` + `brain/ai-expression/cross-domain-rules.md` + `brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md` + `brain/ai-expression/experience/README.md` |
 | 口播、直播、授课逐字稿、对话和旁白 | 再读 `brain/ai-expression/oral-expression/README.md` |
 | 文章、书稿、教程、方案、项目文档和正式说明 | 再读 `brain/ai-expression/written-expression/README.md` |
-| 中文质量复核、语病、逻辑、搭配和跨领域规则 | 在默认基础上重点复核 `brain/ai-expression/cross-domain-rules.md` |
+| 中文质量复核、语病、逻辑、搭配和跨领域规则 | 在默认基础上重点复核 `brain/ai-expression/cross-domain-rules.md` + `brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md` |
 | 只查事实、文件位置、项目状态，或执行代码、测试和文件整理 | 不默认加载 AI 表达；需要生成中文说明时再加载 |
 
-中文数据集目录的治理索引随 AI 表达基础层查看；原始数据默认不读取。只有需要追溯表达来源、提炼经验或执行经授权的数据任务时，才进入 `brain/ai-expression/chinese-datasets/` 的具体数据集。
+中文数据集目录中的 `grammar-and-error-checklist.md` 属于默认中文质量层；其余原始数据默认不读取。只有需要追溯表达来源、提炼经验或执行经授权的数据任务时，才进入 `brain/ai-expression/chinese-datasets/` 的具体数据集。
 
 ## 第二步：选择一个专业领域
 

@@ -12,8 +12,9 @@ ai-expression/
 │   └── README.md             口语化表达规则与检查清单
 ├── written-expression/      书面化表达：准确、完整、适合文档与正式交付
 │   └── README.md             书面化表达规则与检查清单
-├── chinese-datasets/         中文数据集索引与数据治理
-│   ├── README.md             高质量中文数据集的来源、授权、清洗和使用规则
+├── chinese-datasets/         中文数据、开源规则来源与质量检查
+│   ├── README.md             数据来源、授权、提炼、冲突治理和使用规则
+│   ├── grammar-and-error-checklist.md  默认调用的中文语法与病句检查
 │   ├── feitian-shanke/       技术科普中文参考材料
 │   └── short-video-outcome-and-motivation/  短视频口语参考材料
 └── experience/               AI 表达实践经验
@@ -38,6 +39,7 @@ ai-expression/
 ```text
 AI 表达基础层
   → 跨领域中文质量规则
+  → 中文语法与病句检查
   → AI 表达经验
   → 选择口语化 / 书面化表达方式
   → 叠加一个最具体的领域规则
@@ -76,6 +78,7 @@ AI 表达是所有中文内容的基础层，领域规则是专项适配层。�
 4. 口语化不等于堆语气词、网络梗和感叹号；书面化不等于僵硬、空泛和官话。
 5. 交付前朗读或模拟朗读；画面标题、正文、旁白和行动指令必须互相对应。
 6. 删除同义重复、无意义铺垫、机械排比和为了凑长度增加的段落。
+7. 按 [`chinese-datasets/grammar-and-error-checklist.md`](./chinese-datasets/grammar-and-error-checklist.md) 检查标点、拼写、搭配、成分、语序、结构、指代、逻辑、语境、翻译腔和意义漂移。
 
 ## 写入边界
 
@@ -87,6 +90,6 @@ AI 表达是所有中文内容的基础层，领域规则是专项适配层。�
 
 ## 默认读取入口
 
-AI 内容生成时：默认读取本 README、`cross-domain-rules.md`、`experience/README.md`，以及 `oral-expression/README.md` 或 `written-expression/README.md` 中与交付形式匹配的一个；`chinese-datasets/README.md` 用于确认数据治理边界，原始数据只有在来源、授权和任务用途都明确时才读取。
+AI 内容生成时：默认读取本 README、`cross-domain-rules.md`、`chinese-datasets/grammar-and-error-checklist.md`、`experience/README.md`，以及 `oral-expression/README.md` 或 `written-expression/README.md` 中与交付形式匹配的一个；`chinese-datasets/README.md` 用于确认数据治理和多来源冲突边界，原始数据只有在来源、授权和任务用途都明确时才读取。
 
 *规则确认：2026-08-21*

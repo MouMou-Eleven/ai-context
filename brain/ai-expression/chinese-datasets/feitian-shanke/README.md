@@ -24,6 +24,19 @@
 | [`../../../../work/ai/training/experience/technical-explanation/problem-driven-technical-explanation.md`](../../../../work/ai/training/experience/technical-explanation/problem-driven-technical-explanation.md) | 从本资料提炼的培训技术讲解方法 | 编写 AI 培训中的技术概念说明时 |
 | [`raw/feitian-shanke-transcript.txt`](./raw/feitian-shanke-transcript.txt) | 用户提供的两篇视频逐字稿及原分析全文 | 需要观察原始表达、节奏和完整推导时 |
 
+## 已沉淀到仓库的内容
+
+这份资料没有只停留在原始逐字稿中，已经形成“来源层 + 通用表达层 + AI 培训专项层”的分工：
+
+| 位置 | 已沉淀内容 | 默认用途 |
+|---|---|---|
+| 本目录 `raw/` | 两篇原始逐字稿和原分析，保留完整上下文与追溯证据 | 默认不读取 |
+| [`../../experience/README.md`](../../experience/README.md) | 外部资料怎样提炼为跨领域表达经验的规则 | 管理提炼边界 |
+| [`../../../../work/ai/training/experience/technical-explanation/problem-driven-technical-explanation.md`](../../../../work/ai/training/experience/technical-explanation/problem-driven-technical-explanation.md) | 先讲问题、旧办法、缺口和新方法；用场景、比喻、真实任务与限制解释技术概念 | AI 培训中解释技术知识时调用 |
+| [`../grammar-and-error-checklist.md`](../grammar-and-error-checklist.md) | 多来源不得按人物叠加、纠错不得改变原意等通用质量约束 | 所有中文内容默认检查 |
+
+因此，后续制作 AI 培训内容时，不需要直接读取或模仿“飞天闪客”。先读取 AI 培训中的问题驱动讲解方法；只有需要重新核对完整推导、句式节奏或提炼遗漏时，才回到原始逐字稿。
+
 ## 来源说明
 
 - 参考作者：公开视频创作者“飞天闪客”（来自用户提供材料中的标注）。
@@ -38,6 +51,7 @@
 - 技术事实必须重新查证官方资料，不能因为参考稿表达自然就默认其中所有信息仍然有效。
 - 不把口语化理解成堆语气词、感叹号或网络黑话。自然表达的核心是具体、连贯、有因果关系。
 - 不强制所有内容使用“爆款视频”结构。课程正文、教程、公众号文章和口播稿应按各自体裁调整节奏。
+- 后续新增其他讲师或创作者资料时，不把多位作者的开头、句式和节奏一起加载。先按功能提炼，与现有方法兼容的内容合并，互为替代的内容写明适用条件，每次任务只选择一种主方法。
 
 ## 材料完整性
 

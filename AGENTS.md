@@ -32,7 +32,7 @@
 
 ## 4. 严格激活规则
 
-- 只要任务要求 AI 生成、改写、润色、翻译或组织中文内容，默认先读 `brain/ai-expression/README.md`、`brain/ai-expression/cross-domain-rules.md` 和 `brain/ai-expression/experience/README.md`，再按交付形式选择口语化或书面化规则。
+- 只要任务要求 AI 生成、改写、润色、翻译或组织中文内容，默认先读 `brain/ai-expression/README.md`、`brain/ai-expression/cross-domain-rules.md`、`brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md` 和 `brain/ai-expression/experience/README.md`，再按交付形式选择口语化或书面化规则。
 - 默认只激活一个最具体的专业领域。用户说“AI 自媒体”，读取 `brain/ai-expression/` + `work/ai/self-media/`，不得加载 AI 培训。
 - 用户说“AI 培训”，读取 `brain/ai-expression/` + `work/ai/training/`；只有明确提到某个培训项目，才继续进入该项目。
 - 用户说“给客户看、发给客户、客户审阅、对外发送、正式交付、交付版”等含义，或交付物显然代表建委或公司对外呈现时，读取 `brain/ai-expression/` + `work/other/commercial/` + 一个最具体的专业领域或项目。商业交付是跨领域边界层，不计作第二个专业领域。
@@ -92,6 +92,7 @@
 - 每个长期领域、工具或项目必须有 `README.md` 作为入口。
 - 新文件必须被最近一层 README 索引；禁止出现无法路由的孤岛文件。
 - 先去重、去旧、合并同义内容。当前入口只保留当前有效结论；跨领域中文表达规则统一进入 `brain/ai-expression/`，专项目录只写专项差异和事实。
+- 外部创作者、数据集和写作案例不能按人物整体激活。先提炼为带适用范围的方法；同义内容合并，冲突内容按受众、体裁、任务目标和真实验证选择一种，不把多套风格同时拼接。
 - 重大变化先更新项目 README，再把必要的原因、新旧差异和日期追加到项目 `history.md`。普通小改动只留在 Git 提交，不单独建修订文件。
 - 历史细节由 Git 保留。不要为了“完整”让大量失效版本继续出现在当前读取树中。
 - 动态产品、功能、价格、界面和 API 遵守 `repository/versioned-knowledge-policy.md`，回答前重新核验。

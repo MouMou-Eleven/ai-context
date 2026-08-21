@@ -61,6 +61,7 @@ try {
         'brain/ai-expression/written-expression/README.md',
         'brain/ai-expression/experience/README.md',
         'brain/ai-expression/chinese-datasets/README.md',
+        'brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md',
         'work/README.md',
         'work/design/README.md',
         'work/ai/README.md',
@@ -137,6 +138,9 @@ try {
         if (-not $routingFile.Content.Contains('brain/ai-expression/experience/README.md')) {
             Add-ValidationError "$($routingFile.Name) does not define the default AI expression experience index."
         }
+        if (-not $routingFile.Content.Contains('brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md')) {
+            Add-ValidationError "$($routingFile.Name) does not define the default Chinese grammar and error checklist."
+        }
     }
 
     if (-not $structure.Contains('ai-expression/')) {
@@ -201,7 +205,9 @@ try {
         $documentedPaths = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
         $pathByDepth = [System.Collections.Generic.Dictionary[int, string]]::new()
         foreach ($treeLine in ($treeMatch.Groups[1].Value -split '\r?\n')) {
-            $branchMatch = [regex]::Match($treeLine, '^((?:(?:│   |    ))*)(?:├── |└── )(.+)$')
+            # Unicode escapes keep the box-drawing parser stable when Windows PowerShell 5.1
+            # reads this UTF-8-without-BOM script.
+            $branchMatch = [regex]::Match($treeLine, '^((?:(?:\u2502   |    ))*)(?:\u251C\u2500\u2500 |\u2514\u2500\u2500 )(.+)$')
             if (-not $branchMatch.Success) {
                 continue
             }

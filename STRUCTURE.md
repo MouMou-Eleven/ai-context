@@ -36,8 +36,9 @@ ai-context/
 │       ├── experience/                            三级目录：AI 表达经验
 │       │   ├── README.md                          跨领域表达经验索引与提炼规则
 │       │   └── spoken-argument-and-transition.md  口语化论证与前后承接方法
-│       └── chinese-datasets/                      三级目录：高质量中文数据集
-│           ├── README.md                          数据来源、授权、清洗和使用规则
+│       └── chinese-datasets/                      三级目录：中文数据、规则来源与质量检查
+│           ├── README.md                          数据来源、授权、提炼、冲突治理和使用规则
+│           ├── grammar-and-error-checklist.md     默认调用的中文语法与病句检查
 │           ├── feitian-shanke/                    四级目录：中文技术科普参考材料
 │           │   ├── README.md                      材料用途、来源状态和授权边界
 │           │   └── raw/                          五级目录：未经改写的原始逐字稿
@@ -278,6 +279,8 @@ ai-context/
 │       │                                         五个一级入口的信息架构重构记录
 │       ├── 2026-08-20-ai-expression-default-layer.md
 │       │                                         AI 表达默认层和语言规则修订
+│       ├── 2026-08-21-chinese-quality-and-source-governance.md
+│       │                                         中文质量基础层与多来源冲突治理修订
 │       ├── 2026-08-21-commercial-delivery-domain.md
 │       │                                         商业化与对外交付边界层首次建立记录
 │       ├── 2026-08-21-commercial-delivery-relocation.md

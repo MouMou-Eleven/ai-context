@@ -53,6 +53,7 @@
 
 ## 六、交付前检查
 
+- 按 [`chinese-datasets/grammar-and-error-checklist.md`](./chinese-datasets/grammar-and-error-checklist.md) 完成中文语法、病句、语境、翻译腔和意义漂移检查；不重复在本文件维护完整错误分类。
 - 朗读一遍，检查是否有生硬的网络表达、主谓宾错位和绕口句。
 - 检查标题、正文、图片、旁白和行动指令是否在回答同一个问题。
 - 删除无意义客套、重复总结、空泛排比和不必要的免责声明。
