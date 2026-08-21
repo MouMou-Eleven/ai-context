@@ -53,7 +53,6 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 | 百度秒哒 MIAODA | `work/ai/programming/tools/miaoda/llms.txt` | basics、development、experience 或 updates 中一个分支 |
 | 言剪 AI、YanCut、OpenCut 二次开发 | `work/ai/programming/projects/yancut-ai/README.md` | architecture、roadmap；追溯时才读 history |
 | AI 培训、企业培训、公开课、讲师备课、培训课件、反馈复盘 | `work/ai/training/README.md` | experience、outlines、materials 或 projects 中一个分支 |
-| 商业化、商业项目交付、给客户看、发给客户、客户审阅、对外发送、正式交付、交付版 | `work/ai/commercial/README.md` | `experience/external-deliverable-language.md`；再进入一个最具体的专业领域或项目 |
 | AI 超级个体陪跑社群、会员社群、社群课程 | `work/ai/training/projects/paid-community-course/README.md` | 只读当前任务对应文件 |
 | AI 视频通用制作 | `work/ai/video/README.md` | common |
 | 漫剧、企业宣传片、真人实拍故事 | `work/ai/video/types/README.md` | 对应单个类型 |
@@ -65,10 +64,11 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 
 生成上述中文内容时，专项入口之前必须先调用 AI 表达。
 
-### 其他项目
+### 其他领域与项目
 
 | 任务 | 专项入口 | 按需继续 |
 |---|---|---|
+| 商业化、商业项目交付、给客户看、发给客户、客户审阅、对外发送、正式交付、交付版 | `work/other/commercial/README.md` | `experience/external-deliverable-language.md`；再进入一个最具体的专业领域或项目 |
 | Inshan、POPUPIANO、海外电商、Amazon、独立站、代运营 | `work/other/inshan-popupiano/README.md` | `competitive-references.md` 或 `90-day-cold-start-plan.md` |
 
 ## 严格组合规则
@@ -76,7 +76,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 - AI 培训内容 = AI 表达 + AI 培训；不自动读 AI 自媒体。
 - AI 自媒体内容 = AI 表达 + AI 自媒体；不自动读 AI 培训。
 - 对外商业成品 = AI 表达 + 商业化与对外交付 + 一个最具体的专业领域或项目。商业交付层只控制内外部稿件边界，不计作第二个专业领域。
-- 用户说“给客户看、发给客户、对外发送、正式交付”，或交付物显然代表建委或公司对外呈现时，必须读取 `work/ai/commercial/README.md` 和 `experience/external-deliverable-language.md`。
+- 用户说“给客户看、发给客户、对外发送、正式交付”，或交付物显然代表建委或公司对外呈现时，必须读取 `work/other/commercial/README.md` 和 `experience/external-deliverable-language.md`。
 - 对外成品默认不出现“客户版、客户审阅版、给客户看的、建议采用、待客户确认”等内部协作表达；未确认事实先返回建委内部确认。
 - 飞书书稿 = AI 表达 + AI 书籍出版 + 飞书书籍项目；不自动读自媒体销售规则。
 - 微课案例文案 = AI 表达 + 微课设计；不自动读 AI 培训。

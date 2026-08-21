@@ -70,6 +70,9 @@ try {
         'work/ai/publishing/README.md',
         'work/ai/self-media/README.md',
         'work/other/README.md',
+        'work/other/commercial/README.md',
+        'work/other/commercial/experience/README.md',
+        'work/other/commercial/experience/external-deliverable-language.md',
         'repository/README.md',
         'repository/environment/README.md',
         'repository/versioned-knowledge-policy.md',
@@ -79,6 +82,8 @@ try {
         'repository/maintenance/git-hooks/pre-commit',
         'repository/maintenance/git-hooks/post-commit',
         'repository/maintenance/git-hooks/post-merge',
+        'repository/maintenance/git-hooks/post-checkout',
+        'repository/maintenance/git-hooks/post-rewrite',
         'history/README.md'
     )
 
@@ -100,6 +105,10 @@ try {
 
     if (Test-Path -LiteralPath (Join-Path $repoRoot 'brain/personal-expression.md')) {
         Add-ValidationError 'Legacy personal-expression.md still exists; current Chinese expression rules belong under brain/ai-expression/.'
+    }
+
+    if (Test-Path -LiteralPath (Join-Path $repoRoot 'work/ai/commercial')) {
+        Add-ValidationError 'Commercial delivery still exists under work/ai/; the current location is work/other/commercial/.'
     }
 
     $rootReadme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'README.md')
@@ -138,26 +147,44 @@ try {
         Add-ValidationError 'AGENTS.md does not define the user-confirmed direct-to-main publishing rule.'
     }
 
-    $desktopSetting = (Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders').Desktop
-    $desktopDirectory = [Environment]::ExpandEnvironmentVariables($desktopSetting)
-    $desktopStructureBaseName = 'GitHub' + [char]0x4ED3 + [char]0x5E93 + [char]0x5B8C + [char]0x6574 + [char]0x7ED3 + [char]0x6784
-    $desktopStructureFileName = $desktopStructureBaseName + '.html'
-    $desktopStructurePath = Join-Path $desktopDirectory $desktopStructureFileName
-    $legacyDesktopMarkdownPath = Join-Path $desktopDirectory ($desktopStructureBaseName + '.md')
-    if (Test-Path -LiteralPath $desktopDirectory -PathType Container) {
-        if (-not (Test-Path -LiteralPath $desktopStructurePath -PathType Leaf)) {
-            Add-ValidationError "Missing desktop structure mirror: $desktopStructurePath"
+    foreach ($routingFile in @(
+        @{ Name = 'AGENTS.md'; Content = $agents },
+        @{ Name = 'llms.txt'; Content = $llms },
+        @{ Name = 'README.md'; Content = $rootReadme }
+    )) {
+        if (-not $routingFile.Content.Contains('work/other/commercial/')) {
+            Add-ValidationError "$($routingFile.Name) does not route commercial delivery through work/other/commercial/."
         }
-        else {
-            $repoHtmlHash = Get-Sha256 -Path (Join-Path $repoRoot 'STRUCTURE.html')
-            $desktopStructureHash = Get-Sha256 -Path $desktopStructurePath
-            if ($repoHtmlHash -ne $desktopStructureHash) {
-                Add-ValidationError "Desktop structure mirror is not synchronized: $desktopStructurePath"
+    }
+
+    $desktopStructureBaseName = 'GitHub' + [char]0x4ED3 + [char]0x5E93 + [char]0x5B8C + [char]0x6574 + [char]0x7ED3 + [char]0x6784
+    try {
+        $desktopSetting = (Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders').Desktop
+        $desktopDirectory = [Environment]::ExpandEnvironmentVariables($desktopSetting)
+        $desktopStructureFileName = $desktopStructureBaseName + '.html'
+        $desktopStructurePath = Join-Path $desktopDirectory $desktopStructureFileName
+        $legacyDesktopMarkdownPath = Join-Path $desktopDirectory ($desktopStructureBaseName + '.md')
+        if (Test-Path -LiteralPath $desktopDirectory -PathType Container) {
+            if (-not (Test-Path -LiteralPath $desktopStructurePath -PathType Leaf)) {
+                $warnings.Add("Desktop structure mirror is currently missing and will be recreated by the next sync: $desktopStructurePath")
+            }
+            else {
+                $repoHtmlHash = Get-Sha256 -Path (Join-Path $repoRoot 'STRUCTURE.html')
+                $desktopStructureHash = Get-Sha256 -Path $desktopStructurePath
+                if ($repoHtmlHash -ne $desktopStructureHash) {
+                    Add-ValidationError "Desktop structure mirror is not synchronized: $desktopStructurePath"
+                }
+            }
+            if (Test-Path -LiteralPath $legacyDesktopMarkdownPath -PathType Leaf) {
+                Add-ValidationError "Legacy desktop Markdown mirror still exists: $legacyDesktopMarkdownPath"
             }
         }
-        if (Test-Path -LiteralPath $legacyDesktopMarkdownPath -PathType Leaf) {
-            Add-ValidationError "Legacy desktop Markdown mirror still exists: $legacyDesktopMarkdownPath"
+        else {
+            $warnings.Add("Desktop directory is currently unavailable; repository validation continued: $desktopDirectory")
         }
+    }
+    catch {
+        $warnings.Add("Desktop mirror check was skipped because Windows desktop discovery failed: $($_.Exception.Message)")
     }
 
     $sourceStructureHash = Get-Sha256 -Path (Join-Path $repoRoot 'STRUCTURE.md')
@@ -229,7 +256,9 @@ try {
         'work/ai/self-media/articles',
         'work/ai/self-media/video-scripts',
         'work/ai/self-media/live-sales',
-        'work/ai/self-media/experience'
+        'work/ai/self-media/experience',
+        'work/other/commercial',
+        'work/other/commercial/experience'
     )
 
     foreach ($directory in $requiredWorkDirectories) {

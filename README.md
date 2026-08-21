@@ -34,11 +34,12 @@ work/
 ├── ai/                      AI
 │   ├── programming/        AI 编程：工具、经验、项目
 │   ├── training/           AI 培训：经验、大纲、资料、项目
-│   ├── commercial/         AI 商业化与对外交付：正式商业成品与交付经验
 │   ├── video/              AI 视频：通用方法、类型、工具、项目
 │   ├── publishing/         AI 书籍出版
 │   └── self-media/         AI 自媒体
-└── other/                   不能归入设计或 AI 的项目
+└── other/                   不属于设计或 AI 的其他领域与项目
+    ├── commercial/         商业化与对外交付：跨领域规范、经验和注意事项
+    └── inshan-popupiano/   海外电商项目
 ```
 
 ## 三条硬规则
@@ -49,7 +50,7 @@ work/
 
 建委要求沉淀到 GitHub 的内容，默认校验后直接提交并推送 `main`，不创建 PR，也不等待第二次提交指令。
 
-对外商业内容另遵守 [`work/ai/commercial/`](./work/ai/commercial/README.md)：当内容用于给客户看、对外发送或正式交付时，必须区分内部工作稿与对外成品，默认不把“客户版、建议采用、待确认”等内部表达写入成品。
+对外商业内容另遵守 [`work/other/commercial/`](./work/other/commercial/README.md)：它是跨设计、AI 和其他项目复用的商业规范层。当内容用于给客户看、对外发送或正式交付时，必须区分内部工作稿与对外成品，默认不把“客户版、建议采用、待确认”等内部表达写入成品。
 
 ## 快速个人画像
 

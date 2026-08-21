@@ -173,13 +173,6 @@ ai-context/
 │   │   │               └── 2026-08-19-lesson-4-student-material-boundary.md
 │   │   │                                             第 4 节学员资料边界修订
 │   │   │
-│   │   ├── commercial/                            三级目录：AI 商业化与对外交付
-│   │   │   ├── README.md                          商业交付总入口、触发规则与内外部边界
-│   │   │   └── experience/                        四级目录：商业交付经验
-│   │   │       ├── README.md                      商业交付经验索引
-│   │   │       └── external-deliverable-language.md
-│   │   │                                             对外成品与内部工作稿的语言边界
-│   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
 │   │   │   ├── common/
@@ -239,8 +232,14 @@ ai-context/
 │   │           ├── media-growth.md                账号增长与内容规划
 │   │           └── outcome-and-motivation.md      成果展示、用户动机与知识分层
 │   │
-│   └── other/                                     二级目录：其他领域
-│       ├── README.md                              其他项目索引与准入条件
+│   └── other/                                     二级目录：其他领域与项目
+│       ├── README.md                              其他领域与项目索引及准入条件
+│       ├── commercial/                            三级目录：商业化与对外交付
+│       │   ├── README.md                          跨领域商业规范、触发规则与边界
+│       │   └── experience/                        四级目录：商业交付经验
+│       │       ├── README.md                      商业交付经验索引
+│       │       └── external-deliverable-language.md
+│       │                                             对外成品与内部工作稿的语言边界
 │       └── inshan-popupiano/                      三级目录：海外电商项目
 │           ├── README.md                          当前合作模式、事实和待澄清项
 │           ├── 90-day-cold-start-plan.md          90 天冷启动执行方案
@@ -270,7 +269,9 @@ ai-context/
 │   │   └── git-hooks/                             本机自动同步触发器
 │   │       ├── pre-commit                         提交前重建并暂存 STRUCTURE.html
 │   │       ├── post-commit                        提交后同步桌面结构
-│   │       └── post-merge                         拉取或合并后同步桌面结构
+│   │       ├── post-merge                         拉取或合并后同步桌面结构
+│   │       ├── post-checkout                      检出或切换后自愈桌面结构
+│   │       └── post-rewrite                       amend 或 rebase 后同步桌面结构
 │   └── revisions/                                 二级目录：仓库级重大修订
 │       ├── README.md                              仓库修订索引
 │       ├── 2026-08-18-information-architecture-rebuild.md
@@ -278,7 +279,11 @@ ai-context/
 │       ├── 2026-08-20-ai-expression-default-layer.md
 │       │                                         AI 表达默认层和语言规则修订
 │       ├── 2026-08-21-commercial-delivery-domain.md
-│       │                                         商业化与对外交付边界层修订
+│       │                                         商业化与对外交付边界层首次建立记录
+│       ├── 2026-08-21-commercial-delivery-relocation.md
+│       │                                         商业化迁移到其他领域的修订
+│       ├── 2026-08-21-desktop-sync-resilience.md
+│       │                                         桌面 HTML 同步稳定性加固
 │       ├── 2026-08-21-direct-main-and-desktop-sync.md
 │       │                                         直推 main、旧分支清理与桌面同步修订
 │       └── 2026-08-21-interactive-html-structure-viewer.md
@@ -322,7 +327,7 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 工具不是项目，例如百度秒哒位于 `programming/tools/`。
 - 项目不是通用经验，例如言剪 AI 位于 `programming/projects/`。
 - 使用 AI 不自动改变业务归属：AI 设计仍在设计，AI 视频微课仍以微课交付归入设计。
-- `work/ai/commercial/` 是对外交付边界层，可与一个最具体的专业领域或项目组合，不计作第二个专业领域。
+- `work/other/commercial/` 是跨设计、AI 和其他项目复用的商业规范与对外交付边界层，可与一个最具体的专业领域或项目组合，不计作第二个专业领域；它不属于商业认知。
 
 ## 四、README 与文件索引
 
@@ -344,6 +349,6 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 目录和普通文件采用小写 kebab-case；固定入口保留 `README.md`、`AGENTS.md`、`STRUCTURE.md`、`STRUCTURE.html`、`llms.txt`。其中 `STRUCTURE.html` 是自动生成文件。
 - Markdown 使用 UTF-8、LF 和相对链接。
 - 不保存密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
-- 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；提交前自动生成 `STRUCTURE.html`，再运行 `repository/maintenance/sync-desktop-structure.ps1`，保证 F 盘桌面 HTML 与仓库交互查看文件完全一致。
+- 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；提交前自动生成 `STRUCTURE.html`，再运行 `repository/maintenance/sync-desktop-structure.ps1`。桌面暂不可用时只延后镜像同步，不阻断仓库提交；后续 Git 操作会自动补齐。
 
 *结构最后确认：2026-08-21*

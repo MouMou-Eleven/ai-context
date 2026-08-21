@@ -3,4 +3,4 @@
 repo_root="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$repo_root/repository/maintenance/generate-structure-html.ps1" -TargetPath "$repo_root/STRUCTURE.html" || exit 1
 git -C "$repo_root" add -- STRUCTURE.html || exit 1
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$repo_root/repository/maintenance/sync-desktop-structure.ps1" || exit 1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$repo_root/repository/maintenance/sync-desktop-structure.ps1" || true

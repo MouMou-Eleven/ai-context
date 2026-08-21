@@ -1,14 +1,14 @@
 # Work — 工作领域与项目总入口
 
-> 这里保存建委正在做的工作。先判断属于“设计、AI、其他项目”，再进入具体门类；不能把所有项目平铺在同一层。
+> 这里保存建委正在做的工作。先判断属于“设计、AI、其他领域与项目”，再进入具体门类；不能把所有项目平铺在同一层。
 
 ## 一级结构
 
 ```text
 work/
 ├── design/   设计工作：按最终设计交付物分类
-├── ai/       AI 工作：编程、培训、商业交付、视频、出版和自媒体
-└── other/    不属于设计或 AI 的其他长期项目
+├── ai/       AI 工作：编程、培训、视频、出版和自媒体
+└── other/    不属于设计或 AI 的其他领域与项目
 ```
 
 ## 设计门类
@@ -23,14 +23,13 @@ AI 以主要工作方式和交付目标分类，包括：
 
 - [`ai/programming/`](./ai/programming/README.md)：AI 编程工具、经验和开发项目。
 - [`ai/training/`](./ai/training/README.md)：AI 培训经验、大纲、资料和培训项目。
-- [`ai/commercial/`](./ai/commercial/README.md)：商业化与对外交付经验，区分内部工作稿和正式对外成品。
 - [`ai/video/`](./ai/video/README.md)：AI 视频通用经验、片型、工具和项目。
 - [`ai/publishing/`](./ai/publishing/README.md)：AI 相关书籍出版与书稿项目。
 - [`ai/self-media/`](./ai/self-media/README.md)：标题、文章、口播、直播销售和自媒体经验。
 
-## 其他项目
+## 其他领域与项目
 
-不属于设计或 AI 的长期项目进入 [`other/`](./other/README.md)，当前包括 Inshan POPUPIANO 海外电商项目。
+不属于设计或 AI 的领域与长期项目进入 [`other/`](./other/README.md)。商业化与对外交付位于 [`other/commercial/`](./other/commercial/README.md)，保存跨设计、AI 和其他项目复用的商业规范、经验和注意事项；Inshan POPUPIANO 则是具体海外电商项目。
 
 ## 项目与领域的关系
 
