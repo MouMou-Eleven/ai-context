@@ -4,8 +4,9 @@
 
 ## 从哪里开始
 
-- 想看完整的上下级目录和中文说明：读 [`STRUCTURE.md`](./STRUCTURE.md)。
-- F 盘桌面镜像：`F:\桌面文件\GitHub仓库完整结构.md`，由维护脚本从 `STRUCTURE.md` 自动同步，不单独编辑。
+- 想交互式展开、折叠和搜索完整结构：打开 [`STRUCTURE.html`](./STRUCTURE.html)。
+- 想编辑权威上下级目录和中文说明：读 [`STRUCTURE.md`](./STRUCTURE.md)。
+- F 盘桌面镜像：`F:\桌面文件\GitHub仓库完整结构.html`，由维护脚本从 `STRUCTURE.md` 自动生成，不单独编辑。
 - AI 执行具体任务：先读 [`llms.txt`](./llms.txt)，只进入任务对应领域。
 - 新增、移动或清理资料：同时遵守 [`AGENTS.md`](./AGENTS.md) 和 [`STRUCTURE.md`](./STRUCTURE.md)。
 

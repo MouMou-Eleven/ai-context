@@ -5,7 +5,8 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
-$sourcePath = Join-Path $repoRoot 'STRUCTURE.md'
+$generatorPath = Join-Path $PSScriptRoot 'generate-structure-html.ps1'
+$repoHtmlPath = Join-Path $repoRoot 'STRUCTURE.html'
 
 function Get-Sha256 {
     param([Parameter(Mandatory = $true)][string]$Path)
@@ -24,43 +25,33 @@ function Get-Sha256 {
 if ([string]::IsNullOrWhiteSpace($TargetPath)) {
     $desktopSetting = (Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders').Desktop
     $desktopPath = [Environment]::ExpandEnvironmentVariables($desktopSetting)
-    $targetFileName = 'GitHub' + [char]0x4ED3 + [char]0x5E93 + [char]0x5B8C + [char]0x6574 + [char]0x7ED3 + [char]0x6784 + '.md'
-    $TargetPath = Join-Path $desktopPath $targetFileName
+    $baseName = 'GitHub' + [char]0x4ED3 + [char]0x5E93 + [char]0x5B8C + [char]0x6574 + [char]0x7ED3 + [char]0x6784
+    $TargetPath = Join-Path $desktopPath ($baseName + '.html')
 }
 
-$targetDirectory = Split-Path -Parent $TargetPath
-
-if (-not (Test-Path -LiteralPath $sourcePath -PathType Leaf)) {
-    throw "Missing source structure file: $sourcePath"
-}
-
+$targetDirectory = Split-Path -Parent ([System.IO.Path]::GetFullPath($TargetPath))
 if (-not (Test-Path -LiteralPath $targetDirectory -PathType Container)) {
     throw "Desktop target directory does not exist: $targetDirectory"
 }
 
-$sourceHash = Get-Sha256 -Path $sourcePath
-$targetHash = $null
-if (Test-Path -LiteralPath $TargetPath -PathType Leaf) {
-    $targetHash = Get-Sha256 -Path $TargetPath
+if (-not (Test-Path -LiteralPath $generatorPath -PathType Leaf)) {
+    throw "Missing HTML generator: $generatorPath"
 }
 
-if ($sourceHash -ne $targetHash) {
-    $temporaryPath = Join-Path $targetDirectory ('.github-structure-sync-' + [guid]::NewGuid().ToString('N') + '.tmp')
-    try {
-        [System.IO.File]::WriteAllBytes($temporaryPath, [System.IO.File]::ReadAllBytes($sourcePath))
-        Move-Item -LiteralPath $temporaryPath -Destination $TargetPath -Force
-    }
-    finally {
-        if (Test-Path -LiteralPath $temporaryPath) {
-            Remove-Item -LiteralPath $temporaryPath -Force
-        }
-    }
+& $generatorPath -TargetPath $repoHtmlPath
+& $generatorPath -TargetPath $TargetPath
+
+$repoHash = Get-Sha256 -Path $repoHtmlPath
+$desktopHash = Get-Sha256 -Path $TargetPath
+if ($desktopHash -ne $repoHash) {
+    throw "Desktop HTML does not match repository STRUCTURE.html: $TargetPath"
 }
 
-$finalHash = Get-Sha256 -Path $TargetPath
-if ($finalHash -ne $sourceHash) {
-    throw "Desktop structure file hash does not match STRUCTURE.md: $TargetPath"
+# The Markdown desktop mirror was replaced by the interactive HTML viewer.
+$legacyMarkdownPath = [System.IO.Path]::ChangeExtension($TargetPath, '.md')
+if (Test-Path -LiteralPath $legacyMarkdownPath -PathType Leaf) {
+    Remove-Item -LiteralPath $legacyMarkdownPath -Force
 }
 
-Write-Host "Desktop structure synchronized: $TargetPath"
-Write-Host "SHA-256: $finalHash"
+Write-Host "Desktop structure HTML synchronized: $TargetPath"
+Write-Host "SHA-256: $desktopHash"

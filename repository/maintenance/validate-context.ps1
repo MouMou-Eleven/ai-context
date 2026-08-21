@@ -22,6 +22,20 @@ function Add-ValidationError {
     $errors.Add($Message)
 }
 
+function Get-Sha256 {
+    param([Parameter(Mandatory = $true)][string]$Path)
+
+    $stream = [System.IO.File]::OpenRead($Path)
+    $sha256 = [System.Security.Cryptography.SHA256]::Create()
+    try {
+        return ([System.BitConverter]::ToString($sha256.ComputeHash($stream))).Replace('-', '')
+    }
+    finally {
+        $sha256.Dispose()
+        $stream.Dispose()
+    }
+}
+
 Push-Location $repoRoot
 try {
     $requiredFiles = @(
@@ -31,6 +45,7 @@ try {
         'AGENTS.md',
         'llms.txt',
         'STRUCTURE.md',
+        'STRUCTURE.html',
         'personal/README.md',
         'personal/profile.md',
         'personal/business-overview.md',
@@ -58,7 +73,10 @@ try {
         'repository/README.md',
         'repository/environment/README.md',
         'repository/versioned-knowledge-policy.md',
+        'repository/maintenance/generate-structure-html.ps1',
+        'repository/maintenance/structure-viewer.template.html',
         'repository/maintenance/sync-desktop-structure.ps1',
+        'repository/maintenance/git-hooks/pre-commit',
         'repository/maintenance/git-hooks/post-commit',
         'repository/maintenance/git-hooks/post-merge',
         'history/README.md'
@@ -122,17 +140,68 @@ try {
 
     $desktopSetting = (Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders').Desktop
     $desktopDirectory = [Environment]::ExpandEnvironmentVariables($desktopSetting)
-    $desktopStructureFileName = 'GitHub' + [char]0x4ED3 + [char]0x5E93 + [char]0x5B8C + [char]0x6574 + [char]0x7ED3 + [char]0x6784 + '.md'
+    $desktopStructureBaseName = 'GitHub' + [char]0x4ED3 + [char]0x5E93 + [char]0x5B8C + [char]0x6574 + [char]0x7ED3 + [char]0x6784
+    $desktopStructureFileName = $desktopStructureBaseName + '.html'
     $desktopStructurePath = Join-Path $desktopDirectory $desktopStructureFileName
+    $legacyDesktopMarkdownPath = Join-Path $desktopDirectory ($desktopStructureBaseName + '.md')
     if (Test-Path -LiteralPath $desktopDirectory -PathType Container) {
         if (-not (Test-Path -LiteralPath $desktopStructurePath -PathType Leaf)) {
             Add-ValidationError "Missing desktop structure mirror: $desktopStructurePath"
         }
         else {
-            $sourceStructureHash = (Get-FileHash -LiteralPath (Join-Path $repoRoot 'STRUCTURE.md') -Algorithm SHA256).Hash
-            $desktopStructureHash = (Get-FileHash -LiteralPath $desktopStructurePath -Algorithm SHA256).Hash
-            if ($sourceStructureHash -ne $desktopStructureHash) {
+            $repoHtmlHash = Get-Sha256 -Path (Join-Path $repoRoot 'STRUCTURE.html')
+            $desktopStructureHash = Get-Sha256 -Path $desktopStructurePath
+            if ($repoHtmlHash -ne $desktopStructureHash) {
                 Add-ValidationError "Desktop structure mirror is not synchronized: $desktopStructurePath"
+            }
+        }
+        if (Test-Path -LiteralPath $legacyDesktopMarkdownPath -PathType Leaf) {
+            Add-ValidationError "Legacy desktop Markdown mirror still exists: $legacyDesktopMarkdownPath"
+        }
+    }
+
+    $sourceStructureHash = Get-Sha256 -Path (Join-Path $repoRoot 'STRUCTURE.md')
+    $generatedHtml = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repoRoot 'STRUCTURE.html')
+    if (-not $generatedHtml.Contains($sourceStructureHash)) {
+        Add-ValidationError 'STRUCTURE.html was not generated from the current STRUCTURE.md content.'
+    }
+
+    $treeMatch = [regex]::Match($structure, '(?s)```text\s*\r?\n(.*?)\r?\n```')
+    if (-not $treeMatch.Success) {
+        Add-ValidationError 'STRUCTURE.md does not contain the expected complete tree block.'
+    }
+    else {
+        $documentedPaths = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+        $pathByDepth = [System.Collections.Generic.Dictionary[int, string]]::new()
+        foreach ($treeLine in ($treeMatch.Groups[1].Value -split '\r?\n')) {
+            $branchMatch = [regex]::Match($treeLine, '^((?:(?:│   |    ))*)(?:├── |└── )(.+)$')
+            if (-not $branchMatch.Success) {
+                continue
+            }
+
+            $depth = [int]($branchMatch.Groups[1].Value.Length / 4) + 1
+            $name = ($branchMatch.Groups[2].Value.Trim() -split '\s{2,}', 2)[0].TrimEnd('/')
+            $parentPath = if ($depth -eq 1) { '' } else { $pathByDepth[$depth - 1] }
+            $documentedPath = if ([string]::IsNullOrWhiteSpace($parentPath)) { $name } else { "$parentPath/$name" }
+            $pathByDepth[$depth] = $documentedPath
+            $null = $documentedPaths.Add($documentedPath)
+        }
+
+        $actualFiles = Get-ChildItem -LiteralPath $repoRoot -Recurse -File -Force |
+            Where-Object { $_.FullName -notmatch '[\\/]\.git(?:[\\/]|$)' }
+        foreach ($fileEntry in $actualFiles) {
+            $relativeFile = Get-RepoRelativePath $fileEntry.FullName
+            if (-not $documentedPaths.Contains($relativeFile)) {
+                Add-ValidationError "STRUCTURE.md is missing repository entry: $relativeFile"
+            }
+
+            $parentDirectory = $fileEntry.Directory
+            while ($null -ne $parentDirectory -and $parentDirectory.FullName -ne $repoRoot) {
+                $relativeDirectory = Get-RepoRelativePath $parentDirectory.FullName
+                if (-not $documentedPaths.Contains($relativeDirectory)) {
+                    Add-ValidationError "STRUCTURE.md is missing repository directory: $relativeDirectory"
+                }
+                $parentDirectory = $parentDirectory.Parent
             }
         }
     }

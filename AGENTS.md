@@ -95,7 +95,7 @@
 - 重大变化先更新项目 README，再把必要的原因、新旧差异和日期追加到项目 `history.md`。普通小改动只留在 Git 提交，不单独建修订文件。
 - 历史细节由 Git 保留。不要为了“完整”让大量失效版本继续出现在当前读取树中。
 - 动态产品、功能、价格、界面和 API 遵守 `repository/versioned-knowledge-policy.md`，回答前重新核验。
-- 任何目录新增、移动、重命名或删除都必须同步更新 `STRUCTURE.md`，并运行 `repository/maintenance/sync-desktop-structure.ps1`，保证 `F:\桌面文件\GitHub仓库完整结构.md` 与仓库权威结构完全一致。
+- 任何目录新增、移动、重命名或删除都必须同步更新 `STRUCTURE.md`。提交前自动重建可交互的 `STRUCTURE.html`，提交或合并后运行 `repository/maintenance/sync-desktop-structure.ps1`，保证 `F:\桌面文件\GitHub仓库完整结构.html` 与仓库权威结构同步。
 
 ## 8. 提交标准
 

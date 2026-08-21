@@ -12,6 +12,7 @@ ai-context/
 ├── AGENTS.md                                      AI 协作、读取、写入和提交规则
 ├── llms.txt                                       AI 最小读取与单领域激活路由
 ├── STRUCTURE.md                                   完整目录树与结构规范（本文件）
+├── STRUCTURE.html                                 可展开、折叠和搜索的结构思维导图（自动生成）
 │
 ├── personal/                                      一级目录：个人信息概要
 │   ├── README.md                                  个人信息总窗口、索引、写入准则
@@ -34,7 +35,7 @@ ai-context/
 │       │   └── README.md                          书稿、教程、方案和文档表达规则
 │       ├── experience/                            三级目录：AI 表达经验
 │       │   ├── README.md                          跨领域表达经验索引与提炼规则
-│       │   └── spoken-argument-and-transition.md 口语化论证与前后承接方法
+│       │   └── spoken-argument-and-transition.md  口语化论证与前后承接方法
 │       └── chinese-datasets/                      三级目录：高质量中文数据集
 │           ├── README.md                          数据来源、授权、清洗和使用规则
 │           ├── feitian-shanke/                    四级目录：中文技术科普参考材料
@@ -146,7 +147,7 @@ ai-context/
 │   │   │   ├── README.md                          AI 培训总入口
 │   │   │   ├── experience/                        四级目录：培训经验
 │   │   │   │   ├── README.md                      经验索引
-│   │   │   │   ├── teaching-and-course-design.md 备课、课件与课程设计
+│   │   │   │   ├── teaching-and-course-design.md  备课、课件与课程设计
 │   │   │   │   ├── demo-driven-course-design.md  演示驱动课程设计
 │   │   │   │   ├── tutorial-writing.md            学员教程写法
 │   │   │   │   └── technical-explanation/         五级目录：技术解释方法
@@ -165,7 +166,7 @@ ai-context/
 │   │   │           ├── curriculum-design.md       课程结构与直播节奏
 │   │   │           ├── course-materials-index.md  飞书课程资料索引
 │   │   │           ├── operations-playbook.md     招生、运营与转化执行
-│   │   │           ├── competitive-references.md 外部会员社群案例与可迁移经验
+│   │   │           ├── competitive-references.md  外部会员社群案例与可迁移经验
 │   │   │           ├── history.md                 已清洗的关键演进摘要
 │   │   │           └── revisions/                 六级目录：课程关键修订
 │   │   │               ├── README.md              修订索引与读取边界
@@ -263,8 +264,11 @@ ai-context/
 │   ├── maintenance/                               二级目录：维护工具
 │   │   ├── README.md                              校验与桌面同步说明
 │   │   ├── validate-context.ps1                   结构、索引与链接校验脚本
-│   │   ├── sync-desktop-structure.ps1             将权威结构同步到 F 盘桌面
+│   │   ├── generate-structure-html.ps1             从 Markdown 生成交互式 HTML
+│   │   ├── structure-viewer.template.html          HTML 思维导图界面与交互模板
+│   │   ├── sync-desktop-structure.ps1             生成并同步 HTML 到 F 盘桌面
 │   │   └── git-hooks/                             本机自动同步触发器
+│   │       ├── pre-commit                         提交前重建并暂存 STRUCTURE.html
 │   │       ├── post-commit                        提交后同步桌面结构
 │   │       └── post-merge                         拉取或合并后同步桌面结构
 │   └── revisions/                                 二级目录：仓库级重大修订
@@ -275,8 +279,10 @@ ai-context/
 │       │                                         AI 表达默认层和语言规则修订
 │       ├── 2026-08-21-commercial-delivery-domain.md
 │       │                                         商业化与对外交付边界层修订
-│       └── 2026-08-21-direct-main-and-desktop-sync.md
-│                                                 直推 main、旧分支清理与桌面同步修订
+│       ├── 2026-08-21-direct-main-and-desktop-sync.md
+│       │                                         直推 main、旧分支清理与桌面同步修订
+│       └── 2026-08-21-interactive-html-structure-viewer.md
+│                                                 交互式 HTML 结构查看与自动同步修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界
@@ -335,9 +341,9 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 
 ## 六、命名、安全与提交
 
-- 目录和普通文件采用小写 kebab-case；固定入口保留 `README.md`、`AGENTS.md`、`STRUCTURE.md`、`llms.txt`。
+- 目录和普通文件采用小写 kebab-case；固定入口保留 `README.md`、`AGENTS.md`、`STRUCTURE.md`、`STRUCTURE.html`、`llms.txt`。其中 `STRUCTURE.html` 是自动生成文件。
 - Markdown 使用 UTF-8、LF 和相对链接。
 - 不保存密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
-- 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；再运行 `repository/maintenance/sync-desktop-structure.ps1`，保证 F 盘桌面镜像与本文件完全一致。
+- 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；提交前自动生成 `STRUCTURE.html`，再运行 `repository/maintenance/sync-desktop-structure.ps1`，保证 F 盘桌面 HTML 与仓库交互查看文件完全一致。
 
 *结构最后确认：2026-08-21*

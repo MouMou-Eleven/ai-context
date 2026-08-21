@@ -7,6 +7,7 @@
 | 入口 | 内容 | 何时读取 |
 |---|---|---|
 | [`../STRUCTURE.md`](../STRUCTURE.md) | 全仓目录、文件职责、写入位置和状态规范 | 新增、移动或重构文件前 |
+| [`../STRUCTURE.html`](../STRUCTURE.html) | 可逐层展开、折叠和搜索的中文结构思维导图 | 人工浏览完整仓库时 |
 | [`../AGENTS.md`](../AGENTS.md) | AI 协作、事实优先级和特殊项目规则 | AI 进入仓库时 |
 | [`../llms.txt`](../llms.txt) | AI 最小读取路由 | 每次任务开始时 |
 | [`environment/README.md`](./environment/README.md) | 电脑、网络和本地工具环境入口 | 处理本机环境问题时 |
@@ -16,10 +17,10 @@
 
 ## 根目录例外
 
-根目录只保留 `README.md`、`AGENTS.md`、`llms.txt` 和 `STRUCTURE.md` 四个机器与人类都需要快速发现的入口。它们是路由文件，不承担零碎内容沉淀。
+根目录只保留 `README.md`、`AGENTS.md`、`llms.txt`、`STRUCTURE.md` 和派生的 `STRUCTURE.html` 五个机器与人类都需要快速发现的入口。它们是路由或查看文件，不承担零碎内容沉淀。
 
 ## 发布与桌面同步
 
 - 建委要求沉淀到 GitHub 时，默认校验后直接提交并推送 `main`，不创建 PR。
-- 每次结构变化先更新 `STRUCTURE.md`，再由 [`maintenance/sync-desktop-structure.ps1`](./maintenance/sync-desktop-structure.ps1) 同步到 `F:\桌面文件\GitHub仓库完整结构.md`。
-- 桌面文件是只读镜像；仓库 `STRUCTURE.md` 始终是唯一权威来源。
+- 每次结构变化先更新 `STRUCTURE.md`；提交前 Git Hook 自动重建 `STRUCTURE.html`，提交或合并后再同步到 `F:\桌面文件\GitHub仓库完整结构.html`。
+- HTML 支持逐层展开、全部折叠、一级目录导航和全文搜索。桌面文件是只读镜像；仓库 `STRUCTURE.md` 始终是唯一权威来源。

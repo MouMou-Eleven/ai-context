@@ -12,6 +12,9 @@
 *.js text eol=lf
 *.jsx text eol=lf
 *.ps1 text eol=lf
+*.html text eol=lf
+repository/maintenance/git-hooks/* text eol=lf
+.gitattributes text eol=lf
 .gitignore text eol=lf
 
 # Binary assets/documents should never be line-ending normalized.
