@@ -45,6 +45,7 @@
 - AI 自动成片已形成真实闭环：OpenAI-compatible 模型生成结构化分镜，用户逐镜头确认本地真实素材，系统再创建 OpenCut 项目并写入画面轨和字幕轨；模型不可用时明确标记本地兜底，不伪装成模型结果。
 - 2026-08-22 浏览器端到端实测：`gpt-5.6-sol` 生成 5 镜头/30 秒分镜，5 个本地图片素材分别写入画面轨，5 段旁白写入字幕轨，随后成功进入可编辑工作台。
 - 自动成片的创作设置、最近分镜和任务状态已在当前浏览器持久化；更改创作参数会使旧分镜失效，防止误执行过期方案。
+- 修复场景特效帧描述符与 `opencut-wasm 0.2.5` 的字段命名不兼容，并完成场景面板、导出、字体、曲线预设、特效/图形/遮罩和转写流程的深层中文化。
 
 尚未完成：
 
@@ -62,6 +63,7 @@
 | [`roadmap.md`](./roadmap.md) | 后续开发顺序、比赛演示闭环与上线前条件 |
 | [`history.md`](./history.md) | 已清洗的项目关键演进与版本结论摘要 |
 | [`revisions/2026-08-22-auto-video-editable-project-loop.md`](./revisions/2026-08-22-auto-video-editable-project-loop.md) | AI 自动成片真实闭环、验证证据和能力边界 |
+| [`revisions/2026-08-22-wasm-scene-effect-and-editor-localization.md`](./revisions/2026-08-22-wasm-scene-effect-and-editor-localization.md) | WebAssembly 场景特效字段兼容、编辑器深层中文化与真实项目验证 |
 
 ## AI 调用规则
 
