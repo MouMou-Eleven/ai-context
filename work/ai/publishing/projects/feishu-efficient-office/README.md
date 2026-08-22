@@ -11,7 +11,7 @@
 
 - **目标读者**：非技术背景的职场人，日常工作中涉及文档、表格、PPT、数据汇报
 - **差异化**：设计师视角（不是程序员教AI）、真实培训验证（线下讲过）、变现闭环（市面上极少）
-- **当前进度**：第2章已完成豆包工作伙伴名称与截图更新，并复查0822细颗粒度编辑记录；飞书当前基线为 `revision_id=738`、共11张图片，指定边界前仍有待处理语言项，详见 `ch2-editor-feedback-lessons.md`。第3章已完成编辑反馈、图3-1最终口径和 Word 交付版；第8章已全部接受0814编辑稿的26条修订，飞书正文更新至 `revision_id=396`，21页Word终稿已完成修订残留、高清图片哈希和逐页校验。
+- **当前进度**：第2章已完成豆包工作伙伴名称与截图更新，并完成0822指定边界前的细颗粒度精修；飞书当前基线为 `revision_id=764`、共11张图片，23个文字位置已修改并回读验收。图2-4截图像素内仍有旧名称，需取得新素材后替换，详见 `ch2-editor-feedback-lessons.md`。第3章已完成编辑反馈、图3-1最终口径和 Word 交付版；第8章已全部接受0814编辑稿的26条修订，飞书正文更新至 `revision_id=396`，21页Word终稿已完成修订残留、高清图片哈希和逐页校验。
 
 ## 写作铁律（所有 AI 工具必须遵守）
 
@@ -45,7 +45,7 @@
 |------|------|------|-------------|
 | 前言 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第1章 飞书协作模式：AI时代的高效工作方式 | 另一位作者 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
-| 第2章 晨间工作梳理：用消息分组和豆包工作伙伴整理任务 | 建委 | 0822细颗粒度编辑复查已记录；边界前仍有待处理项 | [正文](https://my.feishu.cn/wiki/HBdBwRwcTikxd8k6J4ScIHMEn7c) / [截图清单](https://my.feishu.cn/wiki/XK2CwerKFiwXOrkh6OLcU2Jwnbd) |
+| 第2章 晨间工作梳理：用消息分组和豆包工作伙伴整理任务 | 建委 | 0822边界前文字精修与回读验收已完成；图2-4旧名称截图待换 | [正文](https://my.feishu.cn/wiki/HBdBwRwcTikxd8k6J4ScIHMEn7c) / [截图清单](https://my.feishu.cn/wiki/XK2CwerKFiwXOrkh6OLcU2Jwnbd) |
 | 第3章 方案撰写实战：用模板、AI与评论协作完成文档 | 建委 | 编辑反馈、图3-1最终口径和Word交付版已完成 | [正文](https://my.feishu.cn/wiki/QjUfwODpLipOg6kKZ96c8n5YnSQ) / [截图清单](https://my.feishu.cn/wiki/APJKw9CtwigBP1kfBXYcL5k8nKd) |
 | 第4章 会议闭环管理：用妙记与任务推进会后跟进 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第5章 内容排期管理：用多维表格实现任务流转 | 另一位作者 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
@@ -69,7 +69,7 @@
 | 章节 | 状态 | 字数 | 存放位置 | 完成日期 |
 |------|------|------|----------|----------|
 | 旧第4章 每天被琐事淹没：普通职场人如何用飞书每天省下2小时 | ✅ 历史素材，已审阅多轮 | ~16,000字 | 飞书文档 | 2026-05-11 |
-| 第2章 晨间工作梳理：用消息分组和豆包工作伙伴整理任务 | 🔄 0822细颗粒度编辑复查已记录；边界前待处理项尚未清零 | 待统计 | 飞书文档 + F盘桌面Word | 2026-08-22 |
+| 第2章 晨间工作梳理：用消息分组和豆包工作伙伴整理任务 | 🔄 0822边界前23处文字精修已完成；图2-4旧名称截图待换 | 待统计 | 飞书文档 + F盘桌面Word | 2026-08-22 |
 | 第3章 方案撰写实战：用模板、AI与评论协作完成文档 | ✅ 编辑反馈、图文、序号、官方核验与Word交付版已完成 | 待统计 | 飞书文档 + F盘桌面Word | 2026-07-18 |
 | 第8章 重复工作自动化：用自动化与 AI 工作流提升效率 | ✅ 0814编辑修订全部接受；飞书第396版、21页Word终稿和高清图片校验已完成 | 约0.97万中文字符 | 飞书文档 + F盘桌面Word + 素材 Base | 2026-08-14 |
 
@@ -83,7 +83,7 @@
 | [`feishu-base-form-experience.md`](./feishu-base-form-experience.md) | 多维表格表单选项表达、二维码图片和 API 能力边界 | 创建或调整飞书表单时读取 |
 | [`interface-screenshot-guidelines.md`](./interface-screenshot-guidelines.md) | 软件界面截图与图文一致规范 | 替换图片、审校图文或交稿前读取 |
 | [`ch1-editor-feedback-lessons.md`](./ch1-editor-feedback-lessons.md) | 第1章编辑反馈提炼出的共性教训 | 写作和改稿时按需读取 |
-| [`ch2-editor-feedback-lessons.md`](./ch2-editor-feedback-lessons.md) | 第2章0822细颗粒度编辑证据、共性规则、复查流程和待处理项 | 修改任一章节或报告编辑差异前读取 |
+| [`ch2-editor-feedback-lessons.md`](./ch2-editor-feedback-lessons.md) | 第2章0822细颗粒度编辑证据、共性规则、复查流程、已处理清单和图2-4剩余素材问题 | 修改任一章节或报告编辑差异前读取 |
 | [`ch4-editor-feedback.md`](./ch4-editor-feedback.md) | 第4章编辑反馈与修改方案 | 修改第4章时读取 |
 | [`ch4-v3-editor-feedback.md`](./ch4-v3-editor-feedback.md) | 第4章 v3 精修规则 | 第4章二次改稿时读取 |
 | [`ch4-v4-revision-log.md`](./ch4-v4-revision-log.md) | 第4章 v4 已执行修改与图号体系 | 继续审稿或替换图片时读取 |
