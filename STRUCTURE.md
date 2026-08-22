@@ -211,6 +211,7 @@ ai-context/
 │   │   │           ├── interface-screenshot-guidelines.md
 │   │   │           │                             软件截图与图文一致规范
 │   │   │           ├── ch1-editor-feedback-lessons.md
+│   │   │           ├── ch2-editor-feedback-lessons.md
 │   │   │           ├── ch4-editor-feedback.md
 │   │   │           ├── ch4-v3-editor-feedback.md
 │   │   │           ├── ch4-v4-revision-log.md
