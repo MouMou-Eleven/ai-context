@@ -11,7 +11,7 @@
 
 - **目标读者**：非技术背景的职场人，日常工作中涉及文档、表格、PPT、数据汇报
 - **差异化**：设计师视角（不是程序员教AI）、真实培训验证（线下讲过）、变现闭环（市面上极少）
-- **当前进度**：第2章已完成新增图2-11、原图2-11顺延为图2-12及图2-6后中文与书稿规范复查；飞书当前基线为 `revision_id=819`、共12张图片。图2-6之前编辑已确认文字保持不变，第二章本地素材也已按图2-1至图2-12统一命名。图2-4截图像素内仍有旧名称，需取得新素材后替换，详见 `ch2-editor-feedback-lessons.md`。第3章已完成编辑反馈、图3-1最终口径和 Word 交付版；第8章已全部接受0814编辑稿的26条修订，飞书正文更新至 `revision_id=396`，21页Word终稿已完成修订残留、高清图片哈希和逐页校验。
+- **当前进度**：第2章已完成用户手改后的送审前全章复查，飞书当前基线为 `revision_id=860`、共12张图片；16页编辑送审版 Word 已完成正文一致性、原图字节一致性、修订残留和逐页版式校验。编辑已确认的“选择‘新建标签’选项”等文字保持不变，用户新增的图2-10、图2-12引用和已删除的重复段落也已保留。图2-4截图像素内仍有“智能伙伴”和 `aily`，图2-9卡片名称仍为“杨建委的智能伙伴”，取得新截图后应替换，详见 `ch2-editor-feedback-lessons.md`。第3章已完成编辑反馈、图3-1最终口径和 Word 交付版；第8章已全部接受0814编辑稿的26条修订，飞书正文更新至 `revision_id=396`，21页Word终稿已完成修订残留、高清图片哈希和逐页校验。
 
 ## 写作铁律（所有 AI 工具必须遵守）
 
@@ -45,7 +45,7 @@
 |------|------|------|-------------|
 | 前言 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第1章 飞书协作模式：AI时代的高效工作方式 | 另一位作者 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
-| 第2章 晨间工作梳理：用消息分组和豆包工作伙伴整理任务 | 建委 | 新增图2-11、图2-6后审校和12张素材重排已完成；图2-4旧名称截图待换 | [正文](https://my.feishu.cn/wiki/HBdBwRwcTikxd8k6J4ScIHMEn7c) / [截图清单](https://my.feishu.cn/wiki/XK2CwerKFiwXOrkh6OLcU2Jwnbd) |
+| 第2章 晨间工作梳理：用消息分组和豆包工作伙伴整理任务 | 建委 | 送审前全章复查和16页Word验收已完成；图2-4、图2-9像素内旧称待换 | [正文](https://my.feishu.cn/wiki/HBdBwRwcTikxd8k6J4ScIHMEn7c) / [截图清单](https://my.feishu.cn/wiki/XK2CwerKFiwXOrkh6OLcU2Jwnbd) |
 | 第3章 方案撰写实战：用模板、AI与评论协作完成文档 | 建委 | 编辑反馈、图3-1最终口径和Word交付版已完成 | [正文](https://my.feishu.cn/wiki/QjUfwODpLipOg6kKZ96c8n5YnSQ) / [截图清单](https://my.feishu.cn/wiki/APJKw9CtwigBP1kfBXYcL5k8nKd) |
 | 第4章 会议闭环管理：用妙记与任务推进会后跟进 | 待确认 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
 | 第5章 内容排期管理：用多维表格实现任务流转 | 另一位作者 | 目录确认 | [目录文档](https://eadcgzghjzt.feishu.cn/wiki/CmiXwFmaCiejwEkegnBc9d6an9g) |
@@ -69,7 +69,7 @@
 | 章节 | 状态 | 字数 | 存放位置 | 完成日期 |
 |------|------|------|----------|----------|
 | 旧第4章 每天被琐事淹没：普通职场人如何用飞书每天省下2小时 | ✅ 历史素材，已审阅多轮 | ~16,000字 | 飞书文档 | 2026-05-11 |
-| 第2章 晨间工作梳理：用消息分组和豆包工作伙伴整理任务 | 🔄 新增图2-11、图2-6后审校及12张素材重排已完成；图2-4旧名称截图待换 | 待统计 | 飞书文档 + F盘桌面Word | 2026-08-22 |
+| 第2章 晨间工作梳理：用消息分组和豆包工作伙伴整理任务 | 🔄 飞书第860版及16页编辑送审版Word已通过全章审校；图2-4、图2-9像素内旧称待换 | 约0.53万中文字符 | 飞书文档 + 本地Word + F盘图片素材 | 2026-08-22 |
 | 第3章 方案撰写实战：用模板、AI与评论协作完成文档 | ✅ 编辑反馈、图文、序号、官方核验与Word交付版已完成 | 待统计 | 飞书文档 + F盘桌面Word | 2026-07-18 |
 | 第8章 重复工作自动化：用自动化与 AI 工作流提升效率 | ✅ 0814编辑修订全部接受；飞书第396版、21页Word终稿和高清图片校验已完成 | 约0.97万中文字符 | 飞书文档 + F盘桌面Word + 素材 Base | 2026-08-14 |
 
@@ -83,7 +83,7 @@
 | [`feishu-base-form-experience.md`](./feishu-base-form-experience.md) | 多维表格表单选项表达、二维码图片和 API 能力边界 | 创建或调整飞书表单时读取 |
 | [`interface-screenshot-guidelines.md`](./interface-screenshot-guidelines.md) | 软件界面截图与图文一致规范 | 替换图片、审校图文或交稿前读取 |
 | [`ch1-editor-feedback-lessons.md`](./ch1-editor-feedback-lessons.md) | 第1章编辑反馈提炼出的共性教训 | 写作和改稿时按需读取 |
-| [`ch2-editor-feedback-lessons.md`](./ch2-editor-feedback-lessons.md) | 第2章0822细颗粒度编辑证据、边界纠正、图2-6后审校、12张素材顺序和图2-4剩余问题 | 修改任一章节或报告编辑差异前读取 |
+| [`ch2-editor-feedback-lessons.md`](./ch2-editor-feedback-lessons.md) | 第2章0822细颗粒度编辑证据、边界纠正、送审前全章复查、12张素材顺序和截图像素遗留问题 | 修改任一章节或报告编辑差异前读取 |
 | [`ch4-editor-feedback.md`](./ch4-editor-feedback.md) | 第4章编辑反馈与修改方案 | 修改第4章时读取 |
 | [`ch4-v3-editor-feedback.md`](./ch4-v3-editor-feedback.md) | 第4章 v3 精修规则 | 第4章二次改稿时读取 |
 | [`ch4-v4-revision-log.md`](./ch4-v4-revision-log.md) | 第4章 v4 已执行修改与图号体系 | 继续审稿或替换图片时读取 |
