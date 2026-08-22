@@ -144,7 +144,12 @@ ai-context/
 │   │   │           ├── architecture-and-upstream.md
 │   │   │           │                             架构、上游与能力边界
 │   │   │           ├── roadmap.md                 开发路线与上线条件
-│   │   │           └── history.md                 已清洗的关键演进摘要
+│   │   │           ├── history.md                 已清洗的关键演进摘要
+│   │   │           └── revisions/                 项目关键修订记录
+│   │   │               ├── 2026-08-22-auto-video-editable-project-loop.md
+│   │   │               │                         自动剪辑可编辑工程闭环修订
+│   │   │               └── 2026-08-22-wasm-scene-effect-and-editor-localization.md
+│   │   │                                         WASM 场景效果与编辑器本地化修订
 │   │   │
 │   │   ├── training/                              三级目录：AI 培训
 │   │   │   ├── README.md                          AI 培训总入口
@@ -296,8 +301,10 @@ ai-context/
 │       │                                         直推 main、旧分支清理与桌面同步修订
 │       ├── 2026-08-21-interactive-html-structure-viewer.md
 │       │                                         交互式 HTML 结构查看与自动同步修订
-│       └── 2026-08-22-cognition-and-content-commercialization.md
-│                                                 建委认知归组与跨行业内容经营修订
+│       ├── 2026-08-22-cognition-and-content-commercialization.md
+│       │                                         建委认知归组与跨行业内容经营修订
+│       └── 2026-08-23-feishu-document-routing-boundary.md
+│                                                 飞书文档承载平台与飞书书籍项目的路由边界
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界
@@ -361,4 +368,4 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 不保存密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
 - 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；提交前自动生成 `STRUCTURE.html`，再运行 `repository/maintenance/sync-desktop-structure.ps1`。桌面暂不可用时只延后镜像同步，不阻断仓库提交；后续 Git 操作会自动补齐。
 
-*结构最后确认：2026-08-21*
+*结构最后确认：2026-08-23*

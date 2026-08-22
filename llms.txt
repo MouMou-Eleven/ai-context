@@ -58,7 +58,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 | 漫剧、企业宣传片、真人实拍故事 | `work/ai/video/types/README.md` | 对应单个类型 |
 | Seedance | `work/ai/video/tools/seedance/README.md` | 对应单个专题 |
 | AI 书籍出版 | `work/ai/publishing/README.md` | 对应项目 |
-| 《飞书高效办公》书稿 | `work/ai/publishing/projects/feishu-efficient-office/README.md` | `writing-style-analysis.md` + 当前章节文件 |
+| 《飞书高效办公》书稿、章节、出版或编辑反馈 | `work/ai/publishing/projects/feishu-efficient-office/README.md` | `writing-style-analysis.md` + 当前章节文件；仅出现飞书文档 URL 不触发 |
 | AI 自媒体、标题、文章、口播、直播销售、账号增长 | `work/ai/self-media/README.md` | titles、articles、video-scripts、live-sales 或 experience 中一个分支 |
 | 成果展示、用户动机、观点与知识怎样结合 | `work/ai/self-media/experience/outcome-and-motivation.md` | 口播时再读 `brain/ai-expression/experience/spoken-argument-and-transition.md` |
 
@@ -81,6 +81,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 - 用户说“给客户看、发给客户、对外发送、正式交付”，或交付物显然代表建委或公司对外呈现时，必须读取 `work/other/commercial/README.md` 和 `experience/external-deliverable-language.md`。
 - 对外成品默认不出现“客户版、客户审阅版、给客户看的、建议采用、待客户确认”等内部协作表达；未确认事实先返回建委内部确认。
 - 飞书书稿 = AI 表达 + AI 书籍出版 + 飞书书籍项目；不自动读自媒体销售规则。
+- 飞书文档只是承载平台，不是业务领域。出现“飞书文档”“飞书云文档”“在飞书里写内容”、`/wiki/` 或 `/docx/` 链接时，先根据文档标题、目录和用户目标判断真实归属；不得据此自动激活《飞书高效办公》书籍项目。
 - 微课案例文案 = AI 表达 + 微课设计；不自动读 AI 培训。
 - 只有用户明确说“结合”“综合调用”或同时交付多个独立成果时，才组合多个专业领域。
 - “课程 / 课件”不明确时先判断对象：建委授课属于 AI 培训；给教师制作成品属于微课设计。
