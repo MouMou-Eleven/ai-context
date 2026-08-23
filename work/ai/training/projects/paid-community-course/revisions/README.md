@@ -4,6 +4,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-08-23 | [`lesson-4-visualization-and-case-delivery.md`](./2026-08-23-lesson-4-visualization-and-case-delivery.md) | 确认 AI 培训抽象概念按知识点补机制型可视化，课程案例必须交付可运行和可上传文件 |
 | 2026-08-19 | [`lesson-4-student-material-boundary.md`](./2026-08-19-lesson-4-student-material-boundary.md) | 明确第 4 节学员课程资料不得混入讲师备课提示、逐字稿和授课顺序 |
 
 只在需要理解规则形成原因或核对旧交付问题时读取修订正文；日常生成课程内容不默认加载本目录。
