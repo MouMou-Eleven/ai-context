@@ -6,6 +6,7 @@
 
 | 项目 | 上下文入口 | 源码状态 |
 |---|---|---|
+| AI 六十甲子古音律与 IP 孵化 | [`ai-sixty-jiazi-music-ip/`](./ai-sixty-jiazi-music-ip/README.md) | Web Demo 规划与视觉确认中；独立源码仓库待建立 |
 | 言剪 AI | [`yancut-ai/`](./yancut-ai/README.md) | 本地开发中；独立远程源码仓库待确认 |
 | 混世魔牛游戏 | 本目录仅保留索引 | 统一源码仓库中的 `projects/hunshi-moniu/` |
 | 杨建委个人网站 | 本目录仅保留索引 | 统一源码仓库中的 `projects/jianwei-portfolio/` |

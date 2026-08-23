@@ -139,6 +139,14 @@ ai-context/
 │   │   │   │               └── synapsex-video-scrub.txt
 │   │   │   └── projects/                          四级目录：AI 编程项目
 │   │   │       ├── README.md                      项目索引与源码仓库入口
+│   │   │       ├── ai-sixty-jiazi-music-ip/       五级目录：AI 六十甲子古音律与 IP 孵化
+│   │   │       │   ├── README.md                  当前项目事实、边界与索引
+│   │   │       │   ├── product-demo-plan.md       Web Demo 产品与技术规划
+│   │   │       │   ├── data-audit.md              本地资料、工具与数据审计
+│   │   │       │   ├── ip-character-prompts.md    五行种子角色与形象提示词
+│   │   │       │   └── revisions/                 项目关键修订记录
+│   │   │       │       └── 2026-08-24-initial-project-and-web-demo-direction.md
+│   │   │       │                                 首次入库与 Web Demo 方向
 │   │   │       └── yancut-ai/                     五级目录：言剪 AI
 │   │   │           ├── README.md                  当前项目事实与调用规则
 │   │   │           ├── architecture-and-upstream.md
@@ -178,8 +186,10 @@ ai-context/
 │   │   │           ├── history.md                 已清洗的关键演进摘要
 │   │   │           └── revisions/                 六级目录：课程关键修订
 │   │   │               ├── README.md              修订索引与读取边界
-│   │   │               └── 2026-08-19-lesson-4-student-material-boundary.md
-│   │   │                                             第 4 节学员资料边界修订
+│   │   │               ├── 2026-08-19-lesson-4-student-material-boundary.md
+│   │   │               │                             第 4 节学员资料边界修订
+│   │   │               └── 2026-08-23-lesson-4-visualization-and-case-delivery.md
+│   │   │                                             第 4 节可视化与案例交付修订
 │   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
@@ -368,4 +378,4 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 不保存密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
 - 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；提交前自动生成 `STRUCTURE.html`，再运行 `repository/maintenance/sync-desktop-structure.ps1`。桌面暂不可用时只延后镜像同步，不阻断仓库提交；后续 Git 操作会自动补齐。
 
-*结构最后确认：2026-08-23*
+*结构最后确认：2026-08-24*
