@@ -29,7 +29,7 @@ AI 以主要工作方式和交付目标分类，包括：
 
 ## 其他领域与项目
 
-不属于设计或 AI 的领域与长期项目进入 [`other/`](./other/README.md)。商业化与对外交付位于 [`other/commercial/`](./other/commercial/README.md)，保存跨设计、AI 和其他项目复用的商业规范、经验和注意事项；Inshan POPUPIANO 则是具体海外电商项目。
+不属于设计或 AI 的领域与长期项目进入 [`other/`](./other/README.md)。商业化与对外交付位于 [`other/commercial/`](./other/commercial/README.md)，保存跨设计、AI 和其他项目复用的商业规范、经验和注意事项；AI 六十甲子古音律与 IP 孵化是文化产品与 IP 项目，Inshan POPUPIANO 是海外电商项目。项目是否使用 AI 或包含网站开发，不单独决定归属。
 
 ## 项目与领域的关系
 

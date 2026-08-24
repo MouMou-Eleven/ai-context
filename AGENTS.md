@@ -62,8 +62,17 @@
 
 - 商业化与对外交付进入 `work/other/commercial/`，保存跨设计、AI 和其他项目复用的内容经营、商业规范、交付经验、注意事项及内外部稿件边界；它不属于 AI、设计或建委的商业认知。
 - 海外电商等不属于设计或 AI 的项目进入 `work/other/`。
+- “AI 六十甲子古音律与 IP 孵化”固定归入 `work/other/ai-sixty-jiazi-music-ip/`。项目的主体是六十甲子文化、古音律、声音体验与 IP 孵化；AI、生图、Web、App 或小程序只是实现方式。不得因执行编程任务而在 `work/ai/programming/projects/` 重新创建或推送同名项目。
 
 ## 6. 特殊项目
+
+### AI 六十甲子古音律与 IP 孵化
+
+用户提到“AI 六十甲子古音律与 IP 孵化”“六十甲子网站”“甲音”“音乐算命”“出生节律声音”或“甲子神 IP”时，必须先读：
+
+- `work/other/ai-sixty-jiazi-music-ip/README.md`
+
+需要追溯最新方向时，再读取该目录的 `revisions/`。网站产品与甲子神 IP 是两条独立工作线，除非建委明确要求联动，不得混入同一产品流程。该项目的唯一 GitHub 上下文位置是 `work/other/ai-sixty-jiazi-music-ip/`；旧路径 `work/ai/programming/projects/ai-sixty-jiazi-music-ip/` 已失效，禁止恢复。
 
 ### 《飞书高效办公》
 

@@ -3,6 +3,8 @@
 > 状态：v4 宽屏 Web 工作台已完成；海外产品已明确为“中国出生节律 × 个性化声音”Web-first 方向；独立甲子神 IP 已建立“地支头饰＋天干法器＋纳音材质”视觉语法并生成五张对照版
 >
 > 当前口径确认：2026-08-24
+>
+> GitHub 唯一上下文位置：`work/other/ai-sixty-jiazi-music-ip/`；旧位置 `work/ai/programming/projects/ai-sixty-jiazi-music-ip/` 已失效
 
 ## 项目定位
 
@@ -15,6 +17,7 @@
 
 ## 当前确认事实
 
+- 本项目的主体是六十甲子文化、古音律、声音体验和 IP 孵化，固定归入 `work/other/`；AI、Web、App、小程序和生图是实现方式，不改变项目归属。
 - 第一阶段产品形态：响应式 Web App，兼顾手机浏览器；App Store 与微信小程序仍只是后续方向。
 - 当前已有三套相互分散的网页工具：本命五音推演、干支五音组合、六十甲子与干支关系查询。
 - Web Demo 已完成四个模块、Web Audio 试听、60 条甲子检索、音程比较，以及“作曲导演稿 / ACE-Step / 紧凑引擎稿”三层提示词输出。
@@ -89,6 +92,7 @@
 | [`revisions/2026-08-24-separate-web-and-toy-ip-direction.md`](./revisions/2026-08-24-separate-web-and-toy-ip-direction.md) | 网站与 IP 分线、潮玩视觉重定向和启动修复的最新决策 |
 | [`revisions/2026-08-24-wide-workbench-music-prompt-v4.md`](./revisions/2026-08-24-wide-workbench-music-prompt-v4.md) | 唯一开发目录、五个 IP 命名、宽屏 v4、美术素材和音乐提示词专项改造 |
 | [`revisions/2026-08-24-overseas-sound-oracle-and-stem-artifact-system.md`](./revisions/2026-08-24-overseas-sound-oracle-and-stem-artifact-system.md) | 海外“出生节律声音”定位、MVP、验证方案及甲子神天干法器视觉系统 |
+| [`revisions/2026-08-24-context-relocation-to-other.md`](./revisions/2026-08-24-context-relocation-to-other.md) | 将项目从 AI 编程迁移到 other，并锁定唯一上下文位置与后续路由规则 |
 
 ## AI 调用规则
 
@@ -99,6 +103,7 @@
 5. 原始表格、压缩包、DOCX、WAV 与二进制图片保留在授权的本地资料目录，不复制进 `ai-context`。
 6. 完整 Demo 源码应进入独立源码仓库；仓库未确认前，不把完整构建产物提交到 `ai-context`。
 7. 新增学术口径或角色设定时记录来源；重要变更新增 revision，不得无痕覆盖历史。
+8. 本项目只向 `work/other/ai-sixty-jiazi-music-ip/` 写入上下文；不得在旧 AI 编程路径恢复同名目录。编程经验可以另行提炼到 AI 编程领域，但项目事实仍留在本目录。
 
 ## 待确认事项
 

@@ -139,14 +139,6 @@ ai-context/
 │   │   │   │               └── synapsex-video-scrub.txt
 │   │   │   └── projects/                          四级目录：AI 编程项目
 │   │   │       ├── README.md                      项目索引与源码仓库入口
-│   │   │       ├── ai-sixty-jiazi-music-ip/       五级目录：AI 六十甲子古音律与 IP 孵化
-│   │   │       │   ├── README.md                  当前项目事实、边界与索引
-│   │   │       │   ├── product-demo-plan.md       Web Demo 产品与技术规划
-│   │   │       │   ├── data-audit.md              本地资料、工具与数据审计
-│   │   │       │   ├── ip-character-prompts.md    五行种子角色与形象提示词
-│   │   │       │   └── revisions/                 项目关键修订记录
-│   │   │       │       └── 2026-08-24-initial-project-and-web-demo-direction.md
-│   │   │       │                                 首次入库与 Web Demo 方向
 │   │   │       └── yancut-ai/                     五级目录：言剪 AI
 │   │   │           ├── README.md                  当前项目事实与调用规则
 │   │   │           ├── architecture-and-upstream.md
@@ -261,6 +253,27 @@ ai-context/
 │       │       │                                  内容驱动的需求识别与商业承接
 │       │       └── external-deliverable-language.md
 │       │                                          对外成品与内部工作稿的语言边界
+│       ├── ai-sixty-jiazi-music-ip/               三级目录：AI 六十甲子古音律与 IP 孵化
+│       │   ├── README.md                          当前项目事实、边界、唯一位置与文件索引
+│       │   ├── product-demo-plan.md               Web Demo 产品与技术规划
+│       │   ├── data-audit.md                      本地资料、工具与数据审计
+│       │   ├── demo-implementation.md             四模块 Demo、测试与本地交付记录
+│       │   ├── ip-character-prompts.md            初版潮玩角色构想，保留作历史参考
+│       │   ├── ip-character-prompts-v2-mature.md  已否决的成熟神将视觉方向
+│       │   ├── ip-character-prompts-v3-toy.md     当前潮玩卡通视觉口径与提示词摘要
+│       │   └── revisions/                         项目关键方向和实现修订
+│       │       ├── 2026-08-24-initial-project-and-web-demo-direction.md
+│       │       │                                  首次入库与 Web Demo 方向
+│       │       ├── 2026-08-24-web-demo-implementation-complete.md
+│       │       │                                  初版 Web Demo 实现与测试记录
+│       │       ├── 2026-08-24-separate-web-and-toy-ip-direction.md
+│       │       │                                  网站与潮玩 IP 分线及启动修复
+│       │       ├── 2026-08-24-wide-workbench-music-prompt-v4.md
+│       │       │                                  宽屏工作台、素材与音乐提示词改造
+│       │       ├── 2026-08-24-overseas-sound-oracle-and-stem-artifact-system.md
+│       │       │                                  海外声音产品与天干法器视觉系统
+│       │       └── 2026-08-24-context-relocation-to-other.md
+│       │                                          项目迁入 other 与唯一写入位置修订
 │       └── inshan-popupiano/                      三级目录：海外电商项目
 │           ├── README.md                          当前合作模式、事实和待澄清项
 │           ├── 90-day-cold-start-plan.md          90 天冷启动执行方案
@@ -313,8 +326,10 @@ ai-context/
 │       │                                         交互式 HTML 结构查看与自动同步修订
 │       ├── 2026-08-22-cognition-and-content-commercialization.md
 │       │                                         建委认知归组与跨行业内容经营修订
-│       └── 2026-08-23-feishu-document-routing-boundary.md
-│                                                 飞书文档承载平台与飞书书籍项目的路由边界
+│       ├── 2026-08-23-feishu-document-routing-boundary.md
+│       │                                         飞书文档承载平台与飞书书籍项目的路由边界
+│       └── 2026-08-24-sixty-jiazi-project-relocation.md
+│                                                 六十甲子项目迁入 other 与唯一路由规则
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界

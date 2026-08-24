@@ -70,6 +70,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 |---|---|---|
 | 商业化、商业项目交付、给客户看、发给客户、客户审阅、对外发送、正式交付、交付版 | `work/other/commercial/README.md` | `experience/external-deliverable-language.md`；再进入一个最具体的专业领域或项目 |
 | 内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化、内容承接 | `work/other/commercial/README.md` | `work/other/commercial/experience/content-demand-and-conversion.md`；再进入一个最具体的行业或项目 |
+| AI 六十甲子古音律与 IP 孵化、六十甲子网站、甲音、音乐算命、出生节律声音、甲子神 IP | `work/other/ai-sixty-jiazi-music-ip/README.md` | 只读当前任务对应专题；追溯方向变化时才读 `revisions/` |
 | Inshan、POPUPIANO、海外电商、Amazon、独立站、代运营 | `work/other/inshan-popupiano/README.md` | `competitive-references.md` 或 `90-day-cold-start-plan.md` |
 
 ## 严格组合规则
@@ -86,6 +87,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 - 只有用户明确说“结合”“综合调用”或同时交付多个独立成果时，才组合多个专业领域。
 - “课程 / 课件”不明确时先判断对象：建委授课属于 AI 培训；给教师制作成品属于微课设计。
 - AI 表达是中文内容基础层，不计作一个额外业务领域，也不能触发无关项目。
+- 六十甲子项目即使包含网站、App、AI 音乐、生图或综艺开发，也固定从 `work/other/ai-sixty-jiazi-music-ip/` 读取；不得路由回 AI 编程项目。
 
 ## 动态知识
 

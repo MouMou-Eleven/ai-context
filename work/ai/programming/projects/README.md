@@ -6,7 +6,6 @@
 
 | 项目 | 上下文入口 | 源码状态 |
 |---|---|---|
-| AI 六十甲子古音律与 IP 孵化 | [`ai-sixty-jiazi-music-ip/`](./ai-sixty-jiazi-music-ip/README.md) | 四模块 Web Demo 与五个独立潮玩 IP 已完成；独立源码仓库待建立 |
 | 言剪 AI | [`yancut-ai/`](./yancut-ai/README.md) | 本地开发中；独立远程源码仓库待确认 |
 | 混世魔牛游戏 | 本目录仅保留索引 | 统一源码仓库中的 `projects/hunshi-moniu/` |
 | 杨建委个人网站 | 本目录仅保留索引 | 统一源码仓库中的 `projects/jianwei-portfolio/` |
@@ -23,3 +22,4 @@
 - 新项目必须说明源码位置、公开状态、当前基线和待确认事项。
 - 只讨论某个项目时，不自动加载其他项目或全部编程工具。
 - 涉及百度秒哒分包与部署时，按需读取 [`../tools/miaoda/experience/patterns/codex-source-package-deployment.md`](../tools/miaoda/experience/patterns/codex-source-package-deployment.md)。
+- “AI 六十甲子古音律与 IP 孵化”是文化产品与 IP 项目，权威入口在 [`../../../other/ai-sixty-jiazi-music-ip/`](../../../other/ai-sixty-jiazi-music-ip/README.md)；不得因其中包含 Web 开发而在本目录建立重复项目。

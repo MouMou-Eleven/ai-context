@@ -39,6 +39,7 @@ work/
 │   └── self-media/         AI 自媒体
 └── other/                   不属于设计或 AI 的其他领域与项目
     ├── commercial/         商业化与对外交付：跨领域规范、经验和注意事项
+    ├── ai-sixty-jiazi-music-ip/ AI 六十甲子古音律与 IP 孵化
     └── inshan-popupiano/   海外电商项目
 ```
 
