@@ -1,6 +1,6 @@
 # 五行种子角色与形象提示词
 
-> 历史版本：本文档保留初版 `2.8 头身潮玩` 方向。建委批准强化后，当前口径已改为 [`ip-character-prompts-v2-mature.md`](./ip-character-prompts-v2-mature.md) 的成熟神格方向。
+> 历史版本：本文档保留初版 `2.8 头身` 构想，但服饰和气场仍偏收藏级神将。当前口径已改为 [`ip-character-prompts-v3-toy.md`](./ip-character-prompts-v3-toy.md) 的圆润潮玩卡通方向。
 
 > 版本：2026-08-24
 >
