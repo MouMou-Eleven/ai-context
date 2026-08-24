@@ -1,6 +1,6 @@
 # AI 六十甲子古音律与 IP 孵化
 
-> 状态：产品 Demo 规划与视觉确认阶段
+> 状态：响应式 Web Demo 已完成，待独立源码仓库与部署
 >
 > 当前口径确认：2026-08-24
 
@@ -18,6 +18,7 @@
 - 当前核心数据包括六十甲子纵表、五行古音律校勘表、音乐创作素材、音乐生成提示词和五行音乐全流程资料。
 - 音频素材现有 20 个 WAV 文件，约 690 MB、总时长约 62 分 48 秒；Demo 是否使用原始音频、压缩预览还是浏览器合成，需先确认版权和体积方案。
 - 当前六十份音乐提示词中的“旋律设计（Melody）”均为空，是 Demo 的明确补全任务。
+- Web Demo 已用可复用规则补全 Melody 段落，生成结果仍需作曲人与文化顾问复核。
 - 五个首发形象暂按五种纳音五行各选一个阳年代表：甲子金辨、戊辰赵达、丙子郭嘉、丙寅耿章、庚午王济；这是产品阶段选样，仍需居老师确认。
 - 当前沟通材料提到学术、软件、内容 IP、数字人、自媒体和商业化等方向；其中合作、资金和正式背书状态尚未取得可核验正式文件，不能对外写成既成事实。
 
@@ -43,13 +44,15 @@
 
 详细审计见 [`data-audit.md`](./data-audit.md)。
 
-## 当前设计状态
+## 当前 Demo 与设计状态
 
 - 视觉方向：`玄金夜谱`，深墨黑底、宣纸白、古铜金与少量朱砂，强调古谱、仪器和可交互音乐工作台，而不是通用卡片墙。
 - Superdesign 项目：[`甲音 · 玄金夜谱工作台`](https://superdesign.dev/teams/ea602598-6a14-4540-a451-f03579fb301c/projects/487e08d8-ca54-4287-aea6-bbbcdefe3898)
-- 当前设计稿：[`v2 预览`](https://p.superdesign.dev/draft/0981ff19-0659-4af2-adaa-1bb6a65bc005)
+- 当前设计稿：[`v3 预览`](https://p.superdesign.dev/draft/0981ff19-0659-4af2-adaa-1bb6a65bc005)，标题为“甲音 · 玄金夜谱精密古音仪”。
 - 设计稿中的历法演示样例已改为已核验案例：`2005-12-23 08:37 → 乙酉 戊子 辛巳 壬辰`。
-- 前端实现尚未开始：需先由建委确认设计方向；ImageGen 概念图调用于 2026-08-24 返回 404，是否改用本机 API Key 的 CLI 方案或明确跳过，待确认。
+- 建委已批准在 v3 方向上强化并继续开发；响应式 React/Vite Demo 已完成五个模块和 Web Audio 可听原型。
+- 当前可运行源码位于本地 `C:\Users\Administrator\Documents\居- 项目\ai-sixty-jiazi-demo`；详见 [`demo-implementation.md`](./demo-implementation.md)。
+- ImageGen 内置调用返回 404，且本机未配置 `OPENAI_API_KEY`；本轮以已批准的 Superdesign v3 作为视觉规格，形象交付为五组完整生成提示词，未伪造人物图。
 
 ## 文件索引
 
@@ -57,8 +60,11 @@
 |---|---|
 | [`product-demo-plan.md`](./product-demo-plan.md) | Web 首发理由、信息架构、核心流程、技术方案与阶段路线 |
 | [`data-audit.md`](./data-audit.md) | 本地资料清单、三工具审计、数据优先级和待校验问题 |
-| [`ip-character-prompts.md`](./ip-character-prompts.md) | 五行种子角色选择原则、统一画风和五个形象生成提示词 |
+| [`ip-character-prompts.md`](./ip-character-prompts.md) | 初版 2.8 头身潮玩方向，仅作历史记录 |
+| [`ip-character-prompts-v2-mature.md`](./ip-character-prompts-v2-mature.md) | 当前成熟神格方向、统一画风与五个形象生成提示词 |
+| [`demo-implementation.md`](./demo-implementation.md) | 已完成 Demo 的模块、数据口径、测试证据、本地路径和已知约束 |
 | [`revisions/2026-08-24-initial-project-and-web-demo-direction.md`](./revisions/2026-08-24-initial-project-and-web-demo-direction.md) | 项目首次入库、网页优先和 Demo 范围的决策记录 |
+| [`revisions/2026-08-24-web-demo-implementation-complete.md`](./revisions/2026-08-24-web-demo-implementation-complete.md) | 设计批准、Demo 实现、测试结果与工具偏离记录 |
 
 ## AI 调用规则
 
@@ -74,8 +80,6 @@
 
 ## 待确认事项
 
-- 是否批准当前 `玄金夜谱 v2` 作为开发视觉基线。
-- ImageGen 概念图采用本机 API Key 的 CLI 生成，还是明确跳过并直接以 Superdesign 设计稿为视觉规格。
 - 五个首发甲子神代表和形象气质是否由居老师确认。
 - 四柱各柱的音乐权重、干支到音高的最终映射、节气换年口径和调式规则。
 - 20 个 WAV 文件的权属、可公开范围和首版加载策略。
