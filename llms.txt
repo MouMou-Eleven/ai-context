@@ -69,6 +69,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 | 任务 | 专项入口 | 按需继续 |
 |---|---|---|
 | 商业化、商业项目交付、给客户看、发给客户、客户审阅、对外发送、正式交付、交付版 | `work/other/commercial/README.md` | `experience/external-deliverable-language.md`；再进入一个最具体的专业领域或项目 |
+| 商业计划书、项目申报、比赛材料、路演 PPT、融资材料、评委或投资人审阅 | `work/other/commercial/README.md` | `experience/competition-and-investor-materials.md`；再进入一个最具体的专业领域或项目 |
 | 内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化、内容承接 | `work/other/commercial/README.md` | `work/other/commercial/experience/content-demand-and-conversion.md`；再进入一个最具体的行业或项目 |
 | AI 六十甲子古音律与 IP 孵化、六十甲子网站、甲音、音乐算命、出生节律声音、甲子神 IP | `work/other/ai-sixty-jiazi-music-ip/README.md` | 只读当前任务对应专题；追溯方向变化时才读 `revisions/` |
 | Inshan、POPUPIANO、海外电商、Amazon、独立站、代运营 | `work/other/inshan-popupiano/README.md` | `competitive-references.md` 或 `90-day-cold-start-plan.md` |
@@ -81,6 +82,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 - 跨行业商业内容 = AI 表达 + 内容需求与承接方法 + 一个最具体的专业领域或项目；不把 PPT、AI、培训等单一案例误写成普遍规律。
 - 用户说“给客户看、发给客户、对外发送、正式交付”，或交付物显然代表建委或公司对外呈现时，必须读取 `work/other/commercial/README.md` 和 `experience/external-deliverable-language.md`。
 - 对外成品默认不出现“客户版、客户审阅版、给客户看的、建议采用、待客户确认”等内部协作表达；未确认事实先返回建委内部确认。
+- 面向评委、投资人和孵化机构的材料必须读取 `experience/competition-and-investor-materials.md`；不得把内部研发讨论、自证式声明、本地路径、`localhost`、私有仓库或外部无法访问的记录写入成品。
 - 飞书书稿 = AI 表达 + AI 书籍出版 + 飞书书籍项目；不自动读自媒体销售规则。
 - 飞书文档只是承载平台，不是业务领域。出现“飞书文档”“飞书云文档”“在飞书里写内容”、`/wiki/` 或 `/docx/` 链接时，先根据文档标题、目录和用户目标判断真实归属；不得据此自动激活《飞书高效办公》书籍项目。
 - 微课案例文案 = AI 表达 + 微课设计；不自动读 AI 培训。

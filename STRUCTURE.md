@@ -251,8 +251,10 @@ ai-context/
 │       │       ├── README.md                      内容经营与商业交付经验索引
 │       │       ├── content-demand-and-conversion.md
 │       │       │                                  内容驱动的需求识别与商业承接
-│       │       └── external-deliverable-language.md
-│       │                                          对外成品与内部工作稿的语言边界
+│       │       ├── external-deliverable-language.md
+│       │       │                                  对外成品与内部工作稿的语言边界
+│       │       └── competition-and-investor-materials.md
+│       │                                          赛事、路演与融资材料的对外边界
 │       ├── ai-sixty-jiazi-music-ip/               三级目录：AI 六十甲子古音律与 IP 孵化
 │       │   ├── README.md                          当前项目事实、边界、唯一位置与文件索引
 │       │   ├── product-demo-plan.md               Web Demo 产品与技术规划
@@ -328,8 +330,10 @@ ai-context/
 │       │                                         建委认知归组与跨行业内容经营修订
 │       ├── 2026-08-23-feishu-document-routing-boundary.md
 │       │                                         飞书文档承载平台与飞书书籍项目的路由边界
-│       └── 2026-08-24-sixty-jiazi-project-relocation.md
-│                                                 六十甲子项目迁入 other 与唯一路由规则
+│       ├── 2026-08-24-sixty-jiazi-project-relocation.md
+│       │                                         六十甲子项目迁入 other 与唯一路由规则
+│       └── 2026-08-27-commercial-external-material-boundary.md
+│                                                 赛事、路演与融资材料的对外边界修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界
