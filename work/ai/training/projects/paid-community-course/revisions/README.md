@@ -4,6 +4,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-08-29 | [`student-material-definitive-positioning.md`](./2026-08-29-student-material-definitive-positioning.md) | 确认学员正文必须直接给出已确定的学习定位和人机分工，不得用条件式、阶段式措辞弱化结论 |
 | 2026-08-23 | [`lesson-4-visualization-and-case-delivery.md`](./2026-08-23-lesson-4-visualization-and-case-delivery.md) | 确认 AI 培训抽象概念按知识点补机制型可视化，课程案例必须交付可运行和可上传文件 |
 | 2026-08-19 | [`lesson-4-student-material-boundary.md`](./2026-08-19-lesson-4-student-material-boundary.md) | 明确第 4 节学员课程资料不得混入讲师备课提示、逐字稿和授课顺序 |
 

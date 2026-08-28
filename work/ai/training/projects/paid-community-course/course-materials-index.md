@@ -1,7 +1,7 @@
 # 飞书课程资料索引
 
 > 当前有效
-> 索引最后整理：2026-08-23
+> 索引最后整理：2026-08-29
 
 本文件只登记课程资料的入口、受众、用途和当前状态。教程正文继续维护在飞书，不复制到 GitHub 上下文仓库。
 
@@ -10,6 +10,7 @@
 | 资料 | 飞书正文 | 受众 | 所属与用途 | 当前状态 | 最近核验 |
 |---|---|---|---|---|---|
 | 【02】AI时代技术词典：普通人从开发前到上线后的关键节点 | [飞书文档](https://my.feishu.cn/wiki/MODXwIqpOiE7wqkk3s3cZQ17nid) | 第一季度课程学员，以非程序员为主 | AI 编程基础与开发流程指南；按开发前、开发中、上线前、上线后解释自主搭建项目的关键节点、高频词、风险和验收方法 | 已发布：完成四阶段重构、导航与画板回读验证，飞书 revision 117 | 2026-07-19 |
+| AI 时代，普通人怎样理解 Git 和 GitHub | [飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/KHyiwBqrYi7ky4kemuqcxe7Enpb?from=from_copylink) | 第一季度课程学员，以非程序员和 AI 协作初学者为主 | 从项目策划者和决策者视角解释 Git、GitHub、branch、commit、push、PR、merge 的作用；明确人负责目标、需求、边界、验收和是否采用，AI 负责命令、底层机制与具体技术操作 | 已发布：删除条件式学习定位，改为确定性人机分工；飞书 revision 34 | 2026-08-29 |
 | 【05】第3课 · AI时代的协作心法：从 Prompt 到 Skill、MCP、CLI、API 与 Harness | [飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/VsvFwdyHRiHuDIkxx5gcM6nanmh) | 第一季度课程学员，以非程序员和 AI 协作初学者为主 | 开场先讲单句问答式使用的局限、七个概念组合后的变化和后续课程用途，再以直观案例解释 AI 怎样操作电脑、接收多模态输入、管理上下文、复用 Skill、连接外部工具与系统，以及不同 Harness 为什么让同一模型表现不同 | 已发布：完成学习理由开场与学员视角修订，飞书 revision 168；原录播视频、表格和全部既有链接已回读确认 | 2026-08-18 |
 | 【04】让 AI 做出好看的网页：秒哒网页美化三条路径 | [飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/IoqQw5IXOiQYRgkNf86cv5PvnYs?from=from_copylink) | 第一季度课程学员，以非程序员和 AI 协作初学者为主 | 以企业年会报名网页为同一案例，展示基础提示词、秒哒内置风格、组件 TXT 上传和截图参考；正文只保留展示后的知识点、真实操作链路和验收方法 | 已发布：完成学员正文边界重构，删除课堂提示与 90 分钟路线，组件流程按 TXT 整理与上传重写，飞书 revision 245 | 2026-08-19 |
 | 【06】第4课 · 用 AI 做出并发布一个静态网页 | [飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/Pwo5wdyFIiB9qVkjFvVclENVnOf?from=from_copylink) | 第一季度课程学员，以非程序员和 AI 协作初学者为主 | 以口语化方式解释 AI 时代为什么仍要看懂网页结构；通过机制型可视化说明网页文件、浏览器渲染、HTML 盒子、CSS 前后变化、JavaScript 交互、静态网页边界、PRD、单文件/多文件、部署、MCP 和 GitHub Pages；配套可运行的三阶段演示、个人简介上传案例与多文件坦克大战 | 已发布：飞书 revision 35；回读确认 13 个一级章节、25 张图片、1 个案例附件，用户新增的 GitHub Pages 成功图已保留，旧 AI 味标题与专业调试面板内容已删除 | 2026-08-23 |

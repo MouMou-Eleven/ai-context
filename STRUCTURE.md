@@ -183,8 +183,10 @@ ai-context/
 │   │   │               ├── README.md              修订索引与读取边界
 │   │   │               ├── 2026-08-19-lesson-4-student-material-boundary.md
 │   │   │               │                             第 4 节学员资料边界修订
-│   │   │               └── 2026-08-23-lesson-4-visualization-and-case-delivery.md
-│   │   │                                             第 4 节可视化与案例交付修订
+│   │   │               ├── 2026-08-23-lesson-4-visualization-and-case-delivery.md
+│   │   │               │                             第 4 节可视化与案例交付修订
+│   │   │               └── 2026-08-29-student-material-definitive-positioning.md
+│   │   │                                             学员资料确定性学习定位修订
 │   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
