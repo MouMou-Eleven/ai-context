@@ -2,7 +2,7 @@
 
 > **状态：参考实现 / 非当前默认。** 这三个 `.ts` 是 [`pitfalls.md` #14](../../pitfalls.md) 在旧后端环境中的处方实现，历史生产已验证。
 >
-> 2026-07-15 的仓库记录显示秒哒已取消“应用内 50MB 文件上传上限”。新项目必须先按 [`patterns/large-video-upload.md`](../../patterns/large-video-upload.md) 做当前环境能力测试；只有仍复现 CORS / 413 / supervisor kill 时才使用本目录。
+> 2026-08-27 官方计费页已明确免费版项目内单文件 50MB、专业版及以上 500MB。新项目必须先按 [`patterns/large-video-upload.md`](../../patterns/large-video-upload.md) 确认会员、同步修改前后端限制并测试当前原生上传；只有旧项目仍复现 CORS / 413 / supervisor kill 时才使用本目录。
 >
 > 完整的“为什么这样写、契约长什么样”在 [`patterns/large-video-upload.md`](../../patterns/large-video-upload.md)。
 >

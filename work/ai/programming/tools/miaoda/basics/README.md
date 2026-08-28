@@ -2,6 +2,7 @@
 
 | 文件 | 内容 |
 |---|---|
+| [`current-capabilities.md`](./current-capabilities.md) | 当前版本、会员权益、上传限制、素材库与后端资源口径 |
 | [`platform-basics.md`](./platform-basics.md) | 运行时、应用形态、后端、存储、环境和资源基础 |
 | [`publish-channels.md`](./publish-channels.md) | Web、小程序、原生小程序和 APP 发布边界 |
 

@@ -250,14 +250,14 @@ console.log("[fnname] env diag:", {
 
 ## #14 [历史兼容] 旧后端大视频上传：CORS / Edge Function 资源 / Storage 上限三层叠加
 
-> **状态：已被 2026-07-15 更新部分取代。** 旧环境中这是反复踩坑后已在生产成功的方案；新公告已取消“应用内 50MB 文件上传上限”，但没有公布新的单请求、CORS、413、函数资源限制。本条保留历史发现和旧环境兼容方案，不再作为新项目默认架构。
+> **状态：已被 2026-08-27 当前权益口径取代。** 旧环境中这是反复踩坑后已在生产成功的方案；当前官方计费页已明确免费版单文件 50MB、专业版及以上 500MB，并要求同步修改前后端限制。本条保留历史发现和旧环境兼容方案，不再作为新项目默认架构。
 >
-> 新项目先按 [patterns/large-video-upload.md](./patterns/large-video-upload.md) 做 200MB 能力测试；只有当前环境仍复现下列问题时，才启用本条的兼容实现。
+> 新项目先按 [patterns/large-video-upload.md](./patterns/large-video-upload.md) 确认会员、对象存储容量并测试当前原生上传；只有旧项目仍复现下列问题时，才启用本条的兼容实现。
 >
 > 本条只保留发现叙事 + 根因；
 > 完整实现规范见 [patterns/large-video-upload.md](./patterns/large-video-upload.md)，
 > 可直接抄走的三段源码见 [`reference-materials/video-chunked-upload/`](./reference-materials/video-chunked-upload/README.md)，
-> 新环境测试与旧环境兼容提示词见 [prompt-patterns.md](./prompt-patterns.md#大文件上传先测新环境旧分片代理只兜底)。
+> 当前上传配置与旧环境兼容提示词见 [prompt-patterns.md](./prompt-patterns.md#大文件上传先按会员配置-500mb旧分片代理只兜底)。
 
 **症状（四种死法按出现顺序）**：
 
@@ -281,7 +281,7 @@ console.log("[fnname] env diag:", {
 
 **旧环境兼容解法**：不把分片合并成完整文件。分片以路径 `<upload_id>/<chunk_index>` 永久留在 Storage 桶 `video-chunks` 里，新增一个 `video-serve` Edge Function 用 HTTP Range / 206 Partial Content 把分片伪装成可拖进度条的完整视频文件。它绕开旧环境的 CORS、函数资源和 Storage 上限，但架构复杂、占用对象数量多，不应在新环境未经测试就直接采用。架构图 / 表结构 / 函数契约 / 源码见 [patterns/large-video-upload.md](./patterns/large-video-upload.md)。
 
-**只有新环境测试仍失败时才使用兼容提示词**（详见 [prompt-patterns.md](./prompt-patterns.md#大文件上传先测新环境旧分片代理只兜底)）：
+**只有旧项目按当前权益配置后仍失败时才使用兼容提示词**（详见 [prompt-patterns.md](./prompt-patterns.md#大文件上传先按会员配置-500mb旧分片代理只兜底)）：
 红线“禁止合并分片”+“禁止前端直接调 Storage 端点（含 createSignedUploadUrl / TUS）”+“video-serve 必须返回 206 + Content-Range，不允许 200 全文” + 把 `reference-materials/video-chunked-upload/` 三个 ts 作为“禁止重写、必须照抄”的参考实现塞给它（参考 #5：秒哒会无视已提供实现自己另写一份）。
 
 ---

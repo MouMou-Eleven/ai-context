@@ -82,6 +82,7 @@ ai-context/
 │   │   │   │       ├── disambiguation.md          百度秒哒与飞书妙搭的同名辨析
 │   │   │   │       ├── basics/                    六级目录：基础与发布
 │   │   │   │       │   ├── README.md              基础资料索引
+│   │   │   │       │   ├── current-capabilities.md  当前能力、权益与限制
 │   │   │   │       │   ├── platform-basics.md     平台基础能力
 │   │   │   │       │   └── publish-channels.md    发布渠道与限制
 │   │   │   │       ├── development/               六级目录：开发能力
@@ -121,8 +122,10 @@ ai-context/
 │   │   │   │           ├── version-features.md    历史版本能力时间线
 │   │   │   │           ├── 2026-08-02-version-governance.md
 │   │   │   │           │                         版本知识治理记录
-│   │   │   │           └── 2026-08-15-cloud-runtime-diagnostics.md
-│   │   │   │                                     云端运行诊断记录
+│   │   │   │           ├── 2026-08-15-cloud-runtime-diagnostics.md
+│   │   │   │           │                         云端运行诊断记录
+│   │   │   │           └── 2026-08-29-v3.7-and-upload-limit-governance.md
+│   │   │   │                                     V3.7 与上传限制口径修订
 │   │   │   ├── experience/                        四级目录：通用编程经验
 │   │   │   │   ├── README.md                      经验索引
 │   │   │   │   ├── creative-frontend-prompt-patterns.md

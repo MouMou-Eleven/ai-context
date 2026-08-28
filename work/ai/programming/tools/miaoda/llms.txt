@@ -5,6 +5,7 @@
 ## 查平台
 
 - 同名产品：disambiguation.md
+- 当前版本、会员权益、上传与容量限制：basics/current-capabilities.md
 - 平台基础：basics/platform-basics.md
 - 发布渠道：basics/publish-channels.md
 - 当前功能：先查官方资料或实际环境；updates/ 只用于追溯
