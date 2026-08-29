@@ -173,6 +173,7 @@ ai-context/
 │   │   │       ├── README.md                      培训项目索引
 │   │   │       └── paid-community-course/         五级目录：AI 超级个体陪跑社群
 │   │   │           ├── README.md                  当前产品与课程口径
+│   │   │           ├── positioning-and-vision.md  社群定位、愿景与表达边界
 │   │   │           ├── course-development.md      课程研发与内容选择
 │   │   │           ├── curriculum-design.md       课程结构与直播节奏
 │   │   │           ├── course-materials-index.md  飞书课程资料索引
@@ -185,8 +186,10 @@ ai-context/
 │   │   │               │                             第 4 节学员资料边界修订
 │   │   │               ├── 2026-08-23-lesson-4-visualization-and-case-delivery.md
 │   │   │               │                             第 4 节可视化与案例交付修订
-│   │   │               └── 2026-08-29-student-material-definitive-positioning.md
-│   │   │                                             学员资料确定性学习定位修订
+│   │   │               ├── 2026-08-29-student-material-definitive-positioning.md
+│   │   │               │                             学员资料确定性学习定位修订
+│   │   │               └── 2026-08-30-community-positioning-and-super-individual-definition.md
+│   │   │                                             社群总定位与超级个体定义修订
 │   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
