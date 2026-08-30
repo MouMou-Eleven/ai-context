@@ -514,3 +514,36 @@ curl -i https://域名/<file>.txt
 5. 修复确认后隐藏或移除临时诊断 UI 和采样代码。
 
 **预防**：写秒哒提示词前先区分“秒哒能执行的云端静态动作”和“必须由用户完成的动态复现”。诊断提示词统一复用 [prompt-patterns.md 片段 7](./prompt-patterns.md#片段-7云端应用的临时诊断日志面板)，不得凭 Codex 的工具能力脑补秒哒能力。
+
+## #27 原生 JS + Vite 项目被平台重建 `postcss.config.js` → 构建失败 `Cannot find module 'tailwindcss'`
+
+> **实战来源**：2026-08-30「豆格工坊 · 拼豆图纸生成器」bead-grid-studio v1.2.0 秒哒源码包部署。本地 `npm run build` 正常，云端首版构建失败；连修两轮才成功（先删 tailwind 留 autoprefixer → 仍失败；把 plugins 置空 → 成功）。
+
+**症状**：秒哒部署/发布时构建中断：
+```
+Build failed with 1 error: /v1/plugin/vite:css
+PostCSS config: Failed to load PostCSS config (searchPath: /app/.sourcecode/app-src)
+Failed to load PostCSS config: Cannot find module 'tailwindcss'
+Require stack:
+- /app/.sourcecode/app-src/postcss.config.js
+```
+只删 tailwindcss、保留 autoprefixer 后，变为：
+```
+Cannot find module 'autoprefixer'
+```
+
+**根因**：
+1. 本项目是原生 JS（ES Modules）+ Vite 8，**零 PostCSS 生态**：`package.json` 只有 `vite` / `@playwright/test`，没有 `tailwindcss` / `autoprefixer` / `postcss`；`styles.css` 是纯 CSS。
+2. 上传包里**没有** `postcss.config.js`（已核实仓库无此文件、无 `tailwind.config.js`、无任何 postcss 引用）——该配置是**秒哒云端构建环境按平台 Vite 模板自动生成**的（默认 `plugins: { tailwindcss: {}, autoprefixer: {} }`，并可能带 `tailwind.config.js`）。
+3. Vite 构建自动加载 `postcss.config.js` → Node 端 `require('tailwindcss')` 找不到模块 → 构建在 CSS 插件阶段崩溃，与业务代码无关。
+4. 本地不报错的原因：本地没有 `postcss.config.js`，Vite 不加载任何 PostCSS 配置。
+
+**修复（按实战顺序）**：
+- ❌ 第一轮（无效）：移除 tailwindcss 引用、保留 autoprefixer、删除失效的 tailwind.config.js → 仍报 `Cannot find module 'autoprefixer'`（它同样未安装；逐插件删除会连环踩坑）。
+- ✅ 第二轮（有效）：把 `postcss.config.js` 的 `plugins` 置空 `{}`（纯 CSS 无需任何 PostCSS 处理）→ `pnpm install && npx vite build --logLevel error` exit 0，产物完整，发布成功。
+
+**预防**：
+1. 原生 JS/Vite 项目交付秒哒时，提示词红线段写明："本项目无 postcss / tailwindcss / autoprefixer 依赖；如平台生成 `postcss.config.js` 或 `tailwind.config.js`，请将 `plugins` 置空或直接删除两个文件；禁止新增未使用的 PostCSS 插件/依赖。"
+2. 包内 PRD 与清单中标注"无 CSS 预处理器、无 PostCSS/Tailwind 插件"。
+3. 验收以 `vite build --logLevel error` exit 0 且 `dist/` 完整为准，不能只信"秒哒显示创建完成/构建成功"。
+4. 遇到 `Cannot find module 'tailwindcss'` / `'autoprefixer'` 这类报错时，首选修复就是"置空 plugins"，不要逐插件删除。
