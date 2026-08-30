@@ -178,6 +178,21 @@ C:\Users\Administrator\.codex\archived_sessions    Junction 入口
 
 首次正式执行只需要正常“重新启动”Windows，并在开机后暂时不要手动打开 Codex。约 25.4 GiB 数据需要逐文件哈希，可能持续数分钟。验收时检查 `success.json`、两个 C 盘入口的 `LinkType = Junction`、目标均指向 F 盘、任务已经停用以及 C 盘真实空闲空间增加；不能只看脚本是否消失或单一目录大小。
 
+### 2026-08-30 重启验收与自动启动竞态修复
+
+第一次真实重启已经证明 `AtStartup` 任务确实被触发，并完成了 C/F 两侧复制和完整 SHA-256 校验；但登录后的 `CodexPlusPlusWatcher` 自动启动了 `F:\Codex++\codex-plus-plus.exe`，随后拉起 `ChatGPT.exe`。任务在最后切换前检测到这些写入进程，按设计留下源目录并记录 `DeferredCodexStartedDuringHash`，因此没有完成 Junction，也没有损坏或删除会话。
+
+为消除这个已确认的竞态，已部署一次性的 Codex++ 启动闸门：
+
+- `C:\ProgramData\CodexSessionMigration\CodexPlusPlusMigrationGate.ps1` 在用户登录时等待 `success.json` 或 `failure.json`。
+- 原 `HKCU\Software\Microsoft\Windows\CurrentVersion\Run\CodexPlusPlusWatcher` 命令已精确备份为 `"F:\Codex++\codex-plus-plus.exe" --debug-port 9229`，当前值临时指向闸门。
+- 迁移成功、硬失败或 4 小时 15 分钟超时后，闸门都会恢复原命令；恢复后才启动原 Codex++。如果启动项在等待期间被用户改动，闸门不会覆盖用户的新值。
+- 闸门不改 Codex 配置、会话数据库、网络、Clash、火绒或 Codex++ 本体。它只影响这一次尚未完成迁移的登录启动顺序。
+
+更新后的正式脚本使用 2026-08-30 已完整验证的两份清单作为基线。文件路径、字节数或 UTC 修改时间未变的文件复用已验证 SHA-256；有任何变化的文件才重新计算 C/F 两份哈希，无法找到完整基线时仍退回全量校验。这样保留可审计的一致性检查，同时避免再次用约 9 分钟全量读盘给自动启动留下竞态窗口。
+
+本次更新后的安装结果为 `InstalledAndDryRunVerified`，SYSTEM 干运行仍为 `DeferredCodexRunning` 且任务返回码为 0；源目录仍为普通目录，正式迁移尚未发生。运行脚本 SHA-256 为 `F7D562ED400D1C48334B7D8A4C99E2A087834BE2E86837E2B2361E3D9339AA21`，闸门脚本 SHA-256 为 `E1619AB63D7D42C28C2BFA999DD68EF26527BDA087CA5ACF3130C2C6BD8B61CB`。
+
 ## 六、以后执行电脑清理的固定流程
 
 1. 读取本文件和设备 README，确认仍是台式电脑1。
