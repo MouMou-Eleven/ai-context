@@ -302,6 +302,7 @@ ai-context/
 │   │       ├── windows-junction-migration.md      Windows Junction 迁移经验
 │   │       └── desktop-1/                         四级目录：台式电脑 1
 │   │           ├── README.md                      当前设备事实与操作禁区
+│   │           ├── disk-cleanup-and-codex-storage.md  磁盘清理与 Codex 存储基线
 │   │           ├── network-and-codex.md           网络、Clash 与 Codex 排障
 │   │           └── history.md                     已清洗的关键修复摘要
 │   ├── maintenance/                               二级目录：维护工具

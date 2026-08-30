@@ -6,7 +6,7 @@
 
 | 设备名称 | 状态 | 最近核验 | 首读入口 |
 |---|---|---|---|
-| 台式电脑1 | 在用 | 2026-07-23 | [`desktop-1/README.md`](./desktop-1/README.md) |
+| 台式电脑1 | 在用 | 2026-08-30 | [`desktop-1/README.md`](./desktop-1/README.md) |
 
 ## AI 使用规则
 
@@ -21,7 +21,8 @@
 
 - [`desktop-1/README.md`](./desktop-1/README.md)：台式电脑1当前入口、配置摘要和操作边界。
 - [`desktop-1/network-and-codex.md`](./desktop-1/network-and-codex.md)：网络、Clash、CC Switch、Codex 上下文与插件排障细节。
+- [`desktop-1/disk-cleanup-and-codex-storage.md`](./desktop-1/disk-cleanup-and-codex-storage.md)：磁盘清理路径、应用缓存边界、Junction 统计陷阱和 Codex 会话迁移方案。
 - [`desktop-1/history.md`](./desktop-1/history.md)：台式电脑1已清洗的关键修复与变化摘要。
 - [`windows-junction-migration.md`](./windows-junction-migration.md)：本机 AppData Junction 迁移、安全清理和卸载边界。
 
-*文件最后整理：2026-07-23；设备事实最后核验：2026-07-23*
+*文件最后整理：2026-08-30；设备事实最后核验：2026-08-30*

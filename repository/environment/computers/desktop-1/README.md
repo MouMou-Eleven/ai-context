@@ -15,6 +15,8 @@
 | CC Switch | 3.18.0 |
 | Clash for Windows | 0.20.16.3-ikuuu，规则模式 |
 | Codex++ | 1.2.41；供应商自动切换当前关闭 |
+| 磁盘状态 | C、D、E、F 均为 NTFS，2026-08-30 核验为 Healthy；C 盘清理后可用约 54.99 GiB |
+| Codex 会话存储 | `sessions` 与 `archived_sessions` 仍在 C 盘普通目录；Junction 迁移到 F 盘原理可行，但尚未在安全离线窗口完成 |
 
 截至 2026-07-23，本机 Codex 活动请求链路为：
 
@@ -44,6 +46,8 @@ Codex -> CC Switch 本地端口 127.0.0.1:15721 -> 当前外部供应商
 4. 不要因火绒拦截一条启动项写入就关闭整体防护；先核对被拦截的具体目标。
 5. 修改 Clash 后必须同时检查“持久配置文件”和“当前内核运行规则”；文件存在不代表运行内核已加载。
 6. 不要把供应商密钥、Token、Cookie 或完整认证文件写入本仓库。
+7. 统计 C 盘目录时必须跳过 Junction 和其他 ReparsePoint；微信 `xwechat` 当前真实数据在 F 盘，不能重复算作 C 盘占用。
+8. 不要从正在执行的 Codex 任务中迁移 `.codex\sessions` 或反复安排注销触发。会话迁移只能在 Codex 完全退出后的独立 Windows 维护窗口执行。
 
 ## 后续排障顺序
 
@@ -56,7 +60,18 @@ Codex -> CC Switch 本地端口 127.0.0.1:15721 -> 当前外部供应商
 ## 文件索引
 
 - [`network-and-codex.md`](./network-and-codex.md)：本次网络与 Codex 稳定性排查、官方上下文核验、Clash 规则和插件持久化。
+- [`disk-cleanup-and-codex-storage.md`](./disk-cleanup-and-codex-storage.md)：磁盘清理固定路径、Junction 统计陷阱、Codex 空间增长原因及会话迁移方案。
 - [`history.md`](./history.md)：关键修复、失效故障与配置变化摘要。
+
+## 2026-08-30 磁盘清理与 Codex 存储核验
+
+- C 盘在线验收阶段从约 39.38 GiB 可用增加到约 54.99 GiB，真实净增约 15.61 GiB；剪映、Edge、AE、npm、显卡和临时缓存均按进程与路径边界清理。
+- 删除 22 份数据库中已经不存在的 Codex 备份，释放约 1.892 GiB；仍被索引的聊天、归档聊天和 2 份备份完整保留。
+- 2026-08-30 核验时，221 个被索引的 Codex 会话文件约 25.40 GiB。长会话快速增长的主要原因是上下文压缩记录反复携带截图和 base64 图片数据。
+- 微信 `%APPDATA%\Tencent\xwechat` 已是指向 `F:\AppData_Migrated\XWeChat` 的 Junction。扫描显示的约 16.58 GiB 不占 C 盘。
+- Codex 可以使用 Junction 实现“C 盘保留数据库和入口，F 盘保存会话文件”；本次失败的是活动任务退出后的执行生命周期，不是 Junction 原理。当前没有部分迁移，数据安全。
+
+完整路径、保留项、失败路线和下一次迁移步骤见 [`disk-cleanup-and-codex-storage.md`](./disk-cleanup-and-codex-storage.md)。
 
 ## 2026-07-24 最新网络核验
 
@@ -75,4 +90,4 @@ Codex -> CC Switch 本地端口 127.0.0.1:15721 -> 当前外部供应商
 - 新增的部分站点规则已经写入 Clash 持久配置，但在 2026-07-23 检查时，当前运行内核尚未全部加载。为避免中断正在执行的 Codex 任务，当时未强制重载；应在无活动任务的安全窗口重载后逐条验证。
 - 如果插件再次在重启后消失，先检查守护脚本与启动 VBS 是否在运行，再查火绒日志；不要直接重复安装全部插件。
 
-*文件最后整理：2026-08-01；设备事实最后核验：2026-08-01*
+*文件最后整理：2026-08-30；设备事实最后核验：2026-08-30*
