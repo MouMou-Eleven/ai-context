@@ -72,6 +72,7 @@ Codex -> CC Switch 本地端口 127.0.0.1:15721 -> 当前外部供应商
 - Codex 可以使用 Junction 实现“C 盘保留数据库和入口，F 盘保存会话文件”；本次失败的是活动任务退出后的执行生命周期，不是 Junction 原理。当前没有部分迁移，数据安全。
 - 已注册 `CodexSessionMigration-ToF-Boot` 系统级开机任务，并以 `NT AUTHORITY\SYSTEM` 身份完成一次安全干运行：权限、C/F 盘访问、日志和 Codex 运行阻断均已验证。下次正常重新启动后自动执行；成功或硬失败都会留下 JSON 状态并停用任务，不会形成反复开机循环。
 - 上次真实重启中，Codex++ 的登录自动启动在哈希校验末段拉起了 ChatGPT，迁移因此安全延迟而非失败。现已临时安装 `CodexPlusPlusMigrationGate.ps1`，等待迁移结果后恢复原 `CodexPlusPlusWatcher` 启动命令，专门消除这个启动竞态。
+- 另外确认启动文件夹中还有同名 `CodexPlusPlusWatcher.lnk` 直接启动 Codex++；该快捷方式已临时隔离并登记，迁移后原样恢复，避免第二条启动链绕过闸门。
 
 完整路径、保留项、失败路线和下一次迁移步骤见 [`disk-cleanup-and-codex-storage.md`](./disk-cleanup-and-codex-storage.md)。
 

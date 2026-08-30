@@ -186,12 +186,13 @@ C:\Users\Administrator\.codex\archived_sessions    Junction 入口
 
 - `C:\ProgramData\CodexSessionMigration\CodexPlusPlusMigrationGate.ps1` 在用户登录时等待 `success.json` 或 `failure.json`。
 - 原 `HKCU\Software\Microsoft\Windows\CurrentVersion\Run\CodexPlusPlusWatcher` 命令已精确备份为 `"F:\Codex++\codex-plus-plus.exe" --debug-port 9229`，当前值临时指向闸门。
+- 进一步核验发现用户启动文件夹中的 `Startup\CodexPlusPlusWatcher.lnk` 也直接指向同一命令；它已临时移动到 `C:\ProgramData\CodexSessionMigration\CodexPlusPlusWatcher.lnk.migration-disabled`，原目标、参数和工作目录记录在 `codex-plus-plus-shortcut-backup.json`。它不是删除，迁移结果出来后会原样移回。
 - 迁移成功、硬失败或 4 小时 15 分钟超时后，闸门都会恢复原命令；恢复后才启动原 Codex++。如果启动项在等待期间被用户改动，闸门不会覆盖用户的新值。
 - 闸门不改 Codex 配置、会话数据库、网络、Clash、火绒或 Codex++ 本体。它只影响这一次尚未完成迁移的登录启动顺序。
 
 更新后的正式脚本使用 2026-08-30 已完整验证的两份清单作为基线。文件路径、字节数或 UTC 修改时间未变的文件复用已验证 SHA-256；有任何变化的文件才重新计算 C/F 两份哈希，无法找到完整基线时仍退回全量校验。这样保留可审计的一致性检查，同时避免再次用约 9 分钟全量读盘给自动启动留下竞态窗口。
 
-本次更新后的安装结果为 `InstalledAndDryRunVerified`，SYSTEM 干运行仍为 `DeferredCodexRunning` 且任务返回码为 0；源目录仍为普通目录，正式迁移尚未发生。运行脚本 SHA-256 为 `F7D562ED400D1C48334B7D8A4C99E2A087834BE2E86837E2B2361E3D9339AA21`，闸门脚本 SHA-256 为 `E1619AB63D7D42C28C2BFA999DD68EF26527BDA087CA5ACF3130C2C6BD8B61CB`。
+本次更新后的安装结果为 `InstalledAndDryRunVerified`，SYSTEM 干运行仍为 `DeferredCodexRunning` 且任务返回码为 0；源目录仍为普通目录，正式迁移尚未发生。运行脚本 SHA-256 为 `F7D562ED400D1C48334B7D8A4C99E2A087834BE2E86837E2B2361E3D9339AA21`，最新闸门脚本 SHA-256 为 `B589CAF388192C2045E322B595FCCDC3F4556BCFECCEC53CCB438CCEFE5796C3`。
 
 ## 六、以后执行电脑清理的固定流程
 
