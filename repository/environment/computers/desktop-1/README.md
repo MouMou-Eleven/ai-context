@@ -16,7 +16,7 @@
 | Clash for Windows | 0.20.16.3-ikuuu，规则模式 |
 | Codex++ | 1.2.41；供应商自动切换当前关闭 |
 | 磁盘状态 | C、D、E、F 均为 NTFS，2026-08-30 核验为 Healthy；C 盘清理后可用约 54.99 GiB |
-| Codex 会话存储 | `sessions` 与 `archived_sessions` 仍在 C 盘普通目录；Junction 迁移到 F 盘原理可行，但尚未在安全离线窗口完成 |
+| Codex 会话存储 | `sessions` 与 `archived_sessions` 当前仍在 C 盘普通目录；已部署并验证 SYSTEM 开机迁移任务，等待下一次重新启动正式迁移到 F 盘 |
 
 截至 2026-07-23，本机 Codex 活动请求链路为：
 
@@ -70,6 +70,7 @@ Codex -> CC Switch 本地端口 127.0.0.1:15721 -> 当前外部供应商
 - 2026-08-30 核验时，221 个被索引的 Codex 会话文件约 25.40 GiB。长会话快速增长的主要原因是上下文压缩记录反复携带截图和 base64 图片数据。
 - 微信 `%APPDATA%\Tencent\xwechat` 已是指向 `F:\AppData_Migrated\XWeChat` 的 Junction。扫描显示的约 16.58 GiB 不占 C 盘。
 - Codex 可以使用 Junction 实现“C 盘保留数据库和入口，F 盘保存会话文件”；本次失败的是活动任务退出后的执行生命周期，不是 Junction 原理。当前没有部分迁移，数据安全。
+- 已注册 `CodexSessionMigration-ToF-Boot` 系统级开机任务，并以 `NT AUTHORITY\SYSTEM` 身份完成一次安全干运行：权限、C/F 盘访问、日志和 Codex 运行阻断均已验证。下次正常重新启动后自动执行；成功或硬失败都会留下 JSON 状态并停用任务，不会形成反复开机循环。
 
 完整路径、保留项、失败路线和下一次迁移步骤见 [`disk-cleanup-and-codex-storage.md`](./disk-cleanup-and-codex-storage.md)。
 

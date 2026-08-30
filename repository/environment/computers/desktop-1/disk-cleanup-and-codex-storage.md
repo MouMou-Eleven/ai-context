@@ -149,6 +149,35 @@ C:\Users\Administrator\.codex\archived_sessions    Junction 入口
 
 迁移前后都要记录 C、F 盘空闲空间，且 F 盘目标必须纳入备份。F 盘掉线或目标目录损坏时，Codex 通过 C 盘入口也无法访问会话数据。
 
+### 2026-08-30 已部署并验证的开机迁移任务
+
+为避免再次依赖当前 Codex 任务退出后的子进程，已经部署一份独立于 Codex 的 Windows 系统级计划任务：
+
+| 项目 | 已核验值 |
+|---|---|
+| 计划任务 | `CodexSessionMigration-ToF-Boot` |
+| 运行身份 | `NT AUTHORITY\SYSTEM`，最高权限 |
+| 触发方式 | Windows 开机 `AtStartup`；`StartWhenAvailable = true` |
+| 并发与时限 | `IgnoreNew`；最长运行 4 小时 |
+| 正式脚本 | `C:\ProgramData\CodexSessionMigration\Invoke-CodexSessionMigration.ps1` |
+| 脚本 SHA-256 | `F33860952DBD3CE2015C2C0EB7CED5B9FAEF83D93FD692072AA7B417F8E6C2F6` |
+| 审计目录 | `C:\ProgramData\CodexSessionMigration` |
+| 预检结果 | `PreflightPassed`；源会话约 25.402 GiB，F 盘可用约 1583.99 GiB |
+
+最终任务已经在 Codex 仍运行时由任务计划程序手动启动过一次。它确实以 `SYSTEM` 身份运行，能够访问 C、F 盘并写入状态和日志；检测到真实 Codex 写入进程后返回 `DeferredCodexRunning`，没有复制、改名、创建 Junction 或删除任何文件，任务仍保持启用。这个测试证明了开机任务的独立启动链路，不再依赖 Codex 退出后留下的子进程。
+
+正式开机执行采用以下事务边界：
+
+1. 先写 `boot-triggered.json` 和 `migration.log`，避免无声失败。
+2. 校验 C、F 盘均为固定 NTFS 卷，校验 F 盘所有权标记、源目录形态和空间余量。
+3. 使用 `robocopy /E` 增量复制，不使用会删除目标文件的 `/MIR`。目标端多出的 20 个文件、约 0.434383 GiB 会移动到 `F:\AppData_Migrated\Codex\orphan-quarantine\<runId>`，不会直接删除。
+4. 对每一个源文件和目标文件按相对路径做 SHA-256 一致性校验；校验完成后再次检查 Codex 写入进程。
+5. 原 C 盘目录先原子改名为带 runId 的回滚副本，再建立两个 Junction，并通过 C 盘入口进行写入穿透测试。
+6. 任一步失败都只移除指向核准 F 盘目标的 Junction，并恢复 C 盘原目录；成功验证后才删除 C 盘回滚副本。
+7. 成功写 `success.json` 并停用自身；不可恢复的失败写 `failure.json` 并停用自身，避免反复开机循环。只有“Codex 仍在写入”这一可恢复状态会保留任务，等待下次安全开机。
+
+首次正式执行只需要正常“重新启动”Windows，并在开机后暂时不要手动打开 Codex。约 25.4 GiB 数据需要逐文件哈希，可能持续数分钟。验收时检查 `success.json`、两个 C 盘入口的 `LinkType = Junction`、目标均指向 F 盘、任务已经停用以及 C 盘真实空闲空间增加；不能只看脚本是否消失或单一目录大小。
+
 ## 六、以后执行电脑清理的固定流程
 
 1. 读取本文件和设备 README，确认仍是台式电脑1。
