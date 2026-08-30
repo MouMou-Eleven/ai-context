@@ -31,7 +31,7 @@
 - 言剪 AI 品牌与蓝紫渐变视觉体系。
 - 中文优先的工作台及主要业务页面。
 - 基于 OpenCut 真实素材、预览、时间线和导出结构的剪辑台改造。
-- 剪辑台中文主界面与原创“AI 指令工作室”结构：顶部自然语言命令栏、中文工具轨、预览舞台、AI 创作副驾和主生产时间线。
+- 剪辑台中文主界面与原创“AI 指令工作室”结构：中文工具轨、预览舞台、右侧 AI 创作副驾和主生产时间线；顶部重复 AI 输入已移除。
 - AI 计划 Schema、本地兜底规划器、模型规划器、安全校验与 OpenCut 命令映射层。
 - 个人声音库界面与服务接口边界。
 - Remotion 包装包和 HyperFrames provider 预留。
@@ -50,6 +50,11 @@
 - Remotion 包装中心已形成真实本地闭环：三种参数化包装、实时 Player 预览、本地 CLI 渲染、MP4 下载和统一任务记录。
 - 2026-08-31 冷启动回归：生产构建通过；包装页 200、渲染接口 202、任务页 200；成功生成 503,813 字节 MP4，浏览器无新增控制台错误。
 - Recut 已完成架构与许可核验：只吸收操作模型、稳定 ID、任务状态和本地优先等经验，不并入其商业使用受限源码。
+- 音效服务已形成外部搜索与 12 个内置生成音效双重兜底，Freesound 不可用时不再触发页面 500。
+- 创作贴纸新增 24 个常用资源，形状扩展到 16 个预设；特效从单一模糊扩展到 7 个真实 GPU 变体并更换可辨识预览图。
+- Remotion 包装中心已扩展为 3 类场景、8 种帧驱动动效、AI 自动选择、实时预览和本地 MP4 导出闭环。
+- 2026-08-31 桌面端回归：音效、贴纸、特效、价格页和包装中心无新增控制台错误；退出项目后未再出现 `No active project`。
+- 已核验 Crayo、Revid、AIVideo、Submagic 的公开产品工作流并形成内部记录；不把官网未证明的底层技术栈写成事实。
 
 尚未完成：
 
@@ -70,6 +75,7 @@
 | [`revisions/2026-08-22-auto-video-editable-project-loop.md`](./revisions/2026-08-22-auto-video-editable-project-loop.md) | AI 自动成片真实闭环、验证证据和能力边界 |
 | [`revisions/2026-08-22-wasm-scene-effect-and-editor-localization.md`](./revisions/2026-08-22-wasm-scene-effect-and-editor-localization.md) | WebAssembly 场景特效字段兼容、编辑器深层中文化与真实项目验证 |
 | [`revisions/2026-08-31-recut-remotion-production-loop.md`](./revisions/2026-08-31-recut-remotion-production-loop.md) | Recut 经验吸收、可执行模板、Remotion 本地渲染与任务中心真实闭环 |
+| [`revisions/2026-08-31-effects-remotion-commercial-loop.md`](./revisions/2026-08-31-effects-remotion-commercial-loop.md) | 音效容错、贴纸/特效扩容、Remotion 8 类动效、商业产品参考与桌面端回归 |
 
 ## AI 调用规则
 
