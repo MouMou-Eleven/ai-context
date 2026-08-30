@@ -1,6 +1,6 @@
 # Recut 经验吸收与 Remotion 视频包装闭环
 
-> 日期：2026-08-31  
+> 日期：2026-08-31
 > 性质：本地产品能力修订与验证记录
 
 ## 一、这次修订解决的问题
@@ -75,4 +75,3 @@
 - Remotion：<https://github.com/remotion-dev/remotion>
 - Remotion 官方文档：<https://www.remotion.dev/>
 - Remotion 许可证：<https://www.remotion.dev/docs/licensing>
-
