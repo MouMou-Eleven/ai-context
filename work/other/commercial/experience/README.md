@@ -9,6 +9,7 @@
 | [`content-demand-and-conversion.md`](./content-demand-and-conversion.md) | 让内容连接真实需求、专业能力、合适客户、行动承接和交付反馈 | 内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化或内容承接 |
 | [`external-deliverable-language.md`](./external-deliverable-language.md) | 区分给建委看的内部工作稿与可直接对外发送的成品，清除“客户、建议、待确认”等内部措辞 | 给客户看、对外发送、正式交付、供外部审阅，或交付物显然代表建委或公司对外呈现 |
 | [`competition-and-investor-materials.md`](./competition-and-investor-materials.md) | 清除赛事、路演和融资材料中的内部研发讨论、自证式声明及外部无法访问的本地证据 | 商业计划书、项目申报、比赛材料、路演 PPT、融资材料，或面向评委、投资人和孵化机构的正式内容 |
+| [`case-result-narrative.md`](./case-result-narrative.md) | 将案例从“展示作品”提升为面向精准人群的证明、观点论证、结果预览与产品承接 | 案例演示、产品演示、案例答辩、直播案例、结果展示、课程或社群案例、产品价值演示 |
 
 ## 后续写入方式
 

@@ -8,6 +8,7 @@
 | 2026-08-24 | [`sixty-jiazi-project-relocation.md`](./2026-08-24-sixty-jiazi-project-relocation.md) | 将 AI 六十甲子古音律与 IP 孵化从 AI 编程迁入 other，并锁定唯一项目路由与禁止恢复的旧路径 |
 | 2026-08-23 | [`feishu-document-routing-boundary.md`](./2026-08-23-feishu-document-routing-boundary.md) | 明确飞书文档是承载平台，不得把飞书课程、社群或其他文档误触发为《飞书高效办公》书籍项目 |
 | 2026-08-22 | [`cognition-and-content-commercialization.md`](./2026-08-22-cognition-and-content-commercialization.md) | 将思维与商业认知归入“建委认知”，并把多份内容销售资料提炼为跨行业的需求识别与商业承接方法 |
+| 2026-09-01 | [`case-result-narrative.md`](./2026-09-01-case-result-narrative.md) | 将案例演示从作品展示提升为精准人群证明、观点论证、结果预览和产品承接，并接入商业、自媒体、培训与 AI 编程路由 |
 | 2026-08-21 | [`chinese-quality-and-source-governance.md`](./2026-08-21-chinese-quality-and-source-governance.md) | 建立默认中文语法与病句检查，明确开源资源、数据集和多位创作者经验的去重、冲突与激活规则 |
 | 2026-08-21 | [`desktop-sync-resilience.md`](./2026-08-21-desktop-sync-resilience.md) | 加固桌面 HTML 同步的重试、非阻断延后和 Git 操作自愈机制 |
 | 2026-08-21 | [`commercial-delivery-relocation.md`](./2026-08-21-commercial-delivery-relocation.md) | 将商业化与对外交付从 AI 移到其他领域，明确其跨设计与 AI 的商业规范定位 |

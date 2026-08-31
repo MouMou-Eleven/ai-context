@@ -32,6 +32,7 @@
 | 面向学员的保姆级教程写法 | [`../../experience/tutorial-writing.md`](../../experience/tutorial-writing.md) | 任务明确要写学员教程时 |
 | AI 表达基础层 | [`../../../../../brain/ai-expression/README.md`](../../../../../brain/ai-expression/README.md) | 生成、改写或润色本项目中文内容时默认调用 |
 | 建委本人的思维认知 | [`../../../../../brain/README.md`](../../../../../brain/README.md) | 只有用户明确要求调用建委本人的判断或思维时激活 |
+| 跨行业案例演示、结果叙事与产品价值承接 | [`../../../../other/commercial/experience/case-result-narrative.md`](../../../../other/commercial/experience/case-result-narrative.md) | 直播展示社群案例、课程招生、产品价值答辩或需要把课程能力连接到学员结果时 |
 
 课程设计只适用于课程相关交付。外部作者的表达方法只影响解释和叙事，不自动改变课程设计、销售话术或任何其他写作任务。
 
@@ -83,6 +84,7 @@
 - 如果任务是设计课程结构、判断某个内容是否适合社群成员学习，继续读 `course-development.md` 和 `curriculum-design.md`。
 - 如果任务是查找具体课程资料、飞书教程或某篇正文的最新修订，继续读 `course-materials-index.md`，不要只凭仓库记忆判断飞书内容。
 - 如果任务是写直播方案、私聊转化、社群运营或 30 天执行计划，继续读 `operations-playbook.md`。
+- 如果任务需要展示社群或课程案例、说明学员可能获得的工作结果，继续读 [`../../../../other/commercial/experience/case-result-narrative.md`](../../../../other/commercial/experience/case-result-narrative.md)；案例只能说明路径和条件，不把收入或成交写成保证。
 - 如果任务是拆解外部会员社群、参考竞品权益表达、设计年度交付节奏或社群连接机制，继续读 `competitive-references.md`；其中候选做法不自动成为当前权益。
 - 如果任务是本社群的课程大纲、讲师备课、培训课件、教学活动或课程复盘，继续读 [`../../README.md`](../../README.md)。AI 培训提供通用讲师方法，本项目 README 和课程文件决定具体产品事实。
 - 如果任务是通用自媒体标题、文章、口播、直播销售或增长经验，转到 [`../../../self-media/README.md`](../../../self-media/README.md)，不继续加载本项目课程资料。

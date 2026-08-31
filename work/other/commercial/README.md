@@ -21,8 +21,10 @@ commercial/
     │               内容驱动的需求识别与商业承接
     ├── external-deliverable-language.md
     │               对外成品与内部工作稿的语言边界
-    └── competition-and-investor-materials.md
-                    赛事、路演与融资材料的对外边界
+    ├── competition-and-investor-materials.md
+    │               赛事、路演与融资材料的对外边界
+    └── case-result-narrative.md
+                    案例选择、结果证明、观点叙事与产品承接
 ```
 
 ## 严格触发规则
@@ -34,6 +36,7 @@ commercial/
 3. 即使提示词没有出现“客户”，但交付物显然会离开内部工作环境并直接代表建委或公司对外呈现，也默认启用对外交付规则。
 4. 用户提到“内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化、干货与营销或内容承接”，读取内容需求与承接方法，再叠加一个最具体的行业或项目。
 5. 用户要求商业计划书、项目申报、比赛材料、路演 PPT、融资材料，或内容将交给评委、投资人、孵化机构审阅时，必须读取赛事、路演与融资材料规则。
+6. 用户提到案例演示、产品演示、案例答辩、直播案例、结果展示、未来图景、卖结果、课程或社群案例、产品价值演示时，必须读取案例结果叙事方法；再叠加一个最具体的产品、项目或领域规则。
 
 以下情况不单独触发本目录：
 
@@ -80,6 +83,7 @@ AI 表达基础层
 | 区分内部工作稿与对外成品 | [`experience/external-deliverable-language.md`](./experience/external-deliverable-language.md) |
 | 检查“客户、建议、待确认”等内部词是否误入成品 | [`experience/external-deliverable-language.md`](./experience/external-deliverable-language.md) |
 | 商业计划书、项目申报、比赛材料、路演 PPT、融资材料、评委或投资人审阅 | [`experience/competition-and-investor-materials.md`](./experience/competition-and-investor-materials.md) |
+| 案例演示、产品演示、案例答辩、直播案例、结果展示、未来图景、课程或社群案例、产品价值演示 | [`experience/case-result-narrative.md`](./experience/case-result-narrative.md) |
 | 新增商业交付经验 | [`experience/README.md`](./experience/README.md) |
 
 ## 写入规则

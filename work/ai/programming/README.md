@@ -29,6 +29,7 @@ programming/
 - 某次项目排错只有重复验证后才能提炼为经验。
 - 非科班、AI 辅助开发是建委当前能力边界，不把仓库中的技术资料等同于传统全栈能力。
 - AI 培训中的“AI 编程课程”属于培训项目；只有涉及真实开发方法时才组合本目录。
+- 展示 AI 网站或应用的岗位价值、产品答辩或商业演示时，组合跨行业案例方法 [`../../other/commercial/experience/case-result-narrative.md`](../../other/commercial/experience/case-result-narrative.md)；本目录只提供真实开发事实，不负责商业叙事。
 
 ## 激活规则
 

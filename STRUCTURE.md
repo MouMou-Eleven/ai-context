@@ -151,8 +151,16 @@ ai-context/
 │   │   │           └── revisions/                 项目关键修订记录
 │   │   │               ├── 2026-08-22-auto-video-editable-project-loop.md
 │   │   │               │                         自动剪辑可编辑工程闭环修订
-│   │   │               └── 2026-08-22-wasm-scene-effect-and-editor-localization.md
-│   │   │                                         WASM 场景效果与编辑器本地化修订
+│   │   │               ├── 2026-08-22-wasm-scene-effect-and-editor-localization.md
+│   │   │               │                         WASM 场景效果与编辑器本地化修订
+│   │   │               ├── 2026-08-31-effects-remotion-commercial-loop.md
+│   │   │               │                         Effects Remotion 商业闭环修订
+│   │   │               ├── 2026-08-31-recut-remotion-production-loop.md
+│   │   │               │                         Recut/Remotion 生产闭环修订
+│   │   │               ├── 2026-08-31-shotcut-professional-ai-workflow.md
+│   │   │               │                         Shotcut 专业 AI 工作流修订
+│   │   │               └── 2026-08-31-source-repo-professional-editing-queue.md
+│   │   │                                         源码仓库专业剪辑排队修订
 │   │   │
 │   │   ├── training/                              三级目录：AI 培训
 │   │   │   ├── README.md                          AI 培训总入口
@@ -188,8 +196,12 @@ ai-context/
 │   │   │               │                             第 4 节可视化与案例交付修订
 │   │   │               ├── 2026-08-29-student-material-definitive-positioning.md
 │   │   │               │                             学员资料确定性学习定位修订
-│   │   │               └── 2026-08-30-community-positioning-and-super-individual-definition.md
-│   │   │                                             社群总定位与超级个体定义修订
+│   │   │               ├── 2026-08-30-community-positioning-and-super-individual-definition.md
+│   │   │               │                             社群总定位与超级个体定义修订
+│   │   │               ├── 2026-08-30-lesson-5-purchase-language-and-decision-boundary.md
+│   │   │               │                             第 5 节购买语言与决策边界修订
+│   │   │               └── 2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md
+│   │   │                                             第 5 节课后 AI 时代目的与参数解释修订
 │   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
@@ -261,8 +273,10 @@ ai-context/
 │       │       │                                  内容驱动的需求识别与商业承接
 │       │       ├── external-deliverable-language.md
 │       │       │                                  对外成品与内部工作稿的语言边界
-│       │       └── competition-and-investor-materials.md
-│       │                                          赛事、路演与融资材料的对外边界
+│       │       ├── competition-and-investor-materials.md
+│       │       │                                  赛事、路演与融资材料的对外边界
+│       │       └── case-result-narrative.md
+│       │                                          案例选择、结果证明、观点叙事与产品承接
 │       ├── ai-sixty-jiazi-music-ip/               三级目录：AI 六十甲子古音律与 IP 孵化
 │       │   ├── README.md                          当前项目事实、边界、唯一位置与文件索引
 │       │   ├── product-demo-plan.md               Web Demo 产品与技术规划
@@ -341,8 +355,9 @@ ai-context/
 │       │                                         飞书文档承载平台与飞书书籍项目的路由边界
 │       ├── 2026-08-24-sixty-jiazi-project-relocation.md
 │       │                                         六十甲子项目迁入 other 与唯一路由规则
-│       └── 2026-08-27-commercial-external-material-boundary.md
-│                                                 赛事、路演与融资材料的对外边界修订
+│       ├── 2026-08-27-commercial-external-material-boundary.md
+│       │                                         赛事、路演与融资材料的对外边界修订
+│       └── 2026-09-01-case-result-narrative.md    案例结果叙事方法入库修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界

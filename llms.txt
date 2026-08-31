@@ -71,6 +71,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 | 商业化、商业项目交付、给客户看、发给客户、客户审阅、对外发送、正式交付、交付版 | `work/other/commercial/README.md` | `experience/external-deliverable-language.md`；再进入一个最具体的专业领域或项目 |
 | 商业计划书、项目申报、比赛材料、路演 PPT、融资材料、评委或投资人审阅 | `work/other/commercial/README.md` | `experience/competition-and-investor-materials.md`；再进入一个最具体的专业领域或项目 |
 | 内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化、内容承接 | `work/other/commercial/README.md` | `work/other/commercial/experience/content-demand-and-conversion.md`；再进入一个最具体的行业或项目 |
+| 案例演示、产品演示、案例答辩、直播案例、结果展示、未来图景、卖结果、课程或社群案例、产品价值演示 | `work/other/commercial/README.md` | `work/other/commercial/experience/case-result-narrative.md`；再进入一个最具体的产品、项目或领域 |
 | AI 六十甲子古音律与 IP 孵化、六十甲子网站、甲音、音乐算命、出生节律声音、甲子神 IP | `work/other/ai-sixty-jiazi-music-ip/README.md` | 只读当前任务对应专题；追溯方向变化时才读 `revisions/` |
 | Inshan、POPUPIANO、海外电商、Amazon、独立站、代运营 | `work/other/inshan-popupiano/README.md` | `competitive-references.md` 或 `90-day-cold-start-plan.md` |
 
@@ -79,6 +80,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 - AI 培训内容 = AI 表达 + AI 培训；不自动读 AI 自媒体。
 - AI 自媒体内容 = AI 表达 + AI 自媒体；不自动读 AI 培训。
 - 对外商业成品 = AI 表达 + 商业化与对外交付 + 一个最具体的专业领域或项目。商业交付层只控制内外部稿件边界，不计作第二个专业领域。
+- 案例演示或产品价值表达 = AI 表达 + 案例结果叙事 + 一个最具体的产品、项目或领域；同时承担内容获客或购买承接时，再叠加内容需求与承接方法。
 - 跨行业商业内容 = AI 表达 + 内容需求与承接方法 + 一个最具体的专业领域或项目；不把 PPT、AI、培训等单一案例误写成普遍规律。
 - 用户说“给客户看、发给客户、对外发送、正式交付”，或交付物显然代表建委或公司对外呈现时，必须读取 `work/other/commercial/README.md` 和 `experience/external-deliverable-language.md`。
 - 对外成品默认不出现“客户版、客户审阅版、给客户看的、建议采用、待客户确认”等内部协作表达；未确认事实先返回建委内部确认。

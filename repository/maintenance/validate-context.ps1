@@ -75,6 +75,7 @@ try {
         'work/other/commercial/README.md',
         'work/other/commercial/experience/README.md',
         'work/other/commercial/experience/content-demand-and-conversion.md',
+        'work/other/commercial/experience/case-result-narrative.md',
         'work/other/commercial/experience/external-deliverable-language.md',
         'repository/README.md',
         'repository/environment/README.md',
@@ -154,6 +155,9 @@ try {
         }
         if (-not $routingFile.Content.Contains('work/other/commercial/experience/content-demand-and-conversion.md')) {
             Add-ValidationError "$($routingFile.Name) does not define the cross-industry content demand and conversion method."
+        }
+        if (-not $routingFile.Content.Contains('work/other/commercial/experience/case-result-narrative.md')) {
+            Add-ValidationError "$($routingFile.Name) does not define the cross-industry case result narrative method."
         }
     }
 
