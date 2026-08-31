@@ -9,7 +9,8 @@ programming/
 ├── README.md      AI 编程总入口
 ├── tools/         编程工具知识包
 │   └── miaoda/    百度秒哒
-├── experience/    跨工具开发经验与参考材料
+├── experience/    跨工具开发经验、Skill 仓库与参考材料
+│   └── skill-repository/ 可直接调用并追踪上游版本的 Skill 实体
 └── projects/      建委实际开发的长期项目
     └── yancut-ai/ 言剪 AI
 ```
@@ -20,6 +21,7 @@ programming/
 |---|---|
 | 百度秒哒功能、开发、排错 | [`tools/miaoda/llms.txt`](./tools/miaoda/llms.txt) |
 | 创意前端、视频交互、3D首屏 | [`experience/README.md`](./experience/README.md) |
+| 收录、查找、调用或同步 Skill | [`experience/skill-repository/README.md`](./experience/skill-repository/README.md) |
 | 查找或继续开发源码项目 | [`projects/README.md`](./projects/README.md) |
 | 言剪 AI | [`projects/yancut-ai/README.md`](./projects/yancut-ai/README.md) |
 
@@ -34,6 +36,7 @@ programming/
 ## 激活规则
 
 - “AI 编程、开发网站、开发应用、自动化工具”进入本目录。
+- “Skill 仓库、收录 Skill、同步 Skill、调用 Skill”进入 `experience/skill-repository/`。
 - 只提“秒哒”进入 `tools/miaoda/`，不自动读取言剪 AI。
 - 只提“言剪 AI”进入该项目，不自动加载全部秒哒经验；只有涉及秒哒交付时再组合。
 - 只提“AI 编程课程”首先进入 `../training/`，除非任务明确需要开发事实。

@@ -50,6 +50,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 | 任务 | 专项入口 | 按需继续 |
 |---|---|---|
 | AI 编程、网站、应用、自动化、开发经验 | `work/ai/programming/README.md` | `experience/` 或 `projects/` |
+| Skill 仓库、收录 Skill、同步 Skill、调用 Skill | `work/ai/programming/experience/skill-repository/README.md` | 对应条目的 README、`upstream.json`；执行时才读 `SKILL.md` |
 | 百度秒哒 MIAODA | `work/ai/programming/tools/miaoda/llms.txt` | basics、development、experience 或 updates 中一个分支 |
 | 言剪 AI、YanCut、OpenCut 二次开发 | `work/ai/programming/projects/yancut-ai/README.md` | architecture、roadmap；追溯时才读 history |
 | AI 培训、企业培训、公开课、讲师备课、培训课件、反馈复盘 | `work/ai/training/README.md` | experience、outlines、materials 或 projects 中一个分支 |

@@ -238,10 +238,73 @@ try {
             $null = $documentedPaths.Add($documentedPath)
         }
 
+        $vendorSnapshotRoots = [System.Collections.Generic.List[string]]::new()
+        $skillRepositoryRoot = Join-Path $repoRoot 'work/ai/programming/experience/skill-repository'
+        if (Test-Path -LiteralPath $skillRepositoryRoot -PathType Container) {
+            $skillDirectories = @(Get-ChildItem -LiteralPath $skillRepositoryRoot -Directory -Force)
+            foreach ($skillDirectory in $skillDirectories) {
+                $skillReadmePath = Join-Path $skillDirectory.FullName 'README.md'
+                $skillMetadataPath = Join-Path $skillDirectory.FullName 'upstream.json'
+                if (-not (Test-Path -LiteralPath $skillReadmePath -PathType Leaf)) {
+                    Add-ValidationError "Skill repository entry has no README.md: $(Get-RepoRelativePath $skillDirectory.FullName)/"
+                }
+                if (-not (Test-Path -LiteralPath $skillMetadataPath -PathType Leaf)) {
+                    Add-ValidationError "Skill repository entry has no upstream.json: $(Get-RepoRelativePath $skillDirectory.FullName)/"
+                    continue
+                }
+
+                try {
+                    $skillMetadata = Get-Content -Raw -Encoding UTF8 -LiteralPath $skillMetadataPath | ConvertFrom-Json
+                }
+                catch {
+                    Add-ValidationError "Skill repository metadata is invalid JSON: $(Get-RepoRelativePath $skillMetadataPath)"
+                    continue
+                }
+
+                if ([string]::IsNullOrWhiteSpace([string]$skillMetadata.id) -or
+                    [string]::IsNullOrWhiteSpace([string]$skillMetadata.storageMode) -or
+                    [string]::IsNullOrWhiteSpace([string]$skillMetadata.sourcePath)) {
+                    Add-ValidationError "Skill repository metadata is missing id, storageMode, or sourcePath: $(Get-RepoRelativePath $skillMetadataPath)"
+                    continue
+                }
+
+                $skillSourcePath = Join-Path $skillDirectory.FullName ([string]$skillMetadata.sourcePath)
+                if (-not (Test-Path -LiteralPath $skillSourcePath -PathType Container)) {
+                    Add-ValidationError "Skill repository sourcePath does not exist: $(Get-RepoRelativePath $skillSourcePath)"
+                    continue
+                }
+
+                if ([string]$skillMetadata.storageMode -eq 'full-repository-snapshot') {
+                    if ([string]::IsNullOrWhiteSpace([string]$skillMetadata.upstreamRepository) -or
+                        [string]::IsNullOrWhiteSpace([string]$skillMetadata.commit) -or
+                        [string]::IsNullOrWhiteSpace([string]$skillMetadata.defaultBranch)) {
+                        Add-ValidationError "Full Skill snapshot metadata is missing upstreamRepository, defaultBranch, or commit: $(Get-RepoRelativePath $skillMetadataPath)"
+                    }
+
+                    $relativeSnapshotRoot = (Get-RepoRelativePath $skillSourcePath).TrimEnd('/')
+                    if (-not $documentedPaths.Contains($relativeSnapshotRoot)) {
+                        Add-ValidationError "STRUCTURE.md is missing full Skill snapshot root: $relativeSnapshotRoot"
+                    }
+                    $vendorSnapshotRoots.Add($relativeSnapshotRoot)
+                }
+            }
+        }
+
         $actualFiles = Get-ChildItem -LiteralPath $repoRoot -Recurse -File -Force |
             Where-Object { $_.FullName -notmatch '[\\/]\.git(?:[\\/]|$)' }
         foreach ($fileEntry in $actualFiles) {
             $relativeFile = Get-RepoRelativePath $fileEntry.FullName
+            $isVendorSnapshotFile = $false
+            foreach ($snapshotRoot in $vendorSnapshotRoots) {
+                if ($relativeFile.StartsWith("$snapshotRoot/", [System.StringComparison]::OrdinalIgnoreCase)) {
+                    $isVendorSnapshotFile = $true
+                    break
+                }
+            }
+            if ($isVendorSnapshotFile) {
+                continue
+            }
+
             if (-not $documentedPaths.Contains($relativeFile)) {
                 Add-ValidationError "STRUCTURE.md is missing repository entry: $relativeFile"
             }
@@ -266,6 +329,7 @@ try {
         'work/design/ai-design',
         'work/ai/programming/tools',
         'work/ai/programming/experience',
+        'work/ai/programming/experience/skill-repository',
         'work/ai/programming/projects',
         'work/ai/training/experience',
         'work/ai/training/outlines',
