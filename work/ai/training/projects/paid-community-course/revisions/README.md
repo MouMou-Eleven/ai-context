@@ -4,6 +4,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-08-31 | [`lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md`](./2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md) | 根据第5课真实授课复盘，补齐 AI 时代普通人的学习理由，确立知识点相关性检查、截图参数通俗拆解、事实严谨与免责声明边界，并删除无新增价值的概念收束章节 |
 | 2026-08-30 | [`lesson-5-purchase-language-and-decision-boundary.md`](./2026-08-30-lesson-5-purchase-language-and-decision-boundary.md) | 纠正购买前“要问几个问题”、抽象“把概念放回工具”等表述，明确学员要想清楚购买信息、开发者成本与用户收费边界，并要求云服务课件提供购买入口、动态价格口径和普通人可理解的选择依据 |
 | 2026-08-30 | [`community-positioning-and-super-individual-definition.md`](./2026-08-30-community-positioning-and-super-individual-definition.md) | 明确社群总定位、第一季度课程边界、“超级个体”定义、跨行业受众和对外表达禁区；本次口径覆盖将社群写成编程课或单一职业社群的旧表述 |
 | 2026-08-29 | [`student-material-definitive-positioning.md`](./2026-08-29-student-material-definitive-positioning.md) | 确认学员正文必须直接给出已确定的学习定位和人机分工，不得用条件式、阶段式措辞弱化结论 |
