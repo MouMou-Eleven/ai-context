@@ -20,7 +20,7 @@
 - 视频包装：Remotion 已作为首选可控包装引擎；AI 会把包装预设映射成当前项目中的可编辑文字轨、标签和关键帧，不再要求用户离开剪辑主链路进入独立页面。HyperFrames 通过 provider 边界预留，不把插件页面或概念展示误写成已完成服务。
 - 测试模型：2026-08-13 通过兼容 OpenAI Chat Completions 的测试中转调用 `gpt-5.6-sol`，推理强度 `high`。这只是开发测试配置，不构成生产供应商承诺。
 - 本地开发目录：`F:\桌面文件\言剪AI`（2026-08-13 迁移并完成构建、启动验证）。
-- 代码现状：本地开发分支存在完整工作区改动，但尚未确认独立源码仓库及远端地址；`ai-context` 只保存项目上下文，不保存完整源码。
+- 代码现状：独立源码仓库已建立为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 提交 `3db3ae4`，远端源码树提交 `a001db3`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。`ai-context` 只保存项目上下文，不保存完整源码。
 - 开发与部署分工：采用“本地权威源码 + 百度秒哒云端接管”。前端、业务逻辑、价格权益、数据库 Schema、接口合同、Mock 和自动化测试先在本地完成；验证通过后按编号压缩包交付百度秒哒，由秒哒接入 Auth、Postgres、对象存储、Edge Function、短信能力和部署。
 - 秒哒兼容边界：当前本地基线是 Next.js 16.1.3，而已记录的秒哒稳定 Web 导入形态是 React + Vite。正式交付前必须重新核验平台能力；若仍不支持 Next.js，需提供 React + Vite 兼容构建，不能直接上传当前源码并宣称可部署。
 
@@ -61,16 +61,22 @@
 - 模板标题按 OpenCut `canvasHeight / 90` 的字号缩放机制重新标定；旧模板的大字号标题在加载时自动迁移到安全区，浏览器回归已确认不再溢出画面。
 - Shotcut/MLT 已完成成熟度、能力和许可核验：吸收专业时间线、媒体箱、代理、波形、关键帧、淡入淡出、变速、字幕、任务队列和 MLT 服务模型等产品经验；不把 Qt/C++ 桌面源码直接塞入 Next.js 网页运行时。
 - 2026-08-31 生产构建通过；真实浏览器中模型生成“画面包装”计划，确认后写入两条文字轨与关键帧，再由 AI 执行文字安全区修正，回执为 0 个待服务步骤、0 个回滚步骤。
+- 真实转场已接入：交叉淡化、黑场和向左擦除会产生片段重叠、透明度/位移关键帧，并可通过转场面板或 AI 计划写入一个可撤销时间线操作。
+- 音频专业能力已接入：前景人声窗口驱动背景音 ducking，响度分析输出 RMS/LUFS 估计、峰值、动态范围和波形窗口；现有时间线波形继续使用 RMS 采样。
+- 代理剪辑已接入浏览器本地预览路径：MediaRecorder 生成低分辨率 WebM 代理，原始素材仍是导出源；代理不写入项目持久化数据。
+- 速度曲线已接入视频、音频和重采样逻辑，使用分段速率积分/反解，保持音调时走预渲染音频路径。
+- 长视频高光切片已接入：基于音频能量和已有字幕的主题命中选择非重叠窗口，再以 TracksSnapshotCommand 拼接并可撤销；缺少证据时会明确跳过。
+- Remotion 渲染已接入队列合同：本地无远端配置时使用异步本地队列，支持 queued/running/completed/failed 和轮询接口；配置 `YANCUT_REMOTION_RENDER_URL` 后可切换远端队列，支持 `statusUrl` 回写。
 
 尚未完成：
 
 - 生产级账号、云端项目同步、计费与额度系统的本地完整实现和秒哒云端接线。
 - 声音克隆供应商的正式生产配置、授权留痕和完整试听回写。
 - AI 自动剪辑对长视频、复杂多轨和失败回滚的系统验证。
-- Remotion 独立渲染服务的生产部署、任务队列、对象存储回写、并发和成本测试；当前已完成 AI 到可编辑时间线的本地映射，最终云端高质量渲染仍待部署。HyperFrames 仍保持 provider 预留。
-- 专业剪辑能力仍待补齐：片段 slip/slide、轨道级转场与音频 ducking、代理剪辑、波形/响度分析、复杂调色、运动跟踪、多机位和长视频高光语义切片。
+- Remotion 云端渲染服务的生产部署、对象存储回写、并发和成本测试；当前已完成本地异步队列和远端 provider 合同，仍需接入稳定的云任务服务。HyperFrames 仍保持 provider 预留。
+- 专业剪辑能力仍待补齐：片段 slip/slide、响度标准化与真峰值计量、代理持久化与音画代理、速度曲线编辑器、复杂调色、运动跟踪、多机位和更稳定的语义高光模型。
 - 模板创作包的真实素材槽位、镜头替换、字幕样式与配乐规则。
-- 独立源码 GitHub 仓库、部署域名和正式隐私政策。
+- 部署域名和正式隐私政策。
 
 ## 文件索引
 
@@ -84,6 +90,7 @@
 | [`revisions/2026-08-31-recut-remotion-production-loop.md`](./revisions/2026-08-31-recut-remotion-production-loop.md) | Recut 经验吸收、可执行模板、Remotion 本地渲染与任务中心真实闭环 |
 | [`revisions/2026-08-31-effects-remotion-commercial-loop.md`](./revisions/2026-08-31-effects-remotion-commercial-loop.md) | 音效容错、贴纸/特效扩容、Remotion 8 类动效、商业产品参考与桌面端回归 |
 | [`revisions/2026-08-31-shotcut-professional-ai-workflow.md`](./revisions/2026-08-31-shotcut-professional-ai-workflow.md) | Shotcut/MLT 参考边界、AI 专业剪辑四阶段、Remotion 时间线融合、文字比例修复与实测证据 |
+| [`revisions/2026-08-31-source-repo-professional-editing-queue.md`](./revisions/2026-08-31-source-repo-professional-editing-queue.md) | 自有源码仓库、专业剪辑命令、代理/高光/速度曲线和 Remotion 队列落地记录 |
 
 ## AI 调用规则
 
@@ -99,7 +106,6 @@
 
 ## 待确认事项
 
-- 言剪 AI 独立源码仓库名称、远端地址与是否公开。
 - 参赛的最终赛道、报名材料口径和演示时长。
 - 声音克隆正式供应商、收费策略和用户授权流程。
 - 百度秒哒当期对 Next.js/React + Vite、手机号登录插件、短信服务、对象存储和长任务的实际支持情况。

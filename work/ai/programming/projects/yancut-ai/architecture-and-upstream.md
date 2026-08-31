@@ -52,6 +52,7 @@
 - 执行后生成有限长度回执；本地命令中途失败时撤销本轮已应用修改。
 - AI 上下文中的播放头和项目时长统一使用秒，写入 OpenCut 时间线时再转换为 ticks。
 - 当前可本地执行的专业命令包括：剪气口、生成字幕、倍速与保持音调、淡入淡出关键帧、文字安全区、画幅、音量和可编辑动效包装。
+- 新增专业命令包括：真实转场、前景人声驱动 ducking、响度/波形分析、低分辨率预览代理、分段速度曲线和音频/字幕证据驱动的高光切片。
 
 测试环境变量：
 
@@ -69,6 +70,7 @@
 - Remotion 适合 React 组件化、参数稳定的视频包装，当前作为主实现。其 8 类动效语言由 AI 选择，并映射成 OpenCut 中可继续编辑的文字轨、标签和关键帧；用户不再进入独立包装中心。
 - Player 预览、CLI 渲染、MP4 下载和任务状态实现仍作为底层渲染能力保留，后续由 AI 计划或统一导出流程调用，不作为与剪辑流程割裂的产品模块。
 - 本地渲染通过子进程隔离 Remotion CLI，避免将 bundler/renderer 直接打入 Next.js 路由；生产环境仍需独立渲染服务和任务队列。
+- Remotion 队列接口统一返回 `queued/running/completed/failed`、进度、输出地址和可选 `statusUrl`；本地开发使用异步内存队列，云端通过 `YANCUT_REMOTION_RENDER_URL` 切换到外部 worker，前端只依赖轮询合同。
 - HyperFrames 适合 HTML/CSS/GSAP 组合方向，但生产调用方式、版本与服务端渲染能力必须重新核验；当前只保留 provider 接口，不声称已经生产可用。
 
 ## 五、Recut 参考边界
@@ -97,5 +99,6 @@
 | Recut 参考版本 | 0.1.41；只参考公开架构与交互经验 | Recut 仓库、架构与 LICENSE | 2026-08-31 |
 | Remotion 本地版本 | 4.0.506；本地渲染闭环已验证 | 本地依赖与实测 | 2026-08-31 |
 | Shotcut 参考状态 | 26.8 系列；GPLv3；Qt 6/C++，依赖 MLT、FFmpeg、Frei0r、SDL | Shotcut GitHub、Features、Roadmap | 2026-08-31 |
+| 言剪 AI 源码仓库 | 私有 `MouMou-Eleven/yancut-ai`；本地 `main` 提交 `3db3ae4`；远端源码树提交 `a001db3`；`upstream` 保留 OpenCut | GitHub API、Git 远端核验 | 2026-08-31 |
 
 这些动态事实后续使用前必须重新核验，不能把本表永久当作当前真相。
