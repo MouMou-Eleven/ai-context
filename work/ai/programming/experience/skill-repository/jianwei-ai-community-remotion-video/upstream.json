@@ -5,6 +5,8 @@
   "origin": "internal",
   "sourcePath": "skill",
   "syncedAt": "2026-09-01",
+  "workflowRevision": 2,
+  "approvalMode": "plan-first-explicit-confirmation",
   "upstreamReferences": [
     "https://github.com/remotion-dev/remotion/tree/main/packages/skills",
     "https://github.com/buainoai/remotion-skills"

@@ -381,7 +381,9 @@ ai-context/
 │       │                                         赛事、路演与融资材料的对外边界修订
 │       ├── 2026-09-01-ai-programming-skill-repository.md
 │       │                                         AI 编程 Skill 仓库与上游快照治理
-│       └── 2026-09-01-case-result-narrative.md    案例结果叙事方法入库修订
+│       ├── 2026-09-01-case-result-narrative.md    案例结果叙事方法入库修订
+│       └── 2026-09-01-remotion-skill-confirmation-and-action-contract.md
+│                                                 Remotion Skill 确认门与逐元素动作契约修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界

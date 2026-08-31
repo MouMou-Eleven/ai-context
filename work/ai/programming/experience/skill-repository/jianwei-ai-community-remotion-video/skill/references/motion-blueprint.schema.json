@@ -4,7 +4,7 @@
   "title": "Jianwei Remotion Motion Blueprint",
   "type": "object",
   "additionalProperties": false,
-  "required": ["request", "creativeDirection", "motionSystem", "timeline", "remotionPlan", "quality"],
+  "required": ["request", "approval", "creativeDirection", "motionSystem", "timeline", "remotionPlan", "quality"],
   "properties": {
     "request": {
       "type": "object",
@@ -22,6 +22,17 @@
         "durationSeconds": {"type": "number", "exclusiveMinimum": 0},
         "confirmedFacts": {"type": "array", "items": {"type": "string"}},
         "assumptions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "status", "approvedScope", "evidence"],
+      "properties": {
+        "mode": {"enum": ["required", "explicitly-waived"]},
+        "status": {"enum": ["pending", "approved"]},
+        "approvedScope": {"type": "array", "items": {"type": "string"}},
+        "evidence": {"type": ["string", "null"]}
       }
     },
     "visualAnalysis": {
@@ -70,10 +81,30 @@
     "motionSystem": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["heroAction", "cameraPath", "secondaryActions", "microMotion", "continuityAnchor", "focusStrategy", "transitionLanguage", "audioStrategy", "negativeConstraints"],
+      "required": ["heroAction", "cameraPath", "elementActions", "secondaryActions", "microMotion", "continuityAnchor", "focusStrategy", "transitionLanguage", "audioStrategy", "negativeConstraints"],
       "properties": {
         "heroAction": {"type": "string", "minLength": 1},
         "cameraPath": {"type": "string", "minLength": 1},
+        "elementActions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["element", "trigger", "startState", "motion", "durationSeconds", "easing", "causes", "endState", "implementation"],
+            "properties": {
+              "element": {"type": "string", "minLength": 1},
+              "trigger": {"type": "string", "minLength": 1},
+              "startState": {"type": "string", "minLength": 1},
+              "motion": {"type": "string", "minLength": 1},
+              "durationSeconds": {"type": "number", "exclusiveMinimum": 0},
+              "easing": {"type": "string", "minLength": 1},
+              "causes": {"type": "string", "minLength": 1},
+              "endState": {"type": "string", "minLength": 1},
+              "implementation": {"type": "string", "minLength": 1}
+            }
+          }
+        },
         "secondaryActions": {"type": "array", "items": {"type": "string"}},
         "microMotion": {"type": "array", "items": {"type": "string"}},
         "continuityAnchor": {"type": "string", "minLength": 1},

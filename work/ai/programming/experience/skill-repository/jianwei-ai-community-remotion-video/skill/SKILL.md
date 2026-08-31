@@ -47,7 +47,9 @@ metadata:
 ### 1. 判断交付深度
 
 - 用户只要求分析、拆解、提示词、分镜或方案：交付 Motion Blueprint，不写代码。
-- 用户要求制作、实现或创建视频：先在内部形成 Motion Blueprint，然后直接实现，不因普通风格选择停下来等待确认。
+- 用户要求制作、实现、预览或渲染视频：先公开交付“制作规划确认单”，然后停止实施并等待用户明确确认。确认之前不得创建或修改工程、启动 Studio、渲染视频或生成替代素材。
+- 用户已经给出详细动作描述，也要把它结构化为可核对的规划并等待确认；详细需求不等于实施授权。
+- 只有用户在当前请求中明确说“无需确认、直接制作”“按你判断直接执行”等同义表达，才可跳过确认门。把这句话记录为批准证据，不能根据“帮我做”“生成一个”推断为跳过确认。
 - 用户明确要求预览：实现后启动 Studio，优先使用 `npx remotion studio --no-open`。
 - 只有用户明确要求导出、渲染或交付视频文件时才执行渲染。
 - 只有缺失素材、文字含义或输出规格会实质改变结果时才提问。普通审美选择采用合理默认值，并在结果中标注。
@@ -81,12 +83,22 @@ metadata:
 
 按 [references/output-contract.md](references/output-contract.md) 输出。默认使用可读的 Markdown；内部字段应能映射到 [references/motion-blueprint.schema.json](references/motion-blueprint.schema.json)。当用户要求 JSON、需要跨模型复用或要把 Blueprint 交给后续自动化时，保存 JSON 并运行 `python scripts/validate_blueprint.py <blueprint.json>`。不要为了满足格式而编造信息，未知项写“未提供”或“待验证”。
 
-### 5. 实现 Remotion
+规划必须逐元素写清：触发者、起始状态、动作、路径或形变、持续时间、缓动与速度变化、与前一动作的因果、结束状态、定格微动。不得用“元素依次出现”“加一点动效”“镜头轻推”代替动作设计。
+
+### 5. 用户确认门
+
+- 规划末尾明确写：`当前状态：等待确认，尚未开始制作。`
+- 请用户确认整体规划，或指出需要修改的画面理解、核心视觉、动作链、时间轴、镜头、风格和保留项。
+- 只有用户在后续消息中明确回复“确认”“按这个执行”“开始制作”或等义表达，才能进入实施阶段。
+- 用户提出修改时，更新规划并再次等待确认；不能把修改意见直接当作实施批准。
+- 确认只覆盖已展示的规划。新增场景、改文案、换素材或显著改变时长时，先输出差异并重新确认。
+
+### 6. 实现 Remotion
 
 实施时遵守以下不可协商规则：
 
 - 动画必须由 `useCurrentFrame()` 驱动，时间以秒设计并通过 `fps` 转成帧。
-- 禁止依赖 CSS `transition`、CSS `animation`、Tailwind 动画类或运行时随机数。
+- 禁止依赖 CSS `transition`、CSS `animation`、Tailwind 动画类或运行时随机数。用户说“随机弹出”时，将其实现为预先确定但视觉上有差异的顺序、方向和幅度，保证逐帧可复现。
 - `interpolate()` 默认同时设置左右 clamp；按当前官方规则选择 `Easing.bezier()` 或 `Easing.spring()`。
 - 使用当前官方推荐的 Remotion 媒体组件；本地素材放在 `public/` 并使用 `staticFile()`。
 - 使用命名清楚的 `Sequence`、`Series` 或 `TransitionSeries` 表达时间结构；需要预挂载时按当前官方规则处理。
@@ -96,7 +108,7 @@ metadata:
 - 参数化内容优先通过 Props/Zod 暴露；不要把用户以后可能修改的文字、颜色和素材路径散落在组件内部。
 - 保留工作区中用户已有改动，不覆盖无关文件。
 
-### 6. 验证
+### 7. 验证
 
 实现后读取 [references/quality-gates.md](references/quality-gates.md)：
 

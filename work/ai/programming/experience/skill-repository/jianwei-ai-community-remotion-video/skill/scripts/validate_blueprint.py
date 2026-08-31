@@ -13,6 +13,7 @@ from typing import Any
 
 TOP_LEVEL = (
     "request",
+    "approval",
     "creativeDirection",
     "motionSystem",
     "timeline",
@@ -78,6 +79,27 @@ def validate(data: Any) -> list[str]:
         if input_mode in {"image", "hybrid"} and not isinstance(data.get("visualAnalysis"), dict):
             errors.append("$.visualAnalysis is required for image and hybrid input")
 
+    approval = data.get("approval")
+    require_keys(approval, ("mode", "status", "approvedScope", "evidence"), "$.approval", errors)
+    if isinstance(approval, dict):
+        mode = approval.get("mode")
+        status = approval.get("status")
+        evidence = approval.get("evidence")
+        if mode not in {"required", "explicitly-waived"}:
+            errors.append("$.approval.mode must be required or explicitly-waived")
+        if status not in {"pending", "approved"}:
+            errors.append("$.approval.status must be pending or approved")
+        require_string_list(approval.get("approvedScope"), "$.approval.approvedScope", errors)
+        if status == "approved":
+            if not isinstance(evidence, str) or not evidence.strip():
+                errors.append("$.approval.evidence must quote explicit user approval when status is approved")
+            if not isinstance(approval.get("approvedScope"), list) or not approval.get("approvedScope"):
+                errors.append("$.approval.approvedScope must not be empty when status is approved")
+        elif evidence is not None:
+            errors.append("$.approval.evidence must be null while status is pending")
+        if mode == "explicitly-waived" and status != "approved":
+            errors.append("$.approval.status must be approved when confirmation is explicitly waived")
+
     visual = data.get("visualAnalysis")
     if isinstance(visual, dict):
         require_keys(
@@ -112,6 +134,7 @@ def validate(data: Any) -> list[str]:
     motion_keys = (
         "heroAction",
         "cameraPath",
+        "elementActions",
         "secondaryActions",
         "microMotion",
         "continuityAnchor",
@@ -122,6 +145,21 @@ def validate(data: Any) -> list[str]:
     )
     require_keys(motion, motion_keys, "$.motionSystem", errors)
     if isinstance(motion, dict):
+        element_actions = motion.get("elementActions")
+        if not isinstance(element_actions, list) or not element_actions:
+            errors.append("$.motionSystem.elementActions must be a non-empty array")
+        else:
+            action_keys = ("element", "trigger", "startState", "motion", "durationSeconds", "easing", "causes", "endState", "implementation")
+            for index, action in enumerate(element_actions):
+                location = f"$.motionSystem.elementActions[{index}]"
+                require_keys(action, action_keys, location, errors)
+                if not isinstance(action, dict):
+                    continue
+                for key in ("element", "trigger", "startState", "motion", "easing", "causes", "endState", "implementation"):
+                    if not isinstance(action.get(key), str) or not action.get(key, "").strip():
+                        errors.append(f"{location}.{key} must be a non-empty string")
+                if not is_number(action.get("durationSeconds")) or action.get("durationSeconds", 0) <= 0:
+                    errors.append(f"{location}.durationSeconds must be a positive number")
         for key in ("secondaryActions", "microMotion", "transitionLanguage", "audioStrategy"):
             require_string_list(motion.get(key), f"$.motionSystem.{key}", errors)
         require_string_list(motion.get("negativeConstraints"), "$.motionSystem.negativeConstraints", errors, 1)
@@ -186,6 +224,12 @@ def run_self_test() -> int:
             "confirmedFacts": ["The subject is one card"],
             "assumptions": ["Clean UI style"],
         },
+        "approval": {
+            "mode": "required",
+            "status": "pending",
+            "approvedScope": [],
+            "evidence": None,
+        },
         "creativeDirection": {
             "concept": "One controlled bounce",
             "memoryHook": "The landing compression",
@@ -196,6 +240,19 @@ def run_self_test() -> int:
         "motionSystem": {
             "heroAction": "Compress, release, settle",
             "cameraPath": "Subtle push-in",
+            "elementActions": [
+                {
+                    "element": "Card",
+                    "trigger": "Timeline starts",
+                    "startState": "Six percent compressed below the landing point",
+                    "motion": "Release upward, overshoot, and settle on the landing point",
+                    "durationSeconds": 1.2,
+                    "easing": "Spring with one controlled overshoot",
+                    "causes": "The landing compresses the shadow",
+                    "endState": "Front-facing card at rest with subtle edge flex",
+                    "implementation": "Frame-driven scale and translate interpolation",
+                }
+            ],
             "secondaryActions": ["Shadow compression"],
             "microMotion": ["Edge flex"],
             "continuityAnchor": "Card center",
@@ -226,13 +283,14 @@ def run_self_test() -> int:
     invalid = json.loads(json.dumps(valid))
     invalid["request"]["inputMode"] = "image"
     invalid["timeline"][1]["startSeconds"] = 0.7
+    invalid["approval"]["evidence"] = "Not approved"
     invalid_errors = validate(invalid)
     if valid_errors:
         print("Self-test failed: valid fixture was rejected", file=sys.stderr)
         for error in valid_errors:
             print(f"- {error}", file=sys.stderr)
         return 1
-    if len(invalid_errors) < 2:
+    if len(invalid_errors) < 3:
         print("Self-test failed: invalid fixture was not rejected", file=sys.stderr)
         return 1
     print("Self-test passed")
