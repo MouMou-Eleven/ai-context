@@ -99,6 +99,6 @@
 | Recut 参考版本 | 0.1.41；只参考公开架构与交互经验 | Recut 仓库、架构与 LICENSE | 2026-08-31 |
 | Remotion 本地版本 | 4.0.506；本地渲染闭环已验证 | 本地依赖与实测 | 2026-08-31 |
 | Shotcut 参考状态 | 26.8 系列；GPLv3；Qt 6/C++，依赖 MLT、FFmpeg、Frei0r、SDL | Shotcut GitHub、Features、Roadmap | 2026-08-31 |
-| 言剪 AI 源码仓库 | 私有 `MouMou-Eleven/yancut-ai`；本地 `main` 提交 `3db3ae4`；远端源码树提交 `a001db3`；`upstream` 保留 OpenCut | GitHub API、Git 远端核验 | 2026-08-31 |
+| 言剪 AI 源码仓库 | 私有 `MouMou-Eleven/yancut-ai`；本地 `main` 提交 `d3a69dd`；远端提交 `ba642f8`；`upstream` 保留 OpenCut | GitHub API、Git Data API、Git 远端核验 | 2026-08-31 |
 
 这些动态事实后续使用前必须重新核验，不能把本表永久当作当前真相。

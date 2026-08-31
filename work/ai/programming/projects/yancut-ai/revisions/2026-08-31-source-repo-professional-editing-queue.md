@@ -8,11 +8,11 @@
 - 本地路径：`F:\桌面文件\言剪AI`
 - `origin`：`https://github.com/MouMou-Eleven/yancut-ai.git`
 - `upstream`：`https://github.com/OpenCut-app/OpenCut.git`
-- 本地主线：`main`，提交 `3db3ae4`
-- GitHub 源码树：远端提交 `a001db3`
+- 本地主线：`main`，最新提交 `d3a69dd`
+- GitHub 源码树：远端最新提交 `ba642f8`
 - 仓库可见性：私有
 
-由于本机 Git 全局配置指向已停止的 `127.0.0.1:7890` 代理，HTTPS push 不可用；源码树已通过 GitHub Git Data API 写入并核验。GitHub 当前令牌不允许写入 Actions workflow，因此 `.github/workflows/bun-ci.yml` 未同步到远端，其他源码和资源已同步。
+由于本机 Git 全局配置指向已停止的 `127.0.0.1:7890` 代理，HTTPS push 不可用；源码树和本轮专业编辑增量已通过 GitHub Git Data API 写入并核验。GitHub 当前令牌不允许写入 Actions workflow，因此 `.github/workflows/bun-ci.yml` 未同步到远端，其他源码和资源已同步。
 
 ## 二、专业剪辑命令
 
@@ -52,7 +52,7 @@
 
 - TypeScript 检查通过。
 - Next.js 生产构建通过，生成 27/27 路由；包含 `/api/yancut/packaging/jobs/[job_id]`。
-- 真实队列 smoke test：任务 `queued → running → completed`，返回 `/yancut/renders/a8122be0-53cf-4684-ba85-46025c4339f4.mp4`。
+- 真实队列 smoke test：任务 `queued → running → completed`，返回 `/yancut/renders/a8122be0-53cf-4684-ba85-46025c4339f4.mp4`；新增状态查询路由继续支持同一轮询合同。
 - 浏览器工作台与转场入口加载正常，控制台错误为 0。
 - Bun 未安装，Bun 测试文件已加入源码但未在本机执行。
 
