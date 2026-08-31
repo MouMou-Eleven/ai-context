@@ -61,7 +61,8 @@ AI 表达是所有中文内容的基础层，领域规则是专项适配层。�
 
 | 用户任务 | 必须调用 | 不自动调用 |
 |---|---|---|
-| 写 AI 培训课件 | AI 表达全套基础规则与经验 + `work/ai/training/` | AI 自媒体、其他培训项目 |
+| 写 AI 培训课堂主文档、线上或线下讲课内容 | AI 表达基础规则 + 口语化表达 + `work/ai/training/` | AI 自媒体、书面技术手册；只有用户明确提出备课稿或课后资料时才切换交付物 |
+| 写供学员独立阅读的技术手册、公众号文章或课后资料 | AI 表达基础规则 + 书面化表达 + 对应领域 | 讲师内部提示和课堂时间安排 |
 | 写 AI 自媒体口播 | AI 表达全套基础规则与经验 + `work/ai/self-media/` | AI 培训、个人口吻库 |
 | 写给客户看的课程大纲、脚本或方案 | AI 表达全套基础规则与经验 + `work/other/commercial/` + 一个最具体的专业领域或项目 | 无关领域、内部协作措辞 |
 | 写《飞书高效办公》章节 | AI 表达全套基础规则与经验 + `work/ai/publishing/` | AI 自媒体销售规则 |
@@ -92,4 +93,4 @@ AI 表达是所有中文内容的基础层，领域规则是专项适配层。�
 
 AI 内容生成时：默认读取本 README、`cross-domain-rules.md`、`chinese-datasets/grammar-and-error-checklist.md`、`experience/README.md`，以及 `oral-expression/README.md` 或 `written-expression/README.md` 中与交付形式匹配的一个；`chinese-datasets/README.md` 用于确认数据治理和多来源冲突边界，原始数据只有在来源、授权和任务用途都明确时才读取。
 
-*规则确认：2026-08-21*
+*最后校准：2026-09-01*

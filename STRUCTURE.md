@@ -222,8 +222,10 @@ ai-context/
 │   │   │               │                             社群总定位与超级个体定义修订
 │   │   │               ├── 2026-08-30-lesson-5-purchase-language-and-decision-boundary.md
 │   │   │               │                             第 5 节购买语言与决策边界修订
-│   │   │               └── 2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md
-│   │   │                                             第 5 节课后 AI 时代目的与参数解释修订
+│   │   │               ├── 2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md
+│   │   │               │                             第 5 节课后 AI 时代目的与参数解释修订
+│   │   │               └── 2026-09-01-training-rule-scope-and-delivery-boundary.md
+│   │   │                                             AI 培训规则适用场景与课堂交付边界修订
 │   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
