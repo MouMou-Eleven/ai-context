@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "jianwei-ai-community-remotion-video",
+  "storageMode": "skill-snapshot",
+  "origin": "internal",
+  "sourcePath": "skill",
+  "syncedAt": "2026-09-01",
+  "upstreamReferences": [
+    "https://github.com/remotion-dev/remotion/tree/main/packages/skills",
+    "https://github.com/buainoai/remotion-skills"
+  ],
+  "updatePolicy": "review-and-merge"
+}

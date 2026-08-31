@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "editaplot",
+  "storageMode": "full-repository-snapshot",
+  "upstreamRepository": "https://github.com/hang-jin/editaplot.git",
+  "upstreamWeb": "https://github.com/hang-jin/editaplot",
+  "defaultBranch": "main",
+  "commit": "4aa986f3f84da9cb2a2297159a8f20e42b7e527c",
+  "syncedAt": "2026-09-01",
+  "license": "Apache-2.0",
+  "sourcePath": "source",
+  "requiredRuntimePaths": [
+    "editaplot.cmd",
+    "runtime",
+    "skill/editaplot"
+  ]
+}

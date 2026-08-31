@@ -130,6 +130,28 @@ ai-context/
 │   │   │   │   ├── README.md                      经验索引
 │   │   │   │   ├── creative-frontend-prompt-patterns.md
 │   │   │   │   │                                 创意前端提示词方法
+│   │   │   │   ├── skill-repository/              五级目录：Skill 仓库
+│   │   │   │   │   ├── README.md                  Skill 实体索引、来源与更新规则
+│   │   │   │   │   ├── jianwei-ai-community-remotion-video/
+│   │   │   │   │   │   ├── README.md              建委 AI 社群 Remotion 视频 Skill 说明
+│   │   │   │   │   │   ├── upstream.json          规范参考与维护策略
+│   │   │   │   │   │   └── skill/                 可直接安装的完整 Skill
+│   │   │   │   │   │       ├── SKILL.md
+│   │   │   │   │   │       ├── agents/
+│   │   │   │   │   │       │   └── openai.yaml
+│   │   │   │   │   │       ├── references/
+│   │   │   │   │   │       │   ├── input-and-image-analysis.md
+│   │   │   │   │   │       │   ├── motion-blueprint.schema.json
+│   │   │   │   │   │       │   ├── motion-direction.md
+│   │   │   │   │   │       │   ├── output-contract.md
+│   │   │   │   │   │       │   ├── quality-gates.md
+│   │   │   │   │   │       │   └── remotion-contract.md
+│   │   │   │   │   │       └── scripts/
+│   │   │   │   │   │           └── validate_blueprint.py
+│   │   │   │   │   └── editaplot/
+│   │   │   │   │       ├── README.md              科研绘图 Skill 的调用、前提与更新方法
+│   │   │   │   │       ├── upstream.json          上游仓库、分支、commit 与许可
+│   │   │   │   │       └── source/                完整上游快照，内部供应商文件不逐项展开
 │   │   │   │   └── reference-materials/           五级目录：编程参考资料
 │   │   │   │       ├── README.md                  参考资料索引
 │   │   │   │       └── creative-frontend-prompts/
@@ -151,8 +173,16 @@ ai-context/
 │   │   │           └── revisions/                 项目关键修订记录
 │   │   │               ├── 2026-08-22-auto-video-editable-project-loop.md
 │   │   │               │                         自动剪辑可编辑工程闭环修订
-│   │   │               └── 2026-08-22-wasm-scene-effect-and-editor-localization.md
-│   │   │                                         WASM 场景效果与编辑器本地化修订
+│   │   │               ├── 2026-08-22-wasm-scene-effect-and-editor-localization.md
+│   │   │               │                         WASM 场景效果与编辑器本地化修订
+│   │   │               ├── 2026-08-31-effects-remotion-commercial-loop.md
+│   │   │               │                         Remotion 特效商业化闭环修订
+│   │   │               ├── 2026-08-31-recut-remotion-production-loop.md
+│   │   │               │                         Remotion 重剪生产闭环修订
+│   │   │               ├── 2026-08-31-shotcut-professional-ai-workflow.md
+│   │   │               │                         Shotcut 专业 AI 剪辑工作流
+│   │   │               └── 2026-08-31-source-repo-professional-editing-queue.md
+│   │   │                                         源码仓专业剪辑排期修订
 │   │   │
 │   │   ├── training/                              三级目录：AI 培训
 │   │   │   ├── README.md                          AI 培训总入口
@@ -188,8 +218,12 @@ ai-context/
 │   │   │               │                             第 4 节可视化与案例交付修订
 │   │   │               ├── 2026-08-29-student-material-definitive-positioning.md
 │   │   │               │                             学员资料确定性学习定位修订
-│   │   │               └── 2026-08-30-community-positioning-and-super-individual-definition.md
-│   │   │                                             社群总定位与超级个体定义修订
+│   │   │               ├── 2026-08-30-community-positioning-and-super-individual-definition.md
+│   │   │               │                             社群总定位与超级个体定义修订
+│   │   │               ├── 2026-08-30-lesson-5-purchase-language-and-decision-boundary.md
+│   │   │               │                             第 5 节购买语言与决策边界修订
+│   │   │               └── 2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md
+│   │   │                                             第 5 节课后 AI 时代目的与参数解释修订
 │   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
@@ -341,8 +375,10 @@ ai-context/
 │       │                                         飞书文档承载平台与飞书书籍项目的路由边界
 │       ├── 2026-08-24-sixty-jiazi-project-relocation.md
 │       │                                         六十甲子项目迁入 other 与唯一路由规则
-│       └── 2026-08-27-commercial-external-material-boundary.md
-│                                                 赛事、路演与融资材料的对外边界修订
+│       ├── 2026-08-27-commercial-external-material-boundary.md
+│       │                                         赛事、路演与融资材料的对外边界修订
+│       └── 2026-09-01-ai-programming-skill-repository.md
+│                                                 AI 编程 Skill 仓库与上游快照治理
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界

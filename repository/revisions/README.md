@@ -4,6 +4,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-09-01 | [`ai-programming-skill-repository.md`](./2026-09-01-ai-programming-skill-repository.md) | 新增保存 Skill 实体的五级仓库、上游 commit 元数据和完整供应商快照治理规则 |
 | 2026-08-27 | [`commercial-external-material-boundary.md`](./2026-08-27-commercial-external-material-boundary.md) | 明确赛事、路演和融资材料不得暴露内部研发讨论、自证式声明及外部无法访问的本地证据 |
 | 2026-08-24 | [`sixty-jiazi-project-relocation.md`](./2026-08-24-sixty-jiazi-project-relocation.md) | 将 AI 六十甲子古音律与 IP 孵化从 AI 编程迁入 other，并锁定唯一项目路由与禁止恢复的旧路径 |
 | 2026-08-23 | [`feishu-document-routing-boundary.md`](./2026-08-23-feishu-document-routing-boundary.md) | 明确飞书文档是承载平台，不得把飞书课程、社群或其他文档误触发为《飞书高效办公》书籍项目 |

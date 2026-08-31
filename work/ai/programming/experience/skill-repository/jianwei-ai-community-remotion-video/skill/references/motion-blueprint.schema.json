@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jianwei.example/schemas/motion-blueprint.schema.json",
+  "title": "Jianwei Remotion Motion Blueprint",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["request", "creativeDirection", "motionSystem", "timeline", "remotionPlan", "quality"],
+  "properties": {
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputMode", "goal", "deliverable", "width", "height", "fps", "durationSeconds", "confirmedFacts", "assumptions"],
+      "properties": {
+        "inputMode": {"enum": ["text", "image", "hybrid"]},
+        "goal": {"type": "string", "minLength": 1},
+        "audience": {"type": ["string", "null"]},
+        "platform": {"type": ["string", "null"]},
+        "deliverable": {"enum": ["blueprint", "code", "preview", "render"]},
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1},
+        "fps": {"type": "integer", "minimum": 1},
+        "durationSeconds": {"type": "number", "exclusiveMinimum": 0},
+        "confirmedFacts": {"type": "array", "items": {"type": "string"}},
+        "assumptions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "visualAnalysis": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["observed", "hierarchy", "coreVisual", "preserve", "mayChange", "layerCandidates", "risks"],
+      "properties": {
+        "observed": {"type": "array", "items": {"type": "string"}},
+        "hierarchy": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "coreVisual": {"type": "string", "minLength": 1},
+        "palette": {"type": "array", "items": {"type": "string"}},
+        "typography": {"type": "array", "items": {"type": "string"}},
+        "preserve": {"type": "array", "items": {"type": "string"}},
+        "mayChange": {"type": "array", "items": {"type": "string"}},
+        "layerCandidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "role", "depth", "source", "editable"],
+            "properties": {
+              "name": {"type": "string"},
+              "role": {"type": "string"},
+              "depth": {"type": "number"},
+              "source": {"type": "string"},
+              "editable": {"type": "boolean"}
+            }
+          }
+        },
+        "risks": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "creativeDirection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["concept", "memoryHook", "styleWords", "intensity", "spatialModel"],
+      "properties": {
+        "concept": {"type": "string", "minLength": 1},
+        "memoryHook": {"type": "string", "minLength": 1},
+        "styleWords": {"type": "array", "items": {"type": "string"}, "minItems": 3, "maxItems": 6},
+        "intensity": {"type": "integer", "minimum": 1, "maximum": 3},
+        "spatialModel": {"enum": ["2d", "2.5d", "3d", "hybrid"]},
+        "spatialModelReason": {"type": "string"}
+      }
+    },
+    "motionSystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["heroAction", "cameraPath", "secondaryActions", "microMotion", "continuityAnchor", "focusStrategy", "transitionLanguage", "audioStrategy", "negativeConstraints"],
+      "properties": {
+        "heroAction": {"type": "string", "minLength": 1},
+        "cameraPath": {"type": "string", "minLength": 1},
+        "secondaryActions": {"type": "array", "items": {"type": "string"}},
+        "microMotion": {"type": "array", "items": {"type": "string"}},
+        "continuityAnchor": {"type": "string", "minLength": 1},
+        "focusStrategy": {"type": "string", "minLength": 1},
+        "transitionLanguage": {"type": "array", "items": {"type": "string"}},
+        "audioStrategy": {"type": "array", "items": {"type": "string"}},
+        "negativeConstraints": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["startSeconds", "endSeconds", "beat", "pictureAction", "camera", "focusAndLayers", "audioCue", "implementation"],
+        "properties": {
+          "startSeconds": {"type": "number", "minimum": 0},
+          "endSeconds": {"type": "number", "exclusiveMinimum": 0},
+          "beat": {"type": "string"},
+          "pictureAction": {"type": "string"},
+          "camera": {"type": "string"},
+          "focusAndLayers": {"type": "string"},
+          "audioCue": {"type": ["string", "null"]},
+          "implementation": {"type": "string"}
+        }
+      }
+    },
+    "remotionPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["compositionId", "components", "packages", "editableProps", "documentationToLoad", "checkFrames"],
+      "properties": {
+        "compositionId": {"type": "string", "minLength": 1},
+        "components": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "packages": {"type": "array", "items": {"type": "string"}},
+        "editableProps": {"type": "array", "items": {"type": "string"}},
+        "documentationToLoad": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "checkFrames": {"type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 3}
+      }
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["acceptanceCriteria", "evidenceRequired"],
+      "properties": {
+        "acceptanceCriteria": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "evidenceRequired": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      }
+    }
+  }
+}
