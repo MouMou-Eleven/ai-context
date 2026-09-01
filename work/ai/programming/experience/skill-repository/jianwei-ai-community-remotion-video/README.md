@@ -11,6 +11,7 @@
 - Skill 名称：`jianwei-ai-community-remotion-video`
 - Codex 调用：`$jianwei-ai-community-remotion-video`
 - 实体入口：[`skill/SKILL.md`](./skill/SKILL.md)
+- 参数化契约：[`skill/references/parameterization-contract.md`](./skill/references/parameterization-contract.md)
 - 来源记录：[`upstream.json`](./upstream.json)
 
 该目录保存完整、自包含的 Skill 快照。名称已于 2026-09-01 从 `jianwei-ai-community-video` 调整为当前名称。
@@ -22,3 +23,4 @@
 - 修改提示词契约时，同步检查 `references/`、JSON Schema、验证脚本和 `agents/openai.yaml`，避免只改主文件造成模型间输出漂移。
 - 2026-09-01 根据首个图片开场动画实测，增加默认确认门与逐元素动作契约；旧的“内部规划后直接实现”流程停止使用。
 - 2026-09-01 对比 `motion-director` 实测后增加导演层：目标最终帧、状态反差、最值得记住的一秒、收尾回扣与因果重叠成为实施前硬门槛；同时将参数化工程提升为默认输出。
+- 2026-09-02 根据 Studio 实测补充参数化与右侧面板编辑契约：`schema` 与内联 `defaultProps` 必须直接挂在 `<Composition>`，并实际在 `Inspector → Default Props` 修改文字、编号和颜色，确认真实画面即时变化；仅有可选图层或“空参数”不再视为可编辑。

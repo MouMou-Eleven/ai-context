@@ -146,7 +146,8 @@ ai-context/
 │   │   │   │   │   │       │   ├── motion-direction.md
 │   │   │   │   │   │       │   ├── output-contract.md
 │   │   │   │   │   │       │   ├── quality-gates.md
-│   │   │   │   │   │       │   └── remotion-contract.md
+│   │   │   │   │   │       │   ├── remotion-contract.md
+│   │   │   │   │   │       │   └── parameterization-contract.md
 │   │   │   │   │   │       └── scripts/
 │   │   │   │   │   │           └── validate_blueprint.py
 │   │   │   │   │   └── editaplot/
@@ -182,8 +183,10 @@ ai-context/
 │   │   │               │                         Remotion 重剪生产闭环修订
 │   │   │               ├── 2026-08-31-shotcut-professional-ai-workflow.md
 │   │   │               │                         Shotcut 专业 AI 剪辑工作流
-│   │   │               └── 2026-08-31-source-repo-professional-editing-queue.md
-│   │   │                                         源码仓专业剪辑排期修订
+│   │   │               ├── 2026-08-31-source-repo-professional-editing-queue.md
+│   │   │               │                                         源码仓专业剪辑排期修订
+│   │   │               └── 2026-09-01-concat-template-slots-command-queue.md
+│   │   │                                         Concat 模板槽位与命令队列修订
 │   │   │
 │   │   ├── training/                              三级目录：AI 培训
 │   │   │   ├── README.md                          AI 培训总入口
@@ -389,7 +392,9 @@ ai-context/
 │       ├── 2026-09-01-case-result-narrative.md    案例结果叙事方法入库修订
 │       ├── 2026-09-01-remotion-skill-confirmation-and-action-contract.md
 │       │                                         Remotion Skill 确认门与逐元素动作契约修订
-│       └── 2026-09-01-remotion-skill-director-and-parameterization.md
+│       ├── 2026-09-01-remotion-skill-director-and-parameterization.md
+│       └── 2026-09-02-jianwei-remotion-parameterization.md
+│                                                 Studio 右侧 Default Props 可编辑性验收修订
 │                                                 Remotion Skill 导演层、重叠节奏与参数化默认输出修订
 │
 └── history/                                       一级目录：历史与追溯

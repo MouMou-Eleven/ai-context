@@ -56,11 +56,13 @@
 ## 参数化
 
 - 参数化工程是默认输出；MP4 只是当前参数的渲染快照，可编辑能力来自随附 Remotion 工程。
+- 可编辑的验收对象是 Studio 右侧 `Inspector → Default Props` 表单，而不是仅仅存在可选的 `Interactive` 图层。
 - 使用 Zod 顶层 `z.object()` 定义 Schema，把 `schema` 与内联 `defaultProps` 传给 `<Composition>`。
 - 颜色字段按当前官方规则使用 `@remotion/zod-types` 的 `zColor()`，确保 Studio 提供颜色选择器。
 - 至少暴露用户会修改的主文字；画面存在编号、章节、排名或百分比时暴露对应数字；暴露主色、强调色和背景色等视觉关键颜色。
 - 每个参数必须真实绑定组件元素；Schema、默认值和 Props 保持一致。交付前测试至少一组非默认参数，检查文字溢出、编号宽度、颜色对比和动作关系。
 - 不固定沿用旧仓库写死的 Zod 或 Remotion 版本；通过项目锁文件和当前官方规则决定安装方式。
+- 实施前读取 [parameterization-contract.md](parameterization-contract.md)，实际修改至少一组文字、编号和颜色后再恢复默认值。
 
 ## 预览与渲染
 
