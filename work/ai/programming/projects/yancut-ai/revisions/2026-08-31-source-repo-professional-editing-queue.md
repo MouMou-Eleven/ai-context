@@ -8,8 +8,8 @@
 - 本地路径：`F:\桌面文件\言剪AI`
 - `origin`：`https://github.com/MouMou-Eleven/yancut-ai.git`
 - `upstream`：`https://github.com/OpenCut-app/OpenCut.git`
-- 本地主线：`main`，本轮后最新提交 `e4f2eb2`
-- GitHub 源码树：远端最新提交 `7e4e816`
+- 本地主线：`main`，本轮后最新提交 `b1cbd34`
+- GitHub 源码树：远端最新提交 `205a66a`
 - 仓库可见性：私有
 
 由于本机 Git 全局配置指向已停止的 `127.0.0.1:7890` 代理，HTTPS push 不可用；源码树和本轮专业编辑增量已通过 GitHub Git Data API 写入并核验。GitHub 当前令牌不允许写入 Actions workflow，因此 `.github/workflows/bun-ci.yml` 未同步到远端，其他源码和资源已同步。

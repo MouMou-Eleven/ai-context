@@ -20,7 +20,7 @@
 - 视频包装：Remotion 已作为首选可控包装引擎；AI 会把包装预设映射成当前项目中的可编辑文字轨、标签和关键帧，不再要求用户离开剪辑主链路进入独立页面。HyperFrames 通过 provider 边界预留，不把插件页面或概念展示误写成已完成服务。
 - 测试模型：2026-08-13 通过兼容 OpenAI Chat Completions 的测试中转调用 `gpt-5.6-sol`，推理强度 `high`。这只是开发测试配置，不构成生产供应商承诺。
 - 本地开发目录：`F:\桌面文件\言剪AI`（2026-08-13 迁移并完成构建、启动验证）。
-- 代码现状：独立源码仓库已建立为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `e4f2eb2`，远端源码提交 `7e4e816`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。本轮远端提交包含真实模板槽位、AI 串行队列、ducking 修复和同步记录；`ai-context` 只保存项目上下文，不保存完整源码。
+- 代码现状：独立源码仓库已建立为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `b1cbd34`，远端源码提交 `205a66a`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。本轮远端提交包含真实模板槽位、AI 串行队列、ducking 修复、品牌预览统一和同步记录；`ai-context` 只保存项目上下文，不保存完整源码。
 - 开发与部署分工：采用“本地权威源码 + 百度秒哒云端接管”。前端、业务逻辑、价格权益、数据库 Schema、接口合同、Mock 和自动化测试先在本地完成；验证通过后按编号压缩包交付百度秒哒，由秒哒接入 Auth、Postgres、对象存储、Edge Function、短信能力和部署。
 - 秒哒兼容边界：当前本地基线是 Next.js 16.1.3，而已记录的秒哒稳定 Web 导入形态是 React + Vite。正式交付前必须重新核验平台能力；若仍不支持 Next.js，需提供 React + Vite 兼容构建，不能直接上传当前源码并宣称可部署。
 
