@@ -1,6 +1,6 @@
 # 言剪 AI 架构与上游兼容策略
 
-> 当前适用：OpenCut v0.3.0 基线；核验日期 2026-08-31。
+> 当前适用：OpenCut v0.3.0 基线；核验日期 2026-09-01。
 
 ## 一、分层结构
 
@@ -87,7 +87,15 @@
 - 可选未来路径：把 MLT 作为独立、可替换的后台渲染工作进程，通过任务合同和 MLT XML/OpenTimelineIO 与网页端交换；是否采用必须先完成部署和许可证评审。
 - 相关官方来源：<https://github.com/mltframework/shotcut>、<https://shotcut.org/features/>、<https://shotcut.org/roadmap/>、<https://www.mltframework.org/docs/>。
 
-## 七、版本与来源
+## 七、Concat 参考边界
+
+- 成熟度判断：Concat 有 React/Tauri/Rust/FFmpeg 真实源码、安装包、持续构建和编辑器测试，不是引流空壳；但项目创建时间短、单一主要贡献者、只有 alpha 预发布，仍属于高活跃工程原型。
+- 可吸收：稳定 ID、引擎拥有项目真相、串行命令、一次手势一个撤销步骤、延迟自动保存、临时文件原子替换、模板素材槽位和任务状态。
+- 当前不直接合并源码：其 Tauri/Rust 桌面运行时与 Next.js 浏览器架构不兼容；MPL-2.0 文件级 copyleft 及第三方 GPL 依赖需要明确的分发评审。
+- 本轮已落地：真实模板槽位和实例化验证、半成品项目回滚、AI 计划串行队列；同时修复 ducking 的 ticks/秒单位错误。
+- 相关来源：<https://github.com/jub0t/Concat>、<https://github.com/jub0t/Concat/blob/main/ARCHITECTURE.md>、<https://github.com/jub0t/Concat/releases>、<https://github.com/jub0t/Concat/issues>。
+
+## 八、版本与来源
 
 | 动态事实 | 当前记录 | 来源 | 核验日期 |
 |---|---|---|---|
@@ -99,6 +107,7 @@
 | Recut 参考版本 | 0.1.41；只参考公开架构与交互经验 | Recut 仓库、架构与 LICENSE | 2026-08-31 |
 | Remotion 本地版本 | 4.0.506；本地渲染闭环已验证 | 本地依赖与实测 | 2026-08-31 |
 | Shotcut 参考状态 | 26.8 系列；GPLv3；Qt 6/C++，依赖 MLT、FFmpeg、Frei0r、SDL | Shotcut GitHub、Features、Roadmap | 2026-08-31 |
-| 言剪 AI 源码仓库 | 私有 `MouMou-Eleven/yancut-ai`；本地 `main` 提交 `d3a69dd`；远端提交 `ba642f8`；`upstream` 保留 OpenCut | GitHub API、Git Data API、Git 远端核验 | 2026-08-31 |
+| Concat 参考状态 | `v0.2.0-alpha.16`；MPL-2.0；React/Tauri/Rust/FFmpeg；真实但仍是单人主导 alpha | Concat GitHub、Architecture、Releases、Issues、License | 2026-09-01 |
+| 言剪 AI 源码仓库 | 私有 `MouMou-Eleven/yancut-ai`；本地 `main` 提交 `e4f2eb2`；远端提交 `7e4e816`；`upstream` 保留 OpenCut | GitHub API、Git Data API、Git 远端核验 | 2026-09-01 |
 
 这些动态事实后续使用前必须重新核验，不能把本表永久当作当前真相。

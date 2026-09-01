@@ -1,7 +1,7 @@
 # 言剪 AI（YanCut）
 
 > 状态：开发中（比赛原型阶段）
-> 当前口径确认：2026-08-31
+> 当前口径确认：2026-09-01
 
 ## 定位与边界
 
@@ -20,7 +20,7 @@
 - 视频包装：Remotion 已作为首选可控包装引擎；AI 会把包装预设映射成当前项目中的可编辑文字轨、标签和关键帧，不再要求用户离开剪辑主链路进入独立页面。HyperFrames 通过 provider 边界预留，不把插件页面或概念展示误写成已完成服务。
 - 测试模型：2026-08-13 通过兼容 OpenAI Chat Completions 的测试中转调用 `gpt-5.6-sol`，推理强度 `high`。这只是开发测试配置，不构成生产供应商承诺。
 - 本地开发目录：`F:\桌面文件\言剪AI`（2026-08-13 迁移并完成构建、启动验证）。
-- 代码现状：独立源码仓库已建立为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `d3a69dd`，远端源码提交 `ba642f8`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。`ai-context` 只保存项目上下文，不保存完整源码。
+- 代码现状：独立源码仓库已建立为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `e4f2eb2`，远端源码提交 `7e4e816`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。本轮远端提交包含真实模板槽位、AI 串行队列、ducking 修复和同步记录；`ai-context` 只保存项目上下文，不保存完整源码。
 - 开发与部署分工：采用“本地权威源码 + 百度秒哒云端接管”。前端、业务逻辑、价格权益、数据库 Schema、接口合同、Mock 和自动化测试先在本地完成；验证通过后按编号压缩包交付百度秒哒，由秒哒接入 Auth、Postgres、对象存储、Edge Function、短信能力和部署。
 - 秒哒兼容边界：当前本地基线是 Next.js 16.1.3，而已记录的秒哒稳定 Web 导入形态是 React + Vite。正式交付前必须重新核验平台能力；若仍不支持 Next.js，需提供 React + Vite 兼容构建，不能直接上传当前源码并宣称可部署。
 
@@ -68,6 +68,10 @@
 - 长视频高光切片已接入：基于音频能量和已有字幕的主题命中选择非重叠窗口，再以 TracksSnapshotCommand 拼接并可撤销；缺少证据时会明确跳过。
 - Remotion 渲染已接入队列合同：本地无远端配置时使用异步本地队列，支持 queued/running/completed/failed 和轮询接口；配置 `YANCUT_REMOTION_RENDER_URL` 后可切换远端队列，支持 `statusUrl` 回写。
 - 自有源码仓库已配置 `origin`，并完成源码树及本轮专业编辑增量同步；Git 全局代理失效时通过 GitHub Git Data API 完成远端提交验证。
+- Concat 已完成成熟度、架构和许可核验：结论为“真实但早期的 alpha”，不作为可直接商用底座；言剪 AI 吸收真实模板实例化、稳定素材 ID、串行命令和失败回滚经验。
+- 模板中心已补齐 8 个真实创作包的 4-6 个素材槽位：必填槽位未完成时不创建空壳项目，填满后复制真实媒体并生成连续可编辑时间线，失败会清理半成品项目。
+- AI 计划执行已加入串行操作队列，避免两个异步计划并发覆盖项目状态；修复 ducking 人声窗口把 ticks 误当秒的单位错误。
+- 2026-09-01 浏览器端到端回归：5 个必填素材槽位填满后创建 25 秒项目，主视频轨写入 5 段真实图片素材，标题保持可编辑，控制台错误和警告为 0。
 
 尚未完成：
 
@@ -76,7 +80,7 @@
 - AI 自动剪辑对长视频、复杂多轨和失败回滚的系统验证。
 - Remotion 云端渲染服务的生产部署、对象存储回写、并发和成本测试；当前已完成本地异步队列和远端 provider 合同，仍需接入稳定的云任务服务。HyperFrames 仍保持 provider 预留。
 - 专业剪辑能力仍待补齐：片段 slip/slide、响度标准化与真峰值计量、代理持久化与音画代理、速度曲线编辑器、复杂调色、运动跟踪、多机位和更稳定的语义高光模型。
-- 模板创作包的真实素材槽位、镜头替换、字幕样式与配乐规则。
+- 模板创作包仍需补镜头替换预览、可选槽位、字幕样式与配乐规则；真实必填素材槽位和连续时间线实例化已完成。
 - 部署域名和正式隐私政策。
 
 ## 文件索引
@@ -92,6 +96,7 @@
 | [`revisions/2026-08-31-effects-remotion-commercial-loop.md`](./revisions/2026-08-31-effects-remotion-commercial-loop.md) | 音效容错、贴纸/特效扩容、Remotion 8 类动效、商业产品参考与桌面端回归 |
 | [`revisions/2026-08-31-shotcut-professional-ai-workflow.md`](./revisions/2026-08-31-shotcut-professional-ai-workflow.md) | Shotcut/MLT 参考边界、AI 专业剪辑四阶段、Remotion 时间线融合、文字比例修复与实测证据 |
 | [`revisions/2026-08-31-source-repo-professional-editing-queue.md`](./revisions/2026-08-31-source-repo-professional-editing-queue.md) | 自有源码仓库、专业剪辑命令、代理/高光/速度曲线和 Remotion 队列落地记录 |
+| [`revisions/2026-09-01-concat-template-slots-command-queue.md`](./revisions/2026-09-01-concat-template-slots-command-queue.md) | Concat 成熟度与许可判断、真实模板槽位、AI 串行命令和 ducking 单位修复记录 |
 
 ## AI 调用规则
 
@@ -113,4 +118,4 @@
 - 正式支付渠道、套餐价格、模型与渲染成本、退款和发票策略。
 - 上线版本是否继续保留 OpenCut 上游入口，以及具体的署名展示位置。
 
-*索引最后整理：2026-08-31*
+*索引最后整理：2026-09-01*
