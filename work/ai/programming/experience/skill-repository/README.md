@@ -6,7 +6,7 @@
 
 | Skill | 实体入口 | 来源与更新信息 | 用途 |
 |---|---|---|---|
-| jianwei-ai-community-remotion-video | [`jianwei-ai-community-remotion-video/skill/SKILL.md`](./jianwei-ai-community-remotion-video/skill/SKILL.md) | [`jianwei-ai-community-remotion-video/upstream.json`](./jianwei-ai-community-remotion-video/upstream.json) | 把一句话、图片或图文需求扩展为符合 Remotion 约束的高质量视频动效蓝图 |
+| jianwei-ai-community-remotion-video | [`jianwei-ai-community-remotion-video/skill/SKILL.md`](./jianwei-ai-community-remotion-video/skill/SKILL.md) | [`jianwei-ai-community-remotion-video/upstream.json`](./jianwei-ai-community-remotion-video/upstream.json) | 先导演记忆点、反差、重叠节奏与最终帧，再默认生成可编辑文字、编号和颜色的参数化 Remotion 工程 |
 | EditaPlot | [`editaplot/source/skill/editaplot/SKILL.md`](./editaplot/source/skill/editaplot/SKILL.md) | [`editaplot/upstream.json`](./editaplot/upstream.json) | 通过 Origin/OriginPro 制作与编辑科研图表；本仓保存完整运行仓库快照 |
 
 ## 存放约定

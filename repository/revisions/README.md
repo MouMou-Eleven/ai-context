@@ -4,6 +4,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-09-01 | [`remotion-skill-director-and-parameterization.md`](./2026-09-01-remotion-skill-director-and-parameterization.md) | 将目标最终帧、状态反差、记忆点、收尾回扣和因果重叠提升为导演硬门槛，并把可编辑文字、编号与颜色的参数化 Remotion 工程设为默认输出 |
 | 2026-09-01 | [`remotion-skill-confirmation-and-action-contract.md`](./2026-09-01-remotion-skill-confirmation-and-action-contract.md) | 将 Remotion Skill 改为默认“规划确认后实施”，并建立逐元素触发、路径、缓动与因果动作契约 |
 | 2026-09-01 | [`ai-programming-skill-repository.md`](./2026-09-01-ai-programming-skill-repository.md) | 新增保存 Skill 实体的五级仓库、上游 commit 元数据和完整供应商快照治理规则 |
 | 2026-08-27 | [`commercial-external-material-boundary.md`](./2026-08-27-commercial-external-material-boundary.md) | 明确赛事、路演和融资材料不得暴露内部研发讨论、自证式声明及外部无法访问的本地证据 |

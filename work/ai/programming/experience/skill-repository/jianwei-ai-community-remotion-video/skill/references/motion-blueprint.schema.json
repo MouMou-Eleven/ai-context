@@ -4,7 +4,7 @@
   "title": "Jianwei Remotion Motion Blueprint",
   "type": "object",
   "additionalProperties": false,
-  "required": ["request", "approval", "creativeDirection", "motionSystem", "timeline", "remotionPlan", "quality"],
+  "required": ["request", "approval", "creativeDirection", "motionSystem", "timeline", "parameterization", "remotionPlan", "quality"],
   "properties": {
     "request": {
       "type": "object",
@@ -68,10 +68,23 @@
     "creativeDirection": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["concept", "memoryHook", "styleWords", "intensity", "spatialModel"],
+      "required": ["concept", "targetFrame", "stateContrast", "memoryHook", "memoryHookTime", "payoff", "timingOverlap", "styleWords", "intensity", "spatialModel"],
       "properties": {
         "concept": {"type": "string", "minLength": 1},
+        "targetFrame": {"type": "string", "minLength": 1},
+        "stateContrast": {"type": "string", "minLength": 1},
         "memoryHook": {"type": "string", "minLength": 1},
+        "memoryHookTime": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["startSeconds", "endSeconds"],
+          "properties": {
+            "startSeconds": {"type": "number", "minimum": 0},
+            "endSeconds": {"type": "number", "exclusiveMinimum": 0}
+          }
+        },
+        "payoff": {"type": "string", "minLength": 1},
+        "timingOverlap": {"type": "string", "minLength": 1},
         "styleWords": {"type": "array", "items": {"type": "string"}, "minItems": 3, "maxItems": 6},
         "intensity": {"type": "integer", "minimum": 1, "maximum": 3},
         "spatialModel": {"enum": ["2d", "2.5d", "3d", "hybrid"]},
@@ -120,7 +133,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["startSeconds", "endSeconds", "beat", "pictureAction", "camera", "focusAndLayers", "audioCue", "implementation"],
+        "required": ["startSeconds", "endSeconds", "beat", "pictureAction", "camera", "focusAndLayers", "causalOverlap", "audioCue", "implementation"],
         "properties": {
           "startSeconds": {"type": "number", "minimum": 0},
           "endSeconds": {"type": "number", "exclusiveMinimum": 0},
@@ -128,10 +141,53 @@
           "pictureAction": {"type": "string"},
           "camera": {"type": "string"},
           "focusAndLayers": {"type": "string"},
+          "causalOverlap": {"type": "string"},
           "audioCue": {"type": ["string", "null"]},
           "implementation": {"type": "string"}
         }
       }
+    },
+    "parameterization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "editableInStudio", "fields", "testValues", "artifactNote"],
+      "properties": {
+        "mode": {"enum": ["parameterized", "fixed"]},
+        "editableInStudio": {"type": "boolean"},
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "type", "defaultValue", "purpose", "validation", "boundElements"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "type": {"enum": ["string", "number", "color", "boolean", "select"]},
+              "defaultValue": {},
+              "purpose": {"type": "string", "minLength": 1},
+              "validation": {"type": "string", "minLength": 1},
+              "boundElements": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+            }
+          }
+        },
+        "testValues": {"type": "object"},
+        "artifactNote": {"type": "string", "minLength": 1}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"mode": {"const": "parameterized"}}},
+          "then": {
+            "properties": {
+              "editableInStudio": {"const": true},
+              "fields": {"minItems": 2}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"mode": {"const": "fixed"}}},
+          "then": {"properties": {"editableInStudio": {"const": false}}}
+        }
+      ]
     },
     "remotionPlan": {
       "type": "object",

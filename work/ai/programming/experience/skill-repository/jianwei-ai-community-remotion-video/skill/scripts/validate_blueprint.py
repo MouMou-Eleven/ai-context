@@ -17,6 +17,7 @@ TOP_LEVEL = (
     "creativeDirection",
     "motionSystem",
     "timeline",
+    "parameterization",
     "remotionPlan",
     "quality",
 )
@@ -120,8 +121,36 @@ def validate(data: Any) -> list[str]:
                 require_keys(layer, ("name", "role", "depth", "source", "editable"), f"$.visualAnalysis.layerCandidates[{index}]", errors)
 
     creative = data.get("creativeDirection")
-    require_keys(creative, ("concept", "memoryHook", "styleWords", "intensity", "spatialModel"), "$.creativeDirection", errors)
+    require_keys(
+        creative,
+        (
+            "concept",
+            "targetFrame",
+            "stateContrast",
+            "memoryHook",
+            "memoryHookTime",
+            "payoff",
+            "timingOverlap",
+            "styleWords",
+            "intensity",
+            "spatialModel",
+        ),
+        "$.creativeDirection",
+        errors,
+    )
     if isinstance(creative, dict):
+        for key in ("concept", "targetFrame", "stateContrast", "memoryHook", "payoff", "timingOverlap"):
+            if not isinstance(creative.get(key), str) or not creative.get(key, "").strip():
+                errors.append(f"$.creativeDirection.{key} must be a non-empty string")
+        hook_time = creative.get("memoryHookTime")
+        require_keys(hook_time, ("startSeconds", "endSeconds"), "$.creativeDirection.memoryHookTime", errors)
+        if isinstance(hook_time, dict):
+            hook_start = hook_time.get("startSeconds")
+            hook_end = hook_time.get("endSeconds")
+            if not is_number(hook_start) or not is_number(hook_end) or hook_start < 0 or hook_end <= hook_start:
+                errors.append("$.creativeDirection.memoryHookTime must have endSeconds greater than startSeconds")
+            elif isinstance(request, dict) and is_number(request.get("durationSeconds")) and hook_end > request["durationSeconds"]:
+                errors.append("$.creativeDirection.memoryHookTime must fit inside the composition duration")
         require_string_list(creative.get("styleWords"), "$.creativeDirection.styleWords", errors, 3)
         if isinstance(creative.get("styleWords"), list) and len(creative["styleWords"]) > 6:
             errors.append("$.creativeDirection.styleWords must contain no more than 6 items")
@@ -169,12 +198,13 @@ def validate(data: Any) -> list[str]:
     if not isinstance(timeline, list) or not timeline:
         errors.append("$.timeline must be a non-empty array")
     else:
-        previous_end = 0.0
+        coverage_end = 0.0
+        previous_start = -1.0
         for index, item in enumerate(timeline):
             location = f"$.timeline[{index}]"
             require_keys(
                 item,
-                ("startSeconds", "endSeconds", "beat", "pictureAction", "camera", "focusAndLayers", "audioCue", "implementation"),
+                ("startSeconds", "endSeconds", "beat", "pictureAction", "camera", "focusAndLayers", "causalOverlap", "audioCue", "implementation"),
                 location,
                 errors,
             )
@@ -185,11 +215,80 @@ def validate(data: Any) -> list[str]:
             if not is_number(start) or not is_number(end) or end <= start:
                 errors.append(f"{location} must have numeric endSeconds greater than startSeconds")
                 continue
-            if abs(start - previous_end) > 0.001:
-                errors.append(f"{location}.startSeconds must equal the previous endSeconds ({previous_end:g})")
-            previous_end = float(end)
-        if is_number(duration) and abs(previous_end - float(duration)) > 0.001:
-            errors.append("$.timeline must end at $.request.durationSeconds")
+            if index == 0 and abs(start) > 0.001:
+                errors.append("$.timeline[0].startSeconds must be 0")
+            if start + 0.001 < previous_start:
+                errors.append(f"{location}.startSeconds must be in non-decreasing order")
+            if start - coverage_end > 0.001:
+                errors.append(f"{location}.startSeconds leaves an uncovered gap after {coverage_end:g}s")
+            if not isinstance(item.get("causalOverlap"), str) or not item.get("causalOverlap", "").strip():
+                errors.append(f"{location}.causalOverlap must be a non-empty string")
+            previous_start = float(start)
+            coverage_end = max(coverage_end, float(end))
+        if is_number(duration) and abs(coverage_end - float(duration)) > 0.001:
+            errors.append("$.timeline coverage must end at $.request.durationSeconds")
+
+    parameterization = data.get("parameterization")
+    require_keys(
+        parameterization,
+        ("mode", "editableInStudio", "fields", "testValues", "artifactNote"),
+        "$.parameterization",
+        errors,
+    )
+    if isinstance(parameterization, dict):
+        mode = parameterization.get("mode")
+        editable = parameterization.get("editableInStudio")
+        fields = parameterization.get("fields")
+        test_values = parameterization.get("testValues")
+        if mode not in {"parameterized", "fixed"}:
+            errors.append("$.parameterization.mode must be parameterized or fixed")
+        if not isinstance(editable, bool):
+            errors.append("$.parameterization.editableInStudio must be a boolean")
+        if mode == "parameterized" and editable is not True:
+            errors.append("$.parameterization.editableInStudio must be true in parameterized mode")
+        if mode == "fixed" and editable is not False:
+            errors.append("$.parameterization.editableInStudio must be false in fixed mode")
+        if not isinstance(fields, list):
+            errors.append("$.parameterization.fields must be an array")
+            fields = []
+        elif mode == "parameterized" and len(fields) < 2:
+            errors.append("$.parameterization.fields must contain at least 2 fields in parameterized mode")
+        field_names: set[str] = set()
+        field_types: set[str] = set()
+        for index, field in enumerate(fields):
+            location = f"$.parameterization.fields[{index}]"
+            require_keys(field, ("name", "type", "defaultValue", "purpose", "validation", "boundElements"), location, errors)
+            if not isinstance(field, dict):
+                continue
+            name = field.get("name")
+            field_type = field.get("type")
+            if not isinstance(name, str) or not name.strip():
+                errors.append(f"{location}.name must be a non-empty string")
+            elif name in field_names:
+                errors.append(f"{location}.name must be unique")
+            else:
+                field_names.add(name)
+            if field_type not in {"string", "number", "color", "boolean", "select"}:
+                errors.append(f"{location}.type is invalid")
+            else:
+                field_types.add(field_type)
+            for key in ("purpose", "validation"):
+                if not isinstance(field.get(key), str) or not field.get(key, "").strip():
+                    errors.append(f"{location}.{key} must be a non-empty string")
+            require_string_list(field.get("boundElements"), f"{location}.boundElements", errors, 1)
+        if mode == "parameterized":
+            if "string" not in field_types:
+                errors.append("$.parameterization.fields must include a string field in parameterized mode")
+            if "color" not in field_types:
+                errors.append("$.parameterization.fields must include a color field in parameterized mode")
+            if not isinstance(test_values, dict) or not test_values:
+                errors.append("$.parameterization.testValues must contain a non-default parameter set")
+            elif not set(test_values).issubset(field_names):
+                errors.append("$.parameterization.testValues contains names not declared in fields")
+        elif not isinstance(test_values, dict):
+            errors.append("$.parameterization.testValues must be an object")
+        if not isinstance(parameterization.get("artifactNote"), str) or not parameterization.get("artifactNote", "").strip():
+            errors.append("$.parameterization.artifactNote must be a non-empty string")
 
     plan = data.get("remotionPlan")
     require_keys(plan, ("compositionId", "components", "packages", "editableProps", "documentationToLoad", "checkFrames"), "$.remotionPlan", errors)
@@ -198,6 +297,22 @@ def validate(data: Any) -> list[str]:
         require_string_list(plan.get("packages"), "$.remotionPlan.packages", errors)
         require_string_list(plan.get("editableProps"), "$.remotionPlan.editableProps", errors)
         require_string_list(plan.get("documentationToLoad"), "$.remotionPlan.documentationToLoad", errors, 1)
+        if isinstance(parameterization, dict) and parameterization.get("mode") == "parameterized":
+            docs = plan.get("documentationToLoad")
+            packages = plan.get("packages")
+            editable_props = plan.get("editableProps")
+            if isinstance(docs, list):
+                if not any("remotion-interactivity" in item for item in docs):
+                    errors.append("$.remotionPlan.documentationToLoad must include remotion-interactivity in parameterized mode")
+                if not any("parameters" in item for item in docs):
+                    errors.append("$.remotionPlan.documentationToLoad must include the Remotion parameters guidance")
+            if isinstance(packages, list):
+                if "zod" not in packages:
+                    errors.append("$.remotionPlan.packages must include zod in parameterized mode")
+                if "@remotion/zod-types" not in packages:
+                    errors.append("$.remotionPlan.packages must include @remotion/zod-types in parameterized mode")
+            if isinstance(editable_props, list) and not field_names.issubset(set(editable_props)):
+                errors.append("$.remotionPlan.editableProps must include every declared parameter field")
         check_frames = plan.get("checkFrames")
         if not isinstance(check_frames, list) or len(check_frames) < 3 or any(not isinstance(frame, int) or isinstance(frame, bool) or frame < 0 for frame in check_frames):
             errors.append("$.remotionPlan.checkFrames must contain at least 3 non-negative integers")
@@ -232,7 +347,12 @@ def run_self_test() -> int:
         },
         "creativeDirection": {
             "concept": "One controlled bounce",
+            "targetFrame": "A front-facing card resting at the center",
+            "stateContrast": "Compressed and tense to released and stable",
             "memoryHook": "The landing compression",
+            "memoryHookTime": {"startSeconds": 0.72, "endSeconds": 1.02},
+            "payoff": "The shadow catches up one beat after the card settles",
+            "timingOverlap": "The shadow reaction begins when the card passes 80 percent of its landing path",
             "styleWords": ["clean", "light", "tactile"],
             "intensity": 2,
             "spatialModel": "2.5d",
@@ -262,16 +382,26 @@ def run_self_test() -> int:
             "negativeConstraints": ["No repeated random bounce"],
         },
         "timeline": [
-            {"startSeconds": 0, "endSeconds": 0.4, "beat": "Anticipate", "pictureAction": "Card compresses", "camera": "Static", "focusAndLayers": "Card and shadow", "audioCue": None, "implementation": "CSS and interpolate"},
-            {"startSeconds": 0.4, "endSeconds": 1.2, "beat": "Release", "pictureAction": "Card overshoots and returns", "camera": "Push in", "focusAndLayers": "Card center", "audioCue": "Landing", "implementation": "Easing.spring"},
-            {"startSeconds": 1.2, "endSeconds": 2, "beat": "Hold", "pictureAction": "Card settles", "camera": "Locked", "focusAndLayers": "Final card", "audioCue": None, "implementation": "Clamped interpolate"},
+            {"startSeconds": 0, "endSeconds": 0.5, "beat": "Anticipate", "pictureAction": "Card compresses", "camera": "Static", "focusAndLayers": "Card and shadow", "causalOverlap": "Opening beat; no prior overlap", "audioCue": None, "implementation": "CSS and interpolate"},
+            {"startSeconds": 0.35, "endSeconds": 1.25, "beat": "Release", "pictureAction": "Card overshoots and returns", "camera": "Push in", "focusAndLayers": "Card center", "causalOverlap": "Starts when compression reaches 70 percent", "audioCue": "Landing", "implementation": "Easing.spring"},
+            {"startSeconds": 1.05, "endSeconds": 2, "beat": "Hold", "pictureAction": "Card settles", "camera": "Locked", "focusAndLayers": "Final card", "causalOverlap": "Starts during the final deceleration", "audioCue": None, "implementation": "Clamped interpolate"},
         ],
+        "parameterization": {
+            "mode": "parameterized",
+            "editableInStudio": True,
+            "fields": [
+                {"name": "title", "type": "string", "defaultValue": "Launch", "purpose": "Main card copy", "validation": "Maximum 24 characters", "boundElements": ["Card title"]},
+                {"name": "accentColor", "type": "color", "defaultValue": "#0B84FF", "purpose": "Card accent and shadow response", "validation": "Must retain readable contrast", "boundElements": ["Card", "Shadow"]},
+            ],
+            "testValues": {"title": "New title", "accentColor": "#FF3B30"},
+            "artifactNote": "The MP4 is a rendered parameter snapshot; the Remotion project is editable in Studio",
+        },
         "remotionPlan": {
             "compositionId": "CardBounce",
             "components": ["CardBounce"],
-            "packages": ["remotion"],
-            "editableProps": ["title", "color"],
-            "documentationToLoad": ["remotion-markup"],
+            "packages": ["remotion", "zod", "@remotion/zod-types"],
+            "editableProps": ["title", "accentColor"],
+            "documentationToLoad": ["remotion-markup", "remotion-interactivity", "remotion-markup/parameters"],
             "checkFrames": [0, 24, 48],
         },
         "quality": {
@@ -280,18 +410,44 @@ def run_self_test() -> int:
         },
     }
     valid_errors = validate(valid)
+    fixed = json.loads(json.dumps(valid))
+    fixed["parameterization"] = {
+        "mode": "fixed",
+        "editableInStudio": False,
+        "fields": [],
+        "testValues": {},
+        "artifactNote": "This delivery is a fixed render and is not parameter-editable in Studio",
+    }
+    fixed["remotionPlan"]["editableProps"] = []
+    fixed_errors = validate(fixed)
     invalid = json.loads(json.dumps(valid))
     invalid["request"]["inputMode"] = "image"
-    invalid["timeline"][1]["startSeconds"] = 0.7
+    invalid["timeline"][1]["startSeconds"] = 0.8
     invalid["approval"]["evidence"] = "Not approved"
+    invalid["parameterization"]["editableInStudio"] = False
+    invalid["parameterization"]["fields"] = invalid["parameterization"]["fields"][:1]
     invalid_errors = validate(invalid)
     if valid_errors:
         print("Self-test failed: valid fixture was rejected", file=sys.stderr)
         for error in valid_errors:
             print(f"- {error}", file=sys.stderr)
         return 1
-    if len(invalid_errors) < 3:
+    if fixed_errors:
+        print("Self-test failed: fixed-mode fixture was rejected", file=sys.stderr)
+        for error in fixed_errors:
+            print(f"- {error}", file=sys.stderr)
+        return 1
+    expected_invalid_fragments = (
+        "visualAnalysis is required",
+        "evidence must be null",
+        "uncovered gap",
+        "editableInStudio must be true",
+        "at least 2 fields",
+    )
+    if any(not any(fragment in error for error in invalid_errors) for fragment in expected_invalid_fragments):
         print("Self-test failed: invalid fixture was not rejected", file=sys.stderr)
+        for error in invalid_errors:
+            print(f"- {error}", file=sys.stderr)
         return 1
     print("Self-test passed")
     return 0

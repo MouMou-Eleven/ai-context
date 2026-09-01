@@ -140,6 +140,7 @@ ai-context/
 │   │   │   │   │   │       ├── agents/
 │   │   │   │   │   │       │   └── openai.yaml
 │   │   │   │   │   │       ├── references/
+│   │   │   │   │   │       │   ├── director-strategy.md
 │   │   │   │   │   │       │   ├── input-and-image-analysis.md
 │   │   │   │   │   │       │   ├── motion-blueprint.schema.json
 │   │   │   │   │   │       │   ├── motion-direction.md
@@ -386,8 +387,10 @@ ai-context/
 │       ├── 2026-09-01-ai-programming-skill-repository.md
 │       │                                         AI 编程 Skill 仓库与上游快照治理
 │       ├── 2026-09-01-case-result-narrative.md    案例结果叙事方法入库修订
-│       └── 2026-09-01-remotion-skill-confirmation-and-action-contract.md
-│                                                 Remotion Skill 确认门与逐元素动作契约修订
+│       ├── 2026-09-01-remotion-skill-confirmation-and-action-contract.md
+│       │                                         Remotion Skill 确认门与逐元素动作契约修订
+│       └── 2026-09-01-remotion-skill-director-and-parameterization.md
+│                                                 Remotion Skill 导演层、重叠节奏与参数化默认输出修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界

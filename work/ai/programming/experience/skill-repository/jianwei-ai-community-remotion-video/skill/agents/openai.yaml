@@ -1,4 +1,4 @@
 interface:
   display_name: "jianwei-ai-community-remotion-video"
-  short_description: "把一句话或参考图转成高完成度 Remotion 动效视频"
-  default_prompt: "Use $jianwei-ai-community-remotion-video to analyze my text, image, or both, present a detailed motion plan for my confirmation, and only build the Remotion video after I explicitly approve it."
+  short_description: "把一句话或参考图导演成自然、有记忆点的参数化 Remotion 动效"
+  default_prompt: "Use $jianwei-ai-community-remotion-video to direct one memorable motion idea, present the overlapping action plan for my approval, then build a parameterized Remotion project with editable text, numbers, and colors."
