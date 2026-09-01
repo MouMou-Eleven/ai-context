@@ -7,6 +7,16 @@
 | 实操教程写法 | [`tutorial-writing.md`](./tutorial-writing.md) | 给学员或普通用户写可跟做、可验收的教程 |
 | 技术名词解释 | [`technical-explanation/`](./technical-explanation/README.md) | 抽象概念、术语和技术科普的讲解方法 |
 
+## 当前方法的唯一来源
+
+- `teaching-and-course-design.md` 只负责任务入口、交付物和跨课程边界。
+- `demo-driven-course-design.md` 是“课程怎样组织才可讲”的唯一活动方法。
+- `technical-explanation/problem-driven-technical-explanation.md` 是“技术内容该不该讲、怎样解释”的唯一活动方法。
+- `tutorial-writing.md` 只在学员需要跟着完成操作时使用。
+- 具体课程的事实、标题、案例顺序和进度留在对应项目；历史修订只用于追溯。
+
+同一条方法不要同时写进多个活动文件。入口文件只做指向，项目文件只记录项目特有规则；发现重复或冲突时，先确定唯一来源，再删除其他位置的第二套表述。
+
 ## 外部来源已形成的培训方法
 
 | 来源 | 提炼结果 | 使用方式 |
