@@ -185,8 +185,10 @@ ai-context/
 │   │   │               │                         Shotcut 专业 AI 剪辑工作流
 │   │   │               ├── 2026-08-31-source-repo-professional-editing-queue.md
 │   │   │               │                                         源码仓专业剪辑排期修订
-│   │   │               └── 2026-09-01-concat-template-slots-command-queue.md
-│   │   │                                         Concat 模板槽位与命令队列修订
+│   │   │               ├── 2026-09-01-concat-template-slots-command-queue.md
+│   │   │               │                         Concat 模板槽位与命令队列修订
+│   │   │               └── 2026-09-02-commercialization-closure.md
+│   │   │                                         商业化闭环与上线边界修订
 │   │   │
 │   │   ├── training/                              三级目录：AI 培训
 │   │   │   ├── README.md                          AI 培训总入口
