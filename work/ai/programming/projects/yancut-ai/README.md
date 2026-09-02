@@ -23,7 +23,7 @@
   和字幕/转写文本作为多模态上下文发送；本地实测返回 HTTP 200。API Key 只保存在本地忽略文件
   或部署平台密钥管理中，不写入仓库。
 - 本地开发目录：`F:\桌面文件\言剪AI`（2026-08-13 迁移并完成构建、启动验证）。
-- 代码现状：独立源码仓库为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `e4dd58d`，远端源码提交 `0d30f62`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。本轮新增 GLM 多模态规划、客服人工购买配置和金额格式修正；GitHub Actions 工作流因当前令牌缺少 `workflow` 权限，仍只保留在本地历史中。`ai-context` 只保存项目上下文，不保存完整源码。
+- 代码现状：独立源码仓库为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `e22fbbd`，远端源码提交 `c302c32`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。本轮新增 GLM 多模态规划、客服人工购买配置、金额格式修正和模型测试夹具同步；GitHub Actions 工作流因当前令牌缺少 `workflow` 权限，仍只保留在本地历史中。`ai-context` 只保存项目上下文，不保存完整源码。
 - 开发与部署分工：采用“本地权威源码 + 百度秒哒云端接管”。前端、业务逻辑、价格权益、数据库 Schema、接口合同、Mock 和自动化测试先在本地完成；验证通过后按编号压缩包交付百度秒哒，由秒哒接入 Auth、Postgres、对象存储、Edge Function、短信能力和部署。
 - 秒哒兼容边界：当前本地基线是 Next.js 16.1.3，而已记录的秒哒稳定 Web 导入形态是 React + Vite。正式交付前必须重新核验平台能力；若仍不支持 Next.js，需提供 React + Vite 兼容构建，不能直接上传当前源码并宣称可部署。
 
