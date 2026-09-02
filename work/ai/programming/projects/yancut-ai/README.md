@@ -20,7 +20,7 @@
 - 视频包装：Remotion 已作为首选可控包装引擎；AI 会把包装预设映射成当前项目中的可编辑文字轨、标签和关键帧，不再要求用户离开剪辑主链路进入独立页面。HyperFrames 通过 provider 边界预留，不把插件页面或概念展示误写成已完成服务。
 - 测试模型：2026-08-13 通过兼容 OpenAI Chat Completions 的测试中转调用 `gpt-5.6-sol`，推理强度 `high`。这只是开发测试配置，不构成生产供应商承诺。
 - 本地开发目录：`F:\桌面文件\言剪AI`（2026-08-13 迁移并完成构建、启动验证）。
-- 代码现状：独立源码仓库为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `505b211`，远端源码提交 `8e75544`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。本轮远端提交同步 80 个运行时、数据库、界面和测试文件；GitHub Actions 工作流因当前令牌缺少 `workflow` 权限，仅保留在本地提交中。`ai-context` 只保存项目上下文，不保存完整源码。
+- 代码现状：独立源码仓库为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `3da4b43`，远端源码提交 `083bc91`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。本轮新增管理后台、共享配置、权限审计和动态运行配置共 29 个源码与文档文件；GitHub Actions 工作流因当前令牌缺少 `workflow` 权限，仍只保留在本地历史中。`ai-context` 只保存项目上下文，不保存完整源码。
 - 开发与部署分工：采用“本地权威源码 + 百度秒哒云端接管”。前端、业务逻辑、价格权益、数据库 Schema、接口合同、Mock 和自动化测试先在本地完成；验证通过后按编号压缩包交付百度秒哒，由秒哒接入 Auth、Postgres、对象存储、Edge Function、短信能力和部署。
 - 秒哒兼容边界：当前本地基线是 Next.js 16.1.3，而已记录的秒哒稳定 Web 导入形态是 React + Vite。正式交付前必须重新核验平台能力；若仍不支持 Next.js，需提供 React + Vite 兼容构建，不能直接上传当前源码并宣称可部署。
 
@@ -79,10 +79,13 @@
 - Remotion/HyperFrames 云渲染任务在数据库模式下持久化；远程状态地址限制为配置服务同源，失败任务自动退还积分。
 - 素材批量容量按总量预检并支持失败回滚；项目初始化、IndexedDB 清理和 hydration 前交互阻塞问题已修复。
 - 2026-09-02 完整回归：185 个单元测试、TypeScript、Next.js 31 路由生产构建和商业化 Playwright 主流程均通过；桌面首页、编辑器、价格页和移动端首屏无控制台错误。
+- 管理后台与共享后端已完成本地闭环：`/admin` 提供真实运行概览、用户管理员授权、15 项服务配置和审计记录；新增三张 Postgres 管理表与 4 组受保护 API，模型、声音、渲染和支付运行时均会读取后台覆盖配置。
+- 管理密钥只以 AES-256-GCM 密文入库并向浏览器返回掩码；本地演示模式仅限回环地址，生产环境必须使用真实 Auth、数据库和独立加密密钥。
+- 2026-09-02 管理端回归：187 个单元测试、TypeScript、Next.js 生产构建和 Playwright 商业主流程通过；`/admin` 浏览器控制台错误为 0。
 
 尚未完成：
 
-- 生产级账号、云端项目同步和秒哒云端接线；积分、订单、订阅与付费 API 已完成本地实现，仍需部署真实 Auth、数据库和支付适配器。
+- 秒哒生产接线、云端项目同步和跨账号隔离验收；管理后端、积分、订单、订阅与付费 API 已完成本地实现，仍需部署真实 Auth、Postgres、对象存储和支付适配器。
 - 声音克隆供应商的正式生产配置、授权留痕、录音质量检查和完整试听回写。
 - AI 自动剪辑对长视频、复杂多轨和失败回滚的系统验证。
 - Remotion/HyperFrames 云端渲染服务的生产部署、对象存储回写、并发和成本测试；当前已完成本地队列、远端 provider 合同、数据库任务记录和失败退款，仍需接入稳定的云任务服务。
@@ -105,6 +108,7 @@
 | [`revisions/2026-08-31-source-repo-professional-editing-queue.md`](./revisions/2026-08-31-source-repo-professional-editing-queue.md) | 自有源码仓库、专业剪辑命令、代理/高光/速度曲线和 Remotion 队列落地记录 |
 | [`revisions/2026-09-01-concat-template-slots-command-queue.md`](./revisions/2026-09-01-concat-template-slots-command-queue.md) | Concat 成熟度与许可判断、真实模板槽位、AI 串行命令和 ducking 单位修复记录 |
 | [`revisions/2026-09-02-commercialization-closure.md`](./revisions/2026-09-02-commercialization-closure.md) | 免费与付费边界、积分套餐、订单/订阅/声音/渲染数据模型、安全策略、验证证据和上线条件 |
+| [`revisions/2026-09-02-admin-shared-backend.md`](./revisions/2026-09-02-admin-shared-backend.md) | 管理后台、共享配置、管理员权限、审计记录、动态运行配置和秒哒接线顺序 |
 
 ## AI 调用规则
 

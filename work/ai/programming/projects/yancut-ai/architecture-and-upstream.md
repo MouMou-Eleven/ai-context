@@ -108,6 +108,6 @@
 | Remotion 本地版本 | 4.0.506；本地渲染闭环已验证 | 本地依赖与实测 | 2026-08-31 |
 | Shotcut 参考状态 | 26.8 系列；GPLv3；Qt 6/C++，依赖 MLT、FFmpeg、Frei0r、SDL | Shotcut GitHub、Features、Roadmap | 2026-08-31 |
 | Concat 参考状态 | `v0.2.0-alpha.16`；MPL-2.0；React/Tauri/Rust/FFmpeg；真实但仍是单人主导 alpha | Concat GitHub、Architecture、Releases、Issues、License | 2026-09-01 |
-| 言剪 AI 源码仓库 | 私有 `MouMou-Eleven/yancut-ai`；本地 `main` 提交 `b1cbd34`；远端提交 `205a66a`；`upstream` 保留 OpenCut | GitHub API、Git Data API、Git 远端核验 | 2026-09-01 |
+| 言剪 AI 源码仓库 | 私有 `MouMou-Eleven/yancut-ai`；本地 `main` 提交 `3da4b43`；远端提交 `083bc91`；`upstream` 保留 OpenCut | 本地 Git、GitHub API、Git Data API 远端核验 | 2026-09-02 |
 
 这些动态事实后续使用前必须重新核验，不能把本表永久当作当前真相。

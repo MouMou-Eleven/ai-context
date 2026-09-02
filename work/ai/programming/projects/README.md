@@ -6,7 +6,7 @@
 
 | 项目 | 上下文入口 | 源码状态 |
 |---|---|---|
-| 言剪 AI | [`yancut-ai/`](./yancut-ai/README.md) | 本地开发中；独立远程源码仓库待确认 |
+| 言剪 AI | [`yancut-ai/`](./yancut-ai/README.md) | 本地持续开发；独立私有源码仓库 `MouMou-Eleven/yancut-ai` 已建立并同步 |
 | 混世魔牛游戏 | 本目录仅保留索引 | 统一源码仓库中的 `projects/hunshi-moniu/` |
 | 杨建委个人网站 | 本目录仅保留索引 | 统一源码仓库中的 `projects/jianwei-portfolio/` |
 
@@ -14,6 +14,7 @@
 
 | 仓库 | 项目目录 | 使用边界 |
 |---|---|---|
+| [`MouMou-Eleven/yancut-ai`](https://github.com/MouMou-Eleven/yancut-ai) | 独立仓库根目录 | 言剪 AI 权威源码；本仓库只保存事实、决策、修订与继续开发规则 |
 | [`MouMou-Eleven/ai-programming-development`](https://github.com/MouMou-Eleven/ai-programming-development) | `projects/hunshi-moniu/`、`projects/jianwei-portfolio/` | 继续开发、测试或构建时读取对应项目 README；源码不复制进本仓库 |
 
 ## 规则
