@@ -23,7 +23,7 @@
   和字幕/转写文本作为多模态上下文发送；本地实测返回 HTTP 200。API Key 只保存在本地忽略文件
   或部署平台密钥管理中，不写入仓库。
 - 本地开发目录：`F:\桌面文件\言剪AI`（2026-08-13 迁移并完成构建、启动验证）。
-- 代码现状：独立源码仓库为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `d01e647`，远端源码提交 `fdadd31`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。本轮新增 GLM 多模态规划、客服二维码人工购买、金额格式修正、模型测试夹具同步和完整人工验收清单；GitHub Actions 工作流因当前令牌缺少 `workflow` 权限，仍只保留在本地历史中。`ai-context` 只保存项目上下文，不保存完整源码。
+- 代码现状：独立源码仓库为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `7295a2b`，远端源码提交待本轮 Git Data API 验证，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。本轮新增本地免登录演示开关、13 个基础 GPU 特效、扩充贴纸、AI 特效/贴纸命令和共享语言状态；`ai-context` 只保存项目上下文，不保存完整源码。
 - 开发与部署分工：采用“本地权威源码 + 百度秒哒云端接管”。前端、业务逻辑、价格权益、数据库 Schema、接口合同、Mock 和自动化测试先在本地完成；验证通过后按编号压缩包交付百度秒哒，由秒哒接入 Auth、Postgres、对象存储、Edge Function、短信能力和部署。
 - 秒哒兼容边界：当前本地基线是 Next.js 16.1.3，而已记录的秒哒稳定 Web 导入形态是 React + Vite。正式交付前必须重新核验平台能力；若仍不支持 Next.js，需提供 React + Vite 兼容构建，不能直接上传当前源码并宣称可部署。
 
@@ -86,6 +86,7 @@
 - 管理密钥只以 AES-256-GCM 密文入库并向浏览器返回掩码；本地演示模式仅限回环地址，生产环境必须使用真实 Auth、数据库和独立加密密钥。
 - 2026-09-02 管理端回归：187 个单元测试、TypeScript、Next.js 生产构建和 Playwright 商业主流程通过；`/admin` 浏览器控制台错误为 0。
 - 2026-09-03 模型与购买流程更新：价格页改为“联系客服购买”，通过客服二维码/联系方式人工确认后开通积分；兼容旧收银台的接口不再创建订单或发起扣款。用户确认的微信二维码已作为站内资源内置，联系方式为 `15020414318`，不设置客服名称；后台可覆盖二维码和联系方式。GLM-5.3-Flash 多模态规划参数已接入，图片/视频/字幕上下文会进入模型请求。
+- 2026-09-03 本地演示与画面能力更新：`YANCUT_LOCAL_DEMO_MODE=true` 时未登录可完成钱包、AI 计划和本地编辑演示；新增 13 个基础 GPU 特效、7 个模糊变体、扩充创作贴纸、AI 特效/贴纸命令，并修复属性中文文案与多面板语言状态同步。验证覆盖 TypeScript、Rust/WASM、Next.js 生产构建、接口 200 和浏览器面板。
 
 尚未完成：
 
@@ -114,6 +115,7 @@
 | [`revisions/2026-09-02-commercialization-closure.md`](./revisions/2026-09-02-commercialization-closure.md) | 免费与付费边界、积分套餐、订单/订阅/声音/渲染数据模型、安全策略、验证证据和上线条件 |
 | [`revisions/2026-09-02-admin-shared-backend.md`](./revisions/2026-09-02-admin-shared-backend.md) | 管理后台、共享配置、管理员权限、审计记录、动态运行配置和秒哒接线顺序 |
 | [`revisions/2026-09-03-glm53-manual-purchase.md`](./revisions/2026-09-03-glm53-manual-purchase.md) | GLM-5.3-Flash 多模态规划、官方接口实测与客服扫码人工购买流程 |
+| [`revisions/2026-09-03-local-demo-effects-stickers.md`](./revisions/2026-09-03-local-demo-effects-stickers.md) | 本地免登录演示、GPU 特效、AI 特效/贴纸命令、贴纸扩充与中文状态修复 |
 | 源码仓库 `docs/yancut/manual-test-checklist.md` | 网站完整功能清单、人工验收步骤、自动门禁与秒嗒上线前测试边界 |
 
 ## AI 调用规则

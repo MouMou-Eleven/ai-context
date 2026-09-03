@@ -53,6 +53,7 @@
 - AI 上下文中的播放头和项目时长统一使用秒，写入 OpenCut 时间线时再转换为 ticks。
 - 当前可本地执行的专业命令包括：剪气口、生成字幕、倍速与保持音调、淡入淡出关键帧、文字安全区、画幅、音量和可编辑动效包装。
 - 新增专业命令包括：真实转场、前景人声驱动 ducking、响度/波形分析、低分辨率预览代理、分段速度曲线和音频/字幕证据驱动的高光切片。
+- 画面能力还包括 13 个基础 GPU 特效、7 个模糊变体和可由 AI 调用的贴纸命令；本地演示通过 `YANCUT_LOCAL_DEMO_MODE=true` 提供未登录的计划与积分环境，公网部署必须关闭。
 
 测试环境变量：
 
@@ -108,7 +109,7 @@
 | Remotion 本地版本 | 4.0.506；本地渲染闭环已验证 | 本地依赖与实测 | 2026-08-31 |
 | Shotcut 参考状态 | 26.8 系列；GPLv3；Qt 6/C++，依赖 MLT、FFmpeg、Frei0r、SDL | Shotcut GitHub、Features、Roadmap | 2026-08-31 |
 | Concat 参考状态 | `v0.2.0-alpha.16`；MPL-2.0；React/Tauri/Rust/FFmpeg；真实但仍是单人主导 alpha | Concat GitHub、Architecture、Releases、Issues、License | 2026-09-01 |
-| 言剪 AI 源码仓库 | 私有 `MouMou-Eleven/yancut-ai`；本地 `main` 提交 `d01e647`；远端提交 `fdadd31`；`upstream` 保留 OpenCut | 本地 Git、GitHub API、Git Data API 远端核验 | 2026-09-03 |
+| 言剪 AI 源码仓库 | 私有 `MouMou-Eleven/yancut-ai`；本地 `main` 提交 `7295a2b`；远端提交待本轮 Git Data API 验证；`upstream` 保留 OpenCut | 本地 Git、GitHub API、Git Data API 远端核验 | 2026-09-03 |
 | 主规划模型 | `glm-5.3-flash`；智谱官方 OpenAI 兼容接口；多模态图片/视频/字幕上下文；`temperature=1`、`top_p=0.95`、推理强度 `max` | <https://docs.bigmodel.cn/api-reference/模型-api/对话补全>、用户提供官方文档与本地 HTTP 200 实测 | 2026-09-03 |
 | 购买方式 | 价格页客服二维码/联系方式人工确认并开通积分；网页不自动扣款 | 言剪 AI 本地 `/api/yancut/billing/support` 与价格页实测 | 2026-09-03 |
 
