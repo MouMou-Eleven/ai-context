@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "role-adaptive-workbench",
+  "storageMode": "skill-snapshot",
+  "origin": "internal",
+  "sourcePath": "skill",
+  "syncedAt": "2026-09-04",
+  "workflowRevision": 2,
+  "approvalMode": "conversation-first-compact-confirmation",
+  "defaultOutputMode": "role-adapted-workbench-plan-or-implementation",
+  "upstreamReferences": [],
+  "updatePolicy": "review-and-merge"
+}

@@ -1,4 +1,0 @@
-interface:
-  display_name: "建委 AI 学习社群工作台"
-  short_description: "按任意身份生成完整、跨端、可落地的 AI 学习社群工作台"
-  default_prompt: "请先识别我的身份与首要结果，用最少问题为我生成一套可执行的 AI 学习社群工作台方案。"

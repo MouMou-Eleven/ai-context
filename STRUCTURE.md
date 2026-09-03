@@ -150,8 +150,8 @@ ai-context/
 │   │   │   │   │   │       │   └── parameterization-contract.md
 │   │   │   │   │   │       └── scripts/
 │   │   │   │   │   │           └── validate_blueprint.py
-│   │   │   │   │   ├── jianwei-ai-learning-community-workbench/
-│   │   │   │   │   │   ├── README.md              通用身份适配型学习社群工作台 Skill 说明
+│   │   │   │   │   ├── role-adaptive-workbench/
+│   │   │   │   │   │   ├── README.md              通用身份适配型工作台设计 Skill 说明
 │   │   │   │   │   │   ├── upstream.json          来源、版本与维护策略
 │   │   │   │   │   │   └── skill/                 可直接安装的完整 Skill
 │   │   │   │   │   │       ├── SKILL.md
