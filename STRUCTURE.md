@@ -150,6 +150,18 @@ ai-context/
 │   │   │   │   │   │       │   └── parameterization-contract.md
 │   │   │   │   │   │       └── scripts/
 │   │   │   │   │   │           └── validate_blueprint.py
+│   │   │   │   │   ├── jianwei-ai-learning-community-workbench/
+│   │   │   │   │   │   ├── README.md              通用身份适配型学习社群工作台 Skill 说明
+│   │   │   │   │   │   ├── upstream.json          来源、版本与维护策略
+│   │   │   │   │   │   └── skill/                 可直接安装的完整 Skill
+│   │   │   │   │   │       ├── SKILL.md
+│   │   │   │   │   │       ├── agents/
+│   │   │   │   │   │       │   └── openai.yaml
+│   │   │   │   │   │       └── references/
+│   │   │   │   │   │           ├── conversation-protocol.md
+│   │   │   │   │   │           ├── design-system.md
+│   │   │   │   │   │           ├── quality-gate.md
+│   │   │   │   │   │           └── role-adaptation.md
 │   │   │   │   │   └── editaplot/
 │   │   │   │   │       ├── README.md              科研绘图 Skill 的调用、前提与更新方法
 │   │   │   │   │       ├── upstream.json          上游仓库、分支、commit 与许可
@@ -189,8 +201,10 @@ ai-context/
 │   │   │               │                         Concat 模板槽位与命令队列修订
 │   │   │               ├── 2026-09-02-admin-shared-backend.md
 │   │   │               │                         管理后台与共享后端闭环修订
-│   │   │               └── 2026-09-02-commercialization-closure.md
-│   │   │                                         商业化闭环与上线边界修订
+│   │   │               ├── 2026-09-02-commercialization-closure.md
+│   │   │               │                         商业化闭环与上线边界修订
+│   │   │               └── 2026-09-03-glm53-manual-purchase.md
+│   │   │                                         GLM 模型与手动购买流程修订
 │   │   │
 │   │   ├── training/                              三级目录：AI 培训
 │   │   │   ├── README.md                          AI 培训总入口
@@ -234,8 +248,10 @@ ai-context/
 │   │   │               │                             第 5 节课后 AI 时代目的与参数解释修订
 │   │   │               ├── 2026-09-01-training-rule-scope-and-delivery-boundary.md
 │   │   │               │                             AI 培训规则适用场景与课堂交付边界修订
-│   │   │               └── 2026-09-01-training-rule-single-source-and-technical-selection.md
-│   │   │                                             AI 培训单一来源与技术内容筛选修订
+│   │   │               ├── 2026-09-01-training-rule-single-source-and-technical-selection.md
+│   │   │               │                             AI 培训单一来源与技术内容筛选修订
+│   │   │               └── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md
+│   │   │                                             秒哒进阶课场景驱动更新修订
 │   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
@@ -330,8 +346,14 @@ ai-context/
 │       │       │                                  宽屏工作台、素材与音乐提示词改造
 │       │       ├── 2026-08-24-overseas-sound-oracle-and-stem-artifact-system.md
 │       │       │                                  海外声音产品与天干法器视觉系统
-│       │       └── 2026-08-24-context-relocation-to-other.md
-│       │                                          项目迁入 other 与唯一写入位置修订
+│       │       ├── 2026-08-24-context-relocation-to-other.md
+│       │       │                                  项目迁入 other 与唯一写入位置修订
+│       │       ├── 2026-09-02-five-tone-product-flow-and-private-audio-demo.md
+│       │       │                                  五音产品流程与私有音频演示修订
+│       │       ├── 2026-09-02-harmony-v6-ui-audit-and-interaction-fix.md
+│       │       │                                  V6 界面审计与交互修复
+│       │       └── 2026-09-02-product-v7-ui-and-profile-center.md
+│       │                                          V7 产品界面与个人中心修订
 │       └── inshan-popupiano/                      三级目录：海外电商项目
 │           ├── README.md                          当前合作模式、事实和待澄清项
 │           ├── 90-day-cold-start-plan.md          90 天冷启动执行方案
@@ -463,4 +485,4 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 不保存密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
 - 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；提交前自动生成 `STRUCTURE.html`，再运行 `repository/maintenance/sync-desktop-structure.ps1`。桌面暂不可用时只延后镜像同步，不阻断仓库提交；后续 Git 操作会自动补齐。
 
-*结构最后确认：2026-08-24*
+*结构最后确认：2026-09-03*
