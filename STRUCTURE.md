@@ -150,7 +150,7 @@ ai-context/
 │   │   │   │   │   │       │   └── parameterization-contract.md
 │   │   │   │   │   │       └── scripts/
 │   │   │   │   │   │           └── validate_blueprint.py
-│   │   │   │   │   ├── role-adaptive-workbench/
+│   │   │   │   │   ├── jianwei-ai-learning-community-workbench/
 │   │   │   │   │   │   ├── README.md              通用身份适配型工作台设计 Skill 说明
 │   │   │   │   │   │   ├── upstream.json          来源、版本与维护策略
 │   │   │   │   │   │   └── skill/                 可直接安装的完整 Skill
@@ -203,6 +203,8 @@ ai-context/
 │   │   │               │                         管理后台与共享后端闭环修订
 │   │   │               ├── 2026-09-02-commercialization-closure.md
 │   │   │               │                         商业化闭环与上线边界修订
+│   │   │               ├── 2026-09-03-local-demo-effects-stickers.md
+│   │   │               │                         本地演示特效与贴纸效果修订
 │   │   │               └── 2026-09-03-glm53-manual-purchase.md
 │   │   │                                         GLM 模型与手动购买流程修订
 │   │   │

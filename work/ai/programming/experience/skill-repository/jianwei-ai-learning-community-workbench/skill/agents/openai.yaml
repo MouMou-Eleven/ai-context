@@ -1,0 +1,4 @@
+interface:
+  display_name: "建委 AI 学习社群工作台"
+  short_description: "按任意身份和真实任务设计完整、跨端的 AI 工作台"
+  default_prompt: "使用 $jianwei-ai-learning-community-workbench，先识别我的身份与首要工作结果，用最少的问题补齐场景，再生成匹配我的 AI 工作台方案。"

@@ -1,11 +1,11 @@
-# role-adaptive-workbench
+# jianwei-ai-learning-community-workbench
 
-通用身份适配型 AI 工作台设计 Skill。用户输入任意职业、角色或场景后，Skill 先识别角色与首要结果，再通过少轮高信息量对话补齐关键变量，最后输出工作台产品方案、信息架构、视觉系统、跨端策略或可执行前端实现要求。
+由杨建委维护的通用身份适配型 AI 工作台设计 Skill。名称用于定位社群专属工具，能力不绑定任何个人业务；用户输入任意职业、角色或场景后，Skill 先识别角色与首要结果，再通过少轮高信息量对话补齐关键变量，最后输出工作台产品方案、信息架构、视觉系统、跨端策略或可执行前端实现要求。
 
 ## 调用
 
-- Skill 名称：`role-adaptive-workbench`
-- Codex 调用：`$role-adaptive-workbench`
+- Skill 名称：`jianwei-ai-learning-community-workbench`
+- Codex 调用：`$jianwei-ai-learning-community-workbench`
 - 实体入口：[`skill/SKILL.md`](./skill/SKILL.md)
 - 来源记录：[`upstream.json`](./upstream.json)
 

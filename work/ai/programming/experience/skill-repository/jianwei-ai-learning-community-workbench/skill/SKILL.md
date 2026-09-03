@@ -1,6 +1,9 @@
 ---
-name: role-adaptive-workbench
+name: jianwei-ai-learning-community-workbench
 description: "根据用户输入的任意身份、角色或职业，先用一轮高信息量问题补齐真实工作场景，再设计并实现匹配该身份的 AI 工作台、产品流程、UI 交互和跨端体验。适合从简短需求生成完整工作台，不绑定预设角色。"
+metadata:
+  author: "杨建委"
+  scope: "通用身份适配与产品设计"
 ---
 
 # 身份适配工作台设计 Skill
