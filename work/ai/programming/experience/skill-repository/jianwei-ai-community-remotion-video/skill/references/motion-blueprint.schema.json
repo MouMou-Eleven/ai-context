@@ -4,7 +4,7 @@
   "title": "Jianwei Remotion Motion Blueprint",
   "type": "object",
   "additionalProperties": false,
-  "required": ["request", "approval", "creativeDirection", "motionSystem", "timeline", "parameterization", "remotionPlan", "quality"],
+  "required": ["request", "approval", "referenceFidelity", "creativeDirection", "motionSystem", "timeline", "parameterization", "remotionPlan", "renderPipeline", "quality"],
   "properties": {
     "request": {
       "type": "object",
@@ -63,6 +63,36 @@
           }
         },
         "risks": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "referenceFidelity": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["mode", "sourceWidth", "sourceHeight", "exactCopy", "protectedElements", "allowedDifferences", "criticalRegions", "finalFrameRule", "comparisonMethod"],
+      "properties": {
+        "mode": {"enum": ["reference-locked", "editable-overlay", "rebuild"]},
+        "sourceWidth": {"type": "integer", "minimum": 1},
+        "sourceHeight": {"type": "integer", "minimum": 1},
+        "exactCopy": {"type": "array", "items": {"type": "string"}},
+        "protectedElements": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "allowedDifferences": {"type": "array", "items": {"type": "string"}},
+        "criticalRegions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "role", "normalizedBounds", "tolerancePercent"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "role": {"type": "string", "minLength": 1},
+              "normalizedBounds": {"type": "array", "prefixItems": [{"type": "number", "minimum": 0, "maximum": 1}, {"type": "number", "minimum": 0, "maximum": 1}, {"type": "number", "exclusiveMinimum": 0, "maximum": 1}, {"type": "number", "exclusiveMinimum": 0, "maximum": 1}], "items": false, "minItems": 4, "maxItems": 4},
+              "tolerancePercent": {"type": "number", "minimum": 0, "maximum": 10}
+            }
+          }
+        },
+        "finalFrameRule": {"type": "string", "minLength": 1},
+        "comparisonMethod": {"type": "string", "minLength": 1}
       }
     },
     "creativeDirection": {
@@ -202,6 +232,22 @@
         "checkFrames": {"type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 3}
       }
     },
+    "renderPipeline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["previewFirst", "previewScale", "previewMaxLongEdge", "previewCodec", "finalRenderRequiresApproval", "finalApprovalStatus", "finalApprovalEvidence", "rendererPolicy", "performanceNotes"],
+      "properties": {
+        "previewFirst": {"const": true},
+        "previewScale": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "previewMaxLongEdge": {"type": "integer", "minimum": 320},
+        "previewCodec": {"type": "string", "minLength": 1},
+        "finalRenderRequiresApproval": {"const": true},
+        "finalApprovalStatus": {"enum": ["pending", "approved", "waived"]},
+        "finalApprovalEvidence": {"type": ["string", "null"]},
+        "rendererPolicy": {"enum": ["default-first", "software-fallback", "software-only"]},
+        "performanceNotes": {"type": "string", "minLength": 1}
+      }
+    },
     "quality": {
       "type": "object",
       "additionalProperties": false,
@@ -211,5 +257,21 @@
         "evidenceRequired": {"type": "array", "items": {"type": "string"}, "minItems": 1}
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"request": {"properties": {"inputMode": {"enum": ["image", "hybrid"]}}}}},
+      "then": {
+        "required": ["visualAnalysis"],
+        "properties": {
+          "visualAnalysis": {"type": "object"},
+          "referenceFidelity": {"type": "object"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"request": {"properties": {"inputMode": {"const": "text"}}}}},
+      "then": {"properties": {"referenceFidelity": {"type": "null"}}}
+    }
+  ]
 }

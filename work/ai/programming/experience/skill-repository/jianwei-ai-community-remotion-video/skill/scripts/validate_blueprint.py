@@ -14,11 +14,13 @@ from typing import Any
 TOP_LEVEL = (
     "request",
     "approval",
+    "referenceFidelity",
     "creativeDirection",
     "motionSystem",
     "timeline",
     "parameterization",
     "remotionPlan",
+    "renderPipeline",
     "quality",
 )
 
@@ -41,6 +43,89 @@ def require_string_list(value: Any, location: str, errors: list[str], minimum: i
         errors.append(f"{location} must be an array of strings")
     elif len(value) < minimum:
         errors.append(f"{location} must contain at least {minimum} item(s)")
+
+
+def validate_reference_fidelity(value: Any, input_mode: Any, errors: list[str]) -> None:
+    location = "$.referenceFidelity"
+    if input_mode == "text":
+        if value is not None:
+            errors.append(f"{location} must be null for text input")
+        return
+    if not isinstance(value, dict):
+        errors.append(f"{location} must be an object for image or hybrid input")
+        return
+    require_keys(
+        value,
+        ("mode", "sourceWidth", "sourceHeight", "exactCopy", "protectedElements", "allowedDifferences", "criticalRegions", "finalFrameRule", "comparisonMethod"),
+        location,
+        errors,
+    )
+    if value.get("mode") not in {"reference-locked", "editable-overlay", "rebuild"}:
+        errors.append(f"{location}.mode is invalid")
+    for key in ("sourceWidth", "sourceHeight"):
+        dimension = value.get(key)
+        if not isinstance(dimension, int) or isinstance(dimension, bool) or dimension <= 0:
+            errors.append(f"{location}.{key} must be a positive integer")
+    require_string_list(value.get("exactCopy"), f"{location}.exactCopy", errors)
+    require_string_list(value.get("protectedElements"), f"{location}.protectedElements", errors, 1)
+    require_string_list(value.get("allowedDifferences"), f"{location}.allowedDifferences", errors)
+    for key in ("finalFrameRule", "comparisonMethod"):
+        if not isinstance(value.get(key), str) or not value.get(key, "").strip():
+            errors.append(f"{location}.{key} must be a non-empty string")
+    regions = value.get("criticalRegions")
+    if not isinstance(regions, list) or not regions:
+        errors.append(f"{location}.criticalRegions must be a non-empty array")
+    else:
+        for index, region in enumerate(regions):
+            region_location = f"{location}.criticalRegions[{index}]"
+            require_keys(region, ("name", "role", "normalizedBounds", "tolerancePercent"), region_location, errors)
+            if not isinstance(region, dict):
+                continue
+            for key in ("name", "role"):
+                if not isinstance(region.get(key), str) or not region.get(key, "").strip():
+                    errors.append(f"{region_location}.{key} must be a non-empty string")
+            bounds = region.get("normalizedBounds")
+            if not isinstance(bounds, list) or len(bounds) != 4 or any(not is_number(item) or item < 0 or item > 1 for item in bounds):
+                errors.append(f"{region_location}.normalizedBounds must contain four numbers in the 0..1 range")
+            tolerance = region.get("tolerancePercent")
+            if not is_number(tolerance) or tolerance < 0 or tolerance > 10:
+                errors.append(f"{region_location}.tolerancePercent must be between 0 and 10")
+
+
+def validate_render_pipeline(value: Any, errors: list[str]) -> None:
+    location = "$.renderPipeline"
+    require_keys(
+        value,
+        ("previewFirst", "previewScale", "previewMaxLongEdge", "previewCodec", "finalRenderRequiresApproval", "finalApprovalStatus", "finalApprovalEvidence", "rendererPolicy", "performanceNotes"),
+        location,
+        errors,
+    )
+    if not isinstance(value, dict):
+        return
+    if value.get("previewFirst") is not True:
+        errors.append(f"{location}.previewFirst must be true")
+    scale = value.get("previewScale")
+    if not is_number(scale) or scale <= 0 or scale > 1:
+        errors.append(f"{location}.previewScale must be greater than 0 and at most 1")
+    max_edge = value.get("previewMaxLongEdge")
+    if not isinstance(max_edge, int) or isinstance(max_edge, bool) or max_edge < 320:
+        errors.append(f"{location}.previewMaxLongEdge must be an integer of at least 320")
+    if not isinstance(value.get("previewCodec"), str) or not value.get("previewCodec", "").strip():
+        errors.append(f"{location}.previewCodec must be a non-empty string")
+    if value.get("finalRenderRequiresApproval") is not True:
+        errors.append(f"{location}.finalRenderRequiresApproval must be true")
+    status = value.get("finalApprovalStatus")
+    if status not in {"pending", "approved", "waived"}:
+        errors.append(f"{location}.finalApprovalStatus is invalid")
+    evidence = value.get("finalApprovalEvidence")
+    if status in {"approved", "waived"} and (not isinstance(evidence, str) or not evidence.strip()):
+        errors.append(f"{location}.finalApprovalEvidence must quote explicit final-render approval")
+    if status == "pending" and evidence is not None:
+        errors.append(f"{location}.finalApprovalEvidence must be null while finalApprovalStatus is pending")
+    if value.get("rendererPolicy") not in {"default-first", "software-fallback", "software-only"}:
+        errors.append(f"{location}.rendererPolicy is invalid")
+    if not isinstance(value.get("performanceNotes"), str) or not value.get("performanceNotes", "").strip():
+        errors.append(f"{location}.performanceNotes must be a non-empty string")
 
 
 def validate(data: Any) -> list[str]:
@@ -79,6 +164,9 @@ def validate(data: Any) -> list[str]:
         require_string_list(request.get("assumptions"), "$.request.assumptions", errors)
         if input_mode in {"image", "hybrid"} and not isinstance(data.get("visualAnalysis"), dict):
             errors.append("$.visualAnalysis is required for image and hybrid input")
+        validate_reference_fidelity(data.get("referenceFidelity"), input_mode, errors)
+    elif "referenceFidelity" in data:
+        validate_reference_fidelity(data.get("referenceFidelity"), None, errors)
 
     approval = data.get("approval")
     require_keys(approval, ("mode", "status", "approvedScope", "evidence"), "$.approval", errors)
@@ -317,6 +405,8 @@ def validate(data: Any) -> list[str]:
         if not isinstance(check_frames, list) or len(check_frames) < 3 or any(not isinstance(frame, int) or isinstance(frame, bool) or frame < 0 for frame in check_frames):
             errors.append("$.remotionPlan.checkFrames must contain at least 3 non-negative integers")
 
+    validate_render_pipeline(data.get("renderPipeline"), errors)
+
     quality = data.get("quality")
     require_keys(quality, ("acceptanceCriteria", "evidenceRequired"), "$.quality", errors)
     if isinstance(quality, dict):
@@ -345,6 +435,7 @@ def run_self_test() -> int:
             "approvedScope": [],
             "evidence": None,
         },
+        "referenceFidelity": None,
         "creativeDirection": {
             "concept": "One controlled bounce",
             "targetFrame": "A front-facing card resting at the center",
@@ -403,6 +494,17 @@ def run_self_test() -> int:
             "editableProps": ["title", "accentColor"],
             "documentationToLoad": ["remotion-markup", "remotion-interactivity", "remotion-markup/parameters"],
             "checkFrames": [0, 24, 48],
+        },
+        "renderPipeline": {
+            "previewFirst": True,
+            "previewScale": 0.5,
+            "previewMaxLongEdge": 960,
+            "previewCodec": "H.264 MP4 CRF 28",
+            "finalRenderRequiresApproval": True,
+            "finalApprovalStatus": "pending",
+            "finalApprovalEvidence": None,
+            "rendererPolicy": "default-first",
+            "performanceNotes": "Reuse the same Composition and timing; report actual renderer and elapsed time",
         },
         "quality": {
             "acceptanceCriteria": ["Card is readable at the landing"],

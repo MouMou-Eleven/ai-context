@@ -147,8 +147,11 @@ ai-context/
 │   │   │   │   │   │       │   ├── output-contract.md
 │   │   │   │   │   │       │   ├── quality-gates.md
 │   │   │   │   │   │       │   ├── remotion-contract.md
-│   │   │   │   │   │       │   └── parameterization-contract.md
+│   │   │   │   │   │       │   ├── parameterization-contract.md
+│   │   │   │   │   │       │   ├── reference-fidelity-contract.md
+│   │   │   │   │   │       │   └── render-performance-contract.md
 │   │   │   │   │   │       └── scripts/
+│   │   │   │   │   │           ├── compare_reference_frame.py
 │   │   │   │   │   │           └── validate_blueprint.py
 │   │   │   │   │   ├── jianwei-ai-learning-community-workbench/
 │   │   │   │   │   │   ├── README.md              通用身份适配型工作台设计 Skill 说明
@@ -205,8 +208,10 @@ ai-context/
 │   │   │               │                         商业化闭环与上线边界修订
 │   │   │               ├── 2026-09-03-local-demo-effects-stickers.md
 │   │   │               │                         本地演示特效与贴纸效果修订
-│   │   │               └── 2026-09-03-glm53-manual-purchase.md
+│   │   │               ├── 2026-09-03-glm53-manual-purchase.md
 │   │   │                                         GLM 模型与手动购买流程修订
+│   │   │               └── 2026-09-04-ai-progress-remotion-hyperframes-keyframes.md
+│   │   │                                         AI 执行进度可视化、Remotion 本地预检与手动关键帧修订
 │   │   │
 │   │   ├── training/                              三级目录：AI 培训
 │   │   │   ├── README.md                          AI 培训总入口
@@ -421,9 +426,11 @@ ai-context/
 │       ├── 2026-09-01-remotion-skill-confirmation-and-action-contract.md
 │       │                                         Remotion Skill 确认门与逐元素动作契约修订
 │       ├── 2026-09-01-remotion-skill-director-and-parameterization.md
-│       └── 2026-09-02-jianwei-remotion-parameterization.md
+│       ├── 2026-09-02-jianwei-remotion-parameterization.md
 │                                                 Studio 右侧 Default Props 可编辑性验收修订
 │                                                 Remotion Skill 导演层、重叠节奏与参数化默认输出修订
+│       └── 2026-09-04-remotion-reference-fidelity-and-preview-gate.md
+│                                                 Remotion Skill 参考图保真、低清预览与最终渲染确认门修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界
@@ -487,4 +494,4 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 不保存密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
 - 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；提交前自动生成 `STRUCTURE.html`，再运行 `repository/maintenance/sync-desktop-structure.ps1`。桌面暂不可用时只延后镜像同步，不阻断仓库提交；后续 Git 操作会自动补齐。
 
-*结构最后确认：2026-09-03*
+*结构最后确认：2026-09-04*

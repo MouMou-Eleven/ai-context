@@ -4,6 +4,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-09-04 | [`remotion-reference-fidelity-and-preview-gate.md`](./2026-09-04-remotion-reference-fidelity-and-preview-gate.md) | 将参考图目标最终帧、关键区域对比、只重建必要元素、低清预览与最终渲染二次确认、默认 Chromium 渲染优先级和性能预算提升为可执行硬门槛 |
 | 2026-09-01 | [`remotion-skill-director-and-parameterization.md`](./2026-09-01-remotion-skill-director-and-parameterization.md) | 将目标最终帧、状态反差、记忆点、收尾回扣和因果重叠提升为导演硬门槛，并把可编辑文字、编号与颜色的参数化 Remotion 工程设为默认输出 |
 | 2026-09-01 | [`remotion-skill-confirmation-and-action-contract.md`](./2026-09-01-remotion-skill-confirmation-and-action-contract.md) | 将 Remotion Skill 改为默认“规划确认后实施”，并建立逐元素触发、路径、缓动与因果动作契约 |
 | 2026-09-01 | [`ai-programming-skill-repository.md`](./2026-09-01-ai-programming-skill-repository.md) | 新增保存 Skill 实体的五级仓库、上游 commit 元数据和完整供应商快照治理规则 |
