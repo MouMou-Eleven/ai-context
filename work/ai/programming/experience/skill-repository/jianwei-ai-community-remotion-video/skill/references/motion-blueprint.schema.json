@@ -68,9 +68,12 @@
     "referenceFidelity": {
       "type": ["object", "null"],
       "additionalProperties": false,
-      "required": ["mode", "sourceWidth", "sourceHeight", "exactCopy", "protectedElements", "allowedDifferences", "criticalRegions", "finalFrameRule", "comparisonMethod"],
+      "required": ["mode", "renderPolicy", "terminalOverlay", "targetLayoutLocked", "sourceWidth", "sourceHeight", "exactCopy", "protectedElements", "allowedDifferences", "criticalRegions", "visualOwners", "finalHoldFrames", "finalFrameRule", "comparisonMethod"],
       "properties": {
-        "mode": {"enum": ["reference-locked", "editable-overlay", "rebuild"]},
+        "mode": {"enum": ["layout-locked", "raster-motion", "approved-redesign"]},
+        "renderPolicy": {"enum": ["reconstructed-elements-only", "single-raster-plane", "approved-reconstruction-differences"]},
+        "terminalOverlay": {"const": false},
+        "targetLayoutLocked": {"const": true},
         "sourceWidth": {"type": "integer", "minimum": 1},
         "sourceHeight": {"type": "integer", "minimum": 1},
         "exactCopy": {"type": "array", "items": {"type": "string"}},
@@ -91,6 +94,23 @@
             }
           }
         },
+        "visualOwners": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "normalizedBounds", "ownerType", "editable", "finalState"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "normalizedBounds": {"type": "array", "prefixItems": [{"type": "number", "minimum": 0, "maximum": 1}, {"type": "number", "minimum": 0, "maximum": 1}, {"type": "number", "exclusiveMinimum": 0, "maximum": 1}, {"type": "number", "exclusiveMinimum": 0, "maximum": 1}], "items": false, "minItems": 4, "maxItems": 4},
+              "ownerType": {"enum": ["text", "number", "logo", "icon", "shape", "image-crop", "background-plate", "svg", "canvas", "three", "other"]},
+              "editable": {"type": "boolean"},
+              "finalState": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "finalHoldFrames": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}], "items": false, "minItems": 3, "maxItems": 3},
         "finalFrameRule": {"type": "string", "minLength": 1},
         "comparisonMethod": {"type": "string", "minLength": 1}
       }

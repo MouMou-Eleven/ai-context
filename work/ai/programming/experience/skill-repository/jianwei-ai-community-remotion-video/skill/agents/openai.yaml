@@ -1,4 +1,4 @@
 interface:
   display_name: "jianwei-ai-community-remotion-video"
   short_description: "把一句话或参考图导演成自然、有记忆点的参数化 Remotion 动效"
-  default_prompt: "Use $jianwei-ai-community-remotion-video to lock a reference image as the target final frame, present the overlapping action and fidelity plan for my approval, then build a parameterized Remotion project, render a complete low-resolution preview first, and wait for my explicit final-render approval; text, numbers, and colors must be editable from Studio's right-side Default Props inspector."
+  default_prompt: "Use $jianwei-ai-community-remotion-video to treat an uploaded reference image as the geometry-locked target for the entire animation, present the visual-owner, layout, overlapping action and fidelity plan for my approval, then build a parameterized Remotion project with no full-frame terminal reference overlay, render a complete low-resolution preview first, audit the final-hold continuity, and wait for my explicit final-render approval; text, numbers, and colors must be editable from Studio's right-side Default Props inspector."

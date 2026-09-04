@@ -56,12 +56,25 @@ def validate_reference_fidelity(value: Any, input_mode: Any, errors: list[str]) 
         return
     require_keys(
         value,
-        ("mode", "sourceWidth", "sourceHeight", "exactCopy", "protectedElements", "allowedDifferences", "criticalRegions", "finalFrameRule", "comparisonMethod"),
+        ("mode", "renderPolicy", "terminalOverlay", "targetLayoutLocked", "sourceWidth", "sourceHeight", "exactCopy", "protectedElements", "allowedDifferences", "criticalRegions", "visualOwners", "finalHoldFrames", "finalFrameRule", "comparisonMethod"),
         location,
         errors,
     )
-    if value.get("mode") not in {"reference-locked", "editable-overlay", "rebuild"}:
+    if value.get("mode") not in {"layout-locked", "raster-motion", "approved-redesign"}:
         errors.append(f"{location}.mode is invalid")
+    if value.get("renderPolicy") not in {"reconstructed-elements-only", "single-raster-plane", "approved-reconstruction-differences"}:
+        errors.append(f"{location}.renderPolicy is invalid")
+    if value.get("terminalOverlay") is not False:
+        errors.append(f"{location}.terminalOverlay must be false; a full-frame terminal overlay is forbidden")
+    if value.get("targetLayoutLocked") is not True:
+        errors.append(f"{location}.targetLayoutLocked must be true")
+    expected_policy = {
+        "layout-locked": "reconstructed-elements-only",
+        "raster-motion": "single-raster-plane",
+        "approved-redesign": "approved-reconstruction-differences",
+    }.get(value.get("mode"))
+    if expected_policy and value.get("renderPolicy") != expected_policy:
+        errors.append(f"{location}.renderPolicy must be {expected_policy} for mode {value.get('mode')}")
     for key in ("sourceWidth", "sourceHeight"):
         dimension = value.get(key)
         if not isinstance(dimension, int) or isinstance(dimension, bool) or dimension <= 0:
@@ -90,6 +103,37 @@ def validate_reference_fidelity(value: Any, input_mode: Any, errors: list[str]) 
             tolerance = region.get("tolerancePercent")
             if not is_number(tolerance) or tolerance < 0 or tolerance > 10:
                 errors.append(f"{region_location}.tolerancePercent must be between 0 and 10")
+    owners = value.get("visualOwners")
+    if not isinstance(owners, list) or not owners:
+        errors.append(f"{location}.visualOwners must be a non-empty array")
+    else:
+        owner_names: set[str] = set()
+        for index, owner in enumerate(owners):
+            owner_location = f"{location}.visualOwners[{index}]"
+            require_keys(owner, ("name", "normalizedBounds", "ownerType", "editable", "finalState"), owner_location, errors)
+            if not isinstance(owner, dict):
+                continue
+            name = owner.get("name")
+            if not isinstance(name, str) or not name.strip():
+                errors.append(f"{owner_location}.name must be a non-empty string")
+            elif name in owner_names:
+                errors.append(f"{owner_location}.name must be unique")
+            else:
+                owner_names.add(name)
+            bounds = owner.get("normalizedBounds")
+            if not isinstance(bounds, list) or len(bounds) != 4 or any(not is_number(item) or item < 0 or item > 1 for item in bounds):
+                errors.append(f"{owner_location}.normalizedBounds must contain four numbers in the 0..1 range")
+            if owner.get("ownerType") not in {"text", "number", "logo", "icon", "shape", "image-crop", "background-plate", "svg", "canvas", "three", "other"}:
+                errors.append(f"{owner_location}.ownerType is invalid")
+            if not isinstance(owner.get("editable"), bool):
+                errors.append(f"{owner_location}.editable must be boolean")
+            if not isinstance(owner.get("finalState"), str) or not owner.get("finalState", "").strip():
+                errors.append(f"{owner_location}.finalState must be a non-empty string")
+    hold_frames = value.get("finalHoldFrames")
+    if not isinstance(hold_frames, list) or len(hold_frames) != 3 or any(not isinstance(frame, int) or isinstance(frame, bool) or frame < 0 for frame in hold_frames):
+        errors.append(f"{location}.finalHoldFrames must contain exactly three non-negative integer frames")
+    elif hold_frames != sorted(set(hold_frames)) or len(set(hold_frames)) != 3:
+        errors.append(f"{location}.finalHoldFrames must be three distinct frames in ascending order")
 
 
 def validate_render_pipeline(value: Any, errors: list[str]) -> None:
@@ -165,6 +209,12 @@ def validate(data: Any) -> list[str]:
         if input_mode in {"image", "hybrid"} and not isinstance(data.get("visualAnalysis"), dict):
             errors.append("$.visualAnalysis is required for image and hybrid input")
         validate_reference_fidelity(data.get("referenceFidelity"), input_mode, errors)
+        reference = data.get("referenceFidelity")
+        if isinstance(reference, dict) and isinstance(request.get("durationSeconds"), (int, float)) and isinstance(request.get("fps"), int):
+            max_frame = math.ceil(request["durationSeconds"] * request["fps"]) - 1
+            for index, frame in enumerate(reference.get("finalHoldFrames", [])):
+                if isinstance(frame, int) and not isinstance(frame, bool) and frame > max_frame:
+                    errors.append(f"$.referenceFidelity.finalHoldFrames[{index}] must be within the composition ({max_frame} max)")
     elif "referenceFidelity" in data:
         validate_reference_fidelity(data.get("referenceFidelity"), None, errors)
 
@@ -529,6 +579,37 @@ def run_self_test() -> int:
     invalid["parameterization"]["editableInStudio"] = False
     invalid["parameterization"]["fields"] = invalid["parameterization"]["fields"][:1]
     invalid_errors = validate(invalid)
+    image_valid = json.loads(json.dumps(valid))
+    image_valid["request"]["inputMode"] = "image"
+    image_valid["visualAnalysis"] = {
+        "observed": ["A single centered card"],
+        "hierarchy": ["Card", "Shadow"],
+        "coreVisual": "A card lands with a tactile bounce",
+        "preserve": ["Card silhouette"],
+        "mayChange": ["Card position during entry"],
+        "layerCandidates": [{"name": "Card", "role": "hero", "depth": 0, "source": "reconstructed DOM", "editable": True}],
+        "risks": ["Font metrics"],
+    }
+    image_valid["referenceFidelity"] = {
+        "mode": "layout-locked",
+        "renderPolicy": "reconstructed-elements-only",
+        "terminalOverlay": False,
+        "targetLayoutLocked": True,
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "exactCopy": ["Card title"],
+        "protectedElements": ["Card silhouette"],
+        "allowedDifferences": [],
+        "criticalRegions": [{"name": "Card", "role": "hero", "normalizedBounds": [0.2, 0.2, 0.6, 0.4], "tolerancePercent": 1}],
+        "visualOwners": [{"name": "Card", "normalizedBounds": [0.2, 0.2, 0.6, 0.4], "ownerType": "shape", "editable": True, "finalState": "Front-facing card at rest"}],
+        "finalHoldFrames": [48, 54, 59],
+        "finalFrameRule": "The same Card component reaches the target bounds; no full-frame reference layer",
+        "comparisonMethod": "Compare same-size PNG and three final-hold frames",
+    }
+    image_errors = validate(image_valid)
+    image_overlay = json.loads(json.dumps(image_valid))
+    image_overlay["referenceFidelity"]["terminalOverlay"] = True
+    image_overlay_errors = validate(image_overlay)
     if valid_errors:
         print("Self-test failed: valid fixture was rejected", file=sys.stderr)
         for error in valid_errors:
@@ -537,6 +618,16 @@ def run_self_test() -> int:
     if fixed_errors:
         print("Self-test failed: fixed-mode fixture was rejected", file=sys.stderr)
         for error in fixed_errors:
+            print(f"- {error}", file=sys.stderr)
+        return 1
+    if image_errors:
+        print("Self-test failed: valid image fixture was rejected", file=sys.stderr)
+        for error in image_errors:
+            print(f"- {error}", file=sys.stderr)
+        return 1
+    if not any("terminalOverlay must be false" in error for error in image_overlay_errors):
+        print("Self-test failed: terminal overlay was not rejected", file=sys.stderr)
+        for error in image_overlay_errors:
             print(f"- {error}", file=sys.stderr)
         return 1
     expected_invalid_fragments = (

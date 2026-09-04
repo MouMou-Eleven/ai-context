@@ -15,6 +15,8 @@
 - 参考图保真契约：[`skill/references/reference-fidelity-contract.md`](./skill/references/reference-fidelity-contract.md)
 - 渲染性能与预览流程：[`skill/references/render-performance-contract.md`](./skill/references/render-performance-contract.md)
 - 最终帧对比工具：[`skill/scripts/compare_reference_frame.py`](./skill/scripts/compare_reference_frame.py)
+- 生产参考图引用审计：[`skill/scripts/audit_reference_render_path.py`](./skill/scripts/audit_reference_render_path.py)
+- 最终稳定区连续性审计：[`skill/scripts/check_settle_continuity.py`](./skill/scripts/check_settle_continuity.py)
 - 来源记录：[`upstream.json`](./upstream.json)
 
 该目录保存完整、自包含的 Skill 快照。名称已于 2026-09-01 从 `jianwei-ai-community-video` 调整为当前名称。
@@ -28,3 +30,4 @@
 - 2026-09-01 对比 `motion-director` 实测后增加导演层：目标最终帧、状态反差、最值得记住的一秒、收尾回扣与因果重叠成为实施前硬门槛；同时将参数化工程提升为默认输出。
 - 2026-09-02 根据 Studio 实测补充参数化与右侧面板编辑契约：`schema` 与内联 `defaultProps` 必须直接挂在 `<Composition>`，并实际在 `Inspector → Default Props` 修改文字、编号和颜色，确认真实画面即时变化；仅有可选图层或“空参数”不再视为可编辑。
 - 2026-09-04 根据参考图定帧偏差与 5 秒视频渲染过慢的实测，增加参考图保真模式、关键区域对比工具、只重建必要元素、低清预览后最终渲染确认门、默认渲染器优先级和动态滤镜性能预算；更新 JSON Schema 与 Blueprint 校验器，避免模型只写口号不执行。
+- 2026-09-05 根据 `JianweiPartCover` 实测发现的片尾整图渐显、双层重影、遮挡和位置跳变，撤销“终端参考图混合策略”，改为 `layout-locked`：参考图只作分析/对比资料，同一套视觉所有者从第一帧连续运动到目标边界框。新增 `audit_reference_render_path.py`（生产源码整图引用/终端覆盖审计）、`check_settle_continuity.py`（最终稳定区三帧连续性审计）与 `visualOwners`、`finalHoldFrames` 等 Blueprint 硬字段。

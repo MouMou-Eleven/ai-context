@@ -152,6 +152,8 @@ ai-context/
 │   │   │   │   │   │       │   └── render-performance-contract.md
 │   │   │   │   │   │       └── scripts/
 │   │   │   │   │   │           ├── compare_reference_frame.py
+│   │   │   │   │   │           ├── audit_reference_render_path.py
+│   │   │   │   │   │           ├── check_settle_continuity.py
 │   │   │   │   │   │           └── validate_blueprint.py
 │   │   │   │   │   ├── jianwei-ai-learning-community-workbench/
 │   │   │   │   │   │   ├── README.md              通用身份适配型工作台设计 Skill 说明
@@ -429,8 +431,10 @@ ai-context/
 │       ├── 2026-09-02-jianwei-remotion-parameterization.md
 │                                                 Studio 右侧 Default Props 可编辑性验收修订
 │                                                 Remotion Skill 导演层、重叠节奏与参数化默认输出修订
-│       └── 2026-09-04-remotion-reference-fidelity-and-preview-gate.md
-│                                                 Remotion Skill 参考图保真、低清预览与最终渲染确认门修订
+│       ├── 2026-09-04-remotion-reference-fidelity-and-preview-gate.md
+│       │                                         Remotion Skill 参考图保真、低清预览与最终渲染确认门修订
+│       └── 2026-09-05-remotion-layout-locked-continuity.md
+│                                                 Remotion Skill 几何锁定、禁止片尾整图覆盖与连续性审计修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界
