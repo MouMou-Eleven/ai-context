@@ -1,6 +1,6 @@
 ---
 name: jianwei-ai-community-remotion-video
-description: 将一句简短需求、参考图片或图文混合输入导演成有记忆点、动作自然的 Remotion 动效，并默认实现为可在 Studio 编辑文字、编号和颜色的参数化工程。参考图任务默认把原图几何锁定为整段动画的目标最终帧，禁止片尾整图覆盖；先交付低分辨率预览，确认后才执行全量渲染。适用于片头包装、社群宣传、知识讲解、海报动效、界面演示、数据视觉和图片转视频；不用于与 Remotion 无关的普通剪辑任务。
+description: 将一句简短需求、参考图片或图文混合输入经过二次导演加工，转成有记忆点、动作自然的 Remotion 动效，并默认实现为可在 Studio 编辑文字、编号和颜色的参数化工程。参考图任务锁定目标几何与背景色域，禁止片尾整图覆盖；先交付低分辨率预览，确认后才执行全量渲染。适用于片头包装、社群宣传、知识讲解、海报动效、界面演示、数据视觉和图片转视频；不用于与 Remotion 无关的普通剪辑任务。
 metadata:
   short-description: 导演优先的参数化 Remotion 动效视频
 ---
@@ -36,7 +36,7 @@ metadata:
 
 ### 只有图片
 
-先用可用的图像查看工具检查原图与像素尺寸，再完整读取 [references/input-and-image-analysis.md](references/input-and-image-analysis.md)、[references/reference-fidelity-contract.md](references/reference-fidelity-contract.md)、[references/director-strategy.md](references/director-strategy.md)、[references/motion-direction.md](references/motion-direction.md) 和 [references/output-contract.md](references/output-contract.md)。默认把参考图视为必须回到的目标最终帧，而不是仅作风格参考；先做画面理解和导演判断，再选择 2D、2.5D、3D 或混合方案。
+先用可用的图像查看工具检查原图与像素尺寸，再完整读取 [references/input-and-image-analysis.md](references/input-and-image-analysis.md)、[references/reference-fidelity-contract.md](references/reference-fidelity-contract.md)、[references/background-fidelity-contract.md](references/background-fidelity-contract.md)、[references/director-strategy.md](references/director-strategy.md)、[references/motion-direction.md](references/motion-direction.md) 和 [references/output-contract.md](references/output-contract.md)。默认把参考图视为必须回到的目标最终帧，而不是仅作风格参考；先做画面理解、背景采样和导演判断，再选择 2D、2.5D、3D 或混合方案。
 
 ### 文字加图片
 
@@ -70,6 +70,7 @@ metadata:
 - 有参考图：Composition 默认使用原图像素尺寸与长宽比；只有用户明确指定其他交付尺寸时才等比缩放，禁止先重排成 1920×1080 再声称还原原图。
 - 空间模型：优先 2D 或轻 2.5D；只有真实几何、遮挡、灯光或相机绕行能明显提升表达时才使用 3D。
 - 动效强度：默认 2/3，保证有明显动态和运镜，但不牺牲可读性。
+- 图片任务必须从不含前景的安全区域采样背景，记录至少三个区域的平均 RGB、亮度、渐变/纹理结构和允许动态幅度；不能用“深蓝”“科技感”等主观词替代测量。
 
 ### 3. 先过导演门槛，再拆动作
 
@@ -80,6 +81,7 @@ metadata:
 - 记忆点：明确最值得记住的一秒、时间区间和视觉对象。
 - 收尾回扣：主动作完成后的确认、反应或小惊喜。
 - 重叠节奏：建立、主动作、核心内容、细节与定格允许因果重叠，不能机械串行。
+- 动作能量链：明确驱动者、预备、主动作、冲击或转折、由其触发的响应、回收定格；丰富度来自能量传递和时间重叠，不来自背景提亮或装饰堆叠。
 
 若方案显得平淡，先升级动作逻辑、视觉隐喻、状态反差或收尾，不得通过增加粒子、星点、辉光、标签和持续运镜伪装完成度。参考图中不存在且用户未批准的装饰一律不加。默认只给一个最强方向。
 
@@ -92,6 +94,7 @@ metadata:
 - 一条有目的的主相机路径。
 - 至少一个连续性锚点，连接前后节拍。
 - 一个稳定停留区，让观众看清结果。
+- 至少一条“主动作事件 → 相机或支撑元素响应 → 衰减回收”的可观察因果；响应必须短促、受控，并在结果区归零。
 
 使用 [references/motion-direction.md](references/motion-direction.md) 选择空间模型、镜头、运动层级、节奏和转场。不要把连续页面替换、整屏淡入淡出或元素轮流出现当成动态设计。
 
@@ -105,7 +108,7 @@ metadata:
 
 逐元素动作表是导演稿的实施证明，不能反过来主导创意。时间轴允许重叠区间，但必须从 0 秒起无空档覆盖总时长，并说明重叠触发阈值。
 
-参考图任务还必须输出“参考图保真契约”：原图尺寸、精确文案、品牌、视觉层级、关键元素归一化边界框、主体占比、留白、禁止新增项、获批差异、每个视觉所有者和最终帧相机状态。默认差异清单为空。只重建确实需要独立运动或参数化编辑的元素；重建范围不是重新设计许可。明确声明参考图只作分析/对比资料，生产 Composition 不加载整图，也不存在片尾终端覆盖层。
+参考图任务还必须输出“参考图保真契约”：原图尺寸、精确文案、品牌、视觉层级、关键元素归一化边界框、主体占比、留白、背景采样与色域、禁止新增项、获批差异、每个视觉所有者和最终帧相机状态。默认差异清单为空。只重建确实需要独立运动或参数化编辑的元素；重建范围不是重新设计许可。明确声明参考图只作分析/对比资料，生产 Composition 不加载整图，也不存在片尾终端覆盖层。
 
 需要代码、预览或渲染时还必须输出“渲染流程”：低清预览规格、第二确认门状态、最终渲染规格、渲染器策略和动态滤镜预算。
 
@@ -118,6 +121,12 @@ metadata:
 - 确认只覆盖已展示的规划。新增场景、改文案、换素材或显著改变时长时，先输出差异并重新确认。
 
 确认内容必须包含输出模式。默认是“参数化工程”；只有用户明确要求固定值、硬编码或只要不可编辑成片时才切换为“固定成片”。
+
+### 6A. 生成内部导演执行稿
+
+规划获批后、写代码前完整读取 [references/prompt-expansion-contract.md](references/prompt-expansion-contract.md)，把用户简述、图片理解与已批准 Blueprint 再加工为内部 `production-brief.json`。默认不在聊天中展示全文；它只能补充低风险导演/技术细节，不能修改已批准事实和目标。
+
+必须完成两遍：第一遍做语义与画面理解；第二遍将其增强为“驱动—预备—主动作—冲击/转折—响应—回收”的动作能量链、至少三个有目的的相机关键姿态、逐元素多阶段动作和背景保真指令，再做反幻灯片、布局、背景、装饰和可读性自检。运行 `python scripts/validate_production_brief.py production-brief.json`；未通过不得实施。
 
 ### 7. 选择输出模式
 
@@ -141,7 +150,7 @@ metadata:
 
 ### 8. 实现 Remotion
 
-实施前读取 [references/render-performance-contract.md](references/render-performance-contract.md)；参考图任务同时读取 [references/reference-fidelity-contract.md](references/reference-fidelity-contract.md)。
+实施前读取 [references/render-performance-contract.md](references/render-performance-contract.md)；参考图任务同时读取 [references/reference-fidelity-contract.md](references/reference-fidelity-contract.md) 与 [references/background-fidelity-contract.md](references/background-fidelity-contract.md)。
 
 实施时遵守以下不可协商规则：
 
@@ -156,6 +165,8 @@ metadata:
 - 参数化内容优先通过 Props/Zod 暴露；不要把用户以后可能修改的文字、颜色和素材路径散落在组件内部。
 - 参数化为默认要求，不是可选优化；只有确认的固定成片模式可以省略 Schema。
 - 参考图任务先实现批准的独立动作层，再校准结果帧；不得借拆层、参数化或“增强质感”改变精确文案、品牌、排版层级、主体占比、关键对齐和留白。
+- 参考图背景是受保护元素：`bgColor` 默认值必须来自安全区域采样；不得用大面积正向 `shade()`、白色径向渐变、雾化或曝光提升把深色背景洗成灰白。短促局部光效可响应主动作，但必须在稳定区前退出并恢复采样色域。
+- 主动作必须有速度或状态转折，避免从头到尾单调插值。相机至少有起点、强调点和归零落点；若锁镜更合适，则在内部执行稿中说明原因。相机响应不能取代元素动作。
 - 结果稳定区的默认相机必须回到恒等状态：无残留平移、缩放、旋转、透视或会改变构图的呼吸。定格微动只能发生在不改变最终布局的小范围材质或局部光影上；严格 `layout-locked` 模式可完全静止。
 - 参考图任务的每个视觉所有者必须在规划中登记目标边界框，并由同一个重建元素从动作阶段连续抵达该边界框；禁止为纠正终帧而新增 `FinalFrameLock`、`referenceOverlay`、全画布 opacity/crossfade 或第二套重复文字/图标。
 - 单一整图参考素材只允许放在 `reference/` 或 `public/` 供离线比较，生产源码必须通过 `scripts/audit_reference_render_path.py` 检查为零引用；如果用户明确选择整图平面运动，改用 `raster-motion` 并从第一帧到最后一帧只保留同一个图片层。
@@ -173,14 +184,15 @@ metadata:
 4. 参考图任务在同尺寸 PNG 静帧上执行 [references/reference-fidelity-contract.md](references/reference-fidelity-contract.md) 的最终帧核验；至少生成并查看并排图、50% 叠加图和差异指标。可运行 `python scripts/compare_reference_frame.py <reference> <final-still> --mode locked --output-dir <dir>`。未批准的文字、品牌、层级、比例、留白和相对位置偏差视为缺陷。
 5. 运行 `python scripts/audit_reference_render_path.py <project-root> --reference-asset <reference-basename>`；在 `layout-locked` 模式下生产 `src/` 不得引用整张参考图，也不得出现片尾锁图组件/命名。
 6. 从最终稳定区开始、中间、结束各导出一帧，运行 `python scripts/check_settle_continuity.py <hold-start> <hold-mid> <final>`；检查相邻帧没有全画布跳变、重建层与参考层重影或最后一秒换图。
-7. 参数化模式额外测试至少一组非默认文字、编号和颜色，并恢复默认值后再交付。
-8. 实际在 Studio 右侧 Default Props 面板修改并恢复字段，记录画面变化证据；若字段不可见、改值不生效或出现 JSON 错误，继续修复。
-9. 上述检查通过后，按 [references/render-performance-contract.md](references/render-performance-contract.md) 输出低分辨率完整预览，并记录实际耗时、渲染器、分辨率、fps、时长和文件大小。
-10. 向用户提供低清预览和最终帧对比结论，明确写：`当前状态：低清预览待确认，尚未执行最终全量渲染。是否需要输出最终全量渲染？`
-11. 用户要求修改时，修正后重新输出低清预览；不能把修改意见视为最终渲染批准。只有明确肯定答复覆盖当前预览版本时才执行最终全量渲染。
-12. 最终渲染必须使用已确认预览的同一 Composition、默认参数、时长和时间逻辑；除分辨率、码率或用户批准的修改外，不得在最终阶段偷偷改变设计。
-13. 未看到实际画面或未完成对应渲染时，不声称“效果已经很好”或“视频已完成”。
+7. 参考图任务用至少三个安全背景区域运行 `python scripts/compare_background_regions.py <reference> <final-still> --region x,y,w,h ...`；默认 RGB MAE 和亮度差门槛通过后，才能声称背景一致。
+8. 参数化模式额外测试至少一组非默认文字、编号和颜色，并恢复默认值后再交付。
+9. 实际在 Studio 右侧 Default Props 面板修改并恢复字段，记录画面变化证据；若字段不可见、改值不生效或出现 JSON 错误，继续修复。
+10. 上述检查通过后，按 [references/render-performance-contract.md](references/render-performance-contract.md) 输出低分辨率完整预览，并记录实际耗时、渲染器、分辨率、fps、时长和文件大小。
+11. 向用户提供低清预览和最终帧对比结论，明确写：`当前状态：低清预览待确认，尚未执行最终全量渲染。是否需要输出最终全量渲染？`
+12. 用户要求修改时，修正后重新输出低清预览；不能把修改意见视为最终渲染批准。只有明确肯定答复覆盖当前预览版本时才执行最终全量渲染。
+13. 最终渲染必须使用已确认预览的同一 Composition、默认参数、时长和时间逻辑；除分辨率、码率或用户批准的修改外，不得在最终阶段偷偷改变设计。
+14. 未看到实际画面或未完成对应渲染时，不声称“效果已经很好”或“视频已完成”。
 
 ## 完成标准
 
-结果应同时做到：内容准确、参考图最终帧可验证、焦点明确、动作有因果、镜头服从主体、节奏有起伏、素材未失真、代码可编辑、逐帧确定、低清预览先确认、渲染证据可信。若其中任一硬门槛失败，继续修正，而不是用更多特效掩盖问题。
+结果应同时做到：内容准确、参考图最终帧和背景可验证、用户简述经过内部二次导演加工、焦点明确、动作有能量转折与因果响应、镜头服从主体、节奏有起伏、素材未失真、代码可编辑、逐帧确定、低清预览先确认、渲染证据可信。若其中任一硬门槛失败，继续修正，而不是用更多特效或更亮背景掩盖问题。

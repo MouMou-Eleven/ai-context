@@ -140,21 +140,26 @@ ai-context/
 │   │   │   │   │   │       ├── agents/
 │   │   │   │   │   │       │   └── openai.yaml
 │   │   │   │   │   │       ├── references/
+│   │   │   │   │   │       │   ├── background-fidelity-contract.md
 │   │   │   │   │   │       │   ├── director-strategy.md
 │   │   │   │   │   │       │   ├── input-and-image-analysis.md
+│   │   │   │   │   │       │   ├── internal-production-brief.schema.json
 │   │   │   │   │   │       │   ├── motion-blueprint.schema.json
 │   │   │   │   │   │       │   ├── motion-direction.md
 │   │   │   │   │   │       │   ├── output-contract.md
-│   │   │   │   │   │       │   ├── quality-gates.md
-│   │   │   │   │   │       │   ├── remotion-contract.md
 │   │   │   │   │   │       │   ├── parameterization-contract.md
+│   │   │   │   │   │       │   ├── prompt-expansion-contract.md
+│   │   │   │   │   │       │   ├── quality-gates.md
 │   │   │   │   │   │       │   ├── reference-fidelity-contract.md
+│   │   │   │   │   │       │   ├── remotion-contract.md
 │   │   │   │   │   │       │   └── render-performance-contract.md
 │   │   │   │   │   │       └── scripts/
-│   │   │   │   │   │           ├── compare_reference_frame.py
 │   │   │   │   │   │           ├── audit_reference_render_path.py
 │   │   │   │   │   │           ├── check_settle_continuity.py
-│   │   │   │   │   │           └── validate_blueprint.py
+│   │   │   │   │   │           ├── compare_background_regions.py
+│   │   │   │   │   │           ├── compare_reference_frame.py
+│   │   │   │   │   │           ├── validate_blueprint.py
+│   │   │   │   │   │           └── validate_production_brief.py
 │   │   │   │   │   ├── jianwei-ai-learning-community-workbench/
 │   │   │   │   │   │   ├── README.md              通用身份适配型工作台设计 Skill 说明
 │   │   │   │   │   │   ├── upstream.json          来源、版本与维护策略
@@ -433,8 +438,10 @@ ai-context/
 │                                                 Remotion Skill 导演层、重叠节奏与参数化默认输出修订
 │       ├── 2026-09-04-remotion-reference-fidelity-and-preview-gate.md
 │       │                                         Remotion Skill 参考图保真、低清预览与最终渲染确认门修订
-│       └── 2026-09-05-remotion-layout-locked-continuity.md
-│                                                 Remotion Skill 几何锁定、禁止片尾整图覆盖与连续性审计修订
+│       ├── 2026-09-05-remotion-layout-locked-continuity.md
+│       │                                         Remotion Skill 几何锁定、禁止片尾整图覆盖与连续性审计修订
+│       └── 2026-09-05-remotion-director-expansion-and-background-fidelity.md
+│                                                 Remotion Skill 内部导演加工、动作自然度与背景保真修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界
@@ -498,4 +505,4 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 不保存密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
 - 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；提交前自动生成 `STRUCTURE.html`，再运行 `repository/maintenance/sync-desktop-structure.ps1`。桌面暂不可用时只延后镜像同步，不阻断仓库提交；后续 Git 操作会自动补齐。
 
-*结构最后确认：2026-09-04*
+*结构最后确认：2026-09-05*

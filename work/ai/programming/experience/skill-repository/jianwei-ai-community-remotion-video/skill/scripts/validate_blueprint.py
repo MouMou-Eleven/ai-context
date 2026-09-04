@@ -56,7 +56,7 @@ def validate_reference_fidelity(value: Any, input_mode: Any, errors: list[str]) 
         return
     require_keys(
         value,
-        ("mode", "renderPolicy", "terminalOverlay", "targetLayoutLocked", "sourceWidth", "sourceHeight", "exactCopy", "protectedElements", "allowedDifferences", "criticalRegions", "visualOwners", "finalHoldFrames", "finalFrameRule", "comparisonMethod"),
+        ("mode", "renderPolicy", "terminalOverlay", "targetLayoutLocked", "sourceWidth", "sourceHeight", "backgroundProfile", "exactCopy", "protectedElements", "allowedDifferences", "criticalRegions", "visualOwners", "finalHoldFrames", "finalFrameRule", "comparisonMethod"),
         location,
         errors,
     )
@@ -79,6 +79,39 @@ def validate_reference_fidelity(value: Any, input_mode: Any, errors: list[str]) 
         dimension = value.get(key)
         if not isinstance(dimension, int) or isinstance(dimension, bool) or dimension <= 0:
             errors.append(f"{location}.{key} must be a positive integer")
+    background = value.get("backgroundProfile")
+    background_location = f"{location}.backgroundProfile"
+    require_keys(background, ("classification", "protected", "sampleRegions", "reconstructionMethod", "dynamicPolicy"), background_location, errors)
+    if isinstance(background, dict):
+        if background.get("classification") not in {"flat", "gradient", "texture", "image", "transparent", "mixed"}:
+            errors.append(f"{background_location}.classification is invalid")
+        if background.get("protected") is not True:
+            errors.append(f"{background_location}.protected must be true")
+        for key in ("reconstructionMethod", "dynamicPolicy"):
+            if not isinstance(background.get(key), str) or not background.get(key, "").strip():
+                errors.append(f"{background_location}.{key} must be a non-empty string")
+        samples = background.get("sampleRegions")
+        if not isinstance(samples, list) or len(samples) < 3:
+            errors.append(f"{background_location}.sampleRegions must contain at least three safe regions")
+        else:
+            for index, sample in enumerate(samples):
+                sample_location = f"{background_location}.sampleRegions[{index}]"
+                require_keys(sample, ("name", "normalizedBounds", "meanRgb", "relativeLuminance"), sample_location, errors)
+                if not isinstance(sample, dict):
+                    continue
+                if not isinstance(sample.get("name"), str) or not sample.get("name", "").strip():
+                    errors.append(f"{sample_location}.name must be a non-empty string")
+                bounds = sample.get("normalizedBounds")
+                if not isinstance(bounds, list) or len(bounds) != 4 or any(not is_number(item) or item < 0 or item > 1 for item in bounds):
+                    errors.append(f"{sample_location}.normalizedBounds must contain four numbers in the 0..1 range")
+                elif bounds[2] <= 0 or bounds[3] <= 0 or bounds[0] + bounds[2] > 1 or bounds[1] + bounds[3] > 1:
+                    errors.append(f"{sample_location}.normalizedBounds must have positive size and stay inside the canvas")
+                mean_rgb = sample.get("meanRgb")
+                if not isinstance(mean_rgb, list) or len(mean_rgb) != 3 or any(not is_number(item) or item < 0 or item > 255 for item in mean_rgb):
+                    errors.append(f"{sample_location}.meanRgb must contain three numbers in the 0..255 range")
+                luminance = sample.get("relativeLuminance")
+                if not is_number(luminance) or luminance < 0 or luminance > 1:
+                    errors.append(f"{sample_location}.relativeLuminance must be in the 0..1 range")
     require_string_list(value.get("exactCopy"), f"{location}.exactCopy", errors)
     require_string_list(value.get("protectedElements"), f"{location}.protectedElements", errors, 1)
     require_string_list(value.get("allowedDifferences"), f"{location}.allowedDifferences", errors)
@@ -597,6 +630,17 @@ def run_self_test() -> int:
         "targetLayoutLocked": True,
         "sourceWidth": 1920,
         "sourceHeight": 1080,
+        "backgroundProfile": {
+            "classification": "flat",
+            "protected": True,
+            "sampleRegions": [
+                {"name": "top-left", "normalizedBounds": [0.0, 0.0, 0.1, 0.1], "meanRgb": [1, 8, 42], "relativeLuminance": 0.03},
+                {"name": "top-center", "normalizedBounds": [0.45, 0.0, 0.1, 0.1], "meanRgb": [1, 8, 42], "relativeLuminance": 0.03},
+                {"name": "bottom-left", "normalizedBounds": [0.0, 0.8, 0.1, 0.1], "meanRgb": [1, 8, 42], "relativeLuminance": 0.03},
+            ],
+            "reconstructionMethod": "Sampled solid background",
+            "dynamicPolicy": "Temporary local light only; return to samples before hold",
+        },
         "exactCopy": ["Card title"],
         "protectedElements": ["Card silhouette"],
         "allowedDifferences": [],
@@ -610,6 +654,10 @@ def run_self_test() -> int:
     image_overlay = json.loads(json.dumps(image_valid))
     image_overlay["referenceFidelity"]["terminalOverlay"] = True
     image_overlay_errors = validate(image_overlay)
+    image_background = json.loads(json.dumps(image_valid))
+    image_background["referenceFidelity"]["backgroundProfile"]["protected"] = False
+    image_background["referenceFidelity"]["backgroundProfile"]["sampleRegions"] = image_background["referenceFidelity"]["backgroundProfile"]["sampleRegions"][:2]
+    image_background_errors = validate(image_background)
     if valid_errors:
         print("Self-test failed: valid fixture was rejected", file=sys.stderr)
         for error in valid_errors:
@@ -628,6 +676,12 @@ def run_self_test() -> int:
     if not any("terminalOverlay must be false" in error for error in image_overlay_errors):
         print("Self-test failed: terminal overlay was not rejected", file=sys.stderr)
         for error in image_overlay_errors:
+            print(f"- {error}", file=sys.stderr)
+        return 1
+    expected_background_fragments = ("protected must be true", "at least three safe regions")
+    if any(not any(fragment in error for error in image_background_errors) for fragment in expected_background_fragments):
+        print("Self-test failed: invalid background profile was not rejected", file=sys.stderr)
+        for error in image_background_errors:
             print(f"- {error}", file=sys.stderr)
         return 1
     expected_invalid_fragments = (

@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Jianwei Remotion Internal Production Brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["visibility", "requestDigest", "immutableConstraints", "visualFacts", "directorTranslation", "energyChain", "cameraKeyPoses", "elementDirections", "timingStrategy", "parameterization", "negativeConstraints", "selfCritique"],
+  "properties": {
+    "visibility": {"const": "internal"},
+    "requestDigest": {"type": "string", "minLength": 1},
+    "immutableConstraints": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "visualFacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceMode", "hierarchy", "targetFrame", "backgroundStrategy"],
+      "properties": {
+        "sourceMode": {"enum": ["text", "image", "hybrid"]},
+        "hierarchy": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "targetFrame": {"type": "string", "minLength": 1},
+        "backgroundStrategy": {"type": "string", "minLength": 1}
+      }
+    },
+    "directorTranslation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["userIntent", "motionLogic", "memoryHook", "tone"],
+      "properties": {
+        "userIntent": {"type": "string", "minLength": 1},
+        "motionLogic": {"type": "string", "minLength": 1},
+        "memoryHook": {"type": "string", "minLength": 1},
+        "tone": {"type": "array", "items": {"type": "string"}, "minItems": 2, "maxItems": 6}
+      }
+    },
+    "energyChain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["driver", "anticipation", "primaryAction", "impactOrTurn", "responses", "settle"],
+      "properties": {
+        "driver": {"type": "string", "minLength": 1},
+        "anticipation": {"type": "string", "minLength": 1},
+        "primaryAction": {"type": "string", "minLength": 1},
+        "impactOrTurn": {"type": "string", "minLength": 1},
+        "responses": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "settle": {"type": "string", "minLength": 1}
+      }
+    },
+    "cameraKeyPoses": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["timeSeconds", "target", "pose", "purpose", "identity"],
+        "properties": {
+          "timeSeconds": {"type": "number", "minimum": 0},
+          "target": {"type": "string", "minLength": 1},
+          "pose": {"type": "string", "minLength": 1},
+          "purpose": {"type": "string", "minLength": 1},
+          "identity": {"type": "boolean"}
+        }
+      }
+    },
+    "elementDirections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "targetBounds", "motionRole", "trigger", "phases", "endState", "implementation"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "targetBounds": {"type": ["array", "null"], "prefixItems": [{"type": "number", "minimum": 0, "maximum": 1}, {"type": "number", "minimum": 0, "maximum": 1}, {"type": "number", "exclusiveMinimum": 0, "maximum": 1}, {"type": "number", "exclusiveMinimum": 0, "maximum": 1}], "items": false, "minItems": 4, "maxItems": 4},
+          "motionRole": {"enum": ["hero", "support", "reaction", "ambient"]},
+          "trigger": {"type": "string", "minLength": 1},
+          "phases": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+          "endState": {"type": "string", "minLength": 1},
+          "implementation": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "timingStrategy": {"type": "string", "minLength": 1},
+    "parameterization": {"type": "array", "items": {"type": "string"}},
+    "negativeConstraints": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "selfCritique": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["flatnessRisk", "fidelityRisk", "backgroundRisk", "corrections"],
+      "properties": {
+        "flatnessRisk": {"type": "string", "minLength": 1},
+        "fidelityRisk": {"type": "string", "minLength": 1},
+        "backgroundRisk": {"type": "string", "minLength": 1},
+        "corrections": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      }
+    }
+  }
+}

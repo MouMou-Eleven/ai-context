@@ -68,7 +68,7 @@
     "referenceFidelity": {
       "type": ["object", "null"],
       "additionalProperties": false,
-      "required": ["mode", "renderPolicy", "terminalOverlay", "targetLayoutLocked", "sourceWidth", "sourceHeight", "exactCopy", "protectedElements", "allowedDifferences", "criticalRegions", "visualOwners", "finalHoldFrames", "finalFrameRule", "comparisonMethod"],
+      "required": ["mode", "renderPolicy", "terminalOverlay", "targetLayoutLocked", "sourceWidth", "sourceHeight", "backgroundProfile", "exactCopy", "protectedElements", "allowedDifferences", "criticalRegions", "visualOwners", "finalHoldFrames", "finalFrameRule", "comparisonMethod"],
       "properties": {
         "mode": {"enum": ["layout-locked", "raster-motion", "approved-redesign"]},
         "renderPolicy": {"enum": ["reconstructed-elements-only", "single-raster-plane", "approved-reconstruction-differences"]},
@@ -76,6 +76,32 @@
         "targetLayoutLocked": {"const": true},
         "sourceWidth": {"type": "integer", "minimum": 1},
         "sourceHeight": {"type": "integer", "minimum": 1},
+        "backgroundProfile": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["classification", "protected", "sampleRegions", "reconstructionMethod", "dynamicPolicy"],
+          "properties": {
+            "classification": {"enum": ["flat", "gradient", "texture", "image", "transparent", "mixed"]},
+            "protected": {"const": true},
+            "sampleRegions": {
+              "type": "array",
+              "minItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "normalizedBounds", "meanRgb", "relativeLuminance"],
+                "properties": {
+                  "name": {"type": "string", "minLength": 1},
+                  "normalizedBounds": {"type": "array", "prefixItems": [{"type": "number", "minimum": 0, "maximum": 1}, {"type": "number", "minimum": 0, "maximum": 1}, {"type": "number", "exclusiveMinimum": 0, "maximum": 1}, {"type": "number", "exclusiveMinimum": 0, "maximum": 1}], "items": false, "minItems": 4, "maxItems": 4},
+                  "meanRgb": {"type": "array", "prefixItems": [{"type": "number", "minimum": 0, "maximum": 255}, {"type": "number", "minimum": 0, "maximum": 255}, {"type": "number", "minimum": 0, "maximum": 255}], "items": false, "minItems": 3, "maxItems": 3},
+                  "relativeLuminance": {"type": "number", "minimum": 0, "maximum": 1}
+                }
+              }
+            },
+            "reconstructionMethod": {"type": "string", "minLength": 1},
+            "dynamicPolicy": {"type": "string", "minLength": 1}
+          }
+        },
         "exactCopy": {"type": "array", "items": {"type": "string"}},
         "protectedElements": {"type": "array", "items": {"type": "string"}, "minItems": 1},
         "allowedDifferences": {"type": "array", "items": {"type": "string"}},

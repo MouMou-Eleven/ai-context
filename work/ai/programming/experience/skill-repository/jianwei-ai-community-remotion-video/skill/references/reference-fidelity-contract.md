@@ -13,6 +13,8 @@
 
 规划中把 `preserve`、`mayChange`、`allowedDifferences` 分开。默认 `allowedDifferences` 为空；用户没有明确授权的改动都不是“合理发挥”。
 
+背景同样属于受保护事实。按 [background-fidelity-contract.md](background-fidelity-contract.md) 记录至少三个安全采样区、平均 RGB、亮度、渐变/纹理结构和动态限制；不得只锁定前景排版而允许背景漂色。
+
 ## 2. 选择保真模式
 
 ### `layout-locked`（图片任务默认）
@@ -67,3 +69,4 @@ Blueprint 或实施报告必须写出：
 - 仅重建的独立运动/编辑元素。
 - 禁止新增项和获批差异。
 - 最终帧比较文件、指标、人工结论和待修复问题。
+- 背景安全采样区、`compare_background_regions.py` 指标和是否发生未批准的亮度/色域漂移。
