@@ -4,7 +4,7 @@
   "title": "Jianwei Remotion Motion Blueprint",
   "type": "object",
   "additionalProperties": false,
-  "required": ["request", "approval", "referenceFidelity", "creativeDirection", "motionSystem", "timeline", "parameterization", "remotionPlan", "renderPipeline", "quality"],
+  "required": ["request", "approval", "referenceFidelity", "visibilityPlan", "creativeDirection", "motionSystem", "timeline", "parameterization", "remotionPlan", "renderPipeline", "quality"],
   "properties": {
     "request": {
       "type": "object",
@@ -139,6 +139,19 @@
         "finalHoldFrames": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}], "items": false, "minItems": 3, "maxItems": 3},
         "finalFrameRule": {"type": "string", "minLength": 1},
         "comparisonMethod": {"type": "string", "minLength": 1}
+      }
+    },
+    "visibilityPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protectedElements", "textMeasurement", "revealPolicy", "stablePolicy", "parameterStressTests", "inspectionFrames"],
+      "properties": {
+        "protectedElements": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "textMeasurement": {"type": "string", "minLength": 1},
+        "revealPolicy": {"type": "string", "minLength": 1},
+        "stablePolicy": {"const": "fully-visible-no-unapproved-crop"},
+        "parameterStressTests": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "inspectionFrames": {"type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 3}
       }
     },
     "creativeDirection": {

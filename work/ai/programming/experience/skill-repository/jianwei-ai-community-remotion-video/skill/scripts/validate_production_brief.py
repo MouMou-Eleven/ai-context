@@ -20,6 +20,7 @@ TOP_LEVEL = (
     "energyChain",
     "cameraKeyPoses",
     "elementDirections",
+    "visibilityStrategy",
     "timingStrategy",
     "parameterization",
     "negativeConstraints",
@@ -143,6 +144,20 @@ def validate(data: Any) -> list[str]:
         if hero_count != 1:
             errors.append("$.elementDirections must contain exactly one hero motion")
 
+    visibility = data.get("visibilityStrategy")
+    if not isinstance(visibility, dict):
+        errors.append("$.visibilityStrategy must be an object")
+    else:
+        if not _strings(visibility.get("protectedElements"), 1):
+            errors.append("$.visibilityStrategy.protectedElements must contain at least one string")
+        for key in ("textMetrics", "revealMaskLifecycle", "verification"):
+            if not _nonempty(visibility.get(key)):
+                errors.append(f"$.visibilityStrategy.{key} must be a non-empty string")
+        if visibility.get("stableOverflowPolicy") != "protected-content-visible-no-unapproved-crop":
+            errors.append("$.visibilityStrategy.stableOverflowPolicy must forbid unapproved clipping")
+        if not _strings(visibility.get("parameterStressTests"), 1):
+            errors.append("$.visibilityStrategy.parameterStressTests must contain at least one string")
+
     if not _nonempty(data.get("timingStrategy")):
         errors.append("$.timingStrategy must be a non-empty string")
     if not _strings(data.get("parameterization")):
@@ -153,7 +168,7 @@ def validate(data: Any) -> list[str]:
     if not isinstance(critique, dict):
         errors.append("$.selfCritique must be an object")
     else:
-        for key in ("flatnessRisk", "fidelityRisk", "backgroundRisk"):
+        for key in ("flatnessRisk", "fidelityRisk", "backgroundRisk", "clippingRisk"):
             if not _nonempty(critique.get(key)):
                 errors.append(f"$.selfCritique.{key} must be a non-empty string")
         if not _strings(critique.get("corrections"), 1):
@@ -175,10 +190,11 @@ def _fixture() -> dict[str, Any]:
             {"timeSeconds": 3.9, "target": "Full frame", "pose": "Front-facing", "purpose": "Restore reference layout", "identity": True},
         ],
         "elementDirections": [{"name": "Play icon", "targetBounds": [0.78, 0.4, 0.18, 0.3], "motionRole": "hero", "trigger": "Timeline start", "phases": ["gather", "ignite", "impact", "settle"], "endState": "Reference bounds", "implementation": "SVG plus frame-driven transform"}],
+        "visibilityStrategy": {"protectedElements": ["Title", "Badge", "Play icon"], "textMetrics": "Measure DOM Range and actual glyph bounds after fonts load", "revealMaskLifecycle": "Temporary reveal masks are removed before the hold", "stableOverflowPolicy": "protected-content-visible-no-unapproved-crop", "parameterStressTests": ["Longest allowed title and mixed CJK/Latin copy"], "verification": "Measure peak and hold frames, then run check_visibility_report.py"},
         "timingStrategy": "Overlap responses at the primary action threshold and hold the result.",
         "parameterization": ["title", "accentColor"],
         "negativeConstraints": ["No full-frame reference overlay"],
-        "selfCritique": {"flatnessRisk": "Avoid monotonic camera easing", "fidelityRisk": "Lock all target bounds", "backgroundRisk": "Do not lighten navy toward white", "corrections": ["Use event-linked recoil and sampled background colors"]},
+        "selfCritique": {"flatnessRisk": "Avoid monotonic camera easing", "fidelityRisk": "Lock all target bounds", "backgroundRisk": "Do not lighten navy toward white", "clippingRisk": "Release reveal masks and preserve glyph overhang", "corrections": ["Use event-linked recoil, sampled background colors, and measured visible bounds"]},
     }
 
 
@@ -191,9 +207,10 @@ def run_self_test() -> int:
     invalid = json.loads(json.dumps(valid))
     invalid["cameraKeyPoses"][-1]["identity"] = False
     invalid["elementDirections"][0]["phases"] = ["enter", "settle"]
+    invalid["visibilityStrategy"]["stableOverflowPolicy"] = "overflow-hidden"
     invalid["selfCritique"]["corrections"] = []
     errors = validate(invalid)
-    expected = ("final pose", "at least four stages", "corrections")
+    expected = ("final pose", "at least four stages", "forbid unapproved clipping", "corrections")
     if any(not any(fragment in error for error in errors) for fragment in expected):
         print("Self-test failed: invalid fixture was accepted", file=sys.stderr)
         print("\n".join(f"- {error}" for error in errors), file=sys.stderr)

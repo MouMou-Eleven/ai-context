@@ -54,6 +54,7 @@
 在同一宽高、同一裁切、同一像素密度下检查参考图与最终静帧：
 
 - `layout-locked`：优先比较未压缩 PNG；要求文字和品牌逐字一致，关键边界框位置误差不超过画布宽高的 1%，尺寸误差不超过 3%，且默认值终帧像素差应接近零。除最终帧外，还必须检查最终稳定区的至少三个连续帧，确认没有全画布跳变或整图淡入。可使用 `scripts/compare_reference_frame.py --mode locked` 与 `scripts/check_settle_continuity.py`。
+- 文字、编号、Logo、图标和主体的真实可见/墨迹边界必须完整；检查它们是否被画布、父级 `overflow`、`clip-path`、`mask`、过紧行盒、负偏移或 3D 变换裁切。按 `visibility-and-clipping-contract.md` 生成报告并运行 `scripts/check_visibility_report.py`，不能用容器框或最终帧像素总分掩盖局部缺字。
 - `raster-motion`：同一个参考图平面从开场连续运动到收正；不承诺图中文字独立编辑，且不得存在第二个终端参考层。
 - `approved-redesign`：按已批准差异清单验收，未列出的差异仍视为缺陷。
 

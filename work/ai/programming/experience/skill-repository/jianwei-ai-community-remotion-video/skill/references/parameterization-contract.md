@@ -48,6 +48,7 @@ export const Video: React.FC<VideoProps> = ({title, chapter, accent}) => {
 3. 背景色、主色和强调色修改后，绑定的背景、边框、光效或装饰同步变化，文字对比度仍可读。
 4. 刷新 Studio 或重新选择 Composition 后，字段仍显示默认值/当前值，且不会报 `undefined is not valid JSON`。
 5. 恢复默认值后再渲染；MP4 只作为当前 Props 快照，不能声称 MP4 文件本身可在侧栏编辑。
+6. 将每个文字/编号字段改为 Schema 允许的最长值和一组中英数字混合值，按 `visibility-and-clipping-contract.md` 测量实际字形边界；不得出现静默裁字、被 `overflow`/蒙版切边或画布越界。
 
 ## 常见失败模式
 
@@ -63,5 +64,6 @@ export const Video: React.FC<VideoProps> = ({title, chapter, accent}) => {
 
 - Studio 右侧可编辑字段及其绑定元素。
 - 非默认测试值和对应观察结果。
+- 最长值压力测试、auto-fit/换行/缩放/拒绝超长策略和完整可见检查结果。
 - 参数化工程源码路径；明确 MP4 是哪一组 Props 的渲染快照。
 - 若侧栏不可编辑、只看到图层选择器或出现 JSON 错误，交付判定为失败，继续修复而不是用文字解释掩盖。

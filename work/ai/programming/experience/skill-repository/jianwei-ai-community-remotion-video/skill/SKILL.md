@@ -1,6 +1,6 @@
 ---
 name: jianwei-ai-community-remotion-video
-description: 将一句简短需求、参考图片或图文混合输入经过二次导演加工，转成有记忆点、动作自然的 Remotion 动效，并默认实现为可在 Studio 编辑文字、编号和颜色的参数化工程。参考图任务锁定目标几何与背景色域，禁止片尾整图覆盖；先交付低分辨率预览，确认后才执行全量渲染。适用于片头包装、社群宣传、知识讲解、海报动效、界面演示、数据视觉和图片转视频；不用于与 Remotion 无关的普通剪辑任务。
+description: 将一句简短需求、参考图片或图文混合输入经过二次导演加工，转成有记忆点、动作自然的 Remotion 动效，并默认实现为可在 Studio 编辑文字、编号和颜色的参数化工程。参考图任务锁定目标几何与背景色域，保护文字和关键元素完整可见，禁止片尾整图覆盖；先交付低分辨率预览，确认后才执行全量渲染。适用于片头包装、社群宣传、知识讲解、海报动效、界面演示、数据视觉和图片转视频；不用于与 Remotion 无关的普通剪辑任务。
 metadata:
   short-description: 导演优先的参数化 Remotion 动效视频
 ---
@@ -71,6 +71,7 @@ metadata:
 - 空间模型：优先 2D 或轻 2.5D；只有真实几何、遮挡、灯光或相机绕行能明显提升表达时才使用 3D。
 - 动效强度：默认 2/3，保证有明显动态和运镜，但不牺牲可读性。
 - 图片任务必须从不含前景的安全区域采样背景，记录至少三个区域的平均 RGB、亮度、渐变/纹理结构和允许动态幅度；不能用“深蓝”“科技感”等主观词替代测量。
+- 所有包含文字、Logo、图标或主体的任务都要读取 [references/visibility-and-clipping-contract.md](references/visibility-and-clipping-contract.md)，为受保护元素记录目标布局框、实际可见/墨迹框、裁剪祖先和参数化压力测试；容器框不能冒充可见框。
 
 ### 3. 先过导演门槛，再拆动作
 
@@ -108,7 +109,7 @@ metadata:
 
 逐元素动作表是导演稿的实施证明，不能反过来主导创意。时间轴允许重叠区间，但必须从 0 秒起无空档覆盖总时长，并说明重叠触发阈值。
 
-参考图任务还必须输出“参考图保真契约”：原图尺寸、精确文案、品牌、视觉层级、关键元素归一化边界框、主体占比、留白、背景采样与色域、禁止新增项、获批差异、每个视觉所有者和最终帧相机状态。默认差异清单为空。只重建确实需要独立运动或参数化编辑的元素；重建范围不是重新设计许可。明确声明参考图只作分析/对比资料，生产 Composition 不加载整图，也不存在片尾终端覆盖层。
+参考图任务还必须输出“参考图保真契约”：原图尺寸、精确文案、品牌、视觉层级、关键元素归一化边界框、主体占比、留白、背景采样与色域、禁止新增项、获批差异、每个视觉所有者和最终帧相机状态。所有任务同时输出“完整可见计划”：受保护元素、真实字形/可见边界测量方式、临时揭示蒙版生命周期、稳定区裁剪策略、参数最长值和检查帧。默认差异清单为空。只重建确实需要独立运动或参数化编辑的元素；重建范围不是重新设计许可。明确声明参考图只作分析/对比资料，生产 Composition 不加载整图，也不存在片尾终端覆盖层。
 
 需要代码、预览或渲染时还必须输出“渲染流程”：低清预览规格、第二确认门状态、最终渲染规格、渲染器策略和动态滤镜预算。
 
@@ -126,7 +127,7 @@ metadata:
 
 规划获批后、写代码前完整读取 [references/prompt-expansion-contract.md](references/prompt-expansion-contract.md)，把用户简述、图片理解与已批准 Blueprint 再加工为内部 `production-brief.json`。默认不在聊天中展示全文；它只能补充低风险导演/技术细节，不能修改已批准事实和目标。
 
-必须完成两遍：第一遍做语义与画面理解；第二遍将其增强为“驱动—预备—主动作—冲击/转折—响应—回收”的动作能量链、至少三个有目的的相机关键姿态、逐元素多阶段动作和背景保真指令，再做反幻灯片、布局、背景、装饰和可读性自检。运行 `python scripts/validate_production_brief.py production-brief.json`；未通过不得实施。
+必须完成两遍：第一遍做语义与画面理解；第二遍将其增强为“驱动—预备—主动作—冲击/转折—响应—回收”的动作能量链、至少三个有目的的相机关键姿态、逐元素多阶段动作、背景保真指令和完整可见策略，再做反幻灯片、布局、背景、裁剪、装饰和可读性自检。运行 `python scripts/validate_production_brief.py production-brief.json`；未通过不得实施。
 
 ### 7. 选择输出模式
 
@@ -137,7 +138,7 @@ metadata:
 - 颜色字段使用 `@remotion/zod-types` 的 `zColor()`，确保 Studio 显示颜色选择器。
 - 至少参数化用户会修改的主文字；画面存在编号、期数、排名或百分比时参数化对应数字；参数化主色、强调色和背景色等视觉关键颜色。
 - 每个参数必须绑定真实画面元素，Schema、默认值、组件 Props 和参数说明保持一致，不允许无效参数。
-- 交付前在 Studio 或代表帧中测试至少一组非默认参数，确认文字、编号和颜色变化不会溢出、错位或破坏动作。
+- 交付前在 Studio 或代表帧中测试默认值、Schema 允许的最长文字/编号和至少一组非默认参数，确认不会被画布/容器/蒙版裁切，不会溢出、错位或破坏动作。
 
 参数化实施前必须读取 [references/parameterization-contract.md](references/parameterization-contract.md)。这里的“可编辑”有可观察定义：用户选中 Composition 后，能在 Studio 右侧 `Inspector → Default Props` 修改字段，预览中的真实画面元素立即变化。只有图层可选、源码里存在变量、或面板出现但画面不变，都不算参数化通过。
 
@@ -150,7 +151,7 @@ metadata:
 
 ### 8. 实现 Remotion
 
-实施前读取 [references/render-performance-contract.md](references/render-performance-contract.md)；参考图任务同时读取 [references/reference-fidelity-contract.md](references/reference-fidelity-contract.md) 与 [references/background-fidelity-contract.md](references/background-fidelity-contract.md)。
+实施前读取 [references/render-performance-contract.md](references/render-performance-contract.md) 与 [references/visibility-and-clipping-contract.md](references/visibility-and-clipping-contract.md)；参考图任务同时读取 [references/reference-fidelity-contract.md](references/reference-fidelity-contract.md) 与 [references/background-fidelity-contract.md](references/background-fidelity-contract.md)。
 
 实施时遵守以下不可协商规则：
 
@@ -166,6 +167,8 @@ metadata:
 - 参数化为默认要求，不是可选优化；只有确认的固定成片模式可以省略 Schema。
 - 参考图任务先实现批准的独立动作层，再校准结果帧；不得借拆层、参数化或“增强质感”改变精确文案、品牌、排版层级、主体占比、关键对齐和留白。
 - 参考图背景是受保护元素：`bgColor` 默认值必须来自安全区域采样；不得用大面积正向 `shade()`、白色径向渐变、雾化或曝光提升把深色背景洗成灰白。短促局部光效可响应主动作，但必须在稳定区前退出并恢复采样色域。
+- 受保护文字和关键元素必须完整显示。实际字形/可见框必须位于画布和每个裁剪祖先内；CJK、斜体、描边、阴影和 3D transform 需计入保护垫。禁止把负 margin、纵向缩放后的文字塞进与字号近似等高且 `overflow: hidden` 的容器。
+- 擦除/揭示使用独立临时蒙版层，不让承载最终文字的同一容器永久裁切。进入稳定区前把 `clip-path`/`mask-image` 设为 `none` 或卸载临时层，并让真实内容层 `overflow: visible`；扫光等装饰需要裁剪时使用自己的受限层。
 - 主动作必须有速度或状态转折，避免从头到尾单调插值。相机至少有起点、强调点和归零落点；若锁镜更合适，则在内部执行稿中说明原因。相机响应不能取代元素动作。
 - 结果稳定区的默认相机必须回到恒等状态：无残留平移、缩放、旋转、透视或会改变构图的呼吸。定格微动只能发生在不改变最终布局的小范围材质或局部光影上；严格 `layout-locked` 模式可完全静止。
 - 参考图任务的每个视觉所有者必须在规划中登记目标边界框，并由同一个重建元素从动作阶段连续抵达该边界框；禁止为纠正终帧而新增 `FinalFrameLock`、`referenceOverlay`、全画布 opacity/crossfade 或第二套重复文字/图标。
@@ -180,19 +183,20 @@ metadata:
 
 1. 运行项目现有的类型检查、Lint 或测试。
 2. 至少检查开场、主动作峰值、结果定格三个代表帧；复杂镜头增加中间帧。
-3. 需要时启动 Studio 做时间轴预览。
-4. 参考图任务在同尺寸 PNG 静帧上执行 [references/reference-fidelity-contract.md](references/reference-fidelity-contract.md) 的最终帧核验；至少生成并查看并排图、50% 叠加图和差异指标。可运行 `python scripts/compare_reference_frame.py <reference> <final-still> --mode locked --output-dir <dir>`。未批准的文字、品牌、层级、比例、留白和相对位置偏差视为缺陷。
-5. 运行 `python scripts/audit_reference_render_path.py <project-root> --reference-asset <reference-basename>`；在 `layout-locked` 模式下生产 `src/` 不得引用整张参考图，也不得出现片尾锁图组件/命名。
-6. 从最终稳定区开始、中间、结束各导出一帧，运行 `python scripts/check_settle_continuity.py <hold-start> <hold-mid> <final>`；检查相邻帧没有全画布跳变、重建层与参考层重影或最后一秒换图。
-7. 参考图任务用至少三个安全背景区域运行 `python scripts/compare_background_regions.py <reference> <final-still> --region x,y,w,h ...`；默认 RGB MAE 和亮度差门槛通过后，才能声称背景一致。
-8. 参数化模式额外测试至少一组非默认文字、编号和颜色，并恢复默认值后再交付。
-9. 实际在 Studio 右侧 Default Props 面板修改并恢复字段，记录画面变化证据；若字段不可见、改值不生效或出现 JSON 错误，继续修复。
-10. 上述检查通过后，按 [references/render-performance-contract.md](references/render-performance-contract.md) 输出低分辨率完整预览，并记录实际耗时、渲染器、分辨率、fps、时长和文件大小。
-11. 向用户提供低清预览和最终帧对比结论，明确写：`当前状态：低清预览待确认，尚未执行最终全量渲染。是否需要输出最终全量渲染？`
-12. 用户要求修改时，修正后重新输出低清预览；不能把修改意见视为最终渲染批准。只有明确肯定答复覆盖当前预览版本时才执行最终全量渲染。
-13. 最终渲染必须使用已确认预览的同一 Composition、默认参数、时长和时间逻辑；除分辨率、码率或用户批准的修改外，不得在最终阶段偷偷改变设计。
-14. 未看到实际画面或未完成对应渲染时，不声称“效果已经很好”或“视频已完成”。
+3. 等待字体加载后，实际测量受保护元素在主动作峰值、稳定区开始和最终帧的可见/墨迹框与裁剪祖先；参数化模式增加最长值代表帧。生成 `visibility-report.json` 并运行 `python scripts/check_visibility_report.py visibility-report.json`，未通过不得交付预览。
+4. 需要时启动 Studio 做时间轴预览。
+5. 参考图任务在同尺寸 PNG 静帧上执行 [references/reference-fidelity-contract.md](references/reference-fidelity-contract.md) 的最终帧核验；至少生成并查看并排图、50% 叠加图和差异指标。可运行 `python scripts/compare_reference_frame.py <reference> <final-still> --mode locked --output-dir <dir>`。未批准的文字、品牌、层级、比例、留白和相对位置偏差视为缺陷。
+6. 运行 `python scripts/audit_reference_render_path.py <project-root> --reference-asset <reference-basename>`；在 `layout-locked` 模式下生产 `src/` 不得引用整张参考图，也不得出现片尾锁图组件/命名。
+7. 从最终稳定区开始、中间、结束各导出一帧，运行 `python scripts/check_settle_continuity.py <hold-start> <hold-mid> <final>`；检查相邻帧没有全画布跳变、重建层与参考层重影或最后一秒换图。
+8. 参考图任务用至少三个安全背景区域运行 `python scripts/compare_background_regions.py <reference> <final-still> --region x,y,w,h ...`；默认 RGB MAE 和亮度差门槛通过后，才能声称背景一致。
+9. 参数化模式测试默认值、Schema 允许的最长文字/编号，以及至少一组非默认文字、编号和颜色；全部通过完整可见检查后恢复默认值。
+10. 实际在 Studio 右侧 Default Props 面板修改并恢复字段，记录画面变化证据；若字段不可见、改值不生效、出现 JSON 错误或文字被裁切，继续修复。
+11. 上述检查通过后，按 [references/render-performance-contract.md](references/render-performance-contract.md) 输出低分辨率完整预览，并记录实际耗时、渲染器、分辨率、fps、时长和文件大小。
+12. 向用户提供低清预览和最终帧对比结论，明确写：`当前状态：低清预览待确认，尚未执行最终全量渲染。是否需要输出最终全量渲染？`
+13. 用户要求修改时，修正后重新输出低清预览；不能把修改意见视为最终渲染批准。只有明确肯定答复覆盖当前预览版本时才执行最终全量渲染。
+14. 最终渲染必须使用已确认预览的同一 Composition、默认参数、时长和时间逻辑；除分辨率、码率或用户批准的修改外，不得在最终阶段偷偷改变设计。
+15. 未看到实际画面或未完成对应渲染时，不声称“效果已经很好”或“视频已完成”。
 
 ## 完成标准
 
-结果应同时做到：内容准确、参考图最终帧和背景可验证、用户简述经过内部二次导演加工、焦点明确、动作有能量转折与因果响应、镜头服从主体、节奏有起伏、素材未失真、代码可编辑、逐帧确定、低清预览先确认、渲染证据可信。若其中任一硬门槛失败，继续修正，而不是用更多特效或更亮背景掩盖问题。
+结果应同时做到：内容准确、文字与关键元素完整可见、参考图最终帧和背景可验证、用户简述经过内部二次导演加工、焦点明确、动作有能量转折与因果响应、镜头服从主体、节奏有起伏、素材未失真、代码可编辑、逐帧确定、低清预览先确认、渲染证据可信。若其中任一硬门槛失败，继续修正，而不是用更多特效或更亮背景掩盖问题。

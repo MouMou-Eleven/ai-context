@@ -4,6 +4,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-09-05 | [`remotion-text-visibility-and-clipping.md`](./2026-09-05-remotion-text-visibility-and-clipping.md) | 将文字与关键元素完整可见提升为硬门槛：区分布局框、真实墨迹框和裁剪祖先，稳定区释放蒙版，最长参数值通过实测边界校验 |
 | 2026-09-05 | [`remotion-director-expansion-and-background-fidelity.md`](./2026-09-05-remotion-director-expansion-and-background-fidelity.md) | 增加用户简述的两遍内部导演加工、动作能量链和事件响应；将参考图背景升级为 RGB/亮度采样硬约束，拦截深色背景被大范围混白 |
 | 2026-09-05 | [`remotion-layout-locked-continuity.md`](./2026-09-05-remotion-layout-locked-continuity.md) | 撤销参考图片尾整图混合策略，改为几何锁定重建；新增生产源码整图引用审计、最终稳定区连续性审计和视觉所有者/目标边界框硬字段，拦截重影、遮挡与最后一秒换场 |
 | 2026-09-04 | [`remotion-reference-fidelity-and-preview-gate.md`](./2026-09-04-remotion-reference-fidelity-and-preview-gate.md) | 将参考图目标最终帧、关键区域对比、只重建必要元素、低清预览与最终渲染二次确认、默认 Chromium 渲染优先级和性能预算提升为可执行硬门槛 |

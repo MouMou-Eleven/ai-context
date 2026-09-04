@@ -6,7 +6,7 @@
 
 | Skill | 实体入口 | 来源与更新信息 | 用途 |
 |---|---|---|---|
-| jianwei-ai-community-remotion-video | [`jianwei-ai-community-remotion-video/skill/SKILL.md`](./jianwei-ai-community-remotion-video/skill/SKILL.md) | [`jianwei-ai-community-remotion-video/upstream.json`](./jianwei-ai-community-remotion-video/upstream.json) | 以参考图目标几何和采样背景为整段动画硬约束，禁止片尾整图覆盖；公开规划获批后内部二次导演加工，以能量链和事件响应生成自然动感，再默认交付可编辑文字、编号和颜色的参数化 Remotion 工程及低清预览 |
+| jianwei-ai-community-remotion-video | [`jianwei-ai-community-remotion-video/skill/SKILL.md`](./jianwei-ai-community-remotion-video/skill/SKILL.md) | [`jianwei-ai-community-remotion-video/upstream.json`](./jianwei-ai-community-remotion-video/upstream.json) | 以参考图目标几何、采样背景和关键元素完整可见为硬约束；公开规划获批后内部二次导演加工，以能量链和事件响应生成自然动感，稳定区释放临时裁剪并测量字形/裁剪祖先，再交付参数化 Remotion 工程及低清预览 |
 | EditaPlot | [`editaplot/source/skill/editaplot/SKILL.md`](./editaplot/source/skill/editaplot/SKILL.md) | [`editaplot/upstream.json`](./editaplot/upstream.json) | 通过 Origin/OriginPro 制作与编辑科研图表；本仓保存完整运行仓库快照 |
 | jianwei-ai-learning-community-workbench | [`jianwei-ai-learning-community-workbench/skill/SKILL.md`](./jianwei-ai-learning-community-workbench/skill/SKILL.md) | [`jianwei-ai-learning-community-workbench/upstream.json`](./jianwei-ai-learning-community-workbench/upstream.json) | 由杨建委维护，按任意身份通过少轮对话生成完整、跨端、可落地的 AI 工作台设计 |
 

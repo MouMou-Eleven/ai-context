@@ -15,6 +15,7 @@ TOP_LEVEL = (
     "request",
     "approval",
     "referenceFidelity",
+    "visibilityPlan",
     "creativeDirection",
     "motionSystem",
     "timeline",
@@ -169,6 +170,27 @@ def validate_reference_fidelity(value: Any, input_mode: Any, errors: list[str]) 
         errors.append(f"{location}.finalHoldFrames must be three distinct frames in ascending order")
 
 
+def validate_visibility_plan(value: Any, max_frame: int | None, errors: list[str]) -> None:
+    location = "$.visibilityPlan"
+    require_keys(value, ("protectedElements", "textMeasurement", "revealPolicy", "stablePolicy", "parameterStressTests", "inspectionFrames"), location, errors)
+    if not isinstance(value, dict):
+        return
+    require_string_list(value.get("protectedElements"), f"{location}.protectedElements", errors, 1)
+    for key in ("textMeasurement", "revealPolicy"):
+        if not isinstance(value.get(key), str) or not value.get(key, "").strip():
+            errors.append(f"{location}.{key} must be a non-empty string")
+    if value.get("stablePolicy") != "fully-visible-no-unapproved-crop":
+        errors.append(f"{location}.stablePolicy must forbid unapproved clipping")
+    require_string_list(value.get("parameterStressTests"), f"{location}.parameterStressTests", errors, 1)
+    frames = value.get("inspectionFrames")
+    if not isinstance(frames, list) or len(frames) < 3 or any(not isinstance(frame, int) or isinstance(frame, bool) or frame < 0 for frame in frames):
+        errors.append(f"{location}.inspectionFrames must contain at least three non-negative integer frames")
+    elif frames != sorted(frames) or len(set(frames)) != len(frames):
+        errors.append(f"{location}.inspectionFrames must be distinct and ascending")
+    elif max_frame is not None and any(frame > max_frame for frame in frames):
+        errors.append(f"{location}.inspectionFrames must fit inside the composition ({max_frame} max)")
+
+
 def validate_render_pipeline(value: Any, errors: list[str]) -> None:
     location = "$.renderPipeline"
     require_keys(
@@ -250,6 +272,11 @@ def validate(data: Any) -> list[str]:
                     errors.append(f"$.referenceFidelity.finalHoldFrames[{index}] must be within the composition ({max_frame} max)")
     elif "referenceFidelity" in data:
         validate_reference_fidelity(data.get("referenceFidelity"), None, errors)
+
+    max_frame: int | None = None
+    if isinstance(request, dict) and is_number(request.get("durationSeconds")) and isinstance(request.get("fps"), int) and request["fps"] > 0:
+        max_frame = math.ceil(request["durationSeconds"] * request["fps"]) - 1
+    validate_visibility_plan(data.get("visibilityPlan"), max_frame, errors)
 
     approval = data.get("approval")
     require_keys(approval, ("mode", "status", "approvedScope", "evidence"), "$.approval", errors)
@@ -519,6 +546,14 @@ def run_self_test() -> int:
             "evidence": None,
         },
         "referenceFidelity": None,
+        "visibilityPlan": {
+            "protectedElements": ["Card title", "Card silhouette"],
+            "textMeasurement": "Measure DOM Range and Canvas actualBoundingBox metrics after fonts load",
+            "revealPolicy": "Use a temporary padded reveal layer and remove clipping before the hold",
+            "stablePolicy": "fully-visible-no-unapproved-crop",
+            "parameterStressTests": ["Longest allowed title and mixed CJK/Latin/digits"],
+            "inspectionFrames": [0, 24, 48],
+        },
         "creativeDirection": {
             "concept": "One controlled bounce",
             "targetFrame": "A front-facing card resting at the center",
@@ -611,6 +646,8 @@ def run_self_test() -> int:
     invalid["approval"]["evidence"] = "Not approved"
     invalid["parameterization"]["editableInStudio"] = False
     invalid["parameterization"]["fields"] = invalid["parameterization"]["fields"][:1]
+    invalid["visibilityPlan"]["stablePolicy"] = "overflow-hidden"
+    invalid["visibilityPlan"]["inspectionFrames"] = [0, 48, 60]
     invalid_errors = validate(invalid)
     image_valid = json.loads(json.dumps(valid))
     image_valid["request"]["inputMode"] = "image"
@@ -690,6 +727,8 @@ def run_self_test() -> int:
         "uncovered gap",
         "editableInStudio must be true",
         "at least 2 fields",
+        "forbid unapproved clipping",
+        "fit inside the composition",
     )
     if any(not any(fragment in error for error in invalid_errors) for fragment in expected_invalid_fragments):
         print("Self-test failed: invalid fixture was not rejected", file=sys.stderr)

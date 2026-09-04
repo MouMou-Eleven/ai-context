@@ -152,10 +152,12 @@ ai-context/
 │   │   │   │   │   │       │   ├── quality-gates.md
 │   │   │   │   │   │       │   ├── reference-fidelity-contract.md
 │   │   │   │   │   │       │   ├── remotion-contract.md
-│   │   │   │   │   │       │   └── render-performance-contract.md
+│   │   │   │   │   │       │   ├── render-performance-contract.md
+│   │   │   │   │   │       │   └── visibility-and-clipping-contract.md
 │   │   │   │   │   │       └── scripts/
 │   │   │   │   │   │           ├── audit_reference_render_path.py
 │   │   │   │   │   │           ├── check_settle_continuity.py
+│   │   │   │   │   │           ├── check_visibility_report.py
 │   │   │   │   │   │           ├── compare_background_regions.py
 │   │   │   │   │   │           ├── compare_reference_frame.py
 │   │   │   │   │   │           ├── validate_blueprint.py
@@ -440,8 +442,10 @@ ai-context/
 │       │                                         Remotion Skill 参考图保真、低清预览与最终渲染确认门修订
 │       ├── 2026-09-05-remotion-layout-locked-continuity.md
 │       │                                         Remotion Skill 几何锁定、禁止片尾整图覆盖与连续性审计修订
-│       └── 2026-09-05-remotion-director-expansion-and-background-fidelity.md
-│                                                 Remotion Skill 内部导演加工、动作自然度与背景保真修订
+│       ├── 2026-09-05-remotion-director-expansion-and-background-fidelity.md
+│       │                                         Remotion Skill 内部导演加工、动作自然度与背景保真修订
+│       └── 2026-09-05-remotion-text-visibility-and-clipping.md
+│                                                 Remotion Skill 文字与关键元素完整可见、裁剪祖先和最长参数压力测试修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界

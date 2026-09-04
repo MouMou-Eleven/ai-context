@@ -3,7 +3,7 @@
   "title": "Jianwei Remotion Internal Production Brief",
   "type": "object",
   "additionalProperties": false,
-  "required": ["visibility", "requestDigest", "immutableConstraints", "visualFacts", "directorTranslation", "energyChain", "cameraKeyPoses", "elementDirections", "timingStrategy", "parameterization", "negativeConstraints", "selfCritique"],
+  "required": ["visibility", "requestDigest", "immutableConstraints", "visualFacts", "directorTranslation", "energyChain", "cameraKeyPoses", "elementDirections", "visibilityStrategy", "timingStrategy", "parameterization", "negativeConstraints", "selfCritique"],
   "properties": {
     "visibility": {"const": "internal"},
     "requestDigest": {"type": "string", "minLength": 1},
@@ -77,17 +77,31 @@
         }
       }
     },
+    "visibilityStrategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protectedElements", "textMetrics", "revealMaskLifecycle", "stableOverflowPolicy", "parameterStressTests", "verification"],
+      "properties": {
+        "protectedElements": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "textMetrics": {"type": "string", "minLength": 1},
+        "revealMaskLifecycle": {"type": "string", "minLength": 1},
+        "stableOverflowPolicy": {"const": "protected-content-visible-no-unapproved-crop"},
+        "parameterStressTests": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "verification": {"type": "string", "minLength": 1}
+      }
+    },
     "timingStrategy": {"type": "string", "minLength": 1},
     "parameterization": {"type": "array", "items": {"type": "string"}},
     "negativeConstraints": {"type": "array", "items": {"type": "string"}, "minItems": 1},
     "selfCritique": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["flatnessRisk", "fidelityRisk", "backgroundRisk", "corrections"],
+      "required": ["flatnessRisk", "fidelityRisk", "backgroundRisk", "clippingRisk", "corrections"],
       "properties": {
         "flatnessRisk": {"type": "string", "minLength": 1},
         "fidelityRisk": {"type": "string", "minLength": 1},
         "backgroundRisk": {"type": "string", "minLength": 1},
+        "clippingRisk": {"type": "string", "minLength": 1},
         "corrections": {"type": "array", "items": {"type": "string"}, "minItems": 1}
       }
     }
