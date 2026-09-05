@@ -234,6 +234,7 @@ ai-context/
 │   │   │   │   ├── teaching-and-course-design.md  备课、课件与课程设计
 │   │   │   │   ├── demo-driven-course-design.md  演示驱动课程设计
 │   │   │   │   ├── tutorial-writing.md            学员教程写法
+│   │   │   │   ├── visual-and-oral-training-docs.md  飞书培训文档的可视化与口语化
 │   │   │   │   └── technical-explanation/         五级目录：技术解释方法
 │   │   │   │       ├── README.md                  方法索引
 │   │   │   │       ├── problem-driven-technical-explanation.md

@@ -5,6 +5,7 @@
 | 通用备课与课件设计 | [`teaching-and-course-design.md`](./teaching-and-course-design.md) | 课程目标、受众、结构和讲师/学员边界 |
 | 演示驱动与授课复盘 | [`demo-driven-course-design.md`](./demo-driven-course-design.md) | 技术概念课、现场演示、反馈和讲后复盘 |
 | 实操教程写法 | [`tutorial-writing.md`](./tutorial-writing.md) | 给学员或普通用户写可跟做、可验收的教程 |
+| 飞书培训文档的可视化与口语化 | [`visual-and-oral-training-docs.md`](./visual-and-oral-training-docs.md) | 培训类飞书文章的媒体、结构、可视化判断和口语表达 |
 | 技术名词解释 | [`technical-explanation/`](./technical-explanation/README.md) | 抽象概念、术语和技术科普的讲解方法 |
 
 ## 当前方法的唯一来源
