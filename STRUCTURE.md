@@ -145,6 +145,7 @@ ai-context/
 │   │   │   │   │   │       │   ├── deterministic-layout-contract.md
 │   │   │   │   │   │       │   ├── input-and-image-analysis.md
 │   │   │   │   │   │       │   ├── internal-production-brief.schema.json
+│   │   │   │   │   │       │   ├── director-console-contract.md
 │   │   │   │   │   │       │   ├── motion-blueprint.schema.json
 │   │   │   │   │   │       │   ├── motion-direction.md
 │   │   │   │   │   │       │   ├── output-contract.md
@@ -163,6 +164,7 @@ ai-context/
 │   │   │   │   │   │           ├── check_visibility_report.py
 │   │   │   │   │   │           ├── compare_background_regions.py
 │   │   │   │   │   │           ├── compare_reference_frame.py
+│   │   │   │   │   │           ├── check_layout_stability.py
 │   │   │   │   │   │           ├── validate_blueprint.py
 │   │   │   │   │   │           └── validate_production_brief.py
 │   │   │   │   │   ├── jianwei-ai-learning-community-workbench/
@@ -449,8 +451,10 @@ ai-context/
 │       │                                         Remotion Skill 几何锁定、禁止片尾整图覆盖与连续性审计修订
 │       ├── 2026-09-05-remotion-director-expansion-and-background-fidelity.md
 │       │                                         Remotion Skill 内部导演加工、动作自然度与背景保真修订
-│       └── 2026-09-05-remotion-text-visibility-and-clipping.md
+│       ├── 2026-09-05-remotion-text-visibility-and-clipping.md
 │                                                 Remotion Skill 文字与关键元素完整可见、裁剪祖先和最长参数压力测试修订
+│       └── 2026-09-05-remotion-text-stability-and-director-console.md
+│                                                 Remotion Skill 文字抗抖、字体锁定、布局稳定校验与导演台固定输出修订
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界

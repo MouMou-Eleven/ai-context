@@ -33,10 +33,10 @@ metadata:
 
 ## 参考资料路由
 
-- 导演和创意：`director-strategy.md`、`motion-direction.md`、`remotion-only-director-contract.md`
+- 导演和创意：`director-strategy.md`、`motion-direction.md`、`remotion-only-director-contract.md`、`director-console-contract.md`
 - 参考图与背景：`reference-fidelity-contract.md`、`background-fidelity-contract.md`、`input-and-image-analysis.md`
 - 布局与可见性：`deterministic-layout-contract.md`、`visibility-and-clipping-contract.md`、`parameterization-contract.md`
-- 实现、输出和验收：`remotion-contract.md`、`output-contract.md`、`quality-gates.md`、`render-performance-contract.md`
+- 实现、输出和验收：`remotion-contract.md`、`output-contract.md`、`quality-gates.md`、`render-performance-contract.md`；文字抗抖必须附 `check_layout_stability.py` 证据
 - JSON 自动化：`motion-blueprint.schema.json`、`internal-production-brief.schema.json`及对应校验脚本
 
 ## 规划输出最低要求

@@ -17,6 +17,15 @@
 - 禁止对数字使用 spring 的未约束 overshoot、随机抖动、每帧重新测量文本宽度或基于 `toLocaleString` 的字体/分隔符变化。
 - 同一字段只能有一个视觉所有者；禁止用第二个数字层交叉淡化来修正错位。
 
+## 文字抗抖动
+
+- 文字的 `left/top/width/height`, `font-size`, `line-height`, `letter-spacing`, `font-weight` 和 `transform-origin` 在一个动作阶段内保持固定；只让明确的运动属性按帧变化。
+- 文字入场可以使用整体 `translate3d`、`rotateX/Y` 或揭示进度，但必须在进入阅读区前完成亚像素运动，稳定区对齐到整数像素；不要让每个字独立使用不同的 spring 或持续旋转。
+- 同一文字层只允许一个主 transform 计算源。禁止父层和子层分别叠加未协调的 translate/scale/rotate，禁止同时用相机抖动和字层抖动表达同一个冲击。
+- 使用 `translate3d` 时将设计坐标量化到整数像素；禁止 `translate(0.5px)`、逐字随机 offset、字体大小在相邻帧切换和每帧重新测量导致的版面跳变。
+- 文字的 `opacity`、亮度或扫光可以变化，但不会改变实际边界框；强调效果在稳定区前归零，避免视觉重影被误判为文字抖动。
+- 字体必须在渲染前加载并固定，禁止先用回退字体排版后再切换到目标字体；参数化改字使用预留容器和确定性的 auto-fit/换行策略。
+
 ## 验证
 
 导出代表帧或浏览器测量报告，至少包含动作峰值、settle 开始、settle 中间和最终帧。对每个数字/列记录 `x, y, width, height, baseline`，运行：

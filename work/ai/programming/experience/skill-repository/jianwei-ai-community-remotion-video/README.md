@@ -20,6 +20,8 @@
 - 背景保真契约：[`skill/references/background-fidelity-contract.md`](./skill/references/background-fidelity-contract.md)
 - 内部提示词二次加工：[`skill/references/prompt-expansion-contract.md`](./skill/references/prompt-expansion-contract.md)
 - 内部导演执行稿 Schema：[`skill/references/internal-production-brief.schema.json`](./skill/references/internal-production-brief.schema.json)
+- 导演台稳定输出契约：[`skill/references/director-console-contract.md`](./skill/references/director-console-contract.md)
+- 布局/字体/基线稳定校验：[`skill/scripts/check_layout_stability.py`](./skill/scripts/check_layout_stability.py)
 - 文字与元素完整可见契约：[`skill/references/visibility-and-clipping-contract.md`](./skill/references/visibility-and-clipping-contract.md)
 - 渲染性能与预览流程：[`skill/references/render-performance-contract.md`](./skill/references/render-performance-contract.md)
 - 最终帧对比工具：[`skill/scripts/compare_reference_frame.py`](./skill/scripts/compare_reference_frame.py)
@@ -44,4 +46,5 @@
 - 2026-09-05 根据 `JianweiPartCover` 实测发现的片尾整图渐显、双层重影、遮挡和位置跳变，撤销“终端参考图混合策略”，改为 `layout-locked`：参考图只作分析/对比资料，同一套视觉所有者从第一帧连续运动到目标边界框。新增 `audit_reference_render_path.py`（生产源码整图引用/终端覆盖审计）、`check_settle_continuity.py`（最终稳定区三帧连续性审计）与 `visualOwners`、`finalHoldFrames` 等 Blueprint 硬字段。
 - 2026-09-05 对比同一工程的自有 Skill 与 `motion-director` 成片后，定位背景漂白根因为实现使用 `shade(bgColor, 0.52)` 把深海军蓝大范围混白；新增背景安全区 RGB/亮度采样与自动对比硬门槛。同时把用户简述到代码之间增加默认不公开的两遍导演执行稿，强制主动作能量链、事件响应、多关键姿态相机和自我批判，提升自然动感而不增加无关装饰。
 - 2026-09-05 根据 `preview3d.mp4` 主标题顶部被切掉的实测，定位高风险组合为 `146px` 字体放入 `148px` 高容器后再 `marginTop: -17px`、`scaleY(1.05)` 并保持 `overflow: hidden`。新增真实字形/可见边界、裁剪祖先和临时蒙版生命周期契约；稳定区必须释放 clip/mask，参数化模式必须测试最长值，并用 `check_visibility_report.py` 硬校验。
+- 2026-09-05 根据导演台对话记录与文字抖动风险复核，新增固定顺序的导演台输出契约，强化字体加载锁定、单一 transform 所有者、整数像素稳定区、基线/字体签名跨帧校验；升级 `check_layout_stability.py`，并将抗抖证据纳入质量门槛。
 
