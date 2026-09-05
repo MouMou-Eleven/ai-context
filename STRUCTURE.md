@@ -142,6 +142,7 @@ ai-context/
 │   │   │   │   │   │       ├── references/
 │   │   │   │   │   │       │   ├── background-fidelity-contract.md
 │   │   │   │   │   │       │   ├── director-strategy.md
+│   │   │   │   │   │       │   ├── deterministic-layout-contract.md
 │   │   │   │   │   │       │   ├── input-and-image-analysis.md
 │   │   │   │   │   │       │   ├── internal-production-brief.schema.json
 │   │   │   │   │   │       │   ├── motion-blueprint.schema.json
@@ -152,10 +153,12 @@ ai-context/
 │   │   │   │   │   │       │   ├── quality-gates.md
 │   │   │   │   │   │       │   ├── reference-fidelity-contract.md
 │   │   │   │   │   │       │   ├── remotion-contract.md
+│   │   │   │   │   │       │   ├── remotion-only-director-contract.md
 │   │   │   │   │   │       │   ├── render-performance-contract.md
 │   │   │   │   │   │       │   └── visibility-and-clipping-contract.md
 │   │   │   │   │   │       └── scripts/
 │   │   │   │   │   │           ├── audit_reference_render_path.py
+│   │   │   │   │   │           ├── check_layout_stability.py
 │   │   │   │   │   │           ├── check_settle_continuity.py
 │   │   │   │   │   │           ├── check_visibility_report.py
 │   │   │   │   │   │           ├── compare_background_regions.py
@@ -441,6 +444,8 @@ ai-context/
 │       ├── 2026-09-04-remotion-reference-fidelity-and-preview-gate.md
 │       │                                         Remotion Skill 参考图保真、低清预览与最终渲染确认门修订
 │       ├── 2026-09-05-remotion-layout-locked-continuity.md
+│       ├── 2026-09-05-remotion-deterministic-layout.md
+│       ├── 2026-09-05-remotion-universal-adaptive-architecture.md
 │       │                                         Remotion Skill 几何锁定、禁止片尾整图覆盖与连续性审计修订
 │       ├── 2026-09-05-remotion-director-expansion-and-background-fidelity.md
 │       │                                         Remotion Skill 内部导演加工、动作自然度与背景保真修订

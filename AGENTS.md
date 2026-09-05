@@ -8,6 +8,7 @@
 2. 先读 [`llms.txt`](./llms.txt)，再读任务对应的最近一层 `README.md`。
 3. 只读取完成任务必需的文件。不要默认加载全部 `history.md`、时间线、原始材料、长文档或二进制附件。
 4. 涉及新增、移动、重命名或清理时，再读 [`STRUCTURE.md`](./STRUCTURE.md)。
+5. 平台识别先于技能匹配：建委说“秒嗒/秒哒”或给出 `miaoda.cn`、`*.appmiaoda.com` 时，按百度秒哒处理，回复沿用“秒嗒”，不得写成飞书“妙搭”。不得调用 `lark-apps`、`lark-cli apps` 或 Spark 接口来操作百度秒哒；网站嵌入飞书文档不改变宿主平台。交付前检查平台名称、接口和依赖，完整规则见 [`产品辨析`](./work/ai/programming/tools/miaoda/disambiguation.md)。
 
 ## 2. 事实优先级
 
