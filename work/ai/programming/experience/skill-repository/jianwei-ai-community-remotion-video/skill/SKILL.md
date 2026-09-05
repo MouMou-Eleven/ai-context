@@ -5,7 +5,7 @@ metadata:
   short-description: 导演优先的参数化 Remotion 动效视频
 ---
 
-# jianwei-ai-community-remotion-video
+# jianwei-ai-community-remotion-video`n`n本 Skill 专用于 Remotion。实现、验证和依赖以 Remotion 官方文档及项目现有 Remotion 版本为准；不要加载或引用 HyperFrames 作为前置技能。旧版 `motion-director` 的导演原则已吸收至 [references/remotion-only-director-contract.md](references/remotion-only-director-contract.md)。
 
 把用户的简单想法转成明确、可执行、可验证的动态视觉。先完成导演判断，再拆动作和技术；创意必须服务信息与视觉焦点，“更多效果”不等于“更好效果”。
 
@@ -200,5 +200,6 @@ metadata:
 ## 完成标准
 
 结果应同时做到：内容准确、文字与关键元素完整可见、参考图最终帧和背景可验证、用户简述经过内部二次导演加工、焦点明确、动作有能量转折与因果响应、镜头服从主体、节奏有起伏、素材未失真、代码可编辑、逐帧确定、低清预览先确认、渲染证据可信。若其中任一硬门槛失败，继续修正，而不是用更多特效或更亮背景掩盖问题。
+
 
 
