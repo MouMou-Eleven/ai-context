@@ -5,7 +5,7 @@
   "origin": "internal",
   "sourcePath": "skill",
   "syncedAt": "2026-09-05",
-  "workflowRevision": 8,
+  "workflowRevision": 9,
   "approvalMode": "plan-first-explicit-confirmation",
   "directorMode": "memory-hook-contrast-overlap-payoff",
   "promptExpansionMode": "two-pass-internal-production-brief",
