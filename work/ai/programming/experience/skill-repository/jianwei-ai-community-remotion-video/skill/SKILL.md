@@ -140,7 +140,7 @@ metadata:
 - 每个参数必须绑定真实画面元素，Schema、默认值、组件 Props 和参数说明保持一致，不允许无效参数。
 - 交付前在 Studio 或代表帧中测试默认值、Schema 允许的最长文字/编号和至少一组非默认参数，确认不会被画布/容器/蒙版裁切，不会溢出、错位或破坏动作。
 
-参数化实施前必须读取 [references/parameterization-contract.md](references/parameterization-contract.md)。这里的“可编辑”有可观察定义：用户选中 Composition 后，能在 Studio 右侧 `Inspector → Default Props` 修改字段，预览中的真实画面元素立即变化。只有图层可选、源码里存在变量、或面板出现但画面不变，都不算参数化通过。
+参数化实施前必须读取 [references/parameterization-contract.md](references/parameterization-contract.md) 与 [references/deterministic-layout-contract.md](references/deterministic-layout-contract.md)。这里的“可编辑”有可观察定义：用户选中 Composition 后，能在 Studio 右侧 `Inspector → Default Props` 修改字段，预览中的真实画面元素立即变化。只有图层可选、源码里存在变量、或面板出现但画面不变，都不算参数化通过。
 
 #### 固定成片
 
@@ -170,7 +170,7 @@ metadata:
 - 受保护文字和关键元素必须完整显示。实际字形/可见框必须位于画布和每个裁剪祖先内；CJK、斜体、描边、阴影和 3D transform 需计入保护垫。禁止把负 margin、纵向缩放后的文字塞进与字号近似等高且 `overflow: hidden` 的容器。
 - 擦除/揭示使用独立临时蒙版层，不让承载最终文字的同一容器永久裁切。进入稳定区前把 `clip-path`/`mask-image` 设为 `none` 或卸载临时层，并让真实内容层 `overflow: visible`；扫光等装饰需要裁剪时使用自己的受限层。
 - 主动作必须有速度或状态转折，避免从头到尾单调插值。相机至少有起点、强调点和归零落点；若锁镜更合适，则在内部执行稿中说明原因。相机响应不能取代元素动作。
-- 结果稳定区的默认相机必须回到恒等状态：无残留平移、缩放、旋转、透视或会改变构图的呼吸。定格微动只能发生在不改变最终布局的小范围材质或局部光影上；严格 `layout-locked` 模式可完全静止。
+- 数字、排名、分数、百分比和高信息密度列必须遵守 [references/deterministic-layout-contract.md](references/deterministic-layout-contract.md)：等宽数字、固定列宽、整数像素锚点、单一视觉所有者；禁止 sibling 自适应挤压、每帧测量和亚像素漂移。\n- 数字、排名、分数、百分比和高信息密度列必须遵守 [references/deterministic-layout-contract.md](references/deterministic-layout-contract.md)：等宽数字、固定列宽、整数像素锚点、单一视觉所有者；禁止 sibling 自适应挤压、每帧测量和亚像素漂移。`n- 结果稳定区的默认相机必须回到恒等状态：无残留平移、缩放、旋转、透视或会改变构图的呼吸。定格微动只能发生在不改变最终布局的小范围材质或局部光影上；严格 `layout-locked` 模式可完全静止。
 - 参考图任务的每个视觉所有者必须在规划中登记目标边界框，并由同一个重建元素从动作阶段连续抵达该边界框；禁止为纠正终帧而新增 `FinalFrameLock`、`referenceOverlay`、全画布 opacity/crossfade 或第二套重复文字/图标。
 - 单一整图参考素材只允许放在 `reference/` 或 `public/` 供离线比较，生产源码必须通过 `scripts/audit_reference_render_path.py` 检查为零引用；如果用户明确选择整图平面运动，改用 `raster-motion` 并从第一帧到最后一帧只保留同一个图片层。
 - 不在配置中默认强制软件渲染。先使用当前环境的正常 Chromium 渲染路径；只有出现可复现的 GPU 兼容性或确定性问题时才回退软件渲染，并报告速度代价。
@@ -200,3 +200,5 @@ metadata:
 ## 完成标准
 
 结果应同时做到：内容准确、文字与关键元素完整可见、参考图最终帧和背景可验证、用户简述经过内部二次导演加工、焦点明确、动作有能量转折与因果响应、镜头服从主体、节奏有起伏、素材未失真、代码可编辑、逐帧确定、低清预览先确认、渲染证据可信。若其中任一硬门槛失败，继续修正，而不是用更多特效或更亮背景掩盖问题。
+
+
