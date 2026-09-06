@@ -4,6 +4,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-09-07 | [`2026-09-07-lesson-6-lecture-review-and-visualization-rules.md`](./2026-09-07-lesson-6-lecture-review-and-visualization-rules.md) | 根据第6课直播复盘，确认学员稿承接关系、学员视角、截图与逻辑图分工、生图不重复截图、红色标注保护和章节清理规则 |
 | 2026-09-02 | [`miaoda-advanced-course-scenario-driven-updates.md`](./2026-09-02-miaoda-advanced-course-scenario-driven-updates.md) | 完成秒哒进阶课写入与回读，确认版本更新课应从更新清单改造成使用场景链路，并用官方界面截图承接真实动作、结果和验收 |
 | 2026-09-01 | [`training-rule-single-source-and-technical-selection.md`](./2026-09-01-training-rule-single-source-and-technical-selection.md) | 取消把“选高、选低、用完”当作统一参数模板，完成活动规则结构性收口，建立产品事实与课程标题唯一来源，并确认常见技术机制可以直接讲清而不堆例外 |
 | 2026-09-01 | [`training-rule-scope-and-delivery-boundary.md`](./2026-09-01-training-rule-scope-and-delivery-boundary.md) | 根据完整规则审计后的逐项确认，区分宏观认知与具体实操、系列课与独立课、课堂主文档与备课稿，收口提示词、命令演示、可视化、参数、时长、秒哒定位和培训 / 自媒体调用边界 |
