@@ -272,8 +272,10 @@ ai-context/
 │   │   │               │                             AI 培训规则适用场景与课堂交付边界修订
 │   │   │               ├── 2026-09-01-training-rule-single-source-and-technical-selection.md
 │   │   │               │                             AI 培训单一来源与技术内容筛选修订
-│   │   │               └── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md
-│   │   │                                             秒哒进阶课场景驱动更新修订
+│   │   │               ├── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md
+│   │   │               │                             秒哒进阶课场景驱动更新修订
+│   │   │               └── 2026-09-07-lesson-6-lecture-review-and-visualization-rules.md
+│   │   │                                             第 6 课直播复盘与可视化规则修订
 │   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
