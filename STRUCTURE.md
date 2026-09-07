@@ -231,6 +231,7 @@ ai-context/
 │   │   │   ├── README.md                          AI 培训总入口
 │   │   │   ├── experience/                        四级目录：培训经验
 │   │   │   │   ├── README.md                      经验索引
+│   │   │   │   ├── jianwei-training-style.md      建委默认培训风格与课件形态
 │   │   │   │   ├── teaching-and-course-design.md  备课、课件与课程设计
 │   │   │   │   ├── demo-driven-course-design.md  演示驱动课程设计
 │   │   │   │   ├── tutorial-writing.md            学员教程写法
@@ -456,8 +457,10 @@ ai-context/
 │       │                                         Remotion Skill 内部导演加工、动作自然度与背景保真修订
 │       ├── 2026-09-05-remotion-text-visibility-and-clipping.md
 │                                                 Remotion Skill 文字与关键元素完整可见、裁剪祖先和最长参数压力测试修订
-│       └── 2026-09-05-remotion-text-stability-and-director-console.md
+│       ├── 2026-09-05-remotion-text-stability-and-director-console.md
 │                                                 Remotion Skill 文字抗抖、字体锁定、布局稳定校验与导演台固定输出修订
+│       └── 2026-09-07-training-review-generalization-and-reinforcement.md
+│                                                 AI 培训复盘通用化与重复错误强化机制
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界

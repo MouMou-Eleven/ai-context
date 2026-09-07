@@ -35,7 +35,8 @@
 
 - 只要任务要求 AI 生成、改写、润色、翻译或组织中文内容，默认先读 `brain/ai-expression/README.md`、`brain/ai-expression/cross-domain-rules.md`、`brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md` 和 `brain/ai-expression/experience/README.md`，再按交付形式选择口语化或书面化规则。
 - 默认只激活一个最具体的专业领域。用户说“AI 自媒体”，读取 `brain/ai-expression/` + `work/ai/self-media/`，不得加载 AI 培训。
-- 用户说“AI 培训”，读取 `brain/ai-expression/` + `work/ai/training/`；只有明确提到某个培训项目，才继续进入该项目。
+- 用户说“AI 培训”，读取 `brain/ai-expression/` + `work/ai/training/`；创建、修改、审核或复盘培训课件时，必须读取 `work/ai/training/experience/README.md` 和 `work/ai/training/experience/jianwei-training-style.md`。明确提到某个培训项目时，再叠加该项目；项目资料不能替代通用培训经验。
+- 用户在 AI 培训语境中说“复盘、总结经验、沉淀经验、写入 GitHub”时，默认同时交付项目层证据和通用经验更新，不得只新增单课复盘。同一错误在已有通用规则后再次出现，按 `work/ai/training/experience/README.md` 的强化机制前移调用和验收，不重复创建同义规则。
 - 用户说“给客户看、发给客户、客户审阅、对外发送、正式交付、交付版”等含义，或交付物显然代表建委或公司对外呈现时，读取 `brain/ai-expression/` + `work/other/commercial/` + 一个最具体的专业领域或项目。用户说“内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化或内容承接”时，也进入 `work/other/commercial/experience/content-demand-and-conversion.md`。商业层是跨领域边界，不计作第二个专业领域。
 - 用户要求商业计划书、项目申报、比赛材料、路演 PPT、融资材料，或交付物面向评委、投资人和孵化机构时，还必须读取 `work/other/commercial/experience/competition-and-investor-materials.md`。
 - 用户提到案例演示、产品演示、案例答辩、直播案例、结果展示、未来图景、卖结果、课程或社群案例、产品价值演示时，必须读取 `work/other/commercial/experience/case-result-narrative.md`，再叠加一个最具体的产品、项目或领域规则。

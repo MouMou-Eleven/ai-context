@@ -53,8 +53,8 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 | Skill 仓库、收录 Skill、同步 Skill、调用 Skill | `work/ai/programming/experience/skill-repository/README.md` | 对应条目的 README、`upstream.json`；执行时才读 `SKILL.md` |
 | 秒嗒 / 秒哒 / 百度 MIAODA / `*.appmiaoda.com` | `work/ai/programming/tools/miaoda/llms.txt` | 百度平台，禁止误用飞书妙搭 `lark-apps`；再选 basics、development、experience 或 updates 中一个分支 |
 | 言剪 AI、YanCut、OpenCut 二次开发 | `work/ai/programming/projects/yancut-ai/README.md` | architecture、roadmap；追溯时才读 history |
-| AI 培训、企业培训、公开课、讲师备课、培训课件、反馈复盘 | `work/ai/training/README.md` | experience、outlines、materials 或 projects 中一个分支 |
-| AI 超级个体陪跑社群、会员社群、社群课程 | `work/ai/training/projects/paid-community-course/README.md` | 只读当前任务对应文件 |
+| AI 培训、企业培训、公开课、讲师备课、培训课件、反馈复盘 | `work/ai/training/README.md` | 必读 `experience/README.md` + `experience/jianwei-training-style.md`，再选当前任务需要的活动方法 |
+| AI 超级个体陪跑社群、会员社群、社群课程 | `work/ai/training/README.md` | 先读通用培训经验和建委培训风格，再叠加 `projects/paid-community-course/README.md` 及当前任务文件 |
 | AI 视频通用制作 | `work/ai/video/README.md` | common |
 | 漫剧、企业宣传片、真人实拍故事 | `work/ai/video/types/README.md` | 对应单个类型 |
 | Seedance | `work/ai/video/tools/seedance/README.md` | 对应单个专题 |
@@ -78,7 +78,8 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 
 ## 严格组合规则
 
-- AI 培训内容 = AI 表达 + AI 培训；不自动读 AI 自媒体。
+- AI 培训内容 = AI 表达 + AI 培训通用经验 + 建委培训风格 + 当前任务需要的活动方法；明确项目时再叠加项目事实，不自动读 AI 自媒体。
+- AI 培训复盘或经验沉淀默认产生“项目层证据 + 通用方法更新”两层结果。已有规则再次被违反时做强化和前后双重验收，不另写一份同义复盘。
 - AI 自媒体内容 = AI 表达 + AI 自媒体；不自动读 AI 培训。
 - 对外商业成品 = AI 表达 + 商业化与对外交付 + 一个最具体的专业领域或项目。商业交付层只控制内外部稿件边界，不计作第二个专业领域。
 - 案例演示或产品价值表达 = AI 表达 + 案例结果叙事 + 一个最具体的产品、项目或领域；同时承担内容获客或购买承接时，再叠加内容需求与承接方法。

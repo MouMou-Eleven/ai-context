@@ -18,12 +18,21 @@ training/
 
 | 任务 | 首读 |
 |---|---|
-| 备课、课程设计、课件、现场反馈和复盘 | [`experience/README.md`](./experience/README.md) |
+| 备课、课程设计、课件、现场反馈和复盘 | [`experience/README.md`](./experience/README.md) + [`experience/jianwei-training-style.md`](./experience/jianwei-training-style.md) |
 | 技术名词解释 | [`experience/technical-explanation/README.md`](./experience/technical-explanation/README.md) |
 | 面向学员的实操教程 | [`experience/tutorial-writing.md`](./experience/tutorial-writing.md) |
 | 查培训大纲 | [`outlines/README.md`](./outlines/README.md) |
 | 查培训资料 | [`materials/README.md`](./materials/README.md) |
-| AI 超级个体陪跑社群 | [`projects/paid-community-course/README.md`](./projects/paid-community-course/README.md) |
+| AI 超级个体陪跑社群课程 | 先读通用培训经验，再读 [`projects/paid-community-course/README.md`](./projects/paid-community-course/README.md) |
+
+## 默认调用顺序
+
+1. 先读取 AI 表达基础层，保证中文语法、搭配和语境正确。
+2. 再读取 [`experience/README.md`](./experience/README.md) 和 [`experience/jianwei-training-style.md`](./experience/jianwei-training-style.md)，确定建委稳定的做课偏好和最终课件形态。
+3. 根据任务选择课程设计、技术解释、实操教程或飞书可视化方法；飞书课堂主文档必须读取 [`experience/visual-and-oral-training-docs.md`](./experience/visual-and-oral-training-docs.md)。
+4. 最后叠加具体项目事实、前后课程、案例和当前版本。项目资料不能替代通用经验，也不能让 AI 跳过第二步。
+
+用户在 AI 培训语境中要求复盘或沉淀经验时，默认同时处理“项目复盘证据”和“通用经验更新”。如果反馈已经存在于通用规则中但仍然复现，按 [`experience/README.md`](./experience/README.md) 的强化机制处理，不再重复抄写一份同义经验。
 
 ## 与其他领域的边界
 
@@ -36,6 +45,7 @@ training/
 ## 严格激活
 
 - “AI 培训、企业培训、公开课、讲师备课、培训课件、培训资料、授课复盘”只进入本目录。
+- 任何具体 AI 培训项目都必须先加载通用培训经验，再叠加项目资料；项目 README 不是通用方法的替代入口。
 - 不因课程需要宣传就自动加载自媒体。
 - 提示词只出现“AI 培训”或“AI 自媒体”中的一个时，只调用对应领域；用户明确同时提出两个领域时才组合。具体会员社群的销售任务按“社群项目事实 + AI 自媒体”处理。
 - 不因课程讲 AI 编程就自动加载全部编程知识库。
@@ -45,4 +55,4 @@ training/
 
 中文搭配、逻辑和语境统一服从 [`../../../brain/ai-expression/cross-domain-rules.md`](../../../brain/ai-expression/cross-domain-rules.md)，不在培训目录复制维护。培训目录只补充培训专项：受众、课程逻辑、课件结构、演示方式、讲师与学员资料边界、反馈和复盘。
 
-*结构确认：2026-08-20*
+*结构确认：2026-09-07*

@@ -4,6 +4,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-09-07 | [`training-review-generalization-and-reinforcement.md`](./2026-09-07-training-review-generalization-and-reinforcement.md) | 将 AI 培训复盘改为“项目证据 + 通用经验”双层沉淀，建立已有规则重复被违反时的高频强化机制和必读路由 |
 | 2026-09-05 | [`remotion-text-visibility-and-clipping.md`](./2026-09-05-remotion-text-visibility-and-clipping.md) | 将文字与关键元素完整可见提升为硬门槛：区分布局框、真实墨迹框和裁剪祖先，稳定区释放蒙版，最长参数值通过实测边界校验 |
 | 2026-09-05 | [`remotion-text-stability-and-director-console.md`](./2026-09-05-remotion-text-stability-and-director-console.md) | 将文字抗抖与导演台证据升级为结构化硬门槛：字体锁定、单一变换所有者、整数像素稳定区、基线/字体签名校验和固定输出顺序 |
 | 2026-09-05 | [`remotion-director-expansion-and-background-fidelity.md`](./2026-09-05-remotion-director-expansion-and-background-fidelity.md) | 增加用户简述的两遍内部导演加工、动作能量链和事件响应；将参考图背景升级为 RGB/亮度采样硬约束，拦截深色背景被大范围混白 |
