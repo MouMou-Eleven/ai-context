@@ -102,6 +102,8 @@ ai-context/
 │   │   │   │       │   │   │                     Codex 协助秒哒开发流程
 │   │   │   │       │   │   ├── codex-source-package-deployment.md
 │   │   │   │       │   │   │                     源码分包与秒哒交付
+│   │   │   │       │   │   ├── codex-miaoda-iterative-increment-workflow.md
+│   │   │   │       │   │   │                     Codex 协助秒哒增量迭代流程
 │   │   │   │       │   │   ├── content-rectification-prompts.md
 │   │   │   │       │   │   │                     内容整改提示词
 │   │   │   │       │   │   ├── large-video-upload.md
@@ -124,8 +126,10 @@ ai-context/
 │   │   │   │           │                         版本知识治理记录
 │   │   │   │           ├── 2026-08-15-cloud-runtime-diagnostics.md
 │   │   │   │           │                         云端运行诊断记录
-│   │   │   │           └── 2026-08-29-v3.7-and-upload-limit-governance.md
-│   │   │   │                                     V3.7 与上传限制口径修订
+│   │   │   │           ├── 2026-08-29-v3.7-and-upload-limit-governance.md
+│   │   │   │           │                         V3.7 与上传限制口径修订
+│   │   │   │           └── 2026-09-07-codex-miaoda-incremental-loop.md
+│   │   │   │                                     Codex 协助秒哒增量闭环修订
 │   │   │   ├── experience/                        四级目录：通用编程经验
 │   │   │   │   ├── README.md                      经验索引
 │   │   │   │   ├── creative-frontend-prompt-patterns.md
