@@ -19,7 +19,7 @@
 | 文件 | 内容 | 何时读取 |
 |---|---|---|
 | [`raw/two-video-transcripts.md`](./raw/two-video-transcripts.md) | 建委提供的两段带时间戳逐字稿 | 需要核对原始措辞、口语节奏和完整推进链路时 |
-| [`../../experience/spoken-argument-and-transition.md`](../../experience/spoken-argument-and-transition.md) | 从两段逐字稿提炼的口语推进、承接和论证方法 | 写口播、演讲稿、讲解稿或分析语言结构时 |
+| [`../../oral-expression/spoken-argument-and-transition.md`](../../oral-expression/spoken-argument-and-transition.md) | 从两段逐字稿提炼的口语推进、承接和论证方法 | 写口播、演讲稿、讲解稿或分析语言结构时 |
 | [`../../../../work/ai/self-media/experience/outcome-and-motivation.md`](../../../../work/ai/self-media/experience/outcome-and-motivation.md) | 面向自媒体经营提炼的成果展示、观点、知识和动机分层 | 设计自媒体选题、脚本和前端内容时 |
 
 ## 核验边界

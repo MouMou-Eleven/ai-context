@@ -31,13 +31,13 @@ ai-context/
 │   └── ai-expression/                             二级目录：AI 中文表达基础层
 │       ├── README.md                              AI 表达总入口、默认激活与组合规则
 │       ├── cross-domain-rules.md                  跨领域中文质量、逻辑与搭配规则
-│       ├── oral-expression/                       三级目录：口语化表达
-│       │   └── README.md                          口播、直播、授课和对话表达规则
+│       ├── oral-expression/                       三级目录：口语化表达（唯一通用来源）
+│       │   ├── README.md                          口语化表达总入口与检查清单
+│       │   └── spoken-argument-and-transition.md  口语化论证与前后承接方法
 │       ├── written-expression/                    三级目录：书面化表达
 │       │   └── README.md                          书稿、教程、方案和文档表达规则
 │       ├── experience/                            三级目录：AI 表达经验
-│       │   ├── README.md                          跨领域表达经验索引与提炼规则
-│       │   └── spoken-argument-and-transition.md  口语化论证与前后承接方法
+│       │   └── README.md                          跨领域表达经验索引与提炼规则
 │       └── chinese-datasets/                      三级目录：中文数据、规则来源与质量检查
 │           ├── README.md                          数据来源、授权、提炼、冲突治理和使用规则
 │           ├── grammar-and-error-checklist.md     默认调用的中文语法与病句检查
@@ -327,6 +327,12 @@ ai-context/
 │   │       │   └── README.md                      标题方法与素材入口
 │   │       ├── articles/
 │   │       │   └── README.md                      文章内容方法与素材入口
+│   │       ├── marketing-copy/
+│   │       │   └── README.md                      营销文案与推广文章入口
+│   │       ├── moments-copy/
+│   │       │   └── README.md                      朋友圈文案入口
+│   │       ├── community-copy/
+│   │       │   └── README.md                      社群文案与话术入口
 │   │       ├── video-scripts/
 │   │       │   ├── README.md                      口播与短视频脚本入口
 │   │       │   └── script-patterns.md             脚本结构模式
@@ -459,6 +465,8 @@ ai-context/
 │                                                 Remotion Skill 文字与关键元素完整可见、裁剪祖先和最长参数压力测试修订
 │       ├── 2026-09-05-remotion-text-stability-and-director-console.md
 │                                                 Remotion Skill 文字抗抖、字体锁定、布局稳定校验与导演台固定输出修订
+│       ├── 2026-09-07-structure-sync-and-content-routing.md
+│       │                                         结构镜像同步与表达/自媒体分流修订
 │       └── 2026-09-07-training-review-generalization-and-reinforcement.md
 │                                                 AI 培训复盘通用化与重复错误强化机制
 │
@@ -524,4 +532,4 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 不保存密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
 - 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；提交前自动生成 `STRUCTURE.html`，再运行 `repository/maintenance/sync-desktop-structure.ps1`。桌面暂不可用时只延后镜像同步，不阻断仓库提交；后续 Git 操作会自动补齐。
 
-*结构最后确认：2026-09-05*
+*结构最后确认：2026-09-07*

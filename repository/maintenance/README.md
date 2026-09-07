@@ -8,7 +8,7 @@
 | [`generate-structure-html.ps1`](./generate-structure-html.ps1) | 从 `STRUCTURE.md` 确定性生成可交互的 `STRUCTURE.html` | 提交前自动运行，也可手动重建 |
 | [`structure-viewer.template.html`](./structure-viewer.template.html) | HTML 思维导图的界面、展开折叠、导航和搜索模板 | 调整查看体验时 |
 | [`sync-desktop-structure.ps1`](./sync-desktop-structure.ps1) | 生成并同步 `F:\桌面文件\GitHub仓库完整结构.html`，核对 SHA-256，并清理旧 Markdown 镜像；桌面暂不可用时安全延后 | 每次结构调整后；本机 Git Hook 自动运行 |
-| [`git-hooks/pre-commit`](./git-hooks/pre-commit) | 提交前强制重建并暂存 `STRUCTURE.html`；桌面同步为非阻断重试 | 本机已通过 `core.hooksPath` 启用 |
+| [`git-hooks/pre-commit`](./git-hooks/pre-commit) | 每次提交前强制重建并暂存 `STRUCTURE.html`；桌面同步为非阻断重试 | 本机仓库应通过 `core.hooksPath` 启用 |
 | [`git-hooks/post-commit`](./git-hooks/post-commit) | 提交完成后触发桌面结构同步 | 本机已通过 `core.hooksPath` 启用 |
 | [`git-hooks/post-merge`](./git-hooks/post-merge) | 拉取或合并完成后触发桌面结构同步 | 本机已通过 `core.hooksPath` 启用 |
 | [`git-hooks/post-checkout`](./git-hooks/post-checkout) | 打开或切换仓库版本后自愈桌面镜像 | 本机已通过 `core.hooksPath` 启用 |
@@ -30,7 +30,7 @@ powershell -ExecutionPolicy Bypass -File repository/maintenance/validate-context
 powershell -ExecutionPolicy Bypass -File repository/maintenance/sync-desktop-structure.ps1
 ```
 
-本机仓库配置使用 `repository/maintenance/git-hooks/` 作为 Git Hook 路径。提交前自动重建并暂存仓库 HTML，提交或拉取合并后自动刷新桌面 HTML；脚本使用 SHA-256 验证两个 HTML 文件完全一致。旧的桌面 Markdown 镜像已被 HTML 替代并自动清理。
+本机仓库配置使用 `repository/maintenance/git-hooks/` 作为 Git Hook 路径。每次提交前自动重建并暂存仓库 HTML，提交或拉取合并后自动刷新桌面 HTML；脚本使用 SHA-256 验证两个 HTML 文件完全一致。旧的桌面 Markdown 镜像已被 HTML 替代并自动清理。提交前应确认 `git config --get core.hooksPath` 返回该路径；未返回时先执行 `git config core.hooksPath repository/maintenance/git-hooks`。
 
 ## 稳定性与恢复
 

@@ -15,8 +15,10 @@ brain/
 └── ai-expression/              AI 表达基础层
     ├── README.md               默认激活规则、表达层级和质量门槛
     ├── cross-domain-rules.md   跨领域中文质量、逻辑和搭配规则
-    ├── oral-expression/        口语化表达
-    │   └── README.md           口语化表达经验与检查清单
+    ├── oral-expression/        口语化表达（唯一通用来源）
+    │   ├── README.md           口语化表达总入口与检查清单
+    │   └── spoken-argument-and-transition.md
+    │                           口语化论证与前后承接方法
     ├── written-expression/     书面化表达
     │   └── README.md           书面化表达经验与检查清单
     ├── chinese-datasets/       中文数据、规则来源与质量检查
@@ -32,9 +34,7 @@ brain/
     │       └── raw/
     │           └── two-video-transcripts.md
     └── experience/             AI 表达实践经验
-        ├── README.md           经验索引和提炼规则
-        └── spoken-argument-and-transition.md
-                               口语化论证与前后承接方法
+        └── README.md           跨领域经验索引和提炼规则
 ```
 
 ## 建委大脑的两层结构
@@ -75,7 +75,7 @@ AI 表达不等于“建委本人说话方式”。它是一套用于提升中�
 ## 写入边界
 
 - 跨领域中文表达规则进入 `ai-expression/`。
-- 口语化、书面化和数据集治理进入 `ai-expression/` 对应文件。
+- 口语化通用规则统一进入 `ai-expression/oral-expression/`，书面化通用规则统一进入 `ai-expression/written-expression/`，数据集治理进入 `ai-expression/chinese-datasets/`。
 - 培训、自媒体、书稿、设计和项目专用规则进入 `work/` 对应领域。
 - 建委本人的长期思维、决策和商业认知进入 `cognition/`；可直接执行的领域方法仍进入 `work/`。
 - 一次性修改意见只有在多个任务中验证或由建委明确确认后，才提炼为 AI 表达规则。

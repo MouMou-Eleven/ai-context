@@ -60,8 +60,8 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 | Seedance | `work/ai/video/tools/seedance/README.md` | 对应单个专题 |
 | AI 书籍出版 | `work/ai/publishing/README.md` | 对应项目 |
 | 《飞书高效办公》书稿、章节、出版或编辑反馈 | `work/ai/publishing/projects/feishu-efficient-office/README.md` | `writing-style-analysis.md` + 当前章节文件；仅出现飞书文档 URL 不触发 |
-| AI 自媒体、标题、文章、口播、直播销售、账号增长 | `work/ai/self-media/README.md` | titles、articles、video-scripts、live-sales 或 experience 中一个分支 |
-| 成果展示、用户动机、观点与知识怎样结合 | `work/ai/self-media/experience/outcome-and-motivation.md` | 口播时再读 `brain/ai-expression/experience/spoken-argument-and-transition.md` |
+| AI 自媒体、标题、文章、营销文案、朋友圈、社群话术、口播、直播销售、账号增长 | `work/ai/self-media/README.md` | 按主要发布渠道读取 titles、articles、marketing-copy、moments-copy、community-copy、video-scripts、live-sales 或 experience 中一个分支 |
+| 成果展示、用户动机、观点与知识怎样结合 | `work/ai/self-media/experience/outcome-and-motivation.md` | 口播时再读 `brain/ai-expression/oral-expression/spoken-argument-and-transition.md` |
 
 生成上述中文内容时，专项入口之前必须先调用 AI 表达。
 
@@ -80,7 +80,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 
 - AI 培训内容 = AI 表达 + AI 培训通用经验 + 建委培训风格 + 当前任务需要的活动方法；明确项目时再叠加项目事实，不自动读 AI 自媒体。
 - AI 培训复盘或经验沉淀默认产生“项目层证据 + 通用方法更新”两层结果。已有规则再次被违反时做强化和前后双重验收，不另写一份同义复盘。
-- AI 自媒体内容 = AI 表达 + AI 自媒体；不自动读 AI 培训。
+- AI 自媒体内容 = AI 表达 + `brain/ai-expression/oral-expression/` 或 `written-expression/` + AI 自媒体对应渠道；不自动读 AI 培训。通用口语规则只在 `oral-expression/` 维护，渠道目录只写应用方法。
 - 对外商业成品 = AI 表达 + 商业化与对外交付 + 一个最具体的专业领域或项目。商业交付层只控制内外部稿件边界，不计作第二个专业领域。
 - 案例演示或产品价值表达 = AI 表达 + 案例结果叙事 + 一个最具体的产品、项目或领域；同时承担内容获客或购买承接时，再叠加内容需求与承接方法。
 - 跨行业商业内容 = AI 表达 + 内容需求与承接方法 + 一个最具体的专业领域或项目；不把 PPT、AI、培训等单一案例误写成普遍规律。
@@ -94,6 +94,7 @@ AI 表达只负责中文质量，不能覆盖上面的事实优先级。
 - “课程 / 课件”不明确时先判断对象：建委授课属于 AI 培训；给教师制作成品属于微课设计。
 - AI 表达是中文内容基础层，不计作一个额外业务领域，也不能触发无关项目。
 - 六十甲子项目即使包含网站、App、AI 音乐、生图或综艺开发，也固定从 `work/other/ai-sixty-jiazi-music-ip/` 读取；不得路由回 AI 编程项目。
+- 每一次 GitHub 提交前都必须从最新 `STRUCTURE.md` 重新生成并暂存 `STRUCTURE.html`；提交后同步桌面 HTML 并核对哈希，避免结构查看层与仓库内容漂移。
 
 ## 动态知识
 
