@@ -10,6 +10,13 @@
 - AI 执行具体任务：先读 [`llms.txt`](./llms.txt)，只进入任务对应领域。
 - 新增、移动或清理资料：同时遵守 [`AGENTS.md`](./AGENTS.md) 和 [`STRUCTURE.md`](./STRUCTURE.md)。
 
+## 平台识别硬规则：秒嗒与妙搭
+
+- 建委说“秒嗒”或“秒哒”时，指百度秒哒 MIAODA；回复中沿用“秒嗒”，不得改成“妙搭”。`miaoda.cn`、`*.appmiaoda.com`（包括 `jianwei.appmiaoda.com`）均按百度秒哒处理。
+- 飞书妙搭 Spark 是另一个产品。不得因为 `Miaoda` 拼写相同，或网站嵌入了飞书文档，就调用飞书妙搭的 `lark-apps`、`lark-cli apps`、Spark SDK 或套用其平台规则。
+- 先确认平台，再选择技能、API 和开发方案。百度秒哒任务从 [`秒哒知识入口`](./work/ai/programming/tools/miaoda/README.md) 读取；只有线索确实不足时才澄清。
+- 交付前检查说明、提示词、README、代码注释和工具依赖，清除错误平台名称与接口。完整判定规则见 [`产品辨析`](./work/ai/programming/tools/miaoda/disambiguation.md)。
+
 ## 五个一级目录
 
 | 一级目录 | 回答什么问题 | 内容边界 |

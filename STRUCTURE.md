@@ -31,13 +31,13 @@ ai-context/
 │   └── ai-expression/                             二级目录：AI 中文表达基础层
 │       ├── README.md                              AI 表达总入口、默认激活与组合规则
 │       ├── cross-domain-rules.md                  跨领域中文质量、逻辑与搭配规则
-│       ├── oral-expression/                       三级目录：口语化表达
-│       │   └── README.md                          口播、直播、授课和对话表达规则
+│       ├── oral-expression/                       三级目录：口语化表达（唯一通用来源）
+│       │   ├── README.md                          口语化表达总入口与检查清单
+│       │   └── spoken-argument-and-transition.md  口语化论证与前后承接方法
 │       ├── written-expression/                    三级目录：书面化表达
 │       │   └── README.md                          书稿、教程、方案和文档表达规则
 │       ├── experience/                            三级目录：AI 表达经验
-│       │   ├── README.md                          跨领域表达经验索引与提炼规则
-│       │   └── spoken-argument-and-transition.md  口语化论证与前后承接方法
+│       │   └── README.md                          跨领域表达经验索引与提炼规则
 │       └── chinese-datasets/                      三级目录：中文数据、规则来源与质量检查
 │           ├── README.md                          数据来源、授权、提炼、冲突治理和使用规则
 │           ├── grammar-and-error-checklist.md     默认调用的中文语法与病句检查
@@ -140,14 +140,45 @@ ai-context/
 │   │   │   │   │   │       ├── agents/
 │   │   │   │   │   │       │   └── openai.yaml
 │   │   │   │   │   │       ├── references/
+│   │   │   │   │   │       │   ├── background-fidelity-contract.md
+│   │   │   │   │   │       │   ├── director-strategy.md
+│   │   │   │   │   │       │   ├── deterministic-layout-contract.md
 │   │   │   │   │   │       │   ├── input-and-image-analysis.md
+│   │   │   │   │   │       │   ├── internal-production-brief.schema.json
+│   │   │   │   │   │       │   ├── director-console-contract.md
 │   │   │   │   │   │       │   ├── motion-blueprint.schema.json
 │   │   │   │   │   │       │   ├── motion-direction.md
 │   │   │   │   │   │       │   ├── output-contract.md
+│   │   │   │   │   │       │   ├── parameterization-contract.md
+│   │   │   │   │   │       │   ├── prompt-expansion-contract.md
 │   │   │   │   │   │       │   ├── quality-gates.md
-│   │   │   │   │   │       │   └── remotion-contract.md
+│   │   │   │   │   │       │   ├── reference-fidelity-contract.md
+│   │   │   │   │   │       │   ├── remotion-contract.md
+│   │   │   │   │   │       │   ├── remotion-only-director-contract.md
+│   │   │   │   │   │       │   ├── render-performance-contract.md
+│   │   │   │   │   │       │   └── visibility-and-clipping-contract.md
 │   │   │   │   │   │       └── scripts/
-│   │   │   │   │   │           └── validate_blueprint.py
+│   │   │   │   │   │           ├── audit_reference_render_path.py
+│   │   │   │   │   │           ├── check_layout_stability.py
+│   │   │   │   │   │           ├── check_settle_continuity.py
+│   │   │   │   │   │           ├── check_visibility_report.py
+│   │   │   │   │   │           ├── compare_background_regions.py
+│   │   │   │   │   │           ├── compare_reference_frame.py
+│   │   │   │   │   │           ├── check_layout_stability.py
+│   │   │   │   │   │           ├── validate_blueprint.py
+│   │   │   │   │   │           └── validate_production_brief.py
+│   │   │   │   │   ├── jianwei-ai-learning-community-workbench/
+│   │   │   │   │   │   ├── README.md              通用身份适配型工作台设计 Skill 说明
+│   │   │   │   │   │   ├── upstream.json          来源、版本与维护策略
+│   │   │   │   │   │   └── skill/                 可直接安装的完整 Skill
+│   │   │   │   │   │       ├── SKILL.md
+│   │   │   │   │   │       ├── agents/
+│   │   │   │   │   │       │   └── openai.yaml
+│   │   │   │   │   │       └── references/
+│   │   │   │   │   │           ├── conversation-protocol.md
+│   │   │   │   │   │           ├── design-system.md
+│   │   │   │   │   │           ├── quality-gate.md
+│   │   │   │   │   │           └── role-adaptation.md
 │   │   │   │   │   └── editaplot/
 │   │   │   │   │       ├── README.md              科研绘图 Skill 的调用、前提与更新方法
 │   │   │   │   │       ├── upstream.json          上游仓库、分支、commit 与许可
@@ -185,16 +216,30 @@ ai-context/
 │   │   │               │                         Remotion 重剪生产闭环修订
 │   │   │               ├── 2026-08-31-shotcut-professional-ai-workflow.md
 │   │   │               │                         Shotcut 专业 AI 剪辑工作流
-│   │   │               └── 2026-08-31-source-repo-professional-editing-queue.md
-│   │   │                                         源码仓专业剪辑排期修订
+│   │   │               ├── 2026-08-31-source-repo-professional-editing-queue.md
+│   │   │               │                         源码仓专业剪辑排期修订
+│   │   │               ├── 2026-09-01-concat-template-slots-command-queue.md
+│   │   │               │                         Concat 模板槽位与命令队列修订
+│   │   │               ├── 2026-09-02-admin-shared-backend.md
+│   │   │               │                         管理后台与共享后端闭环修订
+│   │   │               ├── 2026-09-02-commercialization-closure.md
+│   │   │               │                         商业化闭环与上线边界修订
+│   │   │               ├── 2026-09-03-local-demo-effects-stickers.md
+│   │   │               │                         本地演示特效与贴纸效果修订
+│   │   │               ├── 2026-09-03-glm53-manual-purchase.md
+│   │   │                                         GLM 模型与手动购买流程修订
+│   │   │               └── 2026-09-04-ai-progress-remotion-hyperframes-keyframes.md
+│   │   │                                         AI 执行进度可视化、Remotion 本地预检与手动关键帧修订
 │   │   │
 │   │   ├── training/                              三级目录：AI 培训
 │   │   │   ├── README.md                          AI 培训总入口
 │   │   │   ├── experience/                        四级目录：培训经验
 │   │   │   │   ├── README.md                      经验索引
+│   │   │   │   ├── jianwei-training-style.md      建委默认培训风格与课件形态
 │   │   │   │   ├── teaching-and-course-design.md  备课、课件与课程设计
 │   │   │   │   ├── demo-driven-course-design.md  演示驱动课程设计
 │   │   │   │   ├── tutorial-writing.md            学员教程写法
+│   │   │   │   ├── visual-and-oral-training-docs.md  飞书培训文档的可视化与口语化
 │   │   │   │   └── technical-explanation/         五级目录：技术解释方法
 │   │   │   │       ├── README.md                  方法索引
 │   │   │   │       ├── problem-driven-technical-explanation.md
@@ -226,8 +271,16 @@ ai-context/
 │   │   │               │                             社群总定位与超级个体定义修订
 │   │   │               ├── 2026-08-30-lesson-5-purchase-language-and-decision-boundary.md
 │   │   │               │                             第 5 节购买语言与决策边界修订
-│   │   │               └── 2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md
-│   │   │                                             第 5 节课后 AI 时代目的与参数解释修订
+│   │   │               ├── 2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md
+│   │   │               │                             第 5 节课后 AI 时代目的与参数解释修订
+│   │   │               ├── 2026-09-01-training-rule-scope-and-delivery-boundary.md
+│   │   │               │                             AI 培训规则适用场景与课堂交付边界修订
+│   │   │               ├── 2026-09-01-training-rule-single-source-and-technical-selection.md
+│   │   │               │                             AI 培训单一来源与技术内容筛选修订
+│   │   │               ├── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md
+│   │   │               │                             秒哒进阶课场景驱动更新修订
+│   │   │               └── 2026-09-07-lesson-6-lecture-review-and-visualization-rules.md
+│   │   │                                             第 6 课直播复盘与可视化规则修订
 │   │   │
 │   │   ├── video/                                 三级目录：AI 视频
 │   │   │   ├── README.md                          AI 视频总入口
@@ -278,6 +331,12 @@ ai-context/
 │   │       │   └── README.md                      标题方法与素材入口
 │   │       ├── articles/
 │   │       │   └── README.md                      文章内容方法与素材入口
+│   │       ├── marketing-copy/
+│   │       │   └── README.md                      营销文案与推广文章入口
+│   │       ├── moments-copy/
+│   │       │   └── README.md                      朋友圈文案入口
+│   │       ├── community-copy/
+│   │       │   └── README.md                      社群文案与话术入口
 │   │       ├── video-scripts/
 │   │       │   ├── README.md                      口播与短视频脚本入口
 │   │       │   └── script-patterns.md             脚本结构模式
@@ -322,8 +381,14 @@ ai-context/
 │       │       │                                  宽屏工作台、素材与音乐提示词改造
 │       │       ├── 2026-08-24-overseas-sound-oracle-and-stem-artifact-system.md
 │       │       │                                  海外声音产品与天干法器视觉系统
-│       │       └── 2026-08-24-context-relocation-to-other.md
-│       │                                          项目迁入 other 与唯一写入位置修订
+│       │       ├── 2026-08-24-context-relocation-to-other.md
+│       │       │                                  项目迁入 other 与唯一写入位置修订
+│       │       ├── 2026-09-02-five-tone-product-flow-and-private-audio-demo.md
+│       │       │                                  五音产品流程与私有音频演示修订
+│       │       ├── 2026-09-02-harmony-v6-ui-audit-and-interaction-fix.md
+│       │       │                                  V6 界面审计与交互修复
+│       │       └── 2026-09-02-product-v7-ui-and-profile-center.md
+│       │                                          V7 产品界面与个人中心修订
 │       └── inshan-popupiano/                      三级目录：海外电商项目
 │           ├── README.md                          当前合作模式、事实和待澄清项
 │           ├── 90-day-cold-start-plan.md          90 天冷启动执行方案
@@ -385,7 +450,29 @@ ai-context/
 │       │                                         赛事、路演与融资材料的对外边界修订
 │       ├── 2026-09-01-ai-programming-skill-repository.md
 │       │                                         AI 编程 Skill 仓库与上游快照治理
-│       └── 2026-09-01-case-result-narrative.md    案例结果叙事方法入库修订
+│       ├── 2026-09-01-case-result-narrative.md    案例结果叙事方法入库修订
+│       ├── 2026-09-01-remotion-skill-confirmation-and-action-contract.md
+│       │                                         Remotion Skill 确认门与逐元素动作契约修订
+│       ├── 2026-09-01-remotion-skill-director-and-parameterization.md
+│       ├── 2026-09-02-jianwei-remotion-parameterization.md
+│                                                 Studio 右侧 Default Props 可编辑性验收修订
+│                                                 Remotion Skill 导演层、重叠节奏与参数化默认输出修订
+│       ├── 2026-09-04-remotion-reference-fidelity-and-preview-gate.md
+│       │                                         Remotion Skill 参考图保真、低清预览与最终渲染确认门修订
+│       ├── 2026-09-05-remotion-layout-locked-continuity.md
+│       ├── 2026-09-05-remotion-deterministic-layout.md
+│       ├── 2026-09-05-remotion-universal-adaptive-architecture.md
+│       │                                         Remotion Skill 几何锁定、禁止片尾整图覆盖与连续性审计修订
+│       ├── 2026-09-05-remotion-director-expansion-and-background-fidelity.md
+│       │                                         Remotion Skill 内部导演加工、动作自然度与背景保真修订
+│       ├── 2026-09-05-remotion-text-visibility-and-clipping.md
+│                                                 Remotion Skill 文字与关键元素完整可见、裁剪祖先和最长参数压力测试修订
+│       ├── 2026-09-05-remotion-text-stability-and-director-console.md
+│                                                 Remotion Skill 文字抗抖、字体锁定、布局稳定校验与导演台固定输出修订
+│       ├── 2026-09-07-structure-sync-and-content-routing.md
+│       │                                         结构镜像同步与表达/自媒体分流修订
+│       └── 2026-09-07-training-review-generalization-and-reinforcement.md
+│                                                 AI 培训复盘通用化与重复错误强化机制
 │
 └── history/                                       一级目录：历史与追溯
     ├── README.md                                  历史入口和读取边界
@@ -449,4 +536,4 @@ work/<大领域>/<具体门类>/<经验|工具|项目>/<具体主题>/
 - 不保存密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
 - 结构调整后运行 `repository/maintenance/validate-context.ps1`，确认索引和相对链接有效；提交前自动生成 `STRUCTURE.html`，再运行 `repository/maintenance/sync-desktop-structure.ps1`。桌面暂不可用时只延后镜像同步，不阻断仓库提交；后续 Git 操作会自动补齐。
 
-*结构最后确认：2026-08-24*
+*结构最后确认：2026-09-07*

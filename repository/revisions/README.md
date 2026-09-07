@@ -4,6 +4,15 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-09-07 | [`structure-sync-and-content-routing.md`](./2026-09-07-structure-sync-and-content-routing.md) | 固化结构 HTML 与桌面镜像的同步责任，统一通用口语表达唯一来源，并建立 AI 自媒体渠道分流规则 |
+| 2026-09-07 | [`training-review-generalization-and-reinforcement.md`](./2026-09-07-training-review-generalization-and-reinforcement.md) | 将 AI 培训复盘改为“项目证据 + 通用经验”双层沉淀，建立已有规则重复被违反时的高频强化机制和必读路由 |
+| 2026-09-05 | [`remotion-text-visibility-and-clipping.md`](./2026-09-05-remotion-text-visibility-and-clipping.md) | 将文字与关键元素完整可见提升为硬门槛：区分布局框、真实墨迹框和裁剪祖先，稳定区释放蒙版，最长参数值通过实测边界校验 |
+| 2026-09-05 | [`remotion-text-stability-and-director-console.md`](./2026-09-05-remotion-text-stability-and-director-console.md) | 将文字抗抖与导演台证据升级为结构化硬门槛：字体锁定、单一变换所有者、整数像素稳定区、基线/字体签名校验和固定输出顺序 |
+| 2026-09-05 | [`remotion-director-expansion-and-background-fidelity.md`](./2026-09-05-remotion-director-expansion-and-background-fidelity.md) | 增加用户简述的两遍内部导演加工、动作能量链和事件响应；将参考图背景升级为 RGB/亮度采样硬约束，拦截深色背景被大范围混白 |
+| 2026-09-05 | [`remotion-layout-locked-continuity.md`](./2026-09-05-remotion-layout-locked-continuity.md) | 撤销参考图片尾整图混合策略，改为几何锁定重建；新增生产源码整图引用审计、最终稳定区连续性审计和视觉所有者/目标边界框硬字段，拦截重影、遮挡与最后一秒换场 |
+| 2026-09-04 | [`remotion-reference-fidelity-and-preview-gate.md`](./2026-09-04-remotion-reference-fidelity-and-preview-gate.md) | 将参考图目标最终帧、关键区域对比、只重建必要元素、低清预览与最终渲染二次确认、默认 Chromium 渲染优先级和性能预算提升为可执行硬门槛 |
+| 2026-09-01 | [`remotion-skill-director-and-parameterization.md`](./2026-09-01-remotion-skill-director-and-parameterization.md) | 将目标最终帧、状态反差、记忆点、收尾回扣和因果重叠提升为导演硬门槛，并把可编辑文字、编号与颜色的参数化 Remotion 工程设为默认输出 |
+| 2026-09-01 | [`remotion-skill-confirmation-and-action-contract.md`](./2026-09-01-remotion-skill-confirmation-and-action-contract.md) | 将 Remotion Skill 改为默认“规划确认后实施”，并建立逐元素触发、路径、缓动与因果动作契约 |
 | 2026-09-01 | [`ai-programming-skill-repository.md`](./2026-09-01-ai-programming-skill-repository.md) | 新增保存 Skill 实体的五级仓库、上游 commit 元数据和完整供应商快照治理规则 |
 | 2026-08-27 | [`commercial-external-material-boundary.md`](./2026-08-27-commercial-external-material-boundary.md) | 明确赛事、路演和融资材料不得暴露内部研发讨论、自证式声明及外部无法访问的本地证据 |
 | 2026-08-24 | [`sixty-jiazi-project-relocation.md`](./2026-08-24-sixty-jiazi-project-relocation.md) | 将 AI 六十甲子古音律与 IP 孵化从 AI 编程迁入 other，并锁定唯一项目路由与禁止恢复的旧路径 |

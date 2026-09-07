@@ -8,6 +8,7 @@
 2. 先读 [`llms.txt`](./llms.txt)，再读任务对应的最近一层 `README.md`。
 3. 只读取完成任务必需的文件。不要默认加载全部 `history.md`、时间线、原始材料、长文档或二进制附件。
 4. 涉及新增、移动、重命名或清理时，再读 [`STRUCTURE.md`](./STRUCTURE.md)。
+5. 平台识别先于技能匹配：建委说“秒嗒/秒哒”或给出 `miaoda.cn`、`*.appmiaoda.com` 时，按百度秒哒处理，回复沿用“秒嗒”，不得写成飞书“妙搭”。不得调用 `lark-apps`、`lark-cli apps` 或 Spark 接口来操作百度秒哒；网站嵌入飞书文档不改变宿主平台。交付前检查平台名称、接口和依赖，完整规则见 [`产品辨析`](./work/ai/programming/tools/miaoda/disambiguation.md)。
 
 ## 2. 事实优先级
 
@@ -33,9 +34,11 @@
 ## 4. 严格激活规则
 
 - 只要任务要求 AI 生成、改写、润色、翻译或组织中文内容，默认先读 `brain/ai-expression/README.md`、`brain/ai-expression/cross-domain-rules.md`、`brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md` 和 `brain/ai-expression/experience/README.md`，再按交付形式选择口语化或书面化规则。
+- 通用口语表达、口语推进和口语化论证只从 `brain/ai-expression/oral-expression/` 读取；培训、自媒体和其他领域只能补充场景应用，不得复制第二套口语规则。通用书面表达只从 `brain/ai-expression/written-expression/` 读取。
 - 默认只激活一个最具体的专业领域。用户说“AI 自媒体”，读取 `brain/ai-expression/` + `work/ai/self-media/`，不得加载 AI 培训。
 - 用户提到 `qingyun-ip-poster`、个人 IP 海报、账号九宫格、Keynote 观点海报、活动嘉宾海报或创意 IP 角色主视觉时，先读 `work/ai/programming/experience/skill-repository/qingyun-ip-poster/README.md` 和 `upstream.json`；真正执行时再按任务读取其 `skill/SKILL.md` 与 `references/`，不得把示例人物、奖项、日期、Logo 或案例数据当作事实。
-- 用户说“AI 培训”，读取 `brain/ai-expression/` + `work/ai/training/`；只有明确提到某个培训项目，才继续进入该项目。
+- 用户说“AI 培训”，读取 `brain/ai-expression/` + `work/ai/training/`；创建、修改、审核或复盘培训课件时，必须读取 `work/ai/training/experience/README.md` 和 `work/ai/training/experience/jianwei-training-style.md`。明确提到某个培训项目时，再叠加该项目；项目资料不能替代通用培训经验。
+- 用户在 AI 培训语境中说“复盘、总结经验、沉淀经验、写入 GitHub”时，默认同时交付项目层证据和通用经验更新，不得只新增单课复盘。同一错误在已有通用规则后再次出现，按 `work/ai/training/experience/README.md` 的强化机制前移调用和验收，不重复创建同义规则。
 - 用户说“给客户看、发给客户、客户审阅、对外发送、正式交付、交付版”等含义，或交付物显然代表建委或公司对外呈现时，读取 `brain/ai-expression/` + `work/other/commercial/` + 一个最具体的专业领域或项目。用户说“内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化或内容承接”时，也进入 `work/other/commercial/experience/content-demand-and-conversion.md`。商业层是跨领域边界，不计作第二个专业领域。
 - 用户要求商业计划书、项目申报、比赛材料、路演 PPT、融资材料，或交付物面向评委、投资人和孵化机构时，还必须读取 `work/other/commercial/experience/competition-and-investor-materials.md`。
 - 用户提到案例演示、产品演示、案例答辩、直播案例、结果展示、未来图景、卖结果、课程或社群案例、产品价值演示时，必须读取 `work/other/commercial/experience/case-result-narrative.md`，再叠加一个最具体的产品、项目或领域规则。
@@ -60,7 +63,7 @@
 - AI 培训：`work/ai/training/`，内部再分经验、大纲、资料、项目。付费会员社群属于培训项目；生成培训中文内容时必须叠加 AI 表达。
 - AI 视频：`work/ai/video/`，内部再分通用方法、类型、工具、项目。
 - AI 书籍出版：`work/ai/publishing/`，飞书书籍项目在此。
-- AI 自媒体：`work/ai/self-media/`，标题、文章、口播、直播销售和增长经验均在此，不归 AI 培训；生成自媒体中文内容时必须叠加 AI 表达。
+- AI 自媒体：`work/ai/self-media/`，标题、公众号文章、营销文案、朋友圈、社群话术、口播、直播销售和增长经验均在此，不归 AI 培训；生成自媒体中文内容时必须叠加 AI 表达。
 
 ### 其他
 
@@ -107,11 +110,12 @@
 - 每个长期领域、工具或项目必须有 `README.md` 作为入口。
 - 新文件必须被最近一层 README 索引；禁止出现无法路由的孤岛文件。
 - 先去重、去旧、合并同义内容。当前入口只保留当前有效结论；跨领域中文表达规则统一进入 `brain/ai-expression/`，专项目录只写专项差异和事实。
+- 口语化通用规则只进入 `brain/ai-expression/oral-expression/`；AI 培训与 AI 自媒体的口语化文件只能记录各自受众、渠道和交付边界。自媒体素材按主要发布渠道归入 `work/ai/self-media/` 的对应子目录，同一材料只保留一个主归属，其他位置只引用。
 - 外部创作者、数据集和写作案例不能按人物整体激活。先提炼为带适用范围的方法；同义内容合并，冲突内容按受众、体裁、任务目标和真实验证选择一种，不把多套风格同时拼接。
 - 重大变化先更新项目 README，再把必要的原因、新旧差异和日期追加到项目 `history.md`。普通小改动只留在 Git 提交，不单独建修订文件。
 - 历史细节由 Git 保留。不要为了“完整”让大量失效版本继续出现在当前读取树中。
 - 动态产品、功能、价格、界面和 API 遵守 `repository/versioned-knowledge-policy.md`，回答前重新核验。
-- 任何目录新增、移动、重命名或删除都必须同步更新 `STRUCTURE.md`。提交前必须成功重建可交互的 `STRUCTURE.html`；F 盘桌面镜像由 Git Hook 自动同步。桌面或磁盘暂时不可用时只能延后镜像更新，不得阻断仓库提交；后续提交、合并、检出或改写必须自动重试。
+- 任何目录新增、移动、重命名或删除都必须同步更新 `STRUCTURE.md`。每一次 GitHub 提交前，无论本次是否改了目录，都必须从最新 `STRUCTURE.md` 重建并暂存可交互的 `STRUCTURE.html`；提交后必须同步 `F:\桌面文件\GitHub仓库完整结构.html` 并核对 SHA-256。F 盘暂时不可用时只能延后桌面镜像，不得让仓库 HTML 过期或阻断 GitHub 提交；后续提交、合并、检出或改写必须自动重试。
 
 ## 8. 提交标准
 

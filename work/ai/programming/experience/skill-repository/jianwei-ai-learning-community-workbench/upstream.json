@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "jianwei-ai-learning-community-workbench",
+  "storageMode": "skill-snapshot",
+  "origin": "internal",
+  "sourcePath": "skill",
+  "syncedAt": "2026-09-04",
+  "workflowRevision": 3,
+  "approvalMode": "conversation-first-compact-confirmation",
+  "defaultOutputMode": "role-adapted-workbench-plan-or-implementation",
+  "upstreamReferences": [],
+  "updatePolicy": "review-and-merge"
+}

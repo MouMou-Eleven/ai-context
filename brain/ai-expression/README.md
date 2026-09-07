@@ -9,7 +9,9 @@ ai-expression/
 ├── README.md                 AI 表达总入口、默认激活规则和质量门槛
 ├── cross-domain-rules.md     跨领域通用的中文质量、逻辑和事实表达规则
 ├── oral-expression/         口语化表达：自然、清楚、适合朗读与交流
-│   └── README.md             口语化表达规则与检查清单
+│   ├── README.md             口语化表达总入口、通用规则与检查清单
+│   └── spoken-argument-and-transition.md
+│                              口语化论证与前后承接方法
 ├── written-expression/      书面化表达：准确、完整、适合文档与正式交付
 │   └── README.md             书面化表达规则与检查清单
 ├── chinese-datasets/         中文数据、开源规则来源与质量检查
@@ -18,8 +20,7 @@ ai-expression/
 │   ├── feitian-shanke/       技术科普中文参考材料
 │   └── short-video-outcome-and-motivation/  短视频口语参考材料
 └── experience/               AI 表达实践经验
-    ├── README.md             经验索引、问题类型和复盘入口
-    └── spoken-argument-and-transition.md  口语化论证与前后承接
+    └── README.md             跨领域经验索引、来源和提炼规则
 ```
 
 ## 默认激活规则
@@ -50,8 +51,8 @@ AI 表达基础层
 ### 不把 AI 表达当成领域规则
 
 - AI 表达负责中文语境、主谓宾搭配、逻辑通顺、信息组织、语气控制和输出质量。
-- AI 培训负责培训对象、课件结构、课程逻辑、演示方式、学员资料和授课复盘。
-- AI 自媒体负责标题、选题、口播结构、直播销售、平台承接和内容测试。
+- AI 培训负责培训对象、课件结构、课程逻辑、演示方式、学员资料和授课复盘；培训场景的口语应用规则留在培训目录。
+- AI 自媒体负责标题、选题、口播结构、直播销售、平台承接和内容测试；自媒体场景的口语应用规则留在自媒体目录。
 - AI 书籍出版负责章节、编辑规范、出版书面语、截图和事实核验。
 - 设计、视频、编程和其他项目分别负责其专业交付物与事实边界。
 
@@ -61,8 +62,9 @@ AI 表达是所有中文内容的基础层，领域规则是专项适配层。�
 
 | 用户任务 | 必须调用 | 不自动调用 |
 |---|---|---|
-| 写 AI 培训课件 | AI 表达全套基础规则与经验 + `work/ai/training/` | AI 自媒体、其他培训项目 |
-| 写 AI 自媒体口播 | AI 表达全套基础规则与经验 + `work/ai/self-media/` | AI 培训、个人口吻库 |
+| 写 AI 培训课堂主文档、线上或线下讲课内容 | AI 表达基础规则 + `oral-expression/` + `work/ai/training/` | AI 自媒体、书面技术手册；只有用户明确提出备课稿或课后资料时才切换交付物 |
+| 写供学员独立阅读的技术手册、公众号文章或课后资料 | AI 表达基础规则 + 书面化表达 + 对应领域 | 讲师内部提示和课堂时间安排 |
+| 写 AI 自媒体口播 | AI 表达基础规则 + `oral-expression/` + `work/ai/self-media/` | AI 培训、个人口吻库 |
 | 写给客户看的课程大纲、脚本或方案 | AI 表达全套基础规则与经验 + `work/other/commercial/` + 一个最具体的专业领域或项目 | 无关领域、内部协作措辞 |
 | 写《飞书高效办公》章节 | AI 表达全套基础规则与经验 + `work/ai/publishing/` | AI 自媒体销售规则 |
 | 写微课案例说明 | AI 表达全套基础规则与经验 + `work/design/microcourse-mg-animation/` | AI 培训专项，除非任务确实包含授课 |
@@ -82,7 +84,7 @@ AI 表达是所有中文内容的基础层，领域规则是专项适配层。�
 
 ## 写入边界
 
-- 中文表达的通用规则进入本目录。
+- 中文表达的通用规则进入本目录；口语化通用规则和论证方法统一进入 `oral-expression/`，不得再分散到培训、自媒体或其他经验文件中维护第二套。
 - 培训、自媒体、书稿、设计和项目专用表达进入各自领域。
 - 高质量原始中文资料先进入 `chinese-datasets/`，经授权、来源、清洗和用途登记后才可用于经验提炼。
 - 一次性的改稿意见如果没有跨任务价值，不写入本库；有长期价值时更新对应规则并记录来源。
@@ -90,6 +92,6 @@ AI 表达是所有中文内容的基础层，领域规则是专项适配层。�
 
 ## 默认读取入口
 
-AI 内容生成时：默认读取本 README、`cross-domain-rules.md`、`chinese-datasets/grammar-and-error-checklist.md`、`experience/README.md`，以及 `oral-expression/README.md` 或 `written-expression/README.md` 中与交付形式匹配的一个；`chinese-datasets/README.md` 用于确认数据治理和多来源冲突边界，原始数据只有在来源、授权和任务用途都明确时才读取。
+AI 内容生成时：默认读取本 README、`cross-domain-rules.md`、`chinese-datasets/grammar-and-error-checklist.md`、`experience/README.md`，以及 `oral-expression/README.md` 或 `written-expression/README.md` 中与交付形式匹配的一个；需要论证、承接或口语推进时，再读取 `oral-expression/spoken-argument-and-transition.md`。`chinese-datasets/README.md` 用于确认数据治理和多来源冲突边界，原始数据只有在来源、授权和任务用途都明确时才读取。
 
-*规则确认：2026-08-21*
+*最后校准：2026-09-07*

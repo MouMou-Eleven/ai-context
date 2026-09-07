@@ -144,4 +144,44 @@ Codex 配置页出现“将当前项目添加为 trusted project”提示时，�
 - 仓库未记录任何 API Key、Token、Cookie、局域网地址或完整认证文件。
 - 外部站点和供应商状态会变化；后续排查必须重新实测，不得把 2026-07-23 的 HTTP 结果当永久事实。
 
-*文件最后整理：2026-07-23；运行状态最后核验：2026-07-23*
+## 九、2026-09-07 GitHub、iKuuu、CFW 与 Clash Verge 复核
+
+### GitHub 故障结论
+
+本次实测不是 GitHub 账户或仓库权限失效：GitHub CLI 仍以 `MouMou-Eleven` 登录，凭据范围满足私有仓库读写；专用 Ed25519 公钥已经注册到 GitHub。网络表现存在明显路径差异：GitHub API 可以直连，GitHub 网页直连超时，而通过 iKuuu 本地代理访问网页和 API 都返回成功。因此，之前 HTTPS push 失败属于 GitHub HTTPS 路径不稳定，不能通过增大 `http.postBuffer` 解决。
+
+`ai-context` 已改用独立 SSH 别名：目标是 `ssh.github.com:443`，只使用 `id_ed25519_ai_context`。SSH 连接前由本地脚本依次探测 iKuuu、Clash for Windows 和 Clash Verge 的常见本地端口，使用当前真正启动的代理；都未启动时回退到 SSH 443 直连。该配置只作用于 GitHub SSH，不会改变浏览器或国内应用的流量路线。
+
+Git 内置 SSH 与 Windows OpenSSH 对 `ProxyCommand` 的调用方式不同。本机 Git 内置 SSH 曾把命令前的 `exec` 交给 PowerShell，导致 `exec is not recognized`。当前仓库已经通过仓库级 `core.sshCommand` 明确使用 Windows OpenSSH。2026-09-07 已依次验证 SSH 账户认证、`git fetch`、`git push --dry-run` 和真实 `git push`，远端 `main` 成功前进到课程复盘提交。
+
+后续处理 GitHub 连接时按以下顺序检查：
+
+1. `ssh -T github-ai-context` 是否返回 GitHub 认证成功。
+2. 当前使用的 VPN 客户端是否真的有本地代理端口在监听，不能只看窗口是否打开。
+3. `git remote -v` 是否仍为 `git@github-ai-context:...`，仓库级 `core.sshCommand` 是否仍指向 Windows OpenSSH。
+4. 先执行 `git fetch` 和 `git push --dry-run`，确认远端无冲突后再真实推送。
+5. 不把 GitHub 代理写成全局 Git 代理；固定全局端口会在 iKuuu、CFW 和 Verge 之间切换时变成失效配置，也会影响其他仓库和国内地址。
+
+### Clash for Windows 分流结论
+
+活动订阅本身已经包含 `.cn` 域名和中国大陆 IP 直连规则，尾部未命中流量才进入主选择组。因此，没有证据支持“当前 CFW 把所有国内流量都送到代理节点”。浏览器请求先进入本地 Clash 端口，不等于流量最终经过付费节点；是否消耗节点流量取决于规则最终选择 `DIRECT` 还是代理组。
+
+本次发现的实际异常是持久配置的活动订阅索引为 `-1`，同时 `GitHub -> 主选择组` 中的主选择组被保存为 `DIRECT`。这会让 GitHub 规则虽然存在，却仍然直连并触发超时。现已把活动订阅索引恢复为该订阅，并把主选择组恢复到原先保存的香港 IEPL 节点。修改前已完整备份；为不切断当前 Codex 任务，本次只更新持久配置，没有强制重载 CFW 内核。
+
+不要为了省流量把 CFW 改成全局直连，也不要把所有域名手工列进规则。正确做法是保持规则模式、国内规则指向 `DIRECT`、GitHub/OpenAI 等确需代理的域名指向主选择组，最后才由漏网规则接管未匹配流量。
+
+### Clash Verge 更新与同步
+
+Clash Verge Rev 已通过官方 GitHub Release 对应的 winget 包从 2.3.2 更新到 2.5.2，安装程序哈希验证通过。原配置生成出的基础模式是 `global`，这会让系统代理或 TUN 接管的全部流量进入同一个策略，是本次最明确的额外流量风险。`config.yaml`、`clash-verge.yaml` 和校验配置现已统一改为 `rule`，Mihomo 配置检查通过。
+
+Verge 中原有两个远程订阅均已过期或返回 404，不能继续把它们当成可更新来源。本次没有编造订阅，而是把当前仍可用的 CFW iKuuu 订阅地址和本地配置缓存同步到 Verge，并将其设为活动配置。仓库不保存订阅地址。为避免与正在运行的 iKuuu 和 Codex 链路争抢系统代理或 TUN，本次没有启动 Verge 接管网络；实际启用时仍需在安全窗口核对运行态。
+
+### 切换 VPN 的固定边界
+
+- 同一时间只让一个客户端接管 Windows 系统代理或 TUN；另一个客户端可以保留安装，但不要同时接管。
+- 每次切换后确认旧端口没有残留在 Windows 用户代理中，再测试 GitHub 网页、API、SSH 和一个国内站点。
+- 国内站点要通过 Clash 的连接详情或控制器确认最终策略为 `DIRECT`，不能只根据“请求经过 127.0.0.1”判断流量被代理。
+- 配置文件写入成功不代表运行内核已经加载；重载或启动只能放在没有活动 Codex 会话的维护窗口，并在之后验证真实规则命中。
+- 本机备份位于 GitHub 仓库之外，包含本地配置和订阅信息，不得提交到仓库或发送到聊天中。
+
+*文件最后整理：2026-09-07；运行状态最后核验：2026-09-07*

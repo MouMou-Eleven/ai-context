@@ -8,5 +8,6 @@
 | [`2026-08-29-v3.7-and-upload-limit-governance.md`](./2026-08-29-v3.7-and-upload-limit-governance.md) | V3.7、500MB 上传与旧分片方案的口径修订 |
 | [`2026-08-02-version-governance.md`](./2026-08-02-version-governance.md) | 当前能力、历史版本和旧源码分离规则 |
 | [`2026-08-15-cloud-runtime-diagnostics.md`](./2026-08-15-cloud-runtime-diagnostics.md) | 云端修改、用户复现和 Codex 日志分析边界 |
+| [`2026-09-07-codex-miaoda-incremental-loop.md`](./2026-09-07-codex-miaoda-incremental-loop.md) | 版本化增量包、线上未切换风险与统一验收闭环 |
 
 当前问题必须回到上级 README 和对应当前专题，并重新核验官方资料或实际环境。

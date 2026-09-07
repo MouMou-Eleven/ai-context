@@ -151,4 +151,4 @@ AI 输出时必须：
 - 保留真实知识与交付，不把内容全部改成情绪观点。
 - 不写轻松赚钱、必然成交、行业必然淘汰等承诺。
 - 没有真实成果时明确写“需要补案例”，不能编造工作台、学员或客户结果。
-- 表达层按需调用 [`../../../../brain/ai-expression/experience/spoken-argument-and-transition.md`](../../../../brain/ai-expression/experience/spoken-argument-and-transition.md)。
+- 表达层按需调用 [`../../../../brain/ai-expression/oral-expression/spoken-argument-and-transition.md`](../../../../brain/ai-expression/oral-expression/spoken-argument-and-transition.md)。

@@ -1,7 +1,7 @@
 # 言剪 AI（YanCut）
 
 > 状态：开发中（比赛原型阶段）
-> 当前口径确认：2026-08-31
+> 当前口径确认：2026-09-04
 
 ## 定位与边界
 
@@ -17,10 +17,13 @@
 - 当前界面：首页、创作台、AI 自动成片、素材库、模板中心、我的项目、个人声音库、任务中心、帮助中心、价格中心和剪辑工作台。独立包装中心已撤下，包装能力并入剪辑工作台的 AI 计划和时间线。
 - AI 工作流：用户输入自然语言 → 生成结构化操作计划 → 缺少必要信息时请求补充 → 用户确认 → 映射到真实剪辑命令。
 - 个人声音库：已建立声音登记、选择、克隆与合成的接口边界；用户必须拥有声音授权，不能克隆未获许可的声音。
-- 视频包装：Remotion 已作为首选可控包装引擎；AI 会把包装预设映射成当前项目中的可编辑文字轨、标签和关键帧，不再要求用户离开剪辑主链路进入独立页面。HyperFrames 通过 provider 边界预留，不把插件页面或概念展示误写成已完成服务。
-- 测试模型：2026-08-13 通过兼容 OpenAI Chat Completions 的测试中转调用 `gpt-5.6-sol`，推理强度 `high`。这只是开发测试配置，不构成生产供应商承诺。
+- 视频包装：Remotion 已作为首选可控包装引擎；AI 会把包装预设映射成当前项目中的可编辑文字轨、标签和关键帧，不再要求用户离开剪辑主链路进入独立页面。HyperFrames 已接入本地动效配方桥接，按可检查的 HTML/GSAP 节奏描述写入时间线；云端 HyperFrames 仍由独立队列配置提供。
+- 主规划模型：2026-09-03 切换为智谱 `glm-5.3-flash`，使用官方 OpenAI 兼容接口
+  `https://open.bigmodel.cn/api/paas/v4`，推理强度 `max`。模型规划器支持把真实图片、视频 URL
+  和字幕/转写文本作为多模态上下文发送；本地实测返回 HTTP 200。API Key 只保存在本地忽略文件
+  或部署平台密钥管理中，不写入仓库。
 - 本地开发目录：`F:\桌面文件\言剪AI`（2026-08-13 迁移并完成构建、启动验证）。
-- 代码现状：独立源码仓库已建立为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `d3a69dd`，远端源码提交 `ba642f8`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。`ai-context` 只保存项目上下文，不保存完整源码。
+- 代码现状：独立源码仓库为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`；本地 `main` 最新提交 `c10df52`，远端源码已同步提交 `300ef650a01a0838f64c0e311671239eb8e7a17e`，`upstream` 继续跟踪 `https://github.com/OpenCut-app/OpenCut.git`。本轮新增 AI 执行进度事件与时间线浮层、Remotion 本地能力预检、HyperFrames 动效配方桥接、手动关键帧按钮、结束帧可选中和深层中文化；`ai-context` 只保存项目上下文，不保存完整源码。
 - 开发与部署分工：采用“本地权威源码 + 百度秒哒云端接管”。前端、业务逻辑、价格权益、数据库 Schema、接口合同、Mock 和自动化测试先在本地完成；验证通过后按编号压缩包交付百度秒哒，由秒哒接入 Auth、Postgres、对象存储、Edge Function、短信能力和部署。
 - 秒哒兼容边界：当前本地基线是 Next.js 16.1.3，而已记录的秒哒稳定 Web 导入形态是 React + Vite。正式交付前必须重新核验平台能力；若仍不支持 Next.js，需提供 React + Vite 兼容构建，不能直接上传当前源码并宣称可部署。
 
@@ -34,7 +37,7 @@
 - 剪辑台中文主界面与原创“AI 指令工作室”结构：中文工具轨、预览舞台、右侧 AI 创作副驾和主生产时间线；顶部重复 AI 输入已移除。
 - AI 计划 Schema、本地兜底规划器、模型规划器、安全校验与 OpenCut 命令映射层。
 - 个人声音库界面与服务接口边界。
-- Remotion 包装包和 HyperFrames provider 预留。
+- Remotion 本地包装包、异步队列和可切换的云端 provider 合同；HyperFrames 动效配方桥接。
 - 真实测试中转连通性和网站内部 `/api/yancut/ai/plan` 端到端验证。
 - 生产构建、AI 单元测试和浏览器视觉验收。
 - AI 计划能力预检、项目版本冲突保护、有界执行回执与本地失败回滚。
@@ -68,15 +71,32 @@
 - 长视频高光切片已接入：基于音频能量和已有字幕的主题命中选择非重叠窗口，再以 TracksSnapshotCommand 拼接并可撤销；缺少证据时会明确跳过。
 - Remotion 渲染已接入队列合同：本地无远端配置时使用异步本地队列，支持 queued/running/completed/failed 和轮询接口；配置 `YANCUT_REMOTION_RENDER_URL` 后可切换远端队列，支持 `statusUrl` 回写。
 - 自有源码仓库已配置 `origin`，并完成源码树及本轮专业编辑增量同步；Git 全局代理失效时通过 GitHub Git Data API 完成远端提交验证。
+- Concat 已完成成熟度、架构和许可核验：结论为“真实但早期的 alpha”，不作为可直接商用底座；言剪 AI 吸收真实模板实例化、稳定素材 ID、串行命令和失败回滚经验。
+- 模板中心已补齐 8 个真实创作包的 4-6 个素材槽位：必填槽位未完成时不创建空壳项目，填满后复制真实媒体并生成连续可编辑时间线，失败会清理半成品项目。
+- AI 计划执行已加入串行操作队列，避免两个异步计划并发覆盖项目状态；修复 ducking 人声窗口把 ticks 误当秒的单位错误。
+- 2026-09-01 浏览器端到端回归：5 个必填素材槽位填满后创建 25 秒项目，主视频轨写入 5 段真实图片素材，标题保持可编辑，控制台错误和警告为 0。
+- 商业化积分闭环已完成本地代码实现：免费本地剪辑不扣积分；AI 剪辑、自动成片、声音克隆、声音合成和云端包装按统一目录扣分；新用户赠送 30 个体验积分。
+- 套餐与积分包已落到统一产品目录：39 元/月 500 积分、99 元/季度 1650 积分、329 元/年 7200 积分；另有 9.9 元/100、39 元/500、79 元/1200 三档积分包。
+- 积分钱包、流水、订单、订阅、声音资产和渲染任务已加入 Postgres Schema、索引与迁移；付费操作具备登录校验、限流、幂等、失败退款和用户归属保护。
+- 支付采用外部适配器与 HMAC 签名回调；返回地址和收银台地址具备同源/HTTPS/允许名单校验。真实支付通道未配置时明确返回“不会扣款”。
+- Remotion/HyperFrames 云渲染任务在数据库模式下持久化；远程状态地址限制为配置服务同源，失败任务自动退还积分。
+- 素材批量容量按总量预检并支持失败回滚；项目初始化、IndexedDB 清理和 hydration 前交互阻塞问题已修复。
+- 2026-09-02 完整回归：185 个单元测试、TypeScript、Next.js 31 路由生产构建和商业化 Playwright 主流程均通过；桌面首页、编辑器、价格页和移动端首屏无控制台错误。
+- 管理后台与共享后端已完成本地闭环：`/admin` 提供真实运行概览、用户管理员授权、15 项服务配置和审计记录；新增三张 Postgres 管理表与 4 组受保护 API，模型、声音、渲染和支付运行时均会读取后台覆盖配置。
+- 管理密钥只以 AES-256-GCM 密文入库并向浏览器返回掩码；本地演示模式仅限回环地址，生产环境必须使用真实 Auth、数据库和独立加密密钥。
+- 2026-09-02 管理端回归：187 个单元测试、TypeScript、Next.js 生产构建和 Playwright 商业主流程通过；`/admin` 浏览器控制台错误为 0。
+- 2026-09-03 模型与购买流程更新：价格页改为“联系客服购买”，通过客服二维码/联系方式人工确认后开通积分；兼容旧收银台的接口不再创建订单或发起扣款。用户确认的微信二维码已作为站内资源内置，联系方式为 `15020414318`，不设置客服名称；后台可覆盖二维码和联系方式。GLM-5.3-Flash 多模态规划参数已接入，图片/视频/字幕上下文会进入模型请求。
+- 2026-09-03 本地演示与画面能力更新：`YANCUT_LOCAL_DEMO_MODE=true` 时未登录可完成钱包、AI 计划和本地编辑演示；新增 13 个基础 GPU 特效、7 个模糊变体、扩充创作贴纸、AI 特效/贴纸命令，并修复属性中文文案与多面板语言状态同步。验证覆盖 TypeScript、Rust/WASM、Next.js 生产构建、接口 200 和浏览器面板。
+- 2026-09-04 AI 执行可视化与专业工作流更新：AI 计划执行逐步回传 `running/applied/failed/completed` 事件，右侧计划和底部时间线同步显示当前步骤与操作消息；Remotion 在本地开发模式预检为可执行，未配置远程队列时使用本地异步渲染队列；HyperFrames 通过可编辑 HTML/GSAP 动效配方桥接进入时间线。时间线新增手动关键帧按钮，支持视觉属性与音量关键帧；元素在精确结束帧仍可选中；属性面板、多选状态、预览菜单、音效提示和替换素材提示完成中文化。已检查 [OpenDesign](https://github.com/nexu-io/open-design) 的 brief→artifact→preview→delivery 工作流，将“可检查产物 + 实时反馈 + 可交付输出”原则融入 AI 执行体验。
 
 尚未完成：
 
-- 生产级账号、云端项目同步、计费与额度系统的本地完整实现和秒哒云端接线。
-- 声音克隆供应商的正式生产配置、授权留痕和完整试听回写。
+- 秒嗒生产接线、云端项目同步和跨账号隔离验收；管理后端、积分、订单、订阅与客服人工购买指引已完成本地实现，二维码和联系方式已经确认，仍需部署真实 Auth、Postgres、对象存储，并固化付款核验、积分开通和对账流程。
+- 声音克隆供应商的正式生产配置、授权留痕、录音质量检查和完整试听回写。
 - AI 自动剪辑对长视频、复杂多轨和失败回滚的系统验证。
-- Remotion 云端渲染服务的生产部署、对象存储回写、并发和成本测试；当前已完成本地异步队列和远端 provider 合同，仍需接入稳定的云任务服务。HyperFrames 仍保持 provider 预留。
+- Remotion/HyperFrames 云端渲染服务的生产部署、对象存储回写、并发和成本测试；当前已完成 Remotion 本地队列、远端 provider 合同、HyperFrames 本地配方桥接、数据库任务记录和失败退款，仍需接入稳定的云任务服务。
 - 专业剪辑能力仍待补齐：片段 slip/slide、响度标准化与真峰值计量、代理持久化与音画代理、速度曲线编辑器、复杂调色、运动跟踪、多机位和更稳定的语义高光模型。
-- 模板创作包的真实素材槽位、镜头替换、字幕样式与配乐规则。
+- 模板创作包仍需补镜头替换预览、可选槽位、字幕样式与配乐规则；真实必填素材槽位和连续时间线实例化已完成。
 - 部署域名和正式隐私政策。
 
 ## 文件索引
@@ -92,6 +112,13 @@
 | [`revisions/2026-08-31-effects-remotion-commercial-loop.md`](./revisions/2026-08-31-effects-remotion-commercial-loop.md) | 音效容错、贴纸/特效扩容、Remotion 8 类动效、商业产品参考与桌面端回归 |
 | [`revisions/2026-08-31-shotcut-professional-ai-workflow.md`](./revisions/2026-08-31-shotcut-professional-ai-workflow.md) | Shotcut/MLT 参考边界、AI 专业剪辑四阶段、Remotion 时间线融合、文字比例修复与实测证据 |
 | [`revisions/2026-08-31-source-repo-professional-editing-queue.md`](./revisions/2026-08-31-source-repo-professional-editing-queue.md) | 自有源码仓库、专业剪辑命令、代理/高光/速度曲线和 Remotion 队列落地记录 |
+| [`revisions/2026-09-01-concat-template-slots-command-queue.md`](./revisions/2026-09-01-concat-template-slots-command-queue.md) | Concat 成熟度与许可判断、真实模板槽位、AI 串行命令和 ducking 单位修复记录 |
+| [`revisions/2026-09-02-commercialization-closure.md`](./revisions/2026-09-02-commercialization-closure.md) | 免费与付费边界、积分套餐、订单/订阅/声音/渲染数据模型、安全策略、验证证据和上线条件 |
+| [`revisions/2026-09-02-admin-shared-backend.md`](./revisions/2026-09-02-admin-shared-backend.md) | 管理后台、共享配置、管理员权限、审计记录、动态运行配置和秒哒接线顺序 |
+| [`revisions/2026-09-03-glm53-manual-purchase.md`](./revisions/2026-09-03-glm53-manual-purchase.md) | GLM-5.3-Flash 多模态规划、官方接口实测与客服扫码人工购买流程 |
+| [`revisions/2026-09-03-local-demo-effects-stickers.md`](./revisions/2026-09-03-local-demo-effects-stickers.md) | 本地免登录演示、GPU 特效、AI 特效/贴纸命令、贴纸扩充与中文状态修复 |
+| [`revisions/2026-09-04-ai-progress-remotion-hyperframes-keyframes.md`](./revisions/2026-09-04-ai-progress-remotion-hyperframes-keyframes.md) | AI 执行进度可视化、Remotion 本地预检、HyperFrames 动效配方桥接、手动关键帧、结束帧选择与深层中文化 |
+| 源码仓库 `docs/yancut/manual-test-checklist.md` | 网站完整功能清单、人工验收步骤、自动门禁与秒嗒上线前测试边界 |
 
 ## AI 调用规则
 
@@ -113,4 +140,4 @@
 - 正式支付渠道、套餐价格、模型与渲染成本、退款和发票策略。
 - 上线版本是否继续保留 OpenCut 上游入口，以及具体的署名展示位置。
 
-*索引最后整理：2026-08-31*
+*索引最后整理：2026-09-04*

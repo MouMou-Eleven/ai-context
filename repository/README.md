@@ -22,6 +22,7 @@
 ## 发布与桌面同步
 
 - 建委要求沉淀到 GitHub 时，默认校验后直接提交并推送 `main`，不创建 PR。
-- 每次结构变化先更新 `STRUCTURE.md`；提交前 Git Hook 强制重建 `STRUCTURE.html`，提交、合并、检出或历史改写后再同步到 `F:\桌面文件\GitHub仓库完整结构.html`。
+- 每次结构变化先更新 `STRUCTURE.md`；每一次 GitHub 提交前 Git Hook 都从最新 Markdown 强制重建并暂存 `STRUCTURE.html`，不论本次是否改了目录。提交、合并、检出或历史改写后再同步到 `F:\桌面文件\GitHub仓库完整结构.html`。
 - 桌面或 F 盘暂时不可用时，同步会安全延后而不阻断 Git；仓库再次发生上述操作后自动补同步。Hook 路径保存在本地仓库配置中，电脑重启不会丢失。
 - HTML 支持逐层展开、全部折叠、一级目录导航和全文搜索。桌面文件是只读镜像；仓库 `STRUCTURE.md` 始终是唯一权威来源。
+- 如果发现 Git Hook 未启用，先执行 `git config core.hooksPath repository/maintenance/git-hooks`，再继续提交；提交后检查仓库 HTML 与桌面 HTML 的 SHA-256，不能只看提交是否成功。

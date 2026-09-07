@@ -9,3 +9,5 @@
 | 参考源码 | [`reference-materials/`](./reference-materials/README.md) | 只有执行方案需要时才读取的源码 |
 
 单次问题先记录在踩坑或案例；重复验证后再提炼为处方。
+
+版本化的“Codex审查 → 秒哒执行 → 正式域名验收 → 用户反馈”闭环见 [`patterns/codex-miaoda-iterative-increment-workflow.md`](./patterns/codex-miaoda-iterative-increment-workflow.md)。
