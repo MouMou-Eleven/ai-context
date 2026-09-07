@@ -34,6 +34,7 @@
 
 - 只要任务要求 AI 生成、改写、润色、翻译或组织中文内容，默认先读 `brain/ai-expression/README.md`、`brain/ai-expression/cross-domain-rules.md`、`brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md` 和 `brain/ai-expression/experience/README.md`，再按交付形式选择口语化或书面化规则。
 - 默认只激活一个最具体的专业领域。用户说“AI 自媒体”，读取 `brain/ai-expression/` + `work/ai/self-media/`，不得加载 AI 培训。
+- 用户提到 `qingyun-ip-poster`、个人 IP 海报、账号九宫格、Keynote 观点海报、活动嘉宾海报或创意 IP 角色主视觉时，先读 `work/ai/programming/experience/skill-repository/qingyun-ip-poster/README.md` 和 `upstream.json`；真正执行时再按任务读取其 `skill/SKILL.md` 与 `references/`，不得把示例人物、奖项、日期、Logo 或案例数据当作事实。
 - 用户说“AI 培训”，读取 `brain/ai-expression/` + `work/ai/training/`；只有明确提到某个培训项目，才继续进入该项目。
 - 用户说“给客户看、发给客户、客户审阅、对外发送、正式交付、交付版”等含义，或交付物显然代表建委或公司对外呈现时，读取 `brain/ai-expression/` + `work/other/commercial/` + 一个最具体的专业领域或项目。用户说“内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化或内容承接”时，也进入 `work/other/commercial/experience/content-demand-and-conversion.md`。商业层是跨领域边界，不计作第二个专业领域。
 - 用户要求商业计划书、项目申报、比赛材料、路演 PPT、融资材料，或交付物面向评委、投资人和孵化机构时，还必须读取 `work/other/commercial/experience/competition-and-investor-materials.md`。

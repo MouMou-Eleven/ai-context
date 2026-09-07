@@ -8,6 +8,7 @@
 |---|---|---|---|
 | jianwei-ai-community-remotion-video | [`jianwei-ai-community-remotion-video/skill/SKILL.md`](./jianwei-ai-community-remotion-video/skill/SKILL.md) | [`jianwei-ai-community-remotion-video/upstream.json`](./jianwei-ai-community-remotion-video/upstream.json) | 把一句话、图片或图文需求扩展为符合 Remotion 约束的高质量视频动效蓝图 |
 | EditaPlot | [`editaplot/source/skill/editaplot/SKILL.md`](./editaplot/source/skill/editaplot/SKILL.md) | [`editaplot/upstream.json`](./editaplot/upstream.json) | 通过 Origin/OriginPro 制作与编辑科研图表；本仓保存完整运行仓库快照 |
+| qingyun-ip-poster | [`qingyun-ip-poster/skill/SKILL.md`](./qingyun-ip-poster/skill/SKILL.md) | [`qingyun-ip-poster/upstream.json`](./qingyun-ip-poster/upstream.json) | 将人物、观点、活动或创意角色素材编译为 3:4 / 9:16 的系列化高级海报视觉系统 |
 
 ## 存放约定
 

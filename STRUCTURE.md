@@ -152,6 +152,10 @@ ai-context/
 │   │   │   │   │       ├── README.md              科研绘图 Skill 的调用、前提与更新方法
 │   │   │   │   │       ├── upstream.json          上游仓库、分支、commit 与许可
 │   │   │   │   │       └── source/                完整上游快照，内部供应商文件不逐项展开
+│   │   │   │   │   └── qingyun-ip-poster/          五级目录：青云 IP Poster 海报视觉 Skill
+│   │   │   │   │       ├── README.md              调用方式、适用范围、事实与许可边界
+│   │   │   │   │       ├── upstream.json          上游仓库、固定 commit、版本与更新规则
+│   │   │   │   │       └── skill/                 完整上游 Skill 快照，内部文件不逐项展开
 │   │   │   │   └── reference-materials/           五级目录：编程参考资料
 │   │   │   │       ├── README.md                  参考资料索引
 │   │   │   │       └── creative-frontend-prompts/
