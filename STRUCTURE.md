@@ -265,6 +265,7 @@ ai-context/
 │   │   │           ├── history.md                 已清洗的关键演进摘要
 │   │   │           └── revisions/                 六级目录：课程关键修订
 │   │   │               ├── README.md              修订索引与读取边界
+│   │   │               ├── 2026-09-09-lesson-6-bug-repair-evidence-chain.md  第六课 Bug 证据链与训练台修订
 │   │   │               ├── 2026-08-19-lesson-4-student-material-boundary.md
 │   │   │               │                             第 4 节学员资料边界修订
 │   │   │               ├── 2026-08-23-lesson-4-visualization-and-case-delivery.md
