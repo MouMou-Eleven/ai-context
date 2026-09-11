@@ -22,13 +22,15 @@ programming/
 | 百度秒哒功能、开发、排错 | [`tools/miaoda/llms.txt`](./tools/miaoda/llms.txt) |
 | 创意前端、视频交互、3D首屏 | [`experience/README.md`](./experience/README.md) |
 | 收录、查找、调用或同步 Skill | [`experience/skill-repository/README.md`](./experience/skill-repository/README.md) |
+| 可编辑动画、按职业制作AI工作台、Origin科研图、个人IP海报 | [Skill能力与来源索引](./experience/skill-repository/README.md)；不需要先知道Skill名称 |
+| 查找工具知识包 | [工具索引](./tools/README.md) |
 | 查找或继续开发源码项目 | [`projects/README.md`](./projects/README.md) |
 | 言剪 AI | [`projects/yancut-ai/README.md`](./projects/yancut-ai/README.md) |
 
 ## 边界
 
 - 工具知识不能当作项目事实；项目使用某工具时用链接引用。
-- 某次项目排错只有重复验证后才能提炼为经验。
+- 单次项目排错可立即记录为候选经验，注明输入、环境、证据和适用边界；重复验证或确认后更新采用状态，不从一次成功推导通用结论。
 - 非科班、AI 辅助开发是建委当前能力边界，不把仓库中的技术资料等同于传统全栈能力。
 - AI 培训中的“AI 编程课程”属于培训项目；只有涉及真实开发方法时才组合本目录。
 - 展示 AI 网站或应用的岗位价值、产品答辩或商业演示时，组合跨行业案例方法 [`../../other/commercial/experience/case-result-narrative.md`](../../other/commercial/experience/case-result-narrative.md)；本目录只提供真实开发事实，不负责商业叙事。

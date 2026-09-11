@@ -1,82 +1,39 @@
 # 杨建委长期 AI 协作上下文仓库
 
-> 这不是普通文件备份，而是建委长期项目、个人档案、工作经验、历史决策和 AI 协作规则的事实中枢。
+这里保存建委的个人事实、长期项目、实战方法、可执行Skill与来源证据，供后续任务检索、复用和修正。内容的价值由下次任务能否找到、用对和验收决定。
 
-## 从哪里开始
+## 开始使用
 
-- 想交互式展开、折叠和搜索完整结构：打开 [`STRUCTURE.html`](./STRUCTURE.html)。
-- 想编辑权威上下级目录和中文说明：读 [`STRUCTURE.md`](./STRUCTURE.md)。
-- F 盘桌面镜像：`F:\桌面文件\GitHub仓库完整结构.html`，由维护脚本从 `STRUCTURE.md` 自动生成，不单独编辑。
-- AI 执行具体任务：先读 [`llms.txt`](./llms.txt)，只进入任务对应领域。
-- 新增、移动或清理资料：同时遵守 [`AGENTS.md`](./AGENTS.md) 和 [`STRUCTURE.md`](./STRUCTURE.md)。
-
-## 平台识别硬规则：秒嗒与妙搭
-
-- 建委说“秒嗒”或“秒哒”时，指百度秒哒 MIAODA；回复中沿用“秒嗒”，不得改成“妙搭”。`miaoda.cn`、`*.appmiaoda.com`（包括 `jianwei.appmiaoda.com`）均按百度秒哒处理。
-- 飞书妙搭 Spark 是另一个产品。不得因为 `Miaoda` 拼写相同，或网站嵌入了飞书文档，就调用飞书妙搭的 `lark-apps`、`lark-cli apps`、Spark SDK 或套用其平台规则。
-- 先确认平台，再选择技能、API 和开发方案。百度秒哒任务从 [`秒哒知识入口`](./work/ai/programming/tools/miaoda/README.md) 读取；只有线索确实不足时才澄清。
-- 交付前检查说明、提示词、README、代码注释和工具依赖，清除错误平台名称与接口。完整判定规则见 [`产品辨析`](./work/ai/programming/tools/miaoda/disambiguation.md)。
+- AI先读[AGENTS.md](./AGENTS.md)与[llms.txt](./llms.txt)，然后按任务进入相关README。
+- 建委可以直接说“做一条MG微课”“按之前经验做AE宣传片”“把这次商单经验沉淀到设计”。AI按主任务读取必要方法、平台工具与案例，并负责更新索引。
+- 查人物与业务：[personal](./personal/README.md)。查全部当前项目：[项目登记](./repository/navigation/projects.json)，具体状态回到项目权威记录。
+- 查可以调用的工具能力：[Skill索引](./work/ai/programming/experience/skill-repository/README.md)。查怎样维护：[写入流程](./repository/ingestion-workflow.md)。
+- 看完整目录：[STRUCTURE.md](./STRUCTURE.md)；展开、折叠和搜索：[STRUCTURE.html](./STRUCTURE.html)。桌面镜像由维护脚本生成。
 
 ## 五个一级目录
 
-| 一级目录 | 回答什么问题 | 内容边界 |
-|---|---|---|
-| [`personal/`](./personal/README.md) | 建委是谁 | 个人资料、业务与项目概要、背书、成长路径、能力；不放项目细节 |
-| [`brain/`](./brain/README.md) | 建委怎样思考，以及 AI 怎样输出高质量中文 | 建委认知 + 所有中文内容默认调用的 AI 表达基础层 |
-| [`work/`](./work/README.md) | 建委做哪些工作和项目 | 设计、AI、其他工作领域，逐级放经验、工具和项目 |
-| [`repository/`](./repository/README.md) | 仓库怎样维护 | 结构、版本治理、电脑环境、校验脚本和仓库级修订 |
-| [`history/`](./history/README.md) | 过去发生了什么 | 跨领域时间线与已归档项目；不覆盖当前口径 |
-
-## 工作领域总览
-
-```text
-work/
-├── design/                  设计
-│   ├── ppt-design/         PPT 设计
-│   ├── poster-fold-design/ 海报与折页设计
-│   ├── book-design/        书籍设计
-│   ├── microcourse-mg-animation/ 微课与 MG 动画设计
-│   ├── ae-promo-video/     AE 宣传视频设计
-│   └── ai-design/          AI 设计（仍归设计）
-├── ai/                      AI
-│   ├── programming/        AI 编程：工具、经验、项目
-│   ├── training/           AI 培训：经验、大纲、资料、项目
-│   ├── video/              AI 视频：通用方法、类型、工具、项目
-│   ├── publishing/         AI 书籍出版
-│   └── self-media/         AI 自媒体
-└── other/                   不属于设计或 AI 的其他领域与项目
-    ├── commercial/         商业化与对外交付：跨领域规范、经验和注意事项
-    ├── ai-sixty-jiazi-music-ip/ AI 六十甲子古音律与 IP 孵化
-    └── inshan-popupiano/   海外电商项目
-```
-
-## 三条硬规则
-
-1. **AI 表达 + 单一专项**：任何 AI 中文内容默认先调用 `brain/ai-expression/`，再叠加一个最具体的专业领域。用户只提 AI 自媒体，就组合 AI 表达与 AI 自媒体，不得顺带加载 AI 培训或其他领域。
-2. **当前口径优先**：当前 README 是事实入口；`history.md`、归档资料和 Git 历史只用于追溯，不得混入当前结论。
-3. **清洗后写入**：新增内容先判断是否重复、过时或只是一时记录。长期有效的结论才入库，并更新最近一层 README 索引。
-
-建委要求沉淀到 GitHub 的内容，默认校验后直接提交并推送 `main`，不创建 PR，也不等待第二次提交指令。
-
-对外商业内容另遵守 [`work/other/commercial/`](./work/other/commercial/README.md)：它是跨设计、AI 和其他项目复用的商业规范层。当内容用于给客户看、对外发送或正式交付时，必须区分内部工作稿与对外成品。商业计划书、比赛申报、路演和融资材料还要清除内部研发讨论、自证式声明及外部无法访问的本地证据。
-
-## 快速个人画像
-
-| 项目 | 当前信息 |
+| 入口 | 职责 |
 |---|---|
-| 姓名 | 杨建委（称呼：建委） |
-| 身份 | AIGC 实战落地专家、资深跨界设计师、AI 视频创作人 |
-| 公司 | 宿州市十一创动画科技有限公司（法人代表） |
-| 坐标 / 时区 | 济南 / Asia/Shanghai |
-| 核心工作 | 设计、AI 编程、AI 培训、AI 视频、AI 书籍出版、AI 自媒体及其他项目 |
-| GitHub | [MouMou-Eleven](https://github.com/MouMou-Eleven) |
+| [personal](./personal/README.md) | 建委是谁、稳定身份、业务概要、能力和背书 |
+| [brain](./brain/README.md) | 建委认知与中文表达方法，不代替项目事实 |
+| [work](./work/README.md) | 设计、AI、其他工作：项目、经验、工具、案例 |
+| [repository](./repository/README.md) | 读取、写入、来源、路由、校验和电脑环境 |
+| [history](./history/README.md) | 需要保留的历史追溯，默认不参与当前回答 |
 
-个人事实以 [`personal/README.md`](./personal/README.md) 为准。
+## 运行原则
 
-## 安全与校验
+1. 一个项目/案例/方法只维护一份正文；AI视频与设计等相关领域通过链接自动组合必要依赖。
+2. README是入口，当前证据要比较日期、对象与适用范围；不能让漏更新的摘要覆盖建委新确认。
+3. 培训必须先核对项目或场次；会员社群与外部授课分开，课号不用于跨项目匹配。
+4. 原始资料→案例证据→候选方法→验证→正式复用；已有方法再次失败时修调用、执行或验收。
+5. 新内容的归属、README、跨领域引用、路由和结构同步由AI完成。操作要求见[写入流程](./repository/ingestion-workflow.md)。
 
-- 不写入密码、API Key、Token、Cookie、完整认证文件或可直接利用的隐私信息。
-- 提交前运行：`powershell -ExecutionPolicy Bypass -File repository/maintenance/validate-context.ps1`
-- 推送后检查远端文件和分支，不能只看到本地提交就判断完成。
+百度秒嗒/秒哒与飞书妙搭是不同平台；先[识别产品](./work/ai/programming/tools/miaoda/disambiguation.md)。飞书URL不自动触发飞书书籍。当前规则由AGENTS及各权威文件维护，本页只导航。
+
+## 校验与发布
+
+见[维护工具](./repository/maintenance/README.md)。建委要求沉淀到GitHub时，校验后直接提交推送main并核验远端。结构HTML随提交生成，桌面同步故障独立诊断。
+
+仓库配置：[文本规范](./.gitattributes)、[忽略规则](./.gitignore)、[GitHub自动校验](./.github/README.md)。这些是运行配置，业务知识仍在上述五个一级目录。
 
 仓库管理方法的对外科普版：<https://www.feishu.cn/wiki/PqSHwL1nniP2pOkML25cZx2bnSb>

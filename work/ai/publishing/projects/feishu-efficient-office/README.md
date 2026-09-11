@@ -3,7 +3,21 @@
 > 建委著 | 状态：进行中
 > 当前目录口径确认：2026-06-26
 > 最近项目记录：2026-08-22
-> 索引最后整理：2026-08-22
+> 索引最后整理：2026-09-12
+> 唯一上下文位置：`work/ai/publishing/projects/feishu-efficient-office/`；书稿正文与图片素材的权威位置按下表区分。
+> 本轮只整理上下文，未重新核验飞书远端 revision 或本地 Word。
+
+## 位置与读取顺序
+
+| 要找什么 | 唯一入口与边界 |
+|---|---|
+| 出版项目上下文、章节状态、编辑经验 | 本目录 README；旧 `projects/feishu-efficient-office/` 是迁移前路径，不新建第二份 |
+| 当前书稿正文 | 下方“当前全书目录”的各章飞书正文链接；仓库保存上下文与核验记录，不冒充实时全文 |
+| Word和高清素材 | 对应章节记录中的本地交付位置；执行前确认实际文件和哈希，不凭旧文件名猜版本 |
+| 旧第4章资料 | [历史章节映射](./legacy-ch4-map.md)；不作为当前第4章正文 |
+| 全书目录与作者归属 | 本页2026-06-26确认表；待确认项保持待确认 |
+
+查进度只读本页；写稿加 [出版短规则](./writing-style-analysis.md)；改稿与交稿再加 [验收清单](./publication-acceptance-checklist.md) 和对应章节证据。涉及装帧版式时按需引用 [书籍设计](../../../../design/book-design/README.md)，不复制出版事实。普通飞书文档操作按文档主题路由，不因平台名称进入本书。
 
 ## 概述
 
@@ -68,7 +82,6 @@
 
 | 章节 | 状态 | 字数 | 存放位置 | 完成日期 |
 |------|------|------|----------|----------|
-| 旧第4章 每天被琐事淹没：普通职场人如何用飞书每天省下2小时 | ✅ 历史素材，已审阅多轮 | ~16,000字 | 飞书文档 | 2026-05-11 |
 | 第2章 晨间工作梳理：用消息分组和豆包工作伙伴整理任务 | 🔄 飞书第860版及16页编辑送审版Word已通过全章审校；图2-4、图2-9像素内旧称待换 | 约0.53万中文字符 | 飞书文档 + 本地Word + F盘图片素材 | 2026-08-22 |
 | 第3章 方案撰写实战：用模板、AI与评论协作完成文档 | ✅ 编辑反馈、图文、序号、官方核验与Word交付版已完成 | 待统计 | 飞书文档 + F盘桌面Word | 2026-07-18 |
 | 第8章 重复工作自动化：用自动化与 AI 工作流提升效率 | ✅ 0814编辑修订全部接受；飞书第396版、21页Word终稿和高清图片校验已完成 | 约0.97万中文字符 | 飞书文档 + F盘桌面Word + 素材 Base | 2026-08-14 |
@@ -78,15 +91,18 @@
 | 文件 | 内容 | 何时读取 |
 |-----|------|---------|
 | [`README.md`](./README.md) | 项目当前口径、进度、规则与入口 | **进入项目时首先读取** |
-| [`writing-style-analysis.md`](./writing-style-analysis.md) | 本书专用写作风格说明书 | **生成任何书稿内容前必读** |
-| [`feishu-doc-style.md`](./feishu-doc-style.md) | 飞书文档的视觉结构、callout、图表和时间落款偏好 | 创建或改写飞书文档时读取；出版书稿仍以出版规则优先 |
+| [`writing-style-analysis.md`](./writing-style-analysis.md) | 当前出版短规则，不含培训配额和旧称默认规则 | **生成书稿前必读** |
+| [`publication-acceptance-checklist.md`](./publication-acceptance-checklist.md) | 编辑基线、逐字差异、章节例外、图文与Word交稿硬规则 | 改稿、报告差异、交稿时必读 |
+| [`legacy-ch4-map.md`](./legacy-ch4-map.md) | 旧章独立ID、当前章节映射、历史正文入口 | 查旧第4章素材时先读 |
+| [`writing-style-history.md`](./writing-style-history.md) | 原培训风格提炼和历次编辑规则来源，含已失效要求 | 仅按需追溯，不默认执行 |
+| [`feishu-doc-style.md`](./feishu-doc-style.md) | 飞书文档的视觉结构、callout、图表和时间落款偏好 | 为本书处理飞书审稿组件时按需读取；不激活通用飞书任务 |
 | [`feishu-base-form-experience.md`](./feishu-base-form-experience.md) | 多维表格表单选项表达、二维码图片和 API 能力边界 | 创建或调整飞书表单时读取 |
 | [`interface-screenshot-guidelines.md`](./interface-screenshot-guidelines.md) | 软件界面截图与图文一致规范 | 替换图片、审校图文或交稿前读取 |
 | [`ch1-editor-feedback-lessons.md`](./ch1-editor-feedback-lessons.md) | 第1章编辑反馈提炼出的共性教训 | 写作和改稿时按需读取 |
-| [`ch2-editor-feedback-lessons.md`](./ch2-editor-feedback-lessons.md) | 第2章0822细颗粒度编辑证据、边界纠正、送审前全章复查、12张素材顺序和截图像素遗留问题 | 修改任一章节或报告编辑差异前读取 |
-| [`ch4-editor-feedback.md`](./ch4-editor-feedback.md) | 第4章编辑反馈与修改方案 | 修改第4章时读取 |
-| [`ch4-v3-editor-feedback.md`](./ch4-v3-editor-feedback.md) | 第4章 v3 精修规则 | 第4章二次改稿时读取 |
-| [`ch4-v4-revision-log.md`](./ch4-v4-revision-log.md) | 第4章 v4 已执行修改与图号体系 | 继续审稿或替换图片时读取 |
+| [`ch2-editor-feedback-lessons.md`](./ch2-editor-feedback-lessons.md) | 第2章0822细颗粒度编辑证据、边界纠正、送审前全章复查、12张素材顺序和截图像素遗留问题 | 修改第2章或需要第2章逐字证据时读取；全书通用验收见验收清单 |
+| [`ch4-editor-feedback.md`](./ch4-editor-feedback.md) | 历史素材legacy-ch4-efficiency的编辑反馈 | 经历史映射定位后按需读取 |
+| [`ch4-v3-editor-feedback.md`](./ch4-v3-editor-feedback.md) | 历史素材legacy-ch4-efficiency的v3反馈 | 仅追溯旧章v3来源 |
+| [`ch4-v4-revision-log.md`](./ch4-v4-revision-log.md) | 历史素材legacy-ch4-efficiency的v4动作与旧图号 | 仅追溯旧章v4，不继承旧图号 |
 | [`ch5-editor-feedback.md`](./ch5-editor-feedback.md) | 第5章反馈提炼出的全书共性要求 | 写作和改稿时按需读取 |
 | [`all-docs.md`](./all-docs.md) | 历史培训素材摘要与来源索引 | 仅在定位历史素材时读取，不作为当前事实库 |
 | [`history.md`](./history.md) | 已清洗修订记录的关键结论摘要 | 只有追溯版本变化时读取 |
@@ -102,5 +118,12 @@
 
 **对于建委**：
 - 书稿正文存放在飞书文档中，按章节管理
-- `writing-style-analysis.md` 是给其他 AI 工具的「风格说明书」，喂给它就能按你的风格写
-- 第4章飞书文档链接：https://my.feishu.cn/wiki/KEKLwUgWHiv9PtkhzXYc6QlnnEk
+- `writing-style-analysis.md` 是当前出版短规则；编辑与交稿使用配套验收清单。
+- 旧第4章链接已移入 `legacy-ch4-map.md`，当前第4章仅使用上方目录入口，不虚构正文链接。
+
+## 后续更新规则
+
+- 新正文或新版本先核对章节标题与当前目录，不仅按章号归档；同步本页章节状态、正文链接与对应章节素材/编辑记录。
+- 更新飞书或Word后记录实际revision、源稿、哈希、验收范围和待处理项；“文档更新”不能直接写成“编辑验收完成”或“已出版”。
+- 新编辑经验先与当前出版规则和验收清单去重，再补有效差异及来源；跨领域表达方法只引用AI表达库，培训规则不进入出版默认规则。
+- 新发生的方向或章节结构变化写入 `revisions/YYYY-MM-DD-slug.md` 并标明取代关系，`history.md`只追加摘要和链接；已有历史证据保留原位置。新增资料同步本README索引及仓库结构，不复制整套正文到多个位置。

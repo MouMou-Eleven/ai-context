@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "qingyun-ip-poster",
   "storageMode": "full-repository-snapshot",
-  "origin": "https://github.com/qingyunAGI/qingyun-ip-poster.git",
+  "origin": "third-party",
   "defaultBranch": "main",
   "upstreamRepository": "https://github.com/qingyunAGI/qingyun-ip-poster.git",
   "commit": "f0b7d5e17a90e5e9917f136c9b038b60fa3b7f41",
@@ -12,5 +12,27 @@
   "sourcePath": "skill",
   "license": "No open license included upstream; permission required for redistribution or commercial packaging",
   "updatePolicy": "review-and-replace-full-snapshot",
-  "notes": "Standalone Codex Skill with SKILL.md, agents/openai.yaml, references, and image assets. Keep the upstream snapshot intact; do not treat sample identities, logos, dates, or claims as reusable facts."
+  "notes": "Standalone Codex Skill with SKILL.md, agents/openai.yaml, references, and image assets. Keep the upstream snapshot intact; do not treat sample identities, logos, dates, or claims as reusable facts.",
+  "upstreamWeb": "https://github.com/qingyunAGI/qingyun-ip-poster",
+  "capabilities": [
+    "个人IP与账号九宫格视觉系统",
+    "Keynote观点海报",
+    "嘉宾活动与角色Key Art",
+    "3:4/9:16系列设计与质检"
+  ],
+  "useWhen": [
+    "人物、观点、活动或角色素材需要系列化海报",
+    "需要稳定的信息层级和视觉系统"
+  ],
+  "notFor": [
+    "捏造人物履历、奖项、Logo授权或转化数据",
+    "视频或完整应用开发",
+    "未经许可再分发上游或商业打包"
+  ],
+  "runtimeRequirements": [
+    "支持读取Skill的AI宿主与合法素材",
+    "实际生图/排版工具按任务检查；本机生图遵守imagegen.cmd启动器规则",
+    "仓库收录不代表本机已安装或渲染能力已验证"
+  ],
+  "documentationReviewedAt": "2026-09-12"
 }

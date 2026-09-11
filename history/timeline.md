@@ -35,12 +35,10 @@
 - 第一季度内部主线为 AI 编程系统实战，对外主题为“用 AI 做出你的专属小工具”。
 - 当前入口：[`../work/ai/training/projects/paid-community-course/README.md`](../work/ai/training/projects/paid-community-course/README.md)。
 
-### 2026-05-24 - 微课业务与海外电商口径确认
+### 2026-05-24 - 微课业务口径确认
 
 - 哞哞微课确认为微课设计业务的展示官网，不是独立 AI 编程项目。
-- Inshan POPUPIANO 从“分销商假设”修正为“授权经销 + 自建店铺 + 内容代运营”。
 - 微课入口：[`../work/design/microcourse-mg-animation/README.md`](../work/design/microcourse-mg-animation/README.md)。
-- 海外电商入口：[`../work/other/inshan-popupiano/README.md`](../work/other/inshan-popupiano/README.md)。
 
 ### 2026-05-21 至 2026-05-22 - 教育案例归属澄清
 

@@ -13,5 +13,26 @@
     "editaplot.cmd",
     "runtime",
     "skill/editaplot"
-  ]
+  ],
+  "origin": "third-party",
+  "capabilities": [
+    "Origin/OriginPro科研绘图",
+    "数据列用途解释",
+    "可编辑OPJU与PNG/PDF/TIF交付"
+  ],
+  "useWhen": [
+    "用真实实验数据绘制或编辑Origin科研图",
+    "需要保留可编辑科研项目"
+  ],
+  "notFor": [
+    "替用户确定科学结论或补造数据",
+    "没有受支持Windows实体机及Origin的完整运行",
+    "任意参考图像素级复刻"
+  ],
+  "runtimeRequirements": [
+    "Windows 10/11 x64实体机",
+    "Origin/OriginPro 2021–2026b兼容目标（上游完整基准2024b）",
+    "Python 3.10–3.12及source/完整运行时；依照上游setup检查"
+  ],
+  "documentationReviewedAt": "2026-09-12"
 }

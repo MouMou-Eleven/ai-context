@@ -1,130 +1,50 @@
 # AI 协作规则
 
-本仓库是杨建委的长期 AI 协作事实中枢。所有 AI 必须先路由、再读取、后回答，不得只凭当前对话记忆或模型经验猜测仓库内容。
+本仓库是杨建委的长期 AI 协作事实中枢。建委只需说明任务或要求沉淀的领域，AI负责检索、必要依赖、去重、索引更新和验收，不把维护步骤转嫁给建委。
 
-## 1. 任务开始
+## 任务开始
 
-1. 用户提到 GitHub、仓库、repo、ai-context、上下文仓库、项目记录、历史资料、之前整理过、仓库里有没有、推送或持续推进项目时，必须实际检查本仓库。
-2. 先读 [`llms.txt`](./llms.txt)，再读任务对应的最近一层 `README.md`。
-3. 只读取完成任务必需的文件。不要默认加载全部 `history.md`、时间线、原始材料、长文档或二进制附件。
-4. 涉及新增、移动、重命名或清理时，再读 [`STRUCTURE.md`](./STRUCTURE.md)。
-5. 平台识别先于技能匹配：建委说“秒嗒/秒哒”或给出 `miaoda.cn`、`*.appmiaoda.com` 时，按百度秒哒处理，回复沿用“秒嗒”，不得写成飞书“妙搭”。不得调用 `lark-apps`、`lark-cli apps` 或 Spark 接口来操作百度秒哒；网站嵌入飞书文档不改变宿主平台。交付前检查平台名称、接口和依赖，完整规则见 [`产品辨析`](./work/ai/programming/tools/miaoda/disambiguation.md)。
+1. 实际检查仓库版本和目录；读本文件与 [llms.txt](./llms.txt)，按任务进入最近的README。只查状态或位置时不加载创作规则。
+2. 以一个主任务确定事实归属，自动读取完成任务必需的其他领域方法和工具，不需要建委另说“结合”。一个文件只存一处，相关入口用链接双向发现。
+3. 先判断目标、对象、交付物、项目/场次，再选方法。关键词是查找线索，不是无条件执行命令；课号、同一平台或相似主题不能证明属于同一项目。
+4. 默认先入口和短规则，再按需读取具体方法、证据和执行Skill。无固定文件数量上限；不得为了省读取漏掉必要约束，也不默认读取全部源码、原文或历史。
+5. 承载平台不决定业务归属：飞书课程文档不等于飞书书籍；百度“秒嗒/秒哒”、miaoda.cn、*.appmiaoda.com不是飞书妙搭。百度任务禁止使用lark-apps/Spark接口，先读[产品辨析](./work/ai/programming/tools/miaoda/disambiguation.md)。
 
-## 2. 事实优先级
+## 事实、规范、工具分别判断
 
-出现冲突时按以下顺序判断：
+- 建委当前明确确认决定个人目标、偏好、项目归属和商业约定；不得用旧记录覆盖。本次确认不等于外部产品客观能力已经核验。
+- 项目README负责指向当前权威记录。状态、价格、权益、章节和课程各自指定唯一来源；发现更新的适用证据与入口不一致时，报告差异并更新，不机械认定README永远正确。
+- 外部功能、菜单、版本、价格和API按适用账号/版本/环境核验来源与日期，遵守[动态知识政策](./repository/versioned-knowledge-policy.md)。
+- 方法要注明适用条件与验证程度；项目事实不能从示例或模板推导。工具说明不证明本机已安装，已安装不等于本轮已执行。
+- 无法消解时区分已确认、待确认和已被替代；继续独立可做的工作，不编造空白。
 
-1. 建委在当前对话中的最新明确确认。
-2. 对应领域或项目的当前 `README.md`。
-3. 当前专题文件、当前工具说明或实际环境核验结果。
-4. `personal/` 中稳定的个人事实。
-5. 领域经验与建委大脑中的长期方法。
-6. 项目 `history.md`、跨领域时间线、归档材料和 Git 历史，只用于追溯。
+## 必须保持的业务边界
 
-无法判断时必须列出“已确认、待确认、已失效”，不能混用或自行补空白。
+- 中文成品默认先读[AI表达短卡](./brain/ai-expression/README.md)，再按口语/书面和任务需要展开；纯事实查询或代码执行不默认加载。
+- 培训先读[培训入口](./work/ai/training/README.md)区分会员社群、企业、图书馆、夜校和其他外部活动。没有明确归属证据的资料不得默认放入会员社群。课号只在所属课程系列内有意义；资料发布不等于已经授课。
+- 创作/复盘培训资料时读培训经验与风格；查询状态直接读项目状态。复盘同时处理案例证据和可复用方法，重复失误应修复调用或验收，不重复新建同义规则。
+- AE设计、MG微课与AI视频按[制作协作流程](./work/design/production-workflow.md)互相引用。脚本、分镜、AI生成、合成和交付按任务需要组合，项目事实仍只放一个主归属。
+- 纯教学演示不因“案例/结果展示”触发销售框架。用于招生、销售、提案或产品价值证明时才叠加[商业案例方法](./work/other/commercial/experience/case-result-narrative.md)；正式对外交付再读[交付语言](./work/other/commercial/experience/external-deliverable-language.md)，融资/比赛再读[赛事与投资材料](./work/other/commercial/experience/competition-and-investor-materials.md)。
+- 《飞书高效办公》唯一位置是[出版项目](./work/ai/publishing/projects/feishu-efficient-office/README.md)。书稿任务先读项目和[当前出版规则](./work/ai/publishing/projects/feishu-efficient-office/writing-style-analysis.md)，确认新旧章身份；飞书功能与图片须实际核验，面向小白写可执行细步骤。
+- 六十甲子项目唯一上下文为[项目入口](./work/other/ai-sixty-jiazi-music-ip/README.md)，网站与独立IP工作线分开，不因开发任务复制到编程项目。
+- Skill从[能力索引](./work/ai/programming/experience/skill-repository/README.md)查能力、来源、自研/第三方与固定版本；先条目README与upstream.json，真正执行才读SKILL.md及必要引用，不把案例人物、奖项、数据当事实。
+- 电脑环境任务先读[设备索引](./repository/environment/computers/README.md)并核对设备；先诊断，不擅自重启工作中的Codex、CC Switch、Clash或切代理。
+- 在建委本机生图先读[生图通道](./repository/environment/image-generation.md)，按已确认启动器调用；换设备重新核对依赖，凭据不入库。
 
-## 3. 一级目录职责
+## 写入责任
 
-- `personal/`：个人概要，回答建委是谁、业务概要、项目概要、背书、成长路径和能力。不得写具体项目过程。
-- `brain/`：建委本人的认知，以及所有 AI 中文内容默认调用的 AI 表达基础层。不得把具体领域的专业规则混入 AI 表达。
-- `work/`：设计、AI 和其他领域的工作经验、工具与项目。
-- `repository/`：仓库治理、版本规则、电脑环境和校验工具。
-- `history/`：跨领域时间线与已归档项目，不作为当前事实入口。
+新增、修改、移动、删除、纠错、复盘、收录Skill和“沉淀到某板块”，都必须先读[写入与更新流程](./repository/ingestion-workflow.md)和[结构说明](./STRUCTURE.md)。AI负责判断全部受影响入口，不要求建委提醒更新README。
 
-## 4. 严格激活规则
+一次写入完成必须包含：唯一主归属、来源与范围、去重/替代判断、最近README索引、必要跨领域引用、当前状态同步、结构与派生入口同步、校验。商单按[案例/方法模板](./repository/templates/README.md)保留实际过程和验收，缺证据标缺失，不写成已验证。
 
-- 只要任务要求 AI 生成、改写、润色、翻译或组织中文内容，默认先读 `brain/ai-expression/README.md`、`brain/ai-expression/cross-domain-rules.md`、`brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md` 和 `brain/ai-expression/experience/README.md`，再按交付形式选择口语化或书面化规则。
-- 通用口语表达、口语推进和口语化论证只从 `brain/ai-expression/oral-expression/` 读取；培训、自媒体和其他领域只能补充场景应用，不得复制第二套口语规则。通用书面表达只从 `brain/ai-expression/written-expression/` 读取。
-- 默认只激活一个最具体的专业领域。用户说“AI 自媒体”，读取 `brain/ai-expression/` + `work/ai/self-media/`，不得加载 AI 培训。
-- 用户提到 `qingyun-ip-poster`、个人 IP 海报、账号九宫格、Keynote 观点海报、活动嘉宾海报或创意 IP 角色主视觉时，先读 `work/ai/programming/experience/skill-repository/qingyun-ip-poster/README.md` 和 `upstream.json`；真正执行时再按任务读取其 `skill/SKILL.md` 与 `references/`，不得把示例人物、奖项、日期、Logo 或案例数据当作事实。
-- 用户说“AI 培训”，读取 `brain/ai-expression/` + `work/ai/training/`；创建、修改、审核或复盘培训课件时，必须读取 `work/ai/training/experience/README.md` 和 `work/ai/training/experience/jianwei-training-style.md`。明确提到某个培训项目时，再叠加该项目；项目资料不能替代通用培训经验。
-- 用户在 AI 培训语境中说“复盘、总结经验、沉淀经验、写入 GitHub”时，默认同时交付项目层证据和通用经验更新，不得只新增单课复盘。同一错误在已有通用规则后再次出现，按 `work/ai/training/experience/README.md` 的强化机制前移调用和验收，不重复创建同义规则。
-- 用户说“给客户看、发给客户、客户审阅、对外发送、正式交付、交付版”等含义，或交付物显然代表建委或公司对外呈现时，读取 `brain/ai-expression/` + `work/other/commercial/` + 一个最具体的专业领域或项目。用户说“内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化或内容承接”时，也进入 `work/other/commercial/experience/content-demand-and-conversion.md`。商业层是跨领域边界，不计作第二个专业领域。
-- 用户要求商业计划书、项目申报、比赛材料、路演 PPT、融资材料，或交付物面向评委、投资人和孵化机构时，还必须读取 `work/other/commercial/experience/competition-and-investor-materials.md`。
-- 用户提到案例演示、产品演示、案例答辩、直播案例、结果展示、未来图景、卖结果、课程或社群案例、产品价值演示时，必须读取 `work/other/commercial/experience/case-result-narrative.md`，再叠加一个最具体的产品、项目或领域规则。
-- 对外成品默认不出现“客户版、客户审阅版、给客户看的”等接收者身份标签，也不把“建议采用、可以考虑、待客户确认、供客户参考”等内部商议词写入正文。已确认内容写成确定陈述；未确认内容先在内部向建委核实。只有当前提示明确要求这些角色或建议形式时才例外。
-- 面向外部决策者的成品不得混入内部研发讨论、写作过程、无证据的自证式声明、本地磁盘路径、`localhost`、私有仓库或外部无法访问的内部记录。内部证据应转化为正文中的截图、数据、公开演示或正式附件；技术尽调和合规审查按对方明确要求单独提供。
-- 用户说“参考建委本人的思考方式、判断或商业认知”，才先读 `brain/cognition/README.md`，再进入对应认知文件；AI 表达不等于建委个人口吻。
-- 用户要求“结合多个领域”或提示中明确出现多个独立任务时，才组合多个专业领域；AI 表达基础层只加载一次。
-- 只查询事实、运行代码、整理文件、检查结构或执行测试时，不因出现“中文”而自动读取全部 AI 表达经验。
-- “课程”或“课件”语义不明时，先判断服务对象和交付物：建委作为讲师属于 AI 培训；为教师制作成品微课属于设计下的微课与 MG 动画。
+重大变化写 revisions/YYYY-MM-DD-slug.md；已有history.md仅保留摘要和修订链接，不能同时维护另一套当前事实。普通小修改交给Git历史。用户明确彻底清除资料时，同时移除当前树及history目录引用，不另建归档或墓碑记录。
 
-## 5. 工作归属
-
-### 设计
-
-- PPT、海报折页、书籍装帧、微课与 MG 动画、AE 宣传视频、AI 设计都归 `work/design/`。
-- AI 设计仍是设计，只是使用了 AI，不得移入 AI 门类。
-- 微课是给教师、学校或教育项目制作成品课件；它与建委作为讲师开展 AI 培训并列。
-
-### AI
-
-- AI 编程：`work/ai/programming/`，内部再分工具、经验、项目。百度秒哒是工具；言剪 AI 是项目。
-- AI 培训：`work/ai/training/`，内部再分经验、大纲、资料、项目。付费会员社群属于培训项目；生成培训中文内容时必须叠加 AI 表达。
-- AI 视频：`work/ai/video/`，内部再分通用方法、类型、工具、项目。
-- AI 书籍出版：`work/ai/publishing/`，飞书书籍项目在此。
-- AI 自媒体：`work/ai/self-media/`，标题、公众号文章、营销文案、朋友圈、社群话术、口播、直播销售和增长经验均在此，不归 AI 培训；生成自媒体中文内容时必须叠加 AI 表达。
-
-### 其他
-
-- 商业化与对外交付进入 `work/other/commercial/`，保存跨设计、AI 和其他项目复用的内容经营、商业规范、交付经验、注意事项及内外部稿件边界；它不属于 AI、设计或建委的商业认知。
-- 海外电商等不属于设计或 AI 的项目进入 `work/other/`。
-- “AI 六十甲子古音律与 IP 孵化”固定归入 `work/other/ai-sixty-jiazi-music-ip/`。项目的主体是六十甲子文化、古音律、声音体验与 IP 孵化；AI、生图、Web、App 或小程序只是实现方式。不得因执行编程任务而在 `work/ai/programming/projects/` 重新创建或推送同名项目。
-
-## 6. 特殊项目
-
-### AI 六十甲子古音律与 IP 孵化
-
-用户提到“AI 六十甲子古音律与 IP 孵化”“六十甲子网站”“甲音”“音乐算命”“出生节律声音”或“甲子神 IP”时，必须先读：
-
-- `work/other/ai-sixty-jiazi-music-ip/README.md`
-
-需要追溯最新方向时，再读取该目录的 `revisions/`。网站产品与甲子神 IP 是两条独立工作线，除非建委明确要求联动，不得混入同一产品流程。该项目的唯一 GitHub 上下文位置是 `work/other/ai-sixty-jiazi-music-ip/`；旧路径 `work/ai/programming/projects/ai-sixty-jiazi-music-ip/` 已失效，禁止恢复。
-
-### 《飞书高效办公》
-
-本项目只在任务明确涉及《飞书高效办公》这本书、书稿、出版、章节修改、编辑反馈或项目目录中的既有材料时激活。**“飞书文档”“飞书云文档”“在飞书里写内容”只说明承载平台，不等于飞书书籍项目，也不得仅凭飞书文档 URL、`/wiki/` 路径、文档编辑或截图需求触发本项目。**如果文档实际属于课程、社群、项目方案或其他工作，应按内容主题进入对应领域；无法判断文档归属时，先读取文档标题和目录，再路由，不得先读飞书书籍目录。
-
-必须先读：
-
-- `work/ai/publishing/projects/feishu-efficient-office/README.md`
-- `work/ai/publishing/projects/feishu-efficient-office/writing-style-analysis.md`
-
-飞书菜单名、按钮名、功能路径必须通过官方文档或实际界面核验。面向小白写细步骤，禁止凭经验推断。生成书稿中文内容时先调用 `brain/ai-expression/`，再叠加本项目的出版规则；只在需要追溯版本变化时读取项目 `history.md`。
-
-### Inshan / POPUPIANO
-
-必须先读：
-
-- `work/other/inshan-popupiano/README.md`
-- `work/other/inshan-popupiano/competitive-references.md`
-
-当前口径：授权经销 + 自建店铺 + 内容代运营；不是简单分销，也不是托管品牌方现有 Amazon 店铺；我方自建 `inshan.cc` 和 Amazon 店铺；价格自主权已确认；货款流向和收入形式待澄清；海外叙事为“编曲人 + 儿童/初学者”双钩子；AI 是生产与本地化工具，不是产品核心卖点。
-
-### 电脑与本地环境
-
-涉及 Windows、网络、VPN、Clash、Codex、CC Switch、插件或本地工具时，先读 `repository/environment/computers/README.md` 并确认设备。正在执行任务时不要直接重启 Codex、CC Switch、Clash 或切换代理；先做只读诊断。
-
-## 7. 写入与清洗
-
-- 每个长期领域、工具或项目必须有 `README.md` 作为入口。
-- 新文件必须被最近一层 README 索引；禁止出现无法路由的孤岛文件。
-- 先去重、去旧、合并同义内容。当前入口只保留当前有效结论；跨领域中文表达规则统一进入 `brain/ai-expression/`，专项目录只写专项差异和事实。
-- 口语化通用规则只进入 `brain/ai-expression/oral-expression/`；AI 培训与 AI 自媒体的口语化文件只能记录各自受众、渠道和交付边界。自媒体素材按主要发布渠道归入 `work/ai/self-media/` 的对应子目录，同一材料只保留一个主归属，其他位置只引用。
-- 外部创作者、数据集和写作案例不能按人物整体激活。先提炼为带适用范围的方法；同义内容合并，冲突内容按受众、体裁、任务目标和真实验证选择一种，不把多套风格同时拼接。
-- 重大变化先更新项目 README，再把必要的原因、新旧差异和日期追加到项目 `history.md`。普通小改动只留在 Git 提交，不单独建修订文件。
-- 历史细节由 Git 保留。不要为了“完整”让大量失效版本继续出现在当前读取树中。
-- 动态产品、功能、价格、界面和 API 遵守 `repository/versioned-knowledge-policy.md`，回答前重新核验。
-- 任何目录新增、移动、重命名或删除都必须同步更新 `STRUCTURE.md`。每一次 GitHub 提交前，无论本次是否改了目录，都必须从最新 `STRUCTURE.md` 重建并暂存可交互的 `STRUCTURE.html`；提交后必须同步 `F:\桌面文件\GitHub仓库完整结构.html` 并核对 SHA-256。F 盘暂时不可用时只能延后桌面镜像，不得让仓库 HTML 过期或阻断 GitHub 提交；后续提交、合并、检出或改写必须自动重试。
-
-## 8. 提交标准
+## 提交标准
 
 <!-- publish-policy: direct-main-no-pr -->
 
-- 使用 UTF-8、LF、相对链接，英文路径采用 kebab-case。
-- 提交前检查 `git status --short`，确认没有无关文件和敏感信息。
-- 运行 `repository/maintenance/validate-context.ps1`。
-- 推送后验证远端分支和对应文件存在。
-- 建委要求把内容沉淀到 GitHub 时，默认在校验通过后直接提交并推送到 `main`，不创建 PR，也不等待第二次“提交”指令；只有建委明确要求 PR、审阅分支或暂不提交时才改变流程。
-- 直接提交时只暂存本次任务明确涉及的文件；如果工作区存在无关改动，不得一并提交。
-- 已完成迁移、已被 `main` 覆盖或已经合并的临时分支和 PR 应及时清理，避免旧架构继续被误读。
+- UTF-8、LF、相对链接、英文kebab-case；不提交密码、Token、Cookie、API密钥或可利用认证信息。
+- 提交前检查工作区，只暂存本次范围；运行维护README中的同步、生成和校验。任何目录/文件变化同步STRUCTURE.md；每次提交从同一版本的Markdown和模板重建STRUCTURE.html。
+- 建委要求写入GitHub时，校验后直接提交推送main，不创建PR，不等待第二次“提交”。远端有新改动先核对合并，不覆盖他人内容。
+- 推送后核对远端commit与新增/移除路径。完成必须是远端可读取，不是只有本地提交。
+- 桌面HTML是仓库结构的派生镜像，Git操作后自动同步并比对SHA-256。桌面暂不可用只延后，不影响仓库内容校验；后续自动重试。

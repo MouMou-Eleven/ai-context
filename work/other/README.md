@@ -8,7 +8,6 @@
 |---|---|---|
 | 商业化与对外交付 | [`commercial/`](./commercial/README.md) | 跨设计、AI 和其他项目复用的内容经营方法、商业规范、交付经验及内外部稿件边界；不保存建委个人认知 |
 | AI 六十甲子古音律与 IP 孵化 | [`ai-sixty-jiazi-music-ip/`](./ai-sixty-jiazi-music-ip/README.md) | 以六十甲子、五行、古音律和文化 IP 为底座的跨媒介产品项目；AI 与 Web 开发是实现手段，不决定项目归入 AI 编程 |
-| Inshan POPUPIANO | [`inshan-popupiano/`](./inshan-popupiano/README.md) | 授权经销、自建店铺与内容代运营的海外电商项目 |
 
 ## 写入规则
 

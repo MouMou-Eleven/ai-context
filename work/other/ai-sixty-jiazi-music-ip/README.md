@@ -13,7 +13,7 @@
 1. **Web 产品 Demo**：把三套分散网页工具重构成“本命音、甲子谱、合音、创作台、我的”五个连贯模块。
 2. **甲子神 IP 形象**：独立设计与生成五个潮玩卡通角色，不属于网站导航、页面或交互流程。
 
-网站主路径为：输入出生时间或选择甲子 → 查看可追溯的干支、纳音与音律映射 → 试听与比较 → 生成音乐创作方案。不得再把独立 IP 图片工作误写成网站“神谱”模块。
+网站主路径为：输入出生时间或选择甲子 → 查看可追溯的干支、纳音与公开五行声音语义 → 试听与比较 → 生成音乐创作方案。内部音高映射不进入公开界面。不得再把独立 IP 图片工作误写成网站“神谱”模块。
 
 ## 当前确认事实
 
@@ -41,13 +41,13 @@
 
 | 模块 | 核心作用 | 首版闭环 |
 |---|---|---|
-| 听命 | 输入公历日期、时间，计算四柱并映射音律 | 四柱、纳音、音符、分轨开关、可试听组合 |
-| 寻甲子 | 查询和筛选六十甲子 | 干支、纳音、调式、速度、乐器、意象、太岁原型 |
-| 合音 | 比较天干地支及五合六合的音程关系 | 原始音值、循环最短音程、方向音程和 A/B 试听 |
-| 造曲 | 依据甲子和使用场景生成音乐创作提示词 | 左侧参数；右侧作曲导演稿、ACE-Step 标签稿、MusicGen / Stable Audio 紧凑稿 |
+| 本命音 | 输入出生信息，形成公开的本命声音旅程 | 四柱、纳音、五行声音层与选中层试听；不公开音高映射 |
+| 甲子谱 | 查询和筛选六十甲子 | 干支、纳音、调式、速度、乐器、意象、太岁原型 |
+| 合音 | 通过声音卡与文化预设比较公开声音语义 | 关系桥、起势/应答试听与即时反馈；不显示音级、半音或频率 |
+| 创作台 | 依据甲子和使用场景生成音乐创作提示词 | 左侧参数；右侧作曲导演稿、ACE-Step 标签稿、MusicGen / Stable Audio 紧凑稿 |
 | 我的 | 形成可回访的个人声音档案 | 当前本命、生成记录、收藏档案、快捷回到三大创作模块 |
 
-详细方案见 [`product-demo-plan.md`](./product-demo-plan.md)。
+当前操作读 [`current-operations.md`](./current-operations.md)；2026-08-24四模块方案已被v5/v6/v7取代，只作历史依据。以上导航采用v7名称。
 
 ## 数据与表达边界
 
@@ -59,6 +59,8 @@
 详细审计见 [`data-audit.md`](./data-audit.md)。
 
 ## 当前交付位置
+
+以下位置和测试结果来自截至2026-09-02的项目记录，非本轮重新启动或实测。需要操作时先读 [当前操作入口](./current-operations.md) 并核对当前设备。
 
 ### Web Demo
 
@@ -84,15 +86,16 @@
 
 | 文件 | 作用 |
 |---|---|
-| [`product-demo-plan.md`](./product-demo-plan.md) | Web 首发理由、四模块信息架构、技术方案与阶段路线 |
+| [`current-operations.md`](./current-operations.md) | 当前启动、五模块、公开语义/私有映射边界与修改验收入口 |
+| [`product-demo-plan.md`](./product-demo-plan.md) | 历史：2026-08-24四模块方案，不能作为当前实现指令 |
 | [`data-audit.md`](./data-audit.md) | 本地资料清单、三工具审计、数据优先级和待校验问题 |
-| [`demo-implementation.md`](./demo-implementation.md) | 四模块 Demo、启动修复、测试证据、本地路径和已知约束 |
+| [`demo-implementation.md`](./demo-implementation.md) | 历史：2026-08-24四模块及C盘路径测试记录，当前操作已由current-operations取代 |
 | [`ip-character-prompts-v3-toy.md`](./ip-character-prompts-v3-toy.md) | 当前五个独立潮玩甲子神的统一视觉口径与提示词摘要 |
 | [`ip-character-prompts.md`](./ip-character-prompts.md) | 初版潮玩构想，仅作历史记录 |
 | [`ip-character-prompts-v2-mature.md`](./ip-character-prompts-v2-mature.md) | 已否决的成熟写实神将方向，仅作历史记录 |
 | [`revisions/2026-08-24-initial-project-and-web-demo-direction.md`](./revisions/2026-08-24-initial-project-and-web-demo-direction.md) | 项目首次入库、网页优先和初始范围决策 |
 | [`revisions/2026-08-24-web-demo-implementation-complete.md`](./revisions/2026-08-24-web-demo-implementation-complete.md) | 初版实现和测试记录；其中“神谱”已被后续修订取代 |
-| [`revisions/2026-08-24-separate-web-and-toy-ip-direction.md`](./revisions/2026-08-24-separate-web-and-toy-ip-direction.md) | 网站与 IP 分线、潮玩视觉重定向和启动修复的最新决策 |
+| [`revisions/2026-08-24-separate-web-and-toy-ip-direction.md`](./revisions/2026-08-24-separate-web-and-toy-ip-direction.md) | 当时网站与IP分线、潮玩方向和启动修复记录；启动与导航以当前操作入口为准 |
 | [`revisions/2026-08-24-wide-workbench-music-prompt-v4.md`](./revisions/2026-08-24-wide-workbench-music-prompt-v4.md) | 唯一开发目录、五个 IP 命名、宽屏 v4、美术素材和音乐提示词专项改造 |
 | [`revisions/2026-08-24-overseas-sound-oracle-and-stem-artifact-system.md`](./revisions/2026-08-24-overseas-sound-oracle-and-stem-artifact-system.md) | 海外“出生节律声音”定位、MVP、验证方案及甲子神天干法器视觉系统 |
 | [`revisions/2026-08-24-context-relocation-to-other.md`](./revisions/2026-08-24-context-relocation-to-other.md) | 将项目从 AI 编程迁移到 other，并锁定唯一上下文位置与后续路由规则 |
@@ -102,7 +105,7 @@
 
 ## AI 调用规则
 
-1. 先读本 README，再按任务读取产品规划、数据审计、提示词或修订记录。
+1. 先读本README；操作网站读 `current-operations.md`，数据问题读数据审计，IP问题读当前提示词，追溯才读历史规划与旧实现。
 2. 网站只讨论五个模块；甲子神图片只进入独立 IP 工作线，除非建委以后明确要求接入。
 3. 计算事实、传统文化解释、创作建议和商业叙事必须分层展示。
 4. 生图必须遵循本机 `AGENTS.md` 的 imagegen 启动器规则；当前风格不得回退到成熟写实神将。
@@ -122,4 +125,4 @@
 - 第一阶段是否需要登录、保存、分享、导出音频或云端生成 AI 音乐。
 - 海外首发品牌名、英语落地页主标题与首批测试市场，仍需通过真实用户测试确认。
 
-*索引最后整理：2026-09-02*
+*索引最后整理：2026-09-12；当前实现事实基线仍为2026-09-02*

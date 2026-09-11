@@ -35,11 +35,11 @@ self-media/
 - 只提“AI 自媒体、标题、口播、短视频、直播销售”并要求生成中文内容时，读取 [`../../../brain/ai-expression/`](../../../brain/ai-expression/README.md) + 本目录。
 - AI 表达负责中文语境、逻辑和质量；本目录负责标题、选题、文章、营销文案、朋友圈、社群话术、口播结构、直播销售、平台承接和内容复盘。
 - 通用口语表达、句子节奏和口语化论证统一读取 [`../../../brain/ai-expression/oral-expression/README.md`](../../../brain/ai-expression/oral-expression/README.md)；本目录只记录自媒体渠道和营销场景的应用，不复制通用口语规则。
-- 不自动读取 [`../training/`](../training/README.md)、付费社群项目或建委思维认知。
-- 内容要为某个具体项目服务时，建委需明确项目名称，再组合对应项目 README。
+- 按实际任务补充必要的[技术解释方法](../training/experience/technical-explanation/README.md)，不因方法来自培训就带入社群事实。
+- 内容为某个项目服务时，根据本轮信息和仓库证据确认项目，再读取对应README；身份不明确时保持待确认，不能用课程或直播关键词默认关联会员社群。
 - 内容承担获客、产品价值解释、购买顾虑处理或商业承接任务时，组合 [`../../other/commercial/experience/content-demand-and-conversion.md`](../../other/commercial/experience/content-demand-and-conversion.md)；跨行业商业层不计作第二个专业领域。
 - 使用案例演示产品价值、直播展示课程或社群案例、用结果叙事承接购买时，再组合 [`../../other/commercial/experience/case-result-narrative.md`](../../other/commercial/experience/case-result-narrative.md)；它负责跨行业案例方法，本目录仍负责自媒体表达与平台动作。
-- 需要结合建委的个人经历或思维判断时，建委需明确提出，再读取 `personal/` 或 `brain/` 对应认知文件；不要把 AI 表达误写成个人口吻。
+- 内容需要建委的个人经历或判断时，自动读取 `personal/` 或 `brain/` 的相关来源；只引用有证据的经历，不把通用AI表达当作个人口吻。
 - 平台算法、流量规律和效果数字必须重新核验；经验不能写成效果保证。
 
 ## 语言质量规则

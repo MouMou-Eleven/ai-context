@@ -9,5 +9,27 @@
   "approvalMode": "conversation-first-compact-confirmation",
   "defaultOutputMode": "role-adapted-workbench-plan-or-implementation",
   "upstreamReferences": [],
-  "updatePolicy": "review-and-merge"
+  "updatePolicy": "review-and-merge",
+  "maintainer": "杨建委",
+  "authorship": "self-developed",
+  "capabilities": [
+    "角色与真实工作场景梳理",
+    "工作循环和AI边界设计",
+    "信息架构与响应式跨端体验",
+    "产品状态与工程品控"
+  ],
+  "useWhen": [
+    "按职业或角色设计AI工作台",
+    "需要把真实工作流程转成界面与实施方案"
+  ],
+  "notFor": [
+    "未经需求验证预设固定行业模板",
+    "把方案当已接通真实数据的上线应用",
+    "把名称当会员课程的事实归属"
+  ],
+  "runtimeRequirements": [
+    "设计阶段需要支持Skill的AI宿主与真实需求输入",
+    "实现阶段检查目标项目的框架、运行时、包管理器和接口依赖；本卡不承诺统一预装环境"
+  ],
+  "documentationReviewedAt": "2026-09-12"
 }

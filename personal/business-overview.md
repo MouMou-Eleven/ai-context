@@ -27,16 +27,18 @@
 
 ## 其他项目
 
-不属于设计或 AI 工作领域的项目统一进入 [`../work/other/`](../work/other/README.md)，当前包括 Inshan POPUPIANO 海外电商项目。
 
-## 当前仓库中的长期项目
+## 当前项目与活动入口
 
-| 所属领域 | 项目 | 概要入口 |
-|---|---|---|
-| AI 编程 | 言剪 AI | [`../work/ai/programming/projects/yancut-ai/`](../work/ai/programming/projects/yancut-ai/README.md) |
-| AI 培训 | AI 超级个体陪跑社群 | [`../work/ai/training/projects/paid-community-course/`](../work/ai/training/projects/paid-community-course/README.md) |
-| AI 书籍出版 | 《飞书高效办公》 | [`../work/ai/publishing/projects/feishu-efficient-office/`](../work/ai/publishing/projects/feishu-efficient-office/README.md) |
-| 其他项目 | Inshan POPUPIANO | [`../work/other/inshan-popupiano/`](../work/other/inshan-popupiano/README.md) |
+<!-- generated-projects:start -->
+| 领域 | 项目或活动入口 |
+|---|---|
+| AI编程 | [言剪 AI](../work/ai/programming/projects/yancut-ai/README.md) |
+| 会员社群培训 | [AI 超级个体陪跑社群](../work/ai/training/projects/paid-community-course/README.md) |
+| 企业、图书馆、夜校等 | [外部培训（按组织/场次独立登记）](../work/ai/training/projects/external-training/README.md) |
+| 书籍出版 | [《飞书高效办公》](../work/ai/publishing/projects/feishu-efficient-office/README.md) |
+| 文化产品与IP | [AI 六十甲子古音律与 IP 孵化](../work/other/ai-sixty-jiazi-music-ip/README.md) |
+<!-- generated-projects:end -->
 
 ## 状态使用规则
 

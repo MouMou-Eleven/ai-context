@@ -1,19 +1,13 @@
-# 付费社群课程修订记录
+# 会员社群项目修订
 
-> 本目录只保存影响课程受众、结构、交付边界或长期写作规则的重要修订。当前项目事实始终以父级 [`README.md`](../README.md) 为准。
+当前产品事实以[项目 README](../README.md)为准；课程归属与状态以[资料索引](../course-materials-index.md)为准。历史规则只解释形成原因，不覆盖当前入口。
 
-| 日期 | 修订 | 作用 |
-|---|---|---|
-| 2026-09-07 | [`2026-09-07-lesson-6-lecture-review-and-visualization-rules.md`](./2026-09-07-lesson-6-lecture-review-and-visualization-rules.md) | 根据第6课直播复盘，确认学员稿承接关系、学员视角、截图与逻辑图分工、生图不重复截图、红色标注保护和章节清理规则；可复用结论已同步到通用培训经验 |
-| 2026-09-09 | [`2026-09-09-lesson-6-bug-repair-evidence-chain.md`](./2026-09-09-lesson-6-bug-repair-evidence-chain.md) | 重构第六课为“现象—证据—最小修复—回归—清理”链路，补充可运行 Bug 训练台、证据分级和秒哒动态验收边界 |
-| 2026-09-02 | [`miaoda-advanced-course-scenario-driven-updates.md`](./2026-09-02-miaoda-advanced-course-scenario-driven-updates.md) | 完成秒哒进阶课写入与回读，确认版本更新课应从更新清单改造成使用场景链路，并用官方界面截图承接真实动作、结果和验收 |
-| 2026-09-01 | [`training-rule-single-source-and-technical-selection.md`](./2026-09-01-training-rule-single-source-and-technical-selection.md) | 取消把“选高、选低、用完”当作统一参数模板，完成活动规则结构性收口，建立产品事实与课程标题唯一来源，并确认常见技术机制可以直接讲清而不堆例外 |
-| 2026-09-01 | [`training-rule-scope-and-delivery-boundary.md`](./2026-09-01-training-rule-scope-and-delivery-boundary.md) | 根据完整规则审计后的逐项确认，区分宏观认知与具体实操、系列课与独立课、课堂主文档与备课稿，收口提示词、命令演示、可视化、参数、时长、秒哒定位和培训 / 自媒体调用边界 |
-| 2026-08-31 | [`lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md`](./2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md) | 根据第5课两轮真实授课复盘，确立连续课程去重、开场术语时机、生活化案例、概念前置关系、结果导向参数解释、图文互补和事实严谨边界 |
-| 2026-08-30 | [`lesson-5-purchase-language-and-decision-boundary.md`](./2026-08-30-lesson-5-purchase-language-and-decision-boundary.md) | 纠正购买前“要问几个问题”、抽象“把概念放回工具”等表述，明确学员要想清楚购买信息、开发者成本与用户收费边界，并要求云服务课件提供购买入口、动态价格口径和普通人可理解的选择依据 |
-| 2026-08-30 | [`community-positioning-and-super-individual-definition.md`](./2026-08-30-community-positioning-and-super-individual-definition.md) | 明确社群总定位、第一季度课程边界、“超级个体”定义、跨行业受众和对外表达禁区；本次口径覆盖将社群写成编程课或单一职业社群的旧表述 |
-| 2026-08-29 | [`student-material-definitive-positioning.md`](./2026-08-29-student-material-definitive-positioning.md) | 确认学员正文必须直接给出已确定的学习定位和人机分工，不得用条件式、阶段式措辞弱化结论 |
-| 2026-08-23 | [`lesson-4-visualization-and-case-delivery.md`](./2026-08-23-lesson-4-visualization-and-case-delivery.md) | 确认 AI 培训抽象概念按知识点补机制型可视化，课程案例必须交付可运行和可上传文件 |
-| 2026-08-19 | [`lesson-4-student-material-boundary.md`](./2026-08-19-lesson-4-student-material-boundary.md) | 明确第 4 节学员课程资料不得混入讲师备课提示、逐字稿和授课顺序 |
+| 文件 | 内容 |
+|---|---|
+| [2026-09-01-training-rule-single-source-and-technical-selection.md](./2026-09-01-training-rule-single-source-and-technical-selection.md) | 当时的规则收口与唯一来源设计；当前归属规则另见培训入口 |
+| [2026-09-01-training-rule-scope-and-delivery-boundary.md](./2026-09-01-training-rule-scope-and-delivery-boundary.md) | 当时的培训规则适用范围与交付边界；当前读取规则另见培训入口 |
+| [2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md](./2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md) | 第5课讲后复盘；原文明确记载会员社群 |
+| [2026-08-30-lesson-5-purchase-language-and-decision-boundary.md](./2026-08-30-lesson-5-purchase-language-and-decision-boundary.md) | 第5课购买决策表达；原文明确记载会员社群 |
+| [2026-08-30-community-positioning-and-super-individual-definition.md](./2026-08-30-community-positioning-and-super-individual-definition.md) | 社群总定位、季度边界与超级个体定义 |
 
-只在需要理解规则形成原因或核对旧交付问题时读取修订正文；日常生成课程内容不默认加载本目录。
+缺少社群归属证据的单课修订已转到[待归属修订](../../../materials/pending-attribution/revisions/README.md)，明确属外出的 Bug 课已转到[外训课程](../../external-training/lessons/bug-repair/README.md)。具体归属更正见项目 history；日常创作不默认加载本目录。

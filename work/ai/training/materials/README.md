@@ -1,13 +1,13 @@
-# AI 培训资料
+# AI 培训资料入口
 
-> 保存培训资料索引和通用资料规范，不把每篇飞书教程全文复制进 GitHub。
+本页帮助 AI 按资料身份查找正文；不把所有培训统一归入会员社群，也不复制飞书全文。
 
-## 当前状态
+| 要找的资料 | 入口 |
+|---|---|
+| 已确认属于会员社群的资料 | [社群资料索引](../projects/paid-community-course/course-materials-index.md) |
+| 外出培训，包括《别让 Bug 打败你》 | [外出培训课程](../projects/external-training/lessons/README.md) |
+| 技术词典、Git/GitHub、协作心法、网页美化、静态网页发布、秒哒进阶或开发流程，归属尚未明确 | [待归属资料](./pending-attribution/README.md) |
 
-具体付费社群资料由 [`../projects/paid-community-course/course-materials-index.md`](../projects/paid-community-course/course-materials-index.md) 索引。当前没有独立的跨项目培训资料。
+查正文版本时读取对应资料条目；需要确认当前内容时实际打开飞书，旧 revision 不能替代回读。新增或修改资料时执行[归属与更新规则](../attribution-and-updates.md)，自动维护最近一层 README、受影响的索引及来源说明。
 
-## 写入规则
-
-- 课程、课件和培训文档的默认交付形态、讲师/学员边界与口语化要求，统一读取 [`../experience/jianwei-training-style.md`](../experience/jianwei-training-style.md) 和 [`../experience/teaching-and-course-design.md`](../experience/teaching-and-course-design.md)，本目录不复制第二套规则。
-- 飞书课堂主文档的截图、视频、逻辑图、生图、标注保护和局部编辑，统一读取 [`../experience/visual-and-oral-training-docs.md`](../experience/visual-and-oral-training-docs.md)。讲师备课稿、课后文章、作业和练习只有在建委明确提出时生成。
-- 正文在飞书时，本目录只保存标题、链接、受众、状态和最近核验时间。
+创作与修改学员资料时，按[培训经验](../experience/README.md)选择课件形态、实操或飞书可视化方法；只查资料位置不加载写作规则。

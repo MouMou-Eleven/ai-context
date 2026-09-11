@@ -1,10 +1,24 @@
 # jianwei-ai-community-remotion-video
 
-建委 AI 社群的 Remotion 视频制作 Skill。它接收一句话、参考图片或“文字 + 图片”，先公开完成目标最终帧、状态反差、记忆点、动作回扣和重叠节奏的导演判断；规划获批后，再在内部把用户简述二次加工为经过校验的执行级导演稿。实施以主动作能量链、事件响应和多关键姿态相机建立自然动感，并把参考图背景与文字/关键元素的完整可见性都视为受保护事实，重点避免动作死板、背景漂白、文字被行盒或蒙版裁切。
+由杨建委**自研并维护**的 Remotion 视频制作 Skill。名称来自社群工具命名，能力可被设计、AI视频和其他项目复用，不表示某个案例属于会员课程。它接收一句话、参考图片或“文字 + 图片”，先公开完成目标最终帧、状态反差、记忆点、动作回扣和重叠节奏的导演判断；规划获批后，再在内部把用户简述二次加工为经过校验的执行级导演稿。实施以主动作能量链、事件响应和多关键姿态相机建立自然动感，并把参考图背景与文字/关键元素的完整可见性都视为受保护事实，重点避免动作死板、背景漂白、文字被行盒或蒙版裁切。
 
 默认工作方式为三阶段：先公开输出“制作规划确认单”，等待建委明确确认；确认后实现并交付覆盖完整时长的低分辨率预览；建委再次确认后才执行最终全量渲染。规划必须逐元素说明触发、起始状态、动作路径、速度变化、因果、结束状态与微动，不能用通用淡入和镜头推拉代替动作编排。
 
 默认输出为参数化 Remotion 工程：通过 Zod Schema 和 Studio 参数面板编辑主文字、画面中存在的编号以及关键颜色；同时可渲染当前默认参数的 MP4。MP4 是参数快照，可编辑能力来自随附工程。只有建委明确选择固定值、硬编码或只要不可编辑成片时，才改用固定成片模式。
+
+## 能力卡
+
+| 项目 | 说明 |
+|---|---|
+| 适用 | 一句话、脚本、数据、界面、参考图或混合输入的片头、标题动效、MG解释与视频制作；需要参数化工程和帧级验证 |
+| 输出 | 可编辑Remotion工程、全时长低清预览、验证证据，以及按当前授权执行的最终MP4 |
+| 不适用 | 仅查知识就自动启动制作；把MP4视为可编辑工程；替代用户未提供的商业事实或科学数据 |
+| 来源 | 杨建委自研；Remotion官方Skills与buainoai只作为下方列明的参考来源 |
+| 固定版本 | `workflowRevision=10`，实体同步2026-09-05；准确内容由本仓Git版本追溯，未在本次更新实体 |
+| 运行依赖 | Remotion/React工程所需Node.js与包管理器、Chromium等渲染环境；随附Python检查脚本的导入依赖需实际核验 |
+| 安装状态 | 本仓保存快照，不代表当前电脑已安装、版本一致或渲染可用 |
+
+查阅能力只读本页和 `upstream.json`；真正制作时才加载 `skill/SKILL.md` 及相关契约，按当前会话已获授权和有效任务要求执行。下列默认阶段说明只描述Skill的制作流程，不用于阻止仓库查阅、索引维护或本次资料整理。
 
 ## 通用自适应架构
 
@@ -34,9 +48,27 @@
 
 该目录保存完整、自包含的 Skill 快照。名称已于 2026-09-01 从 `jianwei-ai-community-video` 调整为当前名称。
 
+### 其他实体资料索引
+
+这些文件供执行和维护时按需定位，查阅能力卡不默认全部加载。
+
+- [代理配置](./skill/agents/openai.yaml)
+- [输入与图片分析](./skill/references/input-and-image-analysis.md)
+- [导演策略](./skill/references/director-strategy.md)
+- [运动方向](./skill/references/motion-direction.md)
+- [确定性布局契约](./skill/references/deterministic-layout-contract.md)
+- [Remotion契约](./skill/references/remotion-contract.md)
+- [Remotion导演专项契约](./skill/references/remotion-only-director-contract.md)
+- [动效蓝图Schema](./skill/references/motion-blueprint.schema.json)
+- [交付契约](./skill/references/output-contract.md)
+- [质量门槛](./skill/references/quality-gates.md)
+- [蓝图校验脚本](./skill/scripts/validate_blueprint.py)
+
 ## 维护边界
 
-- 这是建委内部维护的 Skill，不自动镜像某一个外部仓库。
+- 这是杨建委自研Skill，不自动镜像外部仓库。实体变更同步主文件、引用、Schema、脚本和代理配置，更新workflowRevision与同步日期；仅修改本能力说明不提升实体版本。
+- 能力或调用入口改变时，同时更新本README、upstream.json、上层Skill索引与相关设计/AI视频入口。
+- 参考来源：[Remotion官方Skills](https://github.com/remotion-dev/remotion/tree/main/packages/skills)、[buainoai/remotion-skills](https://github.com/buainoai/remotion-skills)。参考不是作者归属，也不自动取代自研规则。
 - Remotion 官方 Skills 与 `buainoai/remotion-skills` 是规范和设计参考；更新前必须先比较规范变化，再人工合并并运行 Skill 校验。
 - 修改提示词契约时，同步检查 `references/`、JSON Schema、验证脚本和 `agents/openai.yaml`，避免只改主文件造成模型间输出漂移。
 - 2026-09-01 根据首个图片开场动画实测，增加默认确认门与逐元素动作契约；旧的“内部规划后直接实现”流程停止使用。
@@ -47,4 +79,3 @@
 - 2026-09-05 对比同一工程的自有 Skill 与 `motion-director` 成片后，定位背景漂白根因为实现使用 `shade(bgColor, 0.52)` 把深海军蓝大范围混白；新增背景安全区 RGB/亮度采样与自动对比硬门槛。同时把用户简述到代码之间增加默认不公开的两遍导演执行稿，强制主动作能量链、事件响应、多关键姿态相机和自我批判，提升自然动感而不增加无关装饰。
 - 2026-09-05 根据 `preview3d.mp4` 主标题顶部被切掉的实测，定位高风险组合为 `146px` 字体放入 `148px` 高容器后再 `marginTop: -17px`、`scaleY(1.05)` 并保持 `overflow: hidden`。新增真实字形/可见边界、裁剪祖先和临时蒙版生命周期契约；稳定区必须释放 clip/mask，参数化模式必须测试最长值，并用 `check_visibility_report.py` 硬校验。
 - 2026-09-05 根据导演台对话记录与文字抖动风险复核，新增固定顺序的导演台输出契约，强化字体加载锁定、单一 transform 所有者、整数像素稳定区、基线/字体签名跨帧校验；升级 `check_layout_stability.py`，并将抗抖证据纳入质量门槛。
-

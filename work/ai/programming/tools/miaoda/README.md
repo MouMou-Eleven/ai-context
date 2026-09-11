@@ -20,7 +20,7 @@ miaoda/
 ├── disambiguation.md  同名产品辨析
 ├── basics/            平台基础与发布渠道
 ├── development/       Skill开发与外部调用
-├── experience/        踩坑、提示词、案例、处方和参考源码
+├── experience/        踩坑、提示词主题、案例、处方和参考源码
 └── updates/           版本时间线与重要更新
 ```
 
@@ -32,7 +32,8 @@ miaoda/
 | 当前版本、会员权益、上传与容量限制 | [`basics/current-capabilities.md`](./basics/current-capabilities.md) |
 | 平台形态、运行时、存储、发布渠道 | [`basics/README.md`](./basics/README.md) |
 | 开发自定义 Skill 或被外部 Agent 调用 | [`development/README.md`](./development/README.md) |
-| 排错、提示词、完整案例或重复方案 | [`experience/README.md`](./experience/README.md) |
+| 排错、完整案例或重复方案 | [`experience/README.md`](./experience/README.md) |
+| 只需要写执行提示词 | [`experience/prompt-patterns.md`](./experience/prompt-patterns.md)，再选当前主题 |
 | 追溯功能变化和旧环境方案 | [`updates/README.md`](./updates/README.md) |
 
 ## 当前原则
@@ -46,4 +47,4 @@ miaoda/
 
 动态知识治理遵守 [`../../../../../repository/versioned-knowledge-policy.md`](../../../../../repository/versioned-knowledge-policy.md)。
 
-*结构确认：2026-08-18*
+*结构整理：2026-09-12；产品事实按各来源核验日使用*

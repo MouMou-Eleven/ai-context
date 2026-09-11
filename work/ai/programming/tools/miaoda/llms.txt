@@ -1,6 +1,6 @@
 # 百度秒哒最小路由
 
-默认只读本文件和 README.md，再按单一意图选择一个分支。
+默认只读本文件和 README.md，再按主任务选择分支；真正需要的能力依赖可以组合，不默认加载无关文件。
 
 ## 查平台
 
@@ -14,14 +14,14 @@
 
 - 自定义 Skill：development/skill-development.md
 - 外部 Agent 调用秒哒：development/skill-as-callable.md
-- 写执行提示词：experience/prompt-patterns.md
+- 写执行提示词：experience/prompt-patterns.md → experience/prompts/README.md所列的当前主题
 - 避坑排错：experience/pitfalls.md
 - 完整支付案例：experience/cases/yungouos-jsapi.md
 
 ## 复用方案
 
 - 重复验证的处方：experience/patterns/
-- 旧环境兼容源码：experience/reference-materials/
+- 旧环境兼容源码：experience/reference-materials/；大视频先读experience/patterns/large-video-upload.md，复现旧限制才读video-chunked-upload/legacy-contract.md
 
 ## 严格规则
 

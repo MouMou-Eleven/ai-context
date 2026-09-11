@@ -1,40 +1,30 @@
 # AI Video — AI 视频制作
 
-> 本目录按“通用经验、视频类型、生成工具、具体项目”组织，避免把宣传片、漫剧、真人故事和某个模型的经验混在一起。
-
-## 目录结构
-
-```text
-video/
-├── README.md   AI 视频总入口
-├── common/     跨片型通用制作经验
-├── types/      按最终视频类型分类
-├── tools/      按生成模型或工具分类
-└── projects/   具体客户或长期项目
-```
+> 按通用经验、片型、生成工具和具体项目组织；按任务需要调用设计、后期与编程能力。更新：2026-09-12。
 
 ## 读取路由
 
-| 任务 | 首读 |
+| 任务 | 首读与必要依赖 |
 |---|---|
-| 通用流程、素材、分镜和验收 | [`common/README.md`](./common/README.md) |
-| 漫剧 | [`types/motion-comic/README.md`](./types/motion-comic/README.md) |
-| 企业宣传片 | [`types/enterprise-promo/README.md`](./types/enterprise-promo/README.md) |
-| 真人实拍故事、电影或电视叙事 | [`types/live-action-story/README.md`](./types/live-action-story/README.md) |
-| Seedance | [`tools/seedance/README.md`](./tools/seedance/README.md) |
-| 具体 AI 视频项目 | [`projects/README.md`](./projects/README.md) |
+| 选择片型 | [片型索引](./types/README.md) |
+| 需求、脚本/分镜、素材、镜头测试与验收 | [通用经验](./common/README.md)；混合制作读 [联合流程](../../design/production-workflow.md) |
+| 企业宣传片 | [企业片入口](./types/enterprise-promo/README.md)，先读通用流程，再按需要读视觉配方或案例 |
+| 漫剧 | [漫剧](./types/motion-comic/README.md) |
+| 真人故事、电影或电视叙事 | [真人叙事](./types/live-action-story/README.md) |
+| Seedance 生成与提示词 | [Seedance](./tools/seedance/README.md) |
+| AE 包装、合成、数据与字幕动画 | [AE 设计](../../design/ae-promo-video/README.md) |
+| MG 微课、教师委托的教育视频 | [微课与 MG](../../design/microcourse-mg-animation/README.md)，AI 视频提供所需脚本/分镜和生成能力 |
+| 参数化、可编辑动画，图文转动效 | [Remotion Skill 能力说明](../programming/experience/skill-repository/jianwei-ai-community-remotion-video/README.md) |
+| 项目状态、类似商单与复盘 | [项目与跨域案例](./projects/README.md) |
 
-## 分类原则
+## 分层读取与归属
 
-- 先判断片型，再选择工具；不能用某个模型的经验代替片型方法。
-- 企业宣传片重信息、品牌和包装；真人故事重角色、场景、动作、情绪和摄影；漫剧有自己的角色连续性、分镜和节奏规则。
-- AE 图形包装属于设计门类；当它服务 AI 视频项目时，只组合所需的设计方法。
-- 模型版本、参数和平台能力必须重新核验。
+1. 先确认任务与交付物，选择一个主入口。只展开有关片型、方法和必要工具；无需用户明确说“结合设计”才允许读 AE、微课或编程。
+2. 生成工具已由用户或项目确定时，读对应工具；尚未确定时只读 [工具索引](./tools/README.md) 选型，再核验当前环境与平台能力。模型名不是启动工作所必需的用户输入。
+3. 中文脚本、旁白、字幕与项目说明先读 [AI 表达短卡](../../../brain/ai-expression/README.md)，详细规范按问题展开。
+4. 企业片、漫剧、教育视频的目标不同，片型专属风格与客户事实不能升级为全局要求。AE、Remotion、AI 生成分别按交付需求选用。
+5. 项目正文只有一份。以设计交付为主的项目留在设计，AI 视频在项目入口链接；以生成视频为主的项目留在本目录并链接设计方法。
 
-## 严格激活
+## 自动维护
 
-- 只提一种片型时，只读取该片型和必要的通用经验。
-- 只有明确使用某个模型时才读取对应工具目录。
-- 生成中文脚本、旁白、字幕或项目说明时，默认叠加 [`../../../brain/ai-expression/`](../../../brain/ai-expression/README.md)；不自动加载其他片型、AI 培训或自媒体。
-
-*结构确认：2026-08-18*
+新增经验执行 [沉淀闭环](../../design/production-workflow.md#沉淀时由-ai-自动完成)：先查重、选主位置、记录输入/过程/失败/结果/证据，再更新就近 README、项目/案例索引及需要的跨域入口。片型与工具参数各回到自己的主位置维护；新增能力按仓库全局规则同步上级路由。不得以“文件已写入”代替“下一次能找到并正确复用”。

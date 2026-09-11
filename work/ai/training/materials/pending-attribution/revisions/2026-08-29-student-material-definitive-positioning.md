@@ -1,5 +1,8 @@
 # 2026-08-29：学员资料中的确定性学习定位
 
+> 归属更正（2026-09-12）：课程主题与修改记录保留；会员社群、企业、图书馆、夜校等具体项目及场次尚未核实。旧存放位置与课号不能证明归属，不计入任何项目的当前进度。
+> 本记录的课程身份以[待归属资料索引](../README.md)为准；事实和操作应按原核验日期重新验证。
+
 ## 反馈来源
 
 飞书文章《AI 时代，普通人怎样理解 Git 和 GitHub》在通俗化重写后，仍使用了“如果你的目标是策划项目、提出需求和指挥 AI，下面这些内容不必一开始就深入”等表述。建委确认，这不是单句措辞问题，而是把已经确定的教学立场写成了可选建议。
@@ -30,5 +33,5 @@
 
 - 通用培训规则：`work/ai/training/experience/teaching-and-course-design.md`
 - 学员教程规则：`work/ai/training/experience/tutorial-writing.md`
-- 飞书课程资料索引：`work/ai/training/projects/paid-community-course/course-materials-index.md`
+- 飞书课程资料索引：[待归属培训资料索引](../README.md)（原社群索引归属已撤销）
 - 后续所有面向学员的 AI 技术概念文章、课程正文和教程。

@@ -1,28 +1,19 @@
-# Repository — 仓库治理与维护
+# 仓库运行与维护
 
-> 本目录说明这个长期 AI 上下文仓库怎样分类、怎样更新、怎样保持安全和可追溯。
+建委描述目标和要沉淀的领域，AI负责完成检索、归属、依赖选择、更新及发布。
 
-## 文件索引
+| 文件 | 职责 |
+|---|---|
+| [AGENTS](../AGENTS.md) | 协作边界、事实判断、写入责任与发布政策 |
+| [llms](../llms.txt) | 由任务路由登记生成的短入口 |
+| [STRUCTURE](../STRUCTURE.md) / [交互结构](../STRUCTURE.html) | 完整文件职责与可展开结构 |
+| [navigation/README.md](./navigation/README.md) | 任务路由、项目登记、能力发现与接入 |
+| [ingestion-workflow.md](./ingestion-workflow.md) | 任何新增/改动都要执行的更新流程 |
+| [templates/README.md](./templates/README.md) | 案例、方法与项目入口的最小记录模板 |
+| [roadmap.md](./roadmap.md) | 持续维护顺序、真实任务评估与未来检索升级条件 |
+| [versioned-knowledge-policy.md](./versioned-knowledge-policy.md) | 动态事实的来源、版本与取代关系 |
+| [maintenance/README.md](./maintenance/README.md) | 本地/远端校验、派生文件、结构及桌面同步 |
+| [environment/README.md](./environment/README.md) | 电脑、本地工具与网络环境 |
+| [revisions/README.md](./revisions/README.md) | 治理变化与修订来源 |
 
-| 入口 | 内容 | 何时读取 |
-|---|---|---|
-| [`../STRUCTURE.md`](../STRUCTURE.md) | 全仓目录、文件职责、写入位置和状态规范 | 新增、移动或重构文件前 |
-| [`../STRUCTURE.html`](../STRUCTURE.html) | 可逐层展开、折叠和搜索的中文结构思维导图 | 人工浏览完整仓库时 |
-| [`../AGENTS.md`](../AGENTS.md) | AI 协作、事实优先级和特殊项目规则 | AI 进入仓库时 |
-| [`../llms.txt`](../llms.txt) | AI 最小读取路由 | 每次任务开始时 |
-| [`environment/README.md`](./environment/README.md) | 电脑、网络和本地工具环境入口 | 处理本机环境问题时 |
-| [`versioned-knowledge-policy.md`](./versioned-knowledge-policy.md) | 秒哒等动态产品知识的新旧版本治理 | 记录产品功能、价格、界面、API 或平台规则时 |
-| [`maintenance/README.md`](./maintenance/README.md) | 校验脚本和提交前检查方法 | 修改仓库后 |
-| [`revisions/README.md`](./revisions/README.md) | 仓库级信息架构和治理变化索引 | 追溯仓库结构变化时 |
-
-## 根目录例外
-
-根目录只保留 `README.md`、`AGENTS.md`、`llms.txt`、`STRUCTURE.md` 和派生的 `STRUCTURE.html` 五个机器与人类都需要快速发现的入口。它们是路由或查看文件，不承担零碎内容沉淀。
-
-## 发布与桌面同步
-
-- 建委要求沉淀到 GitHub 时，默认校验后直接提交并推送 `main`，不创建 PR。
-- 每次结构变化先更新 `STRUCTURE.md`；每一次 GitHub 提交前 Git Hook 都从最新 Markdown 强制重建并暂存 `STRUCTURE.html`，不论本次是否改了目录。提交、合并、检出或历史改写后再同步到 `F:\桌面文件\GitHub仓库完整结构.html`。
-- 桌面或 F 盘暂时不可用时，同步会安全延后而不阻断 Git；仓库再次发生上述操作后自动补同步。Hook 路径保存在本地仓库配置中，电脑重启不会丢失。
-- HTML 支持逐层展开、全部折叠、一级目录导航和全文搜索。桌面文件是只读镜像；仓库 `STRUCTURE.md` 始终是唯一权威来源。
-- 如果发现 Git Hook 未启用，先执行 `git config core.hooksPath repository/maintenance/git-hooks`，再继续提交；提交后检查仓库 HTML 与桌面 HTML 的 SHA-256，不能只看提交是否成功。
+根README面向人，AGENTS维护约束，llms由单份登记生成，不能在各入口另写一套相反的路由。桌面HTML仅是查看镜像，不参与知识正确性的判断。

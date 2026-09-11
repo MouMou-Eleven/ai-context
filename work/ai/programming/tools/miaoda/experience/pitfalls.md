@@ -255,9 +255,9 @@ console.log("[fnname] env diag:", {
 > 新项目先按 [patterns/large-video-upload.md](./patterns/large-video-upload.md) 确认会员、对象存储容量并测试当前原生上传；只有旧项目仍复现下列问题时，才启用本条的兼容实现。
 >
 > 本条只保留发现叙事 + 根因；
-> 完整实现规范见 [patterns/large-video-upload.md](./patterns/large-video-upload.md)，
+> 旧实现规范见 [legacy-contract.md](./reference-materials/video-chunked-upload/legacy-contract.md)，
 > 可直接抄走的三段源码见 [`reference-materials/video-chunked-upload/`](./reference-materials/video-chunked-upload/README.md)，
-> 当前上传配置与旧环境兼容提示词见 [prompt-patterns.md](./prompt-patterns.md#大文件上传先按会员配置-500mb旧分片代理只兜底)。
+> 当前上传配置与旧环境兼容提示词见 [prompt-patterns.md](prompts/uploads.md)。
 
 **症状（四种死法按出现顺序）**：
 
@@ -279,16 +279,16 @@ console.log("[fnname] env diag:", {
 | Edge Function 资源 | 单函数内存 / CPU / wall-time | 几百 MB 文件 concat 或流式拼装超过百兆级内存或数百秒 wall-time，被 supervisor 强制 kill。 |
 | Storage 全局上限 | 平台级 `storageFileSizeLimit = Math.min(global, bucket)` | 合并后的整文件在写入瞬间被网关 413，调大桶级 limit 也没用。 |
 
-**旧环境兼容解法**：不把分片合并成完整文件。分片以路径 `<upload_id>/<chunk_index>` 永久留在 Storage 桶 `video-chunks` 里，新增一个 `video-serve` Edge Function 用 HTTP Range / 206 Partial Content 把分片伪装成可拖进度条的完整视频文件。它绕开旧环境的 CORS、函数资源和 Storage 上限，但架构复杂、占用对象数量多，不应在新环境未经测试就直接采用。架构图 / 表结构 / 函数契约 / 源码见 [patterns/large-video-upload.md](./patterns/large-video-upload.md)。
+**旧环境兼容解法**：不把分片合并成完整文件。分片以路径 `<upload_id>/<chunk_index>` 永久留在 Storage 桶 `video-chunks` 里，新增一个 `video-serve` Edge Function 用 HTTP Range / 206 Partial Content 把分片伪装成可拖进度条的完整视频文件。它绕开旧环境的 CORS、函数资源和 Storage 上限，但架构复杂、占用对象数量多，不应在新环境未经测试就直接采用。架构图 / 表结构 / 函数契约见 [legacy-contract.md](./reference-materials/video-chunked-upload/legacy-contract.md)，源码见其参考实现索引。
 
-**只有旧项目按当前权益配置后仍失败时才使用兼容提示词**（详见 [prompt-patterns.md](./prompt-patterns.md#大文件上传先按会员配置-500mb旧分片代理只兜底)）：
+**只有旧项目按当前权益配置后仍失败时才使用兼容提示词**（详见 [prompt-patterns.md](prompts/uploads.md)）：
 红线“禁止合并分片”+“禁止前端直接调 Storage 端点（含 createSignedUploadUrl / TUS）”+“video-serve 必须返回 206 + Content-Range，不允许 200 全文” + 把 `reference-materials/video-chunked-upload/` 三个 ts 作为“禁止重写、必须照抄”的参考实现塞给它（参考 #5：秒哒会无视已提供实现自己另写一份）。
 
 ---
 
 ## #15 只改 `index.html` / `useSEO` → SPA 页面级 `keywords` 容易漏
 
-> 完整处方见 [patterns/seo-optimization.md](./patterns/seo-optimization.md)，提示词片段见 [prompt-patterns.md](./prompt-patterns.md#片段-8全站-seo-优化不漏-keywords)。
+> 完整处方见 [patterns/seo-optimization.md](./patterns/seo-optimization.md)，提示词片段见 [prompt-patterns.md](prompts/seo-and-content.md)。
 
 **症状**：让秒哒“做 SEO”后，它的 Summary 看起来完成了 `index.html`、`title`、`description`、`robots.txt`、`sitemap.xml` 等任务，但继续检查每个页面时发现：部分路由没有 `meta[name="keywords"]`，或页面切换后 `keywords` 没有跟着变。
 
@@ -425,7 +425,7 @@ curl -i https://域名/<file>.txt
 
 ## #22 手机号未做唯一身份规范化 → `+86` 与裸号变成两个账户 / 登录失败
 
-> **风险等级：最高危。** 来源：建委 2026-07-16 提供的真实秒哒应用问题。完整可执行提示词见 [prompt-patterns.md](./prompt-patterns.md#手机号注册登录先规范化再查用户)。
+> **风险等级：最高危。** 来源：建委 2026-07-16 提供的真实秒哒应用问题。完整可执行提示词见 [prompt-patterns.md](prompts/authentication.md)。
 
 **症状**：
 
@@ -513,7 +513,7 @@ curl -i https://域名/<file>.txt
 4. Codex依据日志定位根因并生成下一轮修复提示词；秒哒不得在诊断轮擅自改业务逻辑。
 5. 修复确认后隐藏或移除临时诊断 UI 和采样代码。
 
-**预防**：写秒哒提示词前先区分“秒哒能执行的云端静态动作”和“必须由用户完成的动态复现”。诊断提示词统一复用 [prompt-patterns.md 片段 7](./prompt-patterns.md#片段-7云端应用的临时诊断日志面板)，不得凭 Codex 的工具能力脑补秒哒能力。
+**预防**：写秒哒提示词前先区分“秒哒能执行的云端静态动作”和“必须由用户完成的动态复现”。诊断提示词统一复用 [prompt-patterns.md 片段 7](prompts/runtime-diagnostics.md)，不得凭 Codex 的工具能力脑补秒哒能力。
 
 ## #27 原生 JS + Vite 项目被平台重建 `postcss.config.js` → 构建失败 `Cannot find module 'tailwindcss'`
 

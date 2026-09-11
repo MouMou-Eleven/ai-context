@@ -1,58 +1,30 @@
-# AI Training — AI 培训
+# AI 培训
 
-> 这里保存建委作为 AI 讲师开展企业培训、公开课和社群课程时的通用经验与具体项目。
+保存建委作为讲师开展会员社群、企业、图书馆、夜校和其他培训时的资料、项目与可复用方法。**培训不等于会员社群；同名课程、相同课号和同一个飞书空间都不能证明属于同一项目。**
 
-## 目录结构
+## 按任务读取
 
-```text
-training/
-├── README.md     培训总入口
-├── experience/   备课、课件、讲解、反馈和复盘经验
-├── outlines/     可复用培训大纲
-├── materials/    面向讲师或学员的培训资料索引
-└── projects/     具体培训产品与长期项目
-    └── paid-community-course/
-```
+| 用户要做什么 | 先读 | 继续读取的条件 |
+|---|---|---|
+| 查会员社群定位、权益或近况 | [社群项目](./projects/paid-community-course/README.md) | 只查事实时不加载课件写作方法 |
+| 查外出培训、企业/图书馆/夜校课程 | [外出培训](./projects/external-training/README.md) | 按主题或已确认场次进入，不套用社群权益和课程顺序 |
+| 找课件或某篇飞书资料 | [资料索引](./materials/README.md) | 用标题、链接和受众核对身份；归属不明的资料按原主题查找 |
+| 写、改、审核培训课件或复盘 | [培训经验](./experience/README.md) + [默认培训风格](./experience/jianwei-training-style.md) | 再按任务进入课程组织、技术解释、实操或可视化；明确项目时补该项目事实 |
+| 查可复用大纲 | [大纲](./outlines/README.md) | 区分大纲规划与实际授课 |
+| 沉淀新课程、反馈或改归属 | [归属与更新规则](./attribution-and-updates.md) | AI 自动完成资料、最近一层 README、进度和方法之间的同步 |
 
-## 读取路由
+## 目录入口
 
-| 任务 | 首读 |
-|---|---|
-| 备课、课程设计、课件、现场反馈和复盘 | [`experience/README.md`](./experience/README.md) + [`experience/jianwei-training-style.md`](./experience/jianwei-training-style.md) |
-| 技术名词解释 | [`experience/technical-explanation/README.md`](./experience/technical-explanation/README.md) |
-| 面向学员的实操教程 | [`experience/tutorial-writing.md`](./experience/tutorial-writing.md) |
-| 查培训大纲 | [`outlines/README.md`](./outlines/README.md) |
-| 查培训资料 | [`materials/README.md`](./materials/README.md) |
-| AI 超级个体陪跑社群课程 | 先读通用培训经验，再读 [`projects/paid-community-course/README.md`](./projects/paid-community-course/README.md) |
+- [experience/](./experience/README.md)：跨培训可复用的方法与证据来源。
+- [outlines/](./outlines/README.md)：通用大纲；不复制项目课程表。
+- [materials/](./materials/README.md)：资料发现与待归属材料。
+- [projects/](./projects/README.md)：会员社群与外出培训分别管理。
+- [attribution-and-updates.md](./attribution-and-updates.md)：课程身份、状态、收录与更新的唯一培训专项规则。
 
-## 默认调用顺序
+## 执行边界
 
-1. 先读取 AI 表达基础层，保证中文语法、搭配和语境正确。
-2. 再读取 [`experience/README.md`](./experience/README.md) 和 [`experience/jianwei-training-style.md`](./experience/jianwei-training-style.md)，确定建委稳定的做课偏好和最终课件形态。
-3. 根据任务选择课程设计、技术解释、实操教程或飞书可视化方法；飞书课堂主文档必须读取 [`experience/visual-and-oral-training-docs.md`](./experience/visual-and-oral-training-docs.md)。
-4. 最后叠加具体项目事实、前后课程、案例和当前版本。项目资料不能替代通用经验，也不能让 AI 跳过第二步。
+生成中文内容先读 [AI 表达短入口](../../../brain/ai-expression/README.md)，按交付形式继续读取；只查位置和状态不预读全部表达与培训规则。一个主任务可以调用完成它所需的专业依赖，AI 应自行选择，不要求建委额外说“结合”。
 
-用户在 AI 培训语境中要求复盘或沉淀经验时，默认同时处理“项目复盘证据”和“通用经验更新”。如果反馈已经存在于通用规则中但仍然复现，按 [`experience/README.md`](./experience/README.md) 的强化机制处理，不再重复抄写一份同义经验。
+建委作为讲师授课属于本目录；受教师或学校委托制作成品微课、MG 动画属于[设计](../../design/microcourse-mg-animation/README.md)。课程需要真实开发、视频、演示或招生物料时，按具体工作步骤引用[编程](../programming/README.md)、[AI 视频](../video/README.md)、设计或[自媒体](../self-media/README.md)；不能因使用了这些手段改变课程归属，也不将招生话术带进正式授课。
 
-## 与其他领域的边界
-
-- 生成培训课件、逐字稿、讲解说明或学员资料时，必须先调用 [`../../../brain/ai-expression/`](../../../brain/ai-expression/README.md) 负责中文质量，再调用本目录负责课程逻辑、内容呈现和培训适配。
-- 微课、精品课、MG动画和教育交互课件是设计交付，进入 [`../../design/microcourse-mg-animation/`](../../design/microcourse-mg-animation/README.md)。
-- 通用自媒体标题、文章、口播和直播销售进入 [`../self-media/`](../self-media/README.md)。如果任务明确是某个培训产品或会员社群的招生与销售，读取该产品事实并叠加 AI 自媒体；正式授课仍只使用 AI 培训和对应课程事实，不叠加销售表达。
-- AI 编程课程属于培训；只有需要真实开发事实时才按需组合 [`../programming/`](../programming/README.md)。
-- AI 表达默认叠加；建委的思维认知只有用户明确要求时才从 [`../../../brain/`](../../../brain/README.md) 读取。
-
-## 严格激活
-
-- “AI 培训、企业培训、公开课、讲师备课、培训课件、培训资料、授课复盘”只进入本目录。
-- 任何具体 AI 培训项目都必须先加载通用培训经验，再叠加项目资料；项目 README 不是通用方法的替代入口。
-- 不因课程需要宣传就自动加载自媒体。
-- 提示词只出现“AI 培训”或“AI 自媒体”中的一个时，只调用对应领域；用户明确同时提出两个领域时才组合。具体会员社群的销售任务按“社群项目事实 + AI 自媒体”处理。
-- 不因课程讲 AI 编程就自动加载全部编程知识库。
-- 具体社群价格、权益和进度服从项目 README，不能由通用培训经验覆盖。
-
-## 语言质量规则
-
-中文搭配、逻辑和语境统一服从 [`../../../brain/ai-expression/cross-domain-rules.md`](../../../brain/ai-expression/cross-domain-rules.md)，不在培训目录复制维护。培训目录只补充培训专项：受众、课程逻辑、课件结构、演示方式、讲师与学员资料边界、反馈和复盘。
-
-*结构确认：2026-09-07*
+2026-09-12 归属整理已将《别让 Bug 打败你》移入外出培训。其他来源不足的旧条目进入待归属区；原课程内容和修订证据保留，不从课号补造客户、日期、系列关系或社群进度。

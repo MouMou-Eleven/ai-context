@@ -24,5 +24,28 @@
     "https://github.com/remotion-dev/remotion/tree/main/packages/skills",
     "https://github.com/buainoai/remotion-skills"
   ],
-  "updatePolicy": "review-and-merge"
+  "updatePolicy": "review-and-merge",
+  "maintainer": "杨建委",
+  "authorship": "self-developed",
+  "capabilities": [
+    "参考图与混合输入导演化",
+    "参数化Remotion工程",
+    "布局与背景保真验收",
+    "低清预览与最终成片"
+  ],
+  "useWhen": [
+    "片头、标题动效、MG说明或参考图动画",
+    "需要可编辑文字/编号/颜色与可复现帧"
+  ],
+  "notFor": [
+    "只查视频知识时自动执行制作",
+    "把MP4当可编辑源工程",
+    "把Skill名称当课程归属"
+  ],
+  "runtimeRequirements": [
+    "可运行Remotion/React工程的Node.js与包管理器；版本按目标工程核验",
+    "Chromium等Remotion渲染环境",
+    "使用随附Python验收脚本时核验Python及脚本导入依赖"
+  ],
+  "documentationReviewedAt": "2026-09-12"
 }

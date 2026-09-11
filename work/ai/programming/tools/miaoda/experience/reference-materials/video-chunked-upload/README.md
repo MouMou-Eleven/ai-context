@@ -4,13 +4,17 @@
 >
 > 2026-08-27 官方计费页已明确免费版项目内单文件 50MB、专业版及以上 500MB。新项目必须先按 [`patterns/large-video-upload.md`](../../patterns/large-video-upload.md) 确认会员、同步修改前后端限制并测试当前原生上传；只有旧项目仍复现 CORS / 413 / supervisor kill 时才使用本目录。
 >
-> 完整的“为什么这样写、契约长什么样”在 [`patterns/large-video-upload.md`](../../patterns/large-video-upload.md)。
+> 旧机制的完整合同与专用提示词在 [legacy-contract.md](./legacy-contract.md)；当前决策仍先读 [large-video-upload.md](../../patterns/large-video-upload.md)。
 >
 > 本目录的角色：**旧环境兼容时给 AI 喂“必须照抄、禁止重写”的参考实现**。
 
 ---
 
-## 三个文件
+## 文件索引
+
+- [legacy-contract.md](./legacy-contract.md)：旧机制的桶/表、函数、前端切片、限制与专用提示词，只在当前环境复现旧限制后读取。
+
+### 三个参考源码文件
 
 | 文件 | Edge Function 名 | 职责 |
 |---|---|---|
@@ -29,7 +33,7 @@
 | 桶名 `video-chunks` | 三个文件硬编码同一桶名，改要一起改 |
 | 路径格式 `<upload_id>/<chunk_index>` | list / signedUrl 同样硬编码这个格式 |
 | `createSignedUrl(..., 3600)` | 太短大文件流式播放中途签名会过期 |
-| `video-serve` 不鉴权 | UUID 不可猜，加上鉴权反而会让 `<video>` 标签的 Range 请求失败（浏览器不会带 Authorization） |
+| `video-serve` 不鉴权 | 旧案例内容公开，普通video请求不自动携带自定义Authorization；UUID不能保护私密/付费视频，需受控访问时另行设计 |
 | `Accept-Ranges: bytes` 头 | 没这个头 HTML5 `<video>` 不让拖进度条 |
 | `Cache-Control: no-store` | 加缓存 → 切到下一个视频还放旧片段 |
 
@@ -40,7 +44,7 @@
 这三个函数**不**包含：
 
 1. **创建 `video_uploads` 表行的端点**：前端切片前必须先有 `upload_id` / `chunk_count` / `total_size`。可以走 supabase-js insert（前提是 RLS 允许 admin 写），也可以再写一个 `video-upload-init` Edge Function。
-2. **前端切片上传循环**：见 [`patterns/large-video-upload.md` § 前端契约](../../patterns/large-video-upload.md#前端契约不在三个函数里但必须遵守)。
+2. **前端切片上传循环**：见 [legacy-contract.md的前端契约](./legacy-contract.md#前端契约不在三个函数里但必须遵守)。
 3. **断点续传 UI**：chunk 函数 `upsert: true` 让重传同一片不报错，但"哪几片已传"的状态机要前端自己维护。
 4. **过期清理**：定时任务删除 `status='uploading' AND created_at < now()-interval '24h'` 的会话及其桶分片。
 
@@ -80,4 +84,4 @@ supabase functions deploy video-serve
 # SUPABASE_SERVICE_ROLE_KEY（自动注入，但要确认面板里 secret 已配）
 ```
 
-`video-upload-chunk` 和 `video-upload-complete` 走 admin 校验（`profiles.role === 'admin' || is_super_admin === true`）。`video-serve` **不**走鉴权，因为 `<video>` Range 请求不会带 Authorization 头。
+`video-upload-chunk` 和 `video-upload-complete` 走 admin 校验（`profiles.role === 'admin' || is_super_admin === true`）。旧 `video-serve` 不走鉴权，适用原案例公开媒体；不能直接用于需要用户授权的内容。普通video请求不会自动带自定义Authorization，实际媒体授权应按当前业务独立设计。

@@ -1,4 +1,6 @@
-# 第4章 v4 修订稿创建与执行记录
+# 历史旧第4章 v4 修订稿创建与执行记录
+
+> 状态：历史来源；章节ID `legacy-ch4-efficiency`，不是当前第4章《会议闭环管理》。仅在 [旧章映射](./legacy-ch4-map.md) 指定的素材追溯任务中读取，下文“当前”、图号、产品名和评论状态均指记录当时。当前执行规则见 [出版短卡](./writing-style-analysis.md)。
 
 > 来源：飞书文档改稿执行  
 > 父级 Wiki：<https://my.feishu.cn/wiki/KEKLwUgWHiv9PtkhzXYc6QlnnEk>  

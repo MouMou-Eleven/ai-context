@@ -1,111 +1,55 @@
-# llms.txt - 最小读取路由
+# AI 最小读取路由
 
-默认只读本文件。先判断任务是否生成中文内容，再选择一个最具体的专业领域。除非用户明确要求组合，不得同时激活多个专业领域。
+<!-- generated-from: repository/navigation/routes.json; do not edit -->
 
-## 事实顺序
+先读[AGENTS.md](./AGENTS.md)，确认目标、对象、交付物与项目身份，再选下面的主入口。一个主任务可自动组合必要依赖，不需要额外说“结合”。关键词仅提供候选；同平台、同课号不证明同项目。
 
-当前对话最新确认 > 当前领域 / 项目 README > 当前专题或实际核验 > personal 稳定事实 > 领域经验 / brain 认知 > history / 归档 / Git 历史。
+只查状态/位置直接读权威记录；中文创作加[表达短卡](./brain/ai-expression/README.md)。写入/纠错/沉淀先读[更新流程](./repository/ingestion-workflow.md)，AI负责README、引用、状态、路由、结构与校验。详细依赖和排除条件见[routes.json](./repository/navigation/routes.json)，可用context-route.py解释读取建议。
 
-AI 表达只负责中文质量，不能覆盖上面的事实优先级。
+## 按任务找入口
 
-## 第一步：是否生成中文内容
-
-| 任务类型 | AI 表达读取方式 |
+| 任务 | 首读 |
 |---|---|
-| 生成、改写、润色、翻译、压缩、扩写或组织中文内容 | 必须先读 `brain/ai-expression/README.md` + `brain/ai-expression/cross-domain-rules.md` + `brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md` + `brain/ai-expression/experience/README.md` |
-| 口播、直播、授课逐字稿、对话和旁白 | 再读 `brain/ai-expression/oral-expression/README.md` |
-| 文章、书稿、教程、方案、项目文档和正式说明 | 再读 `brain/ai-expression/written-expression/README.md` |
-| 中文质量复核、语病、逻辑、搭配和跨领域规则 | 在默认基础上重点复核 `brain/ai-expression/cross-domain-rules.md` + `brain/ai-expression/chinese-datasets/grammar-and-error-checklist.md` |
-| 只查事实、文件位置、项目状态，或执行代码、测试和文件整理 | 不默认加载 AI 表达；需要生成中文说明时再加载 |
+| 有哪些项目、近期工作与业务概要 | [入口](./personal/business-overview.md) |
+| 人物、能力与背书 | [入口](./personal/README.md) |
+| 建委的思考与判断 | [入口](./brain/cognition/README.md) |
+| 仓库治理、纠错与沉淀 | [入口](./repository/README.md) |
+| PPT设计 | [入口](./work/design/ppt-design/README.md) |
+| 海报与平面设计 | [入口](./work/design/poster-fold-design/README.md) |
+| 书籍装帧和版式 | [入口](./work/design/book-design/README.md) |
+| 教师委托微课、MG动画 | [入口](./work/design/microcourse-mg-animation/README.md) |
+| AE视频设计与AI辅助 | [入口](./work/design/ae-promo-video/README.md) |
+| AI辅助设计 | [入口](./work/design/ai-design/README.md) |
+| AI视频与生成素材 | [入口](./work/ai/video/README.md) |
+| 企业宣传片 | [入口](./work/ai/video/types/enterprise-promo/README.md) |
+| 漫剧 | [入口](./work/ai/video/types/motion-comic/README.md) |
+| 真人故事影片 | [入口](./work/ai/video/types/live-action-story/README.md) |
+| Seedance工具 | [入口](./work/ai/video/tools/seedance/README.md) |
+| 网站、应用与编程 | [入口](./work/ai/programming/README.md) |
+| 百度秒嗒平台 | [入口](./work/ai/programming/tools/miaoda/llms.txt) |
+| 查阅、使用或收录Skill | [入口](./work/ai/programming/experience/skill-repository/README.md) |
+| 可编辑参数化React动画 | [入口](./work/ai/programming/experience/skill-repository/jianwei-ai-community-remotion-video/README.md) |
+| Origin可编辑科研图 | [入口](./work/ai/programming/experience/skill-repository/editaplot/README.md) |
+| 按职业设计AI工作台 | [入口](./work/ai/programming/experience/skill-repository/jianwei-ai-learning-community-workbench/README.md) |
+| 个人IP与观点海报 | [入口](./work/ai/programming/experience/skill-repository/qingyun-ip-poster/README.md) |
+| 培训备课与复盘（先核对归属） | [入口](./work/ai/training/README.md) |
+| 会员社群（仅明确属于本项目） | [入口](./work/ai/training/projects/paid-community-course/README.md) |
+| 企业、图书馆、夜校与外部培训 | [入口](./work/ai/training/projects/external-training/README.md) |
+| 外部培训：别让Bug打败你 | [入口](./work/ai/training/projects/external-training/lessons/bug-repair/README.md) |
+| 书籍出版与作者书稿 | [入口](./work/ai/publishing/README.md) |
+| 《飞书高效办公》书籍 | [入口](./work/ai/publishing/projects/feishu-efficient-office/README.md) |
+| 自媒体与渠道文案 | [入口](./work/ai/self-media/README.md) |
+| 产品信息、渠道选择与商业对标 | [入口](./work/other/commercial/experience/business-analysis-cards.md) |
+| 客户交付、提案、招生或销售 | [入口](./work/other/commercial/README.md) |
+| 六十甲子项目与独立IP | [入口](./work/other/ai-sixty-jiazi-music-ip/README.md) |
+| 言剪AI项目 | [入口](./work/ai/programming/projects/yancut-ai/README.md) |
+| 当前设备与工具环境 | [入口](./repository/environment/computers/README.md) |
+| 历史追溯 | [入口](./history/README.md) |
 
-中文数据集目录中的 `grammar-and-error-checklist.md` 属于默认中文质量层；其余原始数据默认不读取。只有需要追溯表达来源、提炼经验或执行经授权的数据任务时，才进入 `brain/ai-expression/chinese-datasets/` 的具体数据集。
+## 继续读取的条件
 
-## 第二步：选择一个专业领域
-
-### 一级路由
-
-| 用户要解决的问题 | 首读 |
-|---|---|
-| 建委是谁、个人简介、业务概要、项目概要、荣誉、成长、能力 | `personal/README.md` |
-| 建委怎样思考、判断问题、学习能力或看待商业 | `brain/cognition/README.md` |
-| 工作领域或具体项目 | `work/README.md` |
-| 仓库结构、写入、清理、版本治理、电脑环境 | `repository/README.md` |
-| 历史时间或归档项目 | `history/README.md` |
-
-### 设计路由
-
-| 任务 | 专项入口 |
-|---|---|
-| PPT 设计 | `work/design/ppt-design/README.md` |
-| 海报、折页、平面物料 | `work/design/poster-fold-design/README.md` |
-| 书籍装帧、版式设计 | `work/design/book-design/README.md` |
-| 微课、精品课、参赛课、MG 动画、教师委托、VR 交互课件 | `work/design/microcourse-mg-animation/README.md` |
-| AE 宣传视频 | `work/design/ae-promo-video/README.md` |
-| AI 设计、AI 辅助视觉、AI 商业设计 | `work/design/ai-design/README.md` |
-
-生成设计文案时读取“AI 表达 + 对应设计专项”。AI 设计仍归设计；微课与 AI 培训并列，不能混用。
-
-### AI 路由
-
-| 任务 | 专项入口 | 按需继续 |
-|---|---|---|
-| AI 编程、网站、应用、自动化、开发经验 | `work/ai/programming/README.md` | `experience/` 或 `projects/` |
-| Skill 仓库、收录 Skill、同步 Skill、调用 Skill | `work/ai/programming/experience/skill-repository/README.md` | 对应条目的 README、`upstream.json`；执行时才读 `SKILL.md` |
-| qingyun-ip-poster、个人 IP 海报、账号九宫格、Keynote 观点海报、活动嘉宾海报、创意 IP 角色主视觉 | `work/ai/programming/experience/skill-repository/qingyun-ip-poster/README.md` | 执行时读取 `skill/SKILL.md`，再按任务读取 `skill/references/` |
-| 秒嗒 / 秒哒 / 百度 MIAODA / `*.appmiaoda.com` | `work/ai/programming/tools/miaoda/llms.txt` | 百度平台，禁止误用飞书妙搭 `lark-apps`；再选 basics、development、experience 或 updates 中一个分支 |
-| 言剪 AI、YanCut、OpenCut 二次开发 | `work/ai/programming/projects/yancut-ai/README.md` | architecture、roadmap；追溯时才读 history |
-| AI 培训、企业培训、公开课、讲师备课、培训课件、反馈复盘 | `work/ai/training/README.md` | 必读 `experience/README.md` + `experience/jianwei-training-style.md`，再选当前任务需要的活动方法 |
-| AI 超级个体陪跑社群、会员社群、社群课程 | `work/ai/training/README.md` | 先读通用培训经验和建委培训风格，再叠加 `projects/paid-community-course/README.md` 及当前任务文件 |
-| AI 视频通用制作 | `work/ai/video/README.md` | common |
-| 漫剧、企业宣传片、真人实拍故事 | `work/ai/video/types/README.md` | 对应单个类型 |
-| Seedance | `work/ai/video/tools/seedance/README.md` | 对应单个专题 |
-| AI 书籍出版 | `work/ai/publishing/README.md` | 对应项目 |
-| 《飞书高效办公》书稿、章节、出版或编辑反馈 | `work/ai/publishing/projects/feishu-efficient-office/README.md` | `writing-style-analysis.md` + 当前章节文件；仅出现飞书文档 URL 不触发 |
-| AI 自媒体、标题、文章、营销文案、朋友圈、社群话术、口播、直播销售、账号增长 | `work/ai/self-media/README.md` | 按主要发布渠道读取 titles、articles、marketing-copy、moments-copy、community-copy、video-scripts、live-sales 或 experience 中一个分支 |
-| 成果展示、用户动机、观点与知识怎样结合 | `work/ai/self-media/experience/outcome-and-motivation.md` | 口播时再读 `brain/ai-expression/oral-expression/spoken-argument-and-transition.md` |
-
-生成上述中文内容时，专项入口之前必须先调用 AI 表达。
-
-### 其他领域与项目
-
-| 任务 | 专项入口 | 按需继续 |
-|---|---|---|
-| 商业化、商业项目交付、给客户看、发给客户、客户审阅、对外发送、正式交付、交付版 | `work/other/commercial/README.md` | `experience/external-deliverable-language.md`；再进入一个最具体的专业领域或项目 |
-| 商业计划书、项目申报、比赛材料、路演 PPT、融资材料、评委或投资人审阅 | `work/other/commercial/README.md` | `experience/competition-and-investor-materials.md`；再进入一个最具体的专业领域或项目 |
-| 内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化、内容承接 | `work/other/commercial/README.md` | `work/other/commercial/experience/content-demand-and-conversion.md`；再进入一个最具体的行业或项目 |
-| 案例演示、产品演示、案例答辩、直播案例、结果展示、未来图景、卖结果、课程或社群案例、产品价值演示 | `work/other/commercial/README.md` | `work/other/commercial/experience/case-result-narrative.md`；再进入一个最具体的产品、项目或领域 |
-| AI 六十甲子古音律与 IP 孵化、六十甲子网站、甲音、音乐算命、出生节律声音、甲子神 IP | `work/other/ai-sixty-jiazi-music-ip/README.md` | 只读当前任务对应专题；追溯方向变化时才读 `revisions/` |
-| Inshan、POPUPIANO、海外电商、Amazon、独立站、代运营 | `work/other/inshan-popupiano/README.md` | `competitive-references.md` 或 `90-day-cold-start-plan.md` |
-
-## 严格组合规则
-
-- AI 培训内容 = AI 表达 + AI 培训通用经验 + 建委培训风格 + 当前任务需要的活动方法；明确项目时再叠加项目事实，不自动读 AI 自媒体。
-- AI 培训复盘或经验沉淀默认产生“项目层证据 + 通用方法更新”两层结果。已有规则再次被违反时做强化和前后双重验收，不另写一份同义复盘。
-- AI 自媒体内容 = AI 表达 + `brain/ai-expression/oral-expression/` 或 `written-expression/` + AI 自媒体对应渠道；不自动读 AI 培训。通用口语规则只在 `oral-expression/` 维护，渠道目录只写应用方法。
-- 对外商业成品 = AI 表达 + 商业化与对外交付 + 一个最具体的专业领域或项目。商业交付层只控制内外部稿件边界，不计作第二个专业领域。
-- 案例演示或产品价值表达 = AI 表达 + 案例结果叙事 + 一个最具体的产品、项目或领域；同时承担内容获客或购买承接时，再叠加内容需求与承接方法。
-- 跨行业商业内容 = AI 表达 + 内容需求与承接方法 + 一个最具体的专业领域或项目；不把 PPT、AI、培训等单一案例误写成普遍规律。
-- 用户说“给客户看、发给客户、对外发送、正式交付”，或交付物显然代表建委或公司对外呈现时，必须读取 `work/other/commercial/README.md` 和 `experience/external-deliverable-language.md`。
-- 对外成品默认不出现“客户版、客户审阅版、给客户看的、建议采用、待客户确认”等内部协作表达；未确认事实先返回建委内部确认。
-- 面向评委、投资人和孵化机构的材料必须读取 `experience/competition-and-investor-materials.md`；不得把内部研发讨论、自证式声明、本地路径、`localhost`、私有仓库或外部无法访问的记录写入成品。
-- 飞书书稿 = AI 表达 + AI 书籍出版 + 飞书书籍项目；不自动读自媒体销售规则。
-- 飞书文档只是承载平台，不是业务领域。出现“飞书文档”“飞书云文档”“在飞书里写内容”、`/wiki/` 或 `/docx/` 链接时，先根据文档标题、目录和用户目标判断真实归属；不得据此自动激活《飞书高效办公》书籍项目。
-- 微课案例文案 = AI 表达 + 微课设计；不自动读 AI 培训。
-- 只有用户明确说“结合”“综合调用”或同时交付多个独立成果时，才组合多个专业领域。
-- “课程 / 课件”不明确时先判断对象：建委授课属于 AI 培训；给教师制作成品属于微课设计。
-- AI 表达是中文内容基础层，不计作一个额外业务领域，也不能触发无关项目。
-- 六十甲子项目即使包含网站、App、AI 音乐、生图或综艺开发，也固定从 `work/other/ai-sixty-jiazi-music-ip/` 读取；不得路由回 AI 编程项目。
-- 每一次 GitHub 提交前都必须从最新 `STRUCTURE.md` 重新生成并暂存 `STRUCTURE.html`；提交后同步桌面 HTML 并核对哈希，避免结构查看层与仓库内容漂移。
-
-## 动态知识
-
-秒哒、飞书、Codex、AI 模型、API、价格、界面路径和平台规则会变化。先读当前入口，再核验官方资料或实际环境；AI 表达只能改善语言，不能替代事实核验。
-
-## 默认不读取
-
-- `brain/ai-expression/chinese-datasets/` 原始数据，除非追溯来源或执行授权范围内的数据任务。
-- 项目 `history.md`，除非用户追问为什么变化或旧版本。
-- `history/timeline.md`，除非追溯时间和成长路径。
-- `history/archived-projects/`，除非明确提到归档项目。
-- `reference-materials/`、`source-materials/`、`raw/`，除非当前任务需要原始证据。
-- 飞书项目 `all-docs.md` 和历史 `.docx`。
+- 培训先分会员社群、外部活动或待归属资料。Bug修复课已明确属于外部培训；不凭“第6课”关联社群。创作/复盘读通用经验与风格，状态查询不读整套教学规范。
+- AE/MG与AI视频从[制作协作](./work/design/production-workflow.md)双向调用，事实只维护一处；模型、Skill和源码执行时再读，不默认加载全部。
+- 纯教学案例不触发销售。招生/销售/商业提案按目的补商业方法；对客户的正式成品补对外交付规范。
+- 飞书文档URL不是书籍触发词；百度秒嗒与飞书妙搭先辨平台。书稿读当前出版规则与新旧章映射。
+- 当前事实按来源、日期与适用范围核对；较新证据与入口冲突时更新入口。原始材料、历史、供应商源码与大型附件只在核验或执行需要时读。

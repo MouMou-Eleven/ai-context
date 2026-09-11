@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "purpose": "只登记项目入口与归属，不重复项目状态；外部培训为活动容器，不代表已确认任何客户或场次。",
+  "projects": [
+    {
+      "id": "yancut-ai",
+      "name": "言剪 AI",
+      "domain": "AI编程",
+      "entry": "work/ai/programming/projects/yancut-ai/README.md"
+    },
+    {
+      "id": "paid-community-course",
+      "name": "AI 超级个体陪跑社群",
+      "domain": "会员社群培训",
+      "entry": "work/ai/training/projects/paid-community-course/README.md"
+    },
+    {
+      "id": "external-training",
+      "name": "外部培训（按组织/场次独立登记）",
+      "domain": "企业、图书馆、夜校等",
+      "entry": "work/ai/training/projects/external-training/README.md"
+    },
+    {
+      "id": "feishu-efficient-office",
+      "name": "《飞书高效办公》",
+      "domain": "书籍出版",
+      "entry": "work/ai/publishing/projects/feishu-efficient-office/README.md"
+    },
+    {
+      "id": "ai-sixty-jiazi-music-ip",
+      "name": "AI 六十甲子古音律与 IP 孵化",
+      "domain": "文化产品与IP",
+      "entry": "work/other/ai-sixty-jiazi-music-ip/README.md"
+    }
+  ]
+}
