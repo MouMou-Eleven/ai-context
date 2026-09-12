@@ -1,4 +1,0 @@
-#!/bin/sh
-# Validate the staged snapshot. Deliberately never run git add.
-repo_root="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 1
-exec sh "$repo_root/repository/maintenance/git-hooks/run-python" "$repo_root/repository/maintenance/pre-commit.py"

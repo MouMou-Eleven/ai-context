@@ -1,0 +1,986 @@
+{
+  "schemaVersion": 1,
+  "principle": "一个主任务，按明确依赖读取；关键词返回候选，不自动执行或推定项目归属。",
+  "selectionPolicy": {
+    "trainingTaskWhenAny": [
+      "课",
+      "培训",
+      "授课",
+      "讲师",
+      "教学",
+      "备课"
+    ],
+    "trainingTaskExcludeAny": [
+      "微课",
+      "MG动画",
+      "MG 动画",
+      "教师委托",
+      "精品课",
+      "参赛课",
+      "招生海报",
+      "招生短视频",
+      "直播销售"
+    ],
+    "trainingRouteIds": [
+      "bug-lesson",
+      "external-training",
+      "community",
+      "training"
+    ],
+    "deliveryRouteIds": [
+      "ppt",
+      "poster",
+      "book-design",
+      "microcourse",
+      "ai-design",
+      "video",
+      "enterprise-video",
+      "motion-comic",
+      "live-story",
+      "self-media"
+    ],
+    "projectContextRouteIds": [
+      "bug-lesson",
+      "external-training",
+      "community",
+      "feishu-book",
+      "sixty-jiazi",
+      "yancut"
+    ],
+    "capabilityRouteIds": [
+      "miaoda",
+      "skills",
+      "remotion",
+      "editaplot",
+      "workbench",
+      "ip-poster",
+      "seedance",
+      "ae"
+    ],
+    "exclusiveProjectIds": [
+      "bug-lesson"
+    ],
+    "channelDeliverableWhenAny": [
+      "朋友圈",
+      "公众号",
+      "海报",
+      "折页",
+      "直播话术",
+      "招生短视频",
+      "推广文案",
+      "宣传文案"
+    ],
+    "explicitTeachingWhenAny": [
+      "备课",
+      "授课",
+      "教学",
+      "讲课",
+      "培训课件",
+      "课程课件",
+      "课程大纲",
+      "写一节",
+      "讲一节",
+      "教会员",
+      "教大家",
+      "讲解"
+    ],
+    "courseNumberPattern": "第\\s*[0-9零〇一二两三四五六七八九十百千]+\\s*(?:课|节)"
+  },
+  "readFirst": [
+    "AGENTS.md",
+    "llms.txt"
+  ],
+  "overlays": [
+    {
+      "id": "expression",
+      "whenAny": [],
+      "excludeAny": [],
+      "intents": [],
+      "paths": [
+        "system/expression/README.md"
+      ],
+      "requiresChinese": true
+    },
+    {
+      "id": "writing",
+      "whenAny": [],
+      "excludeAny": [],
+      "intents": [],
+      "paths": [
+        "system/repository/ingestion-workflow.md",
+        "system/repository/navigation/STRUCTURE.md"
+      ],
+      "requiresWrite": true
+    },
+    {
+      "id": "external-delivery",
+      "whenAny": [
+        "给客户",
+        "正式交付",
+        "商业计划",
+        "融资",
+        "路演",
+        "比赛申报"
+      ],
+      "excludeAny": [],
+      "intents": [],
+      "paths": [
+        "work/domains/other/commercial/experience/external-deliverable-language.md"
+      ]
+    },
+    {
+      "id": "commercial-case",
+      "whenAny": [
+        "招生",
+        "销售案例",
+        "产品价值演示",
+        "商业提案"
+      ],
+      "excludeAny": [
+        "不涉及招生",
+        "不招生",
+        "不销售",
+        "纯教学"
+      ],
+      "intents": [],
+      "paths": [
+        "work/domains/other/commercial/experience/case-result-narrative.md"
+      ]
+    },
+    {
+      "id": "local-image-generation",
+      "whenAny": [
+        "生图",
+        "生成图片",
+        "画图",
+        "视觉概念"
+      ],
+      "excludeAny": [],
+      "intents": [
+        "create"
+      ],
+      "paths": [
+        "system/environment/image-generation.md"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "projects",
+      "label": "有哪些项目、近期工作与业务概要",
+      "matchAny": [
+        "长期项目",
+        "哪些项目",
+        "最近在做",
+        "目前在做",
+        "业务概要",
+        "业务版图"
+      ],
+      "excludeAny": [],
+      "entry": "work/projects/README.md",
+      "priority": 80,
+      "dependencies": [
+        {
+          "path": "system/repository/navigation/projects.json",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "personal",
+      "label": "人物、能力与背书",
+      "matchAny": [
+        "建委是谁",
+        "个人简介",
+        "个人背书",
+        "荣誉",
+        "能力结构"
+      ],
+      "excludeAny": [],
+      "entry": "personal/README.md",
+      "priority": 50,
+      "dependencies": []
+    },
+    {
+      "id": "cognition",
+      "label": "建委的思考与判断",
+      "matchAny": [
+        "建委的思考",
+        "建委的判断",
+        "商业认知"
+      ],
+      "excludeAny": [],
+      "entry": "brain/README.md",
+      "priority": 50,
+      "dependencies": []
+    },
+    {
+      "id": "system/repository",
+      "label": "仓库治理、纠错与沉淀",
+      "matchAny": [
+        "仓库",
+        "GitHub",
+        "repo",
+        "沉淀",
+        "入库"
+      ],
+      "excludeAny": [],
+      "entry": "system/repository/README.md",
+      "priority": 10,
+      "dependencies": [
+        {
+          "path": "system/repository/ingestion-workflow.md",
+          "whenAny": [],
+          "intents": [
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ppt",
+      "label": "PPT设计",
+      "matchAny": [
+        "PPT",
+        "幻灯片设计"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/graphic/ppt/README.md",
+      "priority": 50,
+      "dependencies": []
+    },
+    {
+      "id": "poster",
+      "label": "海报与平面设计",
+      "matchAny": [
+        "海报",
+        "折页"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/graphic/poster-fold/README.md",
+      "priority": 50,
+      "dependencies": [
+        {
+          "path": "system/skills/qingyun-ip-poster/README.md",
+          "whenAny": [
+            "个人IP",
+            "个人 IP",
+            "观点海报",
+            "九宫格",
+            "嘉宾海报"
+          ],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "book-design",
+      "label": "书籍装帧和版式",
+      "matchAny": [
+        "书籍设计",
+        "装帧",
+        "版式设计"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/graphic/book/README.md",
+      "priority": 50,
+      "dependencies": []
+    },
+    {
+      "id": "microcourse",
+      "label": "教师微课与教育交互",
+      "matchAny": [
+        "微课",
+        "教师委托",
+        "教育交互",
+        "教学动画",
+        "参赛课",
+        "精品课"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/video/education/README.md",
+      "priority": 85,
+      "dependencies": [
+        {
+          "path": "work/domains/design/common/production-workflow.md",
+          "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/README.md",
+          "whenAny": [
+            "AI",
+            "生视频",
+            "视频提示词",
+            "生成镜头"
+          ],
+          "intents": []
+        },
+        {
+          "path": "system/skills/jianwei-ai-community-remotion-video/README.md",
+          "whenAny": [
+            "参数化",
+            "React",
+            "Remotion"
+          ],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "ae",
+      "label": "AE包装与后期合成",
+      "matchAny": [
+        "AE视频",
+        "AE 视频",
+        "AE宣传",
+        "AE 宣传",
+        "After Effects",
+        "AE后期",
+        "AE 后期",
+        "AE合成",
+        "AE 合成"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/video/common/ae-production.md",
+      "priority": 70,
+      "dependencies": [
+        {
+          "path": "work/domains/design/common/production-workflow.md",
+          "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/README.md",
+          "whenAny": [
+            "AI",
+            "生视频",
+            "视频提示词",
+            "生成镜头"
+          ],
+          "intents": []
+        }
+      ],
+      "matchPatterns": [
+        "(?<![A-Za-z0-9])AE(?![A-Za-z0-9])"
+      ]
+    },
+    {
+      "id": "ai-design",
+      "label": "AI辅助视觉生产",
+      "matchAny": [
+        "AI设计",
+        "AI 设计",
+        "AI辅助视觉"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/common/ai-assisted-design.md",
+      "priority": 50,
+      "dependencies": []
+    },
+    {
+      "id": "video",
+      "label": "视频、动画与生成素材",
+      "matchAny": [
+        "AI视频",
+        "AI 视频",
+        "AI生成视频",
+        "视频提示词",
+        "生视频",
+        "MG动画",
+        "MG 动画",
+        "视频制作",
+        "动画制作"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/video/README.md",
+      "priority": 45,
+      "dependencies": [
+        {
+          "path": "work/domains/design/common/production-workflow.md",
+          "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/common/ae-production.md",
+          "whenAny": [
+            "AE",
+            "合成",
+            "后期"
+          ],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/education/README.md",
+          "whenAny": [
+            "微课",
+            "教师",
+            "教育",
+            "教学"
+          ],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "enterprise-video",
+      "label": "企业宣传片",
+      "matchAny": [
+        "企业宣传片",
+        "宣传片"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/video/promo/README.md",
+      "priority": 75,
+      "dependencies": [
+        {
+          "path": "work/domains/design/common/production-workflow.md",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "motion-comic",
+      "label": "漫剧",
+      "matchAny": [
+        "漫剧"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/video/story/motion-comic.md",
+      "priority": 65,
+      "dependencies": []
+    },
+    {
+      "id": "live-story",
+      "label": "真人故事影片",
+      "matchAny": [
+        "真人故事",
+        "实拍故事"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/video/story/README.md",
+      "priority": 65,
+      "dependencies": []
+    },
+    {
+      "id": "seedance",
+      "label": "Seedance工具",
+      "matchAny": [
+        "Seedance"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/video/common/tools/seedance/README.md",
+      "priority": 70,
+      "dependencies": [
+        {
+          "path": "work/domains/design/video/README.md",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "programming",
+      "label": "网站、应用与编程",
+      "matchAny": [
+        "编程",
+        "网站",
+        "应用开发",
+        "自动化开发"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/development/README.md",
+      "priority": 35,
+      "dependencies": []
+    },
+    {
+      "id": "miaoda",
+      "label": "百度秒嗒平台",
+      "matchAny": [
+        "秒嗒",
+        "秒哒",
+        "miaoda.cn",
+        "appmiaoda.com"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/development/tools/miaoda/llms.txt",
+      "priority": 60,
+      "dependencies": [
+        {
+          "path": "work/domains/development/tools/miaoda/disambiguation.md",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "label": "查阅、使用或收录Skill",
+      "matchAny": [
+        "Skill",
+        "技能仓库"
+      ],
+      "excludeAny": [],
+      "entry": "system/skills/README.md",
+      "priority": 55,
+      "dependencies": []
+    },
+    {
+      "id": "remotion",
+      "label": "可编辑参数化React动画",
+      "matchAny": [
+        "Remotion",
+        "React参数化动画",
+        "React 参数化动画",
+        "可修改文字和颜色",
+        "可编辑动画工程"
+      ],
+      "excludeAny": [],
+      "entry": "system/skills/jianwei-ai-community-remotion-video/README.md",
+      "priority": 95,
+      "dependencies": [
+        {
+          "path": "system/skills/jianwei-ai-community-remotion-video/upstream.json",
+          "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/README.md",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "editaplot",
+      "label": "Origin可编辑科研图",
+      "matchAny": [
+        "EditaPlot",
+        "Origin",
+        "科研图",
+        "实验数据绘图"
+      ],
+      "excludeAny": [],
+      "entry": "system/skills/editaplot/README.md",
+      "priority": 95,
+      "dependencies": [
+        {
+          "path": "system/skills/editaplot/upstream.json",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "workbench",
+      "label": "按职业设计AI工作台",
+      "matchAny": [
+        "AI工作台",
+        "AI 工作台",
+        "职业工作台"
+      ],
+      "excludeAny": [],
+      "entry": "system/skills/jianwei-ai-learning-community-workbench/README.md",
+      "priority": 95,
+      "dependencies": [
+        {
+          "path": "system/skills/jianwei-ai-learning-community-workbench/upstream.json",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "ip-poster",
+      "label": "个人IP与观点海报",
+      "matchAny": [
+        "qingyun-ip-poster",
+        "个人IP海报",
+        "个人 IP 海报",
+        "观点海报",
+        "账号九宫格",
+        "嘉宾海报"
+      ],
+      "excludeAny": [],
+      "entry": "system/skills/qingyun-ip-poster/README.md",
+      "priority": 95,
+      "dependencies": [
+        {
+          "path": "system/skills/qingyun-ip-poster/upstream.json",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "label": "培训备课与复盘（先核对归属）",
+      "matchAny": [
+        "培训",
+        "授课",
+        "讲师",
+        "教学案例",
+        "课件",
+        "课程"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/training/README.md",
+      "priority": 40,
+      "dependencies": [
+        {
+          "path": "work/domains/training/experience/README.md",
+          "whenAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/training/experience/jianwei-training-style.md",
+          "whenAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "community",
+      "label": "会员社群（仅明确属于本项目）",
+      "matchAny": [
+        "会员社群",
+        "陪跑社群",
+        "社群课程",
+        "付费社群",
+        "会员课程"
+      ],
+      "excludeAny": [
+        "不是会员社群",
+        "不属于会员社群",
+        "与会员社群无关",
+        "不是社群课程",
+        "不是会员课程",
+        "不属于会员课程",
+        "与会员课程无关",
+        "非会员课程",
+        "不是社群",
+        "不属于社群"
+      ],
+      "entry": "work/projects/paid-community-course/README.md",
+      "priority": 80,
+      "dependencies": [
+        {
+          "path": "work/domains/training/README.md",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "external-training",
+      "label": "企业、图书馆、夜校与外部培训",
+      "matchAny": [
+        "企业培训",
+        "图书馆培训",
+        "夜校",
+        "外部培训",
+        "外出培训",
+        "外训"
+      ],
+      "excludeAny": [],
+      "entry": "work/projects/external-training/README.md",
+      "priority": 85,
+      "dependencies": [
+        {
+          "path": "work/domains/training/README.md",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "bug-lesson",
+      "label": "外部培训：别让Bug打败你",
+      "matchAny": [
+        "别让Bug打败你",
+        "别让 Bug 打败你",
+        "Bug修复课",
+        "Bug 修复课"
+      ],
+      "excludeAny": [],
+      "entry": "work/projects/external-training/lessons/bug-repair/README.md",
+      "priority": 100,
+      "dependencies": [
+        {
+          "path": "work/domains/training/README.md",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "publishing",
+      "label": "出版体裁与书稿（先明确项目）",
+      "matchAny": [
+        "出版书",
+        "出版",
+        "书稿",
+        "写书"
+      ],
+      "excludeAny": [],
+      "entry": "system/expression/genres.md",
+      "priority": 65,
+      "dependencies": []
+    },
+    {
+      "id": "feishu-book",
+      "label": "《飞书高效办公》书籍",
+      "matchAny": [
+        "飞书高效办公",
+        "飞书书籍",
+        "飞书书稿"
+      ],
+      "excludeAny": [],
+      "entry": "work/projects/feishu-efficient-office/README.md",
+      "priority": 90,
+      "dependencies": [
+        {
+          "path": "work/projects/feishu-efficient-office/writing-style-analysis.md",
+          "whenAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-media",
+      "label": "自媒体、个人IP与渠道表达",
+      "matchAny": [
+        "自媒体",
+        "公众号",
+        "朋友圈",
+        "口播",
+        "社群话术",
+        "直播销售",
+        "直播",
+        "短视频脚本",
+        "个人IP",
+        "个人 IP"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/self-media/README.md",
+      "priority": 50,
+      "dependencies": [
+        {
+          "path": "personal/expression-preferences.md",
+          "whenAny": [
+            "朋友圈",
+            "个人IP",
+            "个人 IP",
+            "建委口吻",
+            "我的口吻"
+          ],
+          "intents": [
+            "create",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "business-analysis",
+      "label": "产品信息、渠道选择与商业对标",
+      "matchAny": [
+        "渠道选择",
+        "选择渠道",
+        "商业对标",
+        "产品信息卡",
+        "产品信息化",
+        "拆解同行"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/other/commercial/experience/business-analysis-cards.md",
+      "priority": 60,
+      "dependencies": [
+        {
+          "path": "work/domains/other/commercial/experience/content-demand-and-conversion.md",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "commercial",
+      "label": "客户交付、提案、招生或销售",
+      "matchAny": [
+        "商业计划",
+        "商业方案",
+        "融资",
+        "路演",
+        "招生",
+        "销售",
+        "给客户",
+        "正式交付",
+        "商单"
+      ],
+      "excludeAny": [
+        "纯教学",
+        "不涉及招生",
+        "不招生",
+        "不销售"
+      ],
+      "entry": "work/domains/other/commercial/README.md",
+      "priority": 30,
+      "dependencies": []
+    },
+    {
+      "id": "sixty-jiazi",
+      "label": "六十甲子项目与独立IP",
+      "matchAny": [
+        "六十甲子",
+        "甲音",
+        "甲子神",
+        "出生节律声音"
+      ],
+      "excludeAny": [],
+      "entry": "work/projects/ai-sixty-jiazi-music-ip/README.md",
+      "priority": 100,
+      "dependencies": []
+    },
+    {
+      "id": "yancut",
+      "label": "言剪AI项目",
+      "matchAny": [
+        "言剪",
+        "YanCut",
+        "OpenCut"
+      ],
+      "excludeAny": [],
+      "entry": "work/projects/yancut-ai/README.md",
+      "priority": 100,
+      "dependencies": []
+    },
+    {
+      "id": "environment",
+      "label": "当前设备与工具环境",
+      "matchAny": [
+        "本机网络",
+        "电脑环境",
+        "CC Switch",
+        "Clash",
+        "Windows故障"
+      ],
+      "excludeAny": [],
+      "entry": "system/environment/computers/README.md",
+      "priority": 80,
+      "dependencies": []
+    },
+    {
+      "id": "history",
+      "label": "历史项目与追溯",
+      "matchAny": [
+        "历史资料",
+        "归档项目",
+        "时间线"
+      ],
+      "excludeAny": [],
+      "entry": "system/repository/navigation/history.md",
+      "priority": 20,
+      "dependencies": []
+    },
+    {
+      "id": "course-number",
+      "label": "按课号找资料（先核对所属系列）",
+      "matchAny": [],
+      "matchPatterns": [
+        "第\\s*[0-9零〇一二两三四五六七八九十百千]+\\s*(?:课|节)"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/training/materials/README.md",
+      "priority": 45,
+      "dependencies": [
+        {
+          "path": "work/domains/training/attribution-and-updates.md",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    }
+  ],
+  "outputPolicy": {
+    "defaultProducesChinese": true,
+    "note": "中文回复默认遵守短卡；纯工具执行可明确关闭。是否写库独立判断，不从write推断没有中文输出。"
+  },
+  "genreRules": [
+    {
+      "id": "oral",
+      "whenAny": [
+        "口播",
+        "讲稿",
+        "旁白",
+        "朗读稿",
+        "直播话术"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "requiresChinese": true,
+      "paths": [
+        "system/expression/oral-expression/README.md"
+      ]
+    },
+    {
+      "id": "written",
+      "whenAny": [
+        "书稿",
+        "计划书",
+        "方案",
+        "合同",
+        "文章",
+        "书面",
+        "教程"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "requiresChinese": true,
+      "excludeAny": [
+        "口播",
+        "朗读稿",
+        "直播话术"
+      ],
+      "paths": [
+        "system/expression/written-expression/README.md"
+      ]
+    },
+    {
+      "id": "genre-selector",
+      "whenAny": [
+        "课件",
+        "讲稿",
+        "口播",
+        "书稿",
+        "合同",
+        "方案",
+        "计划书",
+        "朋友圈",
+        "文章"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "requiresChinese": true,
+      "paths": [
+        "system/expression/genres.md"
+      ]
+    }
+  ]
+}

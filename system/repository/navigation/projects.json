@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "purpose": "只登记路径、类型与领域关系；当前状态和证据回正文。外部培训是活动容器，不代表已经确认具体客户或场次。",
+  "projects": [
+    {
+      "id": "yancut-ai",
+      "name": "言剪 AI",
+      "kind": "项目",
+      "domain": "应用开发",
+      "entry": "work/projects/yancut-ai/README.md",
+      "domainEntries": [
+        "work/domains/development/README.md"
+      ]
+    },
+    {
+      "id": "paid-community-course",
+      "name": "AI 超级个体陪跑社群",
+      "kind": "长期项目",
+      "domain": "会员培训与社群经营",
+      "entry": "work/projects/paid-community-course/README.md",
+      "domainEntries": [
+        "work/domains/training/README.md",
+        "work/domains/self-media/README.md"
+      ]
+    },
+    {
+      "id": "external-training",
+      "name": "外部培训记录",
+      "kind": "活动容器",
+      "domain": "企业、图书馆、夜校等",
+      "entry": "work/projects/external-training/README.md",
+      "domainEntries": [
+        "work/domains/training/README.md"
+      ]
+    },
+    {
+      "id": "feishu-efficient-office",
+      "name": "《飞书高效办公》",
+      "kind": "出版项目",
+      "domain": "书稿与出版",
+      "entry": "work/projects/feishu-efficient-office/README.md",
+      "domainEntries": [
+        "work/domains/design/README.md",
+        "work/domains/design/graphic/book/README.md"
+      ]
+    },
+    {
+      "id": "ai-sixty-jiazi-music-ip",
+      "name": "AI 六十甲子古音律与 IP 孵化",
+      "kind": "项目",
+      "domain": "文化产品与IP",
+      "entry": "work/projects/ai-sixty-jiazi-music-ip/README.md",
+      "domainEntries": [
+        "work/domains/other/README.md",
+        "work/domains/development/README.md"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "minchao-football",
+      "name": "闽超小将",
+      "kind": "案例记录",
+      "domain": "体育微课、AI镜头、MG与实拍标注",
+      "entry": "work/projects/cases/minchao-football.md",
+      "domainEntries": [
+        "work/domains/design/README.md",
+        "work/domains/design/video/README.md",
+        "work/domains/design/video/education/README.md"
+      ]
+    },
+    {
+      "id": "happy-shopping",
+      "name": "快乐购物小超市",
+      "kind": "案例记录",
+      "domain": "数学教育交互",
+      "entry": "work/projects/cases/happy-shopping.md",
+      "domainEntries": [
+        "work/domains/design/README.md",
+        "work/domains/design/video/README.md",
+        "work/domains/design/video/education/README.md",
+        "work/domains/development/README.md"
+      ]
+    },
+    {
+      "id": "vr-ai-interactive",
+      "name": "VR + AI 交互教育",
+      "kind": "案例记录",
+      "domain": "教育交互与VR",
+      "entry": "work/projects/cases/vr-ai-interactive.md",
+      "domainEntries": [
+        "work/domains/design/README.md",
+        "work/domains/design/video/README.md",
+        "work/domains/design/video/education/README.md"
+      ]
+    },
+    {
+      "id": "enterprise-prompt-record",
+      "name": "企业片提示词实战记录",
+      "kind": "提示词案例",
+      "domain": "企业宣传片与信息包装",
+      "entry": "work/projects/cases/2026-05-enterprise-prompt-record.md",
+      "domainEntries": [
+        "work/domains/design/README.md",
+        "work/domains/design/video/README.md",
+        "work/domains/design/video/promo/README.md"
+      ]
+    }
+  ],
+  "archivedProjects": [
+    {
+      "id": "openclaw-agent",
+      "name": "OpenClaw Agent",
+      "kind": "已归档",
+      "domain": "智能体项目历史",
+      "entry": "work/projects/archive/openclaw-agent/README.md"
+    },
+    {
+      "id": "videoai",
+      "name": "VideoAI",
+      "kind": "已归档",
+      "domain": "营销视频平台历史",
+      "entry": "work/projects/archive/videoai/README.md"
+    },
+    {
+      "id": "xinghuo-ying-guozhou-vr-courseware",
+      "name": "星火映果州 VR 交互课件",
+      "kind": "已归档",
+      "domain": "VR教育作品历史",
+      "entry": "work/projects/archive/xinghuo-ying-guozhou-vr-courseware/README.md"
+    }
+  ]
+}

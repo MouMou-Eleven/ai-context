@@ -22,5 +22,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python -B repository/maintenance/validate-context.py
-      - run: python -B -m unittest discover -s repository/maintenance/tests -v
+      - run: python -B system/repository/maintenance/validate-context.py
+      - run: python -B -m unittest discover -s system/repository/maintenance/tests -v

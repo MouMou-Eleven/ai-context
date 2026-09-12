@@ -1,55 +1,5 @@
-# AI 最小读取路由
+# AI Context 读取入口
 
-<!-- generated-from: repository/navigation/routes.json; do not edit -->
+<!-- generated-from: system/repository/navigation/routes.json; do not edit -->
 
-先读[AGENTS.md](./AGENTS.md)，确认目标、对象、交付物与项目身份，再选下面的主入口。一个主任务可自动组合必要依赖，不需要额外说“结合”。关键词仅提供候选；同平台、同课号不证明同项目。
-
-只查状态/位置直接读权威记录；中文创作加[表达短卡](./brain/ai-expression/README.md)。写入/纠错/沉淀先读[更新流程](./repository/ingestion-workflow.md)，AI负责README、引用、状态、路由、结构与校验。详细依赖和排除条件见[routes.json](./repository/navigation/routes.json)，可用context-route.py解释读取建议。
-
-## 按任务找入口
-
-| 任务 | 首读 |
-|---|---|
-| 有哪些项目、近期工作与业务概要 | [入口](./personal/business-overview.md) |
-| 人物、能力与背书 | [入口](./personal/README.md) |
-| 建委的思考与判断 | [入口](./brain/cognition/README.md) |
-| 仓库治理、纠错与沉淀 | [入口](./repository/README.md) |
-| PPT设计 | [入口](./work/design/ppt-design/README.md) |
-| 海报与平面设计 | [入口](./work/design/poster-fold-design/README.md) |
-| 书籍装帧和版式 | [入口](./work/design/book-design/README.md) |
-| 教师委托微课、MG动画 | [入口](./work/design/microcourse-mg-animation/README.md) |
-| AE视频设计与AI辅助 | [入口](./work/design/ae-promo-video/README.md) |
-| AI辅助设计 | [入口](./work/design/ai-design/README.md) |
-| AI视频与生成素材 | [入口](./work/ai/video/README.md) |
-| 企业宣传片 | [入口](./work/ai/video/types/enterprise-promo/README.md) |
-| 漫剧 | [入口](./work/ai/video/types/motion-comic/README.md) |
-| 真人故事影片 | [入口](./work/ai/video/types/live-action-story/README.md) |
-| Seedance工具 | [入口](./work/ai/video/tools/seedance/README.md) |
-| 网站、应用与编程 | [入口](./work/ai/programming/README.md) |
-| 百度秒嗒平台 | [入口](./work/ai/programming/tools/miaoda/llms.txt) |
-| 查阅、使用或收录Skill | [入口](./work/ai/programming/experience/skill-repository/README.md) |
-| 可编辑参数化React动画 | [入口](./work/ai/programming/experience/skill-repository/jianwei-ai-community-remotion-video/README.md) |
-| Origin可编辑科研图 | [入口](./work/ai/programming/experience/skill-repository/editaplot/README.md) |
-| 按职业设计AI工作台 | [入口](./work/ai/programming/experience/skill-repository/jianwei-ai-learning-community-workbench/README.md) |
-| 个人IP与观点海报 | [入口](./work/ai/programming/experience/skill-repository/qingyun-ip-poster/README.md) |
-| 培训备课与复盘（先核对归属） | [入口](./work/ai/training/README.md) |
-| 会员社群（仅明确属于本项目） | [入口](./work/ai/training/projects/paid-community-course/README.md) |
-| 企业、图书馆、夜校与外部培训 | [入口](./work/ai/training/projects/external-training/README.md) |
-| 外部培训：别让Bug打败你 | [入口](./work/ai/training/projects/external-training/lessons/bug-repair/README.md) |
-| 书籍出版与作者书稿 | [入口](./work/ai/publishing/README.md) |
-| 《飞书高效办公》书籍 | [入口](./work/ai/publishing/projects/feishu-efficient-office/README.md) |
-| 自媒体与渠道文案 | [入口](./work/ai/self-media/README.md) |
-| 产品信息、渠道选择与商业对标 | [入口](./work/other/commercial/experience/business-analysis-cards.md) |
-| 客户交付、提案、招生或销售 | [入口](./work/other/commercial/README.md) |
-| 六十甲子项目与独立IP | [入口](./work/other/ai-sixty-jiazi-music-ip/README.md) |
-| 言剪AI项目 | [入口](./work/ai/programming/projects/yancut-ai/README.md) |
-| 当前设备与工具环境 | [入口](./repository/environment/computers/README.md) |
-| 历史追溯 | [入口](./history/README.md) |
-
-## 继续读取的条件
-
-- 培训先分会员社群、外部活动或待归属资料。Bug修复课已明确属于外部培训；不凭“第6课”关联社群。创作/复盘读通用经验与风格，状态查询不读整套教学规范。
-- AE/MG与AI视频从[制作协作](./work/design/production-workflow.md)双向调用，事实只维护一处；模型、Skill和源码执行时再读，不默认加载全部。
-- 纯教学案例不触发销售。招生/销售/商业提案按目的补商业方法；对客户的正式成品补对外交付规范。
-- 飞书文档URL不是书籍触发词；百度秒嗒与飞书妙搭先辨平台。书稿读当前出版规则与新旧章映射。
-- 当前事实按来源、日期与适用范围核对；较新证据与入口冲突时更新入口。原始材料、历史、供应商源码与大型附件只在核验或执行需要时读。
+先读[AGENTS](./AGENTS.md)，再用[任务指南](./system/repository/navigation/task-guide.md)进入领域、项目或能力。中文输出遵守[表达短卡](./system/expression/README.md)；写入仓库同时执行[更新流程](./system/repository/ingestion-workflow.md)。简单查询只读必要事实；关键词不能证明课程归属。

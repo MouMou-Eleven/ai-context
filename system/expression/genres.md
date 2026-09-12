@@ -1,0 +1,26 @@
+# 按成品找表达规则
+
+先判断交付物，再读对应行；这里维护路由和验收目标，不复制领域规则。口语与书面语是表达形式，不能单独决定课件、书稿、方案或合同应包含什么。
+
+| 主要成品 | 权威入口与必要补充 | 完成时重点核对 |
+|---|---|---|
+| 简单回复、事实说明 | [通用短卡](./README.md)；复杂书面说明再读[书面表达](./written-expression/README.md) | 直接回答实际问题，事实有依据，指代清楚；不为简单回复增加整套文稿结构 |
+| 培训课堂主文档 | [培训风格](../../work/domains/training/experience/jianwei-training-style.md)＋[培训方法入口](../../work/domains/training/experience/README.md)；需要朗读时补[口语表达](./oral-expression/README.md) | 面向学员，知识有承接，有必要的动作、例子或画面；讲师内部提醒与招生文案不混入正文 |
+| 学员实操教程 | [教程写法](../../work/domains/training/experience/tutorial-writing.md)＋当前工具或任务证据 | 前提、操作、结果和失败分支可核验；读者能判断是否完成 |
+| 自媒体口播 | [视频脚本](../../work/domains/self-media/video-scripts/README.md)＋[口语表达](./oral-expression/README.md) | 听得懂、能讲出、有承接；观点有依据，结尾与实际目的匹配 |
+| 朋友圈、个人动态 | [朋友圈文案](../../work/domains/self-media/moments-copy/README.md)；以建委身份发布时补[个人表达偏好](../../personal/expression-preferences.md) | 具体事实或观点清楚，无虚构经历与反馈；不强制每条动态转化销售 |
+| 文章、标题、营销或社群文案 | [自媒体分类入口](../../work/domains/self-media/README.md)后进入对应类型；涉及产品补项目事实 | 发布渠道、主要目的和内容结构一致，权益与效果说明准确 |
+| 直播销售话术 | [直播销售](../../work/domains/self-media/live-sales/README.md)＋[口语表达](./oral-expression/README.md)＋所售项目事实 | 讲解、互动、异议和行动有实际承接；价格、权益、案例不从模板推导 |
+| 《飞书高效办公》出版正文 | [当前出版规则](../../work/projects/feishu-efficient-office/writing-style-analysis.md)＋当前章节；编辑改稿/交稿再读[出版验收](../../work/projects/feishu-efficient-office/publication-acceptance-checklist.md) | 章节与图文一致，小白可操作，保护已接受编辑稿；不套课堂口播规则 |
+| 项目方案与正式合作材料 | [书面表达](./written-expression/README.md)＋[对外交付边界](../../work/domains/other/commercial/experience/external-deliverable-language.md)＋项目事实；赛事/融资用途再读[专项规则](../../work/domains/other/commercial/experience/competition-and-investor-materials.md) | 按任务交代目标、依据、范围、行动、资源、验收及关键未定项，不把所有方案套成同一张八段模板 |
+
+## 能力边界与未建体裁
+
+- 上表列出的是当前已有规则入口，不代表每种成品均有建委认可样稿、已完成项目或效果数据。具体证据读领域和项目记录。
+- 当前仓库尚未建立独立、经确认的合同专业规则和合同样稿库。合同任务可使用通用中文与正式文档检查，但条款内容仍须依据本单真实约定及适用依据逐项核验；不能把文字流畅当作法律有效性结论，也不能靠“扮演资深律师”补造专业能力。
+- 新书不能默认继承飞书书籍的章节、产品名和编辑例外；只提炼确可复用的出版经验，建立该书自己的当前要求。
+- 用户给出新的成品类型时，先用最接近的通用表达规则和实际材料完成可确定部分；缺专业依据明确标缺失，有真实积累后再新增体裁入口，不提前造空目录。
+
+## 组合与冲突
+
+同一项目可以产生课件、海报和朋友圈，每份成品分别选择体裁，共用同一个项目事实来源。课堂里的脚本或视频作为局部制作步骤调用对应方法，不把整篇课件改成营销稿。当前用户要求、项目事实和适用专业要求先核对；通用表达负责把它们说清楚，不能为了统一风格改变已确认意思。

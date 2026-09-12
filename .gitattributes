@@ -14,7 +14,7 @@
 *.py text eol=lf
 *.ps1 text eol=lf
 *.html text eol=lf
-repository/maintenance/git-hooks/* text eol=lf
+system/repository/maintenance/git-hooks/* text eol=lf
 .gitattributes text eol=lf
 .gitignore text eol=lf
 

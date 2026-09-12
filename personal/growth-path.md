@@ -38,4 +38,4 @@
 - 在 AI 编程、AI 培训和 AI 视频三个方向形成可重复使用的方法与项目体系。
 - 通过 GitHub 上下文仓库，把个人事实、认知、表达、工作经验和项目决策整理为可持续维护的数字化协作系统。
 
-具体日期与项目里程碑见 [`../history/timeline.md`](../history/timeline.md)；当前项目入口见 [`business-overview.md`](./business-overview.md)。
+个人日期见[个人时间线](./timeline.md)；具体项目里程碑与当前状态从[业务概要](./business-overview.md)进入对应项目。

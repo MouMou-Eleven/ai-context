@@ -1,4 +1,0 @@
-#!/bin/sh
-# Refresh the desktop interactive structure viewer after every pull or merge.
-repo_root="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
-sh "$repo_root/repository/maintenance/git-hooks/run-python" "$repo_root/repository/maintenance/desktop-sync.py" || true

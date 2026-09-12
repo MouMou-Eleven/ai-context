@@ -1,0 +1,4 @@
+#!/bin/sh
+# Refresh after amend or rebase rewrites without blocking Git history updates.
+repo_root="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+sh "$repo_root/system/repository/maintenance/git-hooks/run-python" "$repo_root/system/repository/maintenance/desktop-sync.py" || true
