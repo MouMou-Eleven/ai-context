@@ -14,6 +14,7 @@
 | M1 | [成果展示与用户动机](../../work/domains/self-media/experience/outcome-and-motivation.md) | 自媒体选题、体验分享与商业论证的方法；外部逐字稿缺账号效果数据，不能证明留存或转化提升 |
 | G1 | [迁移前共享纠偏记录](https://github.com/MouMou-Eleven/ai-context/blob/da9d88eba870ea221043ceb8c7ea9be4ea031e62/system/expression/cross-domain-rules.md) | 保留搭配、问句与选项检查；原记录没有每句的原始反馈链接，标为已有规则，不冒充本人原话 |
 | G2 | 建委2026-09-12本轮仓库调整对话 | 明确要求自然、符合不同专业体裁、从真实错误提炼、压缩来源文件；领域样稿不归个人信息。此行是对话摘要，不是认可成品样稿 |
+| G3 | 建委2026-09-12对会员知识库新人入口的纠错，见[项目原句、修订与依据](../../work/projects/paid-community-course/revisions/2026-09-12-onboarding-expression-and-replay-scope.md) | 明确要求把此类不自然表达纳入通用标准；本次强化已有比喻与搭配规则，增加表头连同行内容回读的验收动作。单场分享与系列课程的回放归属只保留在社群项目，不泛化为所有知识库规则；本轮修订未获用户再次验收 |
 
 ## 外部表达参考
 

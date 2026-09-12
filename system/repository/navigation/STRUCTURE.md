@@ -1088,6 +1088,7 @@ ai-context/
 │   │   │       ├── 2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md  第 5 节课后 AI 时代目的与参数解释修订
 │   │   │       ├── 2026-09-01-training-rule-scope-and-delivery-boundary.md  AI 培训规则适用场景与课堂交付边界修订
 │   │   │       ├── 2026-09-01-training-rule-single-source-and-technical-selection.md  AI 培训单一来源与技术内容筛选修订
+│   │   │       ├── 2026-09-12-onboarding-expression-and-replay-scope.md  新人入口表达与回放归属修订
 │   │   │       └── README.md  修订索引与读取边界
 │   │   ├── README.md  项目与案例总入口
 │   │   └── yancut-ai/  五级目录：言剪 AI
