@@ -7,7 +7,7 @@
 | 文件 | 作用 |
 |---|---|
 | [`problem-driven-technical-explanation.md`](./problem-driven-technical-explanation.md) | 从真实问题、旧办法和实际阻力推导新概念 |
-| [`../../../../../system/expression/chinese-datasets/README.md`](../../../../../system/expression/chinese-datasets/README.md) | 中文表达数据集与方法来源，默认不读取原始逐字稿 |
+| [`../../../../../system/expression/sources.md`](../../../../../system/expression/sources.md) | 中文表达数据集与方法来源，默认不读取原始逐字稿 |
 
 ## 使用边界
 

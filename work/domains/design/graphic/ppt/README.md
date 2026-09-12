@@ -9,7 +9,7 @@
 - 建委作为讲师的课程结构、备课和授课经验 → [AI 培训](../../../training/README.md)；具体课表按所属培训项目核验，不能混入会员社群。
 - 教师委托的 PPT 微课、教育作品 → [微课设计](../../video/education/README.md)；不因出现“课程”就转为建委授课项目。
 - 飞书书稿的出版事实 → [出版入口](../../../../projects/feishu-efficient-office/README.md)。
-- AI 生成视觉资产或图文动画 → [AI 设计](../../common/ai-assisted-design.md) 或 [Remotion 能力](../../../../../system/skills/jianwei-ai-community-remotion-video/README.md)。
+- AI 生成视觉资产或图文动画 → [AI 设计](../../common/ai-assisted-design.md) 或 [Remotion 能力](../../../other/skills/jianwei-ai-community-remotion-video/README.md)。
 
 只读当前任务的必要依赖，具体项目保存一个主记录。
 

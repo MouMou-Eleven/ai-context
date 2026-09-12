@@ -12,7 +12,7 @@
 | 脚本与分镜 | 将已核验内容拆成信息点、镜头编号、时长、画面动作、口播/字幕和制作方式 | [表达短卡](../../../../system/expression/README.md)；微课读 [微课入口](../video/education/README.md)；企业片读 [企业片流程](../video/promo/workflow.md) |
 | 视觉与素材 | 明确哪些是实拍/客户资料、哪些手工设计、哪些 AI 生成；建立可复用资产与风格约束 | [AI 设计](./ai-assisted-design.md)；[海报与视觉 Skill 入口](../graphic/poster-fold/README.md) |
 | AI 镜头与提示词 | 只给需要生成的镜头写工具可执行提示词，先验证关键镜头，再迭代失败点 | [AI 视频](../video/README.md) → 相关片型与已选工具；不把企业片科技风套给儿童微课 |
-| 动画、合成与后期 | 按目标选择 AE、手工动画、Remotion 或其他适用工具；整理字幕、图层、声音与镜头衔接 | [AE 入口](../video/common/ae-production.md)；[Remotion 参数化动画能力](../../../../system/skills/jianwei-ai-community-remotion-video/README.md)；交互/自动化读 [编程](../../development/README.md) |
+| 动画、合成与后期 | 按目标选择 AE、手工动画、Remotion 或其他适用工具；整理字幕、图层、声音与镜头衔接 | [AE 入口](../video/common/ae-production.md)；[Remotion 参数化动画能力](../../other/skills/jianwei-ai-community-remotion-video/README.md)；交互/自动化读 [编程](../../development/README.md) |
 | 交付与复盘 | 按约定检查内容准确、文字可读、节奏、技术规格和可编辑源文件；记录反馈与最终状态 | 本项目验收清单、所选工具的验收规则；[案例模板](../../../../system/repository/templates/case.md) |
 
 例如“做 MG 微课，AI 帮我拆脚本、设计分镜和出视频提示词”：主读微课，接着按镜头需要读视频通用经验与生成工具，需要 AE 合成再读 AE；不加载企业培训教学规则，不默认读取所有片型。

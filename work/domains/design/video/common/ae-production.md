@@ -12,7 +12,7 @@ After Effects信息包装、字幕与数据展示、品牌动态视觉、镜头�
 | 企业片信息结构与通用验收 | [企业片工作流](../promo/workflow.md) |
 | AI 生成镜头、提示词和模型经验 | [AI 视频](../README.md)，再选片型与工具 |
 | 科技企业片的数据、荣誉、卡片动效参考 | [可选视觉配方](../promo/visual-recipes.md) 与 [实战提示词记录](../../../../projects/cases/2026-05-enterprise-prompt-record.md) |
-| 可编辑参数化动画、文字数据动画、参考图动效 | [Remotion Skill 能力入口](../../../../../system/skills/jianwei-ai-community-remotion-video/README.md)；具体实施读取其 Skill 与当前版本要求 |
+| 可编辑参数化动画、文字数据动画、参考图动效 | [Remotion Skill 能力入口](../../../other/skills/jianwei-ai-community-remotion-video/README.md)；具体实施读取其 Skill 与当前版本要求 |
 | 教育动画与微课 | [微课与 MG 动画](../education/README.md) |
 | 查类似商单或沉淀本次经验 | [案例索引](../../../../projects/cases/README.md) 与 [案例模板](../../../../../system/repository/templates/case.md) |
 

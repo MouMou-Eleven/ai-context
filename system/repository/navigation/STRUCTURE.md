@@ -10,14 +10,11 @@ ai-context/
 ├── AGENTS.md  AI启动与必要读取规则
 ├── llms.txt  兼容调用的极短指针，完整任务指南位于系统导航
 ├── personal/  个人信息与事实
-│   ├── business-overview.md  业务与项目概要，只做导航不写细节
-│   ├── capabilities.md  能力结构与擅长方向
-│   ├── credentials.md  个人背书：荣誉、成果、聘书和代表经历
-│   ├── expression-preferences.md  建委的表达偏好与认可样稿
-│   ├── growth-path.md  成长路径与阶段变化
-│   ├── profile.md  我是谁：身份、教育和职业基本信息
+│   ├── business-overview.md  业务与项目概要
+│   ├── credentials.md  背书荣誉和成果
+│   ├── profile.md  我是谁
 │   ├── README.md  个人信息总窗口、索引、写入准则
-│   └── timeline.md  跨领域成长与里程碑时间线
+│   └── timeline.md  个人经历与阶段里程碑
 ├── brain/  建委的认知与判断
 │   ├── business-cognition.md  商业、增长、内容经营与经营判断
 │   ├── README.md  认知入口、读取路由与写入边界
@@ -131,7 +128,7 @@ ai-context/
 │   │   │       │       ├── README.md  版本资料索引
 │   │   │       │       └── version-features.md  历史版本能力时间线
 │   │   │       └── README.md  工具索引
-│   │   ├── other/  其他业务
+│   │   ├── other/  其他领域
 │   │   │   ├── commercial/  商业化与对外交付
 │   │   │   │   ├── experience/  商业经验与交付方法
 │   │   │   │   │   ├── business-analysis-cards.md  产品信息、渠道与对标执行卡
@@ -141,7 +138,830 @@ ai-context/
 │   │   │   │   │   ├── external-deliverable-language.md  对外成品与内部工作稿的语言边界
 │   │   │   │   │   └── README.md  内容经营与商业交付经验索引
 │   │   │   │   └── README.md  跨行业商业方法、触发规则与交付边界
-│   │   │   └── README.md  其他领域与项目索引及准入条件
+│   │   │   ├── README.md  其他领域与项目索引及准入条件
+│   │   │   └── skills/  Skill库
+│   │   │       ├── editaplot/  EditaPlot
+│   │   │       │   ├── README.md  科研绘图 Skill 的调用、前提与更新方法
+│   │   │       │   ├── source/  上游完整快照，共 662 个文件；展开可核查内部层级
+│   │   │       │   │   ├── .gitattributes  资料与资源
+│   │   │       │   │   ├── .github/  目录入口
+│   │   │       │   │   │   ├── CODEOWNERS  资料与资源
+│   │   │       │   │   │   ├── dependabot.yml  自动化配置
+│   │   │       │   │   │   └── workflows/  目录入口
+│   │   │       │   │   │       ├── star-trend.yml  自动化配置
+│   │   │       │   │   │       └── tests.yml  自动化配置
+│   │   │       │   │   ├── .gitignore  资料与资源
+│   │   │       │   │   ├── ASSET_PROVENANCE.md  Asset and data provenance
+│   │   │       │   │   ├── assets/  目录入口
+│   │   │       │   │   │   ├── gallery/  目录入口
+│   │   │       │   │   │   │   ├── bar-error-groups.png  图片素材
+│   │   │       │   │   │   │   ├── bubble-indexed-size.png  图片素材
+│   │   │       │   │   │   │   ├── circular-network.png  图片素材
+│   │   │       │   │   │   │   ├── cv-cycles.png  图片素材
+│   │   │       │   │   │   │   ├── density-ridgeline3d.png  图片素材
+│   │   │       │   │   │   │   ├── diverging-effects.png  图片素材
+│   │   │       │   │   │   │   ├── dsc-multi.png  图片素材
+│   │   │       │   │   │   │   ├── eis-nyquist.png  图片素材
+│   │   │       │   │   │   │   ├── forest-intervals.png  图片素材
+│   │   │       │   │   │   │   ├── ftir-temperature-series.png  图片素材
+│   │   │       │   │   │   │   ├── gallery-manifest.json  结构化配置与索引
+│   │   │       │   │   │   │   ├── heatmap-dense-30x30.png  图片素材
+│   │   │       │   │   │   │   ├── heatmap-dense-40x40.png  图片素材
+│   │   │       │   │   │   │   ├── heatmap-results.png  图片素材
+│   │   │       │   │   │   │   ├── histogram-frozen-bins.png  图片素材
+│   │   │       │   │   │   │   ├── horizontal-long-labels.png  图片素材
+│   │   │       │   │   │   │   ├── line-error.png  图片素材
+│   │   │       │   │   │   │   ├── lsv-multi.png  图片素材
+│   │   │       │   │   │   │   ├── medical-agreement.png  图片素材
+│   │   │       │   │   │   │   ├── medical-calibration.png  图片素材
+│   │   │       │   │   │   │   ├── medical-confusion.png  图片素材
+│   │   │       │   │   │   │   ├── medical-decision.png  图片素材
+│   │   │       │   │   │   │   ├── medical-grouped-box.png  图片素材
+│   │   │       │   │   │   │   ├── medical-longitudinal.png  图片素材
+│   │   │       │   │   │   │   ├── medical-pr.png  图片素材
+│   │   │       │   │   │   │   ├── medical-raincloud.png  图片素材
+│   │   │       │   │   │   │   ├── medical-roc.png  图片素材
+│   │   │       │   │   │   │   ├── medical-shap.png  图片素材
+│   │   │       │   │   │   │   ├── nmr-comparison.png  图片素材
+│   │   │       │   │   │   │   ├── percent-composition.png  图片素材
+│   │   │       │   │   │   │   ├── pie-five-parts.png  图片素材
+│   │   │       │   │   │   │   ├── pl-steady-state.png  图片素材
+│   │   │       │   │   │   │   ├── pl-temperature-series.png  图片素材
+│   │   │       │   │   │   │   ├── pl-trpl.png  图片素材
+│   │   │       │   │   │   │   ├── radar-multimetric.png  图片素材
+│   │   │       │   │   │   │   ├── raw-observations.png  图片素材
+│   │   │       │   │   │   │   ├── sankey-flow.png  图片素材
+│   │   │       │   │   │   │   ├── scatter-dense.png  图片素材
+│   │   │       │   │   │   │   ├── stacked-composition.png  图片素材
+│   │   │       │   │   │   │   ├── trajectory3d.png  图片素材
+│   │   │       │   │   │   │   ├── trend-progression.png  图片素材
+│   │   │       │   │   │   │   ├── uv-vis-multi.png  图片素材
+│   │   │       │   │   │   │   ├── uv-vis-tauc.png  图片素材
+│   │   │       │   │   │   │   ├── violin-distributions.png  图片素材
+│   │   │       │   │   │   │   ├── xas-profiles.png  图片素材
+│   │   │       │   │   │   │   ├── xps-comparison.png  图片素材
+│   │   │       │   │   │   │   ├── xps-fit.png  图片素材
+│   │   │       │   │   │   │   └── xrd-multi.png  图片素材
+│   │   │       │   │   │   ├── palettes/  目录入口
+│   │   │       │   │   │   │   ├── cards/  目录入口
+│   │   │       │   │   │   │   │   ├── amber_lavender.png  图片素材
+│   │   │       │   │   │   │   │   ├── blue_coral.png  图片素材
+│   │   │       │   │   │   │   │   ├── deep_sea_gold.png  图片素材
+│   │   │       │   │   │   │   │   ├── forest_amber.png  图片素材
+│   │   │       │   │   │   │   │   ├── navy_cyan_gold.png  图片素材
+│   │   │       │   │   │   │   │   ├── navy_ember.png  图片素材
+│   │   │       │   │   │   │   │   ├── ocean_coral.png  图片素材
+│   │   │       │   │   │   │   │   ├── plum_rose.png  图片素材
+│   │   │       │   │   │   │   │   ├── sky_terra.png  图片素材
+│   │   │       │   │   │   │   │   └── violet_lime.png  图片素材
+│   │   │       │   │   │   │   ├── palette-catalog.json  结构化配置与索引
+│   │   │       │   │   │   │   ├── palette-selector-all.zh-CN.png  图片素材
+│   │   │       │   │   │   │   └── palette-selector-public.zh-CN.png  图片素材
+│   │   │       │   │   │   ├── provenance-manifest.json  结构化配置与索引
+│   │   │       │   │   │   ├── star-trend/  目录入口
+│   │   │       │   │   │   │   ├── stars.json  结构化配置与索引
+│   │   │       │   │   │   │   └── stars.svg  资料与资源
+│   │   │       │   │   │   └── support/  目录入口
+│   │   │       │   │   │       └── wechat-tip.png  图片素材
+│   │   │       │   │   ├── AUTHORS.md  Authors and contributors
+│   │   │       │   │   ├── CHANGELOG.md  Changelog
+│   │   │       │   │   ├── CONTRIBUTING.md  Contributing
+│   │   │       │   │   ├── docs/  目录入口
+│   │   │       │   │   │   ├── dependency-inventory.md  Verified Python dependency inventory
+│   │   │       │   │   │   ├── gallery.en.md  Origin 2024b figures generated and reviewed on a live installation
+│   │   │       │   │   │   ├── gallery.md  Origin 2024b 实机生成并复核的图形示例
+│   │   │       │   │   │   ├── installation.md  安装与环境自检 / Installation
+│   │   │       │   │   │   ├── origin-2021-2026-compatibility.md  EditaPlot 的 Origin 2021–2026b 兼容说明
+│   │   │       │   │   │   ├── palette-guide.md  科研配色指南
+│   │   │       │   │   │   ├── quickstart.en.md  English quick start
+│   │   │       │   │   │   ├── quickstart.zh-CN.md  中文快速开始
+│   │   │       │   │   │   └── release-boundaries.md  发布、隐私与许可边界
+│   │   │       │   │   ├── editaplot.cmd  资料与资源
+│   │   │       │   │   ├── examples/  目录入口
+│   │   │       │   │   │   ├── ambiguous_xy.csv  资料与资源
+│   │   │       │   │   │   ├── category_one_series.csv  资料与资源
+│   │   │       │   │   │   ├── category_two_series.csv  资料与资源
+│   │   │       │   │   │   ├── eis_bode_zh.csv  资料与资源
+│   │   │       │   │   │   ├── gallery/  目录入口
+│   │   │       │   │   │   │   ├── bar_grouped_error.csv  资料与资源
+│   │   │       │   │   │   │   ├── bubble_indexed_size.csv  资料与资源
+│   │   │       │   │   │   │   ├── circular_network.csv  资料与资源
+│   │   │       │   │   │   │   ├── cv_cycles.csv  资料与资源
+│   │   │       │   │   │   │   ├── density_ridgeline3d.csv  资料与资源
+│   │   │       │   │   │   │   ├── diverging_effects.csv  资料与资源
+│   │   │       │   │   │   │   ├── dsc_multi.csv  资料与资源
+│   │   │       │   │   │   │   ├── eis_nyquist.csv  资料与资源
+│   │   │       │   │   │   │   ├── forest_intervals.csv  资料与资源
+│   │   │       │   │   │   │   ├── ftir_temperature_series.csv  资料与资源
+│   │   │       │   │   │   │   ├── grouped_box_medical.csv  资料与资源
+│   │   │       │   │   │   │   ├── heatmap_dense_30x30.csv  资料与资源
+│   │   │       │   │   │   │   ├── heatmap_dense_40x40.csv  资料与资源
+│   │   │       │   │   │   │   ├── heatmap_results.csv  资料与资源
+│   │   │       │   │   │   │   ├── histogram_values.csv  资料与资源
+│   │   │       │   │   │   │   ├── horizontal_long_labels.csv  资料与资源
+│   │   │       │   │   │   │   ├── line_error.csv  资料与资源
+│   │   │       │   │   │   │   ├── lsv_multi.csv  资料与资源
+│   │   │       │   │   │   │   ├── medical_bland_altman.csv  资料与资源
+│   │   │       │   │   │   │   ├── medical_calibration.csv  资料与资源
+│   │   │       │   │   │   │   ├── medical_confusion.csv  资料与资源
+│   │   │       │   │   │   │   ├── medical_decision.csv  资料与资源
+│   │   │       │   │   │   │   ├── medical_paired.csv  资料与资源
+│   │   │       │   │   │   │   ├── medical_pr.csv  资料与资源
+│   │   │       │   │   │   │   ├── medical_raincloud.csv  资料与资源
+│   │   │       │   │   │   │   ├── medical_roc.csv  资料与资源
+│   │   │       │   │   │   │   ├── medical_shap_summary.csv  资料与资源
+│   │   │       │   │   │   │   ├── nmr_comparison.csv  资料与资源
+│   │   │       │   │   │   │   ├── percent_composition.csv  资料与资源
+│   │   │       │   │   │   │   ├── pie_five_parts.csv  资料与资源
+│   │   │       │   │   │   │   ├── pl_steady_state.csv  资料与资源
+│   │   │       │   │   │   │   ├── pl_temperature_series.csv  资料与资源
+│   │   │       │   │   │   │   ├── pl_trpl.csv  资料与资源
+│   │   │       │   │   │   │   ├── radar_multimetric.csv  资料与资源
+│   │   │       │   │   │   │   ├── raw_observations.csv  资料与资源
+│   │   │       │   │   │   │   ├── sankey_four_stage.csv  资料与资源
+│   │   │       │   │   │   │   ├── scatter_dense.csv  资料与资源
+│   │   │       │   │   │   │   ├── stacked_composition.csv  资料与资源
+│   │   │       │   │   │   │   ├── trajectory3d.csv  资料与资源
+│   │   │       │   │   │   │   ├── trend_progression.csv  资料与资源
+│   │   │       │   │   │   │   ├── uv_vis_multi.csv  资料与资源
+│   │   │       │   │   │   │   ├── uv_vis_tauc.csv  资料与资源
+│   │   │       │   │   │   │   ├── violin_distributions.csv  资料与资源
+│   │   │       │   │   │   │   ├── xas_profiles.csv  资料与资源
+│   │   │       │   │   │   │   ├── xps_compare.csv  资料与资源
+│   │   │       │   │   │   │   ├── xps_fit.csv  资料与资源
+│   │   │       │   │   │   │   └── xrd_multi.csv  资料与资源
+│   │   │       │   │   │   ├── line_error_zh.csv  资料与资源
+│   │   │       │   │   │   ├── sankey_zh.csv  资料与资源
+│   │   │       │   │   │   ├── xps_fit.csv  资料与资源
+│   │   │       │   │   │   └── xrd_multi.csv  资料与资源
+│   │   │       │   │   ├── LICENSE  资料与资源
+│   │   │       │   │   ├── NOTICE  资料与资源
+│   │   │       │   │   ├── PRIVACY.md  Privacy
+│   │   │       │   │   ├── pyproject.toml  资料与资源
+│   │   │       │   │   ├── README.en.md  说明与资料
+│   │   │       │   │   ├── README.md  说明与资料
+│   │   │       │   │   ├── release/  目录入口
+│   │   │       │   │   │   └── public-release-policy.json  结构化配置与索引
+│   │   │       │   │   ├── requirements-runtime.lock  资料与资源
+│   │   │       │   │   ├── requirements-runtime.txt  文本资料
+│   │   │       │   │   ├── runtime/  目录入口
+│   │   │       │   │   │   ├── LICENSE  资料与资源
+│   │   │       │   │   │   ├── NOTICE  资料与资源
+│   │   │       │   │   │   ├── pyproject.toml  资料与资源
+│   │   │       │   │   │   ├── requirements-runtime.lock  资料与资源
+│   │   │       │   │   │   ├── requirements-runtime.txt  文本资料
+│   │   │       │   │   │   ├── runtime-manifest.json  结构化配置与索引
+│   │   │       │   │   │   ├── src/  目录入口
+│   │   │       │   │   │   │   └── origin_sciplot/  目录入口
+│   │   │       │   │   │   │       ├── __init__.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── __main__.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── app.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── circular_network_layout.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── data_loader.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── heatmap_layout.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── logging_utils.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── main_window.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── origin_backend/  目录入口
+│   │   │       │   │   │   │       │   ├── __init__.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── base_style_contract.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── capabilities.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── categorical_renderer.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── density_ridgeline3d_renderer.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── evidence_renderer.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── execution_context.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── export_utils.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── job_queue.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── network_renderer.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── safe_errors.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── scientific_renderer.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── session.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── smoke_test.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── template_capabilities.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── trajectory3d_renderer.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── verify_utils.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   └── version_risks.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── output_manager.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── palette_catalog.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── project_paths.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── reference_adaptation.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── reference_figure.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── reference_style.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── resources/  目录入口
+│   │   │       │   │   │   │       │   ├── app_icon.png  图片素材
+│   │   │       │   │   │   │       │   └── qss/  目录入口
+│   │   │       │   │   │   │       │       └── main.qss  资料与资源
+│   │   │       │   │   │   │       ├── scientific_preview.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── scientific_visual.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── scientific_workflow.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── semantic_analysis.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── semantic_contract.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── shap_composite.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── shap_layout.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── template_registry.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── template_service.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── validation/  目录入口
+│   │   │       │   │   │   │       │   ├── __init__.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── csv_validator.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   └── schema_models.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── workers/  目录入口
+│   │   │       │   │   │   │       │   ├── __init__.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── origin_smoke_worker.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── process_launcher.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   ├── progress_protocol.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       │   └── run_template_worker.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── xps_adaptive.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── xps_preview.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── xps_visual_style.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       ├── xps_workflow.py  跨平台维护或执行脚本
+│   │   │       │   │   │   │       └── xrd_semantics.py  跨平台维护或执行脚本
+│   │   │       │   │   │   └── templates/  目录入口
+│   │   │       │   │   │       ├── bar/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  柱状图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_multi_group.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  柱状图视觉合同
+│   │   │       │   │   │       ├── bland_altman/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  视觉合同
+│   │   │       │   │   │       ├── bubble/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  气泡图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  气泡图视觉合同
+│   │   │       │   │   │       ├── calibration_curve/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  视觉合同
+│   │   │       │   │   │       ├── circular_network/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  环形有向加权网络图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── origin_acceptance.md  Origin route acceptance — passed
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  环形有向加权网络图视觉合同
+│   │   │       │   │   │       ├── confusion_matrix/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  视觉合同
+│   │   │       │   │   │       ├── cv/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  CV 数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  CV 视觉合同
+│   │   │       │   │   │       ├── decision_curve/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  视觉合同
+│   │   │       │   │   │       ├── density_ridgeline3d/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  三维双轮廓密度曲线与基线焦点 mixed-wide 数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── origin_acceptance.md  Origin route acceptance — verified 2026-08-01
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  三维双轮廓密度曲线与基线焦点视觉合同
+│   │   │       │   │   │       ├── diagnostic_curve/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_pr.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  视觉合同
+│   │   │       │   │   │       ├── dsc/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  DSC 数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  DSC 视觉合同
+│   │   │       │   │   │       ├── eis/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  EIS 数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_bode.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  EIS 视觉合同
+│   │   │       │   │   │       ├── forest/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  森林图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  森林图视觉合同
+│   │   │       │   │   │       ├── ftir/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  FTIR / IR 数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  FTIR / IR 视觉合同
+│   │   │       │   │   │       ├── grouped_box/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  视觉合同
+│   │   │       │   │   │       ├── heatmap/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  热力图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  热力图视觉合同
+│   │   │       │   │   │       ├── histogram/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  直方图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  直方图视觉合同
+│   │   │       │   │   │       ├── horizontal_bar/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  横向分组条形图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  横向分组条形图视觉合同
+│   │   │       │   │   │       ├── line_error/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  带误差折线图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_chinese.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  带误差折线图视觉合同
+│   │   │       │   │   │       ├── lsv/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  LSV 数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  LSV 视觉合同
+│   │   │       │   │   │       ├── nmr/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  NMR 数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  NMR 视觉合同
+│   │   │       │   │   │       ├── paired_trajectory/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  视觉合同
+│   │   │       │   │   │       ├── percent_stacked_bar/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  百分比堆叠柱状图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  百分比堆叠柱状图视觉合同
+│   │   │       │   │   │       ├── pie/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  二维饼图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  二维饼图视觉合同
+│   │   │       │   │   │       ├── pl/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_temperature_series.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  视觉合同
+│   │   │       │   │   │       ├── radar/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  雷达图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  雷达图视觉合同
+│   │   │       │   │   │       ├── raincloud/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  Raincloud 数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  Raincloud 视觉合同
+│   │   │       │   │   │       ├── raw_summary/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  原始点汇总图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  原始点汇总图视觉合同
+│   │   │       │   │   │       ├── sankey/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  桑基图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  桑基图视觉合同
+│   │   │       │   │   │       ├── scatter/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  散点图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_dense.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  散点图视觉合同
+│   │   │       │   │   │       ├── shap_summary/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  预计算 SHAP 复合图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  预计算 SHAP 复合图视觉合同
+│   │   │       │   │   │       ├── stacked_bar/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  堆叠柱状图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  堆叠柱状图视觉合同
+│   │   │       │   │   │       ├── trajectory3d/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  三维多条件 Nyquist 轨迹数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── origin_acceptance.md  Origin 10.15 route acceptance
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  三维多条件 Nyquist 轨迹视觉合同
+│   │   │       │   │   │       ├── trend/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  趋势折线图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  趋势折线图视觉合同
+│   │   │       │   │   │       ├── uv_vis/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_multi_spectrum.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  视觉合同
+│   │   │       │   │   │       ├── violin/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  小提琴图数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  小提琴图视觉合同
+│   │   │       │   │   │       ├── xas/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  XAS 数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  XAS 视觉合同
+│   │   │       │   │   │       ├── xps/  目录入口
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   └── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       ├── xps_adaptive/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  XPS Adaptive Data Contract
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   └── visual_contract.md  XPS Adaptive Visual Contract
+│   │   │       │   │   │       ├── xps_c1s_fit/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  XPS C 1s CSV 数据合同
+│   │   │       │   │   │       │   ├── example_noisy.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── preview.png  图片素材
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── tests/  目录入口
+│   │   │       │   │   │       │   │   ├── invalid_duplicate_columns.csv  资料与资源
+│   │   │       │   │   │       │   │   ├── invalid_empty_rows.csv  资料与资源
+│   │   │       │   │   │       │   │   ├── invalid_missing_column.csv  资料与资源
+│   │   │       │   │   │       │   │   ├── invalid_non_numeric.csv  资料与资源
+│   │   │       │   │   │       │   │   ├── invalid_wrong_range.csv  资料与资源
+│   │   │       │   │   │       │   │   ├── valid_xps_chinese_filename.csv  资料与资源
+│   │   │       │   │   │       │   │   ├── valid_xps_dense_points.csv  资料与资源
+│   │   │       │   │   │       │   │   ├── valid_xps_noisy.csv  资料与资源
+│   │   │       │   │   │       │   │   └── valid_xps_standard.csv  资料与资源
+│   │   │       │   │   │       │   └── visual_contract.md  XPS C 1s 视觉合同
+│   │   │       │   │   │       ├── xps_compare/  目录入口
+│   │   │       │   │   │       │   ├── data_contract.md  XPS 多谱线对比数据合同
+│   │   │       │   │   │       │   ├── data_template.csv  资料与资源
+│   │   │       │   │   │       │   ├── example_standard.csv  资料与资源
+│   │   │       │   │   │       │   ├── manifest.yaml  自动化配置
+│   │   │       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── schema.json  结构化配置与索引
+│   │   │       │   │   │       │   ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── visual_contract.md  XPS 多谱线对比视觉合同
+│   │   │       │   │   │       └── xrd/  目录入口
+│   │   │       │   │   │           ├── data_contract.md  XRD 数据合同
+│   │   │       │   │   │           ├── data_template.csv  资料与资源
+│   │   │       │   │   │           ├── example_gsas_powder.csv  资料与资源
+│   │   │       │   │   │           ├── example_gsas_publication.csv  资料与资源
+│   │   │       │   │   │           ├── example_standard.csv  资料与资源
+│   │   │       │   │   │           ├── manifest.yaml  自动化配置
+│   │   │       │   │   │           ├── runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │           ├── schema.json  结构化配置与索引
+│   │   │       │   │   │           ├── service.py  跨平台维护或执行脚本
+│   │   │       │   │   │           └── visual_contract.md  XRD 视觉合同
+│   │   │       │   │   ├── SECURITY.md  Security policy
+│   │   │       │   │   ├── skill/  目录入口
+│   │   │       │   │   │   └── editaplot/  目录入口
+│   │   │       │   │   │       ├── agents/  目录入口
+│   │   │       │   │   │       │   └── openai.yaml  自动化配置
+│   │   │       │   │   │       ├── assets/  目录入口
+│   │   │       │   │   │       │   └── palettes/  目录入口
+│   │   │       │   │   │       │       ├── cards/  目录入口
+│   │   │       │   │   │       │       │   ├── amber_lavender.png  图片素材
+│   │   │       │   │   │       │       │   ├── blue_coral.png  图片素材
+│   │   │       │   │   │       │       │   ├── deep_sea_gold.png  图片素材
+│   │   │       │   │   │       │       │   ├── forest_amber.png  图片素材
+│   │   │       │   │   │       │       │   ├── navy_cyan_gold.png  图片素材
+│   │   │       │   │   │       │       │   ├── navy_ember.png  图片素材
+│   │   │       │   │   │       │       │   ├── ocean_coral.png  图片素材
+│   │   │       │   │   │       │       │   ├── plum_rose.png  图片素材
+│   │   │       │   │   │       │       │   ├── sky_terra.png  图片素材
+│   │   │       │   │   │       │       │   └── violet_lime.png  图片素材
+│   │   │       │   │   │       │       ├── palette-catalog.json  结构化配置与索引
+│   │   │       │   │   │       │       ├── palette-selector-all.zh-CN.png  图片素材
+│   │   │       │   │   │       │       └── palette-selector-public.zh-CN.png  图片素材
+│   │   │       │   │   │       ├── LICENSE  资料与资源
+│   │   │       │   │   │       ├── NOTICE  资料与资源
+│   │   │       │   │   │       ├── references/  目录入口
+│   │   │       │   │   │       │   ├── chart-selection.md  Chart selection and support levels
+│   │   │       │   │   │       │   ├── data-contracts.md  Data contracts
+│   │   │       │   │   │       │   ├── figure-contract.md  Publication-informed Origin figure contract
+│   │   │       │   │   │       │   ├── origin-safety.md  Origin Automation safety gate
+│   │   │       │   │   │       │   ├── palettes.md  科研配色选择合同
+│   │   │       │   │   │       │   ├── reference-figures.md  Reference-figure adaptation
+│   │   │       │   │   │       │   ├── runtime.md  Runtime and launcher
+│   │   │       │   │   │       │   ├── semantic-understanding.md  Scientific data understanding and element confirmation
+│   │   │       │   │   │       │   ├── showcase.md  Showcase policy
+│   │   │       │   │   │       │   └── verification.md  Origin delivery verification
+│   │   │       │   │   │       ├── scripts/  目录入口
+│   │   │       │   │   │       │   ├── bootstrap_editaplot.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── editaplot.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   ├── editaplot_core.py  跨平台维护或执行脚本
+│   │   │       │   │   │       │   └── requirements-runtime.lock  资料与资源
+│   │   │       │   │   │       └── SKILL.md  EditaPlot
+│   │   │       │   │   ├── SUPPORT.md  Support scope
+│   │   │       │   │   ├── tests/  目录入口
+│   │   │       │   │   │   ├── test_axis_title_attachments.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_circular_network_layout.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_circular_network_preview_core.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_circular_network_workflow.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_density_ridgeline3d_renderer.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_density_ridgeline3d_showcase.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_density_ridgeline3d_template.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_density_ridgeline3d_workflow.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_editaplot.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_gsas_data_loader.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_gui_worker_launch_contract.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_heatmap_density.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_material_spectroscopy.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_network_renderer_plan.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_2021_2026_compatibility_documentation.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_capabilities.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_compatibility_reports.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_doctor.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_execution_context.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_geometry_compatibility.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_job_queue.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_safety_documentation.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_session.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_smoke.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_smoke_cli.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_startup_recovery.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_version_risk_integration.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_origin_version_risks.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_performance_guidance.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_progress_protocol.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_public_release_gate.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_public_template_alignment.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_reference_adaptation.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_reference_figure.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_reference_style.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_reference_workflow_core.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_safe_errors.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_semantic_analysis.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_semantic_contract.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_semantic_contract_parsing.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_semantic_workflow_core.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_shap_summary_preview_renderer.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_shap_summary_semantics.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_shap_summary_workflow.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_star_trend.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_style_choice_documentation.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_sync_public_gallery.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_template_capabilities.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_worker_done_payload.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_xps_fixed_runner_style.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_xps_ignored_columns_runner.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_xps_preview_style.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_xps_visual_style_cli.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_xps_visual_style_contract.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_xrd_rietveld_renderer.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── test_xrd_rietveld_workflow.py  跨平台维护或执行脚本
+│   │   │       │   │   │   └── test_xrd_semantics.py  跨平台维护或执行脚本
+│   │   │       │   │   ├── THIRD_PARTY_NOTICES.md  Third-party runtime notices
+│   │   │       │   │   └── tools/  目录入口
+│   │   │       │   │       ├── build_asset_provenance.py  跨平台维护或执行脚本
+│   │   │       │   │       ├── build_palette_assets.py  跨平台维护或执行脚本
+│   │   │       │   │       ├── build_runtime_manifest.py  跨平台维护或执行脚本
+│   │   │       │   │       ├── build_showcase.py  跨平台维护或执行脚本
+│   │   │       │   │       ├── build_star_trend.py  跨平台维护或执行脚本
+│   │   │       │   │       ├── generate_showcase_data.py  跨平台维护或执行脚本
+│   │   │       │   │       ├── sync_public_gallery.py  跨平台维护或执行脚本
+│   │   │       │   │       └── verify_public_release.py  跨平台维护或执行脚本
+│   │   │       │   └── upstream.json  上游仓库、分支、commit 与许可
+│   │   │       ├── jianwei-ai-community-remotion-video/  jianwei-ai-community-remotion-video
+│   │   │       │   ├── README.md  建委 AI 社群 Remotion 视频 Skill 说明
+│   │   │       │   ├── skill/  可直接安装的完整 Skill
+│   │   │       │   │   ├── agents/  目录入口
+│   │   │       │   │   │   └── openai.yaml  自动化配置
+│   │   │       │   │   ├── references/  目录入口
+│   │   │       │   │   │   ├── background-fidelity-contract.md  参考图背景保真契约
+│   │   │       │   │   │   ├── deterministic-layout-contract.md  Deterministic layout contract
+│   │   │       │   │   │   ├── director-console-contract.md  导演台稳定输出契约
+│   │   │       │   │   │   ├── director-strategy.md  动效导演策略
+│   │   │       │   │   │   ├── input-and-image-analysis.md  输入与图片分析
+│   │   │       │   │   │   ├── internal-production-brief.schema.json  结构化配置与索引
+│   │   │       │   │   │   ├── motion-blueprint.schema.json  结构化配置与索引
+│   │   │       │   │   │   ├── motion-direction.md  动效导演规则
+│   │   │       │   │   │   ├── output-contract.md  Motion Blueprint 输出契约
+│   │   │       │   │   │   ├── parameterization-contract.md  参数化与 Studio 编辑契约
+│   │   │       │   │   │   ├── prompt-expansion-contract.md  内部导演执行稿与二次加工契约
+│   │   │       │   │   │   ├── quality-gates.md  质量门槛
+│   │   │       │   │   │   ├── reference-fidelity-contract.md  参考图保真契约
+│   │   │       │   │   │   ├── remotion-contract.md  Remotion 实施契约
+│   │   │       │   │   │   ├── remotion-only-director-contract.md  Remotion-only director contract
+│   │   │       │   │   │   ├── render-performance-contract.md  渲染性能与交付流程契约
+│   │   │       │   │   │   └── visibility-and-clipping-contract.md  文字与关键元素完整可见契约
+│   │   │       │   │   ├── scripts/  目录入口
+│   │   │       │   │   │   ├── audit_reference_render_path.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── check_layout_stability.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── check_settle_continuity.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── check_visibility_report.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── compare_background_regions.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── compare_reference_frame.py  跨平台维护或执行脚本
+│   │   │       │   │   │   ├── validate_blueprint.py  跨平台维护或执行脚本
+│   │   │       │   │   │   └── validate_production_brief.py  跨平台维护或执行脚本
+│   │   │       │   │   └── SKILL.md  建委 AI 社群视频制作 Skill
+│   │   │       │   └── upstream.json  规范参考与维护策略
+│   │   │       ├── jianwei-ai-learning-community-workbench/  jianwei-ai-learning-community-workbench
+│   │   │       │   ├── README.md  通用身份适配型工作台设计 Skill 说明
+│   │   │       │   ├── skill/  可直接安装的完整 Skill
+│   │   │       │   │   ├── agents/  目录入口
+│   │   │       │   │   │   └── openai.yaml  自动化配置
+│   │   │       │   │   ├── references/  目录入口
+│   │   │       │   │   │   ├── conversation-protocol.md  首轮提问协议
+│   │   │       │   │   │   ├── design-system.md  视觉、交互与跨端系统
+│   │   │       │   │   │   ├── quality-gate.md  交付前品控门
+│   │   │       │   │   │   └── role-adaptation.md  身份适配与工作台骨架
+│   │   │       │   │   └── SKILL.md  身份适配工作台设计 Skill
+│   │   │       │   └── upstream.json  来源、版本与维护策略
+│   │   │       ├── qingyun-ip-poster/  青云 IP Poster 海报视觉 Skill
+│   │   │       │   ├── README.md  调用方式、适用范围、事实与许可边界
+│   │   │       │   ├── skill/  上游完整快照，共 26 个文件；展开可核查内部层级
+│   │   │       │   │   ├── .gitignore  资料与资源
+│   │   │       │   │   ├── agents/  目录入口
+│   │   │       │   │   │   └── openai.yaml  自动化配置
+│   │   │       │   │   ├── assets/  目录入口
+│   │   │       │   │   │   ├── case-studies/  目录入口
+│   │   │       │   │   │   │   ├── wang-lei-after-account-grid.jpg  图片素材
+│   │   │       │   │   │   │   └── wang-lei-before-account-grid.jpg  图片素材
+│   │   │       │   │   │   └── style-references/  目录入口
+│   │   │       │   │   │       ├── 01-black-neon-green.png  图片素材
+│   │   │       │   │   │       ├── 02-ivory-editorial.png  图片素材
+│   │   │       │   │   │       ├── 03-graphite-thought-leader.png  图片素材
+│   │   │       │   │   │       ├── 04-high-contrast-closeup.png  图片素材
+│   │   │       │   │   │       ├── 05-black-gold-authority.png  图片素材
+│   │   │       │   │   │       ├── 06-cyber-xianxia-character-dossier-light.png  图片素材
+│   │   │       │   │   │       ├── 07-keynote-manifesto-dark.png  图片素材
+│   │   │       │   │   │       ├── 08-cyber-xianxia-worldview-keyart-dark.png  图片素材
+│   │   │       │   │   │       ├── 09-guest-manifesto-orange-cap.png  图片素材
+│   │   │       │   │   │       ├── 10-event-lineup-monumental.png  图片素材
+│   │   │       │   │   │       ├── 11-guest-manifesto-orange-suit.png  图片素材
+│   │   │       │   │   │       └── 12-guest-manifesto-purple.png  图片素材
+│   │   │       │   │   ├── README.en.md  Qingyun IP Poster
+│   │   │       │   │   ├── README.md  Qingyun IP Poster
+│   │   │       │   │   ├── README.zh-CN.md  Qingyun IP Poster · 中文说明
+│   │   │       │   │   ├── references/  目录入口
+│   │   │       │   │   │   ├── design-system.md  Qingyun 海报设计系统
+│   │   │       │   │   │   ├── failure-modes.md  常见失败模式与修复
+│   │   │       │   │   │   ├── intake-guide.md  素材引导与模式选择
+│   │   │       │   │   │   ├── prompt-compiler.md  图像层与排版层指令编译
+│   │   │       │   │   │   ├── quality-checklist.md  海报交付质量检查
+│   │   │       │   │   │   └── version-matrix.md  版本矩阵与系列差异控制
+│   │   │       │   │   └── SKILL.md  Qingyun IP Poster · Visual System Edition
+│   │   │       │   └── upstream.json  上游仓库、固定 commit、版本与更新规则
+│   │   │       └── README.md  Skill 实体索引、来源与更新规则
 │   │   ├── README.md  设计、开发、培训、自媒体和其他领域的知识入口
 │   │   ├── self-media/  自媒体与个人IP经营
 │   │   │   ├── articles/  自媒体文章与图文
@@ -217,13 +1037,10 @@ ai-context/
 │   │   │   ├── openclaw-agent/  OpenClaw AI Agent
 │   │   │   │   └── README.md  OpenClaw Agent 历史档案
 │   │   │   ├── README.md  归档项目索引
-│   │   │   ├── videoai/  VideoAI — AI 驱动的营销视频自动化平台
-│   │   │   │   ├── cost-analysis.md  历史成本测算
-│   │   │   │   ├── pricing-plan-association.md  历史协会定价方案
-│   │   │   │   └── README.md  VideoAI 历史项目入口
-│   │   │   └── xinghuo-ying-guozhou-vr-courseware/  星火映果州 VR 交互课件
-│   │   │       ├── interaction-logic.md  Nibiru 场景交互逻辑
-│   │   │       └── README.md  星火映果州 VR 课件历史入口
+│   │   │   └── videoai/  VideoAI — AI 驱动的营销视频自动化平台
+│   │   │       ├── cost-analysis.md  历史成本测算
+│   │   │       ├── pricing-plan-association.md  历史协会定价方案
+│   │   │       └── README.md  VideoAI 历史项目入口
 │   │   ├── cases/  商单与实践案例
 │   │   │   ├── 2026-05-enterprise-prompt-record.md  2026 年 5 月企业片提示词实战记录
 │   │   │   ├── happy-shopping.md  快乐购物小超市
@@ -291,7 +1108,7 @@ ai-context/
 │   │       │   ├── 2026-09-03-local-demo-effects-stickers.md  本地演示特效与贴纸效果修订
 │   │       │   └── 2026-09-04-ai-progress-remotion-hyperframes-keyframes.md  AI 执行进度可视化、Remotion 本地预检与手动关键帧修订
 │   │       └── roadmap.md  开发路线与上线条件
-│   └── README.md  工作总入口：设计、AI、其他
+│   └── README.md  领域知识与项目案例的分级入口
 ├── system/  AI协作与维护
 │   ├── environment/  设备与执行环境
 │   │   ├── computers/  按设备管理
@@ -305,931 +1122,94 @@ ai-context/
 │   │   ├── image-generation.md  本机生图调用规则
 │   │   └── README.md  环境入口与安全规则
 │   ├── expression/  通用表达与体裁验收
-│   │   ├── chinese-datasets/  中文数据、规则来源与质量检查
-│   │   │   ├── feitian-shanke/  中文技术科普参考材料
-│   │   │   │   ├── raw/  未经改写的原始逐字稿
-│   │   │   │   │   └── feitian-shanke-transcript.txt  文本资料
-│   │   │   │   └── README.md  材料用途、来源状态和授权边界
-│   │   │   ├── grammar-and-error-checklist.md  按需读取的中文语法与病句详查
-│   │   │   ├── README.md  数据来源、授权、提炼、冲突治理和使用规则
-│   │   │   └── short-video-outcome-and-motivation/  短视频“成果展示与用户动机”逐字稿参考包
-│   │   │       ├── raw/  目录入口
-│   │   │       │   └── two-video-transcripts.md  两段原始短视频逐字稿 两套材料均仅供内部分析，不声明可训练
-│   │   │       └── README.md  短视频口语材料来源、核验和使用边界
-│   │   ├── cross-domain-rules.md  跨领域中文质量、逻辑与搭配规则
+│   │   ├── corrections.md  中文纠错与真实反馈提炼
 │   │   ├── evaluation.md  表达与成品验收
-│   │   ├── examples.md  同一材料的体裁对照
-│   │   ├── experience/  AI 表达经验
-│   │   │   └── README.md  跨领域表达经验索引与提炼规则
 │   │   ├── genres.md  按成品找表达规则
-│   │   ├── oral-expression/  口语化表达（唯一通用来源）
-│   │   │   ├── README.md  口语化表达总入口与检查清单
-│   │   │   └── spoken-argument-and-transition.md  口语化论证与前后承接方法
+│   │   ├── oral.md  口语化论证与前后承接方法
 │   │   ├── README.md  AI 表达总入口、默认激活与组合规则
-│   │   └── written-expression/  书面化表达
-│   │       └── README.md  书稿、教程、方案和文档表达规则
+│   │   ├── sources.md  来源与适用边界
+│   │   └── written.md  书稿、教程、方案和文档表达规则
 │   ├── README.md  AI协作与维护
-│   ├── repository/  读取写入、导航与校验
-│   │   ├── collaboration-rules.md  协作规则与职责边界
-│   │   ├── information-architecture.md  AI Context信息架构与长期规划
-│   │   ├── ingestion-workflow.md  新内容写入与更新流程
-│   │   ├── maintenance/  维护工具
-│   │   │   ├── .gitignore  资料与资源
-│   │   │   ├── context-route.py  跨平台维护或执行脚本
-│   │   │   ├── context_common.py  跨平台维护或执行脚本
-│   │   │   ├── desktop-sync.py  跨平台维护或执行脚本
-│   │   │   ├── generate-structure-html.ps1  从 Markdown 生成交互式 HTML
-│   │   │   ├── git-hooks/  本机自动同步触发器
-│   │   │   │   ├── post-checkout  检出或切换后自愈桌面结构
-│   │   │   │   ├── post-commit  提交后同步桌面结构
-│   │   │   │   ├── post-merge  拉取或合并后同步桌面结构
-│   │   │   │   ├── post-rewrite  amend 或 rebase 后同步桌面结构
-│   │   │   │   ├── pre-commit  提交前校验暂存快照，不生成或暂存额外文件
-│   │   │   │   └── run-python  资料与资源
-│   │   │   ├── invoke-python.ps1  Windows 兼容入口
-│   │   │   ├── pre-commit.py  跨平台维护或执行脚本
-│   │   │   ├── README.md  校验与桌面同步说明
-│   │   │   ├── structure-descriptions.json  结构化配置与索引
-│   │   │   ├── structure-viewer.template.html  HTML 思维导图界面与交互模板
-│   │   │   ├── sync-desktop-structure.ps1  生成并同步 HTML 到 F 盘桌面
-│   │   │   ├── sync-navigation.py  跨平台维护或执行脚本
-│   │   │   ├── sync-structure.py  跨平台维护或执行脚本
-│   │   │   ├── tests/  维护回归测试
-│   │   │   │   ├── README.md  维护回归测试
-│   │   │   │   └── test_context.py  跨平台维护或执行脚本
-│   │   │   ├── validate-context.ps1  结构、索引与链接校验脚本
-│   │   │   ├── validate-context.py  跨平台维护或执行脚本
-│   │   │   └── validation-policy.json  结构化配置与索引
-│   │   ├── navigation/  任务路由与项目登记
-│   │   │   ├── history.md  历史入口和读取边界
-│   │   │   ├── projects.json  结构化配置与索引
-│   │   │   ├── README.md  任务路由与项目登记
-│   │   │   ├── routes.json  结构化配置与索引
-│   │   │   ├── STRUCTURE.html  日常知识导航与完整文件视图
-│   │   │   ├── STRUCTURE.md  完整物理文件树与结构约定
-│   │   │   └── task-guide.md  完整任务指南，按主任务和条件依赖读取
-│   │   ├── README.md  治理总入口
-│   │   ├── revisions/  仓库级重大修订
-│   │   │   ├── 2026-04-05-context-repository-established.md  2026-04-05：建立长期AI协作上下文仓库
-│   │   │   ├── 2026-08-18-information-architecture-rebuild.md  五个一级入口的信息架构重构记录
-│   │   │   ├── 2026-08-20-ai-expression-default-layer.md  AI 表达默认层和语言规则修订
-│   │   │   ├── 2026-08-21-chinese-quality-and-source-governance.md  中文质量基础层与多来源冲突治理修订
-│   │   │   ├── 2026-08-21-commercial-delivery-domain.md  商业化与对外交付边界层首次建立记录
-│   │   │   ├── 2026-08-21-commercial-delivery-relocation.md  商业化迁移到其他领域的修订
-│   │   │   ├── 2026-08-21-desktop-sync-resilience.md  桌面 HTML 同步稳定性加固
-│   │   │   ├── 2026-08-21-direct-main-and-desktop-sync.md  直推 main、旧分支清理与桌面同步修订
-│   │   │   ├── 2026-08-21-interactive-html-structure-viewer.md  交互式 HTML 结构查看与自动同步修订
-│   │   │   ├── 2026-08-22-cognition-and-content-commercialization.md  建委认知归组与跨行业内容经营修订
-│   │   │   ├── 2026-08-23-feishu-document-routing-boundary.md  飞书文档承载平台与飞书书籍项目的路由边界
-│   │   │   ├── 2026-08-24-sixty-jiazi-project-relocation.md  六十甲子项目迁入 other 与唯一路由规则
-│   │   │   ├── 2026-08-27-commercial-external-material-boundary.md  赛事、路演与融资材料的对外边界修订
-│   │   │   ├── 2026-09-01-ai-programming-skill-repository.md  AI 编程 Skill 仓库与上游快照治理
-│   │   │   ├── 2026-09-01-case-result-narrative.md  案例结果叙事方法入库修订
-│   │   │   ├── 2026-09-01-remotion-skill-confirmation-and-action-contract.md  Remotion Skill 确认门与逐元素动作契约修订
-│   │   │   ├── 2026-09-01-remotion-skill-director-and-parameterization.md  2026-09-01 Remotion Skill 导演层与参数化默认输出修订
-│   │   │   ├── 2026-09-02-jianwei-remotion-parameterization.md  Studio 右侧 Default Props 可编辑性验收修订 Remotion Skill 导演层、重叠节奏与参数化默认输出修订
-│   │   │   ├── 2026-09-04-remotion-reference-fidelity-and-preview-gate.md  Remotion Skill 参考图保真、低清预览与最终渲染确认门修订
-│   │   │   ├── 2026-09-05-remotion-deterministic-layout.md  Remotion Skill 修订：数字与高密度布局确定性
-│   │   │   ├── 2026-09-05-remotion-director-expansion-and-background-fidelity.md  Remotion Skill 内部导演加工、动作自然度与背景保真修订
-│   │   │   ├── 2026-09-05-remotion-layout-locked-continuity.md  Remotion 参考图几何锁定与连续性审计
-│   │   │   ├── 2026-09-05-remotion-text-stability-and-director-console.md  Remotion Skill 文字抗抖、字体锁定、布局稳定校验与导演台固定输出修订
-│   │   │   ├── 2026-09-05-remotion-text-visibility-and-clipping.md  Remotion Skill 文字与关键元素完整可见、裁剪祖先和最长参数压力测试修订
-│   │   │   ├── 2026-09-05-remotion-universal-adaptive-architecture.md  Remotion Skill 几何锁定、禁止片尾整图覆盖与连续性审计修订
-│   │   │   ├── 2026-09-07-structure-sync-and-content-routing.md  结构镜像同步与表达/自媒体分流修订
-│   │   │   ├── 2026-09-07-training-review-generalization-and-reinforcement.md  AI 培训复盘通用化与重复错误强化机制
-│   │   │   ├── 2026-09-12-context-operation-and-attribution.md  2026-09-12：上下文运行规则与资料归属纠正
-│   │   │   ├── 2026-09-12-hierarchical-navigation-and-expression.md  2026-09-12：分级导航、项目集中与表达标准调整
-│   │   │   └── README.md  仓库修订索引
-│   │   ├── roadmap.md  长期维护与演进
-│   │   ├── templates/  项目、案例与方法模板
-│   │   │   ├── case.md  实战案例模板
-│   │   │   ├── method.md  方法卡模板
-│   │   │   ├── project.md  项目入口模板
-│   │   │   └── README.md  项目、案例与方法模板
-│   │   └── versioned-knowledge-policy.md  动态产品知识与版本治理
-│   └── skills/  可调用能力、来源与版本
-│       ├── editaplot/  EditaPlot
-│       │   ├── README.md  科研绘图 Skill 的调用、前提与更新方法
-│       │   ├── source/  上游完整快照，共 662 个文件；展开可核查内部层级
-│       │   │   ├── .gitattributes  资料与资源
-│       │   │   ├── .github/  目录入口
-│       │   │   │   ├── CODEOWNERS  资料与资源
-│       │   │   │   ├── dependabot.yml  自动化配置
-│       │   │   │   └── workflows/  目录入口
-│       │   │   │       ├── star-trend.yml  自动化配置
-│       │   │   │       └── tests.yml  自动化配置
-│       │   │   ├── .gitignore  资料与资源
-│       │   │   ├── ASSET_PROVENANCE.md  Asset and data provenance
-│       │   │   ├── assets/  目录入口
-│       │   │   │   ├── gallery/  目录入口
-│       │   │   │   │   ├── bar-error-groups.png  图片素材
-│       │   │   │   │   ├── bubble-indexed-size.png  图片素材
-│       │   │   │   │   ├── circular-network.png  图片素材
-│       │   │   │   │   ├── cv-cycles.png  图片素材
-│       │   │   │   │   ├── density-ridgeline3d.png  图片素材
-│       │   │   │   │   ├── diverging-effects.png  图片素材
-│       │   │   │   │   ├── dsc-multi.png  图片素材
-│       │   │   │   │   ├── eis-nyquist.png  图片素材
-│       │   │   │   │   ├── forest-intervals.png  图片素材
-│       │   │   │   │   ├── ftir-temperature-series.png  图片素材
-│       │   │   │   │   ├── gallery-manifest.json  结构化配置与索引
-│       │   │   │   │   ├── heatmap-dense-30x30.png  图片素材
-│       │   │   │   │   ├── heatmap-dense-40x40.png  图片素材
-│       │   │   │   │   ├── heatmap-results.png  图片素材
-│       │   │   │   │   ├── histogram-frozen-bins.png  图片素材
-│       │   │   │   │   ├── horizontal-long-labels.png  图片素材
-│       │   │   │   │   ├── line-error.png  图片素材
-│       │   │   │   │   ├── lsv-multi.png  图片素材
-│       │   │   │   │   ├── medical-agreement.png  图片素材
-│       │   │   │   │   ├── medical-calibration.png  图片素材
-│       │   │   │   │   ├── medical-confusion.png  图片素材
-│       │   │   │   │   ├── medical-decision.png  图片素材
-│       │   │   │   │   ├── medical-grouped-box.png  图片素材
-│       │   │   │   │   ├── medical-longitudinal.png  图片素材
-│       │   │   │   │   ├── medical-pr.png  图片素材
-│       │   │   │   │   ├── medical-raincloud.png  图片素材
-│       │   │   │   │   ├── medical-roc.png  图片素材
-│       │   │   │   │   ├── medical-shap.png  图片素材
-│       │   │   │   │   ├── nmr-comparison.png  图片素材
-│       │   │   │   │   ├── percent-composition.png  图片素材
-│       │   │   │   │   ├── pie-five-parts.png  图片素材
-│       │   │   │   │   ├── pl-steady-state.png  图片素材
-│       │   │   │   │   ├── pl-temperature-series.png  图片素材
-│       │   │   │   │   ├── pl-trpl.png  图片素材
-│       │   │   │   │   ├── radar-multimetric.png  图片素材
-│       │   │   │   │   ├── raw-observations.png  图片素材
-│       │   │   │   │   ├── sankey-flow.png  图片素材
-│       │   │   │   │   ├── scatter-dense.png  图片素材
-│       │   │   │   │   ├── stacked-composition.png  图片素材
-│       │   │   │   │   ├── trajectory3d.png  图片素材
-│       │   │   │   │   ├── trend-progression.png  图片素材
-│       │   │   │   │   ├── uv-vis-multi.png  图片素材
-│       │   │   │   │   ├── uv-vis-tauc.png  图片素材
-│       │   │   │   │   ├── violin-distributions.png  图片素材
-│       │   │   │   │   ├── xas-profiles.png  图片素材
-│       │   │   │   │   ├── xps-comparison.png  图片素材
-│       │   │   │   │   ├── xps-fit.png  图片素材
-│       │   │   │   │   └── xrd-multi.png  图片素材
-│       │   │   │   ├── palettes/  目录入口
-│       │   │   │   │   ├── cards/  目录入口
-│       │   │   │   │   │   ├── amber_lavender.png  图片素材
-│       │   │   │   │   │   ├── blue_coral.png  图片素材
-│       │   │   │   │   │   ├── deep_sea_gold.png  图片素材
-│       │   │   │   │   │   ├── forest_amber.png  图片素材
-│       │   │   │   │   │   ├── navy_cyan_gold.png  图片素材
-│       │   │   │   │   │   ├── navy_ember.png  图片素材
-│       │   │   │   │   │   ├── ocean_coral.png  图片素材
-│       │   │   │   │   │   ├── plum_rose.png  图片素材
-│       │   │   │   │   │   ├── sky_terra.png  图片素材
-│       │   │   │   │   │   └── violet_lime.png  图片素材
-│       │   │   │   │   ├── palette-catalog.json  结构化配置与索引
-│       │   │   │   │   ├── palette-selector-all.zh-CN.png  图片素材
-│       │   │   │   │   └── palette-selector-public.zh-CN.png  图片素材
-│       │   │   │   ├── provenance-manifest.json  结构化配置与索引
-│       │   │   │   ├── star-trend/  目录入口
-│       │   │   │   │   ├── stars.json  结构化配置与索引
-│       │   │   │   │   └── stars.svg  资料与资源
-│       │   │   │   └── support/  目录入口
-│       │   │   │       └── wechat-tip.png  图片素材
-│       │   │   ├── AUTHORS.md  Authors and contributors
-│       │   │   ├── CHANGELOG.md  Changelog
-│       │   │   ├── CONTRIBUTING.md  Contributing
-│       │   │   ├── docs/  目录入口
-│       │   │   │   ├── dependency-inventory.md  Verified Python dependency inventory
-│       │   │   │   ├── gallery.en.md  Origin 2024b figures generated and reviewed on a live installation
-│       │   │   │   ├── gallery.md  Origin 2024b 实机生成并复核的图形示例
-│       │   │   │   ├── installation.md  安装与环境自检 / Installation
-│       │   │   │   ├── origin-2021-2026-compatibility.md  EditaPlot 的 Origin 2021–2026b 兼容说明
-│       │   │   │   ├── palette-guide.md  科研配色指南
-│       │   │   │   ├── quickstart.en.md  English quick start
-│       │   │   │   ├── quickstart.zh-CN.md  中文快速开始
-│       │   │   │   └── release-boundaries.md  发布、隐私与许可边界
-│       │   │   ├── editaplot.cmd  资料与资源
-│       │   │   ├── examples/  目录入口
-│       │   │   │   ├── ambiguous_xy.csv  资料与资源
-│       │   │   │   ├── category_one_series.csv  资料与资源
-│       │   │   │   ├── category_two_series.csv  资料与资源
-│       │   │   │   ├── eis_bode_zh.csv  资料与资源
-│       │   │   │   ├── gallery/  目录入口
-│       │   │   │   │   ├── bar_grouped_error.csv  资料与资源
-│       │   │   │   │   ├── bubble_indexed_size.csv  资料与资源
-│       │   │   │   │   ├── circular_network.csv  资料与资源
-│       │   │   │   │   ├── cv_cycles.csv  资料与资源
-│       │   │   │   │   ├── density_ridgeline3d.csv  资料与资源
-│       │   │   │   │   ├── diverging_effects.csv  资料与资源
-│       │   │   │   │   ├── dsc_multi.csv  资料与资源
-│       │   │   │   │   ├── eis_nyquist.csv  资料与资源
-│       │   │   │   │   ├── forest_intervals.csv  资料与资源
-│       │   │   │   │   ├── ftir_temperature_series.csv  资料与资源
-│       │   │   │   │   ├── grouped_box_medical.csv  资料与资源
-│       │   │   │   │   ├── heatmap_dense_30x30.csv  资料与资源
-│       │   │   │   │   ├── heatmap_dense_40x40.csv  资料与资源
-│       │   │   │   │   ├── heatmap_results.csv  资料与资源
-│       │   │   │   │   ├── histogram_values.csv  资料与资源
-│       │   │   │   │   ├── horizontal_long_labels.csv  资料与资源
-│       │   │   │   │   ├── line_error.csv  资料与资源
-│       │   │   │   │   ├── lsv_multi.csv  资料与资源
-│       │   │   │   │   ├── medical_bland_altman.csv  资料与资源
-│       │   │   │   │   ├── medical_calibration.csv  资料与资源
-│       │   │   │   │   ├── medical_confusion.csv  资料与资源
-│       │   │   │   │   ├── medical_decision.csv  资料与资源
-│       │   │   │   │   ├── medical_paired.csv  资料与资源
-│       │   │   │   │   ├── medical_pr.csv  资料与资源
-│       │   │   │   │   ├── medical_raincloud.csv  资料与资源
-│       │   │   │   │   ├── medical_roc.csv  资料与资源
-│       │   │   │   │   ├── medical_shap_summary.csv  资料与资源
-│       │   │   │   │   ├── nmr_comparison.csv  资料与资源
-│       │   │   │   │   ├── percent_composition.csv  资料与资源
-│       │   │   │   │   ├── pie_five_parts.csv  资料与资源
-│       │   │   │   │   ├── pl_steady_state.csv  资料与资源
-│       │   │   │   │   ├── pl_temperature_series.csv  资料与资源
-│       │   │   │   │   ├── pl_trpl.csv  资料与资源
-│       │   │   │   │   ├── radar_multimetric.csv  资料与资源
-│       │   │   │   │   ├── raw_observations.csv  资料与资源
-│       │   │   │   │   ├── sankey_four_stage.csv  资料与资源
-│       │   │   │   │   ├── scatter_dense.csv  资料与资源
-│       │   │   │   │   ├── stacked_composition.csv  资料与资源
-│       │   │   │   │   ├── trajectory3d.csv  资料与资源
-│       │   │   │   │   ├── trend_progression.csv  资料与资源
-│       │   │   │   │   ├── uv_vis_multi.csv  资料与资源
-│       │   │   │   │   ├── uv_vis_tauc.csv  资料与资源
-│       │   │   │   │   ├── violin_distributions.csv  资料与资源
-│       │   │   │   │   ├── xas_profiles.csv  资料与资源
-│       │   │   │   │   ├── xps_compare.csv  资料与资源
-│       │   │   │   │   ├── xps_fit.csv  资料与资源
-│       │   │   │   │   └── xrd_multi.csv  资料与资源
-│       │   │   │   ├── line_error_zh.csv  资料与资源
-│       │   │   │   ├── sankey_zh.csv  资料与资源
-│       │   │   │   ├── xps_fit.csv  资料与资源
-│       │   │   │   └── xrd_multi.csv  资料与资源
-│       │   │   ├── LICENSE  资料与资源
-│       │   │   ├── NOTICE  资料与资源
-│       │   │   ├── PRIVACY.md  Privacy
-│       │   │   ├── pyproject.toml  资料与资源
-│       │   │   ├── README.en.md  说明与资料
-│       │   │   ├── README.md  说明与资料
-│       │   │   ├── release/  目录入口
-│       │   │   │   └── public-release-policy.json  结构化配置与索引
-│       │   │   ├── requirements-runtime.lock  资料与资源
-│       │   │   ├── requirements-runtime.txt  文本资料
-│       │   │   ├── runtime/  目录入口
-│       │   │   │   ├── LICENSE  资料与资源
-│       │   │   │   ├── NOTICE  资料与资源
-│       │   │   │   ├── pyproject.toml  资料与资源
-│       │   │   │   ├── requirements-runtime.lock  资料与资源
-│       │   │   │   ├── requirements-runtime.txt  文本资料
-│       │   │   │   ├── runtime-manifest.json  结构化配置与索引
-│       │   │   │   ├── src/  目录入口
-│       │   │   │   │   └── origin_sciplot/  目录入口
-│       │   │   │   │       ├── __init__.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── __main__.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── app.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── circular_network_layout.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── data_loader.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── heatmap_layout.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── logging_utils.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── main_window.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── origin_backend/  目录入口
-│       │   │   │   │       │   ├── __init__.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── base_style_contract.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── capabilities.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── categorical_renderer.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── density_ridgeline3d_renderer.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── evidence_renderer.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── execution_context.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── export_utils.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── job_queue.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── network_renderer.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── safe_errors.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── scientific_renderer.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── session.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── smoke_test.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── template_capabilities.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── trajectory3d_renderer.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── verify_utils.py  跨平台维护或执行脚本
-│       │   │   │   │       │   └── version_risks.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── output_manager.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── palette_catalog.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── project_paths.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── reference_adaptation.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── reference_figure.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── reference_style.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── resources/  目录入口
-│       │   │   │   │       │   ├── app_icon.png  图片素材
-│       │   │   │   │       │   └── qss/  目录入口
-│       │   │   │   │       │       └── main.qss  资料与资源
-│       │   │   │   │       ├── scientific_preview.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── scientific_visual.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── scientific_workflow.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── semantic_analysis.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── semantic_contract.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── shap_composite.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── shap_layout.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── template_registry.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── template_service.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── validation/  目录入口
-│       │   │   │   │       │   ├── __init__.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── csv_validator.py  跨平台维护或执行脚本
-│       │   │   │   │       │   └── schema_models.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── workers/  目录入口
-│       │   │   │   │       │   ├── __init__.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── origin_smoke_worker.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── process_launcher.py  跨平台维护或执行脚本
-│       │   │   │   │       │   ├── progress_protocol.py  跨平台维护或执行脚本
-│       │   │   │   │       │   └── run_template_worker.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── xps_adaptive.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── xps_preview.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── xps_visual_style.py  跨平台维护或执行脚本
-│       │   │   │   │       ├── xps_workflow.py  跨平台维护或执行脚本
-│       │   │   │   │       └── xrd_semantics.py  跨平台维护或执行脚本
-│       │   │   │   └── templates/  目录入口
-│       │   │   │       ├── bar/  目录入口
-│       │   │   │       │   ├── data_contract.md  柱状图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_multi_group.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  柱状图视觉合同
-│       │   │   │       ├── bland_altman/  目录入口
-│       │   │   │       │   ├── data_contract.md  数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  视觉合同
-│       │   │   │       ├── bubble/  目录入口
-│       │   │   │       │   ├── data_contract.md  气泡图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  气泡图视觉合同
-│       │   │   │       ├── calibration_curve/  目录入口
-│       │   │   │       │   ├── data_contract.md  数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  视觉合同
-│       │   │   │       ├── circular_network/  目录入口
-│       │   │   │       │   ├── data_contract.md  环形有向加权网络图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── origin_acceptance.md  Origin route acceptance — passed
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  环形有向加权网络图视觉合同
-│       │   │   │       ├── confusion_matrix/  目录入口
-│       │   │   │       │   ├── data_contract.md  数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  视觉合同
-│       │   │   │       ├── cv/  目录入口
-│       │   │   │       │   ├── data_contract.md  CV 数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  CV 视觉合同
-│       │   │   │       ├── decision_curve/  目录入口
-│       │   │   │       │   ├── data_contract.md  数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  视觉合同
-│       │   │   │       ├── density_ridgeline3d/  目录入口
-│       │   │   │       │   ├── data_contract.md  三维双轮廓密度曲线与基线焦点 mixed-wide 数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── origin_acceptance.md  Origin route acceptance — verified 2026-08-01
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  三维双轮廓密度曲线与基线焦点视觉合同
-│       │   │   │       ├── diagnostic_curve/  目录入口
-│       │   │   │       │   ├── data_contract.md  数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_pr.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  视觉合同
-│       │   │   │       ├── dsc/  目录入口
-│       │   │   │       │   ├── data_contract.md  DSC 数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  DSC 视觉合同
-│       │   │   │       ├── eis/  目录入口
-│       │   │   │       │   ├── data_contract.md  EIS 数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_bode.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  EIS 视觉合同
-│       │   │   │       ├── forest/  目录入口
-│       │   │   │       │   ├── data_contract.md  森林图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  森林图视觉合同
-│       │   │   │       ├── ftir/  目录入口
-│       │   │   │       │   ├── data_contract.md  FTIR / IR 数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  FTIR / IR 视觉合同
-│       │   │   │       ├── grouped_box/  目录入口
-│       │   │   │       │   ├── data_contract.md  数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  视觉合同
-│       │   │   │       ├── heatmap/  目录入口
-│       │   │   │       │   ├── data_contract.md  热力图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  热力图视觉合同
-│       │   │   │       ├── histogram/  目录入口
-│       │   │   │       │   ├── data_contract.md  直方图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  直方图视觉合同
-│       │   │   │       ├── horizontal_bar/  目录入口
-│       │   │   │       │   ├── data_contract.md  横向分组条形图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  横向分组条形图视觉合同
-│       │   │   │       ├── line_error/  目录入口
-│       │   │   │       │   ├── data_contract.md  带误差折线图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_chinese.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  带误差折线图视觉合同
-│       │   │   │       ├── lsv/  目录入口
-│       │   │   │       │   ├── data_contract.md  LSV 数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  LSV 视觉合同
-│       │   │   │       ├── nmr/  目录入口
-│       │   │   │       │   ├── data_contract.md  NMR 数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  NMR 视觉合同
-│       │   │   │       ├── paired_trajectory/  目录入口
-│       │   │   │       │   ├── data_contract.md  数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  视觉合同
-│       │   │   │       ├── percent_stacked_bar/  目录入口
-│       │   │   │       │   ├── data_contract.md  百分比堆叠柱状图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  百分比堆叠柱状图视觉合同
-│       │   │   │       ├── pie/  目录入口
-│       │   │   │       │   ├── data_contract.md  二维饼图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  二维饼图视觉合同
-│       │   │   │       ├── pl/  目录入口
-│       │   │   │       │   ├── data_contract.md  数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── example_temperature_series.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  视觉合同
-│       │   │   │       ├── radar/  目录入口
-│       │   │   │       │   ├── data_contract.md  雷达图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  雷达图视觉合同
-│       │   │   │       ├── raincloud/  目录入口
-│       │   │   │       │   ├── data_contract.md  Raincloud 数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  Raincloud 视觉合同
-│       │   │   │       ├── raw_summary/  目录入口
-│       │   │   │       │   ├── data_contract.md  原始点汇总图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  原始点汇总图视觉合同
-│       │   │   │       ├── sankey/  目录入口
-│       │   │   │       │   ├── data_contract.md  桑基图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  桑基图视觉合同
-│       │   │   │       ├── scatter/  目录入口
-│       │   │   │       │   ├── data_contract.md  散点图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_dense.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  散点图视觉合同
-│       │   │   │       ├── shap_summary/  目录入口
-│       │   │   │       │   ├── data_contract.md  预计算 SHAP 复合图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  预计算 SHAP 复合图视觉合同
-│       │   │   │       ├── stacked_bar/  目录入口
-│       │   │   │       │   ├── data_contract.md  堆叠柱状图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  堆叠柱状图视觉合同
-│       │   │   │       ├── trajectory3d/  目录入口
-│       │   │   │       │   ├── data_contract.md  三维多条件 Nyquist 轨迹数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── origin_acceptance.md  Origin 10.15 route acceptance
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  三维多条件 Nyquist 轨迹视觉合同
-│       │   │   │       ├── trend/  目录入口
-│       │   │   │       │   ├── data_contract.md  趋势折线图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  趋势折线图视觉合同
-│       │   │   │       ├── uv_vis/  目录入口
-│       │   │   │       │   ├── data_contract.md  数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_multi_spectrum.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  视觉合同
-│       │   │   │       ├── violin/  目录入口
-│       │   │   │       │   ├── data_contract.md  小提琴图数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  小提琴图视觉合同
-│       │   │   │       ├── xas/  目录入口
-│       │   │   │       │   ├── data_contract.md  XAS 数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  XAS 视觉合同
-│       │   │   │       ├── xps/  目录入口
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   └── service.py  跨平台维护或执行脚本
-│       │   │   │       ├── xps_adaptive/  目录入口
-│       │   │   │       │   ├── data_contract.md  XPS Adaptive Data Contract
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   └── visual_contract.md  XPS Adaptive Visual Contract
-│       │   │   │       ├── xps_c1s_fit/  目录入口
-│       │   │   │       │   ├── data_contract.md  XPS C 1s CSV 数据合同
-│       │   │   │       │   ├── example_noisy.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── preview.png  图片素材
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── tests/  目录入口
-│       │   │   │       │   │   ├── invalid_duplicate_columns.csv  资料与资源
-│       │   │   │       │   │   ├── invalid_empty_rows.csv  资料与资源
-│       │   │   │       │   │   ├── invalid_missing_column.csv  资料与资源
-│       │   │   │       │   │   ├── invalid_non_numeric.csv  资料与资源
-│       │   │   │       │   │   ├── invalid_wrong_range.csv  资料与资源
-│       │   │   │       │   │   ├── valid_xps_chinese_filename.csv  资料与资源
-│       │   │   │       │   │   ├── valid_xps_dense_points.csv  资料与资源
-│       │   │   │       │   │   ├── valid_xps_noisy.csv  资料与资源
-│       │   │   │       │   │   └── valid_xps_standard.csv  资料与资源
-│       │   │   │       │   └── visual_contract.md  XPS C 1s 视觉合同
-│       │   │   │       ├── xps_compare/  目录入口
-│       │   │   │       │   ├── data_contract.md  XPS 多谱线对比数据合同
-│       │   │   │       │   ├── data_template.csv  资料与资源
-│       │   │   │       │   ├── example_standard.csv  资料与资源
-│       │   │   │       │   ├── manifest.yaml  自动化配置
-│       │   │   │       │   ├── runner.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── schema.json  结构化配置与索引
-│       │   │   │       │   ├── service.py  跨平台维护或执行脚本
-│       │   │   │       │   └── visual_contract.md  XPS 多谱线对比视觉合同
-│       │   │   │       └── xrd/  目录入口
-│       │   │   │           ├── data_contract.md  XRD 数据合同
-│       │   │   │           ├── data_template.csv  资料与资源
-│       │   │   │           ├── example_gsas_powder.csv  资料与资源
-│       │   │   │           ├── example_gsas_publication.csv  资料与资源
-│       │   │   │           ├── example_standard.csv  资料与资源
-│       │   │   │           ├── manifest.yaml  自动化配置
-│       │   │   │           ├── runner.py  跨平台维护或执行脚本
-│       │   │   │           ├── schema.json  结构化配置与索引
-│       │   │   │           ├── service.py  跨平台维护或执行脚本
-│       │   │   │           └── visual_contract.md  XRD 视觉合同
-│       │   │   ├── SECURITY.md  Security policy
-│       │   │   ├── skill/  目录入口
-│       │   │   │   └── editaplot/  目录入口
-│       │   │   │       ├── agents/  目录入口
-│       │   │   │       │   └── openai.yaml  自动化配置
-│       │   │   │       ├── assets/  目录入口
-│       │   │   │       │   └── palettes/  目录入口
-│       │   │   │       │       ├── cards/  目录入口
-│       │   │   │       │       │   ├── amber_lavender.png  图片素材
-│       │   │   │       │       │   ├── blue_coral.png  图片素材
-│       │   │   │       │       │   ├── deep_sea_gold.png  图片素材
-│       │   │   │       │       │   ├── forest_amber.png  图片素材
-│       │   │   │       │       │   ├── navy_cyan_gold.png  图片素材
-│       │   │   │       │       │   ├── navy_ember.png  图片素材
-│       │   │   │       │       │   ├── ocean_coral.png  图片素材
-│       │   │   │       │       │   ├── plum_rose.png  图片素材
-│       │   │   │       │       │   ├── sky_terra.png  图片素材
-│       │   │   │       │       │   └── violet_lime.png  图片素材
-│       │   │   │       │       ├── palette-catalog.json  结构化配置与索引
-│       │   │   │       │       ├── palette-selector-all.zh-CN.png  图片素材
-│       │   │   │       │       └── palette-selector-public.zh-CN.png  图片素材
-│       │   │   │       ├── LICENSE  资料与资源
-│       │   │   │       ├── NOTICE  资料与资源
-│       │   │   │       ├── references/  目录入口
-│       │   │   │       │   ├── chart-selection.md  Chart selection and support levels
-│       │   │   │       │   ├── data-contracts.md  Data contracts
-│       │   │   │       │   ├── figure-contract.md  Publication-informed Origin figure contract
-│       │   │   │       │   ├── origin-safety.md  Origin Automation safety gate
-│       │   │   │       │   ├── palettes.md  科研配色选择合同
-│       │   │   │       │   ├── reference-figures.md  Reference-figure adaptation
-│       │   │   │       │   ├── runtime.md  Runtime and launcher
-│       │   │   │       │   ├── semantic-understanding.md  Scientific data understanding and element confirmation
-│       │   │   │       │   ├── showcase.md  Showcase policy
-│       │   │   │       │   └── verification.md  Origin delivery verification
-│       │   │   │       ├── scripts/  目录入口
-│       │   │   │       │   ├── bootstrap_editaplot.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── editaplot.py  跨平台维护或执行脚本
-│       │   │   │       │   ├── editaplot_core.py  跨平台维护或执行脚本
-│       │   │   │       │   └── requirements-runtime.lock  资料与资源
-│       │   │   │       └── SKILL.md  EditaPlot
-│       │   │   ├── SUPPORT.md  Support scope
-│       │   │   ├── tests/  目录入口
-│       │   │   │   ├── test_axis_title_attachments.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_circular_network_layout.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_circular_network_preview_core.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_circular_network_workflow.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_density_ridgeline3d_renderer.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_density_ridgeline3d_showcase.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_density_ridgeline3d_template.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_density_ridgeline3d_workflow.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_editaplot.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_gsas_data_loader.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_gui_worker_launch_contract.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_heatmap_density.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_material_spectroscopy.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_network_renderer_plan.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_2021_2026_compatibility_documentation.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_capabilities.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_compatibility_reports.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_doctor.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_execution_context.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_geometry_compatibility.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_job_queue.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_safety_documentation.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_session.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_smoke.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_smoke_cli.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_startup_recovery.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_version_risk_integration.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_origin_version_risks.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_performance_guidance.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_progress_protocol.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_public_release_gate.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_public_template_alignment.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_reference_adaptation.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_reference_figure.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_reference_style.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_reference_workflow_core.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_safe_errors.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_semantic_analysis.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_semantic_contract.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_semantic_contract_parsing.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_semantic_workflow_core.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_shap_summary_preview_renderer.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_shap_summary_semantics.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_shap_summary_workflow.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_star_trend.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_style_choice_documentation.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_sync_public_gallery.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_template_capabilities.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_worker_done_payload.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_xps_fixed_runner_style.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_xps_ignored_columns_runner.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_xps_preview_style.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_xps_visual_style_cli.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_xps_visual_style_contract.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_xrd_rietveld_renderer.py  跨平台维护或执行脚本
-│       │   │   │   ├── test_xrd_rietveld_workflow.py  跨平台维护或执行脚本
-│       │   │   │   └── test_xrd_semantics.py  跨平台维护或执行脚本
-│       │   │   ├── THIRD_PARTY_NOTICES.md  Third-party runtime notices
-│       │   │   └── tools/  目录入口
-│       │   │       ├── build_asset_provenance.py  跨平台维护或执行脚本
-│       │   │       ├── build_palette_assets.py  跨平台维护或执行脚本
-│       │   │       ├── build_runtime_manifest.py  跨平台维护或执行脚本
-│       │   │       ├── build_showcase.py  跨平台维护或执行脚本
-│       │   │       ├── build_star_trend.py  跨平台维护或执行脚本
-│       │   │       ├── generate_showcase_data.py  跨平台维护或执行脚本
-│       │   │       ├── sync_public_gallery.py  跨平台维护或执行脚本
-│       │   │       └── verify_public_release.py  跨平台维护或执行脚本
-│       │   └── upstream.json  上游仓库、分支、commit 与许可
-│       ├── jianwei-ai-community-remotion-video/  jianwei-ai-community-remotion-video
-│       │   ├── README.md  建委 AI 社群 Remotion 视频 Skill 说明
-│       │   ├── skill/  可直接安装的完整 Skill
-│       │   │   ├── agents/  目录入口
-│       │   │   │   └── openai.yaml  自动化配置
-│       │   │   ├── references/  目录入口
-│       │   │   │   ├── background-fidelity-contract.md  参考图背景保真契约
-│       │   │   │   ├── deterministic-layout-contract.md  Deterministic layout contract
-│       │   │   │   ├── director-console-contract.md  导演台稳定输出契约
-│       │   │   │   ├── director-strategy.md  动效导演策略
-│       │   │   │   ├── input-and-image-analysis.md  输入与图片分析
-│       │   │   │   ├── internal-production-brief.schema.json  结构化配置与索引
-│       │   │   │   ├── motion-blueprint.schema.json  结构化配置与索引
-│       │   │   │   ├── motion-direction.md  动效导演规则
-│       │   │   │   ├── output-contract.md  Motion Blueprint 输出契约
-│       │   │   │   ├── parameterization-contract.md  参数化与 Studio 编辑契约
-│       │   │   │   ├── prompt-expansion-contract.md  内部导演执行稿与二次加工契约
-│       │   │   │   ├── quality-gates.md  质量门槛
-│       │   │   │   ├── reference-fidelity-contract.md  参考图保真契约
-│       │   │   │   ├── remotion-contract.md  Remotion 实施契约
-│       │   │   │   ├── remotion-only-director-contract.md  Remotion-only director contract
-│       │   │   │   ├── render-performance-contract.md  渲染性能与交付流程契约
-│       │   │   │   └── visibility-and-clipping-contract.md  文字与关键元素完整可见契约
-│       │   │   ├── scripts/  目录入口
-│       │   │   │   ├── audit_reference_render_path.py  跨平台维护或执行脚本
-│       │   │   │   ├── check_layout_stability.py  跨平台维护或执行脚本
-│       │   │   │   ├── check_settle_continuity.py  跨平台维护或执行脚本
-│       │   │   │   ├── check_visibility_report.py  跨平台维护或执行脚本
-│       │   │   │   ├── compare_background_regions.py  跨平台维护或执行脚本
-│       │   │   │   ├── compare_reference_frame.py  跨平台维护或执行脚本
-│       │   │   │   ├── validate_blueprint.py  跨平台维护或执行脚本
-│       │   │   │   └── validate_production_brief.py  跨平台维护或执行脚本
-│       │   │   └── SKILL.md  建委 AI 社群视频制作 Skill
-│       │   └── upstream.json  规范参考与维护策略
-│       ├── jianwei-ai-learning-community-workbench/  jianwei-ai-learning-community-workbench
-│       │   ├── README.md  通用身份适配型工作台设计 Skill 说明
-│       │   ├── skill/  可直接安装的完整 Skill
-│       │   │   ├── agents/  目录入口
-│       │   │   │   └── openai.yaml  自动化配置
-│       │   │   ├── references/  目录入口
-│       │   │   │   ├── conversation-protocol.md  首轮提问协议
-│       │   │   │   ├── design-system.md  视觉、交互与跨端系统
-│       │   │   │   ├── quality-gate.md  交付前品控门
-│       │   │   │   └── role-adaptation.md  身份适配与工作台骨架
-│       │   │   └── SKILL.md  身份适配工作台设计 Skill
-│       │   └── upstream.json  来源、版本与维护策略
-│       ├── qingyun-ip-poster/  青云 IP Poster 海报视觉 Skill
-│       │   ├── README.md  调用方式、适用范围、事实与许可边界
-│       │   ├── skill/  上游完整快照，共 26 个文件；展开可核查内部层级
-│       │   │   ├── .gitignore  资料与资源
-│       │   │   ├── agents/  目录入口
-│       │   │   │   └── openai.yaml  自动化配置
-│       │   │   ├── assets/  目录入口
-│       │   │   │   ├── case-studies/  目录入口
-│       │   │   │   │   ├── wang-lei-after-account-grid.jpg  图片素材
-│       │   │   │   │   └── wang-lei-before-account-grid.jpg  图片素材
-│       │   │   │   └── style-references/  目录入口
-│       │   │   │       ├── 01-black-neon-green.png  图片素材
-│       │   │   │       ├── 02-ivory-editorial.png  图片素材
-│       │   │   │       ├── 03-graphite-thought-leader.png  图片素材
-│       │   │   │       ├── 04-high-contrast-closeup.png  图片素材
-│       │   │   │       ├── 05-black-gold-authority.png  图片素材
-│       │   │   │       ├── 06-cyber-xianxia-character-dossier-light.png  图片素材
-│       │   │   │       ├── 07-keynote-manifesto-dark.png  图片素材
-│       │   │   │       ├── 08-cyber-xianxia-worldview-keyart-dark.png  图片素材
-│       │   │   │       ├── 09-guest-manifesto-orange-cap.png  图片素材
-│       │   │   │       ├── 10-event-lineup-monumental.png  图片素材
-│       │   │   │       ├── 11-guest-manifesto-orange-suit.png  图片素材
-│       │   │   │       └── 12-guest-manifesto-purple.png  图片素材
-│       │   │   ├── README.en.md  Qingyun IP Poster
-│       │   │   ├── README.md  Qingyun IP Poster
-│       │   │   ├── README.zh-CN.md  Qingyun IP Poster · 中文说明
-│       │   │   ├── references/  目录入口
-│       │   │   │   ├── design-system.md  Qingyun 海报设计系统
-│       │   │   │   ├── failure-modes.md  常见失败模式与修复
-│       │   │   │   ├── intake-guide.md  素材引导与模式选择
-│       │   │   │   ├── prompt-compiler.md  图像层与排版层指令编译
-│       │   │   │   ├── quality-checklist.md  海报交付质量检查
-│       │   │   │   └── version-matrix.md  版本矩阵与系列差异控制
-│       │   │   └── SKILL.md  Qingyun IP Poster · Visual System Edition
-│       │   └── upstream.json  上游仓库、固定 commit、版本与更新规则
-│       └── README.md  Skill 实体索引、来源与更新规则
+│   └── repository/  读取写入、导航与校验
+│       ├── capability-evidence.md  从实践归纳个人能力
+│       ├── collaboration-rules.md  协作规则与职责边界
+│       ├── information-architecture.md  AI Context信息架构与长期规划
+│       ├── ingestion-workflow.md  新内容写入与更新流程
+│       ├── maintenance/  维护工具
+│       │   ├── .gitignore  资料与资源
+│       │   ├── context-route.py  跨平台维护或执行脚本
+│       │   ├── context_common.py  跨平台维护或执行脚本
+│       │   ├── desktop-sync.py  跨平台维护或执行脚本
+│       │   ├── generate-structure-html.ps1  从 Markdown 生成交互式 HTML
+│       │   ├── git-hooks/  本机自动同步触发器
+│       │   │   ├── post-checkout  检出或切换后自愈桌面结构
+│       │   │   ├── post-commit  提交后同步桌面结构
+│       │   │   ├── post-merge  拉取或合并后同步桌面结构
+│       │   │   ├── post-rewrite  amend 或 rebase 后同步桌面结构
+│       │   │   ├── pre-commit  提交前校验暂存快照，不生成或暂存额外文件
+│       │   │   └── run-python  资料与资源
+│       │   ├── invoke-python.ps1  Windows 兼容入口
+│       │   ├── pre-commit.py  跨平台维护或执行脚本
+│       │   ├── README.md  校验与桌面同步说明
+│       │   ├── structure-descriptions.json  结构化配置与索引
+│       │   ├── structure-viewer.template.html  HTML 思维导图界面与交互模板
+│       │   ├── sync-desktop-structure.ps1  生成并同步 HTML 到 F 盘桌面
+│       │   ├── sync-navigation.py  跨平台维护或执行脚本
+│       │   ├── sync-structure.py  跨平台维护或执行脚本
+│       │   ├── tests/  维护回归测试
+│       │   │   ├── README.md  维护回归测试
+│       │   │   └── test_context.py  跨平台维护或执行脚本
+│       │   ├── validate-context.ps1  结构、索引与链接校验脚本
+│       │   ├── validate-context.py  跨平台维护或执行脚本
+│       │   └── validation-policy.json  结构化配置与索引
+│       ├── navigation/  任务路由与项目登记
+│       │   ├── history.md  历史入口和读取边界
+│       │   ├── projects.json  结构化配置与索引
+│       │   ├── README.md  任务路由与项目登记
+│       │   ├── routes.json  结构化配置与索引
+│       │   ├── STRUCTURE.html  日常知识导航与完整文件视图
+│       │   ├── STRUCTURE.md  完整物理文件树与结构约定
+│       │   └── task-guide.md  完整任务指南，按主任务和条件依赖读取
+│       ├── README.md  治理总入口
+│       ├── revisions/  仓库级重大修订
+│       │   ├── 2026-04-05-context-repository-established.md  2026-04-05：建立长期AI协作上下文仓库
+│       │   ├── 2026-08-18-information-architecture-rebuild.md  五个一级入口的信息架构重构记录
+│       │   ├── 2026-08-20-ai-expression-default-layer.md  AI 表达默认层和语言规则修订
+│       │   ├── 2026-08-21-chinese-quality-and-source-governance.md  中文质量基础层与多来源冲突治理修订
+│       │   ├── 2026-08-21-commercial-delivery-domain.md  商业化与对外交付边界层首次建立记录
+│       │   ├── 2026-08-21-commercial-delivery-relocation.md  商业化迁移到其他领域的修订
+│       │   ├── 2026-08-21-desktop-sync-resilience.md  桌面 HTML 同步稳定性加固
+│       │   ├── 2026-08-21-direct-main-and-desktop-sync.md  直推 main、旧分支清理与桌面同步修订
+│       │   ├── 2026-08-21-interactive-html-structure-viewer.md  交互式 HTML 结构查看与自动同步修订
+│       │   ├── 2026-08-22-cognition-and-content-commercialization.md  建委认知归组与跨行业内容经营修订
+│       │   ├── 2026-08-23-feishu-document-routing-boundary.md  飞书文档承载平台与飞书书籍项目的路由边界
+│       │   ├── 2026-08-24-sixty-jiazi-project-relocation.md  六十甲子项目迁入 other 与唯一路由规则
+│       │   ├── 2026-08-27-commercial-external-material-boundary.md  赛事、路演与融资材料的对外边界修订
+│       │   ├── 2026-09-01-ai-programming-skill-repository.md  AI 编程 Skill 仓库与上游快照治理
+│       │   ├── 2026-09-01-case-result-narrative.md  案例结果叙事方法入库修订
+│       │   ├── 2026-09-01-remotion-skill-confirmation-and-action-contract.md  Remotion Skill 确认门与逐元素动作契约修订
+│       │   ├── 2026-09-01-remotion-skill-director-and-parameterization.md  2026-09-01 Remotion Skill 导演层与参数化默认输出修订
+│       │   ├── 2026-09-02-jianwei-remotion-parameterization.md  Studio 右侧 Default Props 可编辑性验收修订 Remotion Skill 导演层、重叠节奏与参数化默认输出修订
+│       │   ├── 2026-09-04-remotion-reference-fidelity-and-preview-gate.md  Remotion Skill 参考图保真、低清预览与最终渲染确认门修订
+│       │   ├── 2026-09-05-remotion-deterministic-layout.md  Remotion Skill 修订：数字与高密度布局确定性
+│       │   ├── 2026-09-05-remotion-director-expansion-and-background-fidelity.md  Remotion Skill 内部导演加工、动作自然度与背景保真修订
+│       │   ├── 2026-09-05-remotion-layout-locked-continuity.md  Remotion 参考图几何锁定与连续性审计
+│       │   ├── 2026-09-05-remotion-text-stability-and-director-console.md  Remotion Skill 文字抗抖、字体锁定、布局稳定校验与导演台固定输出修订
+│       │   ├── 2026-09-05-remotion-text-visibility-and-clipping.md  Remotion Skill 文字与关键元素完整可见、裁剪祖先和最长参数压力测试修订
+│       │   ├── 2026-09-05-remotion-universal-adaptive-architecture.md  Remotion Skill 几何锁定、禁止片尾整图覆盖与连续性审计修订
+│       │   ├── 2026-09-07-structure-sync-and-content-routing.md  结构镜像同步与表达/自媒体分流修订
+│       │   ├── 2026-09-07-training-review-generalization-and-reinforcement.md  AI 培训复盘通用化与重复错误强化机制
+│       │   ├── 2026-09-12-context-operation-and-attribution.md  2026-09-12：上下文运行规则与资料归属纠正
+│       │   ├── 2026-09-12-hierarchical-navigation-and-expression.md  2026-09-12：分级导航、项目集中与表达标准调整
+│       │   ├── 2026-09-12-personal-expression-and-skill-refinement.md  个人信息、表达与Skill归属调整
+│       │   └── README.md  仓库修订索引
+│       ├── roadmap.md  长期维护与演进
+│       ├── templates/  项目、案例与方法模板
+│       │   ├── case.md  实战案例模板
+│       │   ├── method.md  方法卡模板
+│       │   ├── project.md  项目入口模板
+│       │   └── README.md  项目、案例与方法模板
+│       └── versioned-knowledge-policy.md  动态产品知识与版本治理
 ├── .gitattributes  Git 文本属性与换行规范
 ├── .github/  GitHub 自动校验
 │   ├── README.md  GitHub 自动校验
@@ -1240,10 +1220,10 @@ ai-context/
 
 ## 四个主入口
 
-- personal：个人身份、能力、背书、成长和明确认可的个人表达偏好。
+- personal：我是谁、个人经历与阶段里程碑、背书荣誉和成果、业务与项目概要；能力归纳并入概要，表达样稿留原领域／项目。
 - brain：个人认知与判断，只有有依据的观点进入，不包含通用AI表达。
 - work：domains保存工作方法，projects保存具体项目、商单和归档；AI作为方法、工具或主题。
-- system：共用表达、Skill、仓库运行和设备环境。治理、校验与维护归为一条分支。
+- system：共用表达、仓库运行和设备环境。治理、校验与维护归为一条分支；Skill在work/domains/other/skills。
 
 根README提供日常首页，AGENTS保留AI启动入口，llms是兼容短指针。GitHub要求的.github/workflows以及Git配置保留其技术位置，日常知识树不把它们当业务门类。
 

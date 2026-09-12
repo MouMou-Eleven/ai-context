@@ -11,7 +11,7 @@ EditaPlot 是面向科研绘图的 Agent Skill，通过 Origin/OriginPro 创建�
 
 ## 查看与执行
 
-查能力只读本页和 [upstream.json](./upstream.json)。制作时再读实体Skill，检查本机安装版本、Python与Origin、数据列义和所需授权，再执行对应流程。本仓快照不证明当前电脑已经安装或本轮运行通过。
+查能力只读本页和 [upstream.json](upstream.json)。制作时再读实体Skill，检查本机安装版本、Python与Origin、数据列义和所需授权，再执行对应流程。本仓快照不证明当前电脑已经安装或本轮运行通过。
 
 ## 固定版本
 
@@ -19,9 +19,9 @@ EditaPlot 是面向科研绘图的 Agent Skill，通过 Origin/OriginPro 创建�
 - 默认分支：`main`
 - 当前 commit：`4aa986f3f84da9cb2a2297159a8f20e42b7e527c`
 - 许可证：Apache-2.0
-- 来源记录：[`upstream.json`](./upstream.json)
-- 完整快照：[`source/`](./source)
-- Skill 入口：[`source/skill/editaplot/SKILL.md`](./source/skill/editaplot/SKILL.md)
+- 来源记录：[`upstream.json`](upstream.json)
+- 完整快照：[`source/`](source)
+- Skill 入口：[`source/skill/editaplot/SKILL.md`](source/skill/editaplot/SKILL.md)
 
 之所以保存完整快照，是因为 EditaPlot 的 `skill/editaplot/` 还依赖仓库根目录的 `runtime/` 和 `editaplot.cmd`。只复制 Skill 子目录会缺失绘图运行时，无法按上游设计工作。
 
@@ -32,7 +32,7 @@ EditaPlot 是面向科研绘图的 Agent Skill，通过 Origin/OriginPro 创建�
 - 上游标明Python 3.10–3.12；完整运行时和安装依赖由 `source/` 中的setup检查。
 - 在 `source/` 根目录按上游说明运行 `./editaplot.cmd setup`，安装完成后调用 `$editaplot`。
 
-具体能力、命令和限制以固定快照内的上游 [`README.md`](./source/README.md) 与 [`SKILL.md`](./source/skill/editaplot/SKILL.md) 为准。
+具体能力、命令和限制以固定快照内的上游 [`README.md`](source/README.md) 与 [`SKILL.md`](source/skill/editaplot/SKILL.md) 为准。
 
 ## 更新方法
 

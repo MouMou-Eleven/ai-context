@@ -28,23 +28,23 @@
 
 - Skill 名称：`jianwei-ai-community-remotion-video`
 - Codex 调用：`$jianwei-ai-community-remotion-video`
-- 实体入口：[`skill/SKILL.md`](./skill/SKILL.md)
-- 参数化契约：[`skill/references/parameterization-contract.md`](./skill/references/parameterization-contract.md)
-- 参考图保真契约：[`skill/references/reference-fidelity-contract.md`](./skill/references/reference-fidelity-contract.md)
-- 背景保真契约：[`skill/references/background-fidelity-contract.md`](./skill/references/background-fidelity-contract.md)
-- 内部提示词二次加工：[`skill/references/prompt-expansion-contract.md`](./skill/references/prompt-expansion-contract.md)
-- 内部导演执行稿 Schema：[`skill/references/internal-production-brief.schema.json`](./skill/references/internal-production-brief.schema.json)
-- 导演台稳定输出契约：[`skill/references/director-console-contract.md`](./skill/references/director-console-contract.md)
-- 布局/字体/基线稳定校验：[`skill/scripts/check_layout_stability.py`](./skill/scripts/check_layout_stability.py)
-- 文字与元素完整可见契约：[`skill/references/visibility-and-clipping-contract.md`](./skill/references/visibility-and-clipping-contract.md)
-- 渲染性能与预览流程：[`skill/references/render-performance-contract.md`](./skill/references/render-performance-contract.md)
-- 最终帧对比工具：[`skill/scripts/compare_reference_frame.py`](./skill/scripts/compare_reference_frame.py)
-- 生产参考图引用审计：[`skill/scripts/audit_reference_render_path.py`](./skill/scripts/audit_reference_render_path.py)
-- 最终稳定区连续性审计：[`skill/scripts/check_settle_continuity.py`](./skill/scripts/check_settle_continuity.py)
-- 背景安全区对比工具：[`skill/scripts/compare_background_regions.py`](./skill/scripts/compare_background_regions.py)
-- 内部导演执行稿校验：[`skill/scripts/validate_production_brief.py`](./skill/scripts/validate_production_brief.py)
-- 可见边界与裁剪祖先校验：[`skill/scripts/check_visibility_report.py`](./skill/scripts/check_visibility_report.py)
-- 来源记录：[`upstream.json`](./upstream.json)
+- 实体入口：[`skill/SKILL.md`](skill/SKILL.md)
+- 参数化契约：[`skill/references/parameterization-contract.md`](skill/references/parameterization-contract.md)
+- 参考图保真契约：[`skill/references/reference-fidelity-contract.md`](skill/references/reference-fidelity-contract.md)
+- 背景保真契约：[`skill/references/background-fidelity-contract.md`](skill/references/background-fidelity-contract.md)
+- 内部提示词二次加工：[`skill/references/prompt-expansion-contract.md`](skill/references/prompt-expansion-contract.md)
+- 内部导演执行稿 Schema：[`skill/references/internal-production-brief.schema.json`](skill/references/internal-production-brief.schema.json)
+- 导演台稳定输出契约：[`skill/references/director-console-contract.md`](skill/references/director-console-contract.md)
+- 布局/字体/基线稳定校验：[`skill/scripts/check_layout_stability.py`](skill/scripts/check_layout_stability.py)
+- 文字与元素完整可见契约：[`skill/references/visibility-and-clipping-contract.md`](skill/references/visibility-and-clipping-contract.md)
+- 渲染性能与预览流程：[`skill/references/render-performance-contract.md`](skill/references/render-performance-contract.md)
+- 最终帧对比工具：[`skill/scripts/compare_reference_frame.py`](skill/scripts/compare_reference_frame.py)
+- 生产参考图引用审计：[`skill/scripts/audit_reference_render_path.py`](skill/scripts/audit_reference_render_path.py)
+- 最终稳定区连续性审计：[`skill/scripts/check_settle_continuity.py`](skill/scripts/check_settle_continuity.py)
+- 背景安全区对比工具：[`skill/scripts/compare_background_regions.py`](skill/scripts/compare_background_regions.py)
+- 内部导演执行稿校验：[`skill/scripts/validate_production_brief.py`](skill/scripts/validate_production_brief.py)
+- 可见边界与裁剪祖先校验：[`skill/scripts/check_visibility_report.py`](skill/scripts/check_visibility_report.py)
+- 来源记录：[`upstream.json`](upstream.json)
 
 该目录保存完整、自包含的 Skill 快照。名称已于 2026-09-01 从 `jianwei-ai-community-video` 调整为当前名称。
 
@@ -52,17 +52,17 @@
 
 这些文件供执行和维护时按需定位，查阅能力卡不默认全部加载。
 
-- [代理配置](./skill/agents/openai.yaml)
-- [输入与图片分析](./skill/references/input-and-image-analysis.md)
-- [导演策略](./skill/references/director-strategy.md)
-- [运动方向](./skill/references/motion-direction.md)
-- [确定性布局契约](./skill/references/deterministic-layout-contract.md)
-- [Remotion契约](./skill/references/remotion-contract.md)
-- [Remotion导演专项契约](./skill/references/remotion-only-director-contract.md)
-- [动效蓝图Schema](./skill/references/motion-blueprint.schema.json)
-- [交付契约](./skill/references/output-contract.md)
-- [质量门槛](./skill/references/quality-gates.md)
-- [蓝图校验脚本](./skill/scripts/validate_blueprint.py)
+- [代理配置](skill/agents/openai.yaml)
+- [输入与图片分析](skill/references/input-and-image-analysis.md)
+- [导演策略](skill/references/director-strategy.md)
+- [运动方向](skill/references/motion-direction.md)
+- [确定性布局契约](skill/references/deterministic-layout-contract.md)
+- [Remotion契约](skill/references/remotion-contract.md)
+- [Remotion导演专项契约](skill/references/remotion-only-director-contract.md)
+- [动效蓝图Schema](skill/references/motion-blueprint.schema.json)
+- [交付契约](skill/references/output-contract.md)
+- [质量门槛](skill/references/quality-gates.md)
+- [蓝图校验脚本](skill/scripts/validate_blueprint.py)
 
 ## 维护边界
 

@@ -25,11 +25,11 @@
 | Seedance工具 | [读取](../../../work/domains/design/video/common/tools/seedance/README.md) |
 | 网站、应用与编程 | [读取](../../../work/domains/development/README.md) |
 | 百度秒嗒平台 | [读取](../../../work/domains/development/tools/miaoda/llms.txt) |
-| 查阅、使用或收录Skill | [读取](../../skills/README.md) |
-| 可编辑参数化React动画 | [读取](../../skills/jianwei-ai-community-remotion-video/README.md) |
-| Origin可编辑科研图 | [读取](../../skills/editaplot/README.md) |
-| 按职业设计AI工作台 | [读取](../../skills/jianwei-ai-learning-community-workbench/README.md) |
-| 个人IP与观点海报 | [读取](../../skills/qingyun-ip-poster/README.md) |
+| 查阅、使用或收录Skill | [读取](../../../work/domains/other/skills/README.md) |
+| 可编辑参数化React动画 | [读取](../../../work/domains/other/skills/jianwei-ai-community-remotion-video/README.md) |
+| Origin可编辑科研图 | [读取](../../../work/domains/other/skills/editaplot/README.md) |
+| 按职业设计AI工作台 | [读取](../../../work/domains/other/skills/jianwei-ai-learning-community-workbench/README.md) |
+| 个人IP与观点海报 | [读取](../../../work/domains/other/skills/qingyun-ip-poster/README.md) |
 | 培训备课与复盘（先核对归属） | [读取](../../../work/domains/training/README.md) |
 | 会员社群（仅明确属于本项目） | [读取](../../../work/projects/paid-community-course/README.md) |
 | 企业、图书馆、夜校与外部培训 | [读取](../../../work/projects/external-training/README.md) |

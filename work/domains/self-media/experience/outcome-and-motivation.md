@@ -3,7 +3,7 @@
 > 状态：当前有效的自媒体方法
 > 提炼日期：2026-08-02
 > 迁入当前架构：2026-08-21
-> 原始材料：[`../../../../system/expression/chinese-datasets/short-video-outcome-and-motivation/README.md`](../../../../system/expression/chinese-datasets/short-video-outcome-and-motivation/README.md)
+> 来源登记与旧版原稿入口：[表达来源O1](../../../../system/expression/sources.md)；当前目录不重复保留长逐字稿。
 > 适用范围：短视频、直播预热、图文选题和课程内容的对外转化
 
 ## 一、先校正原素材的核心结论
@@ -151,4 +151,4 @@ AI 输出时必须：
 - 保留真实知识与交付，不把内容全部改成情绪观点。
 - 不写轻松赚钱、必然成交、行业必然淘汰等承诺。
 - 没有真实成果时明确写“需要补案例”，不能编造工作台、学员或客户结果。
-- 表达层按需调用 [`../../../../system/expression/oral-expression/spoken-argument-and-transition.md`](../../../../system/expression/oral-expression/spoken-argument-and-transition.md)。
+- 表达层按需调用 [`../../../../system/expression/oral.md`](../../../../system/expression/oral.md)。

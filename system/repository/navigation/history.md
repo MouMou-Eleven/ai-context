@@ -4,7 +4,7 @@
 
 | 要追溯什么 | 入口 |
 |---|---|
-| 个人成长、奖项与经历 | [个人时间线](../../../personal/timeline.md)、[成长路径](../../../personal/growth-path.md) |
+| 个人成长、奖项与经历 | [个人经历与阶段里程碑](../../../personal/timeline.md) |
 | 某个项目的决策与版本 | [项目入口](../../../work/projects/README.md)，再读该项目history/revisions |
 | 已退出主线项目 | [归档项目](../../../work/projects/archive/README.md) |
 | 仓库组织、规则或工具变化 | [治理修订](../revisions/README.md) |

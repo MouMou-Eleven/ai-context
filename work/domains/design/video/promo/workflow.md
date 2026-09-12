@@ -50,7 +50,7 @@
 | 技术交付 | 核对约定比例、时长、尺寸、编码、声音、源工程/可编辑参数与素材完整性 |
 | 证据与状态 | 保存成片/工程位置、客户反馈与验收状态；未验收就写未验收 |
 
-需要 AE 工程时必须交付实际工程；提示词里出现“AE 风格”不能满足此要求。需要参数可改动画时可从 [Remotion 能力说明](../../../../../system/skills/jianwei-ai-community-remotion-video/README.md) 进入，按其当前执行与验收契约开展。
+需要 AE 工程时必须交付实际工程；提示词里出现“AE 风格”不能满足此要求。需要参数可改动画时可从 [Remotion 能力说明](../../../other/skills/jianwei-ai-community-remotion-video/README.md) 进入，按其当前执行与验收契约开展。
 
 ## 6. 把本次结果变成下次可用经验
 

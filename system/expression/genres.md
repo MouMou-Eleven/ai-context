@@ -4,15 +4,15 @@
 
 | 主要成品 | 权威入口与必要补充 | 完成时重点核对 |
 |---|---|---|
-| 简单回复、事实说明 | [通用短卡](./README.md)；复杂书面说明再读[书面表达](./written-expression/README.md) | 直接回答实际问题，事实有依据，指代清楚；不为简单回复增加整套文稿结构 |
-| 培训课堂主文档 | [培训风格](../../work/domains/training/experience/jianwei-training-style.md)＋[培训方法入口](../../work/domains/training/experience/README.md)；需要朗读时补[口语表达](./oral-expression/README.md) | 面向学员，知识有承接，有必要的动作、例子或画面；讲师内部提醒与招生文案不混入正文 |
+| 简单回复、事实说明 | [通用短卡](./README.md)；复杂书面说明再读[书面表达](written.md) | 直接回答实际问题，事实有依据，指代清楚；不为简单回复增加整套文稿结构 |
+| 培训课堂主文档 | [培训风格](../../work/domains/training/experience/jianwei-training-style.md)＋[培训方法入口](../../work/domains/training/experience/README.md)；需要朗读时补[口语表达](oral.md) | 面向学员，知识有承接，有必要的动作、例子或画面；讲师内部提醒与招生文案不混入正文 |
 | 学员实操教程 | [教程写法](../../work/domains/training/experience/tutorial-writing.md)＋当前工具或任务证据 | 前提、操作、结果和失败分支可核验；读者能判断是否完成 |
-| 自媒体口播 | [视频脚本](../../work/domains/self-media/video-scripts/README.md)＋[口语表达](./oral-expression/README.md) | 听得懂、能讲出、有承接；观点有依据，结尾与实际目的匹配 |
-| 朋友圈、个人动态 | [朋友圈文案](../../work/domains/self-media/moments-copy/README.md)；以建委身份发布时补[个人表达偏好](../../personal/expression-preferences.md) | 具体事实或观点清楚，无虚构经历与反馈；不强制每条动态转化销售 |
+| 自媒体口播 | [视频脚本](../../work/domains/self-media/video-scripts/README.md)＋[口语表达](oral.md) | 听得懂、能讲出、有承接；观点有依据，结尾与实际目的匹配 |
+| 朋友圈、个人动态 | [朋友圈文案](../../work/domains/self-media/moments-copy/README.md)及该领域／所属项目的明确认可样稿（如有） | 具体事实或观点清楚，无虚构经历与反馈；不强制每条动态转化销售 |
 | 文章、标题、营销或社群文案 | [自媒体分类入口](../../work/domains/self-media/README.md)后进入对应类型；涉及产品补项目事实 | 发布渠道、主要目的和内容结构一致，权益与效果说明准确 |
-| 直播销售话术 | [直播销售](../../work/domains/self-media/live-sales/README.md)＋[口语表达](./oral-expression/README.md)＋所售项目事实 | 讲解、互动、异议和行动有实际承接；价格、权益、案例不从模板推导 |
+| 直播销售话术 | [直播销售](../../work/domains/self-media/live-sales/README.md)＋[口语表达](oral.md)＋所售项目事实 | 讲解、互动、异议和行动有实际承接；价格、权益、案例不从模板推导 |
 | 《飞书高效办公》出版正文 | [当前出版规则](../../work/projects/feishu-efficient-office/writing-style-analysis.md)＋当前章节；编辑改稿/交稿再读[出版验收](../../work/projects/feishu-efficient-office/publication-acceptance-checklist.md) | 章节与图文一致，小白可操作，保护已接受编辑稿；不套课堂口播规则 |
-| 项目方案与正式合作材料 | [书面表达](./written-expression/README.md)＋[对外交付边界](../../work/domains/other/commercial/experience/external-deliverable-language.md)＋项目事实；赛事/融资用途再读[专项规则](../../work/domains/other/commercial/experience/competition-and-investor-materials.md) | 按任务交代目标、依据、范围、行动、资源、验收及关键未定项，不把所有方案套成同一张八段模板 |
+| 项目方案与正式合作材料 | [书面表达](written.md)＋[对外交付边界](../../work/domains/other/commercial/experience/external-deliverable-language.md)＋项目事实；赛事/融资用途再读[专项规则](../../work/domains/other/commercial/experience/competition-and-investor-materials.md) | 按任务交代目标、依据、范围、行动、资源、验收及关键未定项，不把所有方案套成同一张八段模板 |
 
 ## 能力边界与未建体裁
 

@@ -17,6 +17,6 @@
 
 - 写清目标对象、使用场景、希望对方完成的一个动作和不能夸大的承诺边界。
 - 真实社群反馈、已验证话术和待测试版本分开记录。
-- 语言基础统一读取 [`../../../../system/expression/oral-expression/README.md`](../../../../system/expression/oral-expression/README.md)；本目录只维护社群场景的应用方法。
+- 语言基础统一读取 [`../../../../system/expression/oral.md`](../../../../system/expression/oral.md)；本目录只维护社群场景的应用方法。
 
 当前尚未收录独立社群话术案例；后续新增内容必须注明来源、渠道、日期和验证状态。

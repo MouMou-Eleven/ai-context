@@ -29,9 +29,9 @@
 ## 当前权威位置
 
 - 默认激活与目录边界：[`brain/ai-expression/README.md`](../../expression/README.md)
-- 跨领域中文质量：[`brain/ai-expression/cross-domain-rules.md`](../../expression/cross-domain-rules.md)
-- 口语化表达：[`brain/ai-expression/oral-expression/README.md`](../../expression/oral-expression/README.md)
-- 书面化表达：[`brain/ai-expression/written-expression/README.md`](../../expression/written-expression/README.md)
-- 中文数据集治理：[`brain/ai-expression/chinese-datasets/README.md`](../../expression/chinese-datasets/README.md)
+- 跨领域中文质量：[`brain/ai-expression/cross-domain-rules.md`](../../expression/corrections.md)
+- 口语化表达：[`brain/ai-expression/oral-expression/README.md`](../../expression/oral.md)
+- 书面化表达：[`brain/ai-expression/written-expression/README.md`](../../expression/written.md)
+- 中文数据集治理：[`brain/ai-expression/chinese-datasets/README.md`](../../expression/sources.md)
 
 本文件只保留修订原因和新旧差异，具体执行规则以上述当前入口为准。

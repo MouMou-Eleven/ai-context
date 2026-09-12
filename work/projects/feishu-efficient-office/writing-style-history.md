@@ -18,7 +18,7 @@
 
 # 建委写作风格说明书（给 AI 的风格 Prompt）
 
-> 中文基础质量统一服从 [`../../../../../brain/ai-expression/cross-domain-rules.md`](../../../system/expression/cross-domain-rules.md)。本文件只维护《飞书高效办公》的出版专项写作规则，不重复保存跨领域语言搭配。
+> 中文基础质量统一服从 [`../../../../../brain/ai-expression/cross-domain-rules.md`](../../../system/expression/corrections.md)。本文件只维护《飞书高效办公》的出版专项写作规则，不重复保存跨领域语言搭配。
 
 > 把这份内容喂给任何 AI，它就能理解建委的写作风格，并按此风格生成内容。
 >

@@ -34,7 +34,7 @@ self-media/
 
 - 自媒体、标题、口播、短视频和直播任务生成中文成品时，读取[表达短卡](../../../system/expression/README.md)及本目录对应体裁入口。
 - AI 表达负责中文语境、逻辑和质量；本目录负责标题、选题、文章、营销文案、朋友圈、社群话术、口播结构、直播销售、平台承接和内容复盘。
-- 通用口语表达、句子节奏和口语化论证统一读取[口语表达](../../../system/expression/oral-expression/README.md)；本目录只记录自媒体渠道和营销场景的应用，不复制通用口语规则。
+- 通用口语表达、句子节奏和口语化论证统一读取[口语表达](../../../system/expression/oral.md)；本目录只记录自媒体渠道和营销场景的应用，不复制通用口语规则。
 - 按实际任务补充必要的[技术解释方法](../training/experience/technical-explanation/README.md)，不因方法来自培训就带入社群事实。
 - 内容为某个项目服务时，根据本轮信息和仓库证据确认项目，再读取对应README；身份不明确时保持待确认，不能用课程或直播关键词默认关联会员社群。
 - 内容承担获客、产品价值解释、购买顾虑处理或商业承接任务时，组合[商业方法](../other/commercial/experience/content-demand-and-conversion.md)。是否组合由实际目的决定。
@@ -44,7 +44,7 @@ self-media/
 
 ## 语言质量规则
 
-中文搭配、逻辑和语境的问题按需读[跨领域表达](../../../system/expression/cross-domain-rules.md)。口播和直播按任务读[口语表达](../../../system/expression/oral-expression/README.md)，文章和正式图文读[书面表达](../../../system/expression/written-expression/README.md)。本目录不复制跨领域语言规则。
+中文搭配、逻辑和语境的问题按需读[跨领域表达](../../../system/expression/corrections.md)。口播和直播按任务读[口语表达](../../../system/expression/oral.md)，文章和正式图文读[书面表达](../../../system/expression/written.md)。本目录不复制跨领域语言规则。
 
 ## 写入规则
 

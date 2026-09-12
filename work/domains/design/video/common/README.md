@@ -10,7 +10,7 @@
 2. 拆出镜头编号、信息点、时长、画面动作、声音与素材依据，标明人工设计、实拍、AI 生成或合成方式；不是每个镜头都要生成。
 3. 需要重复角色或场景时建立可复用资产；先用成本可控的关键镜头验证角色、风格和动作。
 4. 按编号制作并记录工具版本、输入、提示词、成功条件与失败修正；精确文字或资料用可靠后期保证。
-5. 剪辑时检查连续性、节奏、声音与信息完整度；按需要调用 [AE 设计](./ae-production.md)、[AI 设计](../../common/ai-assisted-design.md) 或 [Remotion](../../../../../system/skills/jianwei-ai-community-remotion-video/README.md)。
+5. 剪辑时检查连续性、节奏、声音与信息完整度；按需要调用 [AE 设计](./ae-production.md)、[AI 设计](../../common/ai-assisted-design.md) 或 [Remotion](../../../other/skills/jianwei-ai-community-remotion-video/README.md)。
 6. 最终按约定检查比例、时长、清晰度、字幕、版权与可编辑工程；记录真实验收状态。
 
 中文脚本、旁白与字幕先读[表达短卡](../../../../../system/expression/README.md)。跨制作步骤按[设计流程](../../common/production-workflow.md)组合，资料写入遵守[统一更新流程](../../../../../system/repository/ingestion-workflow.md)。
@@ -19,7 +19,7 @@
 
 - [AE制作与工程交付](./ae-production.md)：信息包装、合成、字幕、源工程与最终导出。
 - [生成工具](./tools/README.md)：先确认已选工具，再查版本与参数。
-- MG是动态图形表达方式，可用于企业、产品或教育；先确定信息结构、图形层级、转场和可读停留，再按交付条件选AE或[Remotion](../../../../../system/skills/jianwei-ai-community-remotion-video/README.md)。目前没有独立经过验收的通用MG案例，不由工具标签补造能力证据。
+- MG是动态图形表达方式，可用于企业、产品或教育；先确定信息结构、图形层级、转场和可读停留，再按交付条件选AE或[Remotion](../../../other/skills/jianwei-ai-community-remotion-video/README.md)。目前没有独立经过验收的通用MG案例，不由工具标签补造能力证据。
 
 ## 资料主位置
 

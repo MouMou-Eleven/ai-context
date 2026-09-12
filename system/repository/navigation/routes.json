@@ -262,7 +262,7 @@
       "priority": 50,
       "dependencies": [
         {
-          "path": "system/skills/qingyun-ip-poster/README.md",
+          "path": "work/domains/other/skills/qingyun-ip-poster/README.md",
           "whenAny": [
             "个人IP",
             "个人 IP",
@@ -318,7 +318,7 @@
           "intents": []
         },
         {
-          "path": "system/skills/jianwei-ai-community-remotion-video/README.md",
+          "path": "work/domains/other/skills/jianwei-ai-community-remotion-video/README.md",
           "whenAny": [
             "参数化",
             "React",
@@ -523,7 +523,7 @@
         "技能仓库"
       ],
       "excludeAny": [],
-      "entry": "system/skills/README.md",
+      "entry": "work/domains/other/skills/README.md",
       "priority": 55,
       "dependencies": []
     },
@@ -538,11 +538,11 @@
         "可编辑动画工程"
       ],
       "excludeAny": [],
-      "entry": "system/skills/jianwei-ai-community-remotion-video/README.md",
+      "entry": "work/domains/other/skills/jianwei-ai-community-remotion-video/README.md",
       "priority": 95,
       "dependencies": [
         {
-          "path": "system/skills/jianwei-ai-community-remotion-video/upstream.json",
+          "path": "work/domains/other/skills/jianwei-ai-community-remotion-video/upstream.json",
           "whenAny": [],
           "intents": []
         },
@@ -563,11 +563,11 @@
         "实验数据绘图"
       ],
       "excludeAny": [],
-      "entry": "system/skills/editaplot/README.md",
+      "entry": "work/domains/other/skills/editaplot/README.md",
       "priority": 95,
       "dependencies": [
         {
-          "path": "system/skills/editaplot/upstream.json",
+          "path": "work/domains/other/skills/editaplot/upstream.json",
           "whenAny": [],
           "intents": []
         }
@@ -582,11 +582,11 @@
         "职业工作台"
       ],
       "excludeAny": [],
-      "entry": "system/skills/jianwei-ai-learning-community-workbench/README.md",
+      "entry": "work/domains/other/skills/jianwei-ai-learning-community-workbench/README.md",
       "priority": 95,
       "dependencies": [
         {
-          "path": "system/skills/jianwei-ai-learning-community-workbench/upstream.json",
+          "path": "work/domains/other/skills/jianwei-ai-learning-community-workbench/upstream.json",
           "whenAny": [],
           "intents": []
         }
@@ -604,11 +604,11 @@
         "嘉宾海报"
       ],
       "excludeAny": [],
-      "entry": "system/skills/qingyun-ip-poster/README.md",
+      "entry": "work/domains/other/skills/qingyun-ip-poster/README.md",
       "priority": 95,
       "dependencies": [
         {
-          "path": "system/skills/qingyun-ip-poster/upstream.json",
+          "path": "work/domains/other/skills/qingyun-ip-poster/upstream.json",
           "whenAny": [],
           "intents": []
         }
@@ -777,7 +777,7 @@
       "priority": 50,
       "dependencies": [
         {
-          "path": "personal/expression-preferences.md",
+          "path": "system/expression/README.md",
           "whenAny": [
             "朋友圈",
             "个人IP",
@@ -932,7 +932,7 @@
       ],
       "requiresChinese": true,
       "paths": [
-        "system/expression/oral-expression/README.md"
+        "system/expression/oral.md"
       ]
     },
     {
@@ -957,7 +957,7 @@
         "直播话术"
       ],
       "paths": [
-        "system/expression/written-expression/README.md"
+        "system/expression/written.md"
       ]
     },
     {

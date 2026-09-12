@@ -87,7 +87,7 @@ def check_indexes(root, files):
 
 def check_skills(root):
     errors = []
-    base = root / 'system/skills'
+    base = root / 'work/domains/other/skills'
     for folder in sorted(base.iterdir()) if base.exists() else []:
         if not folder.is_dir():
             continue

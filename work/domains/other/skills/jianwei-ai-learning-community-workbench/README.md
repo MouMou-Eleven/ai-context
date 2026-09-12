@@ -20,18 +20,18 @@
 
 - Skill 名称：`jianwei-ai-learning-community-workbench`
 - Codex 调用：`$jianwei-ai-learning-community-workbench`
-- 实体入口：[`skill/SKILL.md`](./skill/SKILL.md)
-- 来源记录：[`upstream.json`](./upstream.json)
+- 实体入口：[`skill/SKILL.md`](skill/SKILL.md)
+- 来源记录：[`upstream.json`](upstream.json)
 
 ### 实体参考索引
 
 以下只在执行或维护对应内容时按需读取，不为查阅能力一次性加载。
 
-- [代理配置](./skill/agents/openai.yaml)
-- [对话协议](./skill/references/conversation-protocol.md)
-- [角色适配](./skill/references/role-adaptation.md)
-- [设计系统](./skill/references/design-system.md)
-- [质量门槛](./skill/references/quality-gate.md)
+- [代理配置](skill/agents/openai.yaml)
+- [对话协议](skill/references/conversation-protocol.md)
+- [角色适配](skill/references/role-adaptation.md)
+- [设计系统](skill/references/design-system.md)
+- [质量门槛](skill/references/quality-gate.md)
 
 ## 能力范围
 

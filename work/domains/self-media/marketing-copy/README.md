@@ -17,6 +17,6 @@
 
 - 先说明面向谁、解决什么问题、凭什么相信，再写产品或行动，不用空泛承诺代替证据。
 - 明确区分已验证结果、创作者判断和待测试假设。
-- 语言基础统一读取 [`../../../../system/expression/README.md`](../../../../system/expression/README.md)；口语化文本再读取 [`../../../../system/expression/oral-expression/README.md`](../../../../system/expression/oral-expression/README.md)。本目录只维护营销目标、证据组织和行动设计。
+- 语言基础统一读取 [`../../../../system/expression/README.md`](../../../../system/expression/README.md)；口语化文本再读取 [`../../../../system/expression/oral.md`](../../../../system/expression/oral.md)。本目录只维护营销目标、证据组织和行动设计。
 
 当前尚未收录独立营销文章案例库；后续新增内容必须注明渠道、目标、版本和验证状态。

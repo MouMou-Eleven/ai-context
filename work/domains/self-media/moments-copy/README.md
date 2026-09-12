@@ -17,6 +17,6 @@
 
 - 一条动态只承担一个主要目的：展示结果、表达观点、记录过程或引导一个行动。
 - 个人经历、项目事实和待验证判断分开写，不编造数据、客户和效果。
-- 语言基础统一读取 [`../../../../system/expression/oral-expression/README.md`](../../../../system/expression/oral-expression/README.md)；本目录只维护朋友圈的长度、节奏和上下文呈现。
+- 语言基础统一读取 [`../../../../system/expression/oral.md`](../../../../system/expression/oral.md)；本目录只维护朋友圈的长度、节奏和上下文呈现。
 
 当前尚未收录独立朋友圈案例库；后续新增内容必须注明发布时间、场景和反馈。

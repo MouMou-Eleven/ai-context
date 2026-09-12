@@ -56,7 +56,7 @@ def build_knowledge(root, files, metadata):
     roots = ['personal', 'brain', 'work', 'system']
     root_labels = dict(zip(roots, ['个人信息', '建委大脑', '工作领域与项目', 'AI协作与维护']))
     hidden = []
-    for path in (root / 'system/skills').glob('*/upstream.json'):
+    for path in (root / 'work/domains/other/skills').glob('*/upstream.json'):
         data = json.loads(read_json(path))
         hidden.append((path.parent / data['sourcePath']).relative_to(root).as_posix())
     tree = {}
@@ -111,8 +111,6 @@ def outputs(root=ROOT):
     metadata['descriptions'] = {name: text for name, text in metadata['descriptions'].items() if name in current_paths}
     metadata['knowledgeLabels'] = {name: text for name, text in metadata.get('knowledgeLabels', {}).items() if name in current_paths}
     metadata['descriptions']['llms.txt'] = '兼容调用的极短指针，完整任务指南位于系统导航'
-    if 'system/expression/chinese-datasets/grammar-and-error-checklist.md' in current_paths:
-        metadata['descriptions']['system/expression/chinese-datasets/grammar-and-error-checklist.md'] = '按需读取的中文语法与病句详查'
     original = (root / 'system/repository/navigation/STRUCTURE.md').read_text(encoding='utf-8-sig')
     tree = build_tree(root, files, metadata['descriptions'])
     match = re.search(r'```text\s*\n.*?\n```', original, re.S)

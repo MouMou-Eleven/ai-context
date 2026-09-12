@@ -7,7 +7,7 @@
 | 内容 | 入口 | 用途 |
 |---|---|---|
 | 创意前端提示词方法 | [`creative-frontend-prompt-patterns.md`](./creative-frontend-prompt-patterns.md) | 视频、3D、滚动叙事和空间画廊的提示词结构 |
-| Skill 仓库 | [`skill-repository/`](../../../../system/skills/README.md) | 保存可直接读取或安装的 Skill 实体，并固定上游地址、版本和更新方式 |
+| Skill 仓库 | [`skill-repository/`](../../other/skills/README.md) | 保存可直接读取或安装的 Skill 实体，并固定上游地址、版本和更新方式 |
 | 原始参考材料 | [`reference-materials/`](./reference-materials/README.md) | 核对原始提示词与交互机制 |
 
 ## 写入规则

@@ -25,14 +25,14 @@ class Routes(unittest.TestCase):
             result = router.resolve('给会员社群写一节' + tool + '课程', 'create')
             self.assertEqual(result['selectedCandidate'], 'community')
             self.assertIn('work/domains/training/experience/jianwei-training-style.md', result['read'])
-            self.assertTrue(any('/development/' in path or 'system/skills/' in path for path in result['read']))
+            self.assertTrue(any('/development/' in path or 'work/domains/other/skills/' in path for path in result['read']))
 
     def test_external_training_keeps_tool_as_dependency(self):
         for tool in ['秒哒', 'Origin科研图']:
             result = router.resolve('给企业培训讲' + tool, 'create')
             self.assertEqual(result['selectedCandidate'], 'external-training')
             self.assertFalse(any('paid-community-course' in path for path in result['read']))
-            self.assertTrue(any('/development/' in path or 'system/skills/' in path for path in result['read']))
+            self.assertTrue(any('/development/' in path or 'work/domains/other/skills/' in path for path in result['read']))
 
     def test_remotion_microcourse_retains_design_ownership(self):
         result = router.resolve('给教师用Remotion做MG微课', 'create')
@@ -110,7 +110,7 @@ class Routes(unittest.TestCase):
         result = router.resolve('查个人简介', 'read')
         self.assertIn('system/expression/README.md', result['read'])
         self.assertNotIn('system/expression/genres.md', result['read'])
-        self.assertFalse(any('/oral-expression/' in path or '/written-expression/' in path for path in result['read']))
+        self.assertFalse(any(path in {'system/expression/oral.md', 'system/expression/written.md'} for path in result['read']))
 
     def test_mg_is_a_technique_not_automatic_teacher_ownership(self):
         for task, expected in [('做企业MG动画宣传片', 'enterprise-video'), ('做MG动画', 'video')]:
@@ -125,14 +125,14 @@ class Routes(unittest.TestCase):
 
     def test_genre_selection_does_not_load_all_modes(self):
         result = router.resolve('写一份自然口播稿', 'create')
-        self.assertIn('system/expression/oral-expression/README.md', result['read'])
-        self.assertNotIn('system/expression/written-expression/README.md', result['read'])
+        self.assertIn('system/expression/oral.md', result['read'])
+        self.assertNotIn('system/expression/written.md', result['read'])
 
     def test_member_course_promotion_is_self_media_with_project_facts(self):
         result = router.resolve('给会员课程写朋友圈宣传', 'create')
         self.assertEqual(result['selectedCandidate'], 'self-media')
         self.assertIn('work/projects/paid-community-course/README.md', result['read'])
-        self.assertIn('personal/expression-preferences.md', result['read'])
+        self.assertIn('system/expression/README.md', result['read'])
         self.assertFalse(any('/training/experience/' in path for path in result['read']))
 
     def test_channel_output_and_training_fact_boundaries(self):
@@ -166,10 +166,10 @@ class Routes(unittest.TestCase):
         result = router.resolve('修改并沉淀企业培训课件', 'write')
         self.assertIn('work/domains/training/experience/jianwei-training-style.md', result['read'])
         self.assertIn('system/expression/genres.md', result['read'])
-        self.assertNotIn('system/expression/written-expression/README.md', result['read'])
+        self.assertNotIn('system/expression/written.md', result['read'])
         result = router.resolve('写一份企业培训课件朗读稿', 'create')
-        self.assertIn('system/expression/oral-expression/README.md', result['read'])
-        self.assertNotIn('system/expression/written-expression/README.md', result['read'])
+        self.assertIn('system/expression/oral.md', result['read'])
+        self.assertNotIn('system/expression/written.md', result['read'])
 
 
 class ContentValidation(unittest.TestCase):
@@ -219,7 +219,7 @@ class ContentValidation(unittest.TestCase):
         self.assertTrue(any('missing registry entry: work/projects/cases/new-case.md' in item for item in validator.check_registries(self.root)))
 
     def test_skill_requires_capability_and_authorship_metadata(self):
-        base = 'system/skills/sample/'
+        base = 'work/domains/other/skills/sample/'
         self.write(base + 'README.md', '# Skill\n')
         self.write(base + 'skill/SKILL.md', '# Skill source\n')
         self.write(base + 'upstream.json', json.dumps({'schemaVersion': 1, 'id': 'sample', 'origin': 'internal', 'sourcePath': 'skill', 'storageMode': 'skill-snapshot', 'documentationReviewedAt': '2026-09-12'}))
@@ -273,11 +273,11 @@ class ContentValidation(unittest.TestCase):
 
     def test_knowledge_view_has_four_roots_without_readme_or_skill_sources(self):
         files = ['personal/README.md', 'brain/README.md', 'work/README.md', 'system/README.md',
-                 'work/projects/cases/README.md', 'work/projects/cases/demo.md', 'system/skills/demo/README.md',
-                 'system/skills/demo/upstream.json', 'system/skills/demo/skill/SKILL.md', 'system/repository/maintenance/check.py']
+                 'work/projects/cases/README.md', 'work/projects/cases/demo.md', 'work/domains/other/skills/demo/README.md',
+                 'work/domains/other/skills/demo/upstream.json', 'work/domains/other/skills/demo/skill/SKILL.md', 'system/repository/maintenance/check.py']
         for name in files:
             self.write(name, '# Test\n')
-        self.write('system/skills/demo/upstream.json', json.dumps({'sourcePath': 'skill'}))
+        self.write('work/domains/other/skills/demo/upstream.json', json.dumps({'sourcePath': 'skill'}))
         tree = structure.build_knowledge(self.root, files, {})
         self.assertEqual([node['path'] for node in tree['children']], ['personal', 'brain', 'work', 'system'])
         paths = []
@@ -287,7 +287,7 @@ class ContentValidation(unittest.TestCase):
                 collect(child)
         collect(tree)
         self.assertIn('work/projects/cases/demo.md', paths)
-        self.assertIn('system/skills/demo', paths)
+        self.assertIn('work/domains/other/skills/demo', paths)
         self.assertFalse(any(path.endswith('README.md') or '/skill/' in path or path.endswith('.py') for path in paths))
 
     def test_related_asset_generation_uses_registry_and_removes_old_rows(self):
@@ -298,11 +298,27 @@ class ContentValidation(unittest.TestCase):
             self.write(name, '# Entry\n')
         navigation.sync(root=self.root)
         path = self.root / 'work/domains/design/README.md'
+        self.assertEqual((self.root / 'personal/business-overview.md').read_text(encoding='utf-8'), '# Entry\n')
         self.assertIn('[Demo](../../projects/cases/demo.md)', path.read_text(encoding='utf-8'))
         registry['cases'][0]['domainEntries'] = []
         self.write('system/repository/navigation/projects.json', json.dumps(registry))
         navigation.sync(root=self.root)
         self.assertNotIn('[Demo]', path.read_text(encoding='utf-8'))
+
+    def test_personal_navigation_uses_confirmed_priority(self):
+        names = ['business-overview.md', 'credentials.md', 'profile.md', 'timeline.md']
+        files = ['personal/README.md'] + ['personal/' + name for name in names]
+        for name in files:
+            self.write(name, '# Entry\n')
+        metadata = json.loads((ROOT / 'system/repository/maintenance/structure-descriptions.json').read_text(encoding='utf-8'))
+        tree = structure.build_knowledge(self.root, files, metadata)
+        self.assertEqual([node['path'] for node in tree['children'][0]['children']],
+                         ['personal/' + name for name in ['profile.md', 'timeline.md', 'credentials.md', 'business-overview.md']])
+
+    def test_write_flow_requires_capability_evidence_discovery(self):
+        policy = json.loads((ROOT / 'system/repository/maintenance/validation-policy.json').read_text(encoding='utf-8'))
+        self.assertIn('system/repository/capability-evidence.md',
+                      policy['requiredLinks']['system/repository/ingestion-workflow.md'])
 
     def test_staged_snapshot_ignores_unstaged_repairs_and_does_not_stage(self):
         git(self.root, 'init', '-q')

@@ -63,7 +63,7 @@ def read_json(path):
 
 def snapshot_roots(root=ROOT):
     results = []
-    base = root / 'system/skills'
+    base = root / 'work/domains/other/skills'
     for path in base.glob('*/upstream.json'):
         try:
             data = json.loads(read_json(path))

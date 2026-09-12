@@ -2,11 +2,11 @@
 
 | 入口 | 回答什么 |
 |---|---|
-| [领域知识](./domains/README.md) | 这类工作怎样做：设计、开发、培训、自媒体和其他业务 |
+| [领域知识](./domains/README.md) | 这类工作怎样做：设计、开发、培训、自媒体和其他领域 |
 | [项目与案例](./projects/README.md) | 这件事具体怎样了：目标、事实、进度、交付物和复盘证据 |
 
 先按最终任务选领域，再查对应项目。AI、AE、MG等是主题或制作手段，不再分成与业务竞争的上级目录。一次项目可使用多个领域的方法，项目正文始终只有一份。
 
-只查状态直接读项目；生成中文成品叠加[表达标准](../system/expression/README.md)，执行工具再查[Skill](../system/skills/README.md)。必要的跨领域调用由AI判断，无需建委逐一指定。
+只查状态直接读项目；生成中文成品叠加[表达标准](../system/expression/README.md)，执行工具再查[Skill](domains/other/skills/README.md)。必要的跨领域调用由AI判断，无需建委逐一指定。
 
 沉淀按[更新流程](../system/repository/ingestion-workflow.md)：事实进项目或案例，复用步骤进领域，来源与验证程度写清；索引、相关项目入口和结构由AI同步。

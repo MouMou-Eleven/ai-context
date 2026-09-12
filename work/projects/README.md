@@ -6,7 +6,7 @@
 
 外部培训入口当前是记录容器，不能据此推造企业、图书馆、夜校的具体场次。待归属材料仍在[培训资料](../domains/training/materials/README.md)。会员社群与外训课程分别判断身份。
 
-跨项目可复用做法进入[领域知识](../domains/README.md)，执行能力进入[Skill库](../../system/skills/README.md)。正文只存一份，通过登记生成相关领域入口；[项目模板](../../system/repository/templates/project.md)规定最小事实和更新责任。
+跨项目可复用做法进入[领域知识](../domains/README.md)，执行能力进入[Skill库](../domains/other/skills/README.md)。正文只存一份，通过登记生成相关领域入口；[项目模板](../../system/repository/templates/project.md)规定最小事实和更新责任。
 
 ## 外部源码入口
 

@@ -12,18 +12,15 @@
     "personal/profile.md",
     "personal/business-overview.md",
     "personal/credentials.md",
-    "personal/growth-path.md",
-    "personal/capabilities.md",
+    "personal/timeline.md",
     "brain/README.md",
     "brain/thinking-and-decisions.md",
     "brain/business-cognition.md",
     "system/expression/README.md",
-    "system/expression/cross-domain-rules.md",
-    "system/expression/oral-expression/README.md",
-    "system/expression/written-expression/README.md",
-    "system/expression/experience/README.md",
-    "system/expression/chinese-datasets/README.md",
-    "system/expression/chinese-datasets/grammar-and-error-checklist.md",
+    "system/expression/corrections.md",
+    "system/expression/oral.md",
+    "system/expression/written.md",
+    "system/expression/sources.md",
     "work/README.md",
     "work/domains/design/README.md",
     "work/domains/README.md",
@@ -54,8 +51,7 @@
     "work/projects/README.md",
     "system/repository/navigation/task-guide.md",
     "system/expression/genres.md",
-    "system/expression/evaluation.md",
-    "personal/expression-preferences.md"
+    "system/expression/evaluation.md"
   ],
   "managedDirectories": [
     "work/domains/design/graphic/ppt",
@@ -66,7 +62,7 @@
     "work/domains/design/common",
     "work/domains/development/tools",
     "work/domains/development/experience",
-    "system/skills",
+    "work/domains/other/skills",
     "work/projects",
     "work/domains/training/experience",
     "work/domains/training/outlines",
@@ -100,9 +96,29 @@
     "work/design",
     "work/other",
     "STRUCTURE.md",
-    "STRUCTURE.html"
+    "STRUCTURE.html",
+    "system/skills",
+    "personal/capabilities.md",
+    "personal/growth-path.md",
+    "personal/expression-preferences.md",
+    "system/expression/chinese-datasets",
+    "system/expression/oral-expression",
+    "system/expression/written-expression",
+    "system/expression/experience"
   ],
   "requiredLinks": {
+    "system/repository/ingestion-workflow.md": [
+      "system/repository/capability-evidence.md",
+      "system/expression/sources.md",
+      "work/domains/other/skills/README.md"
+    ],
+    "personal/README.md": [
+      "personal/profile.md",
+      "personal/timeline.md",
+      "personal/credentials.md",
+      "personal/business-overview.md",
+      "system/repository/capability-evidence.md"
+    ],
     "work/domains/training/README.md": [
       "work/projects/paid-community-course/README.md",
       "work/projects/external-training/README.md",

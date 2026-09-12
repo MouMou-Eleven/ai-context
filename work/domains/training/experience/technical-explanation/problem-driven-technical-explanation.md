@@ -4,7 +4,7 @@
 > 提炼日期：2026-07-23
 > 最近修订：2026-09-01，根据会员课程规则复核改为“先筛选学习价值，再选择解释角度”
 > 适用范围：AI课程、技术科普文章和面向普通人的概念讲解；视频口播需要解释技术问题时自动引用本方法，不要求用户明确说组合，也不带入培训项目事实
-> 首个提炼来源：[`../../../../../system/expression/chinese-datasets/feitian-shanke/raw/feitian-shanke-transcript.txt`](../../../../../system/expression/chinese-datasets/feitian-shanke/raw/feitian-shanke-transcript.txt)
+> 首个提炼来源：[表达来源O2](../../../../../system/expression/sources.md)，包含原材料状态与固定旧版原稿入口。
 > 使用方式：按方法调用，不以作者姓名作为日常触发词；后续可继续吸收其他优秀来源修订本方法。
 
 ## 来源扩展与冲突处理

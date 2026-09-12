@@ -6,7 +6,7 @@
 |---|---|
 | [工具知识包](./tools/README.md) | 百度秒哒等平台的功能、限制与实战操作 |
 | [开发经验](./experience/README.md) | 跨工具流程、创意前端与参考材料 |
-| [Skill能力库](../../../system/skills/README.md) | 可编辑动画、职业工作台、科研图与IP海报等能力及来源 |
+| [Skill能力库](../other/skills/README.md) | 可编辑动画、职业工作台、科研图与IP海报等能力及来源 |
 | [项目与案例](../../projects/README.md) | 继续具体开发任务；项目事实不存工具目录 |
 
 ## 调用边界

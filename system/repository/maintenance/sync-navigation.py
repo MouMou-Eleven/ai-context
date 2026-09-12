@@ -76,7 +76,6 @@ def outputs(root=ROOT):
             original = (root / name).read_text(encoding='utf-8-sig')
         result[name] = block(original, marker, body)
 
-    update('personal/business-overview.md', 'projects', asset_table('personal/business-overview.md', projects, ''))
     update('work/projects/README.md', 'projects', asset_table('work/projects/README.md', projects, '## 当前项目与活动入口'))
     update('work/projects/cases/README.md', 'cases', asset_table('work/projects/cases/README.md', cases, '## 已收录案例'))
     update('work/projects/archive/README.md', 'archived-projects', asset_table('work/projects/archive/README.md', archived, '## 已归档入口'))

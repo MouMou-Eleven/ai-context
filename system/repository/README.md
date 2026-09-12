@@ -11,6 +11,7 @@
 | [STRUCTURE](./navigation/STRUCTURE.md) / [交互结构](./navigation/STRUCTURE.html) | 完整文件职责与可展开结构 |
 | [navigation/README.md](./navigation/README.md) | 任务路由、项目登记、能力发现与接入 |
 | [ingestion-workflow.md](./ingestion-workflow.md) | 任何新增/改动都要执行的更新流程 |
+| [capability-evidence.md](./capability-evidence.md) | 每次沉淀后由AI依据独立实践更新个人能力摘要，防止收藏即掌握 |
 | [templates/README.md](./templates/README.md) | 案例、方法与项目入口的最小记录模板 |
 | [roadmap.md](./roadmap.md) | 持续维护顺序、真实任务评估与未来检索升级条件 |
 | [versioned-knowledge-policy.md](./versioned-knowledge-policy.md) | 动态事实的来源、版本与取代关系 |

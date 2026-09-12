@@ -7,12 +7,12 @@
 
 | 你要做什么 | 先读能力卡 | 来源 | 可交付能力 |
 |---|---|---|---|
-| 用一句话、脚本或参考图制作可编辑视频、片头或MG动效 | [建委Remotion视频](./jianwei-ai-community-remotion-video/README.md) | 杨建委自研，参考外部规范 | 参数化Remotion工程、完整低清预览与按当前授权渲染的成片 |
-| 用实验数据做Origin科研图，保留可编辑项目 | [EditaPlot](./editaplot/README.md) | 第三方：[hang-jin/editaplot](https://github.com/hang-jin/editaplot) | Origin可编辑OPJU与PNG/PDF/TIF |
-| 按职业、角色或真实工作场景设计AI工作台 | [建委身份工作台](./jianwei-ai-learning-community-workbench/README.md) | 杨建委自研 | 工作台方案、信息架构、跨端状态与实现要求 |
-| 制作个人IP、观点、活动嘉宾或创意角色系列海报 | [青云IP海报](./qingyun-ip-poster/README.md) | 第三方：[qingyunAGI/qingyun-ip-poster](https://github.com/qingyunAGI/qingyun-ip-poster) | 3:4/9:16海报视觉系统、系列规则与质检 |
+| 用一句话、脚本或参考图制作可编辑视频、片头或MG动效 | [建委Remotion视频](jianwei-ai-community-remotion-video/README.md) | 杨建委自研，参考外部规范 | 参数化Remotion工程、完整低清预览与按当前授权渲染的成片 |
+| 用实验数据做Origin科研图，保留可编辑项目 | [EditaPlot](editaplot/README.md) | 第三方：[hang-jin/editaplot](https://github.com/hang-jin/editaplot) | Origin可编辑OPJU与PNG/PDF/TIF |
+| 按职业、角色或真实工作场景设计AI工作台 | [建委身份工作台](jianwei-ai-learning-community-workbench/README.md) | 杨建委自研 | 工作台方案、信息架构、跨端状态与实现要求 |
+| 制作个人IP、观点、活动嘉宾或创意角色系列海报 | [青云IP海报](qingyun-ip-poster/README.md) | 第三方：[qingyunAGI/qingyun-ip-poster](https://github.com/qingyunAGI/qingyun-ip-poster) | 3:4/9:16海报视觉系统、系列规则与质检 |
 
-Skill是能力依赖，不是业务项目归属。商单与实践事实进入[项目与案例](../../work/projects/README.md)，视频方法从[设计视频](../../work/domains/design/video/README.md)读取；名称中的“community/社群”不表示某个课程事实属于会员课程。一个主任务可按需要引用多个能力卡，相关领域只保留链接，不复制实体。
+Skill是能力依赖，不是业务项目归属。商单与实践事实进入[项目与案例](../../../projects/README.md)，视频方法从[设计视频](../../design/video/README.md)读取；名称中的“community/社群”不表示某个课程事实属于会员课程。一个主任务可按需要引用多个能力卡，相关领域只保留链接，不复制实体。
 
 ## 查看、执行与来源
 
@@ -29,6 +29,6 @@ Skill是能力依赖，不是业务项目归属。商单与实践事实进入[�
 - 自研更新：核对主文件、引用契约、Schema、脚本与代理配置；从实际案例提炼通用能力，增加 `workflowRevision`、更新同步日期并记录必要变更原因。仅改说明不增加实体版本号。
 - 第三方更新：先比较固定commit与候选commit的许可、依赖、结构和行为差异，再整体替换已跟踪快照；更新commit、同步日和README，并验证实体完整性及适用自检。
 - `source/` 或第三方 `skill/` 是完整供应商快照，不直接手改；需要补丁时另存并写明重放方式。自研 `skill/` 按自己的版本流程维护。
-- 保留LICENSE、NOTICE、依赖锁文件和运行脚本；不入库 `.git/`、环境、缓存、输出、凭据或个人输入。`system/repository/navigation/STRUCTURE.md`仅展开能力条目，不遍历完整外部源码。
+- 保留LICENSE、NOTICE、依赖锁文件和运行脚本；不入库 `.git/`、环境、缓存、输出、凭据或个人输入。日常知识导航仅展示能力条目，完整文件树仍可展开源码。
 - `sourcePath`相对条目目录解析；需要完整运行时的Skill从该来源根目录检查依赖。当前四项仍分别使用 `source/` 或 `skill/`，迁移能力库不改变快照内部路径或实体版本。
 - 维护完成后运行仓库链接/元数据/快照校验，必要时执行对应Skill验证；没运行的测试明确记录。更新不等于已获部署、发布或对外发送授权。

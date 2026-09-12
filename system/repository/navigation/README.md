@@ -21,7 +21,7 @@ AI访问仓库先核对分支/commit或读取时间，读AGENTS和llms，再进�
 
 新项目登记projects；新能力或任务入口登记routes，并更新对应领域README及路由用例。方法细节放唯一来源，不塞到根路由。运行维护命令重建llms、项目表和结构；派生结果不可手工另写一套。
 
-`projects`登记长期项目与活动容器，`cases`登记独立实践记录，`archivedProjects`登记已退出主线的项目。每项只维护ID、名称、类型、路径和领域关系，不重复进度、价格与验收结果。`domainEntries`列出应发现该资产的领域README；生成器更新其中的`generated-related-assets`区块，同时刷新项目、案例、归档总表和个人业务导航。撤销关联时移除旧行，手写用途与方法放生成标记之外。
+`projects`登记长期项目与活动容器，`cases`登记独立实践记录，`archivedProjects`登记已退出主线的项目。每项只维护ID、名称、类型、路径和领域关系，不重复进度、价格与验收结果。`domainEntries`列出应发现该资产的领域README；生成器更新其中的`generated-related-assets`区块，同时刷新项目、案例与归档总表。个人概要不生成完整项目表，只在个人方向或能力证据变化时由AI更新。撤销关联时移除旧行，手写用途与方法放生成标记之外。
 
 中文输出与写库独立判断。例：`python system/repository/maintenance/context-route.py --task "修改并沉淀企业培训课件" --intent create --write-repository`。中文回复默认使用表达短卡，纯工具执行可加`--no-chinese-output`；简单查询不读取所有体裁。`--intent write`兼容旧调用并默认开启写库，不关闭中文规则。
 

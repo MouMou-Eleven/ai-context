@@ -9,7 +9,6 @@
 | 项目 | 归档原因 | 需要时怎样使用 |
 |---|---|---|
 | [VideoAI](./videoai/README.md) | 后续提及和持续维护概率较低 | 仅在追溯产品、成本或旧定价方案时读取 |
-| [星火映果州 VR 交互课件](./xinghuo-ying-guozhou-vr-courseware/README.md) | 属于已沉淀的具体案例，不再作为主线项目 | 仅在追溯该案例或 Nibiru 交互逻辑时读取 |
 | [OpenClaw Agent](./openclaw-agent/README.md) | 不再作为长期项目维护 | 仅在追溯旧本地 Agent 架构时读取；当前环境必须重新核验 |
 
 ## 使用边界
@@ -25,5 +24,4 @@
 |---|---|---|
 | 已归档 | [OpenClaw Agent](openclaw-agent/README.md) | 智能体项目历史 |
 | 已归档 | [VideoAI](videoai/README.md) | 营销视频平台历史 |
-| 已归档 | [星火映果州 VR 交互课件](xinghuo-ying-guozhou-vr-courseware/README.md) | VR教育作品历史 |
 <!-- generated-archived-projects:end -->

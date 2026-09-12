@@ -9,7 +9,7 @@
 | [工作与项目](./work/README.md) | 各类工作的做法，以及具体项目与商单 |
 | [AI协作与维护](./system/README.md) | 表达标准、Skill能力、仓库运行与设备环境 |
 
-[查看分级导航](./system/repository/navigation/STRUCTURE.html) · [完整文件结构](./system/repository/navigation/STRUCTURE.md) · [找项目](./work/projects/README.md) · [查Skill](./system/skills/README.md)
+[查看分级导航](./system/repository/navigation/STRUCTURE.html) · [完整文件结构](./system/repository/navigation/STRUCTURE.md) · [找项目](./work/projects/README.md) · [查Skill](work/domains/other/skills/README.md)
 
 ## 从任务出发
 

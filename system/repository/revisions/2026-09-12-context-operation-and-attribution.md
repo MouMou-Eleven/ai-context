@@ -17,7 +17,7 @@
 | 写入后索引与摘要依赖用户提醒 | 统一写入流程、任务/项目登记、生成入口、结构同步、README覆盖、暂存版本校验与CI |
 | 根入口机械优先于更新证据 | 按确认来源、时间、范围判断事实，冲突同步入口；历史不是当前执行规则 |
 
-相关入口：[培训归属](../../../work/domains/training/attribution-and-updates.md)、[制作协作](../../../work/domains/design/common/production-workflow.md)、[Skill能力](../../skills/README.md)、[出版项目](../../../work/projects/feishu-efficient-office/README.md)、[写入流程](../ingestion-workflow.md)、[后续演进](../roadmap.md)。
+相关入口：[培训归属](../../../work/domains/training/attribution-and-updates.md)、[制作协作](../../../work/domains/design/common/production-workflow.md)、[Skill能力](../../../work/domains/other/skills/README.md)、[出版项目](../../../work/projects/feishu-efficient-office/README.md)、[写入流程](../ingestion-workflow.md)、[后续演进](../roadmap.md)。
 
 ## 兼容与边界
 

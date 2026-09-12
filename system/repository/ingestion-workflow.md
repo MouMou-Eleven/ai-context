@@ -17,7 +17,7 @@
 | 商单/实践案例 | work/projects/cases或既有项目内，记录输入、过程、选择、失败、结果和证据；不在每个领域再建一份 |
 | 可复用技巧 | work/domains对应方法位置，带适用/排除条件、步骤、验收与案例链接 |
 | 个人认知 | brain对应主题，必须有建委明确表达或认可；AI不能从个案自动宣布其个人信念 |
-| 通用表达/个人口吻 | 通用标准进system/expression；明确认可的个人偏好进personal，不复制领域体裁规范 |
+| 通用表达/领域表达与样稿 | 跨场景纠错进system/expression；专项偏好、真实改稿与认可样稿留所属领域／项目，个人信息不设文风档案 |
 | 自研Skill | 能力条目、origin=internal、维护者、版本/修订和实际执行入口 |
 | 第三方Skill | 原作者/上游URL、固定commit、许可、同步日期、依赖与完整快照 |
 | 原始参考 | 就近raw/reference-materials，来源和用途登记，默认不读 |
@@ -36,7 +36,8 @@
 | 变化 | AI必须检查更新 |
 |---|---|
 | 新增/移动/删除文件 | 最近README；引用旧路径的全部文件；STRUCTURE.md与HTML |
-| 新项目、案例或归属变化 | 项目/案例主记录、navigation/projects.json中的类型与domainEntries、上级项目/案例索引及相关领域（派生区块）、personal业务概要 |
+| 新项目、案例或归属变化 | 项目/案例主记录、navigation/projects.json中的类型与domainEntries、上级项目/案例索引及相关领域（派生区块）；仅个人方向或能力证据变化时修改业务概要 |
+| 实践、结果或证据增删 | 执行[能力证据规则](./capability-evidence.md)：区分收藏、实践与独立复用；检查本人贡献和原结果，必要时更新个人概要的能力摘要，不按文件数量升级 |
 | 新能力或调用范围变化 | 能力README、来源metadata、navigation/routes.json、相关领域双向引用与路由用例 |
 | 当前事实变化 | 权威事实表、项目摘要、执行说明、被替代段落与来源日期 |
 | 课程/章节变化 | 稳定ID、所属系列、计划/资料发布/实际授课状态或新旧章映射；不串项目 |
@@ -44,6 +45,8 @@
 | 重大方向/运行规则变化 | revisions/YYYY-MM-DD-slug.md，写原因、新旧差异与受影响入口；history如存在只留摘要/链接 |
 
 对于“只是内容变动”的提交也要检查这些项目，适用项必须完成；不适用则无需创造空文件。模板见[templates](./templates/README.md)。
+
+Skill统一收录到[领域知识／其他领域／Skill库](../../work/domains/other/skills/README.md)，元数据与快照保持同条目管理。收录Skill不代表建委个人掌握其能力。新表达反馈执行[来源与提炼流程](../expression/sources.md#后续反馈怎样进入规则)，正文、来源、触发与验收同步。
 
 ## 5. 让AI知道怎样调用
 

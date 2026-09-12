@@ -6,6 +6,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-09-12 | [personal-expression-and-skill-refinement.md](./2026-09-12-personal-expression-and-skill-refinement.md) | 个人四项、实践证据归纳、表达精简及Skill迁入其他领域；取代早先相反归属 |
 | 2026-09-12 | [hierarchical-navigation-and-expression.md](./2026-09-12-hierarchical-navigation-and-expression.md) | 四主入口、领域与项目集中、表达体裁及日常导航；替代此前五根与AI大类的现行结构 |
 | 2026-04-05 | [context-repository-established.md](./2026-04-05-context-repository-established.md) | 从原时间线归回仓库建立的历史事实 |
 | 2026-09-12 | [context-operation-and-attribution.md](./2026-09-12-context-operation-and-attribution.md) | 纠正课程归属，建立自动依赖、写入闭环、来源能力卡和可执行校验 |
