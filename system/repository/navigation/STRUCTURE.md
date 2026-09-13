@@ -977,6 +977,7 @@ ai-context/
 │   │   │   │   ├── conversion-path.md  内容到评论、资料和社群的承接
 │   │   │   │   └── README.md  直播销售与转化入口
 │   │   │   ├── marketing-copy/  营销文案与推广文章
+│   │   │   │   ├── reader-question-led-promotion.md  从报名者真实问题组织宣传内容，含改稿证据与验收
 │   │   │   │   └── README.md  营销文案与推广文章入口
 │   │   │   ├── moments-copy/  朋友圈文案
 │   │   │   │   └── README.md  朋友圈文案入口
@@ -1088,6 +1089,7 @@ ai-context/
 │   │   │       ├── 2026-09-01-training-rule-scope-and-delivery-boundary.md  AI 培训规则适用场景与课堂交付边界修订
 │   │   │       ├── 2026-09-01-training-rule-single-source-and-technical-selection.md  AI 培训单一来源与技术内容筛选修订
 │   │   │       ├── 2026-09-12-onboarding-expression-and-replay-scope.md  新人入口表达与回放归属修订
+│   │   │       ├── 2026-09-13-reader-questions-and-introduction.md  宣传问答结构与当前介绍页事实修订
 │   │   │       └── README.md  修订索引与读取边界
 │   │   ├── README.md  项目与案例总入口
 │   │   └── yancut-ai/  五级目录：言剪 AI

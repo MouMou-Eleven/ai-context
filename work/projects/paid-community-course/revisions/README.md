@@ -4,6 +4,7 @@
 
 | 文件 | 内容 |
 |---|---|
+| [2026-09-13-reader-questions-and-introduction.md](./2026-09-13-reader-questions-and-introduction.md) | 真实宣传改稿、报名者问题顺序、当前12节课程整体发布口径与版本核对 |
 | [2026-09-12-onboarding-expression-and-replay-scope.md](./2026-09-12-onboarding-expression-and-replay-scope.md) | 新人入口真实表达反馈、改前改后与单场专题分享回放归属纠正 |
 | [2026-09-01-training-rule-single-source-and-technical-selection.md](./2026-09-01-training-rule-single-source-and-technical-selection.md) | 当时的规则收口与唯一来源设计；当前归属规则另见培训入口 |
 | [2026-09-01-training-rule-scope-and-delivery-boundary.md](./2026-09-01-training-rule-scope-and-delivery-boundary.md) | 当时的培训规则适用范围与交付边界；当前读取规则另见培训入口 |

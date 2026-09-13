@@ -6,6 +6,8 @@
 
 直播中需要展示产品、课程或社群案例时，组合跨行业案例方法 [`../../other/commercial/experience/case-result-narrative.md`](../../other/commercial/experience/case-result-narrative.md)，并由具体项目 README 提供价格、权益和已核验结果；本目录不复制案例方法。
 
+需要对外讲清产品整体、当前内容和购买顾虑时，读取[读者问题驱动的宣传](../marketing-copy/reader-question-led-promotion.md)，按现场长度选问题；互动安排留内部，不写进读者可见的介绍页。
+
 ## 负责范围
 
 - 直播主题、销售表达、互动与异议处理方法。

@@ -290,7 +290,9 @@
     "work/domains/design/common": "设计共用方法",
     "work/projects/cases": "商单与实践案例",
     "work/projects/cases/little-leaf-ai-microcourse-mv.md": "《小树叶》AI教师音乐微课画面制作与修订复盘",
-    "system/repository/navigation/task-guide.md": "完整任务指南，按主任务和条件依赖读取"
+    "system/repository/navigation/task-guide.md": "完整任务指南，按主任务和条件依赖读取",
+    "work/domains/self-media/marketing-copy/reader-question-led-promotion.md": "从报名者真实问题组织宣传内容，含改稿证据与验收",
+    "work/projects/paid-community-course/revisions/2026-09-13-reader-questions-and-introduction.md": "宣传问答结构与当前介绍页事实修订"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

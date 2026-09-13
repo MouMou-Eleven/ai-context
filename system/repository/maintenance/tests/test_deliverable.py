@@ -72,6 +72,51 @@ class DeliverableChecks(unittest.TestCase):
         self.assertEqual(result['selectedCandidate'], 'self-media')
         self.assertNotIn('work/domains/training/experience/jianwei-training-style.md', result['read'])
 
+    def test_promotion_reads_method_and_project_without_teacher_draft_rules(self):
+        for task in ['给会员社群写介绍页，讲解AI编程课程有什么价值',
+                     '重写会员社群报名页', '给会员社群写宣传文章',
+                     '给会员社群的对外宣传的文档换个写法',
+                     '给会员社群写直播销售话术']:
+            result = router.resolve(task, 'create')
+            self.assertEqual(result['selectedCandidate'], 'self-media', task)
+            self.assertIn('work/domains/self-media/marketing-copy/reader-question-led-promotion.md', result['read'])
+            self.assertIn('work/projects/paid-community-course/README.md', result['read'])
+            self.assertNotIn('work/domains/training/experience/jianwei-training-style.md', result['read'])
+
+    def test_teaching_promotion_as_a_subject_still_uses_training(self):
+        result = router.resolve('给会员社群写一节教学课件，教大家怎样写产品介绍页', 'create')
+        self.assertEqual(result['selectedCandidate'], 'community')
+        self.assertIn('work/domains/training/experience/jianwei-training-style.md', result['read'])
+
+    def test_plain_articles_and_pure_teaching_do_not_load_sales_questions(self):
+        for task in ['写一篇AI自媒体科普文章', '写AI培训文给学员，纯教学不招生',
+                     '给讲师写内部备课稿', '只查会员社群报名页的位置']:
+            intent = 'read' if task.startswith('只查') else 'create'
+            result = router.resolve(task, intent)
+            self.assertNotIn('work/domains/self-media/marketing-copy/reader-question-led-promotion.md', result['read'], task)
+
+    def test_literal_folder_names_find_domain_and_keep_execution_checks(self):
+        for folder, expected in [('self-media', 'self-media'), ('training', 'training')]:
+            result = router.resolve(f'参考 work/domains/{folder} 写新内容', 'create')
+            self.assertEqual(result['selectedCandidate'], expected)
+            self.assertIn('system/repository/execution-checks.md', result['read'])
+
+    def test_generic_promotion_does_not_invent_community_facts(self):
+        result = router.resolve('写产品介绍和购买顾虑的推广文章', 'create')
+        self.assertEqual(result['selectedCandidate'], 'self-media')
+        self.assertIn('work/domains/self-media/marketing-copy/reader-question-led-promotion.md', result['read'])
+        self.assertNotIn('work/projects/paid-community-course/README.md', result['read'])
+
+    def test_question_marks_and_no_patterns_do_not_certify_reader_value(self):
+        # Rejected opening from the actual promotion draft. It contains no learner-lint pattern.
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'promotion.md'
+            path.write_text('你想做的事，能不能不再卡在“我不会”这一步？', encoding='utf-8')
+            result = checker.check(path)
+            self.assertEqual(result['findings'], [])
+            self.assertFalse(result['approved'])
+            self.assertIn('semantic_review', result['status'])
+
 
 if __name__ == '__main__':
     unittest.main()
