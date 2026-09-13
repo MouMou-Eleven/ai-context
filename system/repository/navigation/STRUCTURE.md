@@ -1044,11 +1044,8 @@ ai-context/
 │   │   │       └── README.md  VideoAI 历史项目入口
 │   │   ├── cases/  商单与实践案例
 │   │   │   ├── 2026-05-enterprise-prompt-record.md  2026 年 5 月企业片提示词实战记录
-│   │   │   ├── happy-shopping.md  快乐购物小超市
 │   │   │   ├── little-leaf-ai-microcourse-mv.md  《小树叶》AI教师音乐微课画面制作与修订复盘
-│   │   │   ├── minchao-football.md  大班健康活动：闽超小将
-│   │   │   ├── README.md  商单与实践案例
-│   │   │   └── vr-ai-interactive.md  VR + AI + 交互教育案例
+│   │   │   └── README.md  商单与实践案例
 │   │   ├── external-training/  外出培训
 │   │   │   ├── lessons/  外出培训课程资料
 │   │   │   │   ├── bug-repair/  别让 Bug 打败你：秒哒故障定位与修复实战

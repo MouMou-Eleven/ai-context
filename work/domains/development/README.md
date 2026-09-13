@@ -26,5 +26,4 @@
 |---|---|---|
 | 项目 | [言剪 AI](../../projects/yancut-ai/README.md) | 应用开发 |
 | 项目 | [AI 六十甲子古音律与 IP 孵化](../../projects/ai-sixty-jiazi-music-ip/README.md) | 文化产品与IP |
-| 案例记录 | [快乐购物小超市](../../projects/cases/happy-shopping.md) | 数学教育交互 |
 <!-- generated-related-assets:end -->

@@ -16,9 +16,6 @@ AE、MG、AI生成是可组合的制作技术。只说“MG动画”先进入共
 
 | 类型 | 项目或案例 | 适用领域 |
 |---|---|---|
-| 案例记录 | [闽超小将](../../../projects/cases/minchao-football.md) | 体育微课、AI镜头、MG与实拍标注 |
-| 案例记录 | [快乐购物小超市](../../../projects/cases/happy-shopping.md) | 数学教育交互 |
-| 案例记录 | [VR + AI 交互教育](../../../projects/cases/vr-ai-interactive.md) | 教育交互与VR |
 | 提示词案例 | [企业片提示词实战记录](../../../projects/cases/2026-05-enterprise-prompt-record.md) | 企业宣传片与信息包装 |
 | 案例复盘 | [《小树叶》AI教师音乐微课](../../../projects/cases/little-leaf-ai-microcourse-mv.md) | 教师音乐微课、AI画面与Seedance多镜头 |
 <!-- generated-related-assets:end -->

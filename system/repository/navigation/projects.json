@@ -58,43 +58,6 @@
   ],
   "cases": [
     {
-      "id": "minchao-football",
-      "name": "闽超小将",
-      "kind": "案例记录",
-      "domain": "体育微课、AI镜头、MG与实拍标注",
-      "entry": "work/projects/cases/minchao-football.md",
-      "domainEntries": [
-        "work/domains/design/README.md",
-        "work/domains/design/video/README.md",
-        "work/domains/design/video/education/README.md"
-      ]
-    },
-    {
-      "id": "happy-shopping",
-      "name": "快乐购物小超市",
-      "kind": "案例记录",
-      "domain": "数学教育交互",
-      "entry": "work/projects/cases/happy-shopping.md",
-      "domainEntries": [
-        "work/domains/design/README.md",
-        "work/domains/design/video/README.md",
-        "work/domains/design/video/education/README.md",
-        "work/domains/development/README.md"
-      ]
-    },
-    {
-      "id": "vr-ai-interactive",
-      "name": "VR + AI 交互教育",
-      "kind": "案例记录",
-      "domain": "教育交互与VR",
-      "entry": "work/projects/cases/vr-ai-interactive.md",
-      "domainEntries": [
-        "work/domains/design/README.md",
-        "work/domains/design/video/README.md",
-        "work/domains/design/video/education/README.md"
-      ]
-    },
-    {
       "id": "enterprise-prompt-record",
       "name": "企业片提示词实战记录",
       "kind": "提示词案例",
