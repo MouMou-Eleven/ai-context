@@ -64,4 +64,6 @@ python -B -m unittest discover -s system/repository/maintenance/tests -v
 
 ## 桌面镜像
 
+沉淀内容直接提交并推送到当前 `main` 分支，不创建 PR。推送后核对远端 commit，并在回复中提供实际推送位置的 GitHub 链接；涉及具体文件时一并提供文件或 commit 链接。
+
 Git hooks中的桌面同步只复制 `system/repository/navigation/STRUCTURE.html`，不重写仓库生成物；Windows桌面不可用时记录延后，后续Git操作再次尝试。手动兼容命令 `powershell -ExecutionPolicy Bypass -File system/repository/maintenance/sync-desktop-structure.ps1` 会显式生成再同步；加 `-Strict` 可将桌面不可用视为错误。

@@ -14,4 +14,4 @@
 
 <!-- publish-policy: direct-main-no-pr -->
 
-建委要求写入GitHub时，按[维护步骤](./system/repository/maintenance/README.md)同步、校验并检查暂存范围，然后直接提交推送main，不创建PR或等待第二次提交指令。远端有新变化先核对合并；推送后回读commit与关键路径。桌面HTML是派生镜像，其暂不可用不阻断仓库内容校验。
+建委要求写入GitHub时，按[维护步骤](./system/repository/maintenance/README.md)同步、校验并检查暂存范围，然后直接提交推送main，不创建PR或等待第二次提交指令。远端有新变化先核对合并；推送后回读commit与关键路径，并在回复中提供本次实际推送位置的GitHub链接（必要时附具体文件或commit链接）。桌面HTML是派生镜像，其暂不可用不阻断仓库内容校验。
