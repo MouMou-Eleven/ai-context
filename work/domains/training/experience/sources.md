@@ -4,6 +4,7 @@
 
 | 来源主题 | 证据与入口 | 当前归属 | 证据说明 |
 |---|---|---|---|
+| GPT-6 Astra分享资料视角纠正 | [遵循链审计](../../../../system/repository/revisions/2026-09-13-experience-adherence-audit.md) | 分享活动具体系列未确认，不默认会员社群 | 2026-09-13文档创作反馈；完整读取规则后仍出现讲师安排，保留草稿hash与检测结果，不写成授课效果 |
 | 网页基础设施课：图床、服务器、域名、备案 | [社群资料索引](../../../projects/paid-community-course/course-materials-index.md)及其中8月30/31日修订 | 仓库两份修订明确写会员社群；保留该来源并待有新证据时校正 | 备课修改与明确的直播后复盘；场次日期未独立核验 |
 | 协作心法：Prompt、Skill、MCP、CLI、API、Harness | [待归属资料](../materials/pending-attribution/README.md) | 待确认 | 原资料核验及历史修改摘要；不能仅凭原“第3课”证明社群归属或具体授课 |
 | 秒哒网页美化 | [8月19日修订](../materials/pending-attribution/revisions/2026-08-19-lesson-4-student-material-boundary.md) | 待确认 | 文档多轮验收；原记“第4课”，与静态网页发布是不同文档 |

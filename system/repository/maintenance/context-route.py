@@ -77,6 +77,8 @@ def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_r
         if permitted(task, overlay, intent, produces_chinese, writes_repository):
             for p in overlay['paths']:
                 include(p, f"附加规则: {overlay['id']}")
+    if intent in {'create', 'write'}:
+        include('system/repository/execution-checks.md', '实际成品须把规则转为本次约束并验收最终版本；仅查询或纯维护按适用项执行')
     number_pattern = policy.get('courseNumberPattern')
     course_number = re.search(number_pattern, task) if number_pattern else None
     unresolved_series = bool(course_number and (not selected or selected['id'] not in policy.get('exclusiveProjectIds', [])))

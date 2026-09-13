@@ -110,7 +110,8 @@
     "system/repository/ingestion-workflow.md": [
       "system/repository/capability-evidence.md",
       "system/expression/sources.md",
-      "work/domains/other/skills/README.md"
+      "work/domains/other/skills/README.md",
+      "system/repository/execution-checks.md"
     ],
     "personal/README.md": [
       "personal/profile.md",
@@ -122,7 +123,8 @@
     "work/domains/training/README.md": [
       "work/projects/paid-community-course/README.md",
       "work/projects/external-training/README.md",
-      "work/domains/design/video/education/README.md"
+      "work/domains/design/video/education/README.md",
+      "system/repository/execution-checks.md"
     ],
     "work/domains/design/video/education/README.md": [
       "work/domains/training/README.md"
@@ -131,8 +133,15 @@
       "work/projects/feishu-efficient-office/writing-style-analysis.md"
     ],
     "AGENTS.md": [
+      "system/repository/execution-checks.md",
       "system/expression/README.md",
       "system/repository/ingestion-workflow.md"
+    ],
+    "work/domains/training/experience/jianwei-training-style.md": [
+      "system/repository/execution-checks.md"
+    ],
+    "system/repository/execution-checks.md": [
+      "system/repository/maintenance/check-deliverable.py"
     ]
   },
   "indexOwners": {

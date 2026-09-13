@@ -1133,10 +1133,12 @@ ai-context/
 │   └── repository/  读取写入、导航与校验
 │       ├── capability-evidence.md  从实践归纳个人能力
 │       ├── collaboration-rules.md  协作规则与职责边界
+│       ├── execution-checks.md  从规则读取到实际交付物验收的执行闭环
 │       ├── information-architecture.md  AI Context信息架构与长期规划
 │       ├── ingestion-workflow.md  新内容写入与更新流程
 │       ├── maintenance/  维护工具
 │       │   ├── .gitignore  资料与资源
+│       │   ├── check-deliverable.py  外部交付物的规则信号检查脚本
 │       │   ├── context-route.py  跨平台维护或执行脚本
 │       │   ├── context_common.py  跨平台维护或执行脚本
 │       │   ├── desktop-sync.py  跨平台维护或执行脚本
@@ -1158,7 +1160,8 @@ ai-context/
 │       │   ├── sync-structure.py  跨平台维护或执行脚本
 │       │   ├── tests/  维护回归测试
 │       │   │   ├── README.md  维护回归测试
-│       │   │   └── test_context.py  跨平台维护或执行脚本
+│       │   │   ├── test_context.py  跨平台维护或执行脚本
+│       │   │   └── test_deliverable.py  跨平台维护或执行脚本
 │       │   ├── validate-context.ps1  结构、索引与链接校验脚本
 │       │   ├── validate-context.py  跨平台维护或执行脚本
 │       │   └── validation-policy.json  结构化配置与索引
@@ -1202,6 +1205,7 @@ ai-context/
 │       │   ├── 2026-09-12-context-operation-and-attribution.md  2026-09-12：上下文运行规则与资料归属纠正
 │       │   ├── 2026-09-12-hierarchical-navigation-and-expression.md  2026-09-12：分级导航、项目集中与表达标准调整
 │       │   ├── 2026-09-12-personal-expression-and-skill-refinement.md  个人信息、表达与Skill归属调整
+│       │   ├── 2026-09-13-experience-adherence-audit.md  培训经验遵循性审计与执行闭环修订
 │       │   └── README.md  仓库修订索引
 │       ├── roadmap.md  长期维护与演进
 │       ├── templates/  项目、案例与方法模板

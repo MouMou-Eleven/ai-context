@@ -41,6 +41,8 @@ def outputs(root=ROOT):
 <!-- generated-from: system/repository/navigation/routes.json; do not edit -->
 
 先读[AGENTS](./AGENTS.md)，再用[任务指南](./system/repository/navigation/task-guide.md)进入领域、项目或能力。中文输出遵守[表达短卡](./system/expression/README.md)；写入仓库同时执行[更新流程](./system/repository/ingestion-workflow.md)。简单查询只读必要事实；关键词不能证明课程归属。
+
+制作成品执行[写前约束与最终版本验收](./system/repository/execution-checks.md)。读到规则不算已遵循，格式解析不算内容合格；分享课件默认学员可见，时长安排不进入正文。
 '''
     }
     guide = '''# 按任务读取仓库
@@ -58,6 +60,7 @@ def outputs(root=ROOT):
     guide += '''
 ## 条件组合
 
+- 实际成品执行[写前约束与最终验收](../execution-checks.md)，记录本次接收者、规则来源、材料覆盖和检查证据；无论最终写入飞书还是本地都适用。
 - “产生中文输出”和“写入仓库”分别判断。修改并沉淀课件时，两类规则同时成立；只移动文件不读取整套写作资料。
 - 中文输出先用[表达短卡](../../expression/README.md)，按成品选择[体裁标准](../../expression/genres.md)中的一项；简单回答遵守短卡即可。实际专业方法来自对应领域，不能把所有体裁全文一起载入。
 - 培训先分会员社群、外部活动或待归属材料；Bug修复课已确认外训，局部“第6课”不决定系列。教学演示不默认叠加销售。

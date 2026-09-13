@@ -5,6 +5,7 @@
 1. 开始先实际核对仓库版本、[目录](./system/repository/navigation/STRUCTURE.md)和[任务入口](./system/repository/navigation/task-guide.md)，进入最近README；按需读证据，不默认加载全部原文、源码或历史。
 2. 当前执行[协作规则](./system/repository/collaboration-rules.md)。一个主任务可自动组合必要领域；个人事实在personal，个人认知在brain，方法和Skill在work/domains，项目与案例在work/projects，共享表达与运行规则在system。
 3. 所有中文输出遵守清楚、准确、连贯、不编造的底线。生成、修改或审核中文成品时读[表达短卡](./system/expression/README.md)和适用体裁；同时写入仓库时两套责任都成立。简单回答无需重复加载长规则。
+   制作实际成品按[执行与验收](./system/repository/execution-checks.md)把适用规则落实为本次约束与检查证据。读到规则不算已遵循，格式解析不算内容验收；长任务恢复后回读执行卡，写外部文档前验草稿，写后回读实际成品。
 4. 用户最近明确确认决定个人偏好、业务约定和项目归属；外部产品能力另按来源、版本和环境核验。README指向权威事实，不因它是入口就压过更新的适用证据。
 5. 培训先核对系列与场次；会员社群不代表全部培训。《别让 Bug 打败你》属于外部培训，同号课程与待归属资料不能推入社群。教师委托教育作品与建委授课分别处理。
 6. 项目身份不能由平台名或工具名推断。百度秒哒与飞书妙搭先读[辨析](./work/domains/development/tools/miaoda/disambiguation.md)；飞书文档链接不等于出版项目。飞书书稿先读[项目](./work/projects/feishu-efficient-office/README.md)与[当前出版规则](./work/projects/feishu-efficient-office/writing-style-analysis.md)。
