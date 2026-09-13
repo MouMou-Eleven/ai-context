@@ -11,6 +11,7 @@
 | 要完成什么 | 读取入口 |
 |---|---|
 | 教师微课、MG 视频制作，AI 辅助拆脚本/分镜 | 本 README → [联合制作流程](../../common/production-workflow.md) |
+| 根据歌曲、旁白或故事音频制作AI微课画面，设计场景图与段内多镜头提示词 | [AI教师微课画面生成与多镜头制作方法](./ai-generated-microcourse-video-workflow.md) → 再按本次平台读取工具经验 |
 | AI 生成视频镜头、编写生成提示词 | [AI 视频通用经验](../common/README.md) → 按本次工具选择具体经验 |
 | AE 动画、实拍标注、字幕与后期合成 | [AE 设计](../common/ae-production.md) |
 | 图文转动效、可编辑的文字/颜色/编号动画 | [Remotion Skill 能力说明](../../../other/skills/jianwei-ai-community-remotion-video/README.md) |
@@ -42,6 +43,7 @@
 
 ## 文件索引与维护
 
+- [AI教师微课画面生成与多镜头制作方法](./ai-generated-microcourse-video-workflow.md)：音频分段、角色与场景资产、文生/图生决策、图片和视频提示词模板、多镜头生成、连续性与验收；制作同类AI微课时按需展开。
 - [案例索引](../../../../projects/cases/README.md)：闽超小将、快乐购物小超市、VR + AI 交互案例；按证据状态使用。
 - [展示写作规范](./showcase-guidelines.md)：只在写对外简介时展开。
 - [联合流程](../../common/production-workflow.md)：脚本、分镜、AI 镜头、制作、交付及自动写入规则。
@@ -56,4 +58,5 @@
 | 案例记录 | [闽超小将](../../../../projects/cases/minchao-football.md) | 体育微课、AI镜头、MG与实拍标注 |
 | 案例记录 | [快乐购物小超市](../../../../projects/cases/happy-shopping.md) | 数学教育交互 |
 | 案例记录 | [VR + AI 交互教育](../../../../projects/cases/vr-ai-interactive.md) | 教育交互与VR |
+| 案例复盘 | [《小树叶》AI教师音乐微课](../../../../projects/cases/little-leaf-ai-microcourse-mv.md) | 教师音乐微课、AI画面与Seedance多镜头 |
 <!-- generated-related-assets:end -->

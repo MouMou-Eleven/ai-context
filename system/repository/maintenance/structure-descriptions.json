@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "confirmedDate": "2026-09-12",
+  "confirmedDate": "2026-09-13",
   "descriptions": {
     ".gitattributes": "Git 文本属性与换行规范",
     ".gitignore": "Git 忽略规则，排除不应入库的本地文件",
@@ -33,6 +33,7 @@
     "work/domains/design/graphic/poster-fold/README.md": "海报、折页及平面物料设计入口",
     "work/domains/design/graphic/book/README.md": "书籍装帧与版式设计入口",
     "work/domains/design/video/education/README.md": "微课、精品课、MG 动画与教育课件",
+    "work/domains/design/video/education/ai-generated-microcourse-video-workflow.md": "AI教师微课的音频分段、场景关键图、多镜头提示词与验收方法",
     "work/domains/design/video/common/ae-production.md": "AE包装、合成与工程交付要求",
     "work/domains/design/common/ai-assisted-design.md": "AI辅助视觉生产方法",
     "work/domains": "领域知识：这类工作怎样做",
@@ -285,6 +286,7 @@
     "work/domains/design/video/common": "视频共用制作方法与工具",
     "work/domains/design/common": "设计共用方法",
     "work/projects/cases": "商单与实践案例",
+    "work/projects/cases/little-leaf-ai-microcourse-mv.md": "《小树叶》AI教师音乐微课画面制作与修订复盘",
     "system/repository/navigation/task-guide.md": "完整任务指南，按主任务和条件依赖读取"
   },
   "knowledgeLabels": {

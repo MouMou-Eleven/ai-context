@@ -105,6 +105,18 @@
         "work/domains/design/video/README.md",
         "work/domains/design/video/promo/README.md"
       ]
+    },
+    {
+      "id": "little-leaf-ai-microcourse-mv",
+      "name": "《小树叶》AI教师音乐微课",
+      "kind": "案例复盘",
+      "domain": "教师音乐微课、AI画面与Seedance多镜头",
+      "entry": "work/projects/cases/little-leaf-ai-microcourse-mv.md",
+      "domainEntries": [
+        "work/domains/design/README.md",
+        "work/domains/design/video/README.md",
+        "work/domains/design/video/education/README.md"
+      ]
     }
   ],
   "archivedProjects": [

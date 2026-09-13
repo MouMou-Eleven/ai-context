@@ -47,6 +47,7 @@ ai-context/
 │   │   │       │           ├── prompt-templates.md  提示词模板
 │   │   │       │           └── README.md  Seedance 工具入口
 │   │   │       ├── education/  微课与教育交互
+│   │   │       │   ├── ai-generated-microcourse-video-workflow.md  AI教师微课的音频分段、场景关键图、多镜头提示词与验收方法
 │   │   │       │   ├── README.md  微课、精品课、MG 动画与教育课件
 │   │   │       │   └── showcase-guidelines.md  哞哞微课案例展示写作规范
 │   │   │       ├── promo/  宣传片
@@ -1044,6 +1045,7 @@ ai-context/
 │   │   ├── cases/  商单与实践案例
 │   │   │   ├── 2026-05-enterprise-prompt-record.md  2026 年 5 月企业片提示词实战记录
 │   │   │   ├── happy-shopping.md  快乐购物小超市
+│   │   │   ├── little-leaf-ai-microcourse-mv.md  《小树叶》AI教师音乐微课画面制作与修订复盘
 │   │   │   ├── minchao-football.md  大班健康活动：闽超小将
 │   │   │   ├── README.md  商单与实践案例
 │   │   │   └── vr-ai-interactive.md  VR + AI + 交互教育案例
@@ -1248,4 +1250,4 @@ ai-context/
 
 完整设计理由与后续扩展见[信息架构](../information-architecture.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-09-12*
+*结构最后确认：2026-09-13*
