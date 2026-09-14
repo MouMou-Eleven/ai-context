@@ -1163,7 +1163,8 @@ ai-context/
 │       │   ├── tests/  维护回归测试
 │       │   │   ├── README.md  维护回归测试
 │       │   │   ├── test_context.py  跨平台维护或执行脚本
-│       │   │   └── test_deliverable.py  跨平台维护或执行脚本
+│       │   │   ├── test_deliverable.py  跨平台维护或执行脚本
+│       │   │   └── test_methods.py  跨领域方法发现、误触发与登记维护回归
 │       │   ├── validate-context.ps1  结构、索引与链接校验脚本
 │       │   ├── validate-context.py  跨平台维护或执行脚本
 │       │   └── validation-policy.json  结构化配置与索引
@@ -1208,6 +1209,7 @@ ai-context/
 │       │   ├── 2026-09-12-hierarchical-navigation-and-expression.md  2026-09-12：分级导航、项目集中与表达标准调整
 │       │   ├── 2026-09-12-personal-expression-and-skill-refinement.md  个人信息、表达与Skill归属调整
 │       │   ├── 2026-09-13-experience-adherence-audit.md  培训经验遵循性审计与执行闭环修订
+│       │   ├── 2026-09-15-writing-dna-review-and-method-routing.md  写作蒸馏器评估、材料提炼与按任务发现方法
 │       │   └── README.md  仓库修订索引
 │       ├── roadmap.md  长期维护与演进
 │       ├── templates/  项目、案例与方法模板
@@ -1253,4 +1255,4 @@ ai-context/
 
 完整设计理由与后续扩展见[信息架构](../information-architecture.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-09-13*
+*结构最后确认：2026-09-15*

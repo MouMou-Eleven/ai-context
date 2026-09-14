@@ -41,3 +41,13 @@
 | 长期项目 | [AI 超级个体陪跑社群](../../projects/paid-community-course/README.md) | 会员培训与社群经营 |
 | 活动容器 | [外部培训记录](../../projects/external-training/README.md) | 企业、图书馆、夜校等 |
 <!-- generated-related-assets:end -->
+
+<!-- generated-methods:start -->
+## 按实际需要选择方法
+
+由routes.json生成。先判断本次成品和读者，再按下表实际需要读取方法正文；无需点名作者。多种方法可分工，但同一段不拼接相互冲突的结构。没有适用需求时跳过，不能因看到本表就全部加载。
+
+| 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
+|---|---|---|---|
+| 非技术读者需要理解概念、机制或技术差别，不能只背定义时；主题可以来自提示，也可以来自AI读到的材料 | [从问题推导概念](experience/technical-explanation/problem-driven-technical-explanation.md) | 纯查询、术语速查、直接操作、已接受稿逐字保护时不展开推导；出版只借解释逻辑，保留出版书面语与编辑规则 | 读者能说出原问题、关键变化及使用判断；不虚构历史发展、事实或作者经历，不混入讲师指令 |
+<!-- generated-methods:end -->

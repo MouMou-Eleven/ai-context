@@ -1,7 +1,9 @@
 {
   "schemaVersion": 1,
-  "confirmedDate": "2026-09-13",
+  "confirmedDate": "2026-09-15",
   "descriptions": {
+    "system/repository/revisions/2026-09-15-writing-dna-review-and-method-routing.md": "写作蒸馏器评估、材料提炼与按任务发现方法",
+    "system/repository/maintenance/tests/test_methods.py": "跨领域方法发现、误触发与登记维护回归",
     ".gitattributes": "Git 文本属性与换行规范",
     ".gitignore": "Git 忽略规则，排除不应入库的本地文件",
     "README.md": "建委日常使用的四个主入口",

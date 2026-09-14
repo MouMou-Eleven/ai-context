@@ -20,6 +20,16 @@ def permitted(task, item, intent, produces_chinese=True, writes_repository=False
             and (not item.get('requiresChinese') or produces_chinese)
             and (not item.get('requiresWrite') or writes_repository))
 
+
+def method_matches(task, method, selected_id, intent, produces_chinese):
+    """Recommend a method only within its declared purpose and approved scope."""
+    return (method.get('status') == 'active'
+            and selected_id in method.get('selectedAny', [])
+            and intent in method.get('intents', [])
+            and produces_chinese
+            and permitted(task, method, intent, produces_chinese)
+            and all(matches(task, group) for group in method.get('whenAll', [])))
+
 def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_repository=None):
     catalog = json.loads((repo_root/'system/repository/navigation/routes.json').read_text(encoding='utf-8-sig'))
     if produces_chinese is None:
@@ -77,6 +87,13 @@ def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_r
         if permitted(task, overlay, intent, produces_chinese, writes_repository):
             for p in overlay['paths']:
                 include(p, f"附加规则: {overlay['id']}")
+    applied_methods = []
+    for method in catalog.get('methodRules', []):
+        if method_matches(task, method, selected['id'] if selected else None, intent, produces_chinese):
+            include(method['path'], '方法建议: ' + method['useWhen'])
+            applied_methods.append({'id': method['id'], 'path': method['path'],
+                                    'useWhen': method['useWhen'], 'notFor': method['notFor'],
+                                    'acceptance': method['acceptance']})
     if intent in {'create', 'write'}:
         include('system/repository/execution-checks.md', '实际成品须把规则转为本次约束并验收最终版本；仅查询或纯维护按适用项执行')
     number_pattern = policy.get('courseNumberPattern')
@@ -92,6 +109,7 @@ def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_r
     return {'task': task, 'intent': intent, 'producesChinese': produces_chinese, 'writesRepository': writes_repository,
             'courseSeriesUnresolved': unresolved_series,
             'selectedCandidate': selected['id'] if selected else None,
+            'methods': applied_methods,
             'candidates': [{'id':r['id'], 'entry':r['entry'],
                             'matched':[n for n in r.get('matchAny', []) if n.casefold() in task.casefold()],
                             'matchedPatterns':[p for p in r.get('matchPatterns', []) if re.search(p, task, re.I)]} for r in candidates],

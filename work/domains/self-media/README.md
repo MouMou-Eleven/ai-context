@@ -70,3 +70,14 @@ self-media/
 |---|---|---|
 | 长期项目 | [AI 超级个体陪跑社群](../../projects/paid-community-course/README.md) | 会员培训与社群经营 |
 <!-- generated-related-assets:end -->
+
+<!-- generated-methods:start -->
+## 按实际需要选择方法
+
+由routes.json生成。先判断本次成品和读者，再按下表实际需要读取方法正文；无需点名作者。多种方法可分工，但同一段不拼接相互冲突的结构。没有适用需求时跳过，不能因看到本表就全部加载。
+
+| 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
+|---|---|---|---|
+| 非技术读者需要理解概念、机制或技术差别，不能只背定义时；主题可以来自提示，也可以来自AI读到的材料 | [从问题推导概念](../training/experience/technical-explanation/problem-driven-technical-explanation.md) | 纯查询、术语速查、直接操作、已接受稿逐字保护时不展开推导；出版只借解释逻辑，保留出版书面语与编辑规则 | 读者能说出原问题、关键变化及使用判断；不虚构历史发展、事实或作者经历，不混入讲师指令 |
+| 产品介绍、报名页或购买顾虑说明，需要把整体内容、当前内容和真实价值讲清时 | [用读者问题组织宣传](marketing-copy/reader-question-led-promotion.md) | 纯教学、普通科普、内部复盘不套招生问答；具体价格、权益与已发布状态回项目核对 | 每问影响读者理解或决定；答案直接回应，后一问承接前一答；不是只增加问号 |
+<!-- generated-methods:end -->

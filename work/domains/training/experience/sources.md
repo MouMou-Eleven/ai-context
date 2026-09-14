@@ -13,7 +13,7 @@
 | 秒哒进阶能力 | [9月2日修订](../materials/pending-attribution/revisions/2026-09-02-miaoda-advanced-course-scenario-driven-updates.md) | 待确认 | 版本更新转场景课程、修改与验收；场次需另核实 |
 | 秒哒完整开发流程 | [9月7日修订](../materials/pending-attribution/revisions/2026-09-07-lesson-6-lecture-review-and-visualization-rules.md) | 待确认 | 原标题为直播复盘；讲 PRD、基础设施与开发流程，不能与 Bug 课合并；具体场次待确认 |
 | 别让 Bug 打败你 | [外出培训课程](../../../projects/external-training/lessons/bug-repair/README.md) | 建委明确确认外出培训，非社群 | 9月9日记录为课件重构、训练台与二次验收；不能据此推定授课日期 |
-| 飞天闪客技术科普 | [技术解释方法](./technical-explanation/problem-driven-technical-explanation.md)及其原来源 | 外部表达/解释方法 | 仅提供方法候选，不是建委授课经历 |
+| 飞天闪客技术科普 | [技术解释方法](./technical-explanation/problem-driven-technical-explanation.md)及其原来源 | 外部表达/解释方法 | 原材料是外部参考证据；整理后的问题驱动方法当前按限定场景采用，新增推断仍为候选，不是建委授课经历 |
 
 课程归属待确认不意味着已观察到的改稿问题必须丢弃。提炼时保留问题、修正、验证结果与适用范围；不能把备课反馈改写成真实课堂效果，也不能把一个项目的事实泛化为所有培训的规则。
 

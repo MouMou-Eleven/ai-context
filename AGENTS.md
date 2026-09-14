@@ -3,7 +3,7 @@
 本仓库是杨建委的长期AI协作事实中枢。建委只需描述目标或要沉淀的领域，AI承担检索、归属、必要依赖、更新、验收与发布责任。
 
 1. 开始先实际核对仓库版本、[目录](./system/repository/navigation/STRUCTURE.md)和[任务入口](./system/repository/navigation/task-guide.md)，进入最近README；按需读证据，不默认加载全部原文、源码或历史。用户指定文件夹时，读最近README并沿本次触发继续读规则正文；索引与链接本身不是已读经验，必要的通用规则与项目事实仍须组合。
-2. 当前执行[协作规则](./system/repository/collaboration-rules.md)。一个主任务可自动组合必要领域；个人事实在personal，个人认知在brain，方法和Skill在work/domains，项目与案例在work/projects，共享表达与运行规则在system。
+2. 当前执行[协作规则](./system/repository/collaboration-rules.md)。一个主任务可自动组合必要领域；读取领域方法短表后，按读者困难和实际材料选择已采用方法，不要求用户点名作者，也不把短表内方法全部载入；个人事实在personal，个人认知在brain，方法和Skill在work/domains，项目与案例在work/projects，共享表达与运行规则在system。
 3. 所有中文输出遵守清楚、准确、连贯、不编造的底线。生成、修改或审核中文成品时读[表达短卡](./system/expression/README.md)和适用体裁；同时写入仓库时两套责任都成立。简单回答无需重复加载长规则。
    制作实际成品按[执行与验收](./system/repository/execution-checks.md)把适用规则落实为本次约束与检查证据。读到规则不算已遵循，格式解析不算内容验收；长任务恢复后回读执行卡，写外部文档前验草稿，写后回读实际成品。
 4. 用户最近明确确认决定个人偏好、业务约定和项目归属；外部产品能力另按来源、版本和环境核验。README指向权威事实，不因它是入口就压过更新的适用证据。

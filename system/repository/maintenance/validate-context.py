@@ -182,6 +182,49 @@ def check_registries(root):
                     errors.append(f'Invalid domain relationship: {item.get("id")}: {entry}')
         for overlay in data.get('overlays', []) + data.get('genreRules', []):
             paths.extend(overlay.get('paths', []))
+        methods = data.get('methodRules', [])
+        if not isinstance(methods, list):
+            errors.append('methodRules must be a list')
+            methods = []
+        if any(not isinstance(m, dict) for m in methods):
+            errors.append('Each method must be an object')
+            methods = [m for m in methods if isinstance(m, dict)]
+        method_ids = [m.get('id') for m in methods]
+        if (not all(isinstance(value, str) and value.strip() for value in method_ids)
+                or len(set(method_ids)) != len(method_ids)):
+            errors.append('Duplicate or missing method id')
+        for method in methods:
+            label = method.get('id')
+            for field in ['label', 'path', 'useWhen', 'notFor', 'acceptance', 'evidence', 'confirmedAt']:
+                if not isinstance(method.get(field), str) or not method[field].strip():
+                    errors.append(f'Method needs {field}: {label}')
+            if method.get('status') not in ('active', 'candidate', 'retired'):
+                errors.append(f'Method needs valid status: {label}')
+            try:
+                date.fromisoformat(method.get('confirmedAt', ''))
+            except (ValueError, TypeError):
+                errors.append(f'Method needs ISO confirmedAt: {label}')
+            for field in ['selectedAny', 'entryPoints', 'intents', 'excludeAny']:
+                value = method.get(field)
+                if not isinstance(value, list) or not value or not all(isinstance(x, str) and x.strip() for x in value):
+                    errors.append(f'Method needs nonempty {field}: {label}')
+            scopes = method.get('selectedAny', [])
+            if isinstance(scopes, list) and any(scope not in ids for scope in scopes):
+                errors.append(f'Method references unknown route: {label}')
+            intents = method.get('intents', [])
+            if isinstance(intents, list) and any(intent not in ('create', 'write') for intent in intents):
+                errors.append(f'Method must be scoped to creative intents: {label}')
+            when_any, when_all = method.get('whenAny', []), method.get('whenAll', [])
+            valid_any = isinstance(when_any, list) and all(isinstance(x, str) and x.strip() for x in when_any)
+            valid_all = isinstance(when_all, list) and all(isinstance(g, list) and g and all(isinstance(x, str) and x.strip() for x in g) for g in when_all)
+            if not valid_any or not valid_all or not (when_any or when_all):
+                errors.append(f'Method needs nonempty valid trigger conditions: {label}')
+            paths.extend(value for value in [method.get('path', ''), method.get('evidence', '')] if isinstance(value, str))
+            entry_points = method.get('entryPoints', [])
+            if isinstance(entry_points, list):
+                paths.extend(x for x in entry_points if isinstance(x, str))
+                if any(not isinstance(x, str) or not x.endswith('/README.md') for x in entry_points):
+                    errors.append(f'Method entryPoints must be README files: {label}')
         for value in paths:
             target = (root / value).resolve()
             if not value or not target.is_relative_to(root) or not target.is_file():

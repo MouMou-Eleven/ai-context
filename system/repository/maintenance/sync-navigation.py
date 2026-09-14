@@ -96,6 +96,25 @@ def outputs(root=ROOT):
     for owner, items in related.items():
         body = asset_table(owner, items, '## 相关项目与案例') if items else '## 相关项目与案例\n\n暂无已登记关联；不能据此断言没有未登记材料。'
         update(owner, 'related-assets', body)
+    # Method discovery is generated from the same conditions used by the CLI.
+    # Only short purpose/boundary cards are repeated; the method body stays in one file.
+    method_owners = {guide_path: []}
+    for method in routes.get('methodRules', []):
+        if method.get('status') == 'active':
+            method_owners[guide_path].append(method)
+            for owner in method.get('entryPoints', []):
+                method_owners.setdefault(owner, []).append(method)
+    for path in root.rglob('README.md'):
+        if '.git' not in path.parts and '<!-- generated-methods:start -->' in path.read_text(encoding='utf-8-sig'):
+            method_owners.setdefault(path.relative_to(root).as_posix(), [])
+    for owner, methods in method_owners.items():
+        rows = ['## 按实际需要选择方法', '',
+                '由routes.json生成。先判断本次成品和读者，再按下表实际需要读取方法正文；无需点名作者。多种方法可分工，但同一段不拼接相互冲突的结构。没有适用需求时跳过，不能因看到本表就全部加载。', '',
+                '| 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |', '|---|---|---|---|']
+        rows.extend(f"| {m['useWhen']} | [{m['label']}]({link(owner, m['path'])}) | {m['notFor']} | {m['acceptance']} |" for m in methods)
+        if not methods:
+            rows.append('| 当前无已登记适用方法 | 按实际领域正文判断 | 不根据旧表自动激活 | 核对来源与当前任务 |')
+        update(owner, 'methods', '\n'.join(rows))
     return result
 
 

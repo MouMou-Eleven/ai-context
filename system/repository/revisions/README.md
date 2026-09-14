@@ -6,6 +6,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-09-15 | [writing-dna-review-and-method-routing.md](./2026-09-15-writing-dna-review-and-method-routing.md) | 写作蒸馏器实用性审计；统一材料提炼规范、按需求发现方法与跨体裁边界；同一登记生成入口并校验停用 |
 | 2026-09-13 | [experience-adherence-audit.md](./2026-09-13-experience-adherence-audit.md) | 对已读仍违反学员视角的真实任务回放；补写前约束、实际草稿检测和跨领域成品验收 |
 | 2026-09-12 | [personal-expression-and-skill-refinement.md](./2026-09-12-personal-expression-and-skill-refinement.md) | 个人四项、实践证据归纳、表达精简及Skill迁入其他领域；取代早先相反归属 |
 | 2026-09-12 | [hierarchical-navigation-and-expression.md](./2026-09-12-hierarchical-navigation-and-expression.md) | 四主入口、领域与项目集中、表达体裁及日常导航；替代此前五根与AI大类的现行结构 |
