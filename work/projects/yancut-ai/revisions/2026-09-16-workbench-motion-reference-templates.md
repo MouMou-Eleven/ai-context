@@ -8,6 +8,7 @@
 - Vercel 部署：`dpl_6DQMEr4s2bmPnk1Gr6KQq5joQt3d`；先在新预览验证，再切换固定域名，切换后已用浏览器回读。
 - 上一版本 `dpl_C7kathhPgGXjXoGe6Vw81pVw3ssb` 保留作为回退目标。
 - 私有源码：[本轮实现 815a841](https://github.com/MouMou-Eleven/yancut-ai/commit/815a841)、[同步后的主分支 b0b24335](https://github.com/MouMou-Eleven/yancut-ai/commit/b0b243357860f63ccf7cd46d67c22f35e28cb3ce)。本地目录仍为 `F:\桌面文件\言剪AI`。
+- 后续 [测试配置修正 22023132](https://github.com/MouMou-Eleven/yancut-ai/commit/2202313224b10eae69faa230e89d257c321cf92f) 只改变测试发现范围和技术记录，未改变已部署的运行时代码。
 - [源码验收矩阵](https://github.com/MouMou-Eleven/yancut-ai/blob/b0b243357860f63ccf7cd46d67c22f35e28cb3ce/docs/yancut/upgrade-2026-09-16.md)；[完整人工测试清单](https://github.com/MouMou-Eleven/yancut-ai/blob/b0b243357860f63ccf7cd46d67c22f35e28cb3ce/docs/yancut/manual-test-checklist.md)。
 
 ## 本轮改变
@@ -44,6 +45,8 @@
 ## 实测证据
 
 - 143 项相关测试、2818 次断言通过；TypeScript、本地生产构建、Vercel 构建通过。
+- 推送后 GitHub 首轮自动检查将 Playwright 场景误交给 Bun 执行，产生 `test.use()` 错误；307 项单元测试本身通过。增加 `bunfig.toml` 限定 `src` 后，本地完整运行 307 项、3166 次断言全部通过，浏览器场景保留独立 `test:e2e` 入口。
+- [修正后的 GitHub 检查](https://github.com/MouMou-Eleven/yancut-ai/actions/runs/35014137631)：Ubuntu、macOS、Windows 的构建与测试步骤均已通过；没有删除测试或将真实错误设为忽略。
 - 本地：画布手势修改关键帧后，真实导出 5.000 秒、1920×1080、H.264；提取第 1/2 秒画面，文字的位置与大小符合预览。
 - 线上：上传 12 秒合成视频、创建项目、加入 YC-01、导出 12.000 秒 H.264，480×270 保留测试素材画幅；提取画面确认动效进入成片。正常导入、编辑与导出没有控制台错误。
 - 线上未填 Key 返回 `401 PERSONAL_KEY_REQUIRED` 和中文设置指引；这属于主动验证的预期拒绝。浏览器有 WebGPU 平台提示与欢迎弹窗无障碍警告。
