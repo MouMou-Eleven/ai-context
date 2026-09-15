@@ -12,7 +12,7 @@
 |---|---|
 | 教师微课、MG 视频制作，AI 辅助拆脚本/分镜 | 本 README → [联合制作流程](../../common/production-workflow.md) |
 | 根据歌曲、旁白或故事音频制作AI微课画面，设计场景图与段内多镜头提示词 | [AI教师微课画面生成与多镜头制作方法](./ai-generated-microcourse-video-workflow.md) → 再按本次平台读取工具经验 |
-| 把分段音频、参考图、提示词和验收整理成可操作页面 | [视频与微课交互式制作工作台](../common/interactive-production-workbench.md) |
+| 把教学设计、逐字稿、音频、参考图、提示词和验收按现有素材整理成可操作页面 | [视频与微课交互式制作工作台](../common/interactive-production-workbench.md) |
 | AI 生成视频镜头、编写生成提示词 | [AI 视频通用经验](../common/README.md) → 按本次工具选择具体经验 |
 | AE 动画、实拍标注、字幕与后期合成 | [AE 设计](../common/ae-production.md) |
 | 图文转动效、可编辑的文字/颜色/编号动画 | [Remotion Skill 能力说明](../../../other/skills/jianwei-ai-community-remotion-video/README.md) |
@@ -45,7 +45,7 @@
 ## 文件索引与维护
 
 - [AI教师微课画面生成与多镜头制作方法](./ai-generated-microcourse-video-workflow.md)：音频分段、角色与场景资产、文生/图生决策、图片和视频提示词模板、多镜头生成、连续性与验收；制作同类AI微课时按需展开。
-- [视频与微课交互式制作工作台](../common/interactive-production-workbench.md)：一段一卡组织音频、分镜、参考图职责、提示词、制作状态和验收；多段项目需要逐项操作时使用。
+- [视频与微课交互式制作工作台](../common/interactive-production-workbench.md)：按教学设计、逐字稿、音频或混合素材选择主线，一单元一卡组织原文、分镜、参考图职责、提示词、制作状态和验收；音频播放为条件模块。
 - [案例索引](../../../../projects/cases/README.md)：只收录具有具体场景、真实过程和结果依据的项目案例；当前可参考《小树叶》AI教师音乐微课。
 - [展示写作规范](./showcase-guidelines.md)：只在写对外简介时展开。
 - [联合流程](../../common/production-workflow.md)：脚本、分镜、AI 镜头、制作、交付及自动写入规则。
@@ -59,7 +59,7 @@
 
 | 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
 |---|---|---|---|
-| 多段视频或微课需要集中试听音频、查看参考图、复制提示词、记录状态与返工时 | [视频与微课交互式制作工作台](../common/interactive-production-workbench.md) | 一两个简单镜头可用短分镜表；最终成片播放、多人云端协作和权限审核另用对应工具 | 实际测试分段音频、提示词复制、图片路径、段落锚点、状态反馈和窄屏布局；网页打开不能替代交互与成片验收 |
+| 视频或微课需要按教学设计、逐字稿、音频或混合素材组织分镜、参考图、提示词、状态与返工时 | [视频与微课交互式制作工作台](../common/interactive-production-workbench.md) | 一两个简单镜头可用短分镜表；最终成片播放、多人云端协作和权限审核另用对应工具 | 检查输入素材与画面逐项对应、提示词复制、图片路径、单元锚点、状态反馈和窄屏布局；有音频时再测试时间码与播放，网页打开不能替代交互与成片验收 |
 <!-- generated-methods:end -->
 
 <!-- generated-related-assets:start -->

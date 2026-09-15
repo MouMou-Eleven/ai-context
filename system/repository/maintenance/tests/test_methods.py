@@ -77,6 +77,17 @@ class MethodRouting(unittest.TestCase):
         self.assertIn('work/domains/design/video/common/interactive-production-workbench.md', result['read'])
         self.assertNotIn('work/domains/other/skills/jianwei-ai-learning-community-workbench/README.md', result['read'])
 
+    def test_transcript_or_teaching_design_can_drive_workbench_without_audio(self):
+        for task in ['只有逐字稿，制作微课分镜和AI生图视频提示词',
+                     '只有教学设计，制作微课画面工作台']:
+            with self.subTest(task=task):
+                result = router.resolve(task, 'create')
+                self.assertEqual(result['selectedCandidate'], 'microcourse')
+                self.assertIn(VIDEO_WORKBENCH, method_ids(result))
+        body = (ROOT / 'work/domains/design/video/common/interactive-production-workbench.md').read_text(encoding='utf-8')
+        self.assertIn('音频不是必备输入', body)
+        self.assertIn('没有音频时不显示播放控件', body)
+
     def test_professional_ai_workbench_does_not_activate_video_method(self):
         result = router.resolve('为教师设计一个日常AI工作台', 'create')
         self.assertEqual(result['selectedCandidate'], 'workbench')
