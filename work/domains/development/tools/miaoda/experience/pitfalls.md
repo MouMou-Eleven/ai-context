@@ -547,3 +547,38 @@ Cannot find module 'autoprefixer'
 2. 包内 PRD 与清单中标注"无 CSS 预处理器、无 PostCSS/Tailwind 插件"。
 3. 验收以 `vite build --logLevel error` exit 0 且 `dist/` 完整为准，不能只信"秒哒显示创建完成/构建成功"。
 4. 遇到 `Cannot find module 'tailwindcss'` / `'autoprefixer'` 这类报错时，首选修复就是"置空 plugins"，不要逐插件删除。
+
+## #28 PATCH 的 JSON 路径过滤触发网关白名单错误，被误读为数据库缺列
+
+**适用**：百度秒哒应用中，更新现有记录时出现 `PgRestWhitelistError:42703`，请求 URL 同时含有 `or=(extra_meta->>portal...)`。不适用于所有 `42703`；真实缺列、迁移未执行、环境指错仍须另行核验。
+
+**来源与状态**：2026-09-15，建委JIANWEI网站 R24 教育作品编辑。建委提供完整请求错误及秒哒 v96 自动修复回执，并确认已自动修复。Codex核对本地 R24 `src/pages/admin/PublisherPage.tsx` 后，确认更新分支确实加入了下面的条件。网关内部解析原因来自秒哒回执，未取得网关源码或独立复现生产写入；R25本地回归使用按该错误建立的网关模拟，不冒充真实云端验收。
+
+**症状**：读取、浏览作品正常，保存已存在的教育作品时 HTTP 400；消息为 `column cases.extra_meta does not exist`。请求体本来就携带 `extra_meta`，失败 URL 的关键部分为：
+
+```text
+PATCH /rest/v1/cases?id=eq.<record-id>&or=(extra_meta->>portal.eq.education)&select=id
+```
+
+本地引入的触发写法：
+
+```ts
+supabase.from(table).update(payload).eq('id', recordId)
+  .or('extra_meta->>portal.eq.education');
+```
+
+**根因与漏检**：R24为防止旧编辑页覆盖已经跨专区迁移的记录，把 JSONB 路径条件加入 PATCH。按 v96 回执，秒哒 API 网关处理 PATCH 的 `or` 参数时，将包含 `->>` 的表达式误识别为非法列，报出像数据库缺列的错误。标准 PostgreSQL/PostgREST 支持一种表达式，不证明托管网关在所有 HTTP 方法中都支持它。本地类型检查、构建、PGlite 数据库验证和未模拟白名单的浏览器测试都绕过了这层限制，因此没有发现线上问题；这是增量交付验证边界的遗漏。
+
+**修复**：v96先按普通 `id` 条件 SELECT 当前记录，在应用层核对 `extra_meta.portal`；读取失败、记录不存在或已迁移时中止。PATCH只保留普通列条件，移除 JSON 路径 `or`。不能因为错误文案而新增第二个 `extra_meta`、重建表或删除数据。
+
+R25在本地同步此方向，并在保存前读取 `updated_at`，以 `id` 和读取到的 `updated_at` 普通列条件更新；返回零条记录按冲突处理。这样能拦截预读与写入之间、且确实更新了时间戳的迁移。它依赖相关写入路径维护 `updated_at`，不能宣称前端预读本身就是原子鉴权。严格事务校验应使用经平台验证的RPC，并在数据库内检查身份、专区和版本；RLS始终保留。
+
+**后续增量包检查**：
+
+1. 按实际请求定位层次：HTTP方法、URL参数、payload、错误类型、平台回执；先查同表普通列读取和实际 schema，再决定是否需要迁移。不要把GET成功外推为PATCH成功。
+2. 更新请求默认采用已经验证的普通列条件；引入 JSON 路径、`or` 或新RPC时，单独验证该环境该方法，不凭SDK类型通过放行。
+3. 回归至少覆盖：主站和教育专区作品/素材更新、迁移后旧编辑页、记录删除、预读失败、写入冲突及草稿重存。模拟测试必须让旧请求失败、修复请求成功；最终由真实发布环境的保存结果完成验收。
+4. 用户在秒哒热修复后，先取得回执或最新源码，合并回本地权威源码再打包。未取得完整云端源码时明确基线差异；提示秒哒保留已确认热修复和其他云端改动，不能盲目覆盖旧版 `PublisherPage.tsx`。
+5. 区分“包内哈希一致”“完整源码可构建”“模拟网关通过”“真实网关保存通过”四种证据。上线后用测试记录执行保存和重载，核对数据库内容；没有生产验证不得写“线上已修复”。
+
+本次不构成“秒哒所有版本都不支持JSON过滤”的普遍结论。后续平台升级或改用RPC，应按当前环境重新验证。交付流程入口见[版本化增量迭代闭环](./patterns/codex-miaoda-iterative-increment-workflow.md)。
