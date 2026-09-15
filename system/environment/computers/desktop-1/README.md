@@ -18,8 +18,8 @@
 | Clash Verge Rev | 2.5.2；已从 2.3.2 更新，持久运行配置统一为规则模式，活动配置同步为当前可用的 iKuuu 配置 |
 | GitHub 推送 | `ai-context` 使用专用 SSH 443 别名、独立密钥和本地代理自动选择；fetch、dry-run push、真实 push 均已验证 |
 | Codex++ | 1.2.41；供应商自动切换当前关闭 |
-| 磁盘状态 | C、D、E、F 均为 NTFS，2026-08-30 核验为 Healthy；C 盘清理后可用约 54.99 GiB |
-| Codex 会话存储 | `sessions` 与 `archived_sessions` 当前仍在 C 盘普通目录；已部署并验证 SYSTEM 开机迁移任务，等待下一次重新启动正式迁移到 F 盘 |
+| 磁盘状态 | 2026-09-15 复核 C、D、E、F 均为 NTFS、Healthy；当次容量与清理结果见磁盘专文，历史空闲量不能作为当前读数 |
+| Codex 会话存储 | 2026-08-31 已完成迁移，2026-09-15 实测 `sessions` 与 `archived_sessions` 均为指向 F 盘的 Junction；会话约 6.29 GiB，数据库留 C 盘。不要再次安排迁移或重启 |
 
 截至 2026-07-23，本机 Codex 活动请求链路为：
 
@@ -66,7 +66,18 @@ Codex -> CC Switch 本地端口 127.0.0.1:15721 -> 当前外部供应商
 - [`disk-cleanup-and-codex-storage.md`](./disk-cleanup-and-codex-storage.md)：磁盘清理固定路径、Junction 统计陷阱、Codex 空间增长原因及会话迁移方案。
 - [`history.md`](./history.md)：关键修复、失效故障与配置变化摘要。
 
+## 2026-09-15 存储复核
+
+- 上次迁移实际已在 2026-08-31 18:32:21 完成，`C:\ProgramData\CodexSessionMigration\success.json`、迁移日志和两处实际 Junction 相互印证。仓库遗漏了成功验收，旧的“等待重启”描述已经失效。
+- C 盘再次增长不能归因于会话还在 C 盘。优先核查 `.codex-session-delete\backups`（删除对话工具的恢复备份）、npm 下载缓存、剪映缓存；Claude 虚拟机、Codex 工作产物、PowerPoint 恢复文件须另行区分。
+- E 盘本轮主要占用为微信约 72.99 GiB、360 浏览器约 41.85 GiB、剪映约 41.46 GiB、AE 约 24.53 GiB。可重建大项是 360 的 `Service Worker\CacheStorage` 约 32.62 GiB 和 AE `.aecache` 约 21.63 GiB。
+- “缓存”目录里可能有真实草稿：`E:\剪映\缓存\JianyingPro Drafts` 约 26.80 GiB，不能整目录删。微信 `msg\file` 的 PDF 也不能仅凭文件名判定自动下载。
+- 迁移启动闸门的旧注册表项和快捷方式备份仍有残留；它们不代表迁移失败。本次不改自启动配置，不删除仍被启动项引用的迁移脚本。
+- 详细清理账目、保留项、权限盲区和下次定位规则见 [`disk-cleanup-and-codex-storage.md`](./disk-cleanup-and-codex-storage.md)。
+
 ## 2026-08-30 磁盘清理与 Codex 存储核验
+
+以下为当日历史状态；其中迁移等待状态已由上面的 2026-09-15 实机复核替代，不再据此安排重启。
 
 - C 盘在线验收阶段从约 39.38 GiB 可用增加到约 54.99 GiB，真实净增约 15.61 GiB；剪映、Edge、AE、npm、显卡和临时缓存均按进程与路径边界清理。
 - 删除 22 份数据库中已经不存在的 Codex 备份，释放约 1.892 GiB；仍被索引的聊天、归档聊天和 2 份备份完整保留。
@@ -98,4 +109,4 @@ Codex -> CC Switch 本地端口 127.0.0.1:15721 -> 当前外部供应商
 - Clash Verge 2.5.2 安装和配置语法已经验证，但为避免中断当前 Codex 任务，本次没有启动 Verge 接管系统代理或 TUN。下次实际使用 Verge 时，应在无活动任务窗口启动后核对运行模式、端口、活动配置与国内站点规则命中。
 - Windows 当前用户范围仍残留一条 Clash Verge 2.3.2 的卸载登记；实际程序文件和系统范围登记均为 2.5.2。该条目不影响当前程序版本，后续只在独立维护窗口清理，不能因此卸载现有 `E:\Clash`。
 
-*文件最后整理：2026-09-07；设备事实最后核验：2026-09-07*
+*文件最后整理：2026-09-15；存储事实最后核验：2026-09-15；其余软件与网络事实按各节原核验日期理解。*
