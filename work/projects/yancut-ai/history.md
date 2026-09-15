@@ -6,6 +6,7 @@
 
 | 日期 | 变化 |
 |---|---|
+| 2026-09-16 | 修复关键帧、片段边界和片尾后定位，加入动效库、参考视频及个人模板、语义关联与结构质检；六项目参考及线上 12 秒导出验收，明确后续本地/Vercel/上下文持续同步。见 [修订](./revisions/2026-09-16-workbench-motion-reference-templates.md)。 |
 | 2026-09-15 | 用户选择 Vercel 个人在线测试与手动 GLM Key；校正旧入口、整轮回滚、完整视频理解等描述，最终平台仍为百度秒哒。见 [修订](./revisions/2026-09-15-personal-vercel-testing.md)。 |
 | 2026-09-15 | hypit、montage-vlog-compiler、overlay-studio 核验；场景技能、真实文字动效与多轮修订。见 [修订](./revisions/2026-09-15-hypit-montage-overlay-scenario-workflows.md)。 |
 | 2026-09-10 | 合并统一工作台，加入稀疏画面证据、源区间分镜与浏览器导出验证。见 [修订](./revisions/2026-09-10-evidence-storyboard-workbench.md)。 |

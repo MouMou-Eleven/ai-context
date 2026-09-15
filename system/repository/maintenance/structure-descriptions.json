@@ -1,7 +1,8 @@
 {
   "schemaVersion": 1,
-  "confirmedDate": "2026-09-15",
+  "confirmedDate": "2026-09-16",
   "descriptions": {
+    "work/projects/yancut-ai/revisions/2026-09-16-workbench-motion-reference-templates.md": "言剪动效、关键帧、参考视频与个人模板升级及线上验收",
     "system/repository/revisions/2026-09-15-writing-dna-review-and-method-routing.md": "写作蒸馏器评估、材料提炼与按任务发现方法",
     "system/repository/maintenance/tests/test_methods.py": "跨领域方法发现、误触发与登记维护回归",
     ".gitattributes": "Git 文本属性与换行规范",

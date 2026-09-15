@@ -1121,7 +1121,8 @@ ai-context/
 │   │       │   ├── 2026-09-10-evidence-storyboard-workbench.md  2026-09-10：统一工作台、素材证据与分镜剪辑
 │   │       │   ├── 2026-09-10-narrato-workflow-hardening.md  2026-09-10：NarratoAI 参考与真实剪辑链路加固
 │   │       │   ├── 2026-09-15-hypit-montage-overlay-scenario-workflows.md  2026-09-15：素材证据、场景规范与可编辑信息动效
-│   │       │   └── 2026-09-15-personal-vercel-testing.md  个人在线测试与项目记录校正
+│   │       │   ├── 2026-09-15-personal-vercel-testing.md  个人在线测试与项目记录校正
+│   │       │   └── 2026-09-16-workbench-motion-reference-templates.md  言剪动效、关键帧、参考视频与个人模板升级及线上验收
 │   │       └── roadmap.md  开发路线与上线条件
 │   └── README.md  领域知识与项目案例的分级入口
 ├── system/  AI协作与维护
@@ -1268,4 +1269,4 @@ ai-context/
 
 完整设计理由与后续扩展见[信息架构](../information-architecture.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-09-15*
+*结构最后确认：2026-09-16*
