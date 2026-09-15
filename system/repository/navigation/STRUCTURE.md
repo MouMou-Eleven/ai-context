@@ -1114,7 +1114,11 @@ ai-context/
 │   │       │   ├── 2026-09-02-commercialization-closure.md  商业化闭环与上线边界修订
 │   │       │   ├── 2026-09-03-glm53-manual-purchase.md  GLM 模型与手动购买流程修订
 │   │       │   ├── 2026-09-03-local-demo-effects-stickers.md  本地演示特效与贴纸效果修订
-│   │       │   └── 2026-09-04-ai-progress-remotion-hyperframes-keyframes.md  AI 执行进度可视化、Remotion 本地预检与手动关键帧修订
+│   │       │   ├── 2026-09-04-ai-progress-remotion-hyperframes-keyframes.md  AI 执行进度可视化、Remotion 本地预检与手动关键帧修订
+│   │       │   ├── 2026-09-10-evidence-storyboard-workbench.md  2026-09-10：统一工作台、素材证据与分镜剪辑
+│   │       │   ├── 2026-09-10-narrato-workflow-hardening.md  2026-09-10：NarratoAI 参考与真实剪辑链路加固
+│   │       │   ├── 2026-09-15-hypit-montage-overlay-scenario-workflows.md  2026-09-15：素材证据、场景规范与可编辑信息动效
+│   │       │   └── 2026-09-15-personal-vercel-testing.md  个人在线测试与项目记录校正
 │   │       └── roadmap.md  开发路线与上线条件
 │   └── README.md  领域知识与项目案例的分级入口
 ├── system/  AI协作与维护

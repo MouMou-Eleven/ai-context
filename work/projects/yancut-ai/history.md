@@ -6,6 +6,9 @@
 
 | 日期 | 变化 |
 |---|---|
+| 2026-09-15 | 用户选择 Vercel 个人在线测试与手动 GLM Key；校正旧入口、整轮回滚、完整视频理解等描述，最终平台仍为百度秒哒。见 [修订](./revisions/2026-09-15-personal-vercel-testing.md)。 |
+| 2026-09-15 | hypit、montage-vlog-compiler、overlay-studio 核验；场景技能、真实文字动效与多轮修订。见 [修订](./revisions/2026-09-15-hypit-montage-overlay-scenario-workflows.md)。 |
+| 2026-09-10 | 合并统一工作台，加入稀疏画面证据、源区间分镜与浏览器导出验证。见 [修订](./revisions/2026-09-10-evidence-storyboard-workbench.md)。 |
 | 2026-08-13 | 建立网页优先、中文优先、自然语言剪辑、个人声音库和视频包装的开发基线。 |
 | 2026-08-13 | 本地工作区迁移到新的固定目录，并完成剪辑台中文化和原创 AI 指令工作室设计。 |
 | 2026-08-15 | 确立本地权威源码、编号分包和百度秒哒云端接管路线。 |
