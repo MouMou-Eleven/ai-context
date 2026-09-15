@@ -1096,6 +1096,7 @@ ai-context/
 │   │   │       ├── 2026-09-12-onboarding-expression-and-replay-scope.md  新人入口表达与回放归属修订
 │   │   │       ├── 2026-09-13-reader-questions-and-introduction.md  宣传问答结构与当前介绍页事实修订
 │   │   │       ├── 2026-09-15-ai-programming-as-first-perspective.md  2026-09-15：AI 编程作为普通人理解 AI 的第一视角
+│   │   │       ├── 2026-09-15-ai-programming-breadth-rationale-correction.md  2026-09-15：首期 AI 编程论证改为具体工具与连接方式
 │   │   │       ├── 2026-09-15-public-term-and-internal-continuity.md  2026-09-15：区分对外年度口径与内部持续交付设计
 │   │   │       └── README.md  修订索引与读取边界
 │   │   ├── README.md  项目与案例总入口

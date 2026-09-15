@@ -4,7 +4,8 @@
 
 | 文件 | 内容 |
 |---|---|
-| [2026-09-15-ai-programming-as-first-perspective.md](./2026-09-15-ai-programming-as-first-perspective.md) | 明确首期选择 AI 编程的个人经验依据、跨领域迁移价值，以及与后续 AI 办公、设计、视频专项课程的顺序关系 |
+| [2026-09-15-ai-programming-breadth-rationale-correction.md](./2026-09-15-ai-programming-breadth-rationale-correction.md) | 校正首期 AI 编程的论证方式：用 Codex、WorkBuddy、API、GitHub、Skill、MCP 与真实场景支撑全方位视角，删除泛化能力清单 |
+| [2026-09-15-ai-programming-as-first-perspective.md](./2026-09-15-ai-programming-as-first-perspective.md) | 首次明确首期选择 AI 编程的个人经验依据与课程顺序；其中泛化论证已被同日后续修订校正 |
 | [2026-09-15-public-term-and-internal-continuity.md](./2026-09-15-public-term-and-internal-continuity.md) | 区分对外“499 元 / 年”统一口径与内部买断式持续交付设计，明确不得把内部思路直接宣传为终身权益 |
 | [2026-09-13-reader-questions-and-introduction.md](./2026-09-13-reader-questions-and-introduction.md) | 真实宣传改稿、报名者问题顺序、当前12节课程整体发布口径与版本核对 |
 | [2026-09-12-onboarding-expression-and-replay-scope.md](./2026-09-12-onboarding-expression-and-replay-scope.md) | 新人入口真实表达反馈、改前改后与单场专题分享回放归属纠正 |

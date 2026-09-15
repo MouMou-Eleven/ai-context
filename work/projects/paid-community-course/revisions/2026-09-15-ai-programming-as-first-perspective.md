@@ -1,5 +1,7 @@
 # 2026-09-15：AI 编程作为普通人理解 AI 的第一视角
 
+> 状态：已被同日后续校正。本文保留第一次修订的形成过程；当前有效口径见 [`2026-09-15-ai-programming-breadth-rationale-correction.md`](./2026-09-15-ai-programming-breadth-rationale-correction.md)。
+
 ## 触发背景
 
 建委在修改一条新成员加入社群的朋友圈文案时指出，上一版只强调“做一个完整项目可以练习通用能力”，仍没有准确表达第一期选择 AI 编程的核心依据。
