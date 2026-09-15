@@ -1021,6 +1021,23 @@
   ],
   "methodRules": [
     {
+      "id": "frontend-ui-quality",
+      "label": "前端 UI 质量标准",
+      "status": "active",
+      "path": "work/domains/development/experience/frontend-ui-quality-standards.md",
+      "selectedAny": ["miaoda", "skills", "workbench"],
+      "whenAny": ["frontend", "UI", "界面", "响应式", "移动端", "编辑器", "设计感", "页面改版"],
+      "excludeAny": ["纯后端", "数据库迁移", "命令行脚本"],
+      "intents": ["create", "write", "review"],
+      "useWhen": "页面改版、组件选择、响应式适配、编辑器交互或需要判断界面设计质量时",
+      "notFor": "纯后端、数据库迁移、命令行脚本或无界面任务",
+      "acceptance": "读方法正文与目标项目 README；检查 1920/1024/768/390/360 布局；验证加载、失败、触控和键盘状态",
+      "evidence": "work/domains/development/experience/frontend-ui-quality-standards.md",
+      "confirmedAt": "2026-09-15",
+      "entryPoints": ["work/domains/development/experience/README.md"],
+      "source": "用户确认偏好与 R26 实际验收（2026-09-15）"
+    },
+    {
       "id": "problem-driven-explanation",
       "label": "从问题推导概念",
       "status": "active",
