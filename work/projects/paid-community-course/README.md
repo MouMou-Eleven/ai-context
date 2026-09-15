@@ -72,8 +72,8 @@
 | 内容原则 | 解决真实问题，适合新手小白，步骤清晰，保姆级 |
 | 知识沉淀 | 教程正文写入飞书；社群方向与课程规划维护在本项目，通用培训经验和自媒体方法分别回到所属领域 |
 | 流量入口 | 后续通过自媒体获取课程与社群流量 |
-| 当前介绍与报名页 | [飞书文档](https://hv21wf9uao9.feishu.cn/wiki/R9Gsw9KVuiLEppklfqHc1DuMnMg?from=from_copylink)，已加入微信小店商品二维码，可扫码查看并下单；2026-09-15 回读确认 revision 239，“为什么从 AI 编程开始”已删除泛化能力清单，改用 Codex、WorkBuddy、API、GitHub、Skill、MCP 及跨场景用途支撑判断，见[同日口径校正](./revisions/2026-09-15-ai-programming-breadth-rationale-correction.md)。报名者问题串联见[介绍页修订](./revisions/2026-09-13-reader-questions-and-introduction.md)；对外统一使用“499 元 / 年”，见[会员口径修订](./revisions/2026-09-15-public-term-and-internal-continuity.md) |
-| 关键营销原则 | 社群总定位与季度主题必须分开；开头先说明综合型长期社群，再介绍当前季度课程。解释首期为什么选择 AI 编程时，可以使用建委个人实践判断，但必须用具体工具与连接方式支撑：Codex、WorkBuddy、API、GitHub 项目与 Skill、MCP，以及它们在办公、内容提炼、AI 视频等任务中的用途；不得只写“目标表达、任务拆解、工具调用”等抽象能力。还要说明 AI 办公、AI 设计和 AI 视频会在后续阶段展开，不能写成普遍定律或社群只有编程。内部用技术名保证课程完整，对外用人群、场景和结果完成表达；职业案例只用于说明用途，不代表社群只服务某个行业 |
+| 当前介绍与报名页 | [飞书文档](https://hv21wf9uao9.feishu.cn/wiki/R9Gsw9KVuiLEppklfqHc1DuMnMg?from=from_copylink)，已加入微信小店商品二维码，可扫码查看并下单；2026-09-15 回读确认 revision 240，“为什么从 AI 编程开始”已按正式产品说明重写：直接回答课程选择，使用 Codex、WorkBuddy、API、GitHub、Skill、MCP 及跨场景用途支撑判断，不再沿用朋友圈中的人物与私聊叙事，见[同日口径校正](./revisions/2026-09-15-ai-programming-breadth-rationale-correction.md)。报名者问题串联见[介绍页修订](./revisions/2026-09-13-reader-questions-and-introduction.md)；对外统一使用“499 元 / 年”，见[会员口径修订](./revisions/2026-09-15-public-term-and-internal-continuity.md) |
+| 关键营销原则 | 社群总定位与季度主题必须分开；开头先说明综合型长期社群，再介绍当前季度课程。解释首期为什么选择 AI 编程时，可以使用建委个人实践判断，但必须用具体工具与连接方式支撑：Codex、WorkBuddy、API、GitHub 项目与 Skill、MCP，以及它们在办公、内容提炼、AI 视频等任务中的用途；不得只写“目标表达、任务拆解、工具调用”等抽象能力。还要说明 AI 办公、AI 设计和 AI 视频会在后续阶段展开，不能写成普遍定律或社群只有编程。朋友圈可以借真实人物和对话展开，正式介绍页必须直接解释产品设计；两者可以共享论据，不能直接复制叙事语句。内部用技术名保证课程完整，对外用人群、场景和结果完成表达；职业案例只用于说明用途，不代表社群只服务某个行业 |
 
 ## 会员知识库入口与回放归属
 

@@ -22,6 +22,7 @@
 | 2026-09-15 | 建委重新说明：社群内部最初按一次付费后持续开放后续课程、直播和知识库更新的买断式思路设计，但对外仍统一表述为499元/年，不宣传终身买断；具体边界见[本次修订](./revisions/2026-09-15-public-term-and-internal-continuity.md)。 |
 | 2026-09-15 | 建委进一步明确首期课程排序的个人经验依据：普通人先从 AI 编程视角切入，更容易在完整项目中建立较全面、可迁移的 AI 使用方法；AI 办公、AI 设计和 AI 视频作为后续专项阶段继续展开。该判断不作为对所有人的普遍定律，见[本次修订](./revisions/2026-09-15-ai-programming-as-first-perspective.md)。 |
 | 2026-09-15 | 建委继续校正上一条的论证：不能再用“目标表达、任务拆分、工具调用”等泛化能力证明首期排序，必须用 Codex、WorkBuddy、API、GitHub 项目与 Skill、MCP 及办公、文章提炼、AI 视频等具体连接说明为什么 AI 编程提供更全面的视角；原修订保留追溯，当前口径见[同日校正](./revisions/2026-09-15-ai-programming-breadth-rationale-correction.md)。 |
+| 2026-09-15 | 进一步区分同一观点在不同渠道的写法：朋友圈可借成员咨询与“我告诉了他……”展开，飞书正式介绍页必须直接回答课程设计问题。飞书第02节再次重写并回读至 revision 240；渠道边界并入[同日校正](./revisions/2026-09-15-ai-programming-breadth-rationale-correction.md)。 |
 
 2026-09-12：[新人入口修订](./revisions/2026-09-12-onboarding-expression-and-replay-scope.md)纠正栏目表头的不自然表达，明确公告区回放为单场专题分享；通用纠错同步表达标准。
 
