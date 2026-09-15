@@ -4,6 +4,7 @@
 
 | 文件 | 内容 |
 |---|---|
+| [2026-09-15-reader-address-you-and-everyone.md](./2026-09-15-reader-address-you-and-everyone.md) | 明确社群介绍页以“你”为主、群体语境用“大家”，并区分对外直述与内部“成员／学员”称谓 |
 | [2026-09-15-ai-programming-breadth-rationale-correction.md](./2026-09-15-ai-programming-breadth-rationale-correction.md) | 校正首期 AI 编程的论证方式，并区分朋友圈叙事与正式介绍页说明：共享论据，不直接复制语句 |
 | [2026-09-15-ai-programming-as-first-perspective.md](./2026-09-15-ai-programming-as-first-perspective.md) | 首次明确首期选择 AI 编程的个人经验依据与课程顺序；其中泛化论证已被同日后续修订校正 |
 | [2026-09-15-public-term-and-internal-continuity.md](./2026-09-15-public-term-and-internal-continuity.md) | 区分对外“499 元 / 年”统一口径与内部买断式持续交付设计，明确不得把内部思路直接宣传为终身权益 |
