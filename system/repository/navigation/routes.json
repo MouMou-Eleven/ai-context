@@ -1090,7 +1090,7 @@
       "label": "前端 UI 质量标准",
       "status": "active",
       "path": "work/domains/development/experience/frontend-ui-quality-standards.md",
-      "selectedAny": ["ai-design", "video", "miaoda"],
+      "selectedAny": ["ai-design"],
       "whenAny": ["frontend", "UI", "界面", "响应式", "移动端", "编辑器", "设计感", "页面改版"],
       "excludeAny": ["纯后端", "数据库迁移", "命令行脚本"],
       "intents": ["create", "write"],
