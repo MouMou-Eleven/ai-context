@@ -38,6 +38,7 @@ ai-context/
 │   │   │   └── video/  视频、动画与教育作品
 │   │   │       ├── common/  视频共用制作方法与工具
 │   │   │       │   ├── ae-production.md  AE包装、合成与工程交付要求
+│   │   │       │   ├── interactive-production-workbench.md  分段音频、分镜、参考图、提示词、状态与验收的交互式制作工作台方法
 │   │   │       │   ├── README.md  跨片型通用制作经验
 │   │   │       │   └── tools/  AI 视频工具
 │   │   │       │       ├── README.md  工具索引

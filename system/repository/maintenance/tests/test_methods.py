@@ -15,6 +15,7 @@ validator = load_module('validate-context')
 CATALOG = 'system/repository/navigation/routes.json'
 TECHNICAL = 'problem-driven-explanation'
 PROMOTION = 'reader-question-promotion'
+VIDEO_WORKBENCH = 'interactive-video-production-workbench'
 TRAINING_STYLE = 'work/domains/training/experience/jianwei-training-style.md'
 BOOK_STYLE = 'work/projects/feishu-efficient-office/writing-style-analysis.md'
 
@@ -64,6 +65,18 @@ class MethodRouting(unittest.TestCase):
         result = router.resolve('给培训学员写纯教学课件，解释API，不涉及招生', 'create')
         self.assertEqual(method_ids(result), {TECHNICAL})
 
+    def test_video_workbench_routes_to_video_method(self):
+        result = router.resolve('制作微课时做一个交互式分镜工作台，能逐段试听和复制提示词', 'create')
+        self.assertEqual(result['selectedCandidate'], 'microcourse')
+        self.assertIn(VIDEO_WORKBENCH, method_ids(result))
+        self.assertIn('work/domains/design/video/common/interactive-production-workbench.md', result['read'])
+        self.assertNotIn('work/domains/other/skills/jianwei-ai-learning-community-workbench/README.md', result['read'])
+
+    def test_professional_ai_workbench_does_not_activate_video_method(self):
+        result = router.resolve('为教师设计一个日常AI工作台', 'create')
+        self.assertEqual(result['selectedCandidate'], 'workbench')
+        self.assertNotIn(VIDEO_WORKBENCH, method_ids(result))
+
 
 class MethodRegistry(unittest.TestCase):
     def setUp(self):
@@ -71,7 +84,7 @@ class MethodRegistry(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name).resolve()
         self.catalog = json.loads((ROOT / CATALOG).read_text(encoding='utf-8-sig'))
-        self.method = self.catalog['methodRules'][0]
+        self.method = next(method for method in self.catalog['methodRules'] if method['id'] == TECHNICAL)
         paths = set(self.catalog['readFirst'])
         for route in self.catalog['routes']:
             paths.add(route['entry'])
@@ -87,8 +100,12 @@ class MethodRegistry(unittest.TestCase):
                      'entry': path.relative_to(self.root).as_posix()}
                     for path in (self.root / 'work/projects').glob('*/README.md')
                     if path.parent.name not in {'archive', 'cases'}]
+        cases = [{'id': path.stem, 'name': path.stem, 'domain': 'Fixture',
+                  'entry': path.relative_to(self.root).as_posix()}
+                 for path in (self.root / 'work/projects/cases').glob('*.md')
+                 if path.name != 'README.md']
         write_text(self.root / 'system/repository/navigation/projects.json',
-                   json.dumps({'schemaVersion': 1, 'projects': projects, 'cases': []}))
+                   json.dumps({'schemaVersion': 1, 'projects': projects, 'cases': cases}))
         self.save()
 
     def save(self):

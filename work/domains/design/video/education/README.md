@@ -12,6 +12,7 @@
 |---|---|
 | 教师微课、MG 视频制作，AI 辅助拆脚本/分镜 | 本 README → [联合制作流程](../../common/production-workflow.md) |
 | 根据歌曲、旁白或故事音频制作AI微课画面，设计场景图与段内多镜头提示词 | [AI教师微课画面生成与多镜头制作方法](./ai-generated-microcourse-video-workflow.md) → 再按本次平台读取工具经验 |
+| 把分段音频、参考图、提示词和验收整理成可操作页面 | [视频与微课交互式制作工作台](../common/interactive-production-workbench.md) |
 | AI 生成视频镜头、编写生成提示词 | [AI 视频通用经验](../common/README.md) → 按本次工具选择具体经验 |
 | AE 动画、实拍标注、字幕与后期合成 | [AE 设计](../common/ae-production.md) |
 | 图文转动效、可编辑的文字/颜色/编号动画 | [Remotion Skill 能力说明](../../../other/skills/jianwei-ai-community-remotion-video/README.md) |
@@ -44,11 +45,22 @@
 ## 文件索引与维护
 
 - [AI教师微课画面生成与多镜头制作方法](./ai-generated-microcourse-video-workflow.md)：音频分段、角色与场景资产、文生/图生决策、图片和视频提示词模板、多镜头生成、连续性与验收；制作同类AI微课时按需展开。
+- [视频与微课交互式制作工作台](../common/interactive-production-workbench.md)：一段一卡组织音频、分镜、参考图职责、提示词、制作状态和验收；多段项目需要逐项操作时使用。
 - [案例索引](../../../../projects/cases/README.md)：只收录具有具体场景、真实过程和结果依据的项目案例；当前可参考《小树叶》AI教师音乐微课。
 - [展示写作规范](./showcase-guidelines.md)：只在写对外简介时展开。
 - [联合流程](../../common/production-workflow.md)：脚本、分镜、AI 镜头、制作、交付及自动写入规则。
 
 新增独立案例进入[work/projects/cases](../../../../projects/cases/README.md)，长期项目补原记录；更新相关领域登记，自动生成本领域关联入口。业务定位变化才同步个人业务概要。案例描述、拟定功能、实测结果必须分清，不能把宣传简介当作验收证据。
+
+<!-- generated-methods:start -->
+## 按实际需要选择方法
+
+由routes.json生成。先判断本次成品和读者，再按下表实际需要读取方法正文；无需点名作者。多种方法可分工，但同一段不拼接相互冲突的结构。没有适用需求时跳过，不能因看到本表就全部加载。
+
+| 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
+|---|---|---|---|
+| 多段视频或微课需要集中试听音频、查看参考图、复制提示词、记录状态与返工时 | [视频与微课交互式制作工作台](../common/interactive-production-workbench.md) | 一两个简单镜头可用短分镜表；最终成片播放、多人云端协作和权限审核另用对应工具 | 实际测试分段音频、提示词复制、图片路径、段落锚点、状态反馈和窄屏布局；网页打开不能替代交互与成片验收 |
+<!-- generated-methods:end -->
 
 <!-- generated-related-assets:start -->
 ## 相关项目与案例
