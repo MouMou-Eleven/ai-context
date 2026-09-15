@@ -65,16 +65,19 @@ ai-context/
 │   │   │   │   ├── creative-frontend-prompt-patterns.md  创意前端提示词方法
 │   │   │   │   ├── frontend-ui-quality-standards.md  前端 UI 质量标准：层级、节奏与多端交互
 │   │   │   │   ├── README.md  经验索引
-│   │   │   │   └── reference-materials/  编程参考资料
-│   │   │   │       ├── creative-frontend-prompts/  创意前端提示词原始样例
-│   │   │   │       │   ├── raw/  未经提炼的原文
-│   │   │   │       │   │   ├── dark-editorial-portfolio.txt  文本资料
-│   │   │   │       │   │   ├── jack-3d-creator-portfolio.txt  文本资料
-│   │   │   │       │   │   ├── prmpt-fashion-archive.txt  文本资料
-│   │   │   │       │   │   ├── sentinel-spline-3d-hero.txt  文本资料
-│   │   │   │       │   │   └── synapsex-video-scrub.txt  文本资料
-│   │   │   │       │   └── README.md  创意前端原始提示词索引
-│   │   │   │       └── README.md  参考资料索引
+│   │   │   │   ├── reference-materials/  编程参考资料
+│   │   │   │   │   ├── creative-frontend-prompts/  创意前端提示词原始样例
+│   │   │   │   │   │   ├── raw/  未经提炼的原文
+│   │   │   │   │   │   │   ├── dark-editorial-portfolio.txt  文本资料
+│   │   │   │   │   │   │   ├── jack-3d-creator-portfolio.txt  文本资料
+│   │   │   │   │   │   │   ├── prmpt-fashion-archive.txt  文本资料
+│   │   │   │   │   │   │   ├── sentinel-spline-3d-hero.txt  文本资料
+│   │   │   │   │   │   │   └── synapsex-video-scrub.txt  文本资料
+│   │   │   │   │   │   └── README.md  创意前端原始提示词索引
+│   │   │   │   │   └── README.md  参考资料索引
+│   │   │   │   └── revisions/  开发经验修订记录
+│   │   │   │       ├── 2026-09-15-mobile-ui-verification.md  移动端 UI：纠正“记录了规则但成品仍遗漏”
+│   │   │   │       └── README.md  开发经验修订记录
 │   │   │   ├── README.md  应用开发与自动化入口
 │   │   │   └── tools/  编程工具
 │   │   │       ├── miaoda/  百度秒哒

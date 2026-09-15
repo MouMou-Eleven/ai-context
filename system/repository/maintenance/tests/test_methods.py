@@ -25,6 +25,11 @@ def method_ids(result):
 
 
 class MethodRouting(unittest.TestCase):
+    def test_frontend_feedback_routes_for_web_and_miaoda(self):
+        for task in ['修改网站移动端UI，导航与分享需要重新排版','秒哒网站改版，修复响应式界面','前端UI设计与手机适配']:
+            self.assertIn('frontend-ui-quality', method_ids(router.resolve(task, 'create')))
+        self.assertNotIn('frontend-ui-quality', method_ids(router.resolve('网站纯后端数据库迁移', 'create')))
+
     def test_training_explanation_needs_no_author_name(self):
         result = router.resolve('给企业培训写课件，向小白解释大模型幻觉', 'create')
         self.assertEqual(method_ids(result), {TECHNICAL})
