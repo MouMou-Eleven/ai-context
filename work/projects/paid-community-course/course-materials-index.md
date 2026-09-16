@@ -20,8 +20,9 @@
 | 主题与正文 | 归属与用途 | 资料状态 | 原正文核验 |
 |---|---|---|---|
 | `git-github` · AI 时代，普通人怎样理解 Git 和 GitHub<br>[飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/KHyiwBqrYi7ky4kemuqcxe7Enpb?from=from_copylink) | 建委2026-09-16明确：会员社群给大家阅读的文章，不是课程内容；非程序员和 AI 协作初学者；从项目策划者和决策者视角解释 Git、GitHub、branch、commit、push、PR、merge 的作用；明确人负责目标、需求、边界、验收和是否采用，AI 负责命令、底层机制与具体技术操作 | 已发布：删除条件式学习定位，改为确定性人机分工；飞书 revision 34 | 2026-08-29；本次未回读飞书 |
+| `technical-dictionary` · AI时代技术词典：普通人从开发前到上线后的关键节点<br>[飞书文档](https://my.feishu.cn/wiki/MODXwIqpOiE7wqkk3s3cZQ17nid) | 建委2026-09-17明确：会员社群配套文章，不是系统课程；用于帮助普通人理解AI编程开发流程中的关键节点、词语、风险和验收方法 | 已发布：原记录为飞书 revision 117；本次未回读飞书 | 2026-07-19；本次未回读飞书 |
 
-修改依据：[8月29日学习定位修订](./revisions/2026-08-29-student-material-definitive-positioning.md)。文章可提供课程参考，但不会因为在会员区就算作一节课。
+修改依据：[8月29日学习定位修订](./revisions/2026-08-29-student-material-definitive-positioning.md)与[技术词典资料边界](./technical-dictionary-scope.md)。文章可提供课程参考，但不会因为在会员区就算作一节课。
 
 ## 已确认直播复盘、正文链接待补
 

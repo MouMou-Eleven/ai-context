@@ -6,14 +6,13 @@
 
 | 主题标识与资料 | 正文 | 受众与用途 | 资料版本（原记录） | 原核验日期 | 授课状态 |
 |---|---|---|---|---|---|
-| `technical-dictionary` · 【02】AI时代技术词典：普通人从开发前到上线后的关键节点 | [飞书文档](https://my.feishu.cn/wiki/MODXwIqpOiE7wqkk3s3cZQ17nid) | 非程序员；AI 编程基础与开发流程指南；按开发前、开发中、上线前、上线后解释自主搭建项目的关键节点、高频词、风险和验收方法 | 已发布：完成四阶段重构、导航与画板回读验证，飞书 revision 117 | 2026-07-19 | 待确认；不由发布推断 |
 | `ai-collaboration` · 【05】第3课 · AI时代的协作心法：从 Prompt 到 Skill、MCP、CLI、API 与 Harness | [飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/VsvFwdyHRiHuDIkxx5gcM6nanmh) | 非程序员和 AI 协作初学者；开场先讲单句问答式使用的局限、七个概念组合后的变化和后续课程用途，再以直观案例解释 AI 怎样操作电脑、接收多模态输入、管理上下文、复用 Skill、连接外部工具与系统，以及不同 Harness 为什么让同一模型表现不同 | 已发布：完成学习理由开场与学员视角修订，飞书 revision 168；原录播视频、表格和全部既有链接已回读确认 | 2026-08-18 | 待确认；不由发布推断 |
 
-本轮没有确认以上两篇的归属，不由相邻课号或其他资料已确认反推；不计入具体项目的课程进度。方法仍可按适用范围提炼。
+本轮仍未确认协作心法的归属，不由相邻课号或其他资料已确认反推；不计入具体项目的课程进度。方法仍可按适用范围提炼。
 
 ## 文件与已归位资料
 
-- [技术词典资料边界](./technical-dictionary-scope.md)：四阶段仅适用于该篇资料。
+- 技术词典已确认属于会员社群配套文章，资料边界随文章索引维护。
 - [会员社群资料](../../../../projects/paid-community-course/course-materials-index.md)：静态网页发布、秒哒完整开发流程及Git/GitHub配套文章。
 - [济南市图书馆培训](../../../../projects/external-training/jinan-city-library/README.md)：网页美化、秒哒进阶与Bug修复；相关修订已归位。
 - [本次确认依据](../../../../../system/repository/revisions/2026-09-16-training-attribution-and-navigation.md)：本人说明、新旧归属与状态边界。

@@ -1009,8 +1009,7 @@ ai-context/
 │   │       │   └── visual-and-oral-training-docs.md  飞书培训文档的可视化与口语化
 │   │       ├── materials/  培训资料
 │   │       │   ├── pending-attribution/  待确认归属的培训资料
-│   │       │   │   ├── README.md  待确认归属的培训资料
-│   │       │   │   └── technical-dictionary-scope.md  AI 时代技术词典的资料边界
+│   │       │   │   └── README.md  待确认归属的培训资料
 │   │       │   └── README.md  资料入口，避免复制项目资料
 │   │       ├── outlines/  培训大纲
 │   │       │   └── README.md  大纲入口，当前无独立通用大纲
@@ -1088,22 +1087,23 @@ ai-context/
 │   │   │   ├── operations-playbook.md  招生、运营与转化执行
 │   │   │   ├── positioning-and-vision.md  社群定位、愿景与表达边界
 │   │   │   ├── README.md  当前产品与课程口径
-│   │   │   └── revisions/  六级目录：课程关键修订
-│   │   │       ├── 2026-08-23-lesson-4-visualization-and-case-delivery.md  2026-08-23：第 4 课可视化与案例交付修订
-│   │   │       ├── 2026-08-29-student-material-definitive-positioning.md  2026-08-29：学员资料中的确定性学习定位
-│   │   │       ├── 2026-08-30-community-positioning-and-super-individual-definition.md  社群总定位与超级个体定义修订
-│   │   │       ├── 2026-08-30-lesson-5-purchase-language-and-decision-boundary.md  第 5 节购买语言与决策边界修订
-│   │   │       ├── 2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md  第 5 节课后 AI 时代目的与参数解释修订
-│   │   │       ├── 2026-09-01-training-rule-scope-and-delivery-boundary.md  AI 培训规则适用场景与课堂交付边界修订
-│   │   │       ├── 2026-09-01-training-rule-single-source-and-technical-selection.md  AI 培训单一来源与技术内容筛选修订
-│   │   │       ├── 2026-09-07-lesson-6-lecture-review-and-visualization-rules.md  第六课直播复盘：学员稿表达与可视化规则
-│   │   │       ├── 2026-09-12-onboarding-expression-and-replay-scope.md  新人入口表达与回放归属修订
-│   │   │       ├── 2026-09-13-reader-questions-and-introduction.md  宣传问答结构与当前介绍页事实修订
-│   │   │       ├── 2026-09-15-ai-programming-as-first-perspective.md  2026-09-15：AI 编程作为普通人理解 AI 的第一视角
-│   │   │       ├── 2026-09-15-ai-programming-breadth-rationale-correction.md  2026-09-15：首期 AI 编程论证改为具体工具与连接方式
-│   │   │       ├── 2026-09-15-public-term-and-internal-continuity.md  2026-09-15：区分对外年度口径与内部持续交付设计
-│   │   │       ├── 2026-09-15-reader-address-you-and-everyone.md  2026-09-15：社群介绍页统一使用“你／大家”面对读者
-│   │   │       └── README.md  修订索引与读取边界
+│   │   │   ├── revisions/  六级目录：课程关键修订
+│   │   │   │   ├── 2026-08-23-lesson-4-visualization-and-case-delivery.md  2026-08-23：第 4 课可视化与案例交付修订
+│   │   │   │   ├── 2026-08-29-student-material-definitive-positioning.md  2026-08-29：学员资料中的确定性学习定位
+│   │   │   │   ├── 2026-08-30-community-positioning-and-super-individual-definition.md  社群总定位与超级个体定义修订
+│   │   │   │   ├── 2026-08-30-lesson-5-purchase-language-and-decision-boundary.md  第 5 节购买语言与决策边界修订
+│   │   │   │   ├── 2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md  第 5 节课后 AI 时代目的与参数解释修订
+│   │   │   │   ├── 2026-09-01-training-rule-scope-and-delivery-boundary.md  AI 培训规则适用场景与课堂交付边界修订
+│   │   │   │   ├── 2026-09-01-training-rule-single-source-and-technical-selection.md  AI 培训单一来源与技术内容筛选修订
+│   │   │   │   ├── 2026-09-07-lesson-6-lecture-review-and-visualization-rules.md  第六课直播复盘：学员稿表达与可视化规则
+│   │   │   │   ├── 2026-09-12-onboarding-expression-and-replay-scope.md  新人入口表达与回放归属修订
+│   │   │   │   ├── 2026-09-13-reader-questions-and-introduction.md  宣传问答结构与当前介绍页事实修订
+│   │   │   │   ├── 2026-09-15-ai-programming-as-first-perspective.md  2026-09-15：AI 编程作为普通人理解 AI 的第一视角
+│   │   │   │   ├── 2026-09-15-ai-programming-breadth-rationale-correction.md  2026-09-15：首期 AI 编程论证改为具体工具与连接方式
+│   │   │   │   ├── 2026-09-15-public-term-and-internal-continuity.md  2026-09-15：区分对外年度口径与内部持续交付设计
+│   │   │   │   ├── 2026-09-15-reader-address-you-and-everyone.md  2026-09-15：社群介绍页统一使用“你／大家”面对读者
+│   │   │   │   └── README.md  修订索引与读取边界
+│   │   │   └── technical-dictionary-scope.md  会员配套文章的资料范围与词条边界
 │   │   ├── README.md  项目与案例总入口
 │   │   └── yancut-ai/  五级目录：言剪 AI
 │   │       ├── architecture-and-upstream.md  架构、上游与能力边界
@@ -1238,8 +1238,8 @@ ai-context/
 │       │   └── README.md  项目、案例与方法模板
 │       └── versioned-knowledge-policy.md  动态产品知识与版本治理
 ├── .gitattributes  Git 文本属性与换行规范
-├── .github/  GitHub 自动校验
-│   ├── README.md  GitHub 自动校验
+├── .github/  GitHub 自动校验说明
+│   ├── README.md  GitHub 自动校验说明
 │   └── workflows/  目录入口
 │       └── context-validation.yml  自动化配置
 └── .gitignore  Git 忽略规则，排除不应入库的本地文件
