@@ -1,9 +1,9 @@
 # 言剪 AI（YanCut）
 
 > 状态：开发中，转入个人在线实测与持续迭代阶段
-> 当前口径确认：2026-09-16；历史通过记录不等同于现行线上验收
+> 当前口径确认：2026-09-17；历史通过记录不等同于现行线上验收
 
-个人测试入口：[在线工作台](https://yancut-ai-personal.vercel.app/studio/workbench) · [填写本人 GLM Key](https://yancut-ai-personal.vercel.app/ai-settings)。无需启动本地服务；项目仍存当前浏览器。最新动效、关键帧、参考视频和模板升级见 [09-16 发布记录](./revisions/2026-09-16-workbench-motion-reference-templates.md)，个人测试环境约定见 [部署说明](./revisions/2026-09-15-personal-vercel-testing.md)。
+个人测试入口：[在线工作台](https://yancut-ai-personal.vercel.app/studio/workbench) · [填写本人 GLM Key](https://yancut-ai-personal.vercel.app/ai-settings)。无需启动本地服务；项目仍存当前浏览器。使用前请读 [本地优先使用手册](./revisions/2026-09-17-local-first-manual-spectrum-ui.md)；最新动效、关键帧、参考视频和模板升级见 [09-16 发布记录](./revisions/2026-09-16-workbench-motion-reference-templates.md)，个人测试环境约定见 [部署说明](./revisions/2026-09-15-personal-vercel-testing.md)。
 
 ## 定位与边界
 
