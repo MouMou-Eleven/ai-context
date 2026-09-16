@@ -6,7 +6,7 @@
 |---|---|
 | 已确认的会员系统课程与配套文章（分开登记） | [社群资料索引](../../../projects/paid-community-course/course-materials-index.md) |
 | 外出培训，包括《别让 Bug 打败你》 | [外出培训课程](../../../projects/external-training/lessons/README.md) |
-| 协作心法，归属尚未明确 | [待归属资料](./pending-attribution/README.md) |
+| 新出现但尚未确认归属的资料 | [待归属资料](./README.md) |
 
 查正文版本时读取对应资料条目；需要确认当前内容时实际打开飞书，旧 revision 不能替代回读。新增或修改资料时执行[归属与更新规则](../attribution-and-updates.md)，自动维护最近一层 README、受影响的索引及来源说明。
 

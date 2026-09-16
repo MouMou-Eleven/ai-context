@@ -19,4 +19,4 @@
 | [2026-08-30-lesson-5-purchase-language-and-decision-boundary.md](./2026-08-30-lesson-5-purchase-language-and-decision-boundary.md) | 第5课购买决策表达；原文明确记载会员社群 |
 | [2026-08-30-community-positioning-and-super-individual-definition.md](./2026-08-30-community-positioning-and-super-individual-definition.md) | 社群总定位、季度边界与超级个体定义 |
 
-2026-09-16确认后三份社群修订已归回本目录；网页美化与秒哒进阶见[济南市图书馆培训](../../external-training/jinan-city-library/README.md)，Bug课同属该馆。当前待确认只剩[技术词典和协作心法](../../../domains/training/materials/pending-attribution/README.md)。日常创作读取领域当前方法，不默认加载全部历史。
+2026-09-16确认后三份社群修订已归回本目录；网页美化与秒哒进阶见[济南市图书馆培训](../../external-training/jinan-city-library/README.md)，Bug课同属该馆。当前待确认只剩[技术词典和协作心法](../../../domains/training/materials/README.md)。日常创作读取领域当前方法，不默认加载全部历史。

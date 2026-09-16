@@ -60,7 +60,7 @@ python -B -m unittest discover -s system/repository/maintenance/tests -v
 
 已审查的旧版本可以单独提交，只要它在暂存区自洽。脚本不要求用户把无关工作区改动一并提交。失败后应修复具体问题、重新生成并明确暂存相匹配的输入与输出；不使用自动 `git add`。
 
-[GitHub CI](../../../.github/README.md)在Linux和Windows运行同一校验与回归。本地hook提供即时反馈，CI防止未安装hook的环境漏检；启用分支保护需仓库设置另行配置。
+[GitHub CI](../../../README.md)在Linux和Windows运行同一校验与回归。本地hook提供即时反馈，CI防止未安装hook的环境漏检；启用分支保护需仓库设置另行配置。
 
 ## 桌面镜像
 

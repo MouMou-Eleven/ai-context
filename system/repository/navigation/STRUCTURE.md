@@ -1008,8 +1008,6 @@ ai-context/
 │   │       │   ├── tutorial-writing.md  学员教程写法
 │   │       │   └── visual-and-oral-training-docs.md  飞书培训文档的可视化与口语化
 │   │       ├── materials/  培训资料
-│   │       │   ├── pending-attribution/  待确认归属的培训资料
-│   │       │   │   └── README.md  待确认归属的培训资料
 │   │       │   └── README.md  资料入口，避免复制项目资料
 │   │       ├── outlines/  培训大纲
 │   │       │   └── README.md  大纲入口，当前无独立通用大纲
@@ -1238,8 +1236,8 @@ ai-context/
 │       │   └── README.md  项目、案例与方法模板
 │       └── versioned-knowledge-policy.md  动态产品知识与版本治理
 ├── .gitattributes  Git 文本属性与换行规范
-├── .github/  GitHub 自动校验说明
-│   ├── README.md  GitHub 自动校验说明
+├── .github/  AI Context · 杨建委的长期协作知识库
+│   ├── README.md  AI Context · 杨建委的长期协作知识库
 │   └── workflows/  目录入口
 │       └── context-validation.yml  自动化配置
 └── .gitignore  Git 忽略规则，排除不应入库的本地文件

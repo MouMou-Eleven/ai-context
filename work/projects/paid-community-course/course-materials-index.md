@@ -21,6 +21,7 @@
 |---|---|---|---|
 | `git-github` · AI 时代，普通人怎样理解 Git 和 GitHub<br>[飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/KHyiwBqrYi7ky4kemuqcxe7Enpb?from=from_copylink) | 建委2026-09-16明确：会员社群给大家阅读的文章，不是课程内容；非程序员和 AI 协作初学者；从项目策划者和决策者视角解释 Git、GitHub、branch、commit、push、PR、merge 的作用；明确人负责目标、需求、边界、验收和是否采用，AI 负责命令、底层机制与具体技术操作 | 已发布：删除条件式学习定位，改为确定性人机分工；飞书 revision 34 | 2026-08-29；本次未回读飞书 |
 | `technical-dictionary` · AI时代技术词典：普通人从开发前到上线后的关键节点<br>[飞书文档](https://my.feishu.cn/wiki/MODXwIqpOiE7wqkk3s3cZQ17nid) | 建委2026-09-17明确：会员社群配套文章，不是系统课程；用于帮助普通人理解AI编程开发流程中的关键节点、词语、风险和验收方法 | 已发布：原记录为飞书 revision 117；本次未回读飞书 | 2026-07-19；本次未回读飞书 |
+| `ai-collaboration` · 【05】第3课 · AI时代的协作心法：从 Prompt 到 Skill、MCP、CLI、API 与 Harness<br>[飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/VsvFwdyHRiHuDIkxx5gcM6nanmh) | 建委2026-09-17明确：会员社群系统课程第3课 | 已发布：完成学习理由开场与学员视角修订，飞书 revision 168；原录播视频、表格和全部既有链接已回读确认 | 2026-08-18；本次未回读飞书 |
 
 修改依据：[8月29日学习定位修订](./revisions/2026-08-29-student-material-definitive-positioning.md)与[技术词典资料边界](./technical-dictionary-scope.md)。文章可提供课程参考，但不会因为在会员区就算作一节课。
 
@@ -35,7 +36,7 @@
 ## 查找其他培训资料
 
 - [培训资料总入口](../../domains/training/materials/README.md)：按主题查全部培训资料。
-- [待归属资料](../../domains/training/materials/pending-attribution/README.md)：当前仅技术词典和协作心法尚未明确归属；不能因本次其他条目归位就计入社群进度。
+- 当前没有待归属的培训资料；后续新出现的归属不明资料再进入[待归属入口](../../domains/training/materials/README.md)。
 - [外出培训 Bug 课](../external-training/lessons/bug-repair/README.md)：建委已明确与社群无关。
 
 课程规划读取[curriculum-design.md](./curriculum-design.md)；它不能证明某个文档已经发布或已在社群授课。新增资料和状态变化执行[归属与更新规则](../../domains/training/attribution-and-updates.md)，自动同步索引与受影响的项目状态，不要求建委提醒。

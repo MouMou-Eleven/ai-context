@@ -6,7 +6,7 @@
 |---|---|---|---|
 | GPT-6 Astra分享资料视角纠正 | [遵循链审计](../../../../system/repository/revisions/2026-09-13-experience-adherence-audit.md) | 分享活动具体系列未确认，不默认会员社群 | 2026-09-13文档创作反馈；完整读取规则后仍出现讲师安排，保留草稿hash与检测结果，不写成授课效果 |
 | 网页基础设施课：图床、服务器、域名、备案 | [社群资料索引](../../../projects/paid-community-course/course-materials-index.md)及其中8月30/31日修订 | 仓库两份修订明确写会员社群；保留该来源并待有新证据时校正 | 备课修改与明确的直播后复盘；场次日期未独立核验 |
-| 协作心法：Prompt、Skill、MCP、CLI、API、Harness | [待归属资料](../materials/pending-attribution/README.md) | 待确认 | 原资料核验及历史修改摘要；不能仅凭原“第3课”证明社群归属或具体授课 |
+| 协作心法：Prompt、Skill、MCP、CLI、API、Harness | [会员课程索引](../../../projects/paid-community-course/course-materials-index.md) | 会员社群系统课程第3课；2026-09-17本人确认 | 原资料核验及历史修改摘要；本次未回读飞书，不据发布推断单场授课日期 |
 | AI时代技术词典 | [会员配套文章索引](../../../projects/paid-community-course/course-materials-index.md)及[资料边界](../../../projects/paid-community-course/technical-dictionary-scope.md) | 会员社群配套文章，不是系统课程；2026-09-17本人确认 | 原记录为飞书 revision 117；本次未回读正文 |
 | 秒哒网页美化 | [8月19日修订](../../../projects/external-training/jinan-city-library/revisions/2026-08-19-lesson-4-student-material-boundary.md) | 济南市图书馆培训；2026-09-16本人确认 | 文档多轮验收；原记“第4课”，与静态网页发布是不同文档 |
 | 静态网页发布 | [8月23日修订](../../../projects/paid-community-course/revisions/2026-08-23-lesson-4-visualization-and-case-delivery.md) | 会员社群AI编程系列课程；2026-09-16本人确认 | 课件和案例验收；不自动推为社群已授课 |
