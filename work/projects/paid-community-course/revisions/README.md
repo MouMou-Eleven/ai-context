@@ -4,6 +4,9 @@
 
 | 文件 | 内容 |
 |---|---|
+| [2026-09-07-lesson-6-lecture-review-and-visualization-rules.md](./2026-09-07-lesson-6-lecture-review-and-visualization-rules.md) | 会员直播后复盘：开发流程与后续课件经验复用；2026-09-16本人确认归属 |
+| [2026-08-29-student-material-definitive-positioning.md](./2026-08-29-student-material-definitive-positioning.md) | 会员配套文章：Git/GitHub，不计课程节数；2026-09-16本人确认归属 |
+| [2026-08-23-lesson-4-visualization-and-case-delivery.md](./2026-08-23-lesson-4-visualization-and-case-delivery.md) | 会员AI编程系列课：静态网页发布；2026-09-16本人确认归属 |
 | [2026-09-15-reader-address-you-and-everyone.md](./2026-09-15-reader-address-you-and-everyone.md) | 明确社群介绍页以“你”为主、群体语境用“大家”，并区分对外直述与内部“成员／学员”称谓 |
 | [2026-09-15-ai-programming-breadth-rationale-correction.md](./2026-09-15-ai-programming-breadth-rationale-correction.md) | 校正首期 AI 编程的论证方式，并区分朋友圈叙事与正式介绍页说明：共享论据，不直接复制语句 |
 | [2026-09-15-ai-programming-as-first-perspective.md](./2026-09-15-ai-programming-as-first-perspective.md) | 首次明确首期选择 AI 编程的个人经验依据与课程顺序；其中泛化论证已被同日后续修订校正 |
@@ -16,4 +19,4 @@
 | [2026-08-30-lesson-5-purchase-language-and-decision-boundary.md](./2026-08-30-lesson-5-purchase-language-and-decision-boundary.md) | 第5课购买决策表达；原文明确记载会员社群 |
 | [2026-08-30-community-positioning-and-super-individual-definition.md](./2026-08-30-community-positioning-and-super-individual-definition.md) | 社群总定位、季度边界与超级个体定义 |
 
-缺少社群归属证据的单课修订已转到[待归属修订](../../../domains/training/materials/pending-attribution/revisions/README.md)，明确属外出的 Bug 课已转到[外训课程](../../external-training/lessons/bug-repair/README.md)。具体归属更正见项目 history；日常创作不默认加载本目录。
+2026-09-16确认后三份社群修订已归回本目录；网页美化与秒哒进阶见[济南市图书馆培训](../../external-training/jinan-city-library/README.md)，Bug课同属该馆。当前待确认只剩[技术词典和协作心法](../../../domains/training/materials/pending-attribution/README.md)。日常创作读取领域当前方法，不默认加载全部历史。

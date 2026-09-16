@@ -103,7 +103,7 @@ def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_r
         include('work/domains/training/materials/README.md', '课号须先匹配所属课程系列与资料来源')
         include('work/domains/training/attribution-and-updates.md', '课号不是全仓库唯一身份；所属系列待核对')
     # Training project routes still need the general creative methods when producing content.
-    if selected and (teaching or selected['id'] in {'training','external-training','bug-lesson'}) and intent in {'create','write'}:
+    if selected and (teaching or selected['id'] in training_ids - {'community'}) and intent in {'create','write'}:
         include('work/domains/training/experience/README.md', '培训创作/复盘')
         include('work/domains/training/experience/jianwei-training-style.md', '培训创作/复盘')
     return {'task': task, 'intent': intent, 'producesChinese': produces_chinese, 'writesRepository': writes_repository,

@@ -20,6 +20,25 @@ navigation = load_module('sync-navigation')
 
 
 class Routes(unittest.TestCase):
+    def test_named_library_reads_its_materials_without_community(self):
+        result = router.resolve('给济南市图书馆写课件解释API概念', 'create')
+        self.assertEqual(result['selectedCandidate'], 'jinan-library')
+        self.assertIn('work/projects/external-training/jinan-city-library/README.md', result['read'])
+        self.assertIn('work/domains/training/experience/jianwei-training-style.md', result['read'])
+        self.assertTrue(any(m['id'] == 'problem-driven-explanation' for m in result['methods']))
+        self.assertFalse(any('paid-community-course' in path for path in result['read']))
+        query = router.resolve('查济南市图书馆资料', 'read')
+        self.assertFalse(any('/training/experience/' in path for path in query['read']))
+
+    def test_generic_library_does_not_invent_jinan_and_bug_keeps_identity(self):
+        generic = router.resolve('去图书馆讲课', 'create')
+        self.assertEqual(generic['selectedCandidate'], 'external-training')
+        self.assertFalse(any('jinan-city-library' in path for path in generic['read']))
+        bug = router.resolve('查会员社群的别让Bug打败你第6课', 'read')
+        self.assertEqual(bug['selectedCandidate'], 'bug-lesson')
+        self.assertIn('work/projects/external-training/jinan-city-library/README.md', bug['read'])
+        self.assertFalse(any('paid-community-course' in path for path in bug['read']))
+
     def test_named_tool_cannot_replace_member_course_context(self):
         for tool in ['Remotion动效', '秒哒']:
             result = router.resolve('给会员社群写一节' + tool + '课程', 'create')

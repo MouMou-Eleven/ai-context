@@ -6,7 +6,7 @@
 | [projects.json](./projects.json) | 项目、案例、归档入口与领域关系；状态仍回正文 |
 | [task-guide.md](./task-guide.md) | 自动生成的完整任务指南 |
 | [STRUCTURE.md](./STRUCTURE.md) | 完整物理文件树与结构约定 |
-| [STRUCTURE.html](./STRUCTURE.html) | 日常知识导航与完整文件视图 |
+| [STRUCTURE.html](./STRUCTURE.html) | 默认日常知识导航；完整文件视图位于“维护查看”内，两者来自同一真实目录 |
 | [history.md](./history.md) | 按对象查个人经历、项目历史与仓库修订 |
 
 ## 接入

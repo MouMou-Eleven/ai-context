@@ -2,6 +2,8 @@
 
 日常从[分级知识导航](./STRUCTURE.html)逐层查看；其中“完整文件”视图保留全部技术文件及第三方快照内部层级。README是目录入口，不在日常树重复为平级业务节点；Skill实体只在完整文件视图展开。下方完整文件树自动生成。
 
+两种视图来自同一套真实文件。日常导航保留知识目录父子关系、使用中文标题并隐藏技术细节，是建委默认浏览入口；完整文件视图更接近GitHub实际文件列表，收在页面的“维护查看”中，供检查配置与源码，不是另一套知识分类。
+
 ## 完整文件树
 
 ```text
@@ -1008,13 +1010,6 @@ ai-context/
 │   │       ├── materials/  培训资料
 │   │       │   ├── pending-attribution/  待确认归属的培训资料
 │   │       │   │   ├── README.md  待确认归属的培训资料
-│   │       │   │   ├── revisions/  待归属培训资料修订
-│   │       │   │   │   ├── 2026-08-19-lesson-4-student-material-boundary.md  2026-08-19：第 4 课学员正文边界修订
-│   │       │   │   │   ├── 2026-08-23-lesson-4-visualization-and-case-delivery.md  2026-08-23：第 4 课可视化与案例交付修订
-│   │       │   │   │   ├── 2026-08-29-student-material-definitive-positioning.md  2026-08-29：学员资料中的确定性学习定位
-│   │       │   │   │   ├── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md  秒哒进阶课：把版本更新改造成使用场景链路
-│   │       │   │   │   ├── 2026-09-07-lesson-6-lecture-review-and-visualization-rules.md  第六课直播复盘：学员稿表达与可视化规则
-│   │       │   │   │   └── README.md  待归属培训资料修订
 │   │       │   │   └── technical-dictionary-scope.md  AI 时代技术词典的资料边界
 │   │       │   └── README.md  资料入口，避免复制项目资料
 │   │       ├── outlines/  培训大纲
@@ -1053,6 +1048,12 @@ ai-context/
 │   │   │   ├── little-leaf-ai-microcourse-mv.md  《小树叶》AI教师音乐微课画面制作与修订复盘
 │   │   │   └── README.md  商单与实践案例
 │   │   ├── external-training/  外出培训
+│   │   │   ├── jinan-city-library/  济南市图书馆培训
+│   │   │   │   ├── README.md  图书馆资料归属、版本与授课边界
+│   │   │   │   └── revisions/  图书馆培训改稿与反馈
+│   │   │   │       ├── 2026-08-19-lesson-4-student-material-boundary.md  2026-08-19：第 4 课学员正文边界修订
+│   │   │   │       ├── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md  秒哒进阶课：把版本更新改造成使用场景链路
+│   │   │   │       └── README.md  图书馆培训修订索引
 │   │   │   ├── lessons/  外出培训课程资料
 │   │   │   │   ├── bug-repair/  别让 Bug 打败你：秒哒故障定位与修复实战
 │   │   │   │   │   ├── README.md  别让 Bug 打败你：秒哒故障定位与修复实战
@@ -1081,18 +1082,21 @@ ai-context/
 │   │   ├── paid-community-course/  五级目录：AI 超级个体陪跑社群
 │   │   │   ├── competitive-references.md  外部会员社群案例与可迁移经验
 │   │   │   ├── course-development.md  课程研发与内容选择
-│   │   │   ├── course-materials-index.md  飞书课程资料索引
+│   │   │   ├── course-materials-index.md  会员系统课程、配套文章与直播复盘分开登记
 │   │   │   ├── curriculum-design.md  课程结构与直播节奏
 │   │   │   ├── history.md  已清洗的关键演进摘要
 │   │   │   ├── operations-playbook.md  招生、运营与转化执行
 │   │   │   ├── positioning-and-vision.md  社群定位、愿景与表达边界
 │   │   │   ├── README.md  当前产品与课程口径
 │   │   │   └── revisions/  六级目录：课程关键修订
+│   │   │       ├── 2026-08-23-lesson-4-visualization-and-case-delivery.md  2026-08-23：第 4 课可视化与案例交付修订
+│   │   │       ├── 2026-08-29-student-material-definitive-positioning.md  2026-08-29：学员资料中的确定性学习定位
 │   │   │       ├── 2026-08-30-community-positioning-and-super-individual-definition.md  社群总定位与超级个体定义修订
 │   │   │       ├── 2026-08-30-lesson-5-purchase-language-and-decision-boundary.md  第 5 节购买语言与决策边界修订
 │   │   │       ├── 2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md  第 5 节课后 AI 时代目的与参数解释修订
 │   │   │       ├── 2026-09-01-training-rule-scope-and-delivery-boundary.md  AI 培训规则适用场景与课堂交付边界修订
 │   │   │       ├── 2026-09-01-training-rule-single-source-and-technical-selection.md  AI 培训单一来源与技术内容筛选修订
+│   │   │       ├── 2026-09-07-lesson-6-lecture-review-and-visualization-rules.md  第六课直播复盘：学员稿表达与可视化规则
 │   │   │       ├── 2026-09-12-onboarding-expression-and-replay-scope.md  新人入口表达与回放归属修订
 │   │   │       ├── 2026-09-13-reader-questions-and-introduction.md  宣传问答结构与当前介绍页事实修订
 │   │   │       ├── 2026-09-15-ai-programming-as-first-perspective.md  2026-09-15：AI 编程作为普通人理解 AI 的第一视角
@@ -1224,6 +1228,7 @@ ai-context/
 │       │   ├── 2026-09-12-personal-expression-and-skill-refinement.md  个人信息、表达与Skill归属调整
 │       │   ├── 2026-09-13-experience-adherence-audit.md  培训经验遵循性审计与执行闭环修订
 │       │   ├── 2026-09-15-writing-dna-review-and-method-routing.md  写作蒸馏器评估、材料提炼与按任务发现方法
+│       │   ├── 2026-09-16-training-attribution-and-navigation.md  本人确认培训归属、文章课程区分与日常导航
 │       │   └── README.md  仓库修订索引
 │       ├── roadmap.md  长期维护与演进
 │       ├── templates/  项目、案例与方法模板

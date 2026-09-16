@@ -35,7 +35,7 @@
 | 培训备课与复盘（先核对归属） | [读取](../../../work/domains/training/README.md) |
 | 会员社群（仅明确属于本项目） | [读取](../../../work/projects/paid-community-course/README.md) |
 | 企业、图书馆、夜校与外部培训 | [读取](../../../work/projects/external-training/README.md) |
-| 外部培训：别让Bug打败你 | [读取](../../../work/projects/external-training/lessons/bug-repair/README.md) |
+| 济南市图书馆：别让Bug打败你 | [读取](../../../work/projects/external-training/lessons/bug-repair/README.md) |
 | 出版体裁与书稿（先明确项目） | [读取](../../expression/genres.md) |
 | 《飞书高效办公》书籍 | [读取](../../../work/projects/feishu-efficient-office/README.md) |
 | 自媒体、个人IP与渠道表达 | [读取](../../../work/domains/self-media/README.md) |
@@ -46,6 +46,7 @@
 | 当前设备与工具环境 | [读取](../../environment/computers/README.md) |
 | 历史项目与追溯 | [读取](history.md) |
 | 按课号找资料（先核对所属系列） | [读取](../../../work/domains/training/materials/README.md) |
+| 济南市图书馆培训 | [读取](../../../work/projects/external-training/jinan-city-library/README.md) |
 
 ## 条件组合
 

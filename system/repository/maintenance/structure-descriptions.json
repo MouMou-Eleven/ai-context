@@ -147,7 +147,7 @@
     "work/projects/paid-community-course/positioning-and-vision.md": "社群定位、愿景与表达边界",
     "work/projects/paid-community-course/course-development.md": "课程研发与内容选择",
     "work/projects/paid-community-course/curriculum-design.md": "课程结构与直播节奏",
-    "work/projects/paid-community-course/course-materials-index.md": "飞书课程资料索引",
+    "work/projects/paid-community-course/course-materials-index.md": "会员系统课程、配套文章与直播复盘分开登记",
     "work/projects/paid-community-course/operations-playbook.md": "招生、运营与转化执行",
     "work/projects/paid-community-course/competitive-references.md": "外部会员社群案例与可迁移经验",
     "work/projects/paid-community-course/history.md": "已清洗的关键演进摘要",
@@ -296,7 +296,12 @@
     "work/projects/cases/little-leaf-ai-microcourse-mv.md": "《小树叶》AI教师音乐微课画面制作与修订复盘",
     "system/repository/navigation/task-guide.md": "完整任务指南，按主任务和条件依赖读取",
     "work/domains/self-media/marketing-copy/reader-question-led-promotion.md": "从报名者真实问题组织宣传内容，含改稿证据与验收",
-    "work/projects/paid-community-course/revisions/2026-09-13-reader-questions-and-introduction.md": "宣传问答结构与当前介绍页事实修订"
+    "work/projects/paid-community-course/revisions/2026-09-13-reader-questions-and-introduction.md": "宣传问答结构与当前介绍页事实修订",
+    "work/projects/external-training/jinan-city-library": "济南市图书馆培训",
+    "work/projects/external-training/jinan-city-library/README.md": "图书馆资料归属、版本与授课边界",
+    "work/projects/external-training/jinan-city-library/revisions": "图书馆培训改稿与反馈",
+    "work/projects/external-training/jinan-city-library/revisions/README.md": "图书馆培训修订索引",
+    "system/repository/revisions/2026-09-16-training-attribution-and-navigation.md": "本人确认培训归属、文章课程区分与日常导航"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

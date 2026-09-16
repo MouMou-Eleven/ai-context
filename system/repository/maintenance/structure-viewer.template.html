@@ -558,10 +558,14 @@
           结构确认日期：__CONFIRMED_DATE__
         </div>
       </div>
-      <div class="view-switch" role="group" aria-label="选择导航视图">
-        <button class="view-button" id="view-knowledge" type="button" aria-pressed="true">日常知识导航</button>
-        <button class="view-button" id="view-files" type="button" aria-pressed="false">完整文件视图</button>
-      </div>
+      <details class="footer-note" id="maintenance-view">
+        <summary>维护查看</summary>
+        <p>日常按知识分类浏览即可。完整文件视图展示同一仓库的全部文件，包括脚本、配置和Skill源码，供维护时核查。</p>
+        <div class="view-switch" role="group" aria-label="选择导航视图">
+          <button class="view-button" id="view-knowledge" type="button" aria-pressed="true">返回日常知识导航</button>
+          <button class="view-button" id="view-files" type="button" aria-pressed="false">完整文件视图（维护用）</button>
+        </div>
+      </details>
       <div class="toolbar" role="toolbar" aria-label="结构查看工具">
         <button class="tool-button" id="expand-all" type="button">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 9 4-4 4 4M8 15l4 4 4-4"/></svg>
@@ -899,12 +903,13 @@
         document.getElementById("view-knowledge").setAttribute("aria-pressed", String(knowledge));
         document.getElementById("view-files").setAttribute("aria-pressed", String(!knowledge));
         document.getElementById("view-subtitle").textContent = knowledge ?
-          "杨建委的长期 AI 协作上下文" : "仓库文件、目录与技术配置";
+          "杨建委的长期 AI 协作上下文 · 按知识分类浏览" : "维护查看：同一仓库的全部文件，包含脚本、配置与源码";
         document.getElementById("nav-heading").textContent = knowledge ? "四个主入口" : "一级目录";
         document.getElementById("folder-label").textContent = knowledge ? "分类入口" : "文件夹";
         document.getElementById("file-label").textContent = knowledge ? "内容条目" : "文件";
         document.getElementById("tree-heading").innerHTML = knowledge ?
-          "<strong>日常知识导航</strong>" : "<strong>完整文件视图</strong>";
+          "<strong>日常知识导航</strong>" : "<strong>完整文件视图（维护用）</strong>";
+        document.getElementById("maintenance-view").open = !knowledge;
         searchInput.placeholder = knowledge ? "搜索知识、项目或经验" : "搜索目录、文件或用途";
         restoreState();
         buildQuickNav();
