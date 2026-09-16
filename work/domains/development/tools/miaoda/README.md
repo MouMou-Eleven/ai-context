@@ -34,6 +34,7 @@ miaoda/
 | 开发自定义 Skill 或被外部 Agent 调用 | [`development/README.md`](./development/README.md) |
 | 排错、完整案例或重复方案 | [`experience/README.md`](./experience/README.md) |
 | 只需要写执行提示词 | [`experience/prompt-patterns.md`](./experience/prompt-patterns.md)，再选当前主题 |
+| 制作增量包及问题验收清单 | [`版本化增量迭代闭环`](./experience/patterns/codex-miaoda-iterative-increment-workflow.md)；每包单独交付问题对照与手动验收清单 |
 | 追溯功能变化和旧环境方案 | [`updates/README.md`](./updates/README.md) |
 
 ## 当前原则
