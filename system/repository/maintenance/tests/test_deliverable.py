@@ -4,6 +4,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from context_common import load_module
@@ -13,6 +14,51 @@ router = load_module('context-route')
 
 
 class DeliverableChecks(unittest.TestCase):
+    def test_external_proposal_rejected_fragments(self):
+        fragments = ['以公开真实材料为基础，以可核验的工作成果为落点。',
+                     '本方案为课程设计文件', '两场授课的分工', '各配置的内容边界',
+                     '整体时长联动', '每个案例使用同一条操作路径',
+                     '现场不预设AI一定出错。若当次输出正确，继续检查。',
+                     '公开政策与案例来源', '案例与演示的证据范围', '工具依据与使用说明',
+                     '原文中的事项', '应当保留的判断边界', 'https://example.org/policy']
+        for fragment in fragments:
+            self.assertTrue(checker.inspect(fragment, 'external-proposal'), fragment)
+            self.assertEqual(checker.inspect(fragment, 'instructor'), [])
+
+    def test_external_proposal_legitimate_content_is_not_banned(self):
+        text = '组织单位：济南市总工会\n培训时长：3小时，实操1.5—2小时\n讲师：黄宏伟、杨建委\n课程介绍：政策研读、群众诉求分析、信息脱敏与安全使用。'
+        self.assertEqual(checker.inspect(text, 'external-proposal'), [])
+
+    def test_docx_split_runs_hidden_links_and_inherited_title_alignment(self):
+        ns = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'proposal.docx'
+            def make(align='center', text='培训方案', hyperlink=False, title=True):
+                with zipfile.ZipFile(path, 'w') as z:
+                    style = '<w:pStyle w:val="Title"/>' if title else ''
+                    z.writestr('word/document.xml', f'<w:document xmlns:w="{ns}"><w:body><w:p><w:pPr>{style}</w:pPr><w:r><w:t>{text[:2]}</w:t></w:r><w:r><w:t>{text[2:]}</w:t></w:r></w:p></w:body></w:document>')
+                    z.writestr('word/styles.xml', f'<w:styles xmlns:w="{ns}"><w:style w:styleId="Base"><w:pPr><w:jc w:val="{align}"/></w:pPr></w:style><w:style w:styleId="Title"><w:basedOn w:val="Base"/></w:style></w:styles>')
+                    if hyperlink:
+                        z.writestr('word/_rels/document.xml.rels', '<Relationships><Relationship Type="test/hyperlink" Target="https://example.org" TargetMode="External"/></Relationships>')
+            make()
+            self.assertEqual(checker.check(path,'external-proposal','gov-enterprise-word')['findings'], [])
+            make('left','两场授课的分工',True)
+            rules = {x['rule'] for x in checker.check(path,'external-proposal','gov-enterprise-word')['findings']}
+            self.assertEqual(rules, {'internal-design','proposal-hyperlink','word-title-center'})
+            make(title=False)
+            self.assertEqual(checker.check(path,'external-proposal','gov-enterprise-word')['findings'][0]['rule'], 'word-title-missing')
+            path.write_bytes(b'not a docx')
+            with self.assertRaises(zipfile.BadZipFile):
+                checker.check(path, 'external-proposal')
+
+    def test_proposal_routes_include_audience_and_format_methods(self):
+        result = router.resolve('写AI培训方案给组织方，Word格式', 'create')
+        for name in ['experience/external-proposal-design.md', 'delivery-formats/gov-enterprise-word.md']:
+            self.assertIn('work/domains/other/commercial/'+name, result['read'])
+        for task in ['给讲师写内部备课稿', '写内部培训方案', '只查培训方案位置']:
+            result = router.resolve(task, 'read' if task.startswith('只查') else 'create')
+            self.assertNotIn('work/domains/other/commercial/experience/external-proposal-design.md',result['read'])
+
     def test_original_failure_excerpt_is_detected(self):
         # Actual headings/callout fragments from the 2026-09-13 draft; no model facts.
         text = '<h1>两小时怎么讲：先给结果，再用案例证明</h1><h1>先把结论讲在前面</h1><table><tr><th>现场重点看什么</th></tr></table><callout><p>现场使用建议：不要从头到尾连续播。</p></callout>'

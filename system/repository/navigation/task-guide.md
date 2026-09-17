@@ -73,4 +73,6 @@
 | 页面改版、组件选择、响应式适配、编辑器交互或需要判断界面设计质量时 | [前端 UI 质量标准](../../../work/domains/development/experience/frontend-ui-quality-standards.md) | 纯后端、数据库迁移、命令行脚本或无界面任务 | 读方法正文与目标项目 README；检查 1920/1024/768/390/360 布局；验证加载、失败、触控和键盘状态 |
 | 非技术读者需要理解概念、机制或技术差别，不能只背定义时；主题可以来自提示，也可以来自AI读到的材料 | [从问题推导概念](../../../work/domains/training/experience/technical-explanation/problem-driven-technical-explanation.md) | 纯查询、术语速查、直接操作、已接受稿逐字保护时不展开推导；出版只借解释逻辑，保留出版书面语与编辑规则 | 读者能说出原问题、关键变化及使用判断；不虚构历史发展、事实或作者经历，不混入讲师指令 |
 | 产品介绍、报名页或购买顾虑说明，需要把整体内容、当前内容和真实价值讲清时 | [用读者问题组织宣传](../../../work/domains/self-media/marketing-copy/reader-question-led-promotion.md) | 纯教学、普通科普、内部复盘不套招生问答；具体价格、权益与已发布状态回项目核对 | 每问影响读者理解或决定；答案直接回应，后一问承接前一答；不是只增加问号 |
+| 向政府、企业或组织方提交培训、课程纲要与项目方案时 | [对外方案内容设计](../../../work/domains/other/commercial/experience/external-proposal-design.md) | 课堂课件、讲师备课、教程、研究报告和合同不按方案删去其必要信息 | 逐段确认内容、场景和价值；移出提示词、操作路径、内部分工、核验过程与免责话语；检查实际DOCX和来源留存 |
+| 政府与企业的培训方案、课程纲要或商业项目方案需要Word排版时 | [政企Word方案排版](../../../work/domains/other/commercial/delivery-formats/gov-enterprise-word.md) | 法定公文、合同、指定标书模板、画册及其他用户明确视觉要求 | 主副标题居中、深蓝层级、宋体正文、首行缩进；按参考渲染逐页查看，不把参考内容当项目事实 |
 <!-- generated-methods:end -->

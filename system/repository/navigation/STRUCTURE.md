@@ -138,14 +138,24 @@ ai-context/
 │   │   │       └── README.md  工具索引
 │   │   ├── other/  其他领域
 │   │   │   ├── commercial/  商业化与对外交付
+│   │   │   │   ├── delivery-formats/  按场景选择商业文件交付格式
+│   │   │   │   │   ├── gov-enterprise-word.md  政府与企业Word方案居中题头及正文排版
+│   │   │   │   │   ├── README.md  交付格式索引与新增样式规则
+│   │   │   │   │   └── references/  用户选定的版式参考与采用范围
+│   │   │   │   │       ├── gov-enterprise-word-reference.png  用户图二政企Word排版参考
+│   │   │   │   │       └── README.md  政企Word参考来源与视觉边界
 │   │   │   │   ├── experience/  商业经验与交付方法
 │   │   │   │   │   ├── business-analysis-cards.md  产品信息、渠道与对标执行卡
 │   │   │   │   │   ├── case-result-narrative.md  案例选择、结果证明、观点叙事与产品承接
 │   │   │   │   │   ├── competition-and-investor-materials.md  赛事、路演与融资材料的对外边界
 │   │   │   │   │   ├── content-demand-and-conversion.md  内容驱动的需求识别与商业承接
 │   │   │   │   │   ├── external-deliverable-language.md  对外成品与内部工作稿的语言边界
+│   │   │   │   │   ├── external-proposal-design.md  对外培训及项目方案的内容筛选和验收
 │   │   │   │   │   └── README.md  内容经营与商业交付经验索引
-│   │   │   │   └── README.md  跨行业商业方法、触发规则与交付边界
+│   │   │   │   ├── README.md  跨行业商业方法、触发规则与交付边界
+│   │   │   │   └── revisions/  商业交付规则修订与真实反馈
+│   │   │   │       ├── 2026-09-17-external-proposal-and-word-format.md  对外方案受众纠错、政企Word格式与反例检查
+│   │   │   │       └── README.md  商业交付修订索引
 │   │   │   ├── README.md  其他领域与项目索引及准入条件
 │   │   │   └── skills/  Skill库
 │   │   │       ├── editaplot/  EditaPlot
@@ -1124,7 +1134,8 @@ ai-context/
 │   │       │   ├── 2026-09-10-narrato-workflow-hardening.md  2026-09-10：NarratoAI 参考与真实剪辑链路加固
 │   │       │   ├── 2026-09-15-hypit-montage-overlay-scenario-workflows.md  2026-09-15：素材证据、场景规范与可编辑信息动效
 │   │       │   ├── 2026-09-15-personal-vercel-testing.md  个人在线测试与项目记录校正
-│   │       │   └── 2026-09-16-workbench-motion-reference-templates.md  言剪动效、关键帧、参考视频与个人模板升级及线上验收
+│   │       │   ├── 2026-09-16-workbench-motion-reference-templates.md  言剪动效、关键帧、参考视频与个人模板升级及线上验收
+│   │       │   └── 2026-09-17-local-first-manual-spectrum-ui.md  2026-09-17：本地优先手册与界面整理
 │   │       └── roadmap.md  开发路线与上线条件
 │   └── README.md  领域知识与项目案例的分级入口
 ├── system/  AI协作与维护
@@ -1272,4 +1283,4 @@ ai-context/
 
 完整设计理由与后续扩展见[信息架构](../information-architecture.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-09-16*
+*结构最后确认：2026-09-17*

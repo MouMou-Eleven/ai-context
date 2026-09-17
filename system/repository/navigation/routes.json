@@ -139,9 +139,20 @@
         "商业计划",
         "融资",
         "路演",
-        "比赛申报"
+        "比赛申报",
+        "给甲方",
+        "组织方",
+        "对外方案",
+        "培训方案",
+        "课程纲要",
+        "政企Word"
       ],
-      "excludeAny": [],
+      "excludeAny": [
+        "内部备课",
+        "内部培训方案",
+        "只查",
+        "查询位置"
+      ],
       "intents": [],
       "paths": [
         "work/domains/other/commercial/experience/external-deliverable-language.md"
@@ -892,7 +903,12 @@
         "销售",
         "给客户",
         "正式交付",
-        "商单"
+        "商单",
+        "对外方案",
+        "培训方案",
+        "课程纲要",
+        "政企Word",
+        "组织方"
       ],
       "excludeAny": [
         "纯教学",
@@ -1283,6 +1299,104 @@
         "work/domains/self-media/marketing-copy/README.md",
         "work/domains/self-media/live-sales/README.md"
       ]
+    },
+    {
+      "id": "external-proposal-design",
+      "label": "对外方案内容设计",
+      "status": "active",
+      "path": "work/domains/other/commercial/experience/external-proposal-design.md",
+      "selectedAny": [
+        "commercial",
+        "training",
+        "external-training",
+        "community",
+        "jinan-library",
+        "bug-lesson"
+      ],
+      "whenAny": [
+        "培训方案",
+        "课程纲要",
+        "对外方案",
+        "项目方案",
+        "培训提案",
+        "给甲方",
+        "给客户",
+        "组织方"
+      ],
+      "excludeAny": [
+        "内部备课",
+        "内部培训方案",
+        "操作教程",
+        "逐字稿",
+        "合同",
+        "只查",
+        "查询位置"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "向政府、企业或组织方提交培训、课程纲要与项目方案时",
+      "notFor": "课堂课件、讲师备课、教程、研究报告和合同不按方案删去其必要信息",
+      "acceptance": "逐段确认内容、场景和价值；移出提示词、操作路径、内部分工、核验过程与免责话语；检查实际DOCX和来源留存",
+      "evidence": "work/domains/other/commercial/revisions/2026-09-17-external-proposal-and-word-format.md",
+      "confirmedAt": "2026-09-17",
+      "entryPoints": [
+        "work/domains/other/commercial/README.md",
+        "work/domains/training/README.md"
+      ],
+      "source": "建委2026-09-17对济南干部AI培训方案及四张截图的明确纠正"
+    },
+    {
+      "id": "gov-enterprise-word",
+      "label": "政企Word方案排版",
+      "status": "active",
+      "path": "work/domains/other/commercial/delivery-formats/gov-enterprise-word.md",
+      "selectedAny": [
+        "commercial",
+        "training",
+        "external-training",
+        "community",
+        "jinan-library",
+        "bug-lesson"
+      ],
+      "whenAny": [
+        "Word",
+        "word",
+        "docx",
+        "排版"
+      ],
+      "whenAll": [
+        [
+          "政府",
+          "企业",
+          "政企",
+          "组织方",
+          "培训方案",
+          "课程纲要"
+        ]
+      ],
+      "excludeAny": [
+        "内部备课",
+        "学员课件",
+        "合同",
+        "标书",
+        "只查",
+        "查询位置"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "政府与企业的培训方案、课程纲要或商业项目方案需要Word排版时",
+      "notFor": "法定公文、合同、指定标书模板、画册及其他用户明确视觉要求",
+      "acceptance": "主副标题居中、深蓝层级、宋体正文、首行缩进；按参考渲染逐页查看，不把参考内容当项目事实",
+      "evidence": "work/domains/other/commercial/revisions/2026-09-17-external-proposal-and-word-format.md",
+      "confirmedAt": "2026-09-17",
+      "entryPoints": [
+        "work/domains/other/commercial/README.md"
+      ],
+      "source": "建委2026-09-17明确选择的图二；参数为实现起点"
     }
   ]
 }

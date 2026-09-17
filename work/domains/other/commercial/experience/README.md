@@ -2,11 +2,14 @@
 
 > 这里记录建委确认可跨行业复用的内容经营与正式商业交付经验。每项经验必须能直接转化为分析、写作、测试、承接、审核或交付动作。
 
+对外方案先读取内外稿边界与[方案内容设计](external-proposal-design.md)，文件排版再选择[交付格式](../delivery-formats/README.md)。两者分开验收，不能只检查敏感词。
+
 ## 当前经验
 
 | 经验 | 解决的问题 | 触发条件 |
 |---|---|---|
 | [`content-demand-and-conversion.md`](./content-demand-and-conversion.md) | 让内容连接真实需求、专业能力、合适客户、行动承接和交付反馈 | 内容即销售、内容获客、产品内容、买点、购买顾虑、精准客户、低播放高转化或内容承接 |
+| [external-proposal-design.md](external-proposal-design.md) | 按接收者筛选方案内容，隔离备课、核验与免责话语 | 培训方案、课程纲要、项目方案及组织方提案 |
 | [business-analysis-cards.md](./business-analysis-cards.md) | 产品信息资产、渠道七问、对标拆解和方案验收 | 产品表达、选渠道、拆解商业对标或制定最小测试 |
 | [`external-deliverable-language.md`](./external-deliverable-language.md) | 区分给建委看的内部工作稿与可直接对外发送的成品，清除“客户、建议、待确认”等内部措辞 | 给客户看、对外发送、正式交付、供外部审阅，或交付物显然代表建委或公司对外呈现 |
 | [`competition-and-investor-materials.md`](./competition-and-investor-materials.md) | 清除赛事、路演和融资材料中的内部研发讨论、自证式声明及外部无法访问的本地证据 | 商业计划书、项目申报、比赛材料、路演 PPT、融资材料，或面向评委、投资人和孵化机构的正式内容 |

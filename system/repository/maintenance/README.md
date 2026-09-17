@@ -21,7 +21,7 @@ python -B -m unittest discover -s system/repository/maintenance/tests -v
 | 文件 | 作用 |
 |---|---|
 | [context-route.py](./context-route.py) | 从路由注册表解释自然任务的入口、条件依赖和已采用方法建议；不替代材料理解 |
-| [check-deliverable.py](./check-deliverable.py) | 只读检查实际学员草稿中的已知讲师视角模式，输出hash与问题；无命中仍需语义验收 |
+| [check-deliverable.py](./check-deliverable.py) | 检查实际学员稿或对外方案的受众错位；支持原生DOCX、外链和可选政企主标题居中检查，输出hash；无命中仍需语义验收 |
 | [sync-navigation.py](./sync-navigation.py) | 从注册表生成短llms、任务指南、项目案例总表、领域关联与方法短表；处理停用后的旧表，支持只读漂移检查 |
 | [sync-structure.py](./sync-structure.py) | 从同一真实文件树生成完整结构与日常知识导航，保留有效中文描述 |
 | [structure-descriptions.json](./structure-descriptions.json) | 结构树中文说明与确认日期；不存放第二份项目状态 |

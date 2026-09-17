@@ -42,11 +42,13 @@
 | 个人事实／能力／Skill | 本人证据、独立实践、来源身份、安装及执行状态 | 文件数量、收藏工具或示例效果不证明本人掌握 |
 | 仓库写入 | 实际正文、索引、来源、派生文件、暂存和远端版本 | 静态检查不证明业务事实或外部文稿已遵守经验 |
 
+对外方案另按[方案内容设计](../../work/domains/other/commercial/experience/external-proposal-design.md)做逐段受众检查；政企Word按[对应格式](../../work/domains/other/commercial/delivery-formats/gov-enterprise-word.md)与原图审查。用户指出旧规则再次失效时，保存真实反例并验证检查动作，不能把检查说明附回对外正文。
+
 ## 可以自动拦截什么
 
-运行方式：`python system/repository/maintenance/check-deliverable.py <草稿路径> --profile learner`。当前支持 `learner`（学员成品）、`instructor`（讲师内部稿）与 `general`（其他成品）模式；后两者不运行学员模式规则；命中已知问题退出码为 `1`，文件读取失败为 `2`，无已知模式但仍需人工语义审阅时为 `0`。脚本输出文件哈希，便于确认检查的确是当前版本。
+运行方式：`python system/repository/maintenance/check-deliverable.py <草稿路径> --profile learner`。当前支持 `learner`（学员成品）、`external-proposal`（对外方案）、`instructor`（讲师内部稿）与 `general`（其他成品）模式；后两者不运行内容模式规则。对外方案可直接检查DOCX，加 `--layout gov-enterprise-word` 核对Title居中；命中已知问题退出码为 `1`，文件读取失败为 `2`，无已知模式但仍需人工语义审阅时为 `0`。脚本输出文件哈希，便于确认检查的确是当前版本。
 
-[成品检查脚本](./maintenance/check-deliverable.py)读取实际Markdown／文本／XML，输出内容SHA-256、问题位置与人工复核状态。学员模式提示本次已复现的讲师视角表达；它不禁用所有“分钟”“讲师”“普通人”，以免误杀练习时限、角色事实或引用。
+[成品检查脚本](./maintenance/check-deliverable.py)读取实际Markdown／文本／XML／DOCX，输出内容SHA-256、问题位置与人工复核状态。学员模式提示已复现的讲师视角表达；对外方案模式提示内部设计、操作安排、证据附录与网址，并检查DOCX隐藏超链接。可选政企版式检查Title居中及样式继承；正文、表格、页眉页脚均抽取。它不禁用所有“分钟”“讲师”“安全”，以免误杀课程时长、角色事实或安全教学主题。
 
 没有命中只表示未检出这些模式，仍需语义审读、事实和媒体核验。脚本不改稿、不调用外部API、不自动放行发布，也不会阻止绕过它的其他AI宿主。不能承诺仅靠GitHub文件强制所有模型遵循；可控工作流必须主动调用检查，外部宿主按同一执行卡人工验收。
 
