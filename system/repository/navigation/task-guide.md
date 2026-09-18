@@ -77,5 +77,5 @@
 | 向政府、企业或组织方提交培训、课程纲要与项目方案时 | [对外方案内容设计](../../../work/domains/other/commercial/experience/external-proposal-design.md) | 课堂课件、讲师备课、教程、研究报告和合同不按方案删去其必要信息 | 逐段确认内容、场景和价值；移出提示词、操作路径、内部分工、核验过程与免责话语；检查实际DOCX和来源留存 |
 | 政府与企业的培训方案、课程纲要或商业项目方案需要Word排版时 | [政企Word方案排版](../../../work/domains/other/commercial/delivery-formats/gov-enterprise-word.md) | 法定公文、合同、指定标书模板、画册及其他用户明确视觉要求 | 主副标题居中、深蓝层级、宋体正文、首行缩进；按参考渲染逐页查看，不把参考内容当项目事实 |
 | 面向跨岗位学员设计AI工具全景与工作场景实操课程时 | [工具全景到工作场景](../../../work/domains/training/experience/demo-driven-course-design.md) | 单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本 | 类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对 |
-| 制作创赛项目宣传视频或修正装备开场的景别、灰暗色彩、科技包装和参考图展示时 | [创赛宣传片制作](../../../work/domains/design/video/promo/competition-promo-production.md) | 不用于教师微课；不把本次工业设备、颜色或镜头数量套给所有企业片 | 检查全景与细节层次、明亮自然曝光、轻量科技效果、镜头衔接和图表文字保真；提示词改完不等于成片验收 |
+| 制作创赛项目宣传视频或修正装备开场的景别、灰暗色彩、科技包装和参考图展示时 | [创赛宣传片制作](../../../work/domains/design/video/promo/competition-promo-production.md) | 不用于教师微课；不把本次工业设备、颜色或镜头数量套给所有企业片 | 检查主体体量、景别与内容、曝光及材质层次、自然衔接、三维图板与原图文字保真；回退提示词仍需成片复测 |
 <!-- generated-methods:end -->

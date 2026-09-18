@@ -4,4 +4,5 @@
 
 | 日期 | 修订 |
 |---|---|
+| 2026-09-18 | [创赛开场视觉退化反馈与回退修订](./2026-09-18-competition-opening-visual-rollback.md) |
 | 2026-09-18 | [创赛宣传片经验与微课工作台归属校正](./2026-09-18-competition-and-microcourse-scope.md) |

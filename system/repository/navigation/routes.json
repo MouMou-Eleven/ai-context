@@ -1522,13 +1522,13 @@
       ],
       "useWhen": "制作创赛项目宣传视频或修正装备开场的景别、灰暗色彩、科技包装和参考图展示时",
       "notFor": "不用于教师微课；不把本次工业设备、颜色或镜头数量套给所有企业片",
-      "acceptance": "检查全景与细节层次、明亮自然曝光、轻量科技效果、镜头衔接和图表文字保真；提示词改完不等于成片验收",
-      "evidence": "work/domains/design/video/revisions/2026-09-18-competition-and-microcourse-scope.md",
+      "acceptance": "检查主体体量、景别与内容、曝光及材质层次、自然衔接、三维图板与原图文字保真；回退提示词仍需成片复测",
+      "evidence": "work/domains/design/video/revisions/2026-09-18-competition-opening-visual-rollback.md",
       "confirmedAt": "2026-09-18",
       "entryPoints": [
         "work/domains/design/video/promo/README.md"
       ],
-      "source": "建委2026-09-18石墨烯润滑剂创赛开场生成反馈及参考截图"
+      "source": "建委2026-09-18创赛开场三版对比及最新版退化反馈；全景扫描方案已撤回，回退稿待复测"
     }
   ]
 }
