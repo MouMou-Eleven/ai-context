@@ -41,7 +41,8 @@
       "enterprise-video",
       "motion-comic",
       "live-story",
-      "self-media"
+      "self-media",
+      "competition-video"
     ],
     "projectContextRouteIds": [
       "bug-lesson",
@@ -324,7 +325,6 @@
         "微课",
         "微课工作台",
         "微课制作工作台",
-        "交互式分镜页面",
         "教师委托",
         "教育交互",
         "教学动画",
@@ -474,6 +474,37 @@
       "dependencies": [
         {
           "path": "work/domains/design/common/production-workflow.md",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
+    },
+    {
+      "id": "competition-video",
+      "label": "创赛宣传片制作",
+      "matchAny": [
+        "创赛视频",
+        "创赛宣传片",
+        "创赛",
+        "大创视频",
+        "科创宣传片",
+        "创新创业比赛视频"
+      ],
+      "excludeAny": [
+        "微课",
+        "教师委托",
+        "参赛课"
+      ],
+      "entry": "work/domains/design/video/promo/competition-promo-production.md",
+      "priority": 86,
+      "dependencies": [
+        {
+          "path": "work/domains/design/video/promo/README.md",
+          "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/promo/workflow.md",
           "whenAny": [],
           "intents": []
         }
@@ -1098,15 +1129,11 @@
   "methodRules": [
     {
       "id": "interactive-video-production-workbench",
-      "label": "视频与微课交互式制作工作台",
+      "label": "微课交互式制作工作台",
       "status": "active",
-      "path": "work/domains/design/video/common/interactive-production-workbench.md",
+      "path": "work/domains/design/video/education/interactive-production-workbench.md",
       "selectedAny": [
-        "video",
-        "microcourse",
-        "enterprise-video",
-        "motion-comic",
-        "live-story"
+        "microcourse"
       ],
       "whenAny": [
         "视频工作台",
@@ -1129,23 +1156,36 @@
       ],
       "excludeAny": [
         "只要纯文档",
-        "只需最终成片"
+        "只需最终成片",
+        "宣传片",
+        "创赛视频",
+        "大创视频",
+        "漫剧",
+        "故事影片"
       ],
       "intents": [
         "create",
         "write"
       ],
-      "useWhen": "视频或微课需要按教学设计、逐字稿、音频或混合素材组织分镜、参考图、提示词、状态与返工时",
-      "notFor": "一两个简单镜头可用短分镜表；最终成片播放、多人云端协作和权限审核另用对应工具",
+      "useWhen": "微课需要按教学设计、逐字稿、音频或混合素材组织分镜、参考图、提示词、状态与返工时",
+      "notFor": "不适用于创赛宣传片、企业宣传片、普通视频或故事影片；简单微课可用短分镜表，最终成片及多人协作另行验收",
       "acceptance": "检查输入素材与画面逐项对应、提示词复制、图片路径、单元锚点、状态反馈和窄屏布局；有音频时再测试时间码与播放，网页打开不能替代交互与成片验收",
       "evidence": "work/projects/cases/little-leaf-ai-microcourse-mv.md",
-      "confirmedAt": "2026-09-15",
+      "confirmedAt": "2026-09-18",
       "entryPoints": [
-        "work/domains/design/video/README.md",
-        "work/domains/design/video/common/README.md",
         "work/domains/design/video/education/README.md"
       ],
-      "source": "《小树叶》制作页面实测与建委使用反馈（2026-09-15）"
+      "source": "《小树叶》制作页面实测（2026-09-15）；建委2026-09-18明确校正为仅微课适用",
+      "whenAll": [
+        [
+          "微课",
+          "教师委托",
+          "教育交互",
+          "教学动画",
+          "参赛课",
+          "精品课"
+        ]
+      ]
     },
     {
       "id": "frontend-ui-quality",
@@ -1454,6 +1494,41 @@
         "work/domains/training/README.md"
       ],
       "source": "建委2026-09-18干部AI培训实操方案调整；课前设计要求"
+    },
+    {
+      "id": "competition-promo-production",
+      "label": "创赛宣传片制作",
+      "status": "active",
+      "path": "work/domains/design/video/promo/competition-promo-production.md",
+      "selectedAny": [
+        "competition-video",
+        "enterprise-video",
+        "video"
+      ],
+      "whenAny": [
+        "创赛",
+        "大创视频",
+        "科创宣传片",
+        "创新创业比赛视频"
+      ],
+      "excludeAny": [
+        "微课",
+        "教师委托",
+        "参赛课"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "制作创赛项目宣传视频或修正装备开场的景别、灰暗色彩、科技包装和参考图展示时",
+      "notFor": "不用于教师微课；不把本次工业设备、颜色或镜头数量套给所有企业片",
+      "acceptance": "检查全景与细节层次、明亮自然曝光、轻量科技效果、镜头衔接和图表文字保真；提示词改完不等于成片验收",
+      "evidence": "work/domains/design/video/revisions/2026-09-18-competition-and-microcourse-scope.md",
+      "confirmedAt": "2026-09-18",
+      "entryPoints": [
+        "work/domains/design/video/promo/README.md"
+      ],
+      "source": "建委2026-09-18石墨烯润滑剂创赛开场生成反馈及参考截图"
     }
   ]
 }

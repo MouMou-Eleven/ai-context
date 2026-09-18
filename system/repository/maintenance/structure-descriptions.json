@@ -162,7 +162,7 @@
     "work/domains/design/video": "视频、动画与教育作品",
     "work/domains/design/video/README.md": "类型索引",
     "work/domains/design/video/common/README.md": "跨片型通用制作经验",
-    "work/domains/design/video/common/interactive-production-workbench.md": "分段音频、分镜、参考图、提示词、状态与验收的交互式制作工作台方法",
+    "work/domains/design/video/education/interactive-production-workbench.md": "仅微课适用：按教学设计、逐字稿与音频组织分镜、参考图、提示词和验收",
     "work/domains/design/video/story/motion-comic.md": "漫剧制作入口",
     "work/domains/design/video/promo/README.md": "企业宣传片制作经验",
     "work/domains/design/video/story/README.md": "真人实拍故事与电影叙事",
@@ -318,7 +318,10 @@
     "work/projects/external-training/jinan-cadre-ai/proposal.md": "当前对外培训方案正文",
     "work/projects/external-training/jinan-cadre-ai/revisions": "本场培训方案方向与版本修订",
     "work/projects/external-training/jinan-cadre-ai/revisions/README.md": "方案修订入口",
-    "work/projects/external-training/jinan-cadre-ai/revisions/2026-09-18-tool-panorama-and-work-scenarios.md": "工具全景、提示词与六类工作场景设计反馈"
+    "work/projects/external-training/jinan-cadre-ai/revisions/2026-09-18-tool-panorama-and-work-scenarios.md": "工具全景、提示词与六类工作场景设计反馈",
+    "work/domains/design/video/promo/competition-promo-production.md": "创赛视频的全景层次、明亮实景、轻量科技包装与返工经验",
+    "work/domains/design/video/revisions": "视频制作方法的方向与适用范围修订",
+    "work/domains/design/video/revisions/2026-09-18-competition-and-microcourse-scope.md": "创赛画面反馈沉淀，微课工作台迁移并收窄适用范围"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

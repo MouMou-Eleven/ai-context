@@ -74,7 +74,7 @@ class MethodRouting(unittest.TestCase):
         result = router.resolve('制作微课时做一个交互式分镜工作台，能逐段试听和复制提示词', 'create')
         self.assertEqual(result['selectedCandidate'], 'microcourse')
         self.assertIn(VIDEO_WORKBENCH, method_ids(result))
-        self.assertIn('work/domains/design/video/common/interactive-production-workbench.md', result['read'])
+        self.assertIn('work/domains/design/video/education/interactive-production-workbench.md', result['read'])
         self.assertNotIn('work/domains/other/skills/jianwei-ai-learning-community-workbench/README.md', result['read'])
 
     def test_transcript_or_teaching_design_can_drive_workbench_without_audio(self):
@@ -84,9 +84,25 @@ class MethodRouting(unittest.TestCase):
                 result = router.resolve(task, 'create')
                 self.assertEqual(result['selectedCandidate'], 'microcourse')
                 self.assertIn(VIDEO_WORKBENCH, method_ids(result))
-        body = (ROOT / 'work/domains/design/video/common/interactive-production-workbench.md').read_text(encoding='utf-8')
+        body = (ROOT / 'work/domains/design/video/education/interactive-production-workbench.md').read_text(encoding='utf-8')
         self.assertIn('音频不是必备输入', body)
         self.assertIn('没有音频时不显示播放控件', body)
+
+    def test_promo_and_generic_video_do_not_inherit_microcourse_workbench(self):
+        for task in ['创赛宣传片制作，按逐字稿整理分镜工作台和复制提示词',
+                     '企业宣传片交互式分镜页面，需要分段音频和参考图',
+                     '普通视频制作工作台，整理多个片段和逐字稿',
+                     '真人故事影片分镜工作台']:
+            with self.subTest(task=task):
+                result = router.resolve(task, 'create')
+                self.assertNotIn(VIDEO_WORKBENCH, method_ids(result))
+                self.assertNotIn('work/domains/design/video/education/interactive-production-workbench.md', result['read'])
+
+    def test_competition_promo_discovers_its_own_method(self):
+        result = router.resolve('创赛视频开场太灰暗，改全景和轻量科技包装', 'create')
+        self.assertEqual(result['selectedCandidate'], 'competition-video')
+        self.assertIn('competition-promo-production', method_ids(result))
+        self.assertNotIn('competition-promo-production', method_ids(router.resolve('教师微课参赛课画面工作台', 'create')))
 
     def test_professional_ai_workbench_does_not_activate_video_method(self):
         result = router.resolve('为教师设计一个日常AI工作台', 'create')

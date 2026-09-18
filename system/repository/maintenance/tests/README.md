@@ -8,3 +8,5 @@
 执行：`python -B -m unittest discover -s system/repository/maintenance/tests -v`。测试使用临时目录和独立 Git 索引，不写实际工作区，也不推送。
 
 2026-09-18：`test_deliverable.py`补充济南干部培训项目与实操方法共同读取、只读任务隔离，以及提示词教学主题不被误判为讲师脚本的回归。
+
+2026-09-18：test_methods.py补充微课工作台迁移后的正向读取，以及创赛宣传片、企业宣传片、普通视频、故事影片的排除检查；创赛任务应读取独立制作经验，不继承微课工作台。

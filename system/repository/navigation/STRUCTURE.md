@@ -40,7 +40,6 @@ ai-context/
 │   │   │   └── video/  视频、动画与教育作品
 │   │   │       ├── common/  视频共用制作方法与工具
 │   │   │       │   ├── ae-production.md  AE包装、合成与工程交付要求
-│   │   │       │   ├── interactive-production-workbench.md  分段音频、分镜、参考图、提示词、状态与验收的交互式制作工作台方法
 │   │   │       │   ├── README.md  跨片型通用制作经验
 │   │   │       │   └── tools/  AI 视频工具
 │   │   │       │       ├── README.md  工具索引
@@ -51,14 +50,19 @@ ai-context/
 │   │   │       │           └── README.md  Seedance 工具入口
 │   │   │       ├── education/  微课与教育交互
 │   │   │       │   ├── ai-generated-microcourse-video-workflow.md  AI教师微课的音频分段、场景关键图、多镜头提示词与验收方法
+│   │   │       │   ├── interactive-production-workbench.md  仅微课适用：按教学设计、逐字稿与音频组织分镜、参考图、提示词和验收
 │   │   │       │   ├── README.md  微课、精品课、MG 动画与教育课件
 │   │   │       │   └── showcase-guidelines.md  哞哞微课案例展示写作规范
 │   │   │       ├── promo/  宣传片
+│   │   │       │   ├── competition-promo-production.md  创赛视频的全景层次、明亮实景、轻量科技包装与返工经验
 │   │   │       │   ├── prompt-iteration.md  企业片提示词节奏与迭代经验
 │   │   │       │   ├── README.md  企业宣传片制作经验
 │   │   │       │   ├── visual-recipes.md  科技企业片可选视觉配方
 │   │   │       │   └── workflow.md  企业宣传片通用制作与验收流程
 │   │   │       ├── README.md  类型索引
+│   │   │       ├── revisions/  视频制作方法的方向与适用范围修订
+│   │   │       │   ├── 2026-09-18-competition-and-microcourse-scope.md  创赛画面反馈沉淀，微课工作台迁移并收窄适用范围
+│   │   │       │   └── README.md  视频制作修订记录
 │   │   │       └── story/  故事与叙事影片
 │   │   │           ├── motion-comic.md  漫剧制作入口
 │   │   │           └── README.md  真人实拍故事与电影叙事
