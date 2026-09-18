@@ -75,4 +75,5 @@
 | 产品介绍、报名页或购买顾虑说明，需要把整体内容、当前内容和真实价值讲清时 | [用读者问题组织宣传](../../../work/domains/self-media/marketing-copy/reader-question-led-promotion.md) | 纯教学、普通科普、内部复盘不套招生问答；具体价格、权益与已发布状态回项目核对 | 每问影响读者理解或决定；答案直接回应，后一问承接前一答；不是只增加问号 |
 | 向政府、企业或组织方提交培训、课程纲要与项目方案时 | [对外方案内容设计](../../../work/domains/other/commercial/experience/external-proposal-design.md) | 课堂课件、讲师备课、教程、研究报告和合同不按方案删去其必要信息 | 逐段确认内容、场景和价值；移出提示词、操作路径、内部分工、核验过程与免责话语；检查实际DOCX和来源留存 |
 | 政府与企业的培训方案、课程纲要或商业项目方案需要Word排版时 | [政企Word方案排版](../../../work/domains/other/commercial/delivery-formats/gov-enterprise-word.md) | 法定公文、合同、指定标书模板、画册及其他用户明确视觉要求 | 主副标题居中、深蓝层级、宋体正文、首行缩进；按参考渲染逐页查看，不把参考内容当项目事实 |
+| 面向跨岗位学员设计AI工具全景与工作场景实操课程时 | [工具全景到工作场景](../../../work/domains/training/experience/demo-driven-course-design.md) | 单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本 | 类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对 |
 <!-- generated-methods:end -->

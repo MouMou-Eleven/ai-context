@@ -6,3 +6,5 @@
 - [test_methods.py](./test_methods.py)：不点名作者的跨领域方法发现、出版与纯教学边界、只读／逐字保护、候选停用、无代码新增、入口撤回同步及错误元数据；不认证成品写作效果。
 
 执行：`python -B -m unittest discover -s system/repository/maintenance/tests -v`。测试使用临时目录和独立 Git 索引，不写实际工作区，也不推送。
+
+2026-09-18：`test_deliverable.py`补充济南干部培训项目与实操方法共同读取、只读任务隔离，以及提示词教学主题不被误判为讲师脚本的回归。

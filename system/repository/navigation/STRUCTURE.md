@@ -1055,6 +1055,12 @@ ai-context/
 │   │   │   ├── little-leaf-ai-microcourse-mv.md  《小树叶》AI教师音乐微课画面制作与修订复盘
 │   │   │   └── README.md  商单与实践案例
 │   │   ├── external-training/  外出培训
+│   │   │   ├── jinan-cadre-ai/  济南市总工会干部AI培训的方案与设计反馈
+│   │   │   │   ├── proposal.md  当前对外培训方案正文
+│   │   │   │   ├── README.md  培训事实、当前设计与文件入口
+│   │   │   │   └── revisions/  本场培训方案方向与版本修订
+│   │   │   │       ├── 2026-09-18-tool-panorama-and-work-scenarios.md  工具全景、提示词与六类工作场景设计反馈
+│   │   │   │       └── README.md  方案修订入口
 │   │   │   ├── jinan-city-library/  济南市图书馆培训
 │   │   │   │   ├── README.md  图书馆资料归属、版本与授课边界
 │   │   │   │   └── revisions/  图书馆培训改稿与反馈
@@ -1283,4 +1289,4 @@ ai-context/
 
 完整设计理由与后续扩展见[信息架构](../information-architecture.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-09-17*
+*结构最后确认：2026-09-18*

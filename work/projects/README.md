@@ -30,4 +30,5 @@
 | 活动容器 | [外部培训记录](external-training/README.md) | 企业、图书馆、夜校等 |
 | 出版项目 | [《飞书高效办公》](feishu-efficient-office/README.md) | 书稿与出版 |
 | 项目 | [AI 六十甲子古音律与 IP 孵化](ai-sixty-jiazi-music-ip/README.md) | 文化产品与IP |
+| 专题培训 | [济南市领导干部AI专题培训](external-training/jinan-cadre-ai/README.md) | 干部AI培训方案与实操设计 |
 <!-- generated-projects:end -->

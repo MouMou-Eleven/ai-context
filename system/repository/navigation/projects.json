@@ -54,6 +54,17 @@
         "work/domains/other/README.md",
         "work/domains/development/README.md"
       ]
+    },
+    {
+      "id": "jinan-cadre-ai",
+      "name": "济南市领导干部AI专题培训",
+      "kind": "专题培训",
+      "domain": "干部AI培训方案与实操设计",
+      "entry": "work/projects/external-training/jinan-cadre-ai/README.md",
+      "domainEntries": [
+        "work/domains/training/README.md",
+        "work/domains/other/commercial/README.md"
+      ]
     }
   ],
   "cases": [

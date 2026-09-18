@@ -44,6 +44,7 @@
 |---|---|---|
 | 长期项目 | [AI 超级个体陪跑社群](../../projects/paid-community-course/README.md) | 会员培训与社群经营 |
 | 活动容器 | [外部培训记录](../../projects/external-training/README.md) | 企业、图书馆、夜校等 |
+| 专题培训 | [济南市领导干部AI专题培训](../../projects/external-training/jinan-cadre-ai/README.md) | 干部AI培训方案与实操设计 |
 <!-- generated-related-assets:end -->
 
 <!-- generated-methods:start -->
@@ -55,4 +56,5 @@
 |---|---|---|---|
 | 非技术读者需要理解概念、机制或技术差别，不能只背定义时；主题可以来自提示，也可以来自AI读到的材料 | [从问题推导概念](experience/technical-explanation/problem-driven-technical-explanation.md) | 纯查询、术语速查、直接操作、已接受稿逐字保护时不展开推导；出版只借解释逻辑，保留出版书面语与编辑规则 | 读者能说出原问题、关键变化及使用判断；不虚构历史发展、事实或作者经历，不混入讲师指令 |
 | 向政府、企业或组织方提交培训、课程纲要与项目方案时 | [对外方案内容设计](../other/commercial/experience/external-proposal-design.md) | 课堂课件、讲师备课、教程、研究报告和合同不按方案删去其必要信息 | 逐段确认内容、场景和价值；移出提示词、操作路径、内部分工、核验过程与免责话语；检查实际DOCX和来源留存 |
+| 面向跨岗位学员设计AI工具全景与工作场景实操课程时 | [工具全景到工作场景](experience/demo-driven-course-design.md) | 单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本 | 类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对 |
 <!-- generated-methods:end -->

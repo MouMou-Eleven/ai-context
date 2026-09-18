@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "confirmedDate": "2026-09-17",
+  "confirmedDate": "2026-09-18",
   "descriptions": {
     "work/projects/yancut-ai/revisions/2026-09-16-workbench-motion-reference-templates.md": "言剪动效、关键帧、参考视频与个人模板升级及线上验收",
     "system/repository/revisions/2026-09-15-writing-dna-review-and-method-routing.md": "写作蒸馏器评估、材料提炼与按任务发现方法",
@@ -312,7 +312,13 @@
     "work/domains/other/commercial/revisions": "商业交付规则修订与真实反馈",
     "work/domains/other/commercial/revisions/README.md": "商业交付修订索引",
     "work/domains/other/commercial/revisions/2026-09-17-external-proposal-and-word-format.md": "对外方案受众纠错、政企Word格式与反例检查",
-    "work/domains/other/commercial/experience/external-proposal-design.md": "对外培训及项目方案的内容筛选和验收"
+    "work/domains/other/commercial/experience/external-proposal-design.md": "对外培训及项目方案的内容筛选和验收",
+    "work/projects/external-training/jinan-cadre-ai": "济南市总工会干部AI培训的方案与设计反馈",
+    "work/projects/external-training/jinan-cadre-ai/README.md": "培训事实、当前设计与文件入口",
+    "work/projects/external-training/jinan-cadre-ai/proposal.md": "当前对外培训方案正文",
+    "work/projects/external-training/jinan-cadre-ai/revisions": "本场培训方案方向与版本修订",
+    "work/projects/external-training/jinan-cadre-ai/revisions/README.md": "方案修订入口",
+    "work/projects/external-training/jinan-cadre-ai/revisions/2026-09-18-tool-panorama-and-work-scenarios.md": "工具全景、提示词与六类工作场景设计反馈"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

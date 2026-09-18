@@ -4,7 +4,7 @@
 |---|---|---|
 | 建委的默认培训风格与课件形态 | [`jianwei-training-style.md`](./jianwei-training-style.md) | 所有 AI 培训课件的创建、修改、审核和复盘；必须读取 |
 | 通用备课与课件设计 | [`teaching-and-course-design.md`](./teaching-and-course-design.md) | 课程目标、受众、结构和讲师/学员边界 |
-| 演示驱动与授课复盘 | [`demo-driven-course-design.md`](./demo-driven-course-design.md) | 技术概念课、现场演示、反馈和讲后复盘 |
+| 工具全景、场景应用与演示驱动 | [`demo-driven-course-design.md`](./demo-driven-course-design.md) | 跨岗位应用入门课由全景到任务、技术概念课、现场演示与复盘 |
 | 实操教程写法 | [`tutorial-writing.md`](./tutorial-writing.md) | 给学员或普通用户写可跟做、可验收的教程 |
 | 飞书培训文档的可视化与口语化 | [`visual-and-oral-training-docs.md`](./visual-and-oral-training-docs.md) | 飞书课堂主文档的媒体、结构、可视化判断和口语表达 |
 | 方法来源与课程身份 | [`sources.md`](./sources.md) | 核对实际来源、资料归属和授课证据；日常创作按需读取 |

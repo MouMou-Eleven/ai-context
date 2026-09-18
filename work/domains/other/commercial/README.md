@@ -104,3 +104,11 @@ AI 表达基础层
 | 向政府、企业或组织方提交培训、课程纲要与项目方案时 | [对外方案内容设计](experience/external-proposal-design.md) | 课堂课件、讲师备课、教程、研究报告和合同不按方案删去其必要信息 | 逐段确认内容、场景和价值；移出提示词、操作路径、内部分工、核验过程与免责话语；检查实际DOCX和来源留存 |
 | 政府与企业的培训方案、课程纲要或商业项目方案需要Word排版时 | [政企Word方案排版](delivery-formats/gov-enterprise-word.md) | 法定公文、合同、指定标书模板、画册及其他用户明确视觉要求 | 主副标题居中、深蓝层级、宋体正文、首行缩进；按参考渲染逐页查看，不把参考内容当项目事实 |
 <!-- generated-methods:end -->
+
+<!-- generated-related-assets:start -->
+## 相关项目与案例
+
+| 类型 | 项目或案例 | 适用领域 |
+|---|---|---|
+| 专题培训 | [济南市领导干部AI专题培训](../../../projects/external-training/jinan-cadre-ai/README.md) | 干部AI培训方案与实操设计 |
+<!-- generated-related-assets:end -->

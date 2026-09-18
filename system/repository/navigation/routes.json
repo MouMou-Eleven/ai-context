@@ -744,7 +744,10 @@
         "外部培训",
         "外出培训",
         "外训",
-        "图书馆讲课"
+        "图书馆讲课",
+        "济南市总工会",
+        "济南干部培训",
+        "济南市领导干部"
       ],
       "excludeAny": [],
       "entry": "work/projects/external-training/README.md",
@@ -753,6 +756,15 @@
         {
           "path": "work/domains/training/README.md",
           "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/projects/external-training/jinan-cadre-ai/README.md",
+          "whenAny": [
+            "济南市总工会",
+            "济南干部培训",
+            "济南市领导干部"
+          ],
           "intents": []
         }
       ]
@@ -1397,6 +1409,51 @@
         "work/domains/other/commercial/README.md"
       ],
       "source": "建委2026-09-17明确选择的图二；参数为实现起点"
+    },
+    {
+      "id": "tool-panorama-work-scenarios",
+      "label": "工具全景到工作场景",
+      "status": "active",
+      "path": "work/domains/training/experience/demo-driven-course-design.md",
+      "selectedAny": [
+        "commercial",
+        "training",
+        "external-training",
+        "community",
+        "jinan-library",
+        "bug-lesson"
+      ],
+      "whenAll": [
+        [
+          "培训",
+          "课程",
+          "授课"
+        ],
+        [
+          "实操",
+          "工具全景",
+          "场景",
+          "工具分类"
+        ]
+      ],
+      "excludeAny": [
+        "只查",
+        "查询位置",
+        "逐字保留"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "面向跨岗位学员设计AI工具全景与工作场景实操课程时",
+      "notFor": "单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本",
+      "acceptance": "类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对",
+      "evidence": "work/projects/external-training/jinan-cadre-ai/revisions/2026-09-18-tool-panorama-and-work-scenarios.md",
+      "confirmedAt": "2026-09-18",
+      "entryPoints": [
+        "work/domains/training/README.md"
+      ],
+      "source": "建委2026-09-18干部AI培训实操方案调整；课前设计要求"
     }
   ]
 }
