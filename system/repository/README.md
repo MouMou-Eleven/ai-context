@@ -1,6 +1,6 @@
 # 仓库运行与维护
 
-GitHub工作流说明见[.github/README.md](../../.github/README.md)；仓库日常首页仍是[根目录README](../../README.md)。
+GitHub工作流见[自动校验配置](../../.github/workflows/context-validation.yml)，说明归入[维护入口](./maintenance/README.md)；仓库日常首页使用[根目录README](../../README.md)。不在.github另放README，以免GitHub优先展示技术说明而遮住知识库入口。
 
 建委描述目标和要沉淀的领域，AI负责完成检索、归属、依赖选择、更新及发布。
 
@@ -22,6 +22,6 @@ GitHub工作流说明见[.github/README.md](../../.github/README.md)；仓库日
 | [environment/README.md](../environment/README.md) | 电脑、本地工具与网络环境 |
 | [revisions/README.md](./revisions/README.md) | 治理变化与修订来源 |
 
-技术入口：[Git忽略规则](../../.gitignore)、[文本属性](../../.gitattributes)、[GitHub自动校验](../../README.md)。它们保留工具要求的位置，由本分支解释，不作为日常业务门类。
+技术入口：[Git忽略规则](../../.gitignore)、[文本属性](../../.gitattributes)、[GitHub自动校验](../../.github/workflows/context-validation.yml)。它们保留工具要求的位置，由本分支解释，不作为日常业务门类。
 
 根README面向人，AGENTS负责启动，完整任务导航与派生入口由单份登记生成；不能在各入口另写相反的路由。桌面HTML仅是查看镜像，不参与知识正确性的判断。

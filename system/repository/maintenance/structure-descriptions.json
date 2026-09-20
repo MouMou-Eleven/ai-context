@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "confirmedDate": "2026-09-18",
+  "confirmedDate": "2026-09-21",
   "descriptions": {
     "work/projects/yancut-ai/revisions/2026-09-16-workbench-motion-reference-templates.md": "言剪动效、关键帧、参考视频与个人模板升级及线上验收",
     "system/repository/revisions/2026-09-15-writing-dna-review-and-method-routing.md": "写作蒸馏器评估、材料提炼与按任务发现方法",
@@ -322,7 +322,10 @@
     "work/domains/design/video/promo/competition-promo-production.md": "创赛画面的主体体量、光影、自然衔接、三维原图展示与返工经验",
     "work/domains/design/video/revisions": "视频制作方法的方向与适用范围修订",
     "work/domains/design/video/revisions/2026-09-18-competition-and-microcourse-scope.md": "创赛画面反馈沉淀，微课工作台迁移并收窄适用范围",
-    "work/domains/design/video/revisions/2026-09-18-competition-opening-visual-rollback.md": "撤回全景与扫描包装过度修订，保留机械质感并尝试三维图板"
+    "work/domains/design/video/revisions/2026-09-18-competition-opening-visual-rollback.md": "撤回全景与扫描包装过度修订，保留机械质感并尝试三维图板",
+    "system/repository/maintenance/context_retrieval.py": "任务识别、实时正文检索与完整来源包",
+    "system/repository/maintenance/tests/test_retrieval.py": "自然任务检索与读取证据回归",
+    "system/repository/revisions/2026-09-21-task-retrieval-and-adherence.md": "从自然任务到具体经验和成品验收的调用修复"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

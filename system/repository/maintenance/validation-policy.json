@@ -104,7 +104,8 @@
     "system/expression/chinese-datasets",
     "system/expression/oral-expression",
     "system/expression/written-expression",
-    "system/expression/experience"
+    "system/expression/experience",
+    ".github/README.md"
   ],
   "requiredLinks": {
     "system/repository/ingestion-workflow.md": [
@@ -156,7 +157,7 @@
   "indexOwners": {
     ".gitattributes": "system/repository/README.md",
     ".gitignore": "system/repository/README.md",
-    ".github/README.md": "system/repository/README.md",
+    ".github/workflows/context-validation.yml": "system/repository/README.md",
     "llms.txt": "system/repository/README.md"
   }
 }

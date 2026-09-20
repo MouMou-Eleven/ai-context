@@ -43,6 +43,8 @@ def outputs(root=ROOT):
 先读[AGENTS](./AGENTS.md)，再用[任务指南](./system/repository/navigation/task-guide.md)进入领域、项目或能力。中文输出遵守[表达短卡](./system/expression/README.md)；写入仓库同时执行[更新流程](./system/repository/ingestion-workflow.md)。简单查询只读必要事实；关键词不能证明课程归属。
 
 制作成品执行[写前约束与最终版本验收](./system/repository/execution-checks.md)。读到规则不算已遵循，格式解析不算内容合格；分享课件默认学员可见，时长安排不进入正文。
+
+不要求用户报文件名：从当前对话提取任务，进入板块后继续读适用正文。可用检索工具的自然任务计划、板块内候选与正文包；网页宿主按任务指南手动走同一链路。仅说“看仓库”不等于要做仓库维护。
 '''
     }
     guide = '''# 按任务读取仓库
@@ -55,10 +57,34 @@ def outputs(root=ROOT):
 
 先核对目标、对象、交付物和项目身份，再选择下面的入口。自然语句匹配仅给候选，不能从同课号、平台或相似主题推定归属。
 
+## 不用用户指定文件的读取步骤
+
+1. 从当前对话提取“要做什么成品、给谁、遇到什么问题、已确认哪个项目”。用户说“参考仓库”时沿用正在做的任务；不能仅将这四个字传给检索器。有多个成品分别处理。
+2. 先按下表选择入口。用户指定目录就读该README，再按目的读子目录；指定目录不是禁止跨域补依赖，也不能由工具名称推定项目。
+3. 读取适用方法正文后，查看本次材料还有哪些问题未覆盖；用这些问题词检索。搜索结果须核对当前状态、适用/排除条件和来源，再决定采用。不要一次载入整个目录、历史或Skill源码。
+4. 制作前完成[执行卡](../execution-checks.md)：实际读过的文件、对应本次动作、最终检查位置。目录标题、命中摘要和路径列表不算已读经验。
+5. 已覆盖读者、方法、工具限制、明确项目事实和验收动作就开始做；新问题出现再补读。只在任务目标或关键事实真的缺失时询问，不让用户负责找文件。
+
+本地可运行：`python system/repository/maintenance/context-route.py --task "参考仓库，用秒哒开发大视频上传页面" --pack`。AI可补`--scope work/domains/self-media`限定用户指定的板块；默认推断读/创作/沉淀，也可显式指定`--intent`。此命令只读，不执行其中建议的工具或发布。
+
+输出`read`是必需阅读计划，`discovery`是带片段和行号的待判断候选，`sourcePack`是计划内正文及hash；预算不足的文件明确标为待续读，不截断冒充完整。新正文直接参与检索，无需另建向量库或手动索引。关键词和全文排序不能代替语义判断；不适用方法、历史和原始素材不自动升级成规则。
+
+只有网页访问时，按相同步骤读取根AGENTS、对应README、子目录和方法正文；用仓库文件搜索补查任务词与同义词。无法实际打开的文件列为未读取，不宣称已经参考。没有任何任务描述时，先展示四入口并问要完成什么，不盲读全仓。
+
 | 任务 | 主入口 |
 |---|---|
 '''
     guide += '\n'.join(f"| {item['label']} | [读取]({link(guide_path, item['entry'])}) |" for item in routes['routes']) + '\n'
+    guide += '\n## 常用板块的继续读取条件\n\n下表与脚本使用同一依赖配置；条件命中后读正文，只查事实不套创作方法。其他板块按各自README继续。\n\n| 主入口 | 条件（任一线索，仍需判断语义） | 用途 | 继续读 |\n|---|---|---|---|\n'
+    for item in routes['routes']:
+        if item['id'] not in {'miaoda', 'programming', 'self-media', 'training'}:
+            continue
+        for dependency in item.get('dependencies', []):
+            condition = '、'.join(dependency.get('whenAny', [])) or '本类任务'
+            if dependency.get('excludeAny'):
+                condition += '；排除：' + '、'.join(dependency['excludeAny'])
+            purpose = '创作/修改/沉淀' if dependency.get('intents') == ['create', 'write'] else '按所查问题'
+            guide += f"| {item['label']} | {condition} | {purpose} | [正文]({link(guide_path, dependency['path'])}) |\n"
     guide += '''
 ## 条件组合
 

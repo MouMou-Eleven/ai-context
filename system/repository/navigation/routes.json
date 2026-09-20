@@ -250,11 +250,15 @@
       "id": "system/repository",
       "label": "仓库治理、纠错与沉淀",
       "matchAny": [
-        "仓库",
-        "GitHub",
-        "repo",
+        "仓库维护",
+        "仓库治理",
+        "仓库结构",
+        "修复仓库",
+        "重构仓库",
         "沉淀",
-        "入库"
+        "入库",
+        "推送",
+        "更新GitHub"
       ],
       "excludeAny": [],
       "entry": "system/repository/README.md",
@@ -562,12 +566,31 @@
         "响应式",
         "手机适配",
         "移动端UI",
-        "UI设计"
+        "UI设计",
+        "小程序",
+        "应用开发与自动化",
+        "编程开发",
+        "自动化脚本",
+        "写代码",
+        "修代码"
       ],
       "excludeAny": [],
       "entry": "work/domains/development/README.md",
       "priority": 35,
-      "dependencies": []
+      "dependencies": [
+        {
+          "path": "work/domains/development/experience/README.md",
+          "whenAny": [],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        }
+      ],
+      "matchPatterns": [
+        "(?:做|写|开发|实现|修复).{0,20}(?:自动.{0,12}脚本|Python|接口|后端|数据库)"
+      ]
     },
     {
       "id": "miaoda",
@@ -586,6 +609,149 @@
           "path": "work/domains/development/tools/miaoda/disambiguation.md",
           "whenAny": [],
           "intents": []
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/README.md",
+          "whenAny": [],
+          "excludeAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/development/experience/README.md",
+          "whenAny": [],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/experience/README.md",
+          "whenAny": [],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/experience/pitfalls.md",
+          "whenAny": [],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/experience/prompt-patterns.md",
+          "whenAny": [
+            "提示词",
+            "开发",
+            "搭建",
+            "实现",
+            "修改",
+            "迭代"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/experience/prompts/uploads.md",
+          "whenAny": [
+            "上传",
+            "文件传输"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/experience/patterns/large-video-upload.md",
+          "whenAny": [
+            "大视频",
+            "大文件",
+            "视频上传",
+            "分片上传"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/basics/current-capabilities.md",
+          "whenAny": [
+            "当前",
+            "功能",
+            "限制",
+            "容量",
+            "权益"
+          ],
+          "excludeAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/experience/prompts/authentication.md",
+          "whenAny": [
+            "登录",
+            "认证",
+            "验证码",
+            "鉴权"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/experience/prompts/payment-integration.md",
+          "whenAny": [
+            "支付",
+            "收款",
+            "退款"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/experience/prompts/runtime-diagnostics.md",
+          "whenAny": [
+            "报错",
+            "故障",
+            "排错",
+            "无法运行",
+            "白屏"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md",
+          "whenAny": [
+            "Codex",
+            "codex",
+            "增量",
+            "迭代"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
         }
       ]
     },
@@ -730,6 +896,67 @@
             "create",
             "write"
           ]
+        },
+        {
+          "path": "work/domains/training/experience/tutorial-writing.md",
+          "whenAny": [
+            "实操",
+            "教程",
+            "跟做",
+            "操作步骤"
+          ],
+          "excludeAny": [
+            "宣传",
+            "朋友圈",
+            "招生",
+            "只查",
+            "查询位置"
+          ],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/training/experience/visual-and-oral-training-docs.md",
+          "whenAny": [
+            "飞书",
+            "可视化",
+            "图示",
+            "图片",
+            "口语"
+          ],
+          "excludeAny": [
+            "宣传",
+            "朋友圈",
+            "招生",
+            "只查",
+            "查询位置"
+          ],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/training/experience/demo-driven-course-design.md",
+          "whenAny": [
+            "课程结构",
+            "课程大纲",
+            "演示",
+            "场景实操"
+          ],
+          "excludeAny": [
+            "宣传",
+            "朋友圈",
+            "招生",
+            "只查",
+            "查询位置"
+          ],
+          "intents": [
+            "create",
+            "write"
+          ]
         }
       ]
     },
@@ -761,6 +988,38 @@
         {
           "path": "work/domains/training/README.md",
           "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/projects/paid-community-course/course-materials-index.md",
+          "whenAny": [
+            "课程",
+            "资料",
+            "第3课",
+            "进度",
+            "文章"
+          ],
+          "intents": []
+        },
+        {
+          "path": "work/projects/paid-community-course/positioning-and-vision.md",
+          "whenAny": [
+            "宣传",
+            "介绍",
+            "定位",
+            "报名",
+            "招生"
+          ],
+          "intents": []
+        },
+        {
+          "path": "work/projects/paid-community-course/operations-playbook.md",
+          "whenAny": [
+            "直播销售",
+            "私聊",
+            "社群运营",
+            "招生短视频"
+          ],
           "intents": []
         }
       ]
@@ -890,7 +1149,9 @@
         "对外宣传",
         "对外介绍",
         "宣传稿",
-        "推广文案"
+        "推广文案",
+        "自媒体与个人IP经营",
+        "自媒体与个人 IP 经营"
       ],
       "excludeAny": [],
       "entry": "work/domains/self-media/README.md",
@@ -905,6 +1166,111 @@
             "建委口吻",
             "我的口吻"
           ],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/self-media/articles/README.md",
+          "whenAny": [
+            "公众号",
+            "图文",
+            "长文",
+            "文章"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/self-media/moments-copy/README.md",
+          "whenAny": [
+            "朋友圈"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/self-media/community-copy/README.md",
+          "whenAny": [
+            "群公告",
+            "社群话术",
+            "群内"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/self-media/video-scripts/README.md",
+          "whenAny": [
+            "口播",
+            "短视频脚本"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/self-media/live-sales/README.md",
+          "whenAny": [
+            "直播销售",
+            "带货"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/self-media/marketing-copy/README.md",
+          "whenAny": [
+            "推广",
+            "营销",
+            "报名页",
+            "介绍页",
+            "产品介绍",
+            "宣传",
+            "招生"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/self-media/titles/README.md",
+          "whenAny": [
+            "标题",
+            "选题"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/self-media/experience/README.md",
+          "whenAny": [
+            "运营",
+            "复盘",
+            "账号规划",
+            "涨粉"
+          ],
+          "excludeAny": [],
           "intents": [
             "create",
             "write"

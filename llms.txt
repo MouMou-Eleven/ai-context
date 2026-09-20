@@ -5,3 +5,5 @@
 先读[AGENTS](./AGENTS.md)，再用[任务指南](./system/repository/navigation/task-guide.md)进入领域、项目或能力。中文输出遵守[表达短卡](./system/expression/README.md)；写入仓库同时执行[更新流程](./system/repository/ingestion-workflow.md)。简单查询只读必要事实；关键词不能证明课程归属。
 
 制作成品执行[写前约束与最终版本验收](./system/repository/execution-checks.md)。读到规则不算已遵循，格式解析不算内容合格；分享课件默认学员可见，时长安排不进入正文。
+
+不要求用户报文件名：从当前对话提取任务，进入板块后继续读适用正文。可用检索工具的自然任务计划、板块内候选与正文包；网页宿主按任务指南手动走同一链路。仅说“看仓库”不等于要做仓库维护。

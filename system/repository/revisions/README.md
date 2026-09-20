@@ -6,6 +6,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-09-21 | [task-retrieval-and-adherence.md](./2026-09-21-task-retrieval-and-adherence.md) | 自然任务下钻、实时正文候选与完整来源包、执行证据；修复当前归属残留和GitHub首页README优先级 |
 | 2026-09-16 | [training-attribution-and-navigation.md](./2026-09-16-training-attribution-and-navigation.md) | 本人确认图书馆与会员课程／文章归属；实战复盘接回方法来源；日常导航优先、完整视图收进维护入口 |
 | 2026-09-15 | [writing-dna-review-and-method-routing.md](./2026-09-15-writing-dna-review-and-method-routing.md) | 写作蒸馏器实用性审计；统一材料提炼规范、按需求发现方法与跨体裁边界；同一登记生成入口并校验停用 |
 | 2026-09-13 | [experience-adherence-audit.md](./2026-09-13-experience-adherence-audit.md) | 对已读仍违反学员视角的真实任务回放；补写前约束、实际草稿检测和跨领域成品验收 |

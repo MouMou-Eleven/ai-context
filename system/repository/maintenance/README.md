@@ -12,7 +12,9 @@ python -B system/repository/maintenance/validate-context.py
 python -B -m unittest discover -s system/repository/maintenance/tests -v
 ```
 
-`context-route.py` 只解释候选与依赖，不执行工具，不把关键词匹配当成课程或项目归属证据。写入完成后依次生成导航与结构，复核变化，再明确暂存本次文件。检查时使用 `--check` 查看导航或结构漂移；校验器有 `--json` 供机器读取。
+`context-route.py --task "参考仓库，帮我写公众号文章" --pack` 默认推断读取／创作／沉淀，输出必要正文、可核对的SHA256、待续读文件、板块内搜索候选和成品检查方式。`--scope`可指定仓库相对目录，`--max-chars`控制正文包预算；超预算文件不截断，明确留待单独读取。默认JSON只给计划，不自称已阅读。脚本不执行建议命令、不写仓库、不推定项目归属。不能运行脚本的网页AI按[任务指南](../navigation/task-guide.md)走相同流程。
+
+写入完成后依次生成导航与结构，复核变化，再明确暂存本次文件。检查时使用 `--check` 查看导航或结构漂移；校验器有 `--json` 供机器读取。
 
 结构发生实际变化并完成核对时，AI 同步将 `structure-descriptions.json` 的 `confirmedDate` 更新为本次确认日期；没有结构变化时保持原日期，不因每天运行或 CI 当前时间改变生成结果。新目录用途需要更精确说明时，由 AI 在同一描述表补充，旧路径说明由生成器自动移除。
 
@@ -21,6 +23,7 @@ python -B -m unittest discover -s system/repository/maintenance/tests -v
 | 文件 | 作用 |
 |---|---|
 | [context-route.py](./context-route.py) | 从路由注册表解释自然任务的入口、条件依赖和已采用方法建议；不替代材料理解 |
+| [context_retrieval.py](./context_retrieval.py) | 任务意图、限定范围的实时全文候选、完整正文包与读取状态；不维护第二套正文索引、不判定文章质量 |
 | [check-deliverable.py](./check-deliverable.py) | 检查实际学员稿或对外方案的受众错位；支持原生DOCX、外链和可选政企主标题居中检查，输出hash；无命中仍需语义验收 |
 | [sync-navigation.py](./sync-navigation.py) | 从注册表生成短llms、任务指南、项目案例总表、领域关联与方法短表；处理停用后的旧表，支持只读漂移检查 |
 | [sync-structure.py](./sync-structure.py) | 从同一真实文件树生成完整结构与日常知识导航，保留有效中文描述 |
@@ -60,7 +63,7 @@ python -B -m unittest discover -s system/repository/maintenance/tests -v
 
 已审查的旧版本可以单独提交，只要它在暂存区自洽。脚本不要求用户把无关工作区改动一并提交。失败后应修复具体问题、重新生成并明确暂存相匹配的输入与输出；不使用自动 `git add`。
 
-[GitHub CI](../../../README.md)在Linux和Windows运行同一校验与回归。本地hook提供即时反馈，CI防止未安装hook的环境漏检；启用分支保护需仓库设置另行配置。
+[GitHub CI](../../../.github/workflows/context-validation.yml)在Linux和Windows运行同一校验与回归。本地hook提供即时反馈，CI防止未安装hook的环境漏检；启用分支保护需仓库设置另行配置。
 
 ## 桌面镜像
 

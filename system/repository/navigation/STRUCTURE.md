@@ -1181,6 +1181,7 @@ ai-context/
 │       │   ├── check-deliverable.py  外部交付物的规则信号检查脚本
 │       │   ├── context-route.py  跨平台维护或执行脚本
 │       │   ├── context_common.py  跨平台维护或执行脚本
+│       │   ├── context_retrieval.py  任务识别、实时正文检索与完整来源包
 │       │   ├── desktop-sync.py  跨平台维护或执行脚本
 │       │   ├── generate-structure-html.ps1  从 Markdown 生成交互式 HTML
 │       │   ├── git-hooks/  本机自动同步触发器
@@ -1202,7 +1203,8 @@ ai-context/
 │       │   │   ├── README.md  维护回归测试
 │       │   │   ├── test_context.py  跨平台维护或执行脚本
 │       │   │   ├── test_deliverable.py  跨平台维护或执行脚本
-│       │   │   └── test_methods.py  跨领域方法发现、误触发与登记维护回归
+│       │   │   ├── test_methods.py  跨领域方法发现、误触发与登记维护回归
+│       │   │   └── test_retrieval.py  自然任务检索与读取证据回归
 │       │   ├── validate-context.ps1  结构、索引与链接校验脚本
 │       │   ├── validate-context.py  跨平台维护或执行脚本
 │       │   └── validation-policy.json  结构化配置与索引
@@ -1249,6 +1251,7 @@ ai-context/
 │       │   ├── 2026-09-13-experience-adherence-audit.md  培训经验遵循性审计与执行闭环修订
 │       │   ├── 2026-09-15-writing-dna-review-and-method-routing.md  写作蒸馏器评估、材料提炼与按任务发现方法
 │       │   ├── 2026-09-16-training-attribution-and-navigation.md  本人确认培训归属、文章课程区分与日常导航
+│       │   ├── 2026-09-21-task-retrieval-and-adherence.md  从自然任务到具体经验和成品验收的调用修复
 │       │   └── README.md  仓库修订索引
 │       ├── roadmap.md  长期维护与演进
 │       ├── templates/  项目、案例与方法模板
@@ -1258,8 +1261,7 @@ ai-context/
 │       │   └── README.md  项目、案例与方法模板
 │       └── versioned-knowledge-policy.md  动态产品知识与版本治理
 ├── .gitattributes  Git 文本属性与换行规范
-├── .github/  AI Context · 杨建委的长期协作知识库
-│   ├── README.md  AI Context · 杨建委的长期协作知识库
+├── .github/  目录入口
 │   └── workflows/  目录入口
 │       └── context-validation.yml  自动化配置
 └── .gitignore  Git 忽略规则，排除不应入库的本地文件
@@ -1294,4 +1296,4 @@ ai-context/
 
 完整设计理由与后续扩展见[信息架构](../information-architecture.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-09-18*
+*结构最后确认：2026-09-21*

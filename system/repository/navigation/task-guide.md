@@ -8,6 +8,20 @@
 
 先核对目标、对象、交付物和项目身份，再选择下面的入口。自然语句匹配仅给候选，不能从同课号、平台或相似主题推定归属。
 
+## 不用用户指定文件的读取步骤
+
+1. 从当前对话提取“要做什么成品、给谁、遇到什么问题、已确认哪个项目”。用户说“参考仓库”时沿用正在做的任务；不能仅将这四个字传给检索器。有多个成品分别处理。
+2. 先按下表选择入口。用户指定目录就读该README，再按目的读子目录；指定目录不是禁止跨域补依赖，也不能由工具名称推定项目。
+3. 读取适用方法正文后，查看本次材料还有哪些问题未覆盖；用这些问题词检索。搜索结果须核对当前状态、适用/排除条件和来源，再决定采用。不要一次载入整个目录、历史或Skill源码。
+4. 制作前完成[执行卡](../execution-checks.md)：实际读过的文件、对应本次动作、最终检查位置。目录标题、命中摘要和路径列表不算已读经验。
+5. 已覆盖读者、方法、工具限制、明确项目事实和验收动作就开始做；新问题出现再补读。只在任务目标或关键事实真的缺失时询问，不让用户负责找文件。
+
+本地可运行：`python system/repository/maintenance/context-route.py --task "参考仓库，用秒哒开发大视频上传页面" --pack`。AI可补`--scope work/domains/self-media`限定用户指定的板块；默认推断读/创作/沉淀，也可显式指定`--intent`。此命令只读，不执行其中建议的工具或发布。
+
+输出`read`是必需阅读计划，`discovery`是带片段和行号的待判断候选，`sourcePack`是计划内正文及hash；预算不足的文件明确标为待续读，不截断冒充完整。新正文直接参与检索，无需另建向量库或手动索引。关键词和全文排序不能代替语义判断；不适用方法、历史和原始素材不自动升级成规则。
+
+只有网页访问时，按相同步骤读取根AGENTS、对应README、子目录和方法正文；用仓库文件搜索补查任务词与同义词。无法实际打开的文件列为未读取，不宣称已经参考。没有任何任务描述时，先展示四入口并问要完成什么，不盲读全仓。
+
 | 任务 | 主入口 |
 |---|---|
 | 有哪些项目、近期工作与业务概要 | [读取](../../../work/projects/README.md) |
@@ -48,6 +62,41 @@
 | 历史项目与追溯 | [读取](history.md) |
 | 按课号找资料（先核对所属系列） | [读取](../../../work/domains/training/materials/README.md) |
 | 济南市图书馆培训 | [读取](../../../work/projects/external-training/jinan-city-library/README.md) |
+
+## 常用板块的继续读取条件
+
+下表与脚本使用同一依赖配置；条件命中后读正文，只查事实不套创作方法。其他板块按各自README继续。
+
+| 主入口 | 条件（任一线索，仍需判断语义） | 用途 | 继续读 |
+|---|---|---|---|
+| 网站、应用与编程 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/experience/README.md) |
+| 百度秒嗒平台 | 本类任务 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/disambiguation.md) |
+| 百度秒嗒平台 | 本类任务 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/README.md) |
+| 百度秒嗒平台 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/experience/README.md) |
+| 百度秒嗒平台 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/README.md) |
+| 百度秒嗒平台 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/pitfalls.md) |
+| 百度秒嗒平台 | 提示词、开发、搭建、实现、修改、迭代 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompt-patterns.md) |
+| 百度秒嗒平台 | 上传、文件传输 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/uploads.md) |
+| 百度秒嗒平台 | 大视频、大文件、视频上传、分片上传 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/large-video-upload.md) |
+| 百度秒嗒平台 | 当前、功能、限制、容量、权益 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/basics/current-capabilities.md) |
+| 百度秒嗒平台 | 登录、认证、验证码、鉴权 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/authentication.md) |
+| 百度秒嗒平台 | 支付、收款、退款 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/payment-integration.md) |
+| 百度秒嗒平台 | 报错、故障、排错、无法运行、白屏 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/runtime-diagnostics.md) |
+| 百度秒嗒平台 | Codex、codex、增量、迭代 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md) |
+| 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/README.md) |
+| 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/jianwei-training-style.md) |
+| 培训备课与复盘（先核对归属） | 实操、教程、跟做、操作步骤；排除：宣传、朋友圈、招生、只查、查询位置 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/tutorial-writing.md) |
+| 培训备课与复盘（先核对归属） | 飞书、可视化、图示、图片、口语；排除：宣传、朋友圈、招生、只查、查询位置 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/visual-and-oral-training-docs.md) |
+| 培训备课与复盘（先核对归属） | 课程结构、课程大纲、演示、场景实操；排除：宣传、朋友圈、招生、只查、查询位置 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/demo-driven-course-design.md) |
+| 自媒体、个人IP与渠道表达 | 朋友圈、个人IP、个人 IP、建委口吻、我的口吻 | 创作/修改/沉淀 | [正文](../../expression/README.md) |
+| 自媒体、个人IP与渠道表达 | 公众号、图文、长文、文章 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/articles/README.md) |
+| 自媒体、个人IP与渠道表达 | 朋友圈 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/moments-copy/README.md) |
+| 自媒体、个人IP与渠道表达 | 群公告、社群话术、群内 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/community-copy/README.md) |
+| 自媒体、个人IP与渠道表达 | 口播、短视频脚本 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/video-scripts/README.md) |
+| 自媒体、个人IP与渠道表达 | 直播销售、带货 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/live-sales/README.md) |
+| 自媒体、个人IP与渠道表达 | 推广、营销、报名页、介绍页、产品介绍、宣传、招生 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/marketing-copy/README.md) |
+| 自媒体、个人IP与渠道表达 | 标题、选题 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/titles/README.md) |
+| 自媒体、个人IP与渠道表达 | 运营、复盘、账号规划、涨粉 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/experience/README.md) |
 
 ## 条件组合
 
