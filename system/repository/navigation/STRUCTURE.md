@@ -54,7 +54,7 @@ ai-context/
 │   │   │       │   ├── README.md  微课、精品课、MG 动画与教育课件
 │   │   │       │   └── showcase-guidelines.md  哞哞微课案例展示写作规范
 │   │   │       ├── promo/  宣传片
-│   │   │       │   ├── competition-promo-production.md  创赛画面的主体体量、光影、自然衔接、三维原图展示与返工经验
+│   │   │       │   ├── competition-promo-production.md  创赛文稿拆镜、AI与AE模板分工、定格叠字、参考图动态化与迭代验收
 │   │   │       │   ├── prompt-iteration.md  企业片提示词节奏与迭代经验
 │   │   │       │   ├── README.md  企业宣传片制作经验
 │   │   │       │   ├── visual-recipes.md  科技企业片可选视觉配方
@@ -63,6 +63,7 @@ ai-context/
 │   │   │       ├── revisions/  视频制作方法的方向与适用范围修订
 │   │   │       │   ├── 2026-09-18-competition-and-microcourse-scope.md  创赛画面反馈沉淀，微课工作台迁移并收窄适用范围
 │   │   │       │   ├── 2026-09-18-competition-opening-visual-rollback.md  撤回全景与扫描包装过度修订，保留机械质感并尝试三维图板
+│   │   │       │   ├── 2026-09-21-competition-production-retrospective.md  石墨烯创赛片完工复盘：制作分工、Seedance参考图与多轮失败修正
 │   │   │       │   └── README.md  视频制作修订记录
 │   │   │       └── story/  故事与叙事影片
 │   │   │           ├── motion-comic.md  漫剧制作入口

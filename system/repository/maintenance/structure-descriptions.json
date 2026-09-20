@@ -319,13 +319,14 @@
     "work/projects/external-training/jinan-cadre-ai/revisions": "本场培训方案方向与版本修订",
     "work/projects/external-training/jinan-cadre-ai/revisions/README.md": "方案修订入口",
     "work/projects/external-training/jinan-cadre-ai/revisions/2026-09-18-tool-panorama-and-work-scenarios.md": "工具全景、提示词与六类工作场景设计反馈",
-    "work/domains/design/video/promo/competition-promo-production.md": "创赛画面的主体体量、光影、自然衔接、三维原图展示与返工经验",
+    "work/domains/design/video/promo/competition-promo-production.md": "创赛文稿拆镜、AI与AE模板分工、定格叠字、参考图动态化与迭代验收",
     "work/domains/design/video/revisions": "视频制作方法的方向与适用范围修订",
     "work/domains/design/video/revisions/2026-09-18-competition-and-microcourse-scope.md": "创赛画面反馈沉淀，微课工作台迁移并收窄适用范围",
     "work/domains/design/video/revisions/2026-09-18-competition-opening-visual-rollback.md": "撤回全景与扫描包装过度修订，保留机械质感并尝试三维图板",
     "system/repository/maintenance/context_retrieval.py": "任务识别、实时正文检索与完整来源包",
     "system/repository/maintenance/tests/test_retrieval.py": "自然任务检索与读取证据回归",
-    "system/repository/revisions/2026-09-21-task-retrieval-and-adherence.md": "从自然任务到具体经验和成品验收的调用修复"
+    "system/repository/revisions/2026-09-21-task-retrieval-and-adherence.md": "从自然任务到具体经验和成品验收的调用修复",
+    "work/domains/design/video/revisions/2026-09-21-competition-production-retrospective.md": "石墨烯创赛片完工复盘：制作分工、Seedance参考图与多轮失败修正"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",
