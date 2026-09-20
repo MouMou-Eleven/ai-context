@@ -1520,15 +1520,15 @@
         "create",
         "write"
       ],
-      "useWhen": "制作创赛项目宣传视频或修正装备开场的景别、灰暗色彩、科技包装和参考图展示时",
-      "notFor": "不用于教师微课；不把本次工业设备、颜色或镜头数量套给所有企业片",
-      "acceptance": "检查主体体量、景别与内容、曝光及材质层次、自然衔接、三维图板与原图文字保真；回退提示词仍需成片复测",
-      "evidence": "work/domains/design/video/revisions/2026-09-18-competition-opening-visual-rollback.md",
-      "confirmedAt": "2026-09-18",
+      "useWhen": "收到创赛文稿，需要分析叙事、拆分画面、选择AI／真实素材／AE模板，或调整参考图、人物动作与运镜时",
+      "notFor": "不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴",
+      "acceptance": "核对文稿与画面、素材及制作分工、定格叠字、参考图文字、人物姿态与机位、连续衔接；提示词和用户完工反馈不代替成片逐镜验收",
+      "evidence": "work/domains/design/video/revisions/2026-09-21-competition-production-retrospective.md",
+      "confirmedAt": "2026-09-21",
       "entryPoints": [
         "work/domains/design/video/promo/README.md"
       ],
-      "source": "建委2026-09-18创赛开场三版对比及最新版退化反馈；全景扫描方案已撤回，回退稿待复测"
+      "source": "建委2026-09-21完工复盘及Seedance名称纠正，结合本片多轮截图与调校；方法有条件复用，最终成片未独立审核"
     }
   ]
 }
