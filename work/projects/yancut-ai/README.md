@@ -44,6 +44,8 @@
 | 购买与积分 | 当前为联系客服、二维码/联系方式人工确认后开通积分；兼容旧收银台的接口不再创建订单或扣款。免费本地剪辑与付费AI能力的积分目录已在本地实现，正式价格与运营对账仍待确认 |
 | 管理后台 | `/admin`、共享配置、管理员授权、审计与加密密钥本地闭环已完成；生产需要真实Auth、数据库和独立加密密钥 |
 | 最近验证证据 | 09-16：143 项针对性测试后扩展至 307 项全量单元测试、3166 次断言；TypeScript、本地/Vercel 构建通过。本地关键帧 5 秒 H.264 导出与画面对照、线上素材+动效 12 秒 H.264 导出。真实 GLM 六帧参考分析在本地通过，公网未填 Key 明确拒绝；本人有效 Key 的公网成片质量仍待实测 |
+| 豆包 ASR 2.0 标准版 | 已接入服务端异步提交/查询、300 积分/小时报价与确认扣费、失败退分和密钥配置；正式使用仍需对象存储 HTTPS 地址与真实长任务验收 |
+| 最近验证证据 | 09-16：143 项针对性测试后扩展至 307 项全量单元测试、3166 次断言；TypeScript、本地/Vercel 构建通过。本地关键帧 5 秒 H.264 导出与线上素材+动效 12 秒 H.264 导出已验证。豆包标准版适配器、字幕时间戳转换和前端报价确认流程新增 9 项测试；真实供应商长任务仍待对象存储与账号验收 |
 
 当前客服资料、模型参数、套餐试验价格及具体测试细节按相应日期的revision读取，不把开发登记值当成现行商业承诺。已撤销的独立包装中心和旧自动收银台只保留在历史记录中。
 
@@ -81,7 +83,10 @@
 | [`revisions/2026-09-03-glm53-manual-purchase.md`](./revisions/2026-09-03-glm53-manual-purchase.md) | GLM-5.3-Flash 多模态规划、官方接口实测与客服扫码人工购买流程 |
 | [`revisions/2026-09-03-local-demo-effects-stickers.md`](./revisions/2026-09-03-local-demo-effects-stickers.md) | 本地免登录演示、GPU 特效、AI 特效/贴纸命令、贴纸扩充与中文状态修复 |
 | [`revisions/2026-09-04-ai-progress-remotion-hyperframes-keyframes.md`](./revisions/2026-09-04-ai-progress-remotion-hyperframes-keyframes.md) | AI 执行进度可视化、Remotion 本地预检、HyperFrames 动效配方桥接、手动关键帧、结束帧选择与深层中文化 |
+| [`revisions/2026-09-15-hypit-montage-overlay-scenario-workflows.md`](./revisions/2026-09-15-hypit-montage-overlay-scenario-workflows.md) | Hypit、montage-vlog-compiler、overlay-studio 核验；素材证据、场景规范与可编辑信息动效 |
+| [`revisions/2026-09-23-doubao-asr-standard-billing.md`](./revisions/2026-09-23-doubao-asr-standard-billing.md) | 豆包录音文件识别 2.0 标准版异步提交/查询、积分确认、服务端密钥与对象存储边界 |
 | 源码仓库 `docs/yancut/manual-test-checklist.md` | 网站完整功能清单、人工验收步骤、自动门禁与秒嗒上线前测试边界 |
+| 源码仓库 `docs/yancut/doubao-asr-standard-integration.md` | 豆包录音文件识别 2.0 标准版的开通、异步任务、积分确认和对象存储使用说明 |
 
 ## AI 调用规则
 
