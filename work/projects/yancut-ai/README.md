@@ -85,6 +85,7 @@
 | [`revisions/2026-09-04-ai-progress-remotion-hyperframes-keyframes.md`](./revisions/2026-09-04-ai-progress-remotion-hyperframes-keyframes.md) | AI 执行进度可视化、Remotion 本地预检、HyperFrames 动效配方桥接、手动关键帧、结束帧选择与深层中文化 |
 | [`revisions/2026-09-15-hypit-montage-overlay-scenario-workflows.md`](./revisions/2026-09-15-hypit-montage-overlay-scenario-workflows.md) | Hypit、montage-vlog-compiler、overlay-studio 核验；素材证据、场景规范与可编辑信息动效 |
 | [`revisions/2026-09-23-doubao-asr-standard-billing.md`](./revisions/2026-09-23-doubao-asr-standard-billing.md) | 豆包录音文件识别 2.0 标准版异步提交/查询、积分确认、服务端密钥与对象存储边界 |
+| [`revisions/2026-09-23-doubao-asr-preview-hardening.md`](./revisions/2026-09-23-doubao-asr-preview-hardening.md) | 个人 Vercel Preview 的 ASR 路由、任务恢复、实际时长报价、套餐积分口径与验证结果 |
 | 源码仓库 `docs/yancut/manual-test-checklist.md` | 网站完整功能清单、人工验收步骤、自动门禁与秒嗒上线前测试边界 |
 | 源码仓库 `docs/yancut/doubao-asr-standard-integration.md` | 豆包录音文件识别 2.0 标准版的开通、异步任务、积分确认和对象存储使用说明 |
 
