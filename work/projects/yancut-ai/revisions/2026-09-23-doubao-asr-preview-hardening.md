@@ -5,13 +5,13 @@
 - 字幕面板现在要求填写云端音频的实际秒数，再请求报价；报价不再使用当前编辑器时间线时长代替云端文件时长。
 - 异步任务使用 JSON 记录任务 ID 与计费时长，重新打开字幕面板后可以继续查询；旧版本只保存纯任务 ID 的记录也能恢复。
 - 任务查询完成后，标准版返回的毫秒级分句会转换为编辑器秒级字幕并导入字幕轨；没有分句时不会伪造时间戳。
-- 个人 Vercel Preview 放行 ASR 报价、提交和查询路由，并使用 `YANCUT_LOCAL_DEMO_MODE=true` 的本地演示钱包验证流程。这个钱包不代表正式账户或生产计费；正式上线仍需 Auth、数据库、对象存储和真实积分钱包。
+- 个人 Vercel Preview 放行 ASR 报价、提交和查询路由；Preview 不启用匿名演示钱包，字幕面板临时提交已配置的豆包 Key，并用任务回执校验任务归属。正式上线仍需 Auth、数据库、对象存储和真实积分钱包。
 - 积分包与三档月套餐统一按 1 元 = 100 积分；豆包标准版按每小时 300 积分折算，向上取整到积分。
 
 ## 验证
 
 - 豆包适配器、报价、结果转换器共 10 个定向测试通过，29 次断言；TypeScript 与生产构建通过。
-- Vercel Preview 部署 `yancut-ai-personal-jqzkk9t2e-jianweiyang12131-3768.vercel.app` 达到 READY，Preview Secret `YANCUT_DOUBAO_ASR_API_KEY` 与演示钱包开关已配置；尚未发起真实付费识别请求。
+- Vercel Preview 部署曾达到 READY，Preview Secret `YANCUT_DOUBAO_ASR_API_KEY` 已配置；尚未发起真实付费识别请求。
 
 ## 仍需用户侧准备
 
