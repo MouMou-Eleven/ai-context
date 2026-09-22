@@ -11,7 +11,7 @@
 ## 验证
 
 - 豆包适配器、报价、结果转换器共 10 个定向测试通过，29 次断言；TypeScript 与生产构建通过。
-- Vercel Preview 部署曾达到 READY，Preview Secret `YANCUT_DOUBAO_ASR_API_KEY` 已配置；尚未发起真实付费识别请求。
+- 最新 Vercel Preview `yancut-ai-personal-mi6n00jap-jianweiyang12131-3768.vercel.app` 已达到 READY，Preview Secret `YANCUT_DOUBAO_ASR_API_KEY` 已配置；尚未发起真实付费识别请求。
 
 ## 仍需用户侧准备
 
