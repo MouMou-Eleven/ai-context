@@ -87,6 +87,7 @@
 | [`revisions/2026-09-23-doubao-asr-standard-billing.md`](./revisions/2026-09-23-doubao-asr-standard-billing.md) | 豆包录音文件识别 2.0 标准版异步提交/查询、积分确认、服务端密钥与对象存储边界 |
 | [`revisions/2026-09-23-doubao-asr-preview-hardening.md`](./revisions/2026-09-23-doubao-asr-preview-hardening.md) | 个人 Vercel Preview 的 ASR 路由、任务恢复、实际时长报价、套餐积分口径与验证结果 |
 | [`revisions/2026-09-23-doubao-asr-context-image-preview.md`](./revisions/2026-09-23-doubao-asr-context-image-preview.md) | 豆包标准版上下文/辅助图片入口、结构化上下文修复、最新 Preview 与验证边界 |
+| [`revisions/2026-09-23-demo-release-hardening.md`](./revisions/2026-09-23-demo-release-hardening.md) | 口播精剪＋字幕＋画面包装录屏主线、个人 Preview 边界、ASR 会话安全和最终测试证据 |
 | 源码仓库 `docs/yancut/manual-test-checklist.md` | 网站完整功能清单、人工验收步骤、自动门禁与秒嗒上线前测试边界 |
 | 源码仓库 `docs/yancut/doubao-asr-standard-integration.md` | 豆包录音文件识别 2.0 标准版的开通、异步任务、积分确认和对象存储使用说明 |
 
