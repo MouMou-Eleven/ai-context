@@ -1147,7 +1147,12 @@ ai-context/
 │   │       │   ├── 2026-09-15-hypit-montage-overlay-scenario-workflows.md  2026-09-15：素材证据、场景规范与可编辑信息动效
 │   │       │   ├── 2026-09-15-personal-vercel-testing.md  个人在线测试与项目记录校正
 │   │       │   ├── 2026-09-16-workbench-motion-reference-templates.md  言剪动效、关键帧、参考视频与个人模板升级及线上验收
-│   │       │   └── 2026-09-17-local-first-manual-spectrum-ui.md  2026-09-17：本地优先手册与界面整理
+│   │       │   ├── 2026-09-17-local-first-manual-spectrum-ui.md  2026-09-17：本地优先手册与界面整理
+│   │       │   ├── 2026-09-23-demo-browser-evidence.md  2026-09-23：录屏主线真实浏览器验收
+│   │       │   ├── 2026-09-23-demo-release-hardening.md  2026-09-23：口播录屏演示闭环加固
+│   │       │   ├── 2026-09-23-doubao-asr-context-image-preview.md  2026-09-23：豆包标准版上下文与辅助图片接入
+│   │       │   ├── 2026-09-23-doubao-asr-preview-hardening.md  2026-09-23：豆包标准版个人预览可用性修正
+│   │       │   └── 2026-09-23-doubao-asr-standard-billing.md  2026-09-23：豆包录音文件识别 2.0 标准版与积分确认
 │   │       └── roadmap.md  开发路线与上线条件
 │   └── README.md  领域知识与项目案例的分级入口
 ├── system/  AI协作与维护
@@ -1297,4 +1302,4 @@ ai-context/
 
 完整设计理由与后续扩展见[信息架构](../information-architecture.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-09-21*
+*结构最后确认：2026-09-24*
