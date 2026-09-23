@@ -1,7 +1,7 @@
 # 言剪 AI（YanCut）
 
 > 状态：开发中，转入个人在线实测与持续迭代阶段
-> 当前口径确认：2026-09-17；历史通过记录不等同于现行线上验收
+> 当前口径确认：2026-09-23；历史通过记录不等同于现行线上验收
 
 个人测试入口：[在线工作台](https://yancut-ai-personal.vercel.app/studio/workbench) · [填写本人 GLM Key](https://yancut-ai-personal.vercel.app/ai-settings)。无需启动本地服务；项目仍存当前浏览器。使用前请读 [本地优先使用手册](./revisions/2026-09-17-local-first-manual-spectrum-ui.md)；最新动效、关键帧、参考视频和模板升级见 [09-16 发布记录](./revisions/2026-09-16-workbench-motion-reference-templates.md)，个人测试环境约定见 [部署说明](./revisions/2026-09-15-personal-vercel-testing.md)。
 
@@ -21,7 +21,7 @@
 - 个人声音库：已建立声音登记、选择、克隆与合成的接口边界；用户必须拥有声音授权，不能克隆未获许可的声音。
 - 视频包装：AI 把预设转为原生可编辑文字、标签和位置/缩放等关键帧，支持标题、信息卡、列表与数值排行榜；这条路径不是任意 Remotion/HTML/GSAP 代码渲染。独立渲染接口和本地队列另有实现，云端服务尚待部署验收。
 - 主规划模型：智谱 `glm-5.3-flash`，使用 `https://open.bigmodel.cn/api/paas/v4`。实际素材观察入口最多取样 4 个素材、12 张静帧，需用户授权；不等同于完整视频、连续动作和音频理解。已有文字可进入上下文，真人转写准确率仍待实测。
-- 个人在线测试：用户于 2026-09-15 选择 Vercel，用于本人访问和反复迭代；最终承载平台仍为百度秒哒。新增“AI 设置”手动填写本人 GLM Key，当前标签页会话保存、服务端转发，不写入项目或共享后台。此模式不依赖登录积分，不启用演示管理员；本轮最新 Preview 为 `https://yancut-ai-personal-2sbozwrzw-jianweiyang12131-3768.vercel.app`，部署 `dpl_A5o5uWLV3vq5rqiPgqdYAtFWZSGN`，源码 `fe8fdebf`。
+- 个人在线测试：用户于 2026-09-15 选择 Vercel，用于本人访问和反复迭代；最终承载平台仍为百度秒哒。新增“AI 设置”手动填写本人 GLM Key，当前标签页会话保存、服务端转发，不写入项目或共享后台。此模式不依赖登录积分，不启用演示管理员；本轮最新 Preview 为 `https://yancut-ai-personal-oedzhlxbe-jianweiyang12131-3768.vercel.app`，部署 `dpl_2vz8Z2Xx5ENgq3QGHQmdWa7AqmfY`，源码 `958ac2c8`。2026-09-23 已将固定个人测试域名 `yancut-ai-personal.vercel.app` 指向该 Ready 预览，日常测试优先使用固定域名，以保持浏览器站点存储归属不变。
 - 本地开发目录：`F:\桌面文件\言剪AI`（2026-08-13 迁移并完成构建、启动验证）。
 - 源码仓库为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`，`upstream` 跟踪 `https://github.com/OpenCut-app/OpenCut.git`。09-16 已将多轮实现提交，合并历史至 `b0b24335`，后续测试发现范围修正为 `22023132`；核对和修复了本地/远端历史分离及字体预览损坏。后续任务仍需实际查询最新 HEAD。`ai-context` 保存项目上下文，不保存完整源码。
 - 持续同步约定：今后言剪每次更新默认同步本地权威源码、验收后的 Vercel 个人测试版本和本项目 README/修订记录，无需建委重复提醒。先验收新预览再切换固定域名，保留上一部署回退。
@@ -45,7 +45,9 @@
 | 管理后台 | `/admin`、共享配置、管理员授权、审计与加密密钥本地闭环已完成；生产需要真实Auth、数据库和独立加密密钥 |
 | 最近验证证据 | 09-16：143 项针对性测试后扩展至 307 项全量单元测试、3166 次断言；TypeScript、本地/Vercel 构建通过。本地关键帧 5 秒 H.264 导出与画面对照、线上素材+动效 12 秒 H.264 导出。真实 GLM 六帧参考分析在本地通过，公网未填 Key 明确拒绝；本人有效 Key 的公网成片质量仍待实测 |
 | 豆包 ASR 2.0 标准版 | 已接入服务端异步提交/查询、300 积分/小时报价与确认扣费、失败退分、个人 Preview 任务回执以及可选上下文/辅助图片；正式使用仍需对象存储 HTTPS 地址与真实长任务验收 |
-| 最近验证证据 | 09-16：143 项针对性测试后扩展至 307 项全量单元测试、3166 次断言；TypeScript、本地/Vercel 构建通过。本地关键帧 5 秒 H.264 导出与线上素材+动效 12 秒 H.264 导出已验证。豆包标准版适配器、字幕时间戳转换和前端报价确认流程新增 9 项测试；真实供应商长任务仍待对象存储与账号验收 |
+| 当前录屏验收 | 09-23：344 项单元测试通过、3283 次断言。小型合成口播完成停顿精剪、字幕轨生成、可编辑包装、工程重开和 14 秒 MP4 下载；本轮浏览器使用本地规则规划，不作为在线 GLM 或豆包供应商实测证据 |
+
+最新验收补充（2026-09-23）：本地干净工程已真实跑通口播停顿精剪、中文本地字幕、AI 标题/信息条包装和关键帧开关；工程重开恢复成功。浏览器实际下载成片，ffprobe 确认 14.001633 秒、H.264＋AAC、640×360。小型合成测试片不等于真人识别准确率或长片性能通过，详细证据和最终测试数见本日浏览器验收记录。
 
 当前客服资料、模型参数、套餐试验价格及具体测试细节按相应日期的revision读取，不把开发登记值当成现行商业承诺。已撤销的独立包装中心和旧自动收银台只保留在历史记录中。
 
@@ -88,6 +90,7 @@
 | [`revisions/2026-09-23-doubao-asr-preview-hardening.md`](./revisions/2026-09-23-doubao-asr-preview-hardening.md) | 个人 Vercel Preview 的 ASR 路由、任务恢复、实际时长报价、套餐积分口径与验证结果 |
 | [`revisions/2026-09-23-doubao-asr-context-image-preview.md`](./revisions/2026-09-23-doubao-asr-context-image-preview.md) | 豆包标准版上下文/辅助图片入口、结构化上下文修复、最新 Preview 与验证边界 |
 | [`revisions/2026-09-23-demo-release-hardening.md`](./revisions/2026-09-23-demo-release-hardening.md) | 口播精剪＋字幕＋画面包装录屏主线、个人 Preview 边界、ASR 会话安全和最终测试证据 |
+| [`revisions/2026-09-23-demo-browser-evidence.md`](./revisions/2026-09-23-demo-browser-evidence.md) | 干净项目的真实浏览器验收、包装标签、关键帧开关、Vercel Preview 部署和导出验证边界 |
 | 源码仓库 `docs/yancut/manual-test-checklist.md` | 网站完整功能清单、人工验收步骤、自动门禁与秒嗒上线前测试边界 |
 | 源码仓库 `docs/yancut/doubao-asr-standard-integration.md` | 豆包录音文件识别 2.0 标准版的开通、异步任务、积分确认和对象存储使用说明 |
 
