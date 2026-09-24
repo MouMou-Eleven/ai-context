@@ -16,7 +16,8 @@ def description(root, path, catalog):
     if heading_file.suffix == '.md' and heading_file.is_file():
         heading = re.search(r'^#\s+(.+)$', heading_file.read_text(encoding='utf-8-sig'), re.M)
         if heading:
-            return heading.group(1).strip()[:100]
+            title = heading.group(1).strip()[:100]
+            return title if re.search(r'[\u4e00-\u9fff]', title) else '说明文档：' + title
     return {'json': '结构化配置与索引', 'py': '跨平台维护或执行脚本', 'ps1': 'Windows 兼容入口',
             'yml': '自动化配置', 'yaml': '自动化配置', 'txt': '文本资料', 'md': '说明与资料',
             'html': '可交互页面', 'png': '图片素材', 'jpg': '图片素材', 'docx': '原始文档'}.get(target.suffix.lstrip('.'), '目录入口' if target.is_dir() else '资料与资源')
@@ -96,9 +97,37 @@ def build_knowledge(root, files, metadata):
         order = metadata.get('knowledgeOrder', {}).get(path, [])
         children.sort(key=lambda item: (order.index(Path(item['path']).name) if Path(item['path']).name in order else len(order), item['path'].casefold()))
         return {'label': label, 'path': path, 'entry': entry, 'kind': 'folder' if folder else 'document',
-                'description': '' if desc == label else desc, 'children': [convert(item) for item in children]}
+                'description': desc, 'children': [convert(item) for item in children]}
     return {'label': 'AI Context', 'path': '', 'entry': 'README.md', 'kind': 'folder',
             'description': '建委的长期协作上下文', 'children': [convert(tree[key]) for key in roots if key in tree]}
+
+
+def check_descriptions(root, files):
+    """Require authored purposes for daily entries and Chinese text throughout both views."""
+    metadata = json.loads(read_json(root / 'system/repository/maintenance/structure-descriptions.json'))
+    catalog = metadata.get('descriptions', {})
+    errors = []
+    def visit(node):
+        path = node['path']
+        if path:
+            value = catalog.get(path)
+            if not isinstance(value, str) or not value.strip() or not re.search(r'[\u4e00-\u9fff]', value):
+                errors.append(f'Navigation needs an explicit Chinese purpose: {path}')
+            elif value.strip() == node['label'].strip():
+                errors.append(f'Navigation purpose must explain more than its title: {path}')
+            elif value.strip() in {'说明与资料', '目录入口', '资料与资源', '文本资料', '待补充', '暂无说明'}:
+                errors.append(f'Navigation purpose is only a placeholder: {path}')
+        for child in node['children']:
+            visit(child)
+    visit(build_knowledge(root, files, metadata))
+    paths = set(files)
+    for name in files:
+        paths.update(p.as_posix() for p in Path(name).parents if p != Path('.'))
+    for path in sorted(paths):
+        value = description(root, path, catalog)
+        if not isinstance(value, str) or not value.strip() or not re.search(r'[\u4e00-\u9fff]', value):
+            errors.append(f'Full navigation needs a Chinese description: {path}')
+    return errors
 
 
 def outputs(root=ROOT):

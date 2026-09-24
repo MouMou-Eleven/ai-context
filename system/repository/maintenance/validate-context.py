@@ -344,7 +344,10 @@ def validate(root=ROOT):
     warnings.extend(duplicate_warnings)
     for module in ['sync-navigation', 'sync-structure']:
         try:
-            stale = load_module(module, root).sync(check=True, root=root)
+            implementation = load_module(module, root)
+            if module == 'sync-structure':
+                errors.extend(implementation.check_descriptions(root, files))
+            stale = implementation.sync(check=True, root=root)
             errors.extend(f'Generated artifact is stale: {name}; run {module}.py' for name in stale)
         except (OSError, ValueError, KeyError, TypeError) as exc:
             errors.append(f'Cannot check generated artifacts ({module}): {exc}')

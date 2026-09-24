@@ -6,6 +6,7 @@
 
 | 日期 | 修订 | 作用 |
 |---|---|---|
+| 2026-09-24 | [navigation-descriptions.md](./2026-09-24-navigation-descriptions.md) | 导航用途逐项补齐，新增缺项阻止提交，桌面和窄屏保留说明；明确沉淀完成须远端main可见 |
 | 2026-09-24 | [title-matrix-integration.md](./2026-09-24-title-matrix-integration.md) | 第三方标题Skill入自媒体标题板块，接入隐式拟题、正文依赖、边界回归与领域Skill校验 |
 | 2026-09-21 | [task-retrieval-and-adherence.md](./2026-09-21-task-retrieval-and-adherence.md) | 自然任务下钻、实时正文候选与完整来源包、执行证据；修复当前归属残留和GitHub首页README优先级 |
 | 2026-09-16 | [training-attribution-and-navigation.md](./2026-09-16-training-attribution-and-navigation.md) | 本人确认图书馆与会员课程／文章归属；实战复盘接回方法来源；日常导航优先、完整视图收进维护入口 |

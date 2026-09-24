@@ -10,7 +10,7 @@ from unittest.mock import patch
 
 MAINTENANCE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(MAINTENANCE))
-from context_common import ROOT, clean_git_environment, git, load_module, markdown_targets, write_text
+from context_common import ROOT, clean_git_environment, git, load_module, markdown_targets, repo_files, write_text
 
 validator = load_module('validate-context')
 router = load_module('context-route')
@@ -308,6 +308,34 @@ class ContentValidation(unittest.TestCase):
         self.assertIn('work/projects/cases/demo.md', paths)
         self.assertIn('work/domains/other/skills/demo', paths)
         self.assertFalse(any(path.endswith('README.md') or '/skill/' in path or path.endswith('.py') for path in paths))
+
+    def test_new_navigation_entry_requires_authored_chinese_purpose(self):
+        files = ['personal/README.md', 'personal/new.md']
+        self.write(files[0], '# 个人信息\n')
+        self.write(files[1], '# 新经历\n')
+        data = {'descriptions': {'personal': '了解身份与经历'}}
+        metadata = 'system/repository/maintenance/structure-descriptions.json'
+        self.write(metadata, json.dumps(data))
+        self.assertTrue(any('personal/new.md' in e for e in structure.check_descriptions(self.root, files)))
+        for bad in ['', 'New experience', '新经历', '待补充']:
+            data['descriptions']['personal/new.md'] = bad
+            self.write(metadata, json.dumps(data))
+            self.assertTrue(structure.check_descriptions(self.root, files), bad)
+        data['descriptions']['personal/new.md'] = '记录新阶段发生的事件及其时间依据'
+        self.write(metadata, json.dumps(data))
+        self.assertEqual(structure.check_descriptions(self.root, files), [])
+
+    def test_description_is_not_silently_hidden_when_equal_to_title(self):
+        self.write('personal/README.md', '# 个人信息\n')
+        tree = structure.build_knowledge(self.root, ['personal/README.md'], {'descriptions': {'personal': '个人信息'}})
+        self.assertEqual(tree['children'][0]['description'], '个人信息')
+
+    def test_full_tree_english_reference_gets_chinese_description(self):
+        self.write('vendor/README.md', '# External Skill Reference\n')
+        self.assertIn('说明文档', structure.description(self.root, 'vendor/README.md', {}))
+
+    def test_repository_daily_navigation_has_no_missing_purposes(self):
+        self.assertEqual(structure.check_descriptions(ROOT, repo_files(ROOT)), [])
 
     def test_related_asset_generation_uses_registry_and_removes_old_rows(self):
         self.write('system/repository/navigation/routes.json', json.dumps({'routes': []}))
