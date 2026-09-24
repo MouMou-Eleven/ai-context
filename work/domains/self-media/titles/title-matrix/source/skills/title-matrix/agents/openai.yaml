@@ -1,0 +1,4 @@
+interface:
+  display_name: "标题矩阵"
+  short_description: "为中文内容生成、诊断、评审和复盘跨平台标题"
+  default_prompt: "使用 $title-matrix，基于下面这篇内容生成适合公众号和小红书发布的标题。"

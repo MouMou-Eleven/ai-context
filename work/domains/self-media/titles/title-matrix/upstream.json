@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "title-matrix",
+  "origin": "third-party",
+  "maintainer": "zhouwei713",
+  "storageMode": "full-repository-snapshot",
+  "defaultBranch": "main",
+  "upstreamRepository": "https://github.com/zhouwei713/title-matrix.git",
+  "upstreamWeb": "https://github.com/zhouwei713/title-matrix",
+  "commit": "10a1ee1ba5cd1a5a5cfabdb776ac8e93c7b93065",
+  "syncedCommit": "10a1ee1ba5cd1a5a5cfabdb776ac8e93c7b93065",
+  "syncedAt": "2026-09-24",
+  "documentationReviewedAt": "2026-09-24",
+  "sourcePath": "source",
+  "entryPoint": "source/skills/title-matrix/SKILL.md",
+  "license": "MIT; Copyright (c) 2026 zhouwei713",
+  "updatePolicy": "review-and-replace-full-snapshot",
+  "capabilities": [
+    "中文自媒体标题生成",
+    "已有标题诊断与候选评审",
+    "跨发布形态标题矩阵",
+    "有可比数据时的标题复盘"
+  ],
+  "useWhen": [
+    "用户明确请求标题Skill或标题工作",
+    "自媒体文章创作需要拟题",
+    "短视频发布标题或短帖开头"
+  ],
+  "notFor": [
+    "自动套用到合同、书稿章节和课堂标题",
+    "改动明确要求保留的原标题",
+    "虚构本人经历、阅读量或平台算法"
+  ],
+  "runtimeRequirements": [
+    "可实际读取SKILL.md和参考文件的AI宿主",
+    "正文或事实素材、目标读者与发布形态",
+    "不依赖第三方可执行程序；仓库收录不代表全局安装"
+  ],
+  "requiredRuntimePaths": [
+    "LICENSE",
+    "README.md",
+    "skills/title-matrix/SKILL.md",
+    "skills/title-matrix/LICENSE",
+    "skills/title-matrix/agents/openai.yaml",
+    "skills/title-matrix/references/platforms.md",
+    "skills/title-matrix/references/evidence.md",
+    "skills/title-matrix/references/review-and-library.md"
+  ],
+  "notes": "用户指定主归属为自媒体标题与选题；通用Skill库只索引。本仓适配边界在条目README，上游快照不改写；案例写入不修改source。"
+}

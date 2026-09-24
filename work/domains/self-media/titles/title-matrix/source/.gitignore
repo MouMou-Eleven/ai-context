@@ -1,0 +1,13 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local, potentially private title-library data
+skills/title-matrix/data/hits.md
+skills/title-matrix/data/patterns.md
+skills/title-matrix/data/observations.md

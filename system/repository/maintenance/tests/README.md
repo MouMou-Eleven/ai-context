@@ -1,5 +1,7 @@
 # 维护回归测试
 
+- [test_title_matrix.py](./test_title_matrix.py)：文章隐式拟题、明确标题调用、保留标题／正式文档／教学隔离、宣传方法与项目事实组合、专项领域Skill快照校验和导航隐藏。
+
 - [test_retrieval.py](./test_retrieval.py)：自然说法、板块下钻、工具与项目隔离、实时发现新增正文、候选/历史排除、路径越界、正文hash/预算/缺失状态及受众验收分流。
 
 - [test_context.py](./test_context.py)：验证培训归属、MG通用技术、中文输出与写入独立组合、体裁选择、坏链接、最近索引、Skill元数据、登记完整性、相关资产生成、双视图生成漂移与暂存隔离。

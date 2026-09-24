@@ -61,7 +61,8 @@
       "workbench",
       "ip-poster",
       "seedance",
-      "ae"
+      "ae",
+      "title-matrix"
     ],
     "exclusiveProjectIds": [
       "bug-lesson",
@@ -875,7 +876,10 @@
         "教学案例",
         "课件",
         "课程",
-        "work/domains/training"
+        "work/domains/training",
+        "备课",
+        "教会员",
+        "教大家"
       ],
       "excludeAny": [],
       "entry": "work/domains/training/README.md",
@@ -1151,7 +1155,13 @@
         "宣传稿",
         "推广文案",
         "自媒体与个人IP经营",
-        "自媒体与个人 IP 经营"
+        "自媒体与个人 IP 经营",
+        "小红书",
+        "图文笔记",
+        "X短帖",
+        "X 短帖",
+        "X长文",
+        "X 长文"
       ],
       "excludeAny": [],
       "entry": "work/domains/self-media/README.md",
@@ -1418,6 +1428,45 @@
           "whenAny": [],
           "intents": []
         }
+      ]
+    },
+    {
+      "id": "title-matrix",
+      "label": "自媒体标题生成、诊断与评审",
+      "matchAny": [
+        "title-matrix",
+        "标题矩阵",
+        "自媒体标题",
+        "标题Skill",
+        "标题skill",
+        "起标题",
+        "拟标题",
+        "改标题",
+        "选标题",
+        "标题太平",
+        "标题诊断",
+        "标题复盘"
+      ],
+      "excludeAny": [
+        "合同",
+        "书稿",
+        "章节标题",
+        "培训课件",
+        "课程标题",
+        "项目方案"
+      ],
+      "entry": "work/domains/self-media/titles/title-matrix/README.md",
+      "priority": 95,
+      "dependencies": [
+        {
+          "path": "work/domains/self-media/titles/title-matrix/upstream.json",
+          "whenAny": [],
+          "intents": []
+        }
+      ],
+      "matchPatterns": [
+        "(?:起|拟|改|选|诊断|评审|复盘).{0,12}标题",
+        "标题.{0,12}(?:哪个好|选哪个|太平|好不好|复盘|评审)"
       ]
     }
   ],
@@ -1895,6 +1944,81 @@
         "work/domains/design/video/promo/README.md"
       ],
       "source": "建委2026-09-21完工复盘及Seedance名称纠正，结合本片多轮截图与调校；方法有条件复用，最终成片未独立审核"
+    },
+    {
+      "id": "title-matrix",
+      "label": "Title Matrix 标题矩阵",
+      "status": "active",
+      "path": "work/domains/self-media/titles/title-matrix/README.md",
+      "selectedAny": [
+        "self-media",
+        "title-matrix"
+      ],
+      "whenAny": [
+        "标题",
+        "title-matrix",
+        "文章",
+        "公众号",
+        "小红书",
+        "图文",
+        "口播",
+        "短视频脚本",
+        "X短帖",
+        "X 短帖",
+        "X长文",
+        "X 长文"
+      ],
+      "excludeAny": [
+        "保留原标题",
+        "保留标题",
+        "不要改标题",
+        "标题不变",
+        "只改正文",
+        "只改错字",
+        "只校对",
+        "只查",
+        "查询位置",
+        "逐字保留",
+        "不要改写",
+        "不需要标题",
+        "不用标题",
+        "不使用title-matrix",
+        "不用标题矩阵",
+        "合同",
+        "书稿",
+        "章节标题",
+        "培训课件",
+        "学员课件",
+        "课程标题",
+        "内部备课",
+        "项目方案",
+        "备课",
+        "教会员",
+        "教大家",
+        "课程大纲",
+        "讲师稿"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "为自媒体文章、图文或视频拟发布标题；写公众号等完整文章时即使未点名Skill也用于标题环节；亦可明确调用诊断、评审",
+      "notFor": "只查资料、只改正文或保留原标题不生成新题；合同、出版章节和学员课件不自动套营销标题；不覆盖文章正文方法",
+      "acceptance": "实际读Skill和平台参考，逐项对正文核对标题承诺、读者与发布形态；不编实测、数据或资源，不保证点击率；整篇创作交付标题加正文，不强塞矩阵",
+      "evidence": "work/domains/self-media/titles/title-matrix/README.md",
+      "confirmedAt": "2026-09-24",
+      "source": "建委2026-09-24反馈个人试用效果可以并要求收录及自主调用；第三方zhouwei713，MIT",
+      "entryPoints": [
+        "work/domains/self-media/README.md",
+        "work/domains/self-media/titles/README.md",
+        "work/domains/self-media/articles/README.md",
+        "work/domains/self-media/video-scripts/README.md"
+      ],
+      "readWith": [
+        "work/domains/self-media/titles/title-matrix/upstream.json",
+        "work/domains/self-media/titles/title-matrix/source/skills/title-matrix/SKILL.md",
+        "work/domains/self-media/titles/title-matrix/source/skills/title-matrix/references/platforms.md"
+      ]
     }
   ]
 }

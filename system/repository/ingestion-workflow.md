@@ -50,7 +50,7 @@
 
 对于“只是内容变动”的提交也要检查这些项目，适用项必须完成；不适用则无需创造空文件。模板见[templates](./templates/README.md)。
 
-Skill统一收录到[领域知识／其他领域／Skill库](../../work/domains/other/skills/README.md)，元数据与快照保持同条目管理。收录Skill不代表建委个人掌握其能力。新表达反馈执行[来源与提炼流程](../expression/sources.md#后续反馈怎样进入规则)，正文、来源、触发与验收同步。
+通用Skill收录到[领域知识／其他领域／Skill库](../../work/domains/other/skills/README.md)；建委明确指定某个专项领域时，实体、能力卡、元数据与快照保持在该领域同一条目，通用Skill库只索引，不复制实体。两种位置适用相同来源、许可、版本和校验规则。收录Skill不代表建委个人掌握其能力。新表达反馈执行[来源与提炼流程](../expression/sources.md#后续反馈怎样进入规则)，正文、来源、触发与验收同步。
 
 ## 5. 让AI知道怎样调用
 

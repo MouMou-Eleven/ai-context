@@ -115,6 +115,8 @@ def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_r
     for method in catalog.get('methodRules', []):
         if method_matches(task, method, selected['id'] if selected else None, intent, produces_chinese):
             include(method['path'], '方法建议: ' + method['useWhen'])
+            for path in method.get('readWith', []):
+                include(path, '采用该方法须继续读取的实体或边界: ' + method['label'])
             applied_methods.append({'id': method['id'], 'path': method['path'],
                                     'useWhen': method['useWhen'], 'notFor': method['notFor'],
                                     'acceptance': method['acceptance']})

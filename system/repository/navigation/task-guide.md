@@ -62,6 +62,7 @@
 | 历史项目与追溯 | [读取](history.md) |
 | 按课号找资料（先核对所属系列） | [读取](../../../work/domains/training/materials/README.md) |
 | 济南市图书馆培训 | [读取](../../../work/projects/external-training/jinan-city-library/README.md) |
+| 自媒体标题生成、诊断与评审 | [读取](../../../work/domains/self-media/titles/title-matrix/README.md) |
 
 ## 常用板块的继续读取条件
 
@@ -127,4 +128,5 @@
 | 政府与企业的培训方案、课程纲要或商业项目方案需要Word排版时 | [政企Word方案排版](../../../work/domains/other/commercial/delivery-formats/gov-enterprise-word.md) | 法定公文、合同、指定标书模板、画册及其他用户明确视觉要求 | 主副标题居中、深蓝层级、宋体正文、首行缩进；按参考渲染逐页查看，不把参考内容当项目事实 |
 | 面向跨岗位学员设计AI工具全景与工作场景实操课程时 | [工具全景到工作场景](../../../work/domains/training/experience/demo-driven-course-design.md) | 单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本 | 类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对 |
 | 收到创赛文稿，需要分析叙事、拆分画面、选择AI／真实素材／AE模板，或调整参考图、人物动作与运镜时 | [创赛宣传片制作](../../../work/domains/design/video/promo/competition-promo-production.md) | 不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴 | 核对文稿与画面、素材及制作分工、定格叠字、参考图文字、人物姿态与机位、连续衔接；提示词和用户完工反馈不代替成片逐镜验收 |
+| 为自媒体文章、图文或视频拟发布标题；写公众号等完整文章时即使未点名Skill也用于标题环节；亦可明确调用诊断、评审 | [Title Matrix 标题矩阵](../../../work/domains/self-media/titles/title-matrix/README.md) | 只查资料、只改正文或保留原标题不生成新题；合同、出版章节和学员课件不自动套营销标题；不覆盖文章正文方法 | 实际读Skill和平台参考，逐项对正文核对标题承诺、读者与发布形态；不编实测、数据或资源，不保证点击率；整篇创作交付标题加正文，不强塞矩阵 |
 <!-- generated-methods:end -->

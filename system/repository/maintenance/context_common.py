@@ -61,10 +61,28 @@ def read_json(path):
     return Path(path).read_text(encoding='utf-8-sig')
 
 
+def skill_metadata_paths(root=ROOT):
+    """Discover domain-owned wrappers as well as the general Skill library."""
+    paths = []
+    for path in sorted((root / 'work/domains').rglob('upstream.json')):
+        # Never treat metadata nested inside a registered vendor snapshot as a wrapper.
+        nested = False
+        for parent in paths:
+            try:
+                data = json.loads(read_json(parent))
+                if path.resolve().is_relative_to((parent.parent / data['sourcePath']).resolve()):
+                    nested = True
+                    break
+            except (ValueError, KeyError, TypeError):
+                continue
+        if not nested:
+            paths.append(path)
+    return paths
+
+
 def snapshot_roots(root=ROOT):
     results = []
-    base = root / 'work/domains/other/skills'
-    for path in base.glob('*/upstream.json'):
+    for path in skill_metadata_paths(root):
         try:
             data = json.loads(read_json(path))
             if data.get('origin') == 'third-party' and data.get('storageMode') == 'full-repository-snapshot':

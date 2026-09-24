@@ -7,7 +7,7 @@ import json
 import os
 from pathlib import Path
 import re
-from context_common import ROOT, load_module, markdown_targets, read_json, repo_files, resolve_target, snapshot_roots, within
+from context_common import ROOT, load_module, markdown_targets, read_json, repo_files, resolve_target, skill_metadata_paths, snapshot_roots, within
 
 
 def check_links(root, files):
@@ -88,7 +88,10 @@ def check_indexes(root, files):
 def check_skills(root):
     errors = []
     base = root / 'work/domains/other/skills'
-    for folder in sorted(base.iterdir()) if base.exists() else []:
+    folders = {p.parent for p in skill_metadata_paths(root)}
+    if base.exists():
+        folders.update(p for p in base.iterdir() if p.is_dir())
+    for folder in sorted(folders):
         if not folder.is_dir():
             continue
         label = folder.relative_to(root).as_posix()
@@ -220,6 +223,11 @@ def check_registries(root):
             if not valid_any or not valid_all or not (when_any or when_all):
                 errors.append(f'Method needs nonempty valid trigger conditions: {label}')
             paths.extend(value for value in [method.get('path', ''), method.get('evidence', '')] if isinstance(value, str))
+            read_with = method.get('readWith', [])
+            if not isinstance(read_with, list) or any(not isinstance(p, str) or not p for p in read_with):
+                errors.append(f'Method readWith must be a list of paths: {label}')
+            else:
+                paths.extend(read_with)
             entry_points = method.get('entryPoints', [])
             if isinstance(entry_points, list):
                 paths.extend(x for x in entry_points if isinstance(x, str))

@@ -5,7 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
-from context_common import ROOT, read_json, repo_files, snapshot_roots, within, write_text
+from context_common import ROOT, read_json, repo_files, skill_metadata_paths, snapshot_roots, within, write_text
 
 
 def description(root, path, catalog):
@@ -56,7 +56,7 @@ def build_knowledge(root, files, metadata):
     roots = ['personal', 'brain', 'work', 'system']
     root_labels = dict(zip(roots, ['个人信息', '建委大脑', '工作领域与项目', 'AI协作与维护']))
     hidden = []
-    for path in (root / 'work/domains/other/skills').glob('*/upstream.json'):
+    for path in skill_metadata_paths(root):
         data = json.loads(read_json(path))
         hidden.append((path.parent / data['sourcePath']).relative_to(root).as_posix())
     tree = {}

@@ -11,6 +11,10 @@ def infer_intent(task):
         return 'write'
     if re.search(r'只查|仅查|在哪里|有哪些|查找|查询|查看|看一下', task) and not re.search(r'帮我.{0,5}(写|做|改)|写一|做一|生成|制作|修复', task):
         return 'read'
+    if re.search(r'(?:起|拟|选|诊断|评审|复盘).{0,12}标题|标题.{0,12}(?:哪个好|选哪个|太平|好不好|复盘|评审)', task):
+        return 'create'
+    if re.search(r'(?:使用|调用|用).{0,8}(?:title-matrix|标题矩阵|标题skill)', task, re.I):
+        return 'create'
     if re.search(r'写|改|制作|生成|开发|搭建|实现|修复|优化|审核|审查|备课|做.{0,24}(稿|文|资料|方案|页面|程序|脚本|课|视频|工具)', task):
         return 'create'
     return 'read'

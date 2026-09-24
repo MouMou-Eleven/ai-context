@@ -37,7 +37,7 @@ class MethodRouting(unittest.TestCase):
 
     def test_self_media_explanation_does_not_inherit_teacher_style(self):
         result = router.resolve('给自媒体写文章，解释API概念', 'create')
-        self.assertEqual(method_ids(result), {TECHNICAL})
+        self.assertEqual(method_ids(result), {TECHNICAL, 'title-matrix'})
         self.assertNotIn(TRAINING_STYLE, result['read'])
 
     def test_book_explanation_keeps_project_editorial_rules(self):
@@ -125,6 +125,7 @@ class MethodRegistry(unittest.TestCase):
             paths.update(overlay['paths'])
         for method in self.catalog['methodRules']:
             paths.update([method['path'], method['evidence'], *method['entryPoints']])
+            paths.update(method.get('readWith', []))
         paths.update(['work/projects/README.md', 'work/projects/cases/README.md', 'work/projects/archive/README.md'])
         for path in paths:
             write_text(self.root / path, '# Fixture\n')

@@ -1006,7 +1006,29 @@ ai-context/
 │   │   │   │   └── README.md  朋友圈文案入口
 │   │   │   ├── README.md  内容传播与个人IP经营入口
 │   │   │   ├── titles/  自媒体标题与选题
-│   │   │   │   └── README.md  标题方法与素材入口
+│   │   │   │   ├── README.md  标题方法与素材入口
+│   │   │   │   └── title-matrix/  第三方中文标题Skill：生成、诊断、评审与复盘
+│   │   │   │       ├── README.md  Title Matrix · 标题矩阵 Skill
+│   │   │   │       ├── source/  上游完整快照，共 12 个文件；展开可核查内部层级
+│   │   │   │       │   ├── .claude-plugin/  目录入口
+│   │   │   │       │   │   └── plugin.json  结构化配置与索引
+│   │   │   │       │   ├── .gitignore  资料与资源
+│   │   │   │       │   ├── LICENSE  资料与资源
+│   │   │   │       │   ├── README.md  Title Matrix 标题矩阵
+│   │   │   │       │   └── skills/  目录入口
+│   │   │   │       │       └── title-matrix/  Title Matrix 标题矩阵
+│   │   │   │       │           ├── agents/  目录入口
+│   │   │   │       │           │   └── openai.yaml  自动化配置
+│   │   │   │       │           ├── data/  目录入口
+│   │   │   │       │           │   └── .gitkeep  资料与资源
+│   │   │   │       │           ├── LICENSE  资料与资源
+│   │   │   │       │           ├── README.md  Title Matrix 标题矩阵
+│   │   │   │       │           ├── references/  目录入口
+│   │   │   │       │           │   ├── evidence.md  证据分级与研究出处
+│   │   │   │       │           │   ├── platforms.md  落点细则与字数核验
+│   │   │   │       │           │   └── review-and-library.md  复盘模式与案例库
+│   │   │   │       │           └── SKILL.md  一稿多发标题矩阵
+│   │   │   │       └── upstream.json  结构化配置与索引
 │   │   │   └── video-scripts/  自媒体口播与视频脚本
 │   │   │       ├── README.md  口播与短视频脚本入口
 │   │   │       └── script-patterns.md  脚本结构模式
@@ -1210,7 +1232,8 @@ ai-context/
 │       │   │   ├── test_context.py  跨平台维护或执行脚本
 │       │   │   ├── test_deliverable.py  跨平台维护或执行脚本
 │       │   │   ├── test_methods.py  跨领域方法发现、误触发与登记维护回归
-│       │   │   └── test_retrieval.py  自然任务检索与读取证据回归
+│       │   │   ├── test_retrieval.py  自然任务检索与读取证据回归
+│       │   │   └── test_title_matrix.py  跨平台维护或执行脚本
 │       │   ├── validate-context.ps1  结构、索引与链接校验脚本
 │       │   ├── validate-context.py  跨平台维护或执行脚本
 │       │   └── validation-policy.json  结构化配置与索引
@@ -1258,6 +1281,7 @@ ai-context/
 │       │   ├── 2026-09-15-writing-dna-review-and-method-routing.md  写作蒸馏器评估、材料提炼与按任务发现方法
 │       │   ├── 2026-09-16-training-attribution-and-navigation.md  本人确认培训归属、文章课程区分与日常导航
 │       │   ├── 2026-09-21-task-retrieval-and-adherence.md  从自然任务到具体经验和成品验收的调用修复
+│       │   ├── 2026-09-24-title-matrix-integration.md  Title Matrix收录与自媒体标题调用
 │       │   └── README.md  仓库修订索引
 │       ├── roadmap.md  长期维护与演进
 │       ├── templates/  项目、案例与方法模板
