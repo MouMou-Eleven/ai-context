@@ -62,7 +62,8 @@
       "ip-poster",
       "seedance",
       "ae",
-      "title-matrix"
+      "title-matrix",
+      "awesome-seedance"
     ],
     "exclusiveProjectIds": [
       "bug-lesson",
@@ -542,7 +543,9 @@
       "id": "seedance",
       "label": "Seedance工具",
       "matchAny": [
-        "Seedance"
+        "Seedance",
+        "即梦视频",
+        "Dreamina"
       ],
       "excludeAny": [],
       "entry": "work/domains/design/video/common/tools/seedance/README.md",
@@ -1468,6 +1471,33 @@
         "(?:起|拟|改|选|诊断|评审|复盘).{0,12}标题",
         "标题.{0,12}(?:哪个好|选哪个|太平|好不好|复盘|评审)"
       ]
+    },
+    {
+      "id": "awesome-seedance",
+      "label": "AI视频提示词、模板与案例",
+      "matchAny": [
+        "awesome-seedance",
+        "Seedance提示词库",
+        "视频提示词库",
+        "AI生视频",
+        "图生视频",
+        "文生视频",
+        "视频提示词",
+        "视频提示语",
+        "镜头提示词",
+        "生成镜头",
+        "参考图动态化"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/video/common/awesome-seedance/README.md",
+      "priority": 72,
+      "dependencies": [
+        {
+          "path": "work/domains/design/video/common/awesome-seedance/upstream.json",
+          "whenAny": [],
+          "intents": []
+        }
+      ]
     }
   ],
   "outputPolicy": {
@@ -2018,6 +2048,421 @@
         "work/domains/self-media/titles/title-matrix/upstream.json",
         "work/domains/self-media/titles/title-matrix/source/skills/title-matrix/SKILL.md",
         "work/domains/self-media/titles/title-matrix/source/skills/title-matrix/references/platforms.md"
+      ]
+    },
+    {
+      "id": "awesome-seedance",
+      "label": "Awesome Seedance 视频提示词方法",
+      "status": "active",
+      "path": "work/domains/design/video/common/awesome-seedance/README.md",
+      "selectedAny": [
+        "awesome-seedance",
+        "seedance",
+        "video",
+        "enterprise-video",
+        "competition-video",
+        "microcourse",
+        "motion-comic",
+        "live-story",
+        "ai-design",
+        "self-media",
+        "ae",
+        "remotion"
+      ],
+      "whenAny": [
+        "awesome-seedance",
+        "Seedance",
+        "即梦视频",
+        "AI视频",
+        "AI 视频",
+        "AI生成视频",
+        "AI生成镜头",
+        "AI生成素材",
+        "AI 生成",
+        "AI生视频",
+        "生视频",
+        "视频生成",
+        "视频提示词",
+        "视频提示语",
+        "图生视频",
+        "文生视频",
+        "镜头提示词",
+        "生成镜头",
+        "参考图动态化"
+      ],
+      "excludeAny": [
+        "不用AI生成",
+        "不用 AI 生成",
+        "不使用AI生成",
+        "不使用 AI 生成",
+        "不要生成视频",
+        "不生成视频",
+        "只用AE",
+        "纯AE",
+        "纯 AE",
+        "只用Remotion",
+        "纯Remotion",
+        "纯 Remotion",
+        "只写口播",
+        "只改字幕",
+        "只查",
+        "查询位置",
+        "保留原提示词",
+        "不要改提示词",
+        "不用awesome-seedance",
+        "介绍Seedance",
+        "介绍 Seedance",
+        "介绍即梦",
+        "模型介绍",
+        "介绍AI视频",
+        "介绍 AI 视频",
+        "介绍AI生成视频",
+        "介绍视频生成模型",
+        "只做科普"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板",
+      "notFor": "纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围",
+      "acceptance": "实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目",
+      "evidence": "work/domains/design/video/common/awesome-seedance/README.md",
+      "confirmedAt": "2026-09-24",
+      "source": "建委指定收录LearnPrompt/awesome-seedance并接入主动调用；第三方报告按固定快照保留，未在本轮独立出片复测",
+      "entryPoints": [
+        "work/domains/design/video/README.md",
+        "work/domains/design/video/common/README.md",
+        "work/domains/design/video/common/tools/seedance/README.md",
+        "work/domains/design/video/education/README.md",
+        "work/domains/design/video/promo/README.md",
+        "work/domains/design/video/story/README.md",
+        "work/domains/self-media/video-scripts/README.md"
+      ],
+      "readWith": [
+        "work/domains/design/video/common/awesome-seedance/upstream.json",
+        "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-prompt-library/SKILL.md",
+        "work/domains/design/video/common/awesome-seedance/template-guide.md",
+        "work/domains/design/video/common/tools/seedance/practical-workflow.md"
+      ],
+      "readWhen": [
+        {
+          "whenAny": [
+            "时间轴",
+            "逐秒",
+            "多镜头",
+            "分镜",
+            "镜头顺序"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/timeline-shot-script.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "角色一致",
+            "人物一致",
+            "同一人物",
+            "同一个人",
+            "参考图",
+            "角色图",
+            "人物参考",
+            "换脸"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/character-reference-lock.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "手持",
+            "自拍",
+            "vlog",
+            "生活记录"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/handheld-ugc-vlog.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "第一人称",
+            "一镜到底",
+            "POV"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/pov-continuous-take.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "口播测评",
+            "测评视频",
+            "带货视频",
+            "UGC测评"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/ugc-creator-review.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "产品广告",
+            "产品展示",
+            "产品特写",
+            "商品展示",
+            "产品镜头",
+            "商业广告"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/product-commercial-shotlist.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "对白",
+            "口型",
+            "对话场景",
+            "说话人物"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/dialogue-performance-beats.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "叙事短片",
+            "剧情短片",
+            "故事短片"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/cinematic-narrative-short.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "动漫",
+            "二次元",
+            "画风固定"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/anime-style-lock.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "定格动画",
+            "逐格",
+            "步进节奏"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/stop-motion-cadence.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "制作流程",
+            "变化过程",
+            "变换蒙太奇",
+            "延时摄影"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/process-transformation-montage.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "打斗",
+            "武打",
+            "格斗",
+            "战斗"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/combat-choreography.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "音乐卡点",
+            "卡点MV",
+            "音乐MV"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/music-beat-sync-mv.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "时间冻结",
+            "倒放",
+            "时间静止"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/time-freeze-rewind.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "分镜图转",
+            "分镜网格",
+            "九宫格",
+            "故事板转",
+            "故事板整图"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/storyboard-grid-to-video.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-storyboard-grid-to-video/SKILL.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-storyboard-grid-to-video/references/cases.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "家庭录像",
+            "复古DV",
+            "复古 DV",
+            "VHS",
+            "年代感"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/retro-found-footage.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-retro-dv-home-video/SKILL.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-retro-dv-home-video/references/cases.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "旅行",
+            "城市漫游",
+            "旅游",
+            "city walk"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/travel-city-walk.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-travel-city-walk/SKILL.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-travel-city-walk/references/cases.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "宠物",
+            "猫咪",
+            "小猫",
+            "小狗",
+            "动物主角"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/pet-animal.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-pet-animal/SKILL.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-pet-animal/references/cases.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "汽车",
+            "载具",
+            "赛车"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/car-vehicle.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-car-vehicle/SKILL.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-car-vehicle/references/cases.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "时装",
+            "时尚",
+            "lookbook",
+            "写真"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/fashion-lookbook.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-fashion-lookbook/SKILL.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-fashion-lookbook/references/cases.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "搞笑",
+            "喜剧",
+            "反转短片",
+            "沙雕"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/meme-comedy.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-meme-comedy/SKILL.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-meme-comedy/references/cases.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "恐怖",
+            "悬疑"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/horror-suspense.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-horror-suspense/SKILL.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-horror-suspense/references/cases.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "3D卡通",
+            "3D 卡通",
+            "三维卡通",
+            "黏土"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/3d-cartoon.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-3d-cartoon/SKILL.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-3d-cartoon/references/cases.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "奇幻",
+            "科幻",
+            "巨龙",
+            "怪兽"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/epic-fantasy-scifi.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-epic-fantasy-scifi/SKILL.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-epic-fantasy-scifi/references/cases.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "体育",
+            "极限运动",
+            "跑酷",
+            "滑板"
+          ],
+          "paths": [
+            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/sports-extreme.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-sports-extreme/SKILL.md",
+            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-sports-extreme/references/cases.md"
+          ]
+        }
+      ],
+      "whenAll": [
+        [
+          "提示词",
+          "提示语",
+          "镜头",
+          "短片",
+          "素材",
+          "生成视频",
+          "生视频",
+          "动态化",
+          "做视频",
+          "制作视频",
+          "做一段",
+          "做一个",
+          "调用awesome-seedance",
+          "使用awesome-seedance",
+          "用awesome-seedance"
+        ]
       ]
     }
   ]

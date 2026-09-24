@@ -126,6 +126,8 @@ class MethodRegistry(unittest.TestCase):
         for method in self.catalog['methodRules']:
             paths.update([method['path'], method['evidence'], *method['entryPoints']])
             paths.update(method.get('readWith', []))
+            for reference in method.get('readWhen', []):
+                paths.update(reference['paths'])
         paths.update(['work/projects/README.md', 'work/projects/cases/README.md', 'work/projects/archive/README.md'])
         for path in paths:
             write_text(self.root / path, '# Fixture\n')

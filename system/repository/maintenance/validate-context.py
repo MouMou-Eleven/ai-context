@@ -228,6 +228,25 @@ def check_registries(root):
                 errors.append(f'Method readWith must be a list of paths: {label}')
             else:
                 paths.extend(read_with)
+            read_when = method.get('readWhen', [])
+            if not isinstance(read_when, list):
+                errors.append(f'Method readWhen must be a list: {label}')
+            else:
+                for reference in read_when:
+                    if not isinstance(reference, dict):
+                        errors.append(f'Method readWhen entry must be an object: {label}')
+                        continue
+                    for field in ('whenAny', 'paths'):
+                        values = reference.get(field)
+                        if not isinstance(values, list) or not values or any(not isinstance(v, str) or not v.strip() for v in values):
+                            errors.append(f'Method readWhen needs nonempty {field}: {label}')
+                    for field in ('excludeAny', 'intents'):
+                        values = reference.get(field, [])
+                        if not isinstance(values, list) or any(not isinstance(v, str) or not v.strip() for v in values):
+                            errors.append(f'Method readWhen invalid {field}: {label}')
+                    values = reference.get('paths', [])
+                    if isinstance(values, list):
+                        paths.extend(v for v in values if isinstance(v, str))
             entry_points = method.get('entryPoints', [])
             if isinstance(entry_points, list):
                 paths.extend(x for x in entry_points if isinstance(x, str))

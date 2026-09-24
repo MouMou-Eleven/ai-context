@@ -1,5 +1,7 @@
 # Skill 仓库：能力调用与版本记录
 
+- [Awesome Seedance 视频提示词与案例库](../../design/video/common/awesome-seedance/README.md)：LearnPrompt / goodcase.ai 第三方项目，1个总Skill与11个专项Skill；实体位于视频共用制作方法与工具。按生成镜头需求主动调用，来源和三类许可见能力卡。
+
 > 同时保存能力入口、来源记录和可复现实体。先看能力卡，真正执行才读 `SKILL.md`；保存到本仓不等于已安装到当前电脑。
 > 索引整理：2026-09-24。通用Skill实体在本目录；用户明确指定专项领域时，实体留该领域，本表只索引，仍按同一来源和版本规则管理。
 

@@ -327,7 +327,14 @@
     "system/repository/maintenance/tests/test_retrieval.py": "自然任务检索与读取证据回归",
     "system/repository/revisions/2026-09-21-task-retrieval-and-adherence.md": "从自然任务到具体经验和成品验收的调用修复",
     "work/domains/design/video/revisions/2026-09-21-competition-production-retrospective.md": "石墨烯创赛片完工复盘：制作分工、Seedance参考图与多轮失败修正",
-    "work/domains/self-media/titles/title-matrix": "第三方中文标题Skill：生成、诊断、评审与复盘"
+    "work/domains/self-media/titles/title-matrix": "第三方中文标题Skill：生成、诊断、评审与复盘",
+    "work/domains/design/video/common/awesome-seedance": "AI视频提示词、模板与第三方案例",
+    "work/domains/design/video/common/awesome-seedance/README.md": "能力边界、主动调用、来源与后续沉淀",
+    "work/domains/design/video/common/awesome-seedance/template-guide.md": "按镜头需求选25类模板及处理冲突",
+    "work/domains/design/video/common/awesome-seedance/lookup.py": "只读提取模板、案例原文和复测状态",
+    "work/domains/design/video/common/awesome-seedance/upstream.json": "第三方来源、固定版本与三类许可",
+    "work/domains/design/video/revisions/2026-09-24-awesome-seedance-integration.md": "第三方视频库收录、按需读取与既有经验保护",
+    "system/repository/maintenance/tests/test_seedance.py": "视频提示词自动调用、误触发和按需读取回归"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

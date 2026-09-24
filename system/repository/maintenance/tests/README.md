@@ -1,5 +1,7 @@
 # 维护回归测试
 
+- [test_seedance.py](./test_seedance.py)：视频提示词隐式调用、微课归属保护、只读及非生成任务隔离、条件参考与专项案例正文加载、案例失败／未测状态保留；不认证出片效果。
+
 - [test_title_matrix.py](./test_title_matrix.py)：文章隐式拟题、明确标题调用、保留标题／正式文档／教学隔离、宣传方法与项目事实组合、专项领域Skill快照校验和导航隐藏。
 
 - [test_retrieval.py](./test_retrieval.py)：自然说法、板块下钻、工具与项目隔离、实时发现新增正文、候选/历史排除、路径越界、正文hash/预算/缺失状态及受众验收分流。
