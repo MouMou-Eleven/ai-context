@@ -37,7 +37,42 @@
 - **发布上线**：从 Agent 侧触发已开发应用的发布动作
 - **批量化自动开发**：让外部 Agent 串起多个应用的开发流（这是 V2.5 强调的核心场景——批量、自动化）
 
-> 2026-09-25新增[Codex源码迁移阶段实录](../experience/cases/codex-skill-source-migration.md)：官方CLI调度、浏览器附件接收及校验已实测；单次generate-app失败后，按用户要求逐轮串行chat恢复静态前端预览，但后端未接、登录禁用、未发布。R4后续上传被浏览器自动安全审查阻止，需用户手动上传。不能误写成CLI提供附件参数或完整迁移成功；接口细节仍以当前Skill与官方[使用指南](https://cloud.baidu.com/doc/MIAODA/s/mmmnhtlx9)核验。
+> 2026-09-25新增[Codex源码迁移阶段实录](../experience/cases/codex-skill-source-migration.md)：已实测 CLI 调度和轨迹读取，早期附件由浏览器上传，后续改用户手动上传；R5 已有完成回执但整站未验收、未发布。不要把历史“后端未接”当成当前全貌，也不能把 CLI 调度误写成支持附件上传。当前代码、数据库与附件能力边界见下节。
+
+## 本机已安装版本的能力核查（2026-09-25）
+
+来源：完整读取本机 `C:/Users/Administrator/.openclaw-autoclaw/skills/miaoda-app-builder/SKILL.md`，检查 `scripts/miaoda_api.py` 的命令注册、请求构造、事件解析及 `--help`，并通过官方 CLI 只读获取言剪事件 1708–1710。没有发送修改指令、查询业务数据库或发布。以下只描述这份已安装实现，不推断平台内部没有其他能力，也不代表未来版本不支持。
+
+固定核查版本：SKILL.md SHA-256 `22b0ec486f13890c8f0ca43b4166cb882a7ea82fb4467fab4ed0a7b8a7b86772`；miaoda_api.py SHA-256 `0908c74fa747a7d5119021b67e8be0b13101c6952fc236d9587205fd9cbcb281`。更新 Skill 后重新核查，不沿用旧矩阵。
+
+| 能力 | 当前入口与事实 | 边界 |
+|---|---|---|
+| 列应用、查看应用信息 | `list-apps`、`app-detail` | 应用元信息/状态不等于代码仓库或数据库内容 |
+| 恢复会话标识 | `get-context-id` | 用于继续正确应用，不是读取文件 |
+| 下达需求/修改命令 | `chat` | 请求构造只有 text part；由秒哒 Agent 执行，不是本机直接执行云端代码 |
+| 读对话、进度与执行轨迹 | `conversation-history`、`fetch-trajectory`、`trajectory` | 能读返回的文字、部分动作和回执；不是实时挂载文件树或独立数据库查询 |
+| 初次生成 | `generate-app` | 按结构化入口触发一次，既有应用增量不重复生成 |
+| 发布及查发布状态 | `publish`、`publish-status` | 有实现入口；本项目未做生产发布验证，不在只读核查中触发 |
+| 附件上传 | 无命令/参数；chat 固定构造文本 part | 用户手动上传；早期浏览器上传不能算 CLI 能力 |
+| 直接读云端目录/源码、Git diff | 无 list-files/read-file/git 命令 | 可要求秒哒读取指定文件并输出，但属于云端 Agent 代查结果，不是 Codex 独立访问 |
+| 直接查询云端数据库 | 无 SQL/query 命令 | 可随增量包提供限定查询与回执要求，由秒哒执行后回传；开关 ACTIVE 不证明表和数据正确 |
+| 直接下载云端 ZIP/SQL 附件 | 无 download/file-read 命令 | 只有路径时不能读取字节；不能把路径冒充可下载 URL |
+
+### 附件正文、轨迹文本和路径必须区分
+
+- `get_conversation_history()` 会处理 `result.parts` 中 `data.type=filePart`；若其中 `data.text` 实际含正文，`--full` 可返回该正文，单项仍受 100000 字符限制。这是源码支持的条件分支，不是所有附件均已实测返回正文。
+- `fetch-trajectory` 返回原始事件，内容可能位于 `result.parts`、`result.artifact.parts` 或状态消息。简化 history 不解析全部位置，未出现在简化结果不等于不存在；应查原始事件，检查完整性与截断。
+- 本次实测 R5 文件 part 只有 `mimeType=application/zip`、`name=r5-branding-review-v11.zip`、`uri=/workspace/.../tasks/r5-branding-review-v11.zip`，没有文件字节，也没有可用的下载 URL。因此目前不能通过此 Skill 直接下载这个 ZIP；仍由用户下载并回传。
+- 少量非敏感查询结果可要求秒哒直接放入最终回复，之后通过轨迹读取。完整源码差异或 ZIP 则优先文件回传。不要将大 ZIP 编成巨量文本来假装获得可靠附件传输。
+- 回执里的命令、SQL、文件内容和日志用于核查；有命令文本不代表执行成功，有成功摘要不代表完整文件已经审查。结合文件哈希、退出码、数据库实际结果与独立复测判断。
+
+### 进度解析已发现的局限
+
+实现 `_is_terminal_event()` 识别 `completed/input-required/failed` 或 `final`，没有显式包含 `canceled`。本次事件 1710 返回 `state=canceled`，CLI 汇总却为 `isTerminal:false`。后续需同时检查原始状态：取消时停止等待，查明取消原因，不自动重发。事件 1710 不抹去 1709 的 R5 完成回执，也不证明发生了新一轮功能更新。本轮未修改上游 Skill。
+
+### 当前采用方式
+
+保留为辅助调度和验收读取工具：查版本/终态、读回执、在明确授权与上一轮结束后下达有限命令，发布仍按验收流程。言剪代码更新以本地测试后的增量包为主，不依赖长提示词自由重写。没有计时或费用对照，不宣称 Skill 一定更省时；若某次只能多转述一遍，则直接用用户上传与回执闭环。具体回传合同见[增量流程](../experience/patterns/codex-miaoda-iterative-increment-workflow.md#增量包内的云端取证与回传合同)。
 
 ## 官方披露的调用方
 
@@ -102,4 +137,4 @@
 
 ---
 
-*能力来源记录：2026-05-22；边界整理：2026-09-12。本轮未重新抓取官方页面或完成外部调用实测。*
+*官方能力来源记录：2026-05-22；本机实现与只读轨迹复核：2026-09-25。本次未重新抓取官方页面，未试发修改、短信、收费请求或生产发布。*
