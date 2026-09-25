@@ -7,6 +7,7 @@
     "work/projects/yancut-ai/revisions/2026-09-25-composable-skills-ui.md": "模式与多选技能统一调用、响应式界面、注册协议和真实模型成片验收",
     "work/projects/yancut-ai/revisions/2026-09-25-gallery-protocols-rendering.md": "作品发布撤下、首页交互、模型协议、二维码及剪辑包装成片验证",
     "work/projects/yancut-ai/revisions/2026-09-25-editor-voice-integration.md": "工作台统一、真实音效转场、MiniMax声音任务与实际导出及未开放边界",
+    "work/projects/yancut-ai/revisions/2026-09-25-miaoda-source-migration.md": "工作台修复与源码分包复建，记录秒哒实际接收和运行时适配缺口",
     "work/projects/yancut-ai/revisions/2026-09-25-voice-pricing-v11.md": "声音定价更正：撤销不存在的预估接口，改用真实校准和实扣超额告警",
     "work/projects/yancut-ai/revisions/2026-09-16-workbench-motion-reference-templates.md": "言剪动效、关键帧、参考视频与个人模板升级及线上验收",
     "system/repository/revisions/2026-09-15-writing-dna-review-and-method-routing.md": "写作蒸馏器评估、材料提炼与按任务发现方法",

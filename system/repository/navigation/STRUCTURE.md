@@ -1379,6 +1379,7 @@ ai-context/
 │   │       │   ├── 2026-09-25-composable-skills-ui.md  模式与多选技能统一调用、响应式界面、注册协议和真实模型成片验收
 │   │       │   ├── 2026-09-25-editor-voice-integration.md  工作台统一、真实音效转场、MiniMax声音任务与实际导出及未开放边界
 │   │       │   ├── 2026-09-25-gallery-protocols-rendering.md  作品发布撤下、首页交互、模型协议、二维码及剪辑包装成片验证
+│   │       │   ├── 2026-09-25-miaoda-source-migration.md  工作台修复与源码分包复建，记录秒哒实际接收和运行时适配缺口
 │   │       │   ├── 2026-09-25-online-cloud-launch.md  账号制上线、数据库与对象存储、管理员、积分兑换和权限隔离验收
 │   │       │   ├── 2026-09-25-unified-local-media-workspace.md  统一首页入口、本机原片与云端工程、模型适配和白板导出验证
 │   │       │   └── 2026-09-25-voice-pricing-v11.md  声音定价更正：撤销不存在的预估接口，改用真实校准和实扣超额告警
