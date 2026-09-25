@@ -5,6 +5,7 @@
     "work/projects/yancut-ai/revisions/2026-09-25-online-cloud-launch.md": "账号制上线、数据库与对象存储、管理员、积分兑换和权限隔离验收",
     "work/projects/yancut-ai/revisions/2026-09-25-unified-local-media-workspace.md": "统一首页入口、本机原片与云端工程、模型适配和白板导出验证",
     "work/projects/yancut-ai/revisions/2026-09-25-composable-skills-ui.md": "模式与多选技能统一调用、响应式界面、注册协议和真实模型成片验收",
+    "work/projects/yancut-ai/revisions/2026-09-25-gallery-protocols-rendering.md": "作品发布撤下、首页交互、模型协议、二维码及剪辑包装成片验证",
     "work/projects/yancut-ai/revisions/2026-09-16-workbench-motion-reference-templates.md": "言剪动效、关键帧、参考视频与个人模板升级及线上验收",
     "system/repository/revisions/2026-09-15-writing-dna-review-and-method-routing.md": "写作蒸馏器评估、材料提炼与按任务发现方法",
     "system/repository/maintenance/tests/test_methods.py": "跨领域方法发现、误触发与登记维护回归",
