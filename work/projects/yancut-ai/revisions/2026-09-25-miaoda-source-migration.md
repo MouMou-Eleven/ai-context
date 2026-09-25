@@ -118,3 +118,44 @@ R3历史候选的身份兼容须精确区分：保留原text UID、BetterAuth1.4
 - 独立Remotion容器部署、AI自动回填及完整合成验收；HyperFrames独立HTML Worker仍未实现。平台有数据库和对象存储不等于有Chromium渲染服务。
 
 后续继续按[全量源码交接](../../../domains/development/tools/miaoda/experience/patterns/codex-source-package-deployment.md)和[版本化增量闭环](../../../domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md)执行。需要适配包、实际迁移日志、正式域名版本和真实剪辑导出证据，才可将“已上传核验”更新为“已部署验收”。
+
+## R5 回执与 v10 实物审查：用户再次确认增量交付
+
+本节为 2026-09-25 后续确认，取代上文 R5 待上传与验证码登录的当前口径，保留此前事件用于追溯。
+
+### 本轮实际证据
+
+用户提供 `identity-security-review-v10.zip`、单独的 `00008_r4_0006_platform_link_sub_binding.sql` 与三张截图。ZIP 实际含 8 文件：platform.ts、platform-auth.ts、auth.ts、database.ts、platform.test.ts、SQL 和两份测试日志；已安全解压并逐文件审查。单独 SQL 与包内一致，SHA-256 为 `1d0c4c71ae8bd35d7ffa5f147dd198373f2f30eb9f6655f2d10fdbf9727e6f93`。收到实物前的轨迹和局部代码检查不等于完整审查。
+
+以原 0001/0002 Schema/RPC 和最小 platform_identity_links 表夹具，在隔离 PGlite 数据库安装原 SQL 成功，但调用新用户分支失败：
+
+1. `crypto.randomUUID()` 报 `3F000 schema "crypto" does not exist`。
+2. 替换为 `gen_random_uuid()` 后，`(v_reg->>'user')::public.users` 报 `22P02 malformed record literal`。
+3. 改用 `jsonb_populate_record(NULL::public.users, v_reg->'user')` 后，首次管理员映射、重复映射、拒绝不同 sub 认领同手机号、anon 无调用权限均通过。
+
+上述是离线复现及修法验证，没有修改云端，没有证明完整云端 Schema、并发与真实短信已通过。原 21 断言将 RPC 模拟为成功，未执行 SQL，因而漏掉两个数据库错误。platform-auth.ts 另有过期 access token 无法读取 refresh token 的刷新缺口。sub 唯一约束与旧重载需拿完整云端迁移再判断，不能假定本包没有就等于云端没有。
+
+只读 CLI 已核对 R5：事件 1585 收到用户附件，1709 `completed`，版本标签 v12。回执报告 42 变更、1555 目标哈希、品牌图片 200/image/png、公开品牌 GET 200、多宽度页面通过；管理员保存和真实短信仍未测、36 API 503、未正式发布。云端保留 442 行手机号 auth-page.tsx，并有 Edge 模块内联与静态目录修复。这些不在收到的 v10 八文件包内；下一步回收已生成的 `r5-branding-review-v11.zip`，无需重新要求生成 PRD 或另一个审查 ZIP。
+
+### 新确认的登录与交付合同
+
+- 登录：手机号＋密码；注册：手机号＋密码＋短信验证码；找回密码：手机号＋验证码＋新密码。这次确认替代此前的短信登录偏好。
+- 现有 OTP 门会拒绝所有新密码会话，不能仅改表单。需对已完成短信验证的同一绑定 sub 允许密码登录，并继续拒绝未经验证的 password-only 注册。首管在服务端事务判定。
+- 采用本地权威源码修复、测试、编号 ZIP、用户上传、秒哒应用、Codex 审查验收的串行闭环。回收云端适配差异后再做下一包，避免覆盖手机号页或安全修复。
+- 初次生成保留需求文档步骤；后续不例行重写 PRD。仅当需回收云端代码改动时输出无密钥审查包，收到后必须真的看、测、合入或拒绝，不能让产物闲置。
+- 已读用户指定任务 `01a075eb-f731-7583-92b7-2a9f830a7484`：本地修复和测试、增量 manifest、手动上传反馈、区分代码交付与正式站验证，符合本次所要求方式。
+
+### 进度与后续批次计划
+
+R5 不是完成百分比。当前处于页面迁入、部分后端适配、身份成功链路仍需修复的阶段，尚未达到原 Vercel 功能基线。不能把 47 减 36 算成 11 个业务链路已验收。
+
+| 计划批次 | 目标与验收 |
+|---|---|
+| R6 | 回收云端基线、修复认证 SQL 与密码登录；真实注册、首管、退出重登、密码重置和品牌后台保存 |
+| R7 | 项目保存恢复、本地素材关联、积分/充值/扣返、后台设置及所需存储；验证双用户隔离 |
+| R8 | AI 协议与技能调度、报价确认、工作台执行，跑通短片最小闭环 |
+| R9 | 标准版 ASR 异步任务、字幕与口播精剪、失败恢复和幂等计费 |
+| R10 | 广场、声音及其他剩余接口迁移回归；保留原站本就未完成的付费联调边界 |
+| 总验收 | 按 Vercel 能力矩阵检查真实口播导出 MP4、多设备、隔离、正式域名和回滚 |
+
+暂按 5 个功能批次＋1 轮总验收组织，不保证固定上传次数；依赖、失败与代码回收可能拆包。R6 尚未生成或部署。迁移不会自动补齐常驻 Remotion/HyperFrames 渲染服务，也不能宣称旧 Vercel 用户、积分和数据已自动继承。
