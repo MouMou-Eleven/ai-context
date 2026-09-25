@@ -14,6 +14,9 @@
 
 - 自定义 Skill：development/skill-development.md
 - 外部 Agent 调用秒哒：development/skill-as-callable.md
+- Skill 能否看代码、查数据库、读附件：development/skill-as-callable.md；先分清直接能力与秒哒代查回执
+- 本地源码初次迁入、全量分包：experience/patterns/codex-source-package-deployment.md
+- 后续增量、索取回传资料、审查回执：experience/patterns/codex-miaoda-iterative-increment-workflow.md（包含取证合同和断点恢复）
 - 写执行提示词：experience/prompt-patterns.md → experience/prompts/README.md所列的当前主题
 - 避坑排错：experience/pitfalls.md
 - 完整支付案例：experience/cases/yungouos-jsapi.md
@@ -26,6 +29,7 @@
 ## 严格规则
 
 - 只读取当前问题对应分支，不默认加载全部文件。
+- 先读README的流程分流表，确认当前阶段、源码基线和下一步；读不到关键材料就列缺口，不用旧案例猜补。多阶段任务按依赖组合必读分支，不将“当前分支”理解成只能看一个文件。
 - 不把飞书妙搭经验写入本目录。
 - 不从版本时间线直接回答当前能力。
 - 只有当前环境测试仍复现旧限制时，才读取旧兼容源码。

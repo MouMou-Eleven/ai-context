@@ -20,6 +20,30 @@ navigation = load_module('sync-navigation')
 
 
 class Routes(unittest.TestCase):
+    def test_miaoda_capability_queries_read_actual_contract(self):
+        base = 'work/domains/development/tools/miaoda/'
+        for task in ['秒哒Skill能不能直接查看代码和数据库', '秒哒生成的附件能直接下载吗']:
+            with self.subTest(task=task):
+                result = router.resolve(task, 'read')
+                self.assertIn(base + 'development/skill-as-callable.md', result['read'])
+
+    def test_miaoda_evidence_review_and_increment_read_workflow(self):
+        base = 'work/domains/development/tools/miaoda/'
+        for task, intent in [('审查秒哒回传的SQL和文件', 'read'), ('制作秒哒增量包并索取验收资料', 'create')]:
+            with self.subTest(task=task):
+                result = router.resolve(task, intent)
+                self.assertIn(base + 'experience/patterns/codex-miaoda-iterative-increment-workflow.md', result['read'])
+        result = router.resolve('把本地源码分包迁移到秒哒', 'create')
+        self.assertIn(base + 'experience/patterns/codex-source-package-deployment.md', result['read'])
+
+    def test_miaoda_rules_do_not_leak_to_other_platform_or_simple_query(self):
+        base = 'work/domains/development/tools/miaoda/'
+        for task in ['飞书妙搭上传附件', '查秒哒会员容量']:
+            with self.subTest(task=task):
+                result = router.resolve(task, 'read')
+                self.assertNotIn(base + 'experience/patterns/codex-miaoda-iterative-increment-workflow.md', result['read'])
+                self.assertNotIn(base + 'development/skill-as-callable.md', result['read'])
+
     def test_named_library_reads_its_materials_without_community(self):
         result = router.resolve('给济南市图书馆写课件解释API概念', 'create')
         self.assertEqual(result['selectedCandidate'], 'jinan-library')

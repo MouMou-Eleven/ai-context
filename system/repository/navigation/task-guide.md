@@ -76,7 +76,7 @@
 | 百度秒嗒平台 | 本类任务 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/README.md) |
 | 百度秒嗒平台 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/experience/README.md) |
 | 百度秒嗒平台 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/README.md) |
-| 百度秒嗒平台 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/pitfalls.md) |
+| 百度秒嗒平台 | 报错、故障、排错、失败、白屏、踩坑 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/pitfalls.md) |
 | 百度秒嗒平台 | 提示词、开发、搭建、实现、修改、迭代 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompt-patterns.md) |
 | 百度秒嗒平台 | 上传、文件传输 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/uploads.md) |
 | 百度秒嗒平台 | 大视频、大文件、视频上传、分片上传 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/large-video-upload.md) |
@@ -84,7 +84,9 @@
 | 百度秒嗒平台 | 登录、认证、验证码、鉴权 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/authentication.md) |
 | 百度秒嗒平台 | 支付、收款、退款 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/payment-integration.md) |
 | 百度秒嗒平台 | 报错、故障、排错、无法运行、白屏 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/runtime-diagnostics.md) |
-| 百度秒嗒平台 | Codex、codex、增量、迭代 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md) |
+| 百度秒嗒平台 | 增量、迭代、回传、回执、验收、审查包 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md) |
+| 百度秒嗒平台 | Skill、CLI、外部调用、附件、回传、回执、代码仓库、直接查看、直接读取 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/development/skill-as-callable.md) |
+| 百度秒嗒平台 | 全量、分包、迁移、本地源码 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/codex-source-package-deployment.md) |
 | 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/README.md) |
 | 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/jianwei-training-style.md) |
 | 培训备课与复盘（先核对归属） | 实操、教程、跟做、操作步骤；排除：宣传、朋友圈、招生、只查、查询位置 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/tutorial-writing.md) |

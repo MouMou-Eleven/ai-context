@@ -640,7 +640,7 @@
         },
         {
           "path": "work/domains/development/tools/miaoda/experience/pitfalls.md",
-          "whenAny": [],
+          "whenAny": ["报错", "故障", "排错", "失败", "白屏", "踩坑"],
           "excludeAny": [],
           "intents": [
             "create",
@@ -746,16 +746,27 @@
         {
           "path": "work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md",
           "whenAny": [
-            "Codex",
-            "codex",
             "增量",
-            "迭代"
+            "迭代",
+            "回传",
+            "回执",
+            "验收",
+            "审查包"
           ],
           "excludeAny": [],
-          "intents": [
-            "create",
-            "write"
-          ]
+          "intents": []
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/development/skill-as-callable.md",
+          "whenAny": ["Skill", "CLI", "外部调用", "附件", "回传", "回执", "代码仓库", "直接查看", "直接读取"],
+          "excludeAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/experience/patterns/codex-source-package-deployment.md",
+          "whenAny": ["全量", "分包", "迁移", "本地源码"],
+          "excludeAny": [],
+          "intents": []
         }
       ]
     },
