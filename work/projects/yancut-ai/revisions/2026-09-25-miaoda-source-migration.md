@@ -135,7 +135,7 @@ R3历史候选的身份兼容须精确区分：保留原text UID、BetterAuth1.4
 
 上述是离线复现及修法验证，没有修改云端，没有证明完整云端 Schema、并发与真实短信已通过。原 21 断言将 RPC 模拟为成功，未执行 SQL，因而漏掉两个数据库错误。platform-auth.ts 另有过期 access token 无法读取 refresh token 的刷新缺口。sub 唯一约束与旧重载需拿完整云端迁移再判断，不能假定本包没有就等于云端没有。
 
-只读 CLI 已核对 R5：事件 1585 收到用户附件，1709 `completed`，版本标签 v12。回执报告 42 变更、1555 目标哈希、品牌图片 200/image/png、公开品牌 GET 200、多宽度页面通过；管理员保存和真实短信仍未测、36 API 503、未正式发布。云端保留 442 行手机号 auth-page.tsx，并有 Edge 模块内联与静态目录修复。这些不在收到的 v10 八文件包内；下一步回收已生成的 `r5-branding-review-v11.zip`，无需重新要求生成 PRD 或另一个审查 ZIP。
+只读 CLI 已核对 R5：事件 1585 收到用户附件，1709 `completed`，版本标签 v12。回执报告 42 变更、1555 目标哈希、品牌图片 200/image/png、公开品牌 GET 200，并自称多宽度页面通过；管理员保存和真实短信仍未测、36 API 503、未正式发布。后续用户访问其 `vitesandbox` 地址失败；独立 Playwright 复测入口 HTML 虽为 200，页面却是白屏，`/@vite/client` 与 HMR monitor 资源均为 401。因此“多宽度页面通过”仅保留为云端自报历史，不能作为渲染或发布验收。云端保留 442 行手机号 auth-page.tsx，并有 Edge 模块内联与静态目录修复；该页面不在收到的 v10 八文件包内。
 
 ### 新确认的登录与交付合同
 
@@ -158,7 +158,7 @@ R5 不是完成百分比。当前处于页面迁入、部分后端适配、身�
 | R10 | 广场、声音及其他剩余接口迁移回归；保留原站本就未完成的付费联调边界 |
 | 总验收 | 按 Vercel 能力矩阵检查真实口播导出 MP4、多设备、隔离、正式域名和回滚 |
 
-暂按 5 个功能批次＋1 轮总验收组织，不保证固定上传次数；依赖、失败与代码回收可能拆包。R6 尚未生成或部署。迁移不会自动补齐常驻 Remotion/HyperFrames 渲染服务，也不能宣称旧 Vercel 用户、积分和数据已自动继承。
+暂按 5 个功能批次＋1 轮总验收组织，不保证固定上传次数；依赖、失败与代码回收可能拆包。R6 已在本地生成和离线验证，尚未上传、部署或发送真实短信。迁移不会自动补齐常驻 Remotion/HyperFrames 渲染服务，也不能宣称旧 Vercel 用户、积分和数据已自动继承。
 
 ### 后续补充：先厘清 Skill，再继续 R6
 
@@ -167,3 +167,17 @@ R5 不是完成百分比。当前处于页面迁入、部分后端适配、身�
 R5 ZIP 的实际 file part 仅含文件名、MIME 与 `/workspace/...` 路径，没有字节或可用下载地址；仍需用户回传。内联的回执文字可直接读取，源码解析器也支持部分 filePart.text，须检查实际返回与截断，不能一概说所有附件都能读或都不能读。事件 1710 显示 canceled 而 CLI isTerminal=false，发现其取消状态未计入结束判断；不据此撤销 1709 完成事实，也不自动重发。
 
 用户确认将必要取证要求随增量包交付，秒哒执行时输出指定源码差异、Schema/迁移和测试证据，由用户回传或从内联轨迹读取。已写入[云端取证与回传合同](../../../domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md#增量包内的云端取证与回传合同)；[能力矩阵](../../../domains/development/tools/miaoda/development/skill-as-callable.md#本机已安装版本的能力核查2026-09-25)保存版本哈希与核查边界。建议保留 Skill 用于辅助查状态/读回执，代码更新仍走本地增量包，不声称已证明提效。当前包序号是 R5，不是 R25。
+
+## R6 本地交付与沙箱渲染口径更正
+
+用户要求继续 R6，并指出云端回执中的“Chromium 渲染验收”地址实际无法访问。统筹进行了两层核验：PowerShell 请求在核验时取得入口 HTML 200；真实 Playwright 打开同一 `https://app-enipq7iozwn5-vitesandbox.miaoda.cn/` 后页面为空白，Console/Network 记录 `@vite/client` 与 `virtual:vite-sandbox-hmr-monitor-client.ts` 401。二者并不矛盾：入口 HTML 可达，但应用核心资源不可用。该地址是临时沙箱，不是正式发布 URL，HTTP 200、云端截图或“Chromium 通过”文字都不能单独作为渲染验收。
+
+R6 采用审查优先增量，不覆盖未知版本的 442 行云端登录页：
+
+- SQL 改为 `gen_random_uuid()`，使用 `jsonb_populate_record` 还原用户行；增加 `platform_sub` 唯一索引、手机号与 sub 双事务锁，只保留 5 参数 RPC，且仅 `service_role` 可执行。
+- 由服务端从已验证 JWT 的 `amr` 决定 `p_allow_create`：OTP 可首次创建映射；密码凭证只能读取已经短信映射的同一手机号/sub，不能把 password-only signup 变成新言剪用户。
+- 前端新增手机号密码登录；注册与找回密码仍先短信验证再设置密码。修复旧 `platform-auth.ts` 在 access token 过期后无法读取 refresh token 的问题。
+- 当前云端登录页按合并合同修改，不用本地旧邮箱页面整页覆盖；秒哒必须回传合并后的完整文件、路径和 hash。
+- 云端回传合同把 HTTP 可达、浏览器渲染、正式发布拆成三项；白屏或核心资源 401 必须判失败，不得再次写成验收通过。
+
+本地验证：隔离 PGlite 通过 6 个关键数据库场景（密码不可创建、OTP 创建首管、已有映射密码访问、双向防改绑、旧重载清理、anon 禁止）；Deno 令牌矩阵 6 项通过；前端认证桥 Bun 浏览器目标打包成功；ZIP 包内 9 个业务/说明文件哈希通过，路径安全检查无拒绝项。交付包 `yancut-JW-20260925-R6-increment.zip` 为 18934 字节，SHA-256 `3c8bffd2db5869a5d4ad7551d2cb46526c742461fbded6cea4be927ff877d549`。这仍不是云端、真实短信、管理员或正式发布验收。
