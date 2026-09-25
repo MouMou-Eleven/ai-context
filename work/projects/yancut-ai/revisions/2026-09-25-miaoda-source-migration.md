@@ -20,6 +20,8 @@
 
 本实例数据库状态为ACTIVE_HEALTHY，且已有服务端角色插入探针成功，只能证明实例与该写路径可用；不能证明业务表全部就绪、私有对象存储上传／签名／清理或短信认证可用。未执行旧生产DB、Blob和用户迁移，也未调用付费声音。Skill与源码增量实践见[秒哒阶段案例](../../../domains/development/tools/miaoda/experience/cases/codex-skill-source-migration.md)。
 
+平台故障期间继续完成R4本地候选：源码分支`codex/miaoda-runtime`提交`fa3e86258de9e9147e576c2ac1f5e06ecfde2ffc`已推送且远端核验，7文件覆盖真实admin/settings路由、AES兼容、SQL事务设置／通道／审计及权限门控。Deno check、19项测试、隔离PGlite27断言通过；截至回执尚未上传R4、未云端／付费／真实多连接并发验收，不能以此宣称平台已恢复。R4打包由本轮后续步骤收尾，包状态另行补证。
+
 ## 本轮修复与已验证边界
 
 | 用户问题 | 实施结果 | 验收证据与限制 |
