@@ -60,6 +60,6 @@ miaoda/
 - 秒哒云端构建不等于真实浏览器或手机验收；运行时问题应由用户复现并提供日志。
 - `updates/version-features.md` 只用于历史追溯，不能作为当前能力清单。
 
-动态知识治理遵守 [`../../../../../repository/versioned-knowledge-policy.md`](../../../../../system/repository/versioned-knowledge-policy.md)。
+动态知识治理遵守[版本化知识政策](../../../../../system/repository/versioned-knowledge-policy.md)。
 
 *结构整理：2026-09-12；产品事实按各来源核验日使用*

@@ -20,6 +20,26 @@ navigation = load_module('sync-navigation')
 
 
 class Routes(unittest.TestCase):
+    def test_yancut_current_state_separates_cloud_and_history(self):
+        page = (ROOT / 'work/projects/yancut-ai/README.md').read_text(encoding='utf-8')
+        current = page.split('## 当前进度', 1)[1].split('## 阶段历史', 1)[0]
+        self.assertIn('R6.1/v15', current)
+        self.assertIn('is_admin:false', current)
+        self.assertNotIn('等待上传', current)
+        self.assertNotIn('默认更新本地源码、Vercel 测试版本', page)
+        self.assertIn('原 Vercel／本地能力基线（秒哒迁移对照）', page)
+
+    def test_miaoda_auth_template_excludes_native_phone_email_fallback(self):
+        page = (ROOT / 'work/domains/development/tools/miaoda/experience/prompts/authentication.md').read_text(encoding='utf-8')
+        self.assertIn('不能用于原生 phone/OTP 项目', page)
+        self.assertIn('保留必要的服务端凭据验证', page)
+        self.assertNotIn('请删除或停用其登录职责', page)
+
+    def test_miaoda_auth_change_routes_to_auth_contract(self):
+        result = router.resolve('修改百度秒哒登录注册密码显示并验收', 'create')
+        self.assertIn('work/domains/development/tools/miaoda/experience/prompts/authentication.md', result['read'])
+        self.assertIn('work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md', result['read'])
+
     def test_miaoda_capability_queries_read_actual_contract(self):
         base = 'work/domains/development/tools/miaoda/'
         for task in ['秒哒Skill能不能直接查看代码和数据库', '秒哒生成的附件能直接下载吗']:
