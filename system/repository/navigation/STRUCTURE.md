@@ -1377,9 +1377,11 @@ ai-context/
 │   │       │   ├── 2026-09-23-doubao-asr-preview-hardening.md  追溯“豆包标准版个人预览可用性修正”的调整原因与适用范围
 │   │       │   ├── 2026-09-23-doubao-asr-standard-billing.md  追溯“豆包录音文件识别 2.0 标准版与积分确认”的调整原因与适用范围
 │   │       │   ├── 2026-09-25-composable-skills-ui.md  模式与多选技能统一调用、响应式界面、注册协议和真实模型成片验收
+│   │       │   ├── 2026-09-25-editor-voice-integration.md  工作台统一、真实音效转场、MiniMax声音任务与实际导出及未开放边界
 │   │       │   ├── 2026-09-25-gallery-protocols-rendering.md  作品发布撤下、首页交互、模型协议、二维码及剪辑包装成片验证
 │   │       │   ├── 2026-09-25-online-cloud-launch.md  账号制上线、数据库与对象存储、管理员、积分兑换和权限隔离验收
-│   │       │   └── 2026-09-25-unified-local-media-workspace.md  统一首页入口、本机原片与云端工程、模型适配和白板导出验证
+│   │       │   ├── 2026-09-25-unified-local-media-workspace.md  统一首页入口、本机原片与云端工程、模型适配和白板导出验证
+│   │       │   └── 2026-09-25-voice-pricing-v11.md  声音定价更正：撤销不存在的预估接口，改用真实校准和实扣超额告警
 │   │       └── roadmap.md  开发路线与上线条件
 │   └── README.md  领域知识与项目案例的分级入口
 ├── system/  查AI表达标准、仓库运行规则与本机执行环境
