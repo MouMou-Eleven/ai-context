@@ -6,7 +6,19 @@
 
 此前默认每轮同步 Vercel 测试版；本轮改为以百度秒哒承载和后续迭代为目标。继续维护本地权威源码、GitHub 和本上下文，云端适配结果也须回同步；不再自动把每轮更改发布到 Vercel。旧 Vercel 入口保留历史测试与回退用途，不能将本轮未发布的代码称作现行 Vercel 版本。
 
-用户已完成百度秒哒账号登录。已新建应用 `app-enipq7iozwn5`，会话 `conv-enipq7iozwn4`。这是百度 `miaoda.cn` 平台，不是飞书妙搭 Spark。R1 全量源码及R2增量已实际上传并收到哈希通过的核验回执；R3增量已上传，当前正在云端核验；尚未执行 generate-app 或 publish。
+用户已完成百度秒哒账号登录。已新建应用`app-enipq7iozwn5`，会话`conv-enipq7iozwn4`。这是百度miaoda.cn平台，不是飞书妙搭Spark。R1全量源码及R2增量已上传并收到哈希通过回执，R3候选已上传。generate-app实际调用一次后在事件825失败；随后同应用chat恢复在事件835再次以平台错误终止，未publish。
+
+### 本轮最后核验：生成失败与认证方向更新
+
+先生成PRD并核验generateApp结构动作后，官方CLI实际发起一次generate-app。事件825最终错误为`ServiceUnavailable / MCPGenerateError GenerateStartHook unexpected error Response is not valid JSON`。不能把调用返回应用标识或附件收齐写成生成成功，不重复触发未知状态的生成任务。恢复时先读取同一应用及会话轨迹，再决定如何继续。
+
+之后仅提交一次同应用chat恢复，没有重复generate-app。事件827为恢复请求、829运行、831文字回复恢复迁移，但这些均不是实际执行成功证据。最终17:58:40事件835为`terminal: true`，错误仍为`MCPGenerateError: GenerateStartHook unexpected error: Response is not valid JSON`并伴ValueError；用户可见“秒哒遇到一点问题／秒点稍后返还”。本轮不再重复请求，没有向客服发消息，也没有发布；下一轮先检查平台状态及同会话，不用重建应用掩盖失败。
+
+本轮云端曾用Bun1.4.2／pnpm重新解析依赖，原锁hash因此不一致。已要求恢复原锁并使用Bun1.2.18复测，但截至最终回执没有足够证据认定云端原锁冻结安装与构建通过；本地干净复建通过与云端验证分开记录。
+
+用户最新授权改用秒哒平台原生手机号Auth，覆盖此前以自建密码／opaque Bearer迁移作为最终认证方向。R3已写代码及其测试保留为历史候选，不等于最终Auth已接通；手机验证码接收、登录会话、旧账号映射、管理员归属及积分归属都还要真实验证。
+
+本实例数据库状态为ACTIVE_HEALTHY，且已有服务端角色插入探针成功，只能证明实例与该写路径可用；不能证明业务表全部就绪、私有对象存储上传／签名／清理或短信认证可用。未执行旧生产DB、Blob和用户迁移，也未调用付费声音。Skill与源码增量实践见[秒哒阶段案例](../../../domains/development/tools/miaoda/experience/cases/codex-skill-source-migration.md)。
 
 ## 本轮修复与已验证边界
 
@@ -45,7 +57,7 @@ R3迁移候选在源码分支`codex/miaoda-runtime`，提交`ba81b3744a3c38275a2
 
 R3独立恢复树全量基线与37个目标hash通过；Bun1.2.18冻结安装954包、Vite3103模块生产构建通过。严格前端TypeScript检查通过；8项前端接口回归48断言、13项Deno测试、89项隔离PGlite断言通过。隔离SQL并非真实多连接并发或秒哒生产数据库验收。测试与构建日志位于`C:/Users/Administrator/AppData/Local/Temp/yancut-miaoda-r3-clean-7fac9239e4284a5280df71eb29c2cf37`；交付包与回执在本轮工作目录`yancut-miaoda-R3`。
 
-身份兼容须精确区分：R3保留原text UID、BetterAuth1.4.15密码哈希与session数据表；跨域请求新建opaque Bearer会话，在当前站点localStorage持久化，不是原HttpOnly Cookie原样迁移，也不是Supabase JWT。密码哈希兼容不代表旧数据已导入。后续需保持权限及XSS/CSP防护，私有audio/video标签需鉴权换短期签名URL，不能直接使用需Bearer的播放地址。
+R3历史候选的身份兼容须精确区分：保留原text UID、BetterAuth1.4.15密码哈希与session表，跨域新建opaque Bearer并在localStorage持久化，不是原HttpOnly Cookie或Supabase JWT。此路径的最终方向已被用户最新平台原生手机号Auth授权替代；代码测试不能证明新Auth或旧数据迁移完成。私有audio/video仍须正确鉴权或换短期签名URL。
 
 统筹代理在本次新建秒哒项目核验到：当前交付环境为Vite SPA + Supabase Deno Edge，而言剪包是Next服务端应用；不能原样部署，必须适配。此结论针对本账号当前应用环境，不扩写为平台永远不支持Next或容器。
 

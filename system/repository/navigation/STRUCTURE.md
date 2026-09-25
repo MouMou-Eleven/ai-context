@@ -302,6 +302,7 @@ ai-context/
 │   │   │       │   ├── disambiguation.md  百度秒哒与飞书妙搭的同名辨析
 │   │   │       │   ├── experience/  实战经验
 │   │   │       │   │   ├── cases/  案例
+│   │   │       │   │   │   ├── codex-skill-source-migration.md  官方Skill调度与源码增量实录：附件上传、锁校验及生成平台错误边界
 │   │   │       │   │   │   ├── README.md  案例索引
 │   │   │       │   │   │   └── yungouos-jsapi.md  云购 OS JSAPI 案例
 │   │   │       │   │   ├── patterns/  可复用工作模式

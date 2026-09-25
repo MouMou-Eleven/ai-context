@@ -37,11 +37,11 @@
 - **发布上线**：从 Agent 侧触发已开发应用的发布动作
 - **批量化自动开发**：让外部 Agent 串起多个应用的开发流（这是 V2.5 强调的核心场景——批量、自动化）
 
-> ⚠️ **本文件目前不写「具体怎么调用」**：调用方式、鉴权、Skill 注册、入参出参规范等技术细节，必须以官方[使用指南](https://cloud.baidu.com/doc/MIAODA/s/mmmnhtlx9)为准；本档案目前没有验证过的实战记录，不靠猜补充。
+> 2026-09-25新增[Codex源码迁移阶段实录](../experience/cases/codex-skill-source-migration.md)：已实测官方CLI创建/查看/继续会话、源码附件接收与校验，并提交过一次generate-app；平台返回服务暂时不可用，尚未生成发布成功。附件实际通过浏览器上传，不能误写成CLI提供上传参数。接口细节仍以当前Skill与官方[使用指南](https://cloud.baidu.com/doc/MIAODA/s/mmmnhtlx9)核验。
 
 ## 官方披露的调用方
 
-上方V2.5原文点名OpenClaw和Claude Code；百度智能云另有 [OpenClaw部署说明](https://cloud.baidu.com/doc/LS/s/6ml9f3cvl)。这些来源支持“官方披露过对应调用路径”，不能据此判断OpenClaw的项目归属、所有Agent兼容性或当前账号可用性。本仓尚无完成鉴权、注册和真实调用的案例，实际参数与限制仍须读当前官方指南并验证。
+上方V2.5原文点名OpenClaw和Claude Code；百度智能云另有 [OpenClaw部署说明](https://cloud.baidu.com/doc/LS/s/6ml9f3cvl)。这些来源支持“官方披露过对应调用路径”，不能据此判断OpenClaw的项目归属或所有Agent兼容性。2026-09-25本机Codex通过已安装官方CLI完成鉴权后的真实应用调度，详见上述阶段实录；这不是官方对所有Codex环境的兼容承诺，也不是生成发布已成功。
 
 ## 协议与兼容性：待验证
 
