@@ -1,6 +1,6 @@
 # 言剪 AI（YanCut）
 
-> 状态：账号制在线测试版；秒哒R3候选已上传，单次generate-app事件825失败，随后同应用chat恢复也在事件835平台错误终止，未发布、未完成业务迁移。最新认证方向为平台原生手机号Auth，尚未实测；声音未完成付费联调。
+> 状态：秒哒已能外部访问原首页与登录页静态预览；后端明确未接入、登录禁用，未正式发布或完成业务迁移。原生手机号Auth尚未实施。R4包已验证但上传遭浏览器自动安全审查阻止，仍未上传；声音未付费联调。
 > 当前口径确认：2026-09-25；历史通过记录不等同于现行线上验收
 
 个人在线入口：[言剪 AI](https://yancut-ai-personal.vercel.app) · [登录/注册](https://yancut-ai-personal.vercel.app/login) · [在线帮助](https://yancut-ai-personal.vercel.app/studio/help)。真实账号、Neon 数据库、管理员和积分继续使用；原片保留本机，云端保存轻量工程与素材描述，旧云素材和明确上传的识别音频/作品仍使用私有 Blob。最新见[工作台更新](./revisions/2026-09-25-editor-voice-integration.md)及[声音定价更正](./revisions/2026-09-25-voice-pricing-v11.md)，存储方向见[统一入口与本机原片](./revisions/2026-09-25-unified-local-media-workspace.md)。[早先云端上线记录](./revisions/2026-09-25-online-cloud-launch.md) 保留历史，但“所有原片上传云端”不再作为当前口径。旧的免登录/个人 Key 模式也未恢复。
@@ -26,9 +26,11 @@
 - 源码仓库为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`，`upstream` 跟踪 `https://github.com/OpenCut-app/OpenCut.git`。09-16 已将多轮实现提交，合并历史至 `b0b24335`，后续测试发现范围修正为 `22023132`；核对和修复了本地/远端历史分离及字体预览损坏。后续任务仍需实际查询最新 HEAD。`ai-context` 保存项目上下文，不保存完整源码。
 - 持续同步约定（本轮更新）：后续以百度秒哒承载和迭代为目标，维护本地权威源码、GitHub及本项目README/修订记录；不再自动继续Vercel发布。旧Vercel作为历史测试／回退入口，秒哒云端适配改动也须同步回源码，避免分叉。
 - 开发与部署分工：采用“本地权威源码 + 百度秒哒云端接管”。前端、业务逻辑、价格权益、数据库 Schema、接口合同、Mock 和自动化测试先在本地完成；验证通过后按编号压缩包交付百度秒哒，由秒哒接入 Auth、Postgres、对象存储、Edge Function、短信能力和部署。
-- 秒哒兼容边界：应用`app-enipq7iozwn5`核验为Vite SPA + Supabase Deno Edge，与当前Next16.1.3／47API／25表不能原样兼容。R1/R2已核验，R3候选已上传；generate-app仅调用一次，事件825失败，随后chat恢复在835同样错误终止，未publish。旧DB、Blob和用户未迁，数据库ACTIVE_HEALTHY不证明业务可用，见[迁移修订](./revisions/2026-09-25-miaoda-source-migration.md)。
+- 秒哒兼容边界：应用`app-enipq7iozwn5`为Vite SPA + Supabase Deno Edge，与原Next16.1.3／47API／25表不能原样兼容。825/835失败后按用户要求串行chat，最终1016完成静态预览；外部浏览器确认原首页和邮箱密码登录页可见，但后端未接、登录禁用、未publish。旧DB/Blob/用户未迁，云端pnpm冒烟不是原锁构建，见[迁移修订](./revisions/2026-09-25-miaoda-source-migration.md)。
 
 ## 当前进度
+
+最新串行推进在19:00:55事件1016完成，外部真实浏览器验证静态首页「想怎么剪，直接说。」及附件／技能／比例／时长／导航和登录页。尚非可登录剪辑成品；R4上传前点击提示被自动安全审查以`Browser Use is not permitted on this page`拒绝，禁止绕过，需用户手动上传已有ZIP和INSTALL。所有本轮平台任务已结束，不再追加平台指令。
 
 平台生成故障后仍完成R4本地候选`fa3e8625`并推送迁移分支：后台设置、AES兼容和事务权限门控通过Deno19测试及隔离SQL27断言；尚未上传R4，未云端／付费／真实并发验收，详见[迁移回执](./revisions/2026-09-25-miaoda-source-migration.md)。
 

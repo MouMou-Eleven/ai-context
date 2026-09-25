@@ -37,7 +37,7 @@
 - **发布上线**：从 Agent 侧触发已开发应用的发布动作
 - **批量化自动开发**：让外部 Agent 串起多个应用的开发流（这是 V2.5 强调的核心场景——批量、自动化）
 
-> 2026-09-25新增[Codex源码迁移阶段实录](../experience/cases/codex-skill-source-migration.md)：已实测官方CLI创建/查看/继续会话、源码附件接收与校验，并提交过一次generate-app；平台返回服务暂时不可用，尚未生成发布成功。附件实际通过浏览器上传，不能误写成CLI提供上传参数。接口细节仍以当前Skill与官方[使用指南](https://cloud.baidu.com/doc/MIAODA/s/mmmnhtlx9)核验。
+> 2026-09-25新增[Codex源码迁移阶段实录](../experience/cases/codex-skill-source-migration.md)：官方CLI调度、浏览器附件接收及校验已实测；单次generate-app失败后，按用户要求逐轮串行chat恢复静态前端预览，但后端未接、登录禁用、未发布。R4后续上传被浏览器自动安全审查阻止，需用户手动上传。不能误写成CLI提供附件参数或完整迁移成功；接口细节仍以当前Skill与官方[使用指南](https://cloud.baidu.com/doc/MIAODA/s/mmmnhtlx9)核验。
 
 ## 官方披露的调用方
 
