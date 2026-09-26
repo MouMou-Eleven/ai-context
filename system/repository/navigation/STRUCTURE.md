@@ -34,6 +34,11 @@ ai-context/
 │   │   │   │   ├── poster-fold/  制作海报、折页等平面宣传物料的经验入口
 │   │   │   │   │   └── README.md  海报、折页及平面物料设计入口
 │   │   │   │   ├── ppt/  制作演示文稿时查内容组织与视觉设计要求
+│   │   │   │   │   ├── premium-course/  教师委托精品课的模板课件、素材、交互及验收经验
+│   │   │   │   │   │   ├── README.md  按制作任务进入精品课方法与真实案例
+│   │   │   │   │   │   ├── revisions/  对照客户修改前后画面，记录布局判断及可观察的检查标准
+│   │   │   │   │   │   │   └── 2026-09-26-layout-and-arrow-review.md  用户前后对照推动的留白对齐、保护页与箭头接缝修订
+│   │   │   │   │   │   └── workflow.md  文稿比对、拆页、排版、AI素材、箭头动画和交付检查
 │   │   │   │   │   └── README.md  PPT 设计经验与项目入口
 │   │   │   │   └── README.md  平面与演示
 │   │   │   ├── README.md  设计制作入口，项目与案例来自统一登记
@@ -1282,6 +1287,7 @@ ai-context/
 │   │   │       └── README.md  VideoAI 历史项目入口
 │   │   ├── cases/  按真实商单或实践记录查过程、结果和可复用方法
 │   │   │   ├── 2026-05-enterprise-prompt-record.md  查看企业片提示词的真实调整过程与适用限制
+│   │   │   ├── angle-revisited-premium-course.md  角的再认识从文稿拆分到AI配图、交互与排版返修的真实记录
 │   │   │   ├── little-leaf-ai-microcourse-mv.md  《小树叶》AI教师音乐微课画面制作与修订复盘
 │   │   │   └── README.md  商单与实践案例
 │   │   ├── external-training/  按机构与场次管理外出授课，和会员社群分开
@@ -1537,4 +1543,4 @@ ai-context/
 
 完整设计理由与后续扩展见[信息架构](../information-architecture.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-09-25*
+*结构最后确认：2026-09-26*

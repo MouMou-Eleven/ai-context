@@ -24,4 +24,5 @@
 |---|---|---|
 | 提示词案例 | [企业片提示词实战记录](2026-05-enterprise-prompt-record.md) | 企业宣传片与信息包装 |
 | 案例复盘 | [《小树叶》AI教师音乐微课](little-leaf-ai-microcourse-mv.md) | 教师音乐微课、AI画面与Seedance多镜头 |
+| 案例复盘 | [《角的再认识》精品课](angle-revisited-premium-course.md) | 教师精品课PPT、AI素材与教育交互 |
 <!-- generated-cases:end -->

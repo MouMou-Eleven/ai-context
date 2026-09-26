@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "confirmedDate": "2026-09-25",
+  "confirmedDate": "2026-09-26",
   "descriptions": {
     "work/domains/development/tools/miaoda/experience/cases/codex-skill-source-migration.md": "官方Skill调度与源码增量实录：附件上传、锁校验及生成平台错误边界",
     "work/projects/yancut-ai/revisions/2026-09-25-online-cloud-launch.md": "账号制上线、数据库与对象存储、管理员、积分兑换和权限隔离验收",
@@ -436,7 +436,13 @@
     "system/repository/revisions/2026-09-12-hierarchical-navigation-and-expression.md": "追溯“分级导航、项目集中与表达标准调整”的调整原因与适用范围",
     "system/repository/revisions/2026-09-12-personal-expression-and-skill-refinement.md": "追溯“个人信息、表达与Skill归属调整”的调整原因与适用范围",
     "system/repository/revisions/2026-09-24-title-matrix-integration.md": "追溯“Title Matrix收录与自媒体标题调用”的调整原因与适用范围",
-    "system/repository/revisions/2026-09-24-navigation-descriptions.md": "追溯导航中文用途说明补齐、缺项校验和直接发布要求"
+    "system/repository/revisions/2026-09-24-navigation-descriptions.md": "追溯导航中文用途说明补齐、缺项校验和直接发布要求",
+    "work/domains/design/graphic/ppt/premium-course": "教师委托精品课的模板课件、素材、交互及验收经验",
+    "work/domains/design/graphic/ppt/premium-course/README.md": "按制作任务进入精品课方法与真实案例",
+    "work/domains/design/graphic/ppt/premium-course/workflow.md": "文稿比对、拆页、排版、AI素材、箭头动画和交付检查",
+    "work/domains/design/graphic/ppt/premium-course/revisions": "对照客户修改前后画面，记录布局判断及可观察的检查标准",
+    "work/domains/design/graphic/ppt/premium-course/revisions/2026-09-26-layout-and-arrow-review.md": "用户前后对照推动的留白对齐、保护页与箭头接缝修订",
+    "work/projects/cases/angle-revisited-premium-course.md": "角的再认识从文稿拆分到AI配图、交互与排版返修的真实记录"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",
@@ -489,7 +495,8 @@
     "system/expression/corrections.md": "中文纠错与真实反馈提炼",
     "system/expression/sources.md": "来源与适用边界",
     "work/projects/yancut-ai/revisions": "项目关键修订记录",
-    "work/projects/ai-sixty-jiazi-music-ip/revisions": "项目关键方向和实现修订"
+    "work/projects/ai-sixty-jiazi-music-ip/revisions": "项目关键方向和实现修订",
+    "work/domains/design/graphic/ppt/premium-course/revisions": "精品课制作修订记录"
   },
   "knowledgeOrder": {
     "work": [

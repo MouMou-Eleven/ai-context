@@ -91,6 +91,17 @@
         "work/domains/design/video/README.md",
         "work/domains/design/video/education/README.md"
       ]
+    },
+    {
+      "id": "angle-revisited-premium-course",
+      "name": "《角的再认识》精品课",
+      "kind": "案例复盘",
+      "domain": "教师精品课PPT、AI素材与教育交互",
+      "entry": "work/projects/cases/angle-revisited-premium-course.md",
+      "domainEntries": [
+        "work/domains/design/graphic/ppt/README.md",
+        "work/domains/design/video/education/README.md"
+      ]
     }
   ],
   "archivedProjects": [

@@ -2475,6 +2475,39 @@
           "用awesome-seedance"
         ]
       ]
+    },
+    {
+      "id": "premium-course-production",
+      "label": "精品课制作与验收",
+      "status": "active",
+      "path": "work/domains/design/graphic/ppt/premium-course/workflow.md",
+      "whenAny": [
+        "精品课",
+        "参赛课",
+        "教师委托课件"
+      ],
+      "excludeAny": [
+        "商务路演",
+        "只查报价"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "教师委托精品课需要比对文稿、按模板制作PPT、配合真人与网页交互或返修排版时",
+      "notFor": "普通商务汇报与自由风格路演；不套用个案费用、字号和人物区域",
+      "acceptance": "保护用户改页，核对稿件、模板边界、对齐留白、箭头接缝、动画媒体与网页返回；静态检查不替代成片验收",
+      "evidence": "work/projects/cases/angle-revisited-premium-course.md",
+      "confirmedAt": "2026-09-26",
+      "source": "建委在角的再认识商单的多轮明确要求与实际修订，跨项目复用尚未验证",
+      "entryPoints": [
+        "work/domains/design/graphic/ppt/README.md",
+        "work/domains/design/video/education/README.md"
+      ],
+      "selectedAny": [
+        "microcourse",
+        "ppt"
+      ]
     }
   ]
 }
