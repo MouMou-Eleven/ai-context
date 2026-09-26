@@ -1,7 +1,7 @@
 # 言剪 AI（YanCut）
 
-> 状态：用户已回传B1 v29安装报告及实际问题截图；B2修复增量已本地交付，待秒哒合并部署与逐项验收。不能认定最终Vercel已完美还原。
-> 当前口径确认：2026-09-26；历史通过记录不等同于现行线上验收
+> 状态：用户确认B2已上传并执行完成；B3编辑器运行时/页面体验/真实动画任务增量已本地交付，待秒哒应用与真实服务验收。未宣布正式发布或完整商业化验收通过。
+> 当前口径确认：2026-09-27；历史通过记录不等同于现行线上验收
 
 原 Vercel 测试／回退入口（非秒哒）：[言剪 AI](https://yancut-ai-personal.vercel.app) · [登录/注册](https://yancut-ai-personal.vercel.app/login) · [在线帮助](https://yancut-ai-personal.vercel.app/studio/help)。真实账号、Neon 数据库、管理员和积分继续使用；原片保留本机，云端保存轻量工程与素材描述，旧云素材和明确上传的识别音频/作品仍使用私有 Blob。最新见[工作台更新](./revisions/2026-09-25-editor-voice-integration.md)及[声音定价更正](./revisions/2026-09-25-voice-pricing-v11.md)，存储方向见[统一入口与本机原片](./revisions/2026-09-25-unified-local-media-workspace.md)。[早先云端上线记录](./revisions/2026-09-25-online-cloud-launch.md) 保留历史，但“所有原片上传云端”不再作为当前口径。旧的免登录/个人 Key 模式也未恢复。
 
@@ -19,7 +19,7 @@
 - 当前界面：首页为统一新建入口，导航以首页、工具箱、作品广场、我的为主；项目、素材、声音、任务、账户与积分集中在我的空间。旧创建页重定向并保留需求；时间线剪辑工作台、帮助和管理后台保留。页面存在不表示相应云服务已配置。
 - AI 工作流：用户输入自然语言 → 生成结构化操作计划 → 缺少必要信息时请求补充 → 用户确认 → 映射到真实剪辑命令。
 - 个人声音库：已建立声音登记、选择、克隆与合成的接口边界；用户必须拥有声音授权，不能克隆未获许可的声音。
-- 视频包装：用户只需导入、对话、确认、导出同一条完整 MP4，不另设 Remotion 工作台。AI 将部分预设转成原生文字、标签和关键帧，已验证随原片导出；这不是任意 Remotion/HTML/GSAP 代码渲染。新增 Remotion HTTP Worker 已本机出片，公网服务、AI 自动调用和回填时间线仍待接线与整链验收。
+- 视频包装：原生可编辑预设与真实框架渲染分开。B3新增render_motion源码任务、Remotion/HyperFrames独立Worker及可撤销回填同一时间线；两框架可信fixture本机实际出片、HTTP模拟回填通过。Docker生产隔离、公网服务与真实模型整链尚未验收，不能认定上传ZIP即已接通。
 - 默认规划模型配置为智谱 `glm-5.3-flash`，使用 `https://open.bigmodel.cn/api/paas/v4`；统一规划器现支持 Chat Completions、Responses、Anthropic Messages、Gemini generateContent。自动按端点及域名识别，未知中转默认 Chat，特殊中转需手选；新增协议经契约测试，不代表所有厂商已联网实测。独立能力适配器控制图片/视频/JSON/推理参数，协议兼容不保证模型质量一致。素材观察仍为经授权的有限静帧抽样，不等于完整视频或音频理解。
 - 原 Vercel 最后记录版本（非秒哒）：2026-09-25 固定域名指向 READY 生产 `dpl_Gbuh1NLbpg7t3zkcDmS3Ks37txoF`；验收 Preview 为 `dpl_FmjyMVSLiHE4yK8YxtBm12LW9E18`，运行代码 `bdd71f13`。前版 `dpl_H4pCaqFCNEuh9RsLtLM8a1ivRBCK` 保留回退，但其旧声音价格预估前提已作废。真实账号、Neon、管理员、积分继续使用；兼容迁移 0009 已执行，回退不删除任务表或账本。国内直连此前失败，本轮使用代理验收，不能保证裸连可用。最终承载平台仍为百度秒哒。
 - 本地开发目录：`F:\桌面文件\言剪AI`（2026-08-13 迁移并完成构建、启动验证）。
@@ -30,7 +30,7 @@
 
 ## 当前进度
 
-当前执行入口：[B2实际修复与同码多人兑换](./revisions/2026-09-26-b2-quality-and-redemption.md)。批次方法见[完整迁移批次与有效沉淀](./revisions/2026-09-26-batch-delivery-and-effective-context.md)。
+当前执行入口：[B3编辑器运行时与真实动画任务](./revisions/2026-09-27-b3-editor-runtime-and-rendering.md)。B2已由用户确认应用；B3本地交付待秒哒验收。以下B1/B2表格保留当时证据，不覆盖当前状态。批次方法见[完整迁移批次与有效沉淀](./revisions/2026-09-26-batch-delivery-and-effective-context.md)。
 
 | 项目 | 已确认事实与验证边界 |
 |---|---|
@@ -123,6 +123,7 @@ R4 源码 `fa3e8625` 已推送迁移分支并应用到秒哒源码树：后台�
 
 | 文件 | 作用 |
 |---|---|
+| [revisions/2026-09-27-b3-editor-runtime-and-rendering.md](./revisions/2026-09-27-b3-editor-runtime-and-rendering.md) | B2已应用更正、B3包hash、64目标/314补丁、实际测试、Worker部署及完整未测边界 |
 | [revisions/2026-09-26-b2-quality-and-redemption.md](./revisions/2026-09-26-b2-quality-and-redemption.md) | B1 v29回执、B2实物交付、渲染根因、同码多人兑换、安全及接口验收边界 |
 | [`revisions/2026-09-26-r7-profile-feedback.md`](./revisions/2026-09-26-r7-profile-feedback.md) | 账户确认态补充、实物ZIP重建与用户回执边界 |
 | [`revisions/2026-09-26-r7-source-audit.md`](./revisions/2026-09-26-r7-source-audit.md) | 完整导出与R7实际代码包对照、遗漏修复及源码审计 |
