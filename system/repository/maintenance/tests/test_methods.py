@@ -25,6 +25,20 @@ def method_ids(result):
 
 
 class MethodRouting(unittest.TestCase):
+    def test_premium_course_topics_and_recording_do_not_inherit_training(self):
+        base = 'work/domains/design/graphic/ppt/premium-course/'
+        for task, topic in [
+            ('精品课最后一页重新设计，配图比例和间距不协调', 'visual-design.md'),
+            ('修复精品课动画绕错圆心，箭头接合不正常', 'animation-and-geometry.md'),
+            ('给录课课件做逐页录制操作稿，注明哪句话点击', 'recording-guide.md'),
+            ('精品课PPT根据新版逐字稿标注翻页和动画', 'recording-guide.md'),
+        ]:
+            result = router.resolve(task, 'create')
+            self.assertIn(base + topic, result['read'])
+            self.assertNotIn(TRAINING_STYLE, result['read'])
+        for task in ['制作商务路演PPT', '剪辑直播录像，生成逐字稿', '生成产品配图']:
+            self.assertNotIn('premium-course-production', method_ids(router.resolve(task, 'create')))
+
     def test_frontend_feedback_routes_for_web_and_miaoda(self):
         for task in ['修改网站移动端UI，导航与分享需要重新排版','秒哒网站改版，修复响应式界面','前端UI设计与手机适配']:
             self.assertIn('frontend-ui-quality', method_ids(router.resolve(task, 'create')))

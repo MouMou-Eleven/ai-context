@@ -7,7 +7,7 @@
 | 入口 | 内容 | 激活条件 |
 |---|---|---|
 | [`computers/README.md`](./computers/README.md) | 按设备划分的电脑环境档案 | 明确涉及电脑、网络、VPN、Codex 或本地工具故障时 |
-| [`image-generation.md`](./image-generation.md) | 本轮用户提供的本机imagegen启动器、模型、通道与凭据排查边界；设备映射及运行验证待确认 | 本机生图、视觉概念或生图鉴权/模型错误时 |
+| [`image-generation.md`](./image-generation.md) | 内置ImageGen优先、条件回退启动器；已有回退生成验证，设备映射及内置通道运行待确认 | 本机生图、视觉概念或生图鉴权/模型错误时 |
 
 ## 写入规则
 

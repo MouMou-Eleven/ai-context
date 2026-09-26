@@ -447,7 +447,11 @@
     "work/projects/yancut-ai/revisions/2026-09-26-r7-profile-feedback.md": "账户确认态补充、实物ZIP重建与用户回执边界",
     "work/projects/yancut-ai/revisions/2026-09-26-r7-source-audit.md": "完整导出与R7实际代码包对照、遗漏修复及源码审计",
     "work/projects/yancut-ai/revisions/2026-09-26-r8-ai-implementation.md": "R8规划器实现、事务迁移、定点安装和本地测试证据",
-    "work/projects/yancut-ai/revisions/2026-09-26-r8-cloud-adaptation.md": "v24平台适配、保护文件、R8执行前故障定位与边界"
+    "work/projects/yancut-ai/revisions/2026-09-26-r8-cloud-adaptation.md": "v24平台适配、保护文件、R8执行前故障定位与边界",
+    "work/domains/design/graphic/ppt/premium-course/visual-design.md": "按内容匹配图框与留白，检查透明素材并组织收尾页层级",
+    "work/domains/design/graphic/ppt/premium-course/animation-and-geometry.md": "按问答安排揭示，联合检查旋转中心、路径尺寸和箭头接合",
+    "work/domains/design/graphic/ppt/premium-course/recording-guide.md": "把最终稿段映射为准确点击口令、翻页和网页媒体操作",
+    "work/domains/design/graphic/ppt/premium-course/revisions/2026-09-26-animation-recording-and-arrow-axis.md": "记录动画录制补全与箭头轴线返修，明确历史阶段和冻结范围"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

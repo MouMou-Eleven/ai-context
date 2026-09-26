@@ -14,6 +14,8 @@
       "备课"
     ],
     "trainingTaskExcludeAny": [
+      "录课课件",
+      "逐页录制操作稿",
       "微课",
       "MG动画",
       "MG 动画",
@@ -335,7 +337,10 @@
         "教育交互",
         "教学动画",
         "参赛课",
-        "精品课"
+        "精品课",
+        "录课课件",
+        "逐页录制操作稿",
+        "教师委托课件"
       ],
       "excludeAny": [],
       "entry": "work/domains/design/video/education/README.md",
@@ -2517,7 +2522,9 @@
       "whenAny": [
         "精品课",
         "参赛课",
-        "教师委托课件"
+        "教师委托课件",
+        "录课课件",
+        "逐页录制操作稿"
       ],
       "excludeAny": [
         "商务路演",
@@ -2527,9 +2534,9 @@
         "create",
         "write"
       ],
-      "useWhen": "教师委托精品课需要比对文稿、按模板制作PPT、配合真人与网页交互或返修排版时",
+      "useWhen": "精品课或录课课件的文稿、模板、配图排版、动画返修及逐页录制操作稿制作",
       "notFor": "普通商务汇报与自由风格路演；不套用个案费用、字号和人物区域",
-      "acceptance": "保护用户改页，核对稿件、模板边界、对齐留白、箭头接缝、动画媒体与网页返回；静态检查不替代成片验收",
+      "acceptance": "保护最新用户改稿，按任务检查图文适配、箭头轴线与旋转、准确点击句及媒体返回；冻结HTML时不自动同步",
       "evidence": "work/projects/cases/angle-revisited-premium-course.md",
       "confirmedAt": "2026-09-26",
       "source": "建委在角的再认识商单的多轮明确要求与实际修订，跨项目复用尚未验证",
@@ -2540,6 +2547,49 @@
       "selectedAny": [
         "microcourse",
         "ppt"
+      ],
+      "readWhen": [
+        {
+          "whenAny": [
+            "配图",
+            "文本框",
+            "排版",
+            "设计",
+            "最后一页",
+            "收尾",
+            "比例",
+            "间距",
+            "装饰"
+          ],
+          "paths": [
+            "work/domains/design/graphic/ppt/premium-course/visual-design.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "动画",
+            "箭头",
+            "圆心",
+            "旋转",
+            "出示"
+          ],
+          "paths": [
+            "work/domains/design/graphic/ppt/premium-course/animation-and-geometry.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "录制",
+            "录课",
+            "备注",
+            "翻页",
+            "点击",
+            "逐字稿"
+          ],
+          "paths": [
+            "work/domains/design/graphic/ppt/premium-course/recording-guide.md"
+          ]
+        }
       ]
     }
   ]
