@@ -38,6 +38,8 @@ miaoda/
 | 制作增量包及问题验收清单 | [`版本化增量迭代闭环`](./experience/patterns/codex-miaoda-iterative-increment-workflow.md)；每包单独交付问题对照与手动验收清单 |
 | 追溯功能变化和旧环境方案 | [`updates/README.md`](./updates/README.md) |
 
+已有源码要尽快还原原站、一次给齐或减少上传轮次时，读[一次交付批次](./experience/patterns/codex-miaoda-iterative-increment-workflow.md#一次交付批次与有效完成)。阶段号不等于用户上传次数，基线与测试由Codex负责。
+
 ## 当前原则
 
 ### 先决定本次走哪条流程
@@ -56,7 +58,7 @@ miaoda/
 - 当前已核验口径先读 `basics/current-capabilities.md`；历史版本变化只从 `updates/` 追溯，不能反向覆盖当前口径。
 - 秒哒技能运行时与应用运行时是两个环境，密钥和变量不能默认互通。
 - 秒哒收到指令后会直接修改，提示词必须写清红线、顺序和验收。
-- 已有本地项目采用本地修改测试后交付编号 ZIP、用户上传、秒哒应用、回收差异验收的闭环；文本调度不等于附件上传。当前轮未结束不发下一轮；后续增量无需例行重写需求文档或生成无用途 ZIP，见[增量流程](./experience/patterns/codex-miaoda-iterative-increment-workflow.md)。
+- 已有本地项目采用本地修改测试后交付编号 ZIP、用户上传、秒哒应用、回收差异验收的闭环；文本调度不等于附件上传。云端冲突写入不并行，同批多包一次接收后顺序应用；后续增量无需例行重写需求文档或生成无用途 ZIP，见[增量流程](./experience/patterns/codex-miaoda-iterative-increment-workflow.md)。
 - 秒哒云端构建不等于真实浏览器或手机验收；运行时问题应由用户复现并提供日志。
 - `updates/version-features.md` 只用于历史追溯，不能作为当前能力清单。
 

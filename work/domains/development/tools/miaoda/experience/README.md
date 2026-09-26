@@ -16,3 +16,5 @@
 版本化的“Codex审查 → 秒哒执行 → 正式域名验收 → 用户反馈”闭环见 [`patterns/codex-miaoda-iterative-increment-workflow.md`](./patterns/codex-miaoda-iterative-increment-workflow.md)。
 
 新增经验先确定当前问题、平台/版本、执行结果和适用边界；模板只写入一个主题，再从相关处方引用。主题拆分或路径变化同时维护本索引、prompts/README和旧引用，不把历史平台限制重新提升为默认规则。
+
+尽快还原或一次给齐，读[一次交付批次](./patterns/codex-miaoda-iterative-increment-workflow.md#一次交付批次与有效完成)。只查套餐、状态不触发开发。

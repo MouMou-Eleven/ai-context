@@ -442,7 +442,12 @@
     "work/domains/design/graphic/ppt/premium-course/workflow.md": "文稿比对、拆页、排版、AI素材、箭头动画和交付检查",
     "work/domains/design/graphic/ppt/premium-course/revisions": "对照客户修改前后画面，记录布局判断及可观察的检查标准",
     "work/domains/design/graphic/ppt/premium-course/revisions/2026-09-26-layout-and-arrow-review.md": "用户前后对照推动的留白对齐、保护页与箭头接缝修订",
-    "work/projects/cases/angle-revisited-premium-course.md": "角的再认识从文稿拆分到AI配图、交互与排版返修的真实记录"
+    "work/projects/cases/angle-revisited-premium-course.md": "角的再认识从文稿拆分到AI配图、交互与排版返修的真实记录",
+    "work/projects/yancut-ai/revisions/2026-09-26-batch-delivery-and-effective-context.md": "批次交付纠偏、云端回执核对与自然语言触发回归",
+    "work/projects/yancut-ai/revisions/2026-09-26-r7-profile-feedback.md": "账户确认态补充、实物ZIP重建与用户回执边界",
+    "work/projects/yancut-ai/revisions/2026-09-26-r7-source-audit.md": "完整导出与R7实际代码包对照、遗漏修复及源码审计",
+    "work/projects/yancut-ai/revisions/2026-09-26-r8-ai-implementation.md": "R8规划器实现、事务迁移、定点安装和本地测试证据",
+    "work/projects/yancut-ai/revisions/2026-09-26-r8-cloud-adaptation.md": "v24平台适配、保护文件、R8执行前故障定位与边界"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

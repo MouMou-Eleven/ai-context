@@ -84,7 +84,7 @@
 | 百度秒嗒平台 | 登录、认证、验证码、鉴权 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/authentication.md) |
 | 百度秒嗒平台 | 支付、收款、退款 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/payment-integration.md) |
 | 百度秒嗒平台 | 报错、故障、排错、无法运行、白屏 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/runtime-diagnostics.md) |
-| 百度秒嗒平台 | 增量、迭代、回传、回执、验收、审查包 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md) |
+| 百度秒嗒平台 | 增量、迭代、回传、回执、验收、审查包、还原、恢复原站、一次给齐、一次性、批量交付、减少上传、上传轮次、迁移、打包、分包 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md) |
 | 百度秒嗒平台 | Skill、CLI、外部调用、附件、回传、回执、代码仓库、直接查看、直接读取 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/development/skill-as-callable.md) |
 | 百度秒嗒平台 | 全量、分包、迁移、本地源码 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/codex-source-package-deployment.md) |
 | 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/README.md) |

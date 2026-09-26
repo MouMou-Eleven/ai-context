@@ -603,7 +603,8 @@
         "秒嗒",
         "秒哒",
         "miaoda.cn",
-        "appmiaoda.com"
+        "appmiaoda.com",
+        "miaoda.online"
       ],
       "excludeAny": [],
       "entry": "work/domains/development/tools/miaoda/llms.txt",
@@ -640,7 +641,14 @@
         },
         {
           "path": "work/domains/development/tools/miaoda/experience/pitfalls.md",
-          "whenAny": ["报错", "故障", "排错", "失败", "白屏", "踩坑"],
+          "whenAny": [
+            "报错",
+            "故障",
+            "排错",
+            "失败",
+            "白屏",
+            "踩坑"
+          ],
           "excludeAny": [],
           "intents": [
             "create",
@@ -751,20 +759,45 @@
             "回传",
             "回执",
             "验收",
-            "审查包"
+            "审查包",
+            "还原",
+            "恢复原站",
+            "一次给齐",
+            "一次性",
+            "批量交付",
+            "减少上传",
+            "上传轮次",
+            "迁移",
+            "打包",
+            "分包"
           ],
           "excludeAny": [],
           "intents": []
         },
         {
           "path": "work/domains/development/tools/miaoda/development/skill-as-callable.md",
-          "whenAny": ["Skill", "CLI", "外部调用", "附件", "回传", "回执", "代码仓库", "直接查看", "直接读取"],
+          "whenAny": [
+            "Skill",
+            "CLI",
+            "外部调用",
+            "附件",
+            "回传",
+            "回执",
+            "代码仓库",
+            "直接查看",
+            "直接读取"
+          ],
           "excludeAny": [],
           "intents": []
         },
         {
           "path": "work/domains/development/tools/miaoda/experience/patterns/codex-source-package-deployment.md",
-          "whenAny": ["全量", "分包", "迁移", "本地源码"],
+          "whenAny": [
+            "全量",
+            "分包",
+            "迁移",
+            "本地源码"
+          ],
           "excludeAny": [],
           "intents": []
         }

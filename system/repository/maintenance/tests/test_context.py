@@ -20,11 +20,24 @@ navigation = load_module('sync-navigation')
 
 
 class Routes(unittest.TestCase):
+    def test_miaoda_batch_delivery_natural_tasks(self):
+        target = 'work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md'
+        for task in ['用秒哒尽快还原原站，不要删功能', '秒嗒后面的包一次给齐', '秒哒批量交付减少上传轮次', '把Vercel迁移到miaoda.online']:
+            with self.subTest(task=task):
+                self.assertIn(target, router.resolve(task, 'create')['read'])
+        for task in ['飞书妙搭一次给齐应用素材', '查秒哒会员容量', '查看秒哒当前状态']:
+            with self.subTest(task=task):
+                self.assertNotIn(target, router.resolve(task, 'read')['read'])
+
     def test_yancut_current_state_separates_cloud_and_history(self):
         page = (ROOT / 'work/projects/yancut-ai/README.md').read_text(encoding='utf-8')
         current = page.split('## 当前进度', 1)[1].split('## 阶段历史', 1)[0]
-        self.assertIn('R6.1/v15', current)
-        self.assertIn('is_admin:false', current)
+        self.assertIn('v28 R8', current)
+        self.assertIn('请求来源不允许', current)
+        self.assertIn('后续代码包尚未生成', current)
+        self.assertNotIn('R6.1/v15', current)
+        history = page.split('## 阶段历史', 1)[1]
+        self.assertIn('R6.1/v15', history)
         self.assertNotIn('等待上传', current)
         self.assertNotIn('默认更新本地源码、Vercel 测试版本', page)
         self.assertIn('原 Vercel／本地能力基线（秒哒迁移对照）', page)

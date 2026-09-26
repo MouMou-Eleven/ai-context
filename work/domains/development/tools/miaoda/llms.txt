@@ -17,6 +17,7 @@
 - Skill 能否看代码、查数据库、读附件：development/skill-as-callable.md；先分清直接能力与秒哒代查回执
 - 本地源码初次迁入、全量分包：experience/patterns/codex-source-package-deployment.md
 - 后续增量、索取回传资料、审查回执：experience/patterns/codex-miaoda-iterative-increment-workflow.md（包含取证合同和断点恢复）
+- 尽快还原、一次给齐、减少上传轮次：experience/patterns/codex-miaoda-iterative-increment-workflow.md 的一次交付批次规则
 - 写执行提示词：experience/prompt-patterns.md → experience/prompts/README.md所列的当前主题
 - 避坑排错：experience/pitfalls.md
 - 完整支付案例：experience/cases/yungouos-jsapi.md

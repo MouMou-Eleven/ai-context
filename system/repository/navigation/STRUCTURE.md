@@ -1389,7 +1389,12 @@ ai-context/
 │   │       │   ├── 2026-09-25-miaoda-source-migration.md  工作台修复与源码分包复建，记录秒哒实际接收和运行时适配缺口
 │   │       │   ├── 2026-09-25-online-cloud-launch.md  账号制上线、数据库与对象存储、管理员、积分兑换和权限隔离验收
 │   │       │   ├── 2026-09-25-unified-local-media-workspace.md  统一首页入口、本机原片与云端工程、模型适配和白板导出验证
-│   │       │   └── 2026-09-25-voice-pricing-v11.md  声音定价更正：撤销不存在的预估接口，改用真实校准和实扣超额告警
+│   │       │   ├── 2026-09-25-voice-pricing-v11.md  声音定价更正：撤销不存在的预估接口，改用真实校准和实扣超额告警
+│   │       │   ├── 2026-09-26-batch-delivery-and-effective-context.md  批次交付纠偏、云端回执核对与自然语言触发回归
+│   │       │   ├── 2026-09-26-r7-profile-feedback.md  账户确认态补充、实物ZIP重建与用户回执边界
+│   │       │   ├── 2026-09-26-r7-source-audit.md  完整导出与R7实际代码包对照、遗漏修复及源码审计
+│   │       │   ├── 2026-09-26-r8-ai-implementation.md  R8规划器实现、事务迁移、定点安装和本地测试证据
+│   │       │   └── 2026-09-26-r8-cloud-adaptation.md  v24平台适配、保护文件、R8执行前故障定位与边界
 │   │       └── roadmap.md  开发路线与上线条件
 │   └── README.md  领域知识与项目案例的分级入口
 ├── system/  查AI表达标准、仓库运行规则与本机执行环境
