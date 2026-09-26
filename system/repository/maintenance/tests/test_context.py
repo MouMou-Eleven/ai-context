@@ -34,7 +34,8 @@ class Routes(unittest.TestCase):
         current = page.split('## 当前进度', 1)[1].split('## 阶段历史', 1)[0]
         self.assertIn('v28 R8', current)
         self.assertIn('请求来源不允许', current)
-        self.assertIn('后续代码包尚未生成', current)
+        self.assertIn('本地', current)
+        self.assertIn('验收', current)
         self.assertNotIn('R6.1/v15', current)
         history = page.split('## 阶段历史', 1)[1]
         self.assertIn('R6.1/v15', history)
