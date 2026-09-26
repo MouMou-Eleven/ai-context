@@ -32,8 +32,9 @@ class Routes(unittest.TestCase):
     def test_yancut_current_state_separates_cloud_and_history(self):
         page = (ROOT / 'work/projects/yancut-ai/README.md').read_text(encoding='utf-8')
         current = page.split('## 当前进度', 1)[1].split('## 阶段历史', 1)[0]
-        self.assertIn('v28 R8', current)
-        self.assertIn('请求来源不允许', current)
+        self.assertIn('B1 v29', current)
+        self.assertIn('B2', current)
+        self.assertIn('未验收', current)
         self.assertIn('本地', current)
         self.assertIn('验收', current)
         self.assertNotIn('R6.1/v15', current)

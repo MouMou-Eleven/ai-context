@@ -1394,6 +1394,7 @@ ai-context/
 │   │       │   ├── 2026-09-25-online-cloud-launch.md  账号制上线、数据库与对象存储、管理员、积分兑换和权限隔离验收
 │   │       │   ├── 2026-09-25-unified-local-media-workspace.md  统一首页入口、本机原片与云端工程、模型适配和白板导出验证
 │   │       │   ├── 2026-09-25-voice-pricing-v11.md  声音定价更正：撤销不存在的预估接口，改用真实校准和实扣超额告警
+│   │       │   ├── 2026-09-26-b2-quality-and-redemption.md  B1回执与B2实物修复、渲染根因、同码多人兑换和验收边界
 │   │       │   ├── 2026-09-26-batch-delivery-and-effective-context.md  批次交付纠偏、云端回执核对与自然语言触发回归
 │   │       │   ├── 2026-09-26-r7-profile-feedback.md  账户确认态补充、实物ZIP重建与用户回执边界
 │   │       │   ├── 2026-09-26-r7-source-audit.md  完整导出与R7实际代码包对照、遗漏修复及源码审计
