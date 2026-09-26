@@ -1,6 +1,6 @@
 # 言剪 AI（YanCut）
 
-> 状态：R7-PROFILE已上传；用户随后由秒哒对话修复账户确认卡住，v24四文件需保护。用户授权开始R8，现已提供限定范围的云端接线执行说明，尚未实施/验收R8代码。R7未实测项独立保留。秒哒回执仅作参考，不替代真实验证；不要求每轮付费导出源码。
+> 状态：R7-PROFILE已上传，v24账户热修保护。v27仅梳理未写代码；现已交付R8实际AI接线增量包，本地跨层测试通过，等待云端实施和真实短片闭环。完整Edge类型检查仍有原导出缺失项，未称R8完成。R7未实测项独立保留；不要求每轮付费导出源码。
 > 当前口径确认：2026-09-26；历史通过记录不等同于现行线上验收
 
 原 Vercel 测试／回退入口（非秒哒）：[言剪 AI](https://yancut-ai-personal.vercel.app) · [登录/注册](https://yancut-ai-personal.vercel.app/login) · [在线帮助](https://yancut-ai-personal.vercel.app/studio/help)。真实账号、Neon 数据库、管理员和积分继续使用；原片保留本机，云端保存轻量工程与素材描述，旧云素材和明确上传的识别音频/作品仍使用私有 Blob。最新见[工作台更新](./revisions/2026-09-25-editor-voice-integration.md)及[声音定价更正](./revisions/2026-09-25-voice-pricing-v11.md)，存储方向见[统一入口与本机原片](./revisions/2026-09-25-unified-local-media-workspace.md)。[早先云端上线记录](./revisions/2026-09-25-online-cloud-launch.md) 保留历史，但“所有原片上传云端”不再作为当前口径。旧的免登录/个人 Key 模式也未恢复。
@@ -29,6 +29,8 @@
 - 秒哒初期兼容记录（事件1016，当时状态，已被后续接线取代）：应用`app-enipq7iozwn5`为Vite SPA + Supabase Deno Edge，与原Next16.1.3／47API／25表不能原样兼容。825/835失败后按用户要求串行chat，最终1016完成静态预览；外部浏览器确认原首页和邮箱密码登录页可见，但后端未接、登录禁用、未publish。旧DB/Blob/用户未迁，云端pnpm冒烟不是原锁构建，见[迁移修订](./revisions/2026-09-25-miaoda-source-migration.md)。
 
 ## 当前进度
+
+当前执行入口：[R8实际AI接线包](./revisions/2026-09-26-r8-ai-implementation.md)。这次包含实现代码、追加迁移和定点安装器；下方云端执行说明为上一轮勘察阶段。
 
 最新执行入口：[R8开始与v24云端适配](./revisions/2026-09-26-r8-cloud-adaptation.md)。采用增量代码与限定范围提示词结合，平台故障必须定位、修复或明确阻塞，不能被阶段声明遗漏。以下账户补充记录是上一交付阶段。
 
