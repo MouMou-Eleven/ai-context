@@ -1,7 +1,14 @@
 {
   "schemaVersion": 1,
-  "confirmedDate": "2026-09-26",
+  "confirmedDate": "2026-09-27",
   "descriptions": {
+    "work/domains/development/tools/miaoda/experience/cases/yancut-b3-loading-hotfixes.md": "加载热修复盘：会话等待、现场证据与下一轮增量保护范围",
+    "work/projects/yancut-ai/revisions/2026-09-27-b3-editor-runtime-and-rendering.md": "B3编辑器与动画任务交付、实测证据和未完成的生产渲染验证",
+    "work/projects/yancut-ai/revisions/2026-09-27-b4-token-localization-and-loading-lessons.md": "B4计费与双语修订，保护云端加载热修并划分验收证据",
+    "work/projects/yancut-ai/revisions/2026-09-27-b5-guest-pricing-and-doubao-asr.md": "B5游客浏览、用户价格展示和豆包识别接线及测试边界",
+    "work/projects/yancut-ai/revisions/2026-09-27-b6-runtime-logs-and-ai-assistance.md": "B6日志和辅助调试交付、依赖碰撞回执与持续知识修订约定",
+    "work/projects/yancut-ai/revisions/2026-09-27-paid-source-baseline-ep8e1gojj18g.md": "付费源码归档基线及定点同步约定，避免重复全量导出费用",
+    "work/projects/yancut-ai/revisions/2026-09-27-v35-v38-receipts-and-b6-observability.md": "v35至v38登录、后台和二维码热修回执及B6最初需求",
     "work/domains/development/tools/miaoda/experience/cases/codex-skill-source-migration.md": "官方Skill调度与源码增量实录：附件上传、锁校验及生成平台错误边界",
     "work/projects/yancut-ai/revisions/2026-09-25-online-cloud-launch.md": "账号制上线、数据库与对象存储、管理员、积分兑换和权限隔离验收",
     "work/projects/yancut-ai/revisions/2026-09-25-unified-local-media-workspace.md": "统一首页入口、本机原片与云端工程、模型适配和白板导出验证",

@@ -36,6 +36,7 @@ miaoda/
 | 排错、完整案例或重复方案 | [`experience/README.md`](./experience/README.md) |
 | 只需要写执行提示词 | [`experience/prompt-patterns.md`](./experience/prompt-patterns.md)，再选当前主题 |
 | 制作增量包及问题验收清单 | [`版本化增量迭代闭环`](./experience/patterns/codex-miaoda-iterative-increment-workflow.md)；每包单独交付问题对照与手动验收清单 |
+| 根据项目反馈补充认识、纠正旧结论、防止遗忘 | [持续反馈如何修订知识](./experience/patterns/codex-miaoda-iterative-increment-workflow.md#持续反馈如何修订知识)；先比对差异，再修唯一正文和下轮检查，不逐轮堆积文档 |
 | 追溯功能变化和旧环境方案 | [`updates/README.md`](./updates/README.md) |
 
 已有源码要尽快还原原站、一次给齐或减少上传轮次时，读[一次交付批次](./experience/patterns/codex-miaoda-iterative-increment-workflow.md#一次交付批次与有效完成)。阶段号不等于用户上传次数，基线与测试由Codex负责。
@@ -69,3 +70,5 @@ miaoda/
 ## 最新项目经验（2026-09-27）
 
 [言剪 B3 后加载热修复盘](./experience/cases/yancut-b3-loading-hotfixes.md)：会话刷新阻塞、弹窗串行依赖、云端热修保护与本地/现场验收边界；单项目证据，不是平台通用限制。
+
+[B6 依赖碰撞（踩坑第30条）](./experience/pitfalls.md)：自带安装器停止与平台能力分开；本地验证依赖不能无差别进入业务增量包。后续反馈按上方持续修订规则处理，应用状态以项目记录为准。

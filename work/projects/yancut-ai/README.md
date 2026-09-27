@@ -7,7 +7,7 @@
 
 ## 最新修订（2026-09-27）
 
-[B6：真实运行日志与受控 AI 辅助调试增量包](./revisions/2026-09-27-b6-runtime-logs-and-ai-assistance.md)：已基于付费源码导出制作可锚点合并的 B6 包；本地安装器、SQL 与 Edge 集成测试通过，等待秒哒真实环境执行和验收。
+[B6：真实运行日志与受控 AI 辅助调试增量包](./revisions/2026-09-27-b6-runtime-logs-and-ai-assistance.md)：已上传；v39 回执报告 zod 目录新文件碰撞，预检停止且未 apply。用户已转发备份旧目录后重试的方案 A；尚未收到重试结果，不能标为已部署或已验收。同一修订记录了持续反馈的知识维护约定。
 
 [当前源码基线与不重复付费导出约定](./revisions/2026-09-27-paid-source-baseline-ep8e1gojj18g.md)：完整ZIP已双路径保存、SHA256及全包CRC验证；源码Git HEAD `fd538fe0`。后续优先同步定点diff，不例行要求重新下载源码。本记录取代下方“等待源码”状态。
 

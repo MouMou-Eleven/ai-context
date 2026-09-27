@@ -313,6 +313,7 @@ ai-context/
 │   │   │       │   │   ├── cases/  案例
 │   │   │       │   │   │   ├── codex-skill-source-migration.md  官方Skill调度与源码增量实录：附件上传、锁校验及生成平台错误边界
 │   │   │       │   │   │   ├── README.md  案例索引
+│   │   │       │   │   │   ├── yancut-b3-loading-hotfixes.md  加载热修复盘：会话等待、现场证据与下一轮增量保护范围
 │   │   │       │   │   │   └── yungouos-jsapi.md  云购 OS JSAPI 案例
 │   │   │       │   │   ├── patterns/  可复用工作模式
 │   │   │       │   │   │   ├── codex-assisted-workflow.md  Codex 协助秒哒开发流程
@@ -1399,7 +1400,13 @@ ai-context/
 │   │       │   ├── 2026-09-26-r7-profile-feedback.md  账户确认态补充、实物ZIP重建与用户回执边界
 │   │       │   ├── 2026-09-26-r7-source-audit.md  完整导出与R7实际代码包对照、遗漏修复及源码审计
 │   │       │   ├── 2026-09-26-r8-ai-implementation.md  R8规划器实现、事务迁移、定点安装和本地测试证据
-│   │       │   └── 2026-09-26-r8-cloud-adaptation.md  v24平台适配、保护文件、R8执行前故障定位与边界
+│   │       │   ├── 2026-09-26-r8-cloud-adaptation.md  v24平台适配、保护文件、R8执行前故障定位与边界
+│   │       │   ├── 2026-09-27-b3-editor-runtime-and-rendering.md  B3编辑器与动画任务交付、实测证据和未完成的生产渲染验证
+│   │       │   ├── 2026-09-27-b4-token-localization-and-loading-lessons.md  B4计费与双语修订，保护云端加载热修并划分验收证据
+│   │       │   ├── 2026-09-27-b5-guest-pricing-and-doubao-asr.md  B5游客浏览、用户价格展示和豆包识别接线及测试边界
+│   │       │   ├── 2026-09-27-b6-runtime-logs-and-ai-assistance.md  B6日志和辅助调试交付、依赖碰撞回执与持续知识修订约定
+│   │       │   ├── 2026-09-27-paid-source-baseline-ep8e1gojj18g.md  付费源码归档基线及定点同步约定，避免重复全量导出费用
+│   │       │   └── 2026-09-27-v35-v38-receipts-and-b6-observability.md  v35至v38登录、后台和二维码热修回执及B6最初需求
 │   │       └── roadmap.md  开发路线与上线条件
 │   └── README.md  领域知识与项目案例的分级入口
 ├── system/  查AI表达标准、仓库运行规则与本机执行环境
@@ -1553,4 +1560,4 @@ ai-context/
 
 完整设计理由与后续扩展见[信息架构](../information-architecture.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-09-26*
+*结构最后确认：2026-09-27*
