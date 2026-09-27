@@ -7,6 +7,9 @@
 
 ## 最新修订（2026-09-27）
 
+[B5：游客浏览、用户价格表与豆包识别](./revisions/2026-09-27-b5-guest-pricing-and-doubao-asr.md)。B4用户确认已上传；B5本地交付待秒哒执行。公开浏览无需登录，使用功能需登录；消费展示采用极速/标准品牌名称，极速默认；具体测试与边界以B5记录为准。
+
+
 [B4：Token结算、双语界面与加载热修保护](./revisions/2026-09-27-b4-token-localization-and-loading-lessons.md)。该记录优先于下方历史B3待上传口径；价格中心位于我的空间后，FlashX默认，50积分为Token预留上限。
 
 ## 定位与边界
