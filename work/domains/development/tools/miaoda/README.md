@@ -65,3 +65,7 @@ miaoda/
 动态知识治理遵守[版本化知识政策](../../../../../system/repository/versioned-knowledge-policy.md)。
 
 *结构整理：2026-09-12；产品事实按各来源核验日使用*
+
+## 最新项目经验（2026-09-27）
+
+[言剪 B3 后加载热修复盘](./experience/cases/yancut-b3-loading-hotfixes.md)：会话刷新阻塞、弹窗串行依赖、云端热修保护与本地/现场验收边界；单项目证据，不是平台通用限制。

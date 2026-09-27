@@ -1,9 +1,13 @@
 # 言剪 AI（YanCut）
 
-> 状态：用户确认B2已上传并执行完成；B3编辑器运行时/页面体验/真实动画任务增量已本地交付，待秒哒应用与真实服务验收。未宣布正式发布或完整商业化验收通过。
+> 状态：用户确认B3已执行；随后秒哒v32/v33加载热修用户实测改善。B4 Token计费/双语界面增量已本地交付，待云端应用与真实服务验收。未宣布全面商业化验收通过。
 > 当前口径确认：2026-09-27；历史通过记录不等同于现行线上验收
 
 原 Vercel 测试／回退入口（非秒哒）：[言剪 AI](https://yancut-ai-personal.vercel.app) · [登录/注册](https://yancut-ai-personal.vercel.app/login) · [在线帮助](https://yancut-ai-personal.vercel.app/studio/help)。真实账号、Neon 数据库、管理员和积分继续使用；原片保留本机，云端保存轻量工程与素材描述，旧云素材和明确上传的识别音频/作品仍使用私有 Blob。最新见[工作台更新](./revisions/2026-09-25-editor-voice-integration.md)及[声音定价更正](./revisions/2026-09-25-voice-pricing-v11.md)，存储方向见[统一入口与本机原片](./revisions/2026-09-25-unified-local-media-workspace.md)。[早先云端上线记录](./revisions/2026-09-25-online-cloud-launch.md) 保留历史，但“所有原片上传云端”不再作为当前口径。旧的免登录/个人 Key 模式也未恢复。
+
+## 最新修订（2026-09-27）
+
+[B4：Token结算、双语界面与加载热修保护](./revisions/2026-09-27-b4-token-localization-and-loading-lessons.md)。该记录优先于下方历史B3待上传口径；价格中心位于我的空间后，FlashX默认，50积分为Token预留上限。
 
 ## 定位与边界
 
