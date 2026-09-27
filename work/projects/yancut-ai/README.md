@@ -1,11 +1,14 @@
 # 言剪 AI（YanCut）
 
-> 状态：用户已提供 B5/v35 执行回执及随后 v36–v38 直接热修截图；最新热修涉及登录续期、后台加载和二维码缓存。B6新增真实运行日志与受控AI辅助调试，正等待用户上传最新源码后实施；未宣布全面商业化验收通过。
+> 状态：用户已提供 B5/v35 执行回执及随后 v36–v38 直接热修截图；最新热修涉及登录续期、后台加载和二维码缓存。B6新增真实运行日志与受控AI辅助调试，已取得并校验付费导出源码 ep8e1gojj18g，基于该版本实施；未宣布全面商业化验收通过。
 > 当前口径确认：2026-09-27；历史通过记录不等同于现行线上验收
 
 原 Vercel 测试／回退入口（非秒哒）：[言剪 AI](https://yancut-ai-personal.vercel.app) · [登录/注册](https://yancut-ai-personal.vercel.app/login) · [在线帮助](https://yancut-ai-personal.vercel.app/studio/help)。真实账号、Neon 数据库、管理员和积分继续使用；原片保留本机，云端保存轻量工程与素材描述，旧云素材和明确上传的识别音频/作品仍使用私有 Blob。最新见[工作台更新](./revisions/2026-09-25-editor-voice-integration.md)及[声音定价更正](./revisions/2026-09-25-voice-pricing-v11.md)，存储方向见[统一入口与本机原片](./revisions/2026-09-25-unified-local-media-workspace.md)。[早先云端上线记录](./revisions/2026-09-25-online-cloud-launch.md) 保留历史，但“所有原片上传云端”不再作为当前口径。旧的免登录/个人 Key 模式也未恢复。
 
 ## 最新修订（2026-09-27）
+
+[当前源码基线与不重复付费导出约定](./revisions/2026-09-27-paid-source-baseline-ep8e1gojj18g.md)：完整ZIP已双路径保存、SHA256及全包CRC验证；源码Git HEAD `fd538fe0`。后续优先同步定点diff，不例行要求重新下载源码。本记录取代下方“等待源码”状态。
+
 
 [最新：v35–v38回执与B6实施规格](./revisions/2026-09-27-v35-v38-receipts-and-b6-observability.md)。此记录优先于下方历史“B5待执行”状态；截图报告不等同于完整源码核验，用户已答复将上传最新源码。
 
