@@ -17,6 +17,10 @@ AI访问仓库先核对分支/commit或读取时间，读AGENTS和llms，再进�
 
 一个主任务可读取跨目录的必要依赖；相邻入口补双向链接。多个独立交付分别路由。课程身份不能靠课号、标题或旧路径推定；明确项目与文档归属冲突时先记录冲突。
 
+## 任务对照（taskRecipes）
+
+`routes.json` 的 `taskRecipes` 与根目录 AGENTS.md 的"任务 → 必读"表一一对应，是那张表的机器版。改 AGENTS.md 的任务表时同步改这里，反之亦然；[真实任务回归](../maintenance/tests/test_real_tasks.py)会检查两者没有脱节。一个组合任务可以同时命中多条。
+
 ## 方法条件登记
 
 写作方法使用routes.json中的methodRules；不单独建立作者或风格注册表。path指唯一方法正文；evidence指来源记录；entryPoints列需要自动生成短表的README；selectedAny限定适用任务候选。status为active、candidate或retired，只有active进入日常建议和短表。confirmedAt记录当前采用范围的确认日期。

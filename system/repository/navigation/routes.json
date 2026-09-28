@@ -419,7 +419,7 @@
         "AI辅助视觉"
       ],
       "excludeAny": [],
-      "entry": "work/domains/design/common/ai-assisted-design.md",
+      "entry": "work/domains/design/common/ai-generation-principles.md",
       "priority": 50,
       "dependencies": []
     },
@@ -553,7 +553,7 @@
         "Dreamina"
       ],
       "excludeAny": [],
-      "entry": "work/domains/design/video/common/tools/seedance/README.md",
+      "entry": "work/domains/design/video/common/seedance/README.md",
       "priority": 70,
       "dependencies": [
         {
@@ -607,24 +607,56 @@
       "matchAny": [
         "秒嗒",
         "秒哒",
+        "百度秒哒",
         "miaoda.cn",
         "appmiaoda.com",
         "miaoda.online"
       ],
       "excludeAny": [],
-      "entry": "work/domains/development/tools/miaoda/llms.txt",
+      "entry": "work/domains/development/tools/miaoda/README.md",
       "priority": 60,
       "dependencies": [
         {
-          "path": "work/domains/development/tools/miaoda/disambiguation.md",
+          "path": "work/domains/development/tools/miaoda/workflow.md",
           "whenAny": [],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/workflow.md",
+          "whenAny": [
+            "增量",
+            "迭代",
+            "回传",
+            "回执",
+            "验收",
+            "审查",
+            "还原",
+            "恢复原站",
+            "一次给齐",
+            "批量交付",
+            "减少上传",
+            "上传轮次",
+            "迁移",
+            "打包",
+            "分包",
+            "全量",
+            "本地源码"
+          ],
+          "excludeAny": [],
           "intents": []
         },
         {
-          "path": "work/domains/development/tools/miaoda/README.md",
+          "path": "work/domains/development/tools/miaoda/prompt-templates.md",
           "whenAny": [],
           "excludeAny": [],
-          "intents": []
+          "intents": [
+            "create",
+            "write"
+          ]
         },
         {
           "path": "work/domains/development/experience/README.md",
@@ -636,16 +668,24 @@
           ]
         },
         {
-          "path": "work/domains/development/tools/miaoda/experience/README.md",
-          "whenAny": [],
+          "path": "work/domains/development/tools/miaoda/facts.md",
+          "whenAny": [
+            "当前",
+            "功能",
+            "限制",
+            "限额",
+            "容量",
+            "权益",
+            "会员",
+            "价格",
+            "秒点",
+            "能不能"
+          ],
           "excludeAny": [],
-          "intents": [
-            "create",
-            "write"
-          ]
+          "intents": []
         },
         {
-          "path": "work/domains/development/tools/miaoda/experience/pitfalls.md",
+          "path": "work/domains/development/tools/miaoda/pitfalls.md",
           "whenAny": [
             "报错",
             "故障",
@@ -661,23 +701,7 @@
           ]
         },
         {
-          "path": "work/domains/development/tools/miaoda/experience/prompt-patterns.md",
-          "whenAny": [
-            "提示词",
-            "开发",
-            "搭建",
-            "实现",
-            "修改",
-            "迭代"
-          ],
-          "excludeAny": [],
-          "intents": [
-            "create",
-            "write"
-          ]
-        },
-        {
-          "path": "work/domains/development/tools/miaoda/experience/prompts/uploads.md",
+          "path": "work/domains/development/tools/miaoda/topics/uploads.md",
           "whenAny": [
             "上传",
             "文件传输"
@@ -689,7 +713,7 @@
           ]
         },
         {
-          "path": "work/domains/development/tools/miaoda/experience/patterns/large-video-upload.md",
+          "path": "work/domains/development/tools/miaoda/topics/large-video-upload.md",
           "whenAny": [
             "大视频",
             "大文件",
@@ -703,24 +727,13 @@
           ]
         },
         {
-          "path": "work/domains/development/tools/miaoda/basics/current-capabilities.md",
-          "whenAny": [
-            "当前",
-            "功能",
-            "限制",
-            "容量",
-            "权益"
-          ],
-          "excludeAny": [],
-          "intents": []
-        },
-        {
-          "path": "work/domains/development/tools/miaoda/experience/prompts/authentication.md",
+          "path": "work/domains/development/tools/miaoda/topics/authentication.md",
           "whenAny": [
             "登录",
             "认证",
             "验证码",
-            "鉴权"
+            "鉴权",
+            "手机号"
           ],
           "excludeAny": [],
           "intents": [
@@ -729,11 +742,12 @@
           ]
         },
         {
-          "path": "work/domains/development/tools/miaoda/experience/prompts/payment-integration.md",
+          "path": "work/domains/development/tools/miaoda/topics/payment.md",
           "whenAny": [
             "支付",
             "收款",
-            "退款"
+            "退款",
+            "订单"
           ],
           "excludeAny": [],
           "intents": [
@@ -742,13 +756,14 @@
           ]
         },
         {
-          "path": "work/domains/development/tools/miaoda/experience/prompts/runtime-diagnostics.md",
+          "path": "work/domains/development/tools/miaoda/topics/runtime-diagnostics.md",
           "whenAny": [
             "报错",
             "故障",
             "排错",
             "无法运行",
-            "白屏"
+            "白屏",
+            "日志"
           ],
           "excludeAny": [],
           "intents": [
@@ -757,27 +772,32 @@
           ]
         },
         {
-          "path": "work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md",
+          "path": "work/domains/development/tools/miaoda/topics/backend-storage.md",
           "whenAny": [
-            "增量",
-            "迭代",
-            "回传",
-            "回执",
-            "验收",
-            "审查包",
-            "还原",
-            "恢复原站",
-            "一次给齐",
-            "一次性",
-            "批量交付",
-            "减少上传",
-            "上传轮次",
-            "迁移",
-            "打包",
-            "分包"
+            "数据库",
+            "存储",
+            "后端",
+            "localStorage"
           ],
           "excludeAny": [],
-          "intents": []
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/topics/seo-and-content.md",
+          "whenAny": [
+            "SEO",
+            "关键词",
+            "备案",
+            "整改"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
         },
         {
           "path": "work/domains/development/tools/miaoda/development/skill-as-callable.md",
@@ -786,22 +806,9 @@
             "CLI",
             "外部调用",
             "附件",
-            "回传",
-            "回执",
             "代码仓库",
             "直接查看",
             "直接读取"
-          ],
-          "excludeAny": [],
-          "intents": []
-        },
-        {
-          "path": "work/domains/development/tools/miaoda/experience/patterns/codex-source-package-deployment.md",
-          "whenAny": [
-            "全量",
-            "分包",
-            "迁移",
-            "本地源码"
           ],
           "excludeAny": [],
           "intents": []
@@ -1096,7 +1103,7 @@
         "济南市领导干部"
       ],
       "excludeAny": [],
-      "entry": "work/projects/external-training/README.md",
+      "entry": "work/domains/training/materials/README.md",
       "priority": 85,
       "dependencies": [
         {
@@ -1105,7 +1112,7 @@
           "intents": []
         },
         {
-          "path": "work/projects/external-training/jinan-cadre-ai/README.md",
+          "path": "work/domains/training/materials/jinan-cadre-ai/README.md",
           "whenAny": [
             "济南市总工会",
             "济南干部培训",
@@ -1125,7 +1132,7 @@
         "Bug 修复课"
       ],
       "excludeAny": [],
-      "entry": "work/projects/external-training/lessons/bug-repair/README.md",
+      "entry": "work/domains/training/materials/jinan-city-library/bug-repair/README.md",
       "priority": 100,
       "dependencies": [
         {
@@ -1134,7 +1141,7 @@
           "intents": []
         },
         {
-          "path": "work/projects/external-training/jinan-city-library/README.md",
+          "path": "work/domains/training/materials/jinan-city-library/README.md",
           "whenAny": [],
           "intents": []
         }
@@ -1472,7 +1479,7 @@
         "济南图书馆"
       ],
       "excludeAny": [],
-      "entry": "work/projects/external-training/jinan-city-library/README.md",
+      "entry": "work/domains/training/materials/jinan-city-library/README.md",
       "priority": 95,
       "dependencies": [
         {
@@ -1538,11 +1545,11 @@
         "参考图动态化"
       ],
       "excludeAny": [],
-      "entry": "work/domains/design/video/common/awesome-seedance/README.md",
+      "entry": "work/domains/design/video/common/seedance/awesome-seedance/README.md",
       "priority": 72,
       "dependencies": [
         {
-          "path": "work/domains/design/video/common/awesome-seedance/upstream.json",
+          "path": "work/domains/design/video/common/seedance/awesome-seedance/upstream.json",
           "whenAny": [],
           "intents": []
         }
@@ -1557,11 +1564,19 @@
     {
       "id": "oral",
       "whenAny": [
+        "分享资料",
         "口播",
-        "讲稿",
+        "口语",
+        "宣传",
+        "招生",
         "旁白",
+        "朋友圈",
         "朗读稿",
-        "直播话术"
+        "直播话术",
+        "社群",
+        "讲稿",
+        "讲课",
+        "课件"
       ],
       "intents": [
         "create",
@@ -1569,6 +1584,7 @@
       ],
       "requiresChinese": true,
       "paths": [
+        "system/expression/voice-samples.md",
         "system/expression/oral.md"
       ]
     },
@@ -1664,7 +1680,7 @@
       "useWhen": "微课需要按教学设计、逐字稿、音频或混合素材组织分镜、参考图、提示词、状态与返工时",
       "notFor": "不适用于创赛宣传片、企业宣传片、普通视频或故事影片；简单微课可用短分镜表，最终成片及多人协作另行验收",
       "acceptance": "检查输入素材与画面逐项对应、提示词复制、图片路径、单元锚点、状态反馈和窄屏布局；有音频时再测试时间码与播放，网页打开不能替代交互与成片验收",
-      "evidence": "work/projects/cases/little-leaf-ai-microcourse-mv.md",
+      "evidence": "work/domains/design/video/education/case-little-leaf-microcourse-mv.md",
       "confirmedAt": "2026-09-18",
       "entryPoints": [
         "work/domains/design/video/education/README.md"
@@ -1982,7 +1998,7 @@
       "useWhen": "面向跨岗位学员设计AI工具全景与工作场景实操课程时",
       "notFor": "单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本",
       "acceptance": "类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对",
-      "evidence": "work/projects/external-training/jinan-cadre-ai/revisions/2026-09-18-tool-panorama-and-work-scenarios.md",
+      "evidence": "work/domains/training/materials/jinan-cadre-ai/revisions/2026-09-18-tool-panorama-and-work-scenarios.md",
       "confirmedAt": "2026-09-18",
       "entryPoints": [
         "work/domains/training/README.md"
@@ -2103,7 +2119,7 @@
       "id": "awesome-seedance",
       "label": "Awesome Seedance 视频提示词方法",
       "status": "active",
-      "path": "work/domains/design/video/common/awesome-seedance/README.md",
+      "path": "work/domains/design/video/common/seedance/awesome-seedance/README.md",
       "selectedAny": [
         "awesome-seedance",
         "seedance",
@@ -2176,23 +2192,23 @@
       "useWhen": "实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板",
       "notFor": "纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围",
       "acceptance": "实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目",
-      "evidence": "work/domains/design/video/common/awesome-seedance/README.md",
+      "evidence": "work/domains/design/video/common/seedance/awesome-seedance/README.md",
       "confirmedAt": "2026-09-24",
       "source": "建委指定收录LearnPrompt/awesome-seedance并接入主动调用；第三方报告按固定快照保留，未在本轮独立出片复测",
       "entryPoints": [
         "work/domains/design/video/README.md",
         "work/domains/design/video/common/README.md",
-        "work/domains/design/video/common/tools/seedance/README.md",
+        "work/domains/design/video/common/seedance/README.md",
         "work/domains/design/video/education/README.md",
         "work/domains/design/video/promo/README.md",
         "work/domains/design/video/story/README.md",
         "work/domains/self-media/video-scripts/README.md"
       ],
       "readWith": [
-        "work/domains/design/video/common/awesome-seedance/upstream.json",
-        "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-prompt-library/SKILL.md",
-        "work/domains/design/video/common/awesome-seedance/template-guide.md",
-        "work/domains/design/video/common/tools/seedance/practical-workflow.md"
+        "work/domains/design/video/common/seedance/awesome-seedance/upstream.json",
+        "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-prompt-library/SKILL.md",
+        "work/domains/design/video/common/seedance/awesome-seedance/template-guide.md",
+        "work/domains/design/video/common/seedance/practical-workflow.md"
       ],
       "readWhen": [
         {
@@ -2204,7 +2220,7 @@
             "镜头顺序"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/timeline-shot-script.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/timeline-shot-script.md"
           ]
         },
         {
@@ -2219,7 +2235,7 @@
             "换脸"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/character-reference-lock.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/character-reference-lock.md"
           ]
         },
         {
@@ -2230,7 +2246,7 @@
             "生活记录"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/handheld-ugc-vlog.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/handheld-ugc-vlog.md"
           ]
         },
         {
@@ -2240,7 +2256,7 @@
             "POV"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/pov-continuous-take.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/pov-continuous-take.md"
           ]
         },
         {
@@ -2251,7 +2267,7 @@
             "UGC测评"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/ugc-creator-review.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/ugc-creator-review.md"
           ]
         },
         {
@@ -2264,7 +2280,7 @@
             "商业广告"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/product-commercial-shotlist.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/product-commercial-shotlist.md"
           ]
         },
         {
@@ -2275,7 +2291,7 @@
             "说话人物"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/dialogue-performance-beats.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/dialogue-performance-beats.md"
           ]
         },
         {
@@ -2285,7 +2301,7 @@
             "故事短片"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/cinematic-narrative-short.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/cinematic-narrative-short.md"
           ]
         },
         {
@@ -2295,7 +2311,7 @@
             "画风固定"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/anime-style-lock.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/anime-style-lock.md"
           ]
         },
         {
@@ -2305,7 +2321,7 @@
             "步进节奏"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/stop-motion-cadence.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/stop-motion-cadence.md"
           ]
         },
         {
@@ -2316,7 +2332,7 @@
             "延时摄影"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/process-transformation-montage.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/process-transformation-montage.md"
           ]
         },
         {
@@ -2327,7 +2343,7 @@
             "战斗"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/combat-choreography.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/combat-choreography.md"
           ]
         },
         {
@@ -2337,7 +2353,7 @@
             "音乐MV"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/music-beat-sync-mv.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/music-beat-sync-mv.md"
           ]
         },
         {
@@ -2347,7 +2363,7 @@
             "时间静止"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/time-freeze-rewind.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/time-freeze-rewind.md"
           ]
         },
         {
@@ -2359,9 +2375,9 @@
             "故事板整图"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/storyboard-grid-to-video.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-storyboard-grid-to-video/SKILL.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-storyboard-grid-to-video/references/cases.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/storyboard-grid-to-video.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-storyboard-grid-to-video/SKILL.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-storyboard-grid-to-video/references/cases.md"
           ]
         },
         {
@@ -2373,9 +2389,9 @@
             "年代感"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/retro-found-footage.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-retro-dv-home-video/SKILL.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-retro-dv-home-video/references/cases.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/retro-found-footage.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-retro-dv-home-video/SKILL.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-retro-dv-home-video/references/cases.md"
           ]
         },
         {
@@ -2386,9 +2402,9 @@
             "city walk"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/travel-city-walk.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-travel-city-walk/SKILL.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-travel-city-walk/references/cases.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/travel-city-walk.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-travel-city-walk/SKILL.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-travel-city-walk/references/cases.md"
           ]
         },
         {
@@ -2400,9 +2416,9 @@
             "动物主角"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/pet-animal.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-pet-animal/SKILL.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-pet-animal/references/cases.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/pet-animal.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-pet-animal/SKILL.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-pet-animal/references/cases.md"
           ]
         },
         {
@@ -2412,9 +2428,9 @@
             "赛车"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/car-vehicle.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-car-vehicle/SKILL.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-car-vehicle/references/cases.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/car-vehicle.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-car-vehicle/SKILL.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-car-vehicle/references/cases.md"
           ]
         },
         {
@@ -2425,9 +2441,9 @@
             "写真"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/fashion-lookbook.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-fashion-lookbook/SKILL.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-fashion-lookbook/references/cases.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/fashion-lookbook.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-fashion-lookbook/SKILL.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-fashion-lookbook/references/cases.md"
           ]
         },
         {
@@ -2438,9 +2454,9 @@
             "沙雕"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/meme-comedy.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-meme-comedy/SKILL.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-meme-comedy/references/cases.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/meme-comedy.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-meme-comedy/SKILL.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-meme-comedy/references/cases.md"
           ]
         },
         {
@@ -2449,9 +2465,9 @@
             "悬疑"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/horror-suspense.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-horror-suspense/SKILL.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-horror-suspense/references/cases.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/horror-suspense.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-horror-suspense/SKILL.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-horror-suspense/references/cases.md"
           ]
         },
         {
@@ -2462,9 +2478,9 @@
             "黏土"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/3d-cartoon.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-3d-cartoon/SKILL.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-3d-cartoon/references/cases.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/3d-cartoon.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-3d-cartoon/SKILL.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-3d-cartoon/references/cases.md"
           ]
         },
         {
@@ -2475,9 +2491,9 @@
             "怪兽"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/epic-fantasy-scifi.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-epic-fantasy-scifi/SKILL.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-epic-fantasy-scifi/references/cases.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/epic-fantasy-scifi.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-epic-fantasy-scifi/SKILL.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-epic-fantasy-scifi/references/cases.md"
           ]
         },
         {
@@ -2488,9 +2504,9 @@
             "滑板"
           ],
           "paths": [
-            "work/domains/design/video/common/awesome-seedance/source/docs/templates/zh/sports-extreme.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-sports-extreme/SKILL.md",
-            "work/domains/design/video/common/awesome-seedance/source/agents/skills/seedance-sports-extreme/references/cases.md"
+            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/sports-extreme.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-sports-extreme/SKILL.md",
+            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-sports-extreme/references/cases.md"
           ]
         }
       ],
@@ -2537,7 +2553,7 @@
       "useWhen": "精品课或录课课件的文稿、模板、配图排版、动画返修及逐页录制操作稿制作",
       "notFor": "普通商务汇报与自由风格路演；不套用个案费用、字号和人物区域",
       "acceptance": "保护最新用户改稿，按任务检查图文适配、箭头轴线与旋转、准确点击句及媒体返回；冻结HTML时不自动同步",
-      "evidence": "work/projects/cases/angle-revisited-premium-course.md",
+      "evidence": "work/domains/design/graphic/ppt/premium-course/case-angle-revisited.md",
       "confirmedAt": "2026-09-26",
       "source": "建委在角的再认识商单的多轮明确要求与实际修订，跨项目复用尚未验证",
       "entryPoints": [
@@ -2590,6 +2606,245 @@
             "work/domains/design/graphic/ppt/premium-course/recording-guide.md"
           ]
         }
+      ]
+    }
+  ],
+  "taskRecipes": [
+    {
+      "id": "training-courseware",
+      "label": "培训课件 / 分享资料 / 课堂文档",
+      "whenAny": [
+        "课件",
+        "分享资料",
+        "讲课文档",
+        "课堂文档",
+        "培训内容",
+        "讲课稿",
+        "培训文"
+      ],
+      "excludeAny": [
+        "方案",
+        "大纲给",
+        "招生",
+        "宣传",
+        "朋友圈",
+        "公众号",
+        "微课",
+        "精品课",
+        "教师委托",
+        "录课",
+        "逐页录制",
+        "教师",
+        "逐字稿"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/training/README.md",
+        "work/domains/training/experience/jianwei-training-style.md",
+        "system/expression/voice-samples.md",
+        "work/domains/training/experience/demo-driven-course-design.md",
+        "work/domains/training/topics.md"
+      ],
+      "readWhen": [
+        {
+          "whenAny": [
+            "飞书"
+          ],
+          "paths": [
+            "work/domains/training/experience/visual-and-oral-training-docs.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "概念",
+            "原理",
+            "API",
+            "CLI",
+            "Skill",
+            "MCP"
+          ],
+          "paths": [
+            "work/domains/training/experience/technical-explanation/problem-driven-technical-explanation.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "training-proposal",
+      "label": "培训方案 / 大纲（给主办方）",
+      "whenAll": [
+        [
+          "培训",
+          "课程",
+          "授课",
+          "讲座"
+        ],
+        [
+          "方案",
+          "大纲",
+          "纲要",
+          "提案",
+          "计划书"
+        ]
+      ],
+      "excludeAny": [
+        "招生",
+        "朋友圈",
+        "公众号",
+        "内部",
+        "备课"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/training/topics.md",
+        "work/domains/other/commercial/experience/external-proposal-design.md",
+        "work/domains/other/commercial/experience/external-deliverable-language.md",
+        "work/domains/training/materials/README.md"
+      ],
+      "readWhen": [
+        {
+          "whenAny": [
+            "Word",
+            "word",
+            "docx",
+            "DOCX",
+            "政府",
+            "政企",
+            "机关"
+          ],
+          "paths": [
+            "work/domains/other/commercial/delivery-formats/gov-enterprise-word.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "promotion",
+      "label": "宣传、招生、产品介绍、报名页",
+      "whenAny": [
+        "宣传",
+        "招生",
+        "报名",
+        "产品介绍",
+        "推广",
+        "介绍页"
+      ],
+      "excludeAny": [
+        "宣传片",
+        "不招生",
+        "不涉及招生",
+        "纯教学",
+        "不宣传",
+        "不涉及销售",
+        "不销售"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/self-media/marketing-copy/reader-question-led-promotion.md",
+        "system/expression/voice-samples.md"
+      ],
+      "readWhen": [
+        {
+          "whenAny": [
+            "培训",
+            "课",
+            "社群",
+            "干货"
+          ],
+          "paths": [
+            "work/domains/training/topics.md",
+            "work/domains/other/commercial/experience/external-deliverable-language.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oral-channel",
+      "label": "朋友圈 / 社群话术 / 口播 / 直播",
+      "whenAny": [
+        "朋友圈",
+        "社群话术",
+        "群公告",
+        "口播",
+        "直播"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "system/expression/voice-samples.md"
+      ]
+    },
+    {
+      "id": "video-prompt",
+      "label": "视频分镜与 AI 视频提示词",
+      "whenAny": [
+        "提示词",
+        "分镜",
+        "AI视频",
+        "AI 视频",
+        "生成镜头",
+        "Seedance",
+        "即梦"
+      ],
+      "excludeAny": [
+        "秒哒",
+        "秒嗒",
+        "公众号",
+        "朋友圈"
+      ],
+      "requireAnyOf": [
+        "视频",
+        "宣传片",
+        "微课",
+        "短片",
+        "镜头",
+        "漫剧",
+        "MV",
+        "Seedance",
+        "即梦"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/design/video/common/seedance/README.md",
+        "work/domains/design/video/common/seedance/practical-workflow.md",
+        "work/domains/design/common/ai-generation-principles.md"
+      ]
+    },
+    {
+      "id": "design-delivery",
+      "label": "设计交付（海报、PPT、视频）",
+      "whenAny": [
+        "宣传片",
+        "海报",
+        "折页",
+        "PPT",
+        "微课",
+        "精品课",
+        "漫剧",
+        "MG",
+        "AE"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/design/common/production-workflow.md",
+        "work/domains/design/common/feedback-iteration.md"
       ]
     }
   ]

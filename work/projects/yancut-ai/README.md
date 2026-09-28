@@ -142,6 +142,8 @@ R4 源码 `fa3e8625` 已推送迁移分支并应用到秒哒源码树：后台�
 
 | 文件 | 作用 |
 |---|---|
+| [cases/miaoda-source-migration-case.md](./case-miaoda-source-migration.md) | 言剪从 Vercel 迁到秒哒的阶段实录：Skill 调度、浏览器上传源码增量、PRD 核验与生成故障；秒哒通用方法已提炼到[秒哒协作方法](../../domains/development/tools/miaoda/workflow.md) |
+| [cases/b3-loading-hotfixes.md](./case-b3-loading-hotfixes.md) | B3 后加载热修：会话刷新阻塞、弹窗串行依赖、云端热修保护与本地/现场验收边界 |
 | [revisions/2026-09-27-b3-editor-runtime-and-rendering.md](./revisions/2026-09-27-b3-editor-runtime-and-rendering.md) | B2已应用更正、B3包hash、64目标/314补丁、实际测试、Worker部署及完整未测边界 |
 | [revisions/2026-09-26-b2-quality-and-redemption.md](./revisions/2026-09-26-b2-quality-and-redemption.md) | B1 v29回执、B2实物交付、渲染根因、同码多人兑换、安全及接口验收边界 |
 | [`revisions/2026-09-26-r7-profile-feedback.md`](./revisions/2026-09-26-r7-profile-feedback.md) | 账户确认态补充、实物ZIP重建与用户回执边界 |

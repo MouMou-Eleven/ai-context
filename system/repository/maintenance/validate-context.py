@@ -286,10 +286,14 @@ def check_policy(root, files):
         for directory in ['personal', 'brain', 'work', 'system']:
             if directory + '/' not in text:
                 errors.append(f'{name} omits top-level directory {directory}/')
-    for name in ['AGENTS.md', 'llms.txt']:
+    for name in ['AGENTS.md']:
         text = (root / name).read_text(encoding='utf-8-sig') if (root / name).exists() else ''
         if 'system/expression/README.md' not in text:
             errors.append(f'{name} omits Chinese expression short entry')
+    for name in ['llms.txt', 'CLAUDE.md']:
+        text = (root / name).read_text(encoding='utf-8-sig') if (root / name).exists() else ''
+        if 'AGENTS.md' not in text:
+            errors.append(f'{name} must point every AI to AGENTS.md')
     agents = (root / 'AGENTS.md').read_text(encoding='utf-8-sig') if (root / 'AGENTS.md').exists() else ''
     if 'publish-policy: direct-main-no-pr' not in agents:
         errors.append('AGENTS.md omits confirmed publishing policy')

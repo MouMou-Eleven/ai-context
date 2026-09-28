@@ -107,6 +107,20 @@ def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_r
     else:
         include('README.md', '未匹配：先从当前对话提取目标，不将看仓库误当作维护任务')
         include('work/README.md', '按目标继续领域检索；只有任务本身缺失时才问要做什么')
+    # Task recipes mirror the AGENTS.md task table; several can apply to one combined task.
+    for recipe in catalog.get('taskRecipes', []):
+        if not permitted(task, recipe, intent, produces_chinese, writes_repository):
+            continue
+        if not all(matches(task, group) for group in recipe.get('whenAll', [])):
+            continue
+        if recipe.get('requireAnyOf') and not matches(task, recipe['requireAnyOf']):
+            continue
+        for p in recipe['paths']:
+            include(p, f"任务对照表: {recipe['label']}")
+        for reference in recipe.get('readWhen', []):
+            if matches(task, reference['whenAny']):
+                for p in reference['paths']:
+                    include(p, f"任务对照表（条件）: {recipe['label']}")
     for overlay in catalog.get('overlays', []) + catalog.get('genreRules', []):
         if permitted(task, overlay, intent, produces_chinese, writes_repository):
             for p in overlay['paths']:

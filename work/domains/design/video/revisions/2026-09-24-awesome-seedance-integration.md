@@ -4,7 +4,7 @@
 
 ## 变化与原因
 
-以前只有建委自己的Seedance实战与少量模板。现在新增[第三方案例库](../common/awesome-seedance/README.md)，固定上游commit `db659f2d9295e564728b0507ad7e28b3cd0adc62`，保留完整快照和来源。第三方经验不混作建委案例，Skill总库只索引，不复制实体。
+以前只有建委自己的Seedance实战与少量模板。现在新增[第三方案例库](../common/seedance/awesome-seedance/README.md)，固定上游commit `db659f2d9295e564728b0507ad7e28b3cd0adc62`，保留完整快照和来源。第三方经验不混作建委案例，Skill总库只索引，不复制实体。
 
 入口先读能力边界、Skill和模板选择，再按实际场景读具体模板／专项Skill；本地检索支持方法内条件参考，未采用方法不会加载其参考。一般视频、AE后期或口播不因相邻目录自动触发生成。网页AI按同一README与模板表继续阅读。
 

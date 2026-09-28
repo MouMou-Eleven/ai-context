@@ -95,7 +95,7 @@ license: Proprietary
 2. 字节级密钥泄漏扫描——任何字面密钥都应返回 0 hits
 3. `unzip -l X.zip` —— 确认 SKILL.md 在根目录、无 `__pycache__`、无 `.pyc`、无 `.git`
 4. `unzip -p X.zip SKILL.md | head -5` —— 第一行必须是 `---`
-5. 如果脚本里有 MD5/HMAC 签名，用一组已知答案的样例做自检（参考 [pitfalls.md](../experience/pitfalls.md) MD5 章节）
+5. 如果脚本里有 MD5/HMAC 签名，用一组已知答案的样例做自检（参考 [pitfalls.md](../pitfalls.md) MD5 章节）
 
 ## 七、上传后的配置流程
 

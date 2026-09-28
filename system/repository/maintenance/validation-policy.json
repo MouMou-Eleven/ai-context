@@ -5,6 +5,7 @@
     ".gitignore",
     "README.md",
     "AGENTS.md",
+    "CLAUDE.md",
     "llms.txt",
     "system/repository/navigation/STRUCTURE.md",
     "system/repository/navigation/STRUCTURE.html",
@@ -15,7 +16,8 @@
     "personal/timeline.md",
     "brain/README.md",
     "brain/thinking-and-decisions.md",
-    "brain/business-cognition.md",
+    "brain/business-judgment.md",
+    "work/domains/other/commercial/experience/business-growth-loop.md",
     "system/expression/README.md",
     "system/expression/corrections.md",
     "system/expression/oral.md",
@@ -65,9 +67,8 @@
     "work/domains/other/skills",
     "work/projects",
     "work/domains/training/experience",
-    "work/domains/training/outlines",
     "work/domains/training/materials",
-    "work/domains/design/video/common/tools",
+    "work/domains/design/video/common/seedance",
     "work/domains/self-media/titles",
     "work/domains/self-media/articles",
     "work/domains/self-media/marketing-copy",
@@ -81,7 +82,6 @@
     "work/domains/design/graphic",
     "work/domains/design/video/promo",
     "work/domains/design/video/story",
-    "work/projects/cases",
     "work/projects/archive"
   ],
   "deprecatedPaths": [
@@ -123,9 +123,10 @@
     ],
     "work/domains/training/README.md": [
       "work/projects/paid-community-course/README.md",
-      "work/projects/external-training/README.md",
+      "work/domains/training/materials/README.md",
       "work/domains/design/video/education/README.md",
-      "system/repository/execution-checks.md"
+      "work/domains/training/topics.md",
+      "system/expression/voice-samples.md"
     ],
     "work/domains/design/video/education/README.md": [
       "work/domains/training/README.md"
@@ -134,9 +135,10 @@
       "work/projects/feishu-efficient-office/writing-style-analysis.md"
     ],
     "AGENTS.md": [
-      "system/repository/execution-checks.md",
       "system/expression/README.md",
-      "system/repository/ingestion-workflow.md"
+      "system/repository/ingestion-workflow.md",
+      "system/expression/voice-samples.md",
+      "work/domains/training/topics.md"
     ],
     "work/domains/training/experience/jianwei-training-style.md": [
       "system/repository/execution-checks.md"
@@ -158,6 +160,7 @@
     ".gitattributes": "system/repository/README.md",
     ".gitignore": "system/repository/README.md",
     ".github/workflows/context-validation.yml": "system/repository/README.md",
-    "llms.txt": "system/repository/README.md"
+    "llms.txt": "system/repository/README.md",
+    "CLAUDE.md": "system/repository/README.md"
   }
 }

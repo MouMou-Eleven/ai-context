@@ -238,7 +238,7 @@ python -m http.server 8765
 
 ## 来源与后续复用
 
-- 来源案例：[《小树叶》AI教师音乐微课](../../../../projects/cases/little-leaf-ai-microcourse-mv.md)。
+- 来源案例：[《小树叶》AI教师音乐微课](case-little-leaf-microcourse-mv.md)。
 - 微课分段与生成方法：[AI教师微课画面生成与多镜头制作方法](./ai-generated-microcourse-video-workflow.md)。
 - 共用制作流程：[设计制作与经验复用流程](../../common/production-workflow.md)。
 

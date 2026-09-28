@@ -22,7 +22,7 @@
 |---|---|---|
 | O1 | 建委2026-08-02提供的两段短视频逐字稿；作者、原链接、日期、平台与授权未提供 | 结果与具体场景、疑问与论据的承接方式已压缩到[口语](./oral.md)，商业方法留M1。不能复制金句、补造画面、继承赚钱论断或声称提高完播率 |
 | O2 | 2026-07-23整理的“飞天闪客”技术科普参考；作者标注来自用户材料，原视频链接与转载授权未独立核验 | 问题、旧办法、缺口、新机制及限制的讲解方法留T2；模型参数、排行与时效事实不能直接引用 |
-| O3 | 2026-09-15核对writing-dna-skill主仓与其引用研究，版本、评分与范围见[审计记录](../repository/revisions/2026-09-15-writing-dna-review-and-method-routing.md) | 借鉴带证据的分层提炼、样本边界与写前校准，落实为下方提炼流程；未安装Skill，不导入作者人格、固定文风或上游统计结论 |
+| O3 | 2026-09-15核对writing-dna-skill主仓与其引用研究，版本、评分与范围见[审计记录](https://github.com/MouMou-Eleven/ai-context/blob/9f56e5d47cdf3926c2b7d17bd637ad775d5762d9/repository/revisions/2026-09-15-writing-dna-review-and-method-routing.md) | 借鉴带证据的分层提炼、样本边界与写前校准，落实为下方提炼流程；未安装Skill，不导入作者人格、固定文风或上游统计结论 |
 
 需要重新核对原措辞时，可查固定旧版本的[两段短视频原稿](https://github.com/MouMou-Eleven/ai-context/blob/da9d88eba870ea221043ceb8c7ea9be4ea031e62/system/expression/chinese-datasets/short-video-outcome-and-motivation/raw/two-video-transcripts.md)和[技术科普原稿](https://github.com/MouMou-Eleven/ai-context/blob/da9d88eba870ea221043ceb8c7ea9be4ea031e62/system/expression/chinese-datasets/feitian-shanke/raw/feitian-shanke-transcript.txt)。它们不作为当前默认读链，也不是本轮新核验的外部原视频来源。原稿精简不损失已提炼的专项方法，不把这些材料声明为可训练语料。
 

@@ -37,6 +37,6 @@
 
 - [培训资料总入口](../../domains/training/materials/README.md)：按主题查全部培训资料。
 - 前述本人确认的课程与文章已归位；后续归属不明的资料按[培训归属规则](../../domains/training/attribution-and-updates.md)逐项登记，不能据此宣称全仓没有其他待确认活动。
-- [外出培训 Bug 课](../external-training/lessons/bug-repair/README.md)：建委已明确与社群无关。
+- [外出培训 Bug 课](../../domains/training/materials/jinan-city-library/bug-repair/README.md)：建委已明确与社群无关。
 
 课程规划读取[curriculum-design.md](./curriculum-design.md)；它不能证明某个文档已经发布或已在社群授课。新增资料和状态变化执行[归属与更新规则](../../domains/training/attribution-and-updates.md)，自动同步索引与受影响的项目状态，不要求建委提醒。

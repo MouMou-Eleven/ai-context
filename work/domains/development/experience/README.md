@@ -1,24 +1,26 @@
-# AI 编程经验
+# AI 编程通用经验
 
-> 保存不绑定单一工具、可跨网站和应用项目使用的开发经验。
+不绑定某个工具、所有 AI 编程项目都能用的经验。某个工具特有的做法放在 `tools/<工具>/`，比如[秒哒](../tools/miaoda/README.md)；某个项目自己的事实放在 `projects/<项目>/`。
 
-## 当前内容
+## 内容
 
-| 内容 | 入口 | 用途 |
+| 内容 | 文件 | 什么时候读 |
 |---|---|---|
-| 创意前端提示词方法 | [`creative-frontend-prompt-patterns.md`](./creative-frontend-prompt-patterns.md) | 视频、3D、滚动叙事和空间画廊的提示词结构 |
-| Skill 仓库 | [`skill-repository/`](../../other/skills/README.md) | 保存可直接读取或安装的 Skill 实体，并固定上游地址、版本和更新方式 |
-| 原始参考材料 | [`reference-materials/`](./reference-materials/README.md) | 核对原始提示词与交互机制 |
-| 前端 UI 质量标准 | [`frontend-ui-quality-standards.md`](./frontend-ui-quality-standards.md) | 层级、间距、多端与状态体验的通用验收方法 |
+| 交付与测试：证据分级、干净复建、跨层契约、字段矩阵、线上版本确认、性能不降质 | [delivery-and-testing.md](./delivery-and-testing.md) | 任何要交付、要测试、要上线的开发任务 |
+| 后端、登录、支付：数据存哪、手机号身份、签名、密钥、多通道支付、兑换码事务 | [backend-auth-payment.md](./backend-auth-payment.md) | 涉及数据库、登录、支付、积分 |
+| 前端 UI 质量：层级、间距、多端、状态体验、移动端验收 | [frontend-ui-quality-standards.md](./frontend-ui-quality-standards.md) | 页面改版、组件、响应式、需要判断界面好不好看 |
+| 创意前端提示词：视频、3D、滚动叙事、空间画廊 | [creative-frontend-prompt-patterns.md](./creative-frontend-prompt-patterns.md) | 要做有视觉冲击力的前端页面 |
+| 原始参考材料 | [reference-materials/](./reference-materials/README.md) | 核对原始提示词时才读 |
+| 修订记录 | [revisions/](./revisions/README.md) | 追溯规则为什么这样定 |
+
+商业化落地（怎么定价、怎么对外介绍产品）见[商业化领域](../../other/commercial/README.md)；Skill 见 [Skill 库](../../other/skills/README.md)。
 
 ## 写入规则
 
-- 只有跨两个以上工具或项目仍成立的方法才进入这里。
-- 某个工具专属踩坑进入 `tools/<tool>/experience/`。
-- 某个项目事实进入 `projects/<project>/`。
-- 收录 Skill 时必须保存实际内容，并用条目 README 与 `upstream.json` 记录来源、固定版本、依赖和同步方式；不得只保存外链。
-- 原始材料默认不激活，先读提炼后的方法文件。
-- 用户明确要求长期执行的 UI 偏好可在限定范围采用；AI 推论先留候选。每条须具备场景、动作、验收和反例，同类错误补证据，不重复造规则。版本纠错见[修订记录](./revisions/README.md)。
+- 在两个以上工具或项目里都成立的，才写进这里；只在某个工具上成立的，写进该工具目录。
+- 秒哒上发现的问题，先判断是秒哒特有的还是通用的。通用的写这里，秒哒目录里只留链接。
+- 每条标上级别：红线、默认、可灵活。
+- 同类错误补证据，不重复造规则。其他规则见[写入规范](../../../../system/repository/ingestion-workflow.md)。
 
 <!-- generated-methods:start -->
 ## 按实际需要选择方法

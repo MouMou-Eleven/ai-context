@@ -317,4 +317,4 @@
 负面提示词要复用上一版的失败现象,直接写成"不要 XX",并通过下一版对照确认是否改善。
 
 
-相关：[原提示词案例](../../../../projects/cases/2026-05-enterprise-prompt-record.md) · [节奏迭代](./prompt-iteration.md) · [AE 设计](../common/ae-production.md)。新增配方须写适用条件和来源案例，不覆盖通用验收。
+相关：[原提示词案例](case-2026-05-enterprise-prompt-record.md) · [节奏迭代](./prompt-iteration.md) · [AE 设计](../common/ae-production.md)。新增配方须写适用条件和来源案例，不覆盖通用验收。

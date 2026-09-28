@@ -218,8 +218,8 @@
 
 ## 来源与边界
 
-- 来源案例：[《小树叶》AI 教师音乐微课画面制作复盘](../../../../projects/cases/little-leaf-ai-microcourse-mv.md)。
-- 工具执行：[Seedance 主体、场景、声音与镜头工作流](../common/tools/seedance/practical-workflow.md)。
+- 来源案例：[《小树叶》AI 教师音乐微课画面制作复盘](case-little-leaf-microcourse-mv.md)。
+- 工具执行：[Seedance 主体、场景、声音与镜头工作流](../common/seedance/practical-workflow.md)。
 - 共用制作：[视频制作共用方法](../common/README.md)与[设计联合制作流程](../../common/production-workflow.md)。
 
 本文件保存教师微课的画面规划与生成方法。Seedance的引用语法、支持时长、分辨率和多镜头能力具有版本时效性，执行前读取工具说明并在当前界面复测。以后每次复用应把新案例、模型版本、失败修正和验收结果回写；只有跨案例重复有效的结论才进一步提升为稳定通用规则。

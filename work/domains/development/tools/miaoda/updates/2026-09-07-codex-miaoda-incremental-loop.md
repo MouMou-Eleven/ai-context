@@ -6,7 +6,7 @@
 
 ## 本次修订
 
-新增 [`../experience/patterns/codex-miaoda-iterative-increment-workflow.md`](../experience/patterns/codex-miaoda-iterative-increment-workflow.md)，统一记录：
+新增 [`../experience/patterns/codex-miaoda-iterative-increment-workflow.md`](../workflow.md)，统一记录：
 
 - 版本号、包名、manifest、字节数和 SHA-256 规则；
 - Codex、用户和秒哒的职责边界；

@@ -9,7 +9,7 @@
 
 具体事情统一进入[项目与案例](../../projects/README.md)，包括跨媒介文化产品。六十甲子的唯一事实入口是[项目](../../projects/ai-sixty-jiazi-music-ip/README.md)，相关设计、开发与商业方法分别引用。
 
-建委本人的商业理解在[商业认知](../../../brain/business-cognition.md)。新增业务必须有明确职责及真实资料，不建“其他经验”杂物堆；少量资料先在最近入口清楚描述，达到独立使用规模再分目录。
+建委本人的商业判断原则在[建委大脑](../../../brain/business-judgment.md)，展开的方法在[商业增长闭环](commercial/experience/business-growth-loop.md)。新增业务必须有明确职责及真实资料，不建“其他经验”杂物堆；少量资料先在最近入口清楚描述，达到独立使用规模再分目录。
 
 <!-- generated-related-assets:start -->
 ## 相关项目与案例

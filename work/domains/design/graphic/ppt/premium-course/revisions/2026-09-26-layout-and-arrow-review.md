@@ -6,4 +6,4 @@
 
 用户已调整的第7、19页作为保护页，不再重新排版；其余页面遵循同类原则，而非复制两页结构。箭头修复保持动画组框与对象标识，局部收回线段末端。
 
-影响入口：[精品课制作](../README.md)、[制作与验收方法](../workflow.md)。实际结果和未验收范围见[案例](../../../../../../projects/cases/angle-revisited-premium-course.md)。
+影响入口：[精品课制作](../README.md)、[制作与验收方法](../workflow.md)。实际结果和未验收范围见[案例](../case-angle-revisited.md)。

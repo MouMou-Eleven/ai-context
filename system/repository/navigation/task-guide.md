@@ -33,15 +33,15 @@
 | 书籍装帧和版式 | [读取](../../../work/domains/design/graphic/book/README.md) |
 | 教师微课与教育交互 | [读取](../../../work/domains/design/video/education/README.md) |
 | AE包装与后期合成 | [读取](../../../work/domains/design/video/common/ae-production.md) |
-| AI辅助视觉生产 | [读取](../../../work/domains/design/common/ai-assisted-design.md) |
+| AI辅助视觉生产 | [读取](../../../work/domains/design/common/ai-generation-principles.md) |
 | 视频、动画与生成素材 | [读取](../../../work/domains/design/video/README.md) |
 | 企业宣传片 | [读取](../../../work/domains/design/video/promo/README.md) |
 | 创赛宣传片制作 | [读取](../../../work/domains/design/video/promo/competition-promo-production.md) |
 | 漫剧 | [读取](../../../work/domains/design/video/story/motion-comic.md) |
 | 真人故事影片 | [读取](../../../work/domains/design/video/story/README.md) |
-| Seedance工具 | [读取](../../../work/domains/design/video/common/tools/seedance/README.md) |
+| Seedance工具 | [读取](../../../work/domains/design/video/common/seedance/README.md) |
 | 网站、应用与编程 | [读取](../../../work/domains/development/README.md) |
-| 百度秒嗒平台 | [读取](../../../work/domains/development/tools/miaoda/llms.txt) |
+| 百度秒嗒平台 | [读取](../../../work/domains/development/tools/miaoda/README.md) |
 | 查阅、使用或收录Skill | [读取](../../../work/domains/other/skills/README.md) |
 | 可编辑参数化React动画 | [读取](../../../work/domains/other/skills/jianwei-ai-community-remotion-video/README.md) |
 | Origin可编辑科研图 | [读取](../../../work/domains/other/skills/editaplot/README.md) |
@@ -49,8 +49,8 @@
 | 个人IP与观点海报 | [读取](../../../work/domains/other/skills/qingyun-ip-poster/README.md) |
 | 培训备课与复盘（先核对归属） | [读取](../../../work/domains/training/README.md) |
 | 会员社群（仅明确属于本项目） | [读取](../../../work/projects/paid-community-course/README.md) |
-| 企业、图书馆、夜校与外部培训 | [读取](../../../work/projects/external-training/README.md) |
-| 济南市图书馆：别让Bug打败你 | [读取](../../../work/projects/external-training/lessons/bug-repair/README.md) |
+| 企业、图书馆、夜校与外部培训 | [读取](../../../work/domains/training/materials/README.md) |
+| 济南市图书馆：别让Bug打败你 | [读取](../../../work/domains/training/materials/jinan-city-library/bug-repair/README.md) |
 | 出版体裁与书稿（先明确项目） | [读取](../../expression/genres.md) |
 | 《飞书高效办公》书籍 | [读取](../../../work/projects/feishu-efficient-office/README.md) |
 | 自媒体、个人IP与渠道表达 | [读取](../../../work/domains/self-media/README.md) |
@@ -61,9 +61,9 @@
 | 当前设备与工具环境 | [读取](../../environment/computers/README.md) |
 | 历史项目与追溯 | [读取](history.md) |
 | 按课号找资料（先核对所属系列） | [读取](../../../work/domains/training/materials/README.md) |
-| 济南市图书馆培训 | [读取](../../../work/projects/external-training/jinan-city-library/README.md) |
+| 济南市图书馆培训 | [读取](../../../work/domains/training/materials/jinan-city-library/README.md) |
 | 自媒体标题生成、诊断与评审 | [读取](../../../work/domains/self-media/titles/title-matrix/README.md) |
-| AI视频提示词、模板与案例 | [读取](../../../work/domains/design/video/common/awesome-seedance/README.md) |
+| AI视频提示词、模板与案例 | [读取](../../../work/domains/design/video/common/seedance/awesome-seedance/README.md) |
 
 ## 常用板块的继续读取条件
 
@@ -72,21 +72,20 @@
 | 主入口 | 条件（任一线索，仍需判断语义） | 用途 | 继续读 |
 |---|---|---|---|
 | 网站、应用与编程 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/experience/README.md) |
-| 百度秒嗒平台 | 本类任务 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/disambiguation.md) |
-| 百度秒嗒平台 | 本类任务 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/README.md) |
+| 百度秒嗒平台 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/workflow.md) |
+| 百度秒嗒平台 | 增量、迭代、回传、回执、验收、审查、还原、恢复原站、一次给齐、批量交付、减少上传、上传轮次、迁移、打包、分包、全量、本地源码 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/workflow.md) |
+| 百度秒嗒平台 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/prompt-templates.md) |
 | 百度秒嗒平台 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/experience/README.md) |
-| 百度秒嗒平台 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/README.md) |
-| 百度秒嗒平台 | 报错、故障、排错、失败、白屏、踩坑 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/pitfalls.md) |
-| 百度秒嗒平台 | 提示词、开发、搭建、实现、修改、迭代 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompt-patterns.md) |
-| 百度秒嗒平台 | 上传、文件传输 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/uploads.md) |
-| 百度秒嗒平台 | 大视频、大文件、视频上传、分片上传 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/large-video-upload.md) |
-| 百度秒嗒平台 | 当前、功能、限制、容量、权益 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/basics/current-capabilities.md) |
-| 百度秒嗒平台 | 登录、认证、验证码、鉴权 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/authentication.md) |
-| 百度秒嗒平台 | 支付、收款、退款 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/payment-integration.md) |
-| 百度秒嗒平台 | 报错、故障、排错、无法运行、白屏 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/experience/prompts/runtime-diagnostics.md) |
-| 百度秒嗒平台 | 增量、迭代、回传、回执、验收、审查包、还原、恢复原站、一次给齐、一次性、批量交付、减少上传、上传轮次、迁移、打包、分包 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md) |
-| 百度秒嗒平台 | Skill、CLI、外部调用、附件、回传、回执、代码仓库、直接查看、直接读取 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/development/skill-as-callable.md) |
-| 百度秒嗒平台 | 全量、分包、迁移、本地源码 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/experience/patterns/codex-source-package-deployment.md) |
+| 百度秒嗒平台 | 当前、功能、限制、限额、容量、权益、会员、价格、秒点、能不能 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/facts.md) |
+| 百度秒嗒平台 | 报错、故障、排错、失败、白屏、踩坑 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/pitfalls.md) |
+| 百度秒嗒平台 | 上传、文件传输 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/uploads.md) |
+| 百度秒嗒平台 | 大视频、大文件、视频上传、分片上传 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/large-video-upload.md) |
+| 百度秒嗒平台 | 登录、认证、验证码、鉴权、手机号 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/authentication.md) |
+| 百度秒嗒平台 | 支付、收款、退款、订单 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/payment.md) |
+| 百度秒嗒平台 | 报错、故障、排错、无法运行、白屏、日志 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/runtime-diagnostics.md) |
+| 百度秒嗒平台 | 数据库、存储、后端、localStorage | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/backend-storage.md) |
+| 百度秒嗒平台 | SEO、关键词、备案、整改 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/seo-and-content.md) |
+| 百度秒嗒平台 | Skill、CLI、外部调用、附件、代码仓库、直接查看、直接读取 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/development/skill-as-callable.md) |
 | 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/README.md) |
 | 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/jianwei-training-style.md) |
 | 培训备课与复盘（先核对归属） | 实操、教程、跟做、操作步骤；排除：宣传、朋友圈、招生、只查、查询位置 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/tutorial-writing.md) |
@@ -132,6 +131,6 @@
 | 面向跨岗位学员设计AI工具全景与工作场景实操课程时 | [工具全景到工作场景](../../../work/domains/training/experience/demo-driven-course-design.md) | 单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本 | 类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对 |
 | 收到创赛文稿，需要分析叙事、拆分画面、选择AI／真实素材／AE模板，或调整参考图、人物动作与运镜时 | [创赛宣传片制作](../../../work/domains/design/video/promo/competition-promo-production.md) | 不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴 | 核对文稿与画面、素材及制作分工、定格叠字、参考图文字、人物姿态与机位、连续衔接；提示词和用户完工反馈不代替成片逐镜验收 |
 | 为自媒体文章、图文或视频拟发布标题；写公众号等完整文章时即使未点名Skill也用于标题环节；亦可明确调用诊断、评审 | [Title Matrix 标题矩阵](../../../work/domains/self-media/titles/title-matrix/README.md) | 只查资料、只改正文或保留原标题不生成新题；合同、出版章节和学员课件不自动套营销标题；不覆盖文章正文方法 | 实际读Skill和平台参考，逐项对正文核对标题承诺、读者与发布形态；不编实测、数据或资源，不保证点击率；整篇创作交付标题加正文，不强塞矩阵 |
-| 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](../../../work/domains/design/video/common/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
+| 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](../../../work/domains/design/video/common/seedance/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
 | 精品课或录课课件的文稿、模板、配图排版、动画返修及逐页录制操作稿制作 | [精品课制作与验收](../../../work/domains/design/graphic/ppt/premium-course/workflow.md) | 普通商务汇报与自由风格路演；不套用个案费用、字号和人物区域 | 保护最新用户改稿，按任务检查图文适配、箭头轴线与旋转、准确点击句及媒体返回；冻结HTML时不自动同步 |
 <!-- generated-methods:end -->

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "purpose": "只登记路径、类型与领域关系；当前状态和证据回正文。外部培训是活动容器，不代表已经确认具体客户或场次。",
+  "purpose": "只登记真正的项目（一件有目标、持续推进的事）的路径、类型与领域关系；当前状态和证据回正文。外出培训场次属于培训领域的授课记录，见 work/domains/training/materials/，不在此登记。",
   "projects": [
     {
       "id": "yancut-ai",
@@ -24,16 +24,6 @@
       ]
     },
     {
-      "id": "external-training",
-      "name": "外部培训记录",
-      "kind": "活动容器",
-      "domain": "企业、图书馆、夜校等",
-      "entry": "work/projects/external-training/README.md",
-      "domainEntries": [
-        "work/domains/training/README.md"
-      ]
-    },
-    {
       "id": "feishu-efficient-office",
       "name": "《飞书高效办公》",
       "kind": "出版项目",
@@ -54,56 +44,9 @@
         "work/domains/other/README.md",
         "work/domains/development/README.md"
       ]
-    },
-    {
-      "id": "jinan-cadre-ai",
-      "name": "济南市领导干部AI专题培训",
-      "kind": "专题培训",
-      "domain": "干部AI培训方案与实操设计",
-      "entry": "work/projects/external-training/jinan-cadre-ai/README.md",
-      "domainEntries": [
-        "work/domains/training/README.md",
-        "work/domains/other/commercial/README.md"
-      ]
     }
   ],
-  "cases": [
-    {
-      "id": "enterprise-prompt-record",
-      "name": "企业片提示词实战记录",
-      "kind": "提示词案例",
-      "domain": "企业宣传片与信息包装",
-      "entry": "work/projects/cases/2026-05-enterprise-prompt-record.md",
-      "domainEntries": [
-        "work/domains/design/README.md",
-        "work/domains/design/video/README.md",
-        "work/domains/design/video/promo/README.md"
-      ]
-    },
-    {
-      "id": "little-leaf-ai-microcourse-mv",
-      "name": "《小树叶》AI教师音乐微课",
-      "kind": "案例复盘",
-      "domain": "教师音乐微课、AI画面与Seedance多镜头",
-      "entry": "work/projects/cases/little-leaf-ai-microcourse-mv.md",
-      "domainEntries": [
-        "work/domains/design/README.md",
-        "work/domains/design/video/README.md",
-        "work/domains/design/video/education/README.md"
-      ]
-    },
-    {
-      "id": "angle-revisited-premium-course",
-      "name": "《角的再认识》精品课",
-      "kind": "案例复盘",
-      "domain": "教师精品课PPT、AI素材与教育交互",
-      "entry": "work/projects/cases/angle-revisited-premium-course.md",
-      "domainEntries": [
-        "work/domains/design/graphic/ppt/README.md",
-        "work/domains/design/video/education/README.md"
-      ]
-    }
-  ],
+  "cases": [],
   "archivedProjects": [
     {
       "id": "openclaw-agent",

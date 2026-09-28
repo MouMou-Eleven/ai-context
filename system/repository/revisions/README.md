@@ -1,46 +1,8 @@
-# Repository Revisions - 仓库级修订
+# 仓库结构的重大变化
 
-这里仅记录影响全仓信息架构、读取规则或治理方式的重大变化，不存放单个工作项目的日常修订。
+普通改动看 Git 提交记录，不单独写修订文件。只有整个仓库的结构或读写规则发生重大变化时，才在这里记一条。
 
-各记录说明当时的变化，不整份自动激活；当前执行以AGENTS及其指向的有效规则为准。同一主题有新记录时核对适用范围与替代关系。
-
-| 日期 | 修订 | 作用 |
-|---|---|---|
-| 2026-09-24 | [navigation-descriptions.md](./2026-09-24-navigation-descriptions.md) | 导航用途逐项补齐，新增缺项阻止提交，桌面和窄屏保留说明；明确沉淀完成须远端main可见 |
-| 2026-09-24 | [title-matrix-integration.md](./2026-09-24-title-matrix-integration.md) | 第三方标题Skill入自媒体标题板块，接入隐式拟题、正文依赖、边界回归与领域Skill校验 |
-| 2026-09-21 | [task-retrieval-and-adherence.md](./2026-09-21-task-retrieval-and-adherence.md) | 自然任务下钻、实时正文候选与完整来源包、执行证据；修复当前归属残留和GitHub首页README优先级 |
-| 2026-09-16 | [training-attribution-and-navigation.md](./2026-09-16-training-attribution-and-navigation.md) | 本人确认图书馆与会员课程／文章归属；实战复盘接回方法来源；日常导航优先、完整视图收进维护入口 |
-| 2026-09-15 | [writing-dna-review-and-method-routing.md](./2026-09-15-writing-dna-review-and-method-routing.md) | 写作蒸馏器实用性审计；统一材料提炼规范、按需求发现方法与跨体裁边界；同一登记生成入口并校验停用 |
-| 2026-09-13 | [experience-adherence-audit.md](./2026-09-13-experience-adherence-audit.md) | 对已读仍违反学员视角的真实任务回放；补写前约束、实际草稿检测和跨领域成品验收 |
-| 2026-09-12 | [personal-expression-and-skill-refinement.md](./2026-09-12-personal-expression-and-skill-refinement.md) | 个人四项、实践证据归纳、表达精简及Skill迁入其他领域；取代早先相反归属 |
-| 2026-09-12 | [hierarchical-navigation-and-expression.md](./2026-09-12-hierarchical-navigation-and-expression.md) | 四主入口、领域与项目集中、表达体裁及日常导航；替代此前五根与AI大类的现行结构 |
-| 2026-04-05 | [context-repository-established.md](./2026-04-05-context-repository-established.md) | 从原时间线归回仓库建立的历史事实 |
-| 2026-09-12 | [context-operation-and-attribution.md](./2026-09-12-context-operation-and-attribution.md) | 纠正课程归属，建立自动依赖、写入闭环、来源能力卡和可执行校验 |
-| 2026-09-05 | [remotion-deterministic-layout.md](./2026-09-05-remotion-deterministic-layout.md) | 参数变化时的确定性布局约束与验收 |
-| 2026-09-05 | [remotion-universal-adaptive-architecture.md](./2026-09-05-remotion-universal-adaptive-architecture.md) | 通用自适应架构和参数覆盖 |
-| 2026-09-02 | [jianwei-remotion-parameterization.md](./2026-09-02-jianwei-remotion-parameterization.md) | 自研动画参数化能力修订 |
-| 2026-09-07 | [`structure-sync-and-content-routing.md`](./2026-09-07-structure-sync-and-content-routing.md) | 固化结构 HTML 与桌面镜像的同步责任，统一通用口语表达唯一来源，并建立 AI 自媒体渠道分流规则 |
-| 2026-09-07 | [`training-review-generalization-and-reinforcement.md`](./2026-09-07-training-review-generalization-and-reinforcement.md) | 将 AI 培训复盘改为“项目证据 + 通用经验”双层沉淀，建立已有规则重复被违反时的高频强化机制和必读路由 |
-| 2026-09-05 | [`remotion-text-visibility-and-clipping.md`](./2026-09-05-remotion-text-visibility-and-clipping.md) | 将文字与关键元素完整可见提升为硬门槛：区分布局框、真实墨迹框和裁剪祖先，稳定区释放蒙版，最长参数值通过实测边界校验 |
-| 2026-09-05 | [`remotion-text-stability-and-director-console.md`](./2026-09-05-remotion-text-stability-and-director-console.md) | 将文字抗抖与导演台证据升级为结构化硬门槛：字体锁定、单一变换所有者、整数像素稳定区、基线/字体签名校验和固定输出顺序 |
-| 2026-09-05 | [`remotion-director-expansion-and-background-fidelity.md`](./2026-09-05-remotion-director-expansion-and-background-fidelity.md) | 增加用户简述的两遍内部导演加工、动作能量链和事件响应；将参考图背景升级为 RGB/亮度采样硬约束，拦截深色背景被大范围混白 |
-| 2026-09-05 | [`remotion-layout-locked-continuity.md`](./2026-09-05-remotion-layout-locked-continuity.md) | 撤销参考图片尾整图混合策略，改为几何锁定重建；新增生产源码整图引用审计、最终稳定区连续性审计和视觉所有者/目标边界框硬字段，拦截重影、遮挡与最后一秒换场 |
-| 2026-09-04 | [`remotion-reference-fidelity-and-preview-gate.md`](./2026-09-04-remotion-reference-fidelity-and-preview-gate.md) | 将参考图目标最终帧、关键区域对比、只重建必要元素、低清预览与最终渲染二次确认、默认 Chromium 渲染优先级和性能预算提升为可执行硬门槛 |
-| 2026-09-01 | [`remotion-skill-director-and-parameterization.md`](./2026-09-01-remotion-skill-director-and-parameterization.md) | 将目标最终帧、状态反差、记忆点、收尾回扣和因果重叠提升为导演硬门槛，并把可编辑文字、编号与颜色的参数化 Remotion 工程设为默认输出 |
-| 2026-09-01 | [`remotion-skill-confirmation-and-action-contract.md`](./2026-09-01-remotion-skill-confirmation-and-action-contract.md) | 将 Remotion Skill 改为默认“规划确认后实施”，并建立逐元素触发、路径、缓动与因果动作契约 |
-| 2026-09-01 | [`ai-programming-skill-repository.md`](./2026-09-01-ai-programming-skill-repository.md) | 新增保存 Skill 实体的五级仓库、上游 commit 元数据和完整供应商快照治理规则 |
-| 2026-08-27 | [`commercial-external-material-boundary.md`](./2026-08-27-commercial-external-material-boundary.md) | 明确赛事、路演和融资材料不得暴露内部研发讨论、自证式声明及外部无法访问的本地证据 |
-| 2026-08-24 | [`sixty-jiazi-project-relocation.md`](./2026-08-24-sixty-jiazi-project-relocation.md) | 将 AI 六十甲子古音律与 IP 孵化从 AI 编程迁入 other，并锁定唯一项目路由与禁止恢复的旧路径 |
-| 2026-08-23 | [`feishu-document-routing-boundary.md`](./2026-08-23-feishu-document-routing-boundary.md) | 明确飞书文档是承载平台，不得把飞书课程、社群或其他文档误触发为《飞书高效办公》书籍项目 |
-| 2026-08-22 | [`cognition-and-content-commercialization.md`](./2026-08-22-cognition-and-content-commercialization.md) | 将思维与商业认知归入“建委认知”，并把多份内容销售资料提炼为跨行业的需求识别与商业承接方法 |
-| 2026-09-01 | [`case-result-narrative.md`](./2026-09-01-case-result-narrative.md) | 将案例演示从作品展示提升为精准人群证明、观点论证、结果预览和产品承接，并接入商业、自媒体、培训与 AI 编程路由 |
-| 2026-08-21 | [`chinese-quality-and-source-governance.md`](./2026-08-21-chinese-quality-and-source-governance.md) | 建立默认中文语法与病句检查，明确开源资源、数据集和多位创作者经验的去重、冲突与激活规则 |
-| 2026-08-21 | [`desktop-sync-resilience.md`](./2026-08-21-desktop-sync-resilience.md) | 加固桌面 HTML 同步的重试、非阻断延后和 Git 操作自愈机制 |
-| 2026-08-21 | [`commercial-delivery-relocation.md`](./2026-08-21-commercial-delivery-relocation.md) | 将商业化与对外交付从 AI 移到其他领域，明确其跨设计与 AI 的商业规范定位 |
-| 2026-08-21 | [`interactive-html-structure-viewer.md`](./2026-08-21-interactive-html-structure-viewer.md) | 将桌面 Markdown 结构镜像升级为可逐层展开、折叠和搜索的 HTML 思维导图，并接入自动同步 |
-| 2026-08-21 | [`direct-main-and-desktop-sync.md`](./2026-08-21-direct-main-and-desktop-sync.md) | 默认直接提交并推送 `main`、清理旧 PR/分支，并建立 F 盘桌面结构镜像同步机制 |
-| 2026-08-21 | [`commercial-delivery-domain.md`](./2026-08-21-commercial-delivery-domain.md) | 新增商业化与对外交付边界层，明确“给客户看”等触发条件、内外部稿件边界和确定性表达规则 |
-| 2026-08-20 | [`ai-expression-default-layer.md`](./2026-08-20-ai-expression-default-layer.md) | 将个人表达重构为所有中文内容默认调用的 AI 表达基础层，并统一跨领域语言规则与数据集边界 |
-| 2026-08-18 | [`information-architecture-rebuild.md`](./2026-08-18-information-architecture-rebuild.md) | 从零散六目录重构为个人、建委大脑、工作、仓库治理、历史五个一级入口 |
-
-当前结构见[结构规范](../navigation/STRUCTURE.md)，完整协作见[当前规则](../collaboration-rules.md)；[交互导航](../navigation/STRUCTURE.html)是自动生成的查看层。表内旧迁址和分类决定仅是历史，不作为现在的路径约束。
+| 日期 | 变化 |
+|---|---|
+| 2026-09-28 | 仓库整改：AGENTS.md 改为一页"任务 → 必读文件"对照表（含组合任务、冲突顺序、红线／默认／可灵活三级）；写入规范重写（先改已有位置、写清楚不压缩、新分类先问建委）；新增建委口语样稿、培训常讲课题、秒哒事实表与协作方法；外出培训从项目移入培训领域；Seedance 合并为一处；案例移到对应方法旁边；删除旧的治理规则文件和 36 份治理修订记录（它们描述的是被取代的旧规则）。 |
+| 2026-04-05 ～ 2026-09-24 | 旧的治理修订记录共 36 份，已删除。需要查看时，打开 [删除前的版本](https://github.com/MouMou-Eleven/ai-context/tree/9f56e5d47cdf3926c2b7d17bd637ad775d5762d9/system/repository/revisions)。 |

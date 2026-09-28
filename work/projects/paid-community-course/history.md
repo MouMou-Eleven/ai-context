@@ -33,4 +33,4 @@
 - 现存详细修订保留在项目内，只有追溯时读取；此前已删除的中间稿按需通过Git历史查证。
 - 新变化先改当前专题；重要方向或事实变化写入对应 `revisions/YYYY-MM-DD-slug.md` 并更新README索引，本摘要只补一句变化与修订链接，不维护第二套当前事实。
 
-2026-09-16：建委确认静态网页发布为会员AI编程系列课、Git/GitHub为会员配套文章、秒哒完整开发流程为会员直播后复盘。三份修订归回项目，资料类型与授课状态分别维护；详见[本次确认](../../../system/repository/revisions/2026-09-16-training-attribution-and-navigation.md)。
+2026-09-16：建委确认静态网页发布为会员AI编程系列课、Git/GitHub为会员配套文章、秒哒完整开发流程为会员直播后复盘。三份修订归回项目，资料类型与授课状态分别维护；详见[本次确认](https://github.com/MouMou-Eleven/ai-context/blob/9f56e5d47cdf3926c2b7d17bd637ad775d5762d9/system/repository/revisions/2026-09-16-training-attribution-and-navigation.md)。

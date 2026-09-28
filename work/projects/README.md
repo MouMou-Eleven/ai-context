@@ -2,7 +2,7 @@
 
 这里保存具体事情的事实：目标、客户或受众、约定、资料、当前状态、交付与修订。按名称进入项目README，再核对当前事实的权威来源。
 
-长期项目直接放在本目录，短期商单和单次实践进入[案例](./cases/README.md)，已退出主线的资料进入[归档项目](./archive/README.md)。状态变化记录在项目入口，不因每次暂停或恢复就改路径。
+这里只放长期项目（一件有目标、持续推进的事）。单次商单的案例放在它证明的那个方法旁边（比如设计案例在设计目录里）；外出培训场次在[培训资料](../domains/training/materials/README.md)；已退出主线的资料进入[归档项目](./archive/README.md)。状态变化记录在项目入口，不因每次暂停或恢复就改路径。
 
 外部培训入口当前是记录容器，不能据此推造企业、图书馆、夜校的具体场次。待归属材料仍在[培训资料](../domains/training/materials/README.md)。会员社群与外训课程分别判断身份。
 
@@ -18,7 +18,7 @@
 | 混世魔牛游戏 | [ai-programming-development](https://github.com/MouMou-Eleven/ai-programming-development)中的`projects/hunshi-moniu/` | 进入该源码目录README，核对基线、测试与状态 |
 | 杨建委个人网站 | 同一源码仓库中的`projects/jianwei-portfolio/` | 进入该源码目录README，核对基线、测试与状态 |
 
-新项目登记源码位置、公开范围、基线和待确认项；不复制完整工程到上下文仓库。涉及秒哒分包再读[部署方法](../domains/development/tools/miaoda/experience/patterns/codex-source-package-deployment.md)。
+新项目登记源码位置、公开范围、基线和待确认项；不复制完整工程到上下文仓库。涉及秒哒分包再读[部署方法](../domains/development/tools/miaoda/workflow.md)。
 
 <!-- generated-projects:start -->
 ## 当前项目与活动入口
@@ -27,8 +27,6 @@
 |---|---|---|
 | 项目 | [言剪 AI](yancut-ai/README.md) | 应用开发 |
 | 长期项目 | [AI 超级个体陪跑社群](paid-community-course/README.md) | 会员培训与社群经营 |
-| 活动容器 | [外部培训记录](external-training/README.md) | 企业、图书馆、夜校等 |
 | 出版项目 | [《飞书高效办公》](feishu-efficient-office/README.md) | 书稿与出版 |
 | 项目 | [AI 六十甲子古音律与 IP 孵化](ai-sixty-jiazi-music-ip/README.md) | 文化产品与IP |
-| 专题培训 | [济南市领导干部AI专题培训](external-training/jinan-cadre-ai/README.md) | 干部AI培训方案与实操设计 |
 <!-- generated-projects:end -->

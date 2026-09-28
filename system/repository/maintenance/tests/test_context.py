@@ -21,7 +21,7 @@ navigation = load_module('sync-navigation')
 
 class Routes(unittest.TestCase):
     def test_miaoda_batch_delivery_natural_tasks(self):
-        target = 'work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md'
+        target = 'work/domains/development/tools/miaoda/workflow.md'
         for task in ['用秒哒尽快还原原站，不要删功能', '秒嗒后面的包一次给齐', '秒哒批量交付减少上传轮次', '把Vercel迁移到miaoda.online']:
             with self.subTest(task=task):
                 self.assertIn(target, router.resolve(task, 'create')['read'])
@@ -45,15 +45,15 @@ class Routes(unittest.TestCase):
         self.assertIn('原 Vercel／本地能力基线（秒哒迁移对照）', page)
 
     def test_miaoda_auth_template_excludes_native_phone_email_fallback(self):
-        page = (ROOT / 'work/domains/development/tools/miaoda/experience/prompts/authentication.md').read_text(encoding='utf-8')
+        page = (ROOT / 'work/domains/development/tools/miaoda/topics/authentication.md').read_text(encoding='utf-8')
         self.assertIn('不能用于原生 phone/OTP 项目', page)
         self.assertIn('保留必要的服务端凭据验证', page)
         self.assertNotIn('请删除或停用其登录职责', page)
 
     def test_miaoda_auth_change_routes_to_auth_contract(self):
         result = router.resolve('修改百度秒哒登录注册密码显示并验收', 'create')
-        self.assertIn('work/domains/development/tools/miaoda/experience/prompts/authentication.md', result['read'])
-        self.assertIn('work/domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md', result['read'])
+        self.assertIn('work/domains/development/tools/miaoda/topics/authentication.md', result['read'])
+        self.assertIn('work/domains/development/tools/miaoda/workflow.md', result['read'])
 
     def test_miaoda_capability_queries_read_actual_contract(self):
         base = 'work/domains/development/tools/miaoda/'
@@ -67,22 +67,22 @@ class Routes(unittest.TestCase):
         for task, intent in [('审查秒哒回传的SQL和文件', 'read'), ('制作秒哒增量包并索取验收资料', 'create')]:
             with self.subTest(task=task):
                 result = router.resolve(task, intent)
-                self.assertIn(base + 'experience/patterns/codex-miaoda-iterative-increment-workflow.md', result['read'])
+                self.assertIn(base + 'workflow.md', result['read'])
         result = router.resolve('把本地源码分包迁移到秒哒', 'create')
-        self.assertIn(base + 'experience/patterns/codex-source-package-deployment.md', result['read'])
+        self.assertIn(base + 'workflow.md', result['read'])
 
     def test_miaoda_rules_do_not_leak_to_other_platform_or_simple_query(self):
         base = 'work/domains/development/tools/miaoda/'
         for task in ['飞书妙搭上传附件', '查秒哒会员容量']:
             with self.subTest(task=task):
                 result = router.resolve(task, 'read')
-                self.assertNotIn(base + 'experience/patterns/codex-miaoda-iterative-increment-workflow.md', result['read'])
+                self.assertNotIn(base + 'workflow.md', result['read'])
                 self.assertNotIn(base + 'development/skill-as-callable.md', result['read'])
 
     def test_named_library_reads_its_materials_without_community(self):
         result = router.resolve('给济南市图书馆写课件解释API概念', 'create')
         self.assertEqual(result['selectedCandidate'], 'jinan-library')
-        self.assertIn('work/projects/external-training/jinan-city-library/README.md', result['read'])
+        self.assertIn('work/domains/training/materials/jinan-city-library/README.md', result['read'])
         self.assertIn('work/domains/training/experience/jianwei-training-style.md', result['read'])
         self.assertTrue(any(m['id'] == 'problem-driven-explanation' for m in result['methods']))
         self.assertFalse(any('paid-community-course' in path for path in result['read']))
@@ -95,7 +95,7 @@ class Routes(unittest.TestCase):
         self.assertFalse(any('jinan-city-library' in path for path in generic['read']))
         bug = router.resolve('查会员社群的别让Bug打败你第6课', 'read')
         self.assertEqual(bug['selectedCandidate'], 'bug-lesson')
-        self.assertIn('work/projects/external-training/jinan-city-library/README.md', bug['read'])
+        self.assertIn('work/domains/training/materials/jinan-city-library/README.md', bug['read'])
         self.assertFalse(any('paid-community-course' in path for path in bug['read']))
 
     def test_named_tool_cannot_replace_member_course_context(self):
@@ -216,7 +216,7 @@ class Routes(unittest.TestCase):
     def test_channel_output_and_training_fact_boundaries(self):
         tasks = [
             ('给会员社群做海报', 'create', 'poster', 'work/projects/paid-community-course/README.md'),
-            ('为外训写朋友圈宣传', 'create', 'self-media', 'work/projects/external-training/README.md'),
+            ('为外训写朋友圈宣传', 'create', 'self-media', 'work/domains/training/materials/README.md'),
             ('会员社群状态查询', 'read', 'community', 'work/projects/paid-community-course/README.md'),
         ]
         for task, intent, selected, project in tasks:

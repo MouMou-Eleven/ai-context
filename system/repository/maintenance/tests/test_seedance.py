@@ -12,7 +12,7 @@ from context_retrieval import source_pack
 
 router = load_module('context-route')
 validator = load_module('validate-context')
-BASE = 'work/domains/design/video/common/awesome-seedance'
+BASE = 'work/domains/design/video/common/seedance/awesome-seedance'
 SKILL = BASE + '/source/agents/skills/seedance-prompt-library/SKILL.md'
 spec = importlib.util.spec_from_file_location('seedance_lookup', ROOT / BASE / 'lookup.py')
 lookup = importlib.util.module_from_spec(spec)
@@ -34,7 +34,7 @@ class SeedanceRouting(unittest.TestCase):
         result = router.resolve('为教师微课写AI生成镜头提示词，人物参考图要保持角色一致', 'auto')
         self.assertEqual(result['selectedCandidate'], 'microcourse')
         self.assertIn(BASE + '/source/docs/templates/zh/character-reference-lock.md', result['read'])
-        self.assertIn('work/domains/design/video/common/tools/seedance/practical-workflow.md', result['read'])
+        self.assertIn('work/domains/design/video/common/seedance/practical-workflow.md', result['read'])
         self.assertNotIn('work/projects/paid-community-course/README.md', result['read'])
 
     def test_explicit_and_directory_scoped_invocation(self):

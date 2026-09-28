@@ -1,21 +1,109 @@
-# AI启动规则
+# AI 读取和写入本仓库的规则
 
-本仓库是杨建委的长期AI协作事实中枢。建委只需描述目标或要沉淀的领域，AI承担检索、归属、必要依赖、更新、验收与发布责任。
+这是杨建委（建委）的长期上下文仓库：他是谁、怎么想、会做什么、在做什么。任何 AI（GPT、Claude、GLM、Gemini 等，不论哪个版本）接到建委的任务都按本页执行。本页是唯一入口，读完本页就知道下一步读什么，不需要运行脚本。本页的规则对所有模型一样，不因为换了模型就换一套做法。
 
-**调用时不用建委报路径。** 从当前对话提取正在做的交付物、读者、问题和明确项目，再按[任务指南](./system/repository/navigation/task-guide.md)定位；“参考仓库”只是取用上下文，不是仓库维护任务。只指定板块时继续查它的子目录与方法正文。能运行Python就用[检索工具](./system/repository/maintenance/context-route.py)的自然任务计划与正文包；不能运行时按同一指南沿README和站内文件搜索。未命中先改用材料中的问题词检索，不能要求建委替AI找文件。只有对话本身没有任务目标，才问要完成什么。
+## 一、读取：接到任务怎么找经验
 
-1. 开始先实际核对仓库版本、[目录](./system/repository/navigation/STRUCTURE.md)和[任务入口](./system/repository/navigation/task-guide.md)，进入最近README；按需读证据，不默认加载全部原文、源码或历史。用户指定文件夹时，读最近README并沿本次触发继续读规则正文；索引与链接本身不是已读经验，必要的通用规则与项目事实仍须组合。
-2. 当前执行[协作规则](./system/repository/collaboration-rules.md)。一个主任务可自动组合必要领域；读取领域方法短表后，按读者困难和实际材料选择已采用方法，不要求用户点名作者，也不把短表内方法全部载入；个人事实在personal，个人认知在brain，方法和Skill在work/domains，项目与案例在work/projects，共享表达与运行规则在system。
-3. 所有中文输出遵守清楚、准确、连贯、不编造的底线。生成、修改或审核中文成品时读[表达短卡](./system/expression/README.md)和适用体裁；同时写入仓库时两套责任都成立。简单回答无需重复加载长规则。
-   制作实际成品按[执行与验收](./system/repository/execution-checks.md)把适用规则落实为本次约束与检查证据。读到规则不算已遵循，格式解析不算内容验收；长任务恢复后回读执行卡，写外部文档前验草稿，写后回读实际成品。
-4. 用户最近明确确认决定个人偏好、业务约定和项目归属；外部产品能力另按来源、版本和环境核验。README指向权威事实，不因它是入口就压过更新的适用证据。
-5. 培训先核对系列与场次；会员社群不代表全部培训。《别让 Bug 打败你》属于外部培训，同号课程与待归属资料不能推入社群。教师委托教育作品与建委授课分别处理。
-6. 项目身份不能由平台名或工具名推断。百度秒哒与飞书妙搭先读[辨析](./work/domains/development/tools/miaoda/disambiguation.md)；飞书文档链接不等于出版项目。飞书书稿先读[项目](./work/projects/feishu-efficient-office/README.md)与[当前出版规则](./work/projects/feishu-efficient-office/writing-style-analysis.md)。
-7. 写入、纠错、迁移、删除、收录Skill和复盘先读[更新流程](./system/repository/ingestion-workflow.md)。AI同步最近索引、相关资产登记、当前事实、引用和派生结构；重大变化写就近revisions，普通变动由Git追溯。
-8. Skill先查[能力与来源](work/domains/other/skills/README.md)，选定后才读执行实体。收录不等于安装，安装不等于执行。本机环境按[设备入口](./system/environment/README.md)核对；生图按[本机通道](./system/environment/image-generation.md)执行，凭据不入库。
+### 第 1 步：弄清楚要交付什么
+
+从对话里提取：**交付什么东西、给谁看、用在哪里**。建委说"看我的仓库，帮我……"时，后半句就是任务。建委指定了目录，就从那个目录开始，但仍按下表补齐必要的文件。
+
+### 第 2 步：按下表读文件
+
+表里的文件都要读完正文，只看标题或目录不算读过。一个任务同时属于几行时，每行都读。
+
+表里找不到对应的任务时：打开 [work/domains/README.md](work/domains/README.md) 和 [work/projects/README.md](work/projects/README.md)，按领域和项目名找最接近的目录，读它的 README；再用任务里的关键词搜仓库。实在找不到，照常完成任务，并告诉建委"仓库里没找到相关经验"，不要编造"仓库里说……"。
+
+| 任务 | 必读 |
+|---|---|
+| 写培训**课件** / 分享资料 / 课堂文档 | [培训入口](work/domains/training/README.md) → [培训风格](work/domains/training/experience/jianwei-training-style.md) + [口语样稿](system/expression/voice-samples.md) + [课程组织](work/domains/training/experience/demo-driven-course-design.md)；飞书课件加读[可视化与口语化](work/domains/training/experience/visual-and-oral-training-docs.md) |
+| 写培训**方案 / 大纲**（给主办方） | [常讲课题](work/domains/training/topics.md) + [对外方案写法](work/domains/other/commercial/experience/external-proposal-design.md) + [内外稿边界](work/domains/other/commercial/experience/external-deliverable-language.md)；要 Word 加读[政企 Word 排版](work/domains/other/commercial/delivery-formats/gov-enterprise-word.md) |
+| 写实操教程 | [教程写法](work/domains/training/experience/tutorial-writing.md) |
+| 公众号 / 图文文章 | [自媒体入口](work/domains/self-media/README.md) → [文章](work/domains/self-media/articles/README.md) + [标题](work/domains/self-media/titles/README.md) |
+| 宣传、招生、产品介绍、报名页 | [宣传写法](work/domains/self-media/marketing-copy/reader-question-led-promotion.md) + [口语样稿](system/expression/voice-samples.md) + 对应项目的事实 |
+| 朋友圈 / 社群话术 / 口播 / 直播 | [自媒体入口](work/domains/self-media/README.md) 里对应的那一类 + [口语样稿](system/expression/voice-samples.md) |
+| 平面设计：PPT、海报、折页、书籍 | [设计入口](work/domains/design/README.md) → 对应交付物目录 |
+| 视频：宣传片、微课、故事片、AI 视频提示词 | [视频入口](work/domains/design/video/README.md) → 对应片型目录；要写视频提示词再读 [Seedance](work/domains/design/video/common/seedance/README.md) |
+| 用百度秒哒开发 | [秒哒入口](work/domains/development/tools/miaoda/README.md)（先看顶部平台识别）→ 按其中的流程表选一条 |
+| 其他网站 / 应用 / 编程 | [开发入口](work/domains/development/README.md) + [通用开发经验](work/domains/development/experience/README.md) |
+| 商业计划、比赛申报、融资、对外合作材料 | [商业化入口](work/domains/other/commercial/README.md) |
+| 外出培训某一场（济南干部培训、济南市图书馆等） | [培训资料与场次](work/domains/training/materials/README.md) → 该场次 README |
+| 某个具体项目（社群、言剪、飞书书、六十甲子） | [项目列表](work/projects/README.md) → 该项目 README |
+| 个人简介、讲师介绍、简历 | [个人信息](personal/README.md)；荣誉和数字只按[背书表](personal/credentials.md)写 |
+| 建委的想法、偏好、判断方式 | [建委大脑](brain/README.md) |
+| 用 Skill | [Skill 库](work/domains/other/skills/README.md) |
+| 电脑、网络、本机工具 | [设备环境](system/environment/README.md) |
+| 往仓库里写东西 | 本页第二部分 + [写入规范](system/repository/ingestion-workflow.md) |
+
+**常见的组合任务**（主导方决定整体结构，其他方只提供内容）：
+
+| 组合 | 谁主导结构 | 其他方提供什么 |
+|---|---|---|
+| 培训宣传文章（有干货也要招生） | 自媒体宣传写法 | 培训：干货内容和课题；项目：课程事实、权益 |
+| 培训方案（给主办方） | 商业化：对外方案 | 培训：课题和讲法；场次记录：受众、时长 |
+| 培训课件里需要演示视频或做个小工具 | 培训：课件 | 设计或开发：制作方法（只用在那一段） |
+| 自媒体内容讲 AI 技术 | 自媒体 | 培训：[技术概念讲法](work/domains/training/experience/technical-explanation/problem-driven-technical-explanation.md) |
+| 秒哒开发项目（如言剪） | 秒哒流程 | 项目：当前进度和要求；通用开发经验：测试、UI、后端 |
+| 培训＋自媒体＋商业化一起（比如一场付费公开课的招生文章） | 自媒体宣传写法 | 培训：课程讲什么；商业化：[对外表达不假大空](work/domains/other/commercial/experience/external-deliverable-language.md)；项目：价格与权益 |
+
+组合时的做法：先定"主导方"，用它的结构写；其他方只借具体内容放进对应段落，不要把几套结构拼在一起。拿不准谁主导，看成品最终给谁看、要对方做什么（学会 → 培训主导；报名购买 → 自媒体宣传主导；签约采购 → 商业化主导）。
+
+### 第 3 步：读到的经验有冲突时
+
+按这个顺序，前面的优先：
+
+1. 建委这次对话里的明确要求
+2. 项目里的当前事实（价格、进度、已定内容）
+3. 标了"红线"的规则
+4. 领域里的默认做法
+5. 外部参考、旧记录
+
+规则分三级：
+
+- **红线**：不能违反，比如给学员的课件不写讲师安排、荣誉数字不能编、百度秒哒不用飞书妙搭的接口。
+- **默认**：没有特别理由就照做。
+- **可灵活**：看具体场景判断，比如课件里用生图还是现场演示，由知识点决定。
+
+没有标级别的，按"默认"处理。默认和可灵活的规则，只要本次场景有更好的做法就可以变通，但要跟建委说一句为什么这样做。
+
+### 第 4 步：交付前自查，并告诉建委用了什么
+
+把读到的红线逐条对照成品检查一遍（方法见[成品自查](system/repository/execution-checks.md)），再交付。交付时用一两句话告诉建委：这次读了仓库里哪几个文件、用了哪几条经验、有没有哪条没照做以及原因。这一步不能省，建委靠它判断经验有没有被用上。
+
+### 容易混淆的地方（红线）
+
+- **百度秒哒 ≠ 飞书妙搭。** 建委说"秒哒""秒嗒"、网址含 miaoda.cn 或 appmiaoda.com，都是百度秒哒。**不要**调用 lark-apps、lark-cli apps、Spark 这些飞书妙搭的工具和接口。只有明确出现"飞书妙搭"或 miaoda.feishu.cn 时才是飞书的产品。
+- **培训 ≠ 会员社群。** 企业、图书馆、夜校的培训是外出培训；课号只在自己的系列里有效。
+- **给学员的 ≠ 给讲师的 ≠ 给主办方的。** 同一场培训，课件、备课稿、方案是三种东西，分开写。
+- **教师委托做的微课、精品课**属于设计，不属于建委讲课。
+- **飞书文档链接**不代表是《飞书高效办公》这本书。
+
+## 二、写入：往仓库里沉淀经验
+
+建委说"沉淀一下""记到仓库""写进 GitHub"时执行这部分。详细步骤见[写入规范](system/repository/ingestion-workflow.md)。核心规则：
+
+1. **先找已有位置。** 先搜仓库里有没有讲同一件事的文件。有就改那一处：补充、修正或替换过时内容。不要另起新文件，也不要在末尾追加一条意思相近的新规则。
+2. **写清楚，不要压缩成口号。** 每条经验写明：什么场景、怎么做、一个正例或反例、为什么。"注意口语化"这种一句话规则没法执行；要写"像这样说，不要像那样说"。
+3. **标级别。** 新规则标上红线、默认或可灵活。
+4. **事实和方法分开放。** 某个项目的事实（价格、进度、客户）放项目；能用到别处的做法放领域。一件事两样都有，就各写一部分，互相加链接。
+5. **新建目录或新分类，必须先问建委。** 问的时候同时给两个方案：A. 放进已有的哪个位置；B. 新建什么、叫什么。并说明理由。建委同意后再建。
+6. **过时的内容直接改掉或删掉。** 不要新旧并列，Git 历史能找回旧版本。不再单独写"修订记录"文件，除非改的是整个仓库的结构。
+7. **同步索引。** 新增、移动、删除文件后，更新最近一层 README 的目录。移动文件后运行 `python system/repository/maintenance/relink.py 旧路径=新路径` 修正链接。
+8. **校验后再推送。** 运行 `python -B system/repository/maintenance/sync-navigation.py`、`sync-structure.py`、`validate-context.py`，没有错误再提交。
+
+凭据、Token、密码不入库。文件用 UTF-8、LF 换行、英文小写短横线命名。
+
+## 三、发布
 
 <!-- publish-policy: direct-main-no-pr -->
 
-默认不额外创建备份分支或待合并分支；Git提交历史保留追溯与恢复能力。沉淀完成以远端main确实包含本次内容为准，不能停在本地、临时分支或PR；必要的隔离与冲突处理由AI完成，不转交建委逐项合并，不覆盖远端他人更新。
+写入完成后直接提交并推送到 main，不开 PR，不建临时分支让建委合并。远端有新提交时先拉取合并，不覆盖别人的改动。推送后确认远端已包含本次提交，并把 GitHub 链接发给建委。
 
-建委要求写入GitHub时，按[维护步骤](./system/repository/maintenance/README.md)同步、校验并检查暂存范围，然后直接提交推送main，不创建PR或等待第二次提交指令。远端有新变化先核对合并；推送后回读commit与关键路径，并在回复中提供本次实际推送位置的GitHub链接（必要时附具体文件或commit链接）。桌面HTML是派生镜像，其暂不可用不阻断仓库内容校验。
+本地仓库启用 Git hooks（`git config core.hooksPath system/repository/maintenance/git-hooks`）后，每次提交会自动更新桌面上的"GitHub仓库完整结构.html"。建委靠这个页面看仓库，不能关掉。
+
+## 其他入口
+
+- 人看的首页：[README](README.md)
+- 完整文件结构：[STRUCTURE](system/repository/navigation/STRUCTURE.md)
+- 中文表达的通用要求：[表达短卡](system/expression/README.md)
+- 仓库维护工具：[maintenance](system/repository/maintenance/README.md)

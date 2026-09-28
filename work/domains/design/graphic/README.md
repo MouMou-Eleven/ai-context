@@ -6,4 +6,4 @@
 | [海报与折页](./poster-fold/README.md) | 海报、KV、宣传折页和系列视觉 |
 | [书籍封面与版式](./book/README.md) | 封面、内页、图文编排及印刷交付 |
 
-通用制作从[设计共用方法](../common/README.md)进入；AI生图、人工精修与排版按实际环节组合，不另建AI项目副本。业务事实、交付与复盘保存在[项目与案例](../../../projects/README.md)。
+通用制作从[设计共用方法](../common/README.md)进入；AI生图、人工精修与排版按实际环节组合，不另建AI项目副本。商单案例文件（`case-` 开头）直接放在对应门类目录里，例如[《角的再认识》精品课](./ppt/premium-course/case-angle-revisited.md)。

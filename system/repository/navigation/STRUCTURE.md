@@ -18,14 +18,15 @@ ai-context/
 │   ├── README.md  个人信息总窗口、索引、写入准则
 │   └── timeline.md  按时间查看成长经历与重要阶段变化
 ├── brain/  建委的认知与判断
-│   ├── business-cognition.md  商业、增长、内容经营与经营判断
+│   ├── business-judgment.md  建委看产品、渠道、信任、对标、客户时的八条总原则
 │   ├── README.md  认知入口、读取路由与写入边界
 │   └── thinking-and-decisions.md  思维、判断、框架拆解、学习与决策方式
 ├── work/  领域知识、项目事实与实践案例
 │   ├── domains/  领域知识：这类工作怎样做
 │   │   ├── design/  按交付物组织设计制作经验
 │   │   │   ├── common/  组合手工设计与AI辅助，统一制作和沉淀流程
-│   │   │   │   ├── ai-assisted-design.md  AI辅助视觉生产方法
+│   │   │   │   ├── ai-generation-principles.md  设计中用 AI 生成的五条原则
+│   │   │   │   ├── feedback-iteration.md  多轮反馈修改方法：可见问题、每轮一类、退回、授权范围
 │   │   │   │   ├── production-workflow.md  从需求到交付组织设计工作，并把经验接回知识库
 │   │   │   │   └── README.md  设计共用方法
 │   │   │   ├── graphic/  按PPT、海报折页和书籍版式查设计经验
@@ -36,6 +37,7 @@ ai-context/
 │   │   │   │   ├── ppt/  制作演示文稿时查内容组织与视觉设计要求
 │   │   │   │   │   ├── premium-course/  教师委托精品课的模板课件、素材、交互及验收经验
 │   │   │   │   │   │   ├── animation-and-geometry.md  按问答安排揭示，联合检查旋转中心、路径尺寸和箭头接合
+│   │   │   │   │   │   ├── case-angle-revisited.md  《角的再认识》数学精品课商单案例
 │   │   │   │   │   │   ├── README.md  按制作任务进入精品课方法与真实案例
 │   │   │   │   │   │   ├── recording-guide.md  把最终稿段映射为准确点击口令、翻页和网页媒体操作
 │   │   │   │   │   │   ├── revisions/  对照客户修改前后画面，记录布局判断及可观察的检查标准
@@ -49,220 +51,211 @@ ai-context/
 │   │   │   └── video/  按宣传、教育、故事片型组合制作方法
 │   │   │       ├── common/  跨片型复用分镜、AI生成、合成与验收方法
 │   │   │       │   ├── ae-production.md  AE包装、合成与工程交付要求
-│   │   │       │   ├── awesome-seedance/  AI视频提示词、模板与第三方案例
-│   │   │       │   │   ├── lookup.py  只读提取模板、案例原文和复测状态
-│   │   │       │   │   ├── README.md  能力边界、主动调用、来源与后续沉淀
-│   │   │       │   │   ├── source/  上游完整快照，共 153 个文件；展开可核查内部层级
-│   │   │       │   │   │   ├── .claude-plugin/  目录入口
-│   │   │       │   │   │   │   └── marketplace.json  结构化配置与索引
-│   │   │       │   │   │   ├── .github/  目录入口
-│   │   │       │   │   │   │   ├── CODEOWNERS  资料与资源
-│   │   │       │   │   │   │   ├── pull_request_template.md  说明与资料
-│   │   │       │   │   │   │   └── workflows/  目录入口
-│   │   │       │   │   │   │       ├── refresh-site-stats.yml  自动化配置
-│   │   │       │   │   │   │       ├── update-readme.yml  自动化配置
-│   │   │       │   │   │   │       └── validate-submissions.yml  自动化配置
-│   │   │       │   │   │   ├── .gitignore  资料与资源
-│   │   │       │   │   │   ├── agents/  目录入口
-│   │   │       │   │   │   │   └── skills/  目录入口
-│   │   │       │   │   │   │       ├── seedance-3d-cartoon/  目录入口
-│   │   │       │   │   │   │       │   ├── references/  目录入口
-│   │   │       │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · 3D cartoon character short
-│   │   │       │   │   │   │       │   └── SKILL.md  3D cartoon character short · 3D 卡通角色短片
-│   │   │       │   │   │   │       ├── seedance-car-vehicle/  目录入口
-│   │   │       │   │   │   │       │   ├── references/  目录入口
-│   │   │       │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Cars and vehicles at speed
-│   │   │       │   │   │   │       │   └── SKILL.md  Cars and vehicles at speed · 汽车与载具速度片
-│   │   │       │   │   │   │       ├── seedance-epic-fantasy-scifi/  目录入口
-│   │   │       │   │   │   │       │   ├── references/  目录入口
-│   │   │       │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Epic fantasy and sci-fi spectacle
-│   │   │       │   │   │   │       │   └── SKILL.md  Epic fantasy and sci-fi spectacle · 奇幻科幻大场面
-│   │   │       │   │   │   │       ├── seedance-fashion-lookbook/  目录入口
-│   │   │       │   │   │   │       │   ├── references/  目录入口
-│   │   │       │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Fashion lookbook and portrait film
-│   │   │       │   │   │   │       │   └── SKILL.md  Fashion lookbook and portrait film · 时尚 lookbook 与人像写真片
-│   │   │       │   │   │   │       ├── seedance-horror-suspense/  目录入口
-│   │   │       │   │   │   │       │   ├── references/  目录入口
-│   │   │       │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Horror and suspense
-│   │   │       │   │   │   │       │   └── SKILL.md  Horror and suspense · 恐怖悬疑短片
-│   │   │       │   │   │   │       ├── seedance-meme-comedy/  目录入口
-│   │   │       │   │   │   │       │   ├── references/  目录入口
-│   │   │       │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Twist-ending comedy skit
-│   │   │       │   │   │   │       │   └── SKILL.md  Twist-ending comedy skit · 反转结尾搞笑短片
-│   │   │       │   │   │   │       ├── seedance-pet-animal/  目录入口
-│   │   │       │   │   │   │       │   ├── references/  目录入口
-│   │   │       │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Pets and animals as the lead
-│   │   │       │   │   │   │       │   └── SKILL.md  Pets and animals as the lead · 宠物动物当主角
-│   │   │       │   │   │   │       ├── seedance-prompt-library/  目录入口
-│   │   │       │   │   │   │       │   ├── bin/  目录入口
-│   │   │       │   │   │   │       │   │   └── install.mjs  资料与资源
-│   │   │       │   │   │   │       │   ├── CHANGELOG.md  说明文档：Changelog
-│   │   │       │   │   │   │       │   ├── package.json  结构化配置与索引
-│   │   │       │   │   │   │       │   ├── references/  目录入口
-│   │   │       │   │   │   │       │   │   └── style-library.md  说明文档：Seedance Prompt Style Library
-│   │   │       │   │   │   │       │   └── SKILL.md  说明文档：Seedance Prompt Library
-│   │   │       │   │   │   │       ├── seedance-retro-dv-home-video/  目录入口
-│   │   │       │   │   │   │       │   ├── references/  目录入口
-│   │   │       │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Early-2000s DV home video
-│   │   │       │   │   │   │       │   └── SKILL.md  Early-2000s DV home video · 早年 DV 家庭录像
-│   │   │       │   │   │   │       ├── seedance-sports-extreme/  目录入口
-│   │   │       │   │   │   │       │   ├── references/  目录入口
-│   │   │       │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Sports and extreme stunts
-│   │   │       │   │   │   │       │   └── SKILL.md  Sports and extreme stunts · 体育与极限运动
-│   │   │       │   │   │   │       ├── seedance-storyboard-grid-to-video/  目录入口
-│   │   │       │   │   │   │       │   ├── references/  目录入口
-│   │   │       │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Storyboard grid to video
-│   │   │       │   │   │   │       │   └── SKILL.md  Storyboard grid to video · 分镜网格转视频
-│   │   │       │   │   │   │       └── seedance-travel-city-walk/  目录入口
-│   │   │       │   │   │   │           ├── references/  目录入口
-│   │   │       │   │   │   │           │   └── cases.md  说明文档：Case evidence · Cinematic travel vlog montage
-│   │   │       │   │   │   │           └── SKILL.md  Cinematic travel vlog montage · 电影感旅行漫游
-│   │   │       │   │   │   ├── assets/  目录入口
-│   │   │       │   │   │   │   ├── goodcase-retest-evidence.png  图片素材
-│   │   │       │   │   │   │   ├── goodcase-seedance-gallery.png  图片素材
-│   │   │       │   │   │   │   ├── hero.svg  资料与资源
-│   │   │       │   │   │   │   └── retests/  目录入口
-│   │   │       │   │   │   │       ├── seedance-25-diner-frozen-time-rewind.jpg  图片素材
-│   │   │       │   │   │   │       ├── seedance-25-minidv-coffee-asmr-vlog.jpg  图片素材
-│   │   │       │   │   │   │       └── vlog-c8171f712492.jpg  图片素材
-│   │   │       │   │   │   ├── code-of-conduct.md  说明文档：Contributor Covenant Code of Conduct
-│   │   │       │   │   │   ├── contributing.md  说明文档：Contributing to Awesome Seedance
-│   │   │       │   │   │   ├── data/  目录入口
-│   │   │       │   │   │   │   ├── case-taxonomy.json  结构化配置与索引
-│   │   │       │   │   │   │   ├── cases.json  结构化配置与索引
-│   │   │       │   │   │   │   ├── fixtures/  目录入口
-│   │   │       │   │   │   │   │   ├── cases.fixture.json  结构化配置与索引
-│   │   │       │   │   │   │   │   └── style-library.fixture.json  结构化配置与索引
-│   │   │       │   │   │   │   ├── site.json  结构化配置与索引
-│   │   │       │   │   │   │   ├── skills.json  结构化配置与索引
-│   │   │       │   │   │   │   ├── stats.json  结构化配置与索引
-│   │   │       │   │   │   │   ├── style-library.json  结构化配置与索引
-│   │   │       │   │   │   │   └── templates-local.json  结构化配置与索引
-│   │   │       │   │   │   ├── docs/  目录入口
-│   │   │       │   │   │   │   ├── gallery-seedance-2-0-part-1.ja.md  Seedance 2.0 — 全ケース（Part 1/3）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-0-part-1.md  说明文档：Seedance 2.0 — Full Gallery (Part 1/3)
-│   │   │       │   │   │   │   ├── gallery-seedance-2-0-part-1.zh.md  Seedance 2.0 — 全量案例（第 1/3 页）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-0-part-2.ja.md  Seedance 2.0 — 全ケース（Part 2/3）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-0-part-2.md  说明文档：Seedance 2.0 — Full Gallery (Part 2/3)
-│   │   │       │   │   │   │   ├── gallery-seedance-2-0-part-2.zh.md  Seedance 2.0 — 全量案例（第 2/3 页）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-0-part-3.ja.md  Seedance 2.0 — 全ケース（Part 3/3）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-0-part-3.md  说明文档：Seedance 2.0 — Full Gallery (Part 3/3)
-│   │   │       │   │   │   │   ├── gallery-seedance-2-0-part-3.zh.md  Seedance 2.0 — 全量案例（第 3/3 页）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-1.ja.md  Seedance 2.5 — 全ケース（Part 1/4）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-1.md  说明文档：Seedance 2.5 — Full Gallery (Part 1/4)
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-1.zh.md  Seedance 2.5 — 全量案例（第 1/4 页）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-2.ja.md  Seedance 2.5 — 全ケース（Part 2/4）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-2.md  说明文档：Seedance 2.5 — Full Gallery (Part 2/4)
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-2.zh.md  Seedance 2.5 — 全量案例（第 2/4 页）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-3.ja.md  Seedance 2.5 — 全ケース（Part 3/4）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-3.md  说明文档：Seedance 2.5 — Full Gallery (Part 3/4)
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-3.zh.md  Seedance 2.5 — 全量案例（第 3/4 页）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-4.ja.md  Seedance 2.5 — 全ケース（Part 4/4）
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-4.md  说明文档：Seedance 2.5 — Full Gallery (Part 4/4)
-│   │   │       │   │   │   │   ├── gallery-seedance-2-5-part-4.zh.md  Seedance 2.5 — 全量案例（第 4/4 页）
-│   │   │       │   │   │   │   ├── gallery.ja.md  Awesome Seedance — ギャラリー索引
-│   │   │       │   │   │   │   ├── gallery.md  说明文档：Awesome Seedance — Gallery Index
-│   │   │       │   │   │   │   ├── gallery.zh.md  Awesome Seedance — 画廊总览
-│   │   │       │   │   │   │   └── templates/  目录入口
-│   │   │       │   │   │   │       ├── en/  说明文档：Prompt Templates by Category (25)
-│   │   │       │   │   │   │       │   ├── 3d-cartoon.md  说明文档：🎨 3D cartoon character short
-│   │   │       │   │   │   │       │   ├── anime-style-lock.md  说明文档：🎨 Anime and stylized style lock
-│   │   │       │   │   │   │       │   ├── car-vehicle.md  说明文档：💥 Cars and vehicles at speed
-│   │   │       │   │   │   │       │   ├── character-reference-lock.md  说明文档：🧱 Reference image identity lock
-│   │   │       │   │   │   │       │   ├── cinematic-narrative-short.md  说明文档：🎭 Cinematic narrative short
-│   │   │       │   │   │   │       │   ├── combat-choreography.md  说明文档：💥 Combat choreography
-│   │   │       │   │   │   │       │   ├── dialogue-performance-beats.md  说明文档：🎭 Dialogue and performance beats
-│   │   │       │   │   │   │       │   ├── epic-fantasy-scifi.md  说明文档：💥 Epic fantasy and sci-fi spectacle
-│   │   │       │   │   │   │       │   ├── fashion-lookbook.md  说明文档：🛒 Fashion lookbook and portrait film
-│   │   │       │   │   │   │       │   ├── handheld-ugc-vlog.md  说明文档：📱 Handheld UGC vlog
-│   │   │       │   │   │   │       │   ├── horror-suspense.md  说明文档：🎭 Horror and suspense
-│   │   │       │   │   │   │       │   ├── meme-comedy.md  说明文档：🎭 Twist-ending comedy skit
-│   │   │       │   │   │   │       │   ├── music-beat-sync-mv.md  说明文档：💥 Beat-synced music video
-│   │   │       │   │   │   │       │   ├── pet-animal.md  说明文档：📱 Pets and animals as the lead
-│   │   │       │   │   │   │       │   ├── pov-continuous-take.md  说明文档：📱 First-person continuous take
-│   │   │       │   │   │   │       │   ├── process-transformation-montage.md  说明文档：🛒 Process and transformation montage
-│   │   │       │   │   │   │       │   ├── product-commercial-shotlist.md  说明文档：🛒 Cinematic product commercial shot list
-│   │   │       │   │   │   │       │   ├── README.md  说明文档：Prompt Templates by Category (25)
-│   │   │       │   │   │   │       │   ├── retro-found-footage.md  说明文档：📱 Early-2000s DV home video
-│   │   │       │   │   │   │       │   ├── sports-extreme.md  说明文档：💥 Sports and extreme stunts
-│   │   │       │   │   │   │       │   ├── stop-motion-cadence.md  说明文档：🎨 Stop motion and stepped cadence
-│   │   │       │   │   │   │       │   ├── storyboard-grid-to-video.md  说明文档：🧱 Storyboard grid to video
-│   │   │       │   │   │   │       │   ├── time-freeze-rewind.md  说明文档：💥 Time freeze and rewind set piece
-│   │   │       │   │   │   │       │   ├── timeline-shot-script.md  说明文档：🧱 Second-by-second timeline script
-│   │   │       │   │   │   │       │   ├── travel-city-walk.md  说明文档：🎭 Cinematic travel vlog montage
-│   │   │       │   │   │   │       │   └── ugc-creator-review.md  说明文档：🛒 UGC creator review with spoken lines
-│   │   │       │   │   │   │       └── zh/  分类提示语模板（25 个）
-│   │   │       │   │   │   │           ├── 3d-cartoon.md  🎨 3D 卡通角色短片
-│   │   │       │   │   │   │           ├── anime-style-lock.md  🎨 动漫与风格化画风固定
-│   │   │       │   │   │   │           ├── car-vehicle.md  💥 汽车与载具速度片
-│   │   │       │   │   │   │           ├── character-reference-lock.md  🧱 参考图身份锁定
-│   │   │       │   │   │   │           ├── cinematic-narrative-short.md  🎭 电影级叙事短片
-│   │   │       │   │   │   │           ├── combat-choreography.md  💥 打斗编排
-│   │   │       │   │   │   │           ├── dialogue-performance-beats.md  🎭 对白与表演节拍
-│   │   │       │   │   │   │           ├── epic-fantasy-scifi.md  💥 奇幻科幻大场面
-│   │   │       │   │   │   │           ├── fashion-lookbook.md  🛒 时尚 lookbook 与人像写真片
-│   │   │       │   │   │   │           ├── handheld-ugc-vlog.md  📱 手持 UGC vlog
-│   │   │       │   │   │   │           ├── horror-suspense.md  🎭 恐怖悬疑短片
-│   │   │       │   │   │   │           ├── meme-comedy.md  🎭 反转结尾搞笑短片
-│   │   │       │   │   │   │           ├── music-beat-sync-mv.md  💥 音乐卡点 MV
-│   │   │       │   │   │   │           ├── pet-animal.md  📱 宠物动物当主角
-│   │   │       │   │   │   │           ├── pov-continuous-take.md  📱 第一人称一镜到底
-│   │   │       │   │   │   │           ├── process-transformation-montage.md  🛒 流程与变换蒙太奇
-│   │   │       │   │   │   │           ├── product-commercial-shotlist.md  🛒 电影级产品广告分镜
-│   │   │       │   │   │   │           ├── README.md  分类提示语模板（25 个）
-│   │   │       │   │   │   │           ├── retro-found-footage.md  📱 早年 DV 家庭录像
-│   │   │       │   │   │   │           ├── sports-extreme.md  💥 体育与极限运动
-│   │   │       │   │   │   │           ├── stop-motion-cadence.md  🎨 定格动画与步进节奏
-│   │   │       │   │   │   │           ├── storyboard-grid-to-video.md  🧱 分镜网格转视频
-│   │   │       │   │   │   │           ├── time-freeze-rewind.md  💥 时间冻结与倒放奇观
-│   │   │       │   │   │   │           ├── timeline-shot-script.md  🧱 逐秒时间轴分镜脚本
-│   │   │       │   │   │   │           ├── travel-city-walk.md  🎭 电影感旅行漫游
-│   │   │       │   │   │   │           └── ugc-creator-review.md  🛒 UGC 口播测评带货
-│   │   │       │   │   │   ├── LICENSE  资料与资源
-│   │   │       │   │   │   ├── package.json  结构化配置与索引
-│   │   │       │   │   │   ├── README.md  说明文档：Awesome Seedance [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-│   │   │       │   │   │   ├── README_ja.md  说明文档：Awesome Seedance [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-│   │   │       │   │   │   ├── README_zh.md  说明文档：Awesome Seedance [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-│   │   │       │   │   │   ├── scripts/  目录入口
-│   │   │       │   │   │   │   ├── check-links.mjs  资料与资源
-│   │   │       │   │   │   │   ├── fetch-retest-posters.mjs  资料与资源
-│   │   │       │   │   │   │   ├── fetch-site-stats.mjs  资料与资源
-│   │   │       │   │   │   │   ├── generate-readme.mjs  资料与资源
-│   │   │       │   │   │   │   ├── generate-skill-reference.mjs  资料与资源
-│   │   │       │   │   │   │   ├── generate-standalone-skills.mjs  资料与资源
-│   │   │       │   │   │   │   ├── lib/  目录入口
-│   │   │       │   │   │   │   │   ├── library.mjs  资料与资源
-│   │   │       │   │   │   │   │   ├── render.mjs  资料与资源
-│   │   │       │   │   │   │   │   ├── render.test.mjs  资料与资源
-│   │   │       │   │   │   │   │   ├── sections.mjs  资料与资源
-│   │   │       │   │   │   │   │   ├── sections.test.mjs  资料与资源
-│   │   │       │   │   │   │   │   ├── standalone-skill.mjs  资料与资源
-│   │   │       │   │   │   │   │   ├── standalone-skill.test.mjs  资料与资源
-│   │   │       │   │   │   │   │   ├── submissions.mjs  资料与资源
-│   │   │       │   │   │   │   │   ├── submissions.test.mjs  资料与资源
-│   │   │       │   │   │   │   │   ├── templates.mjs  资料与资源
-│   │   │       │   │   │   │   │   └── templates.test.mjs  资料与资源
-│   │   │       │   │   │   │   ├── taxonomy-todo.mjs  资料与资源
-│   │   │       │   │   │   │   └── validate-submissions.mjs  资料与资源
-│   │   │       │   │   │   └── submissions/  说明文档：Submissions
-│   │   │       │   │   │       ├── README.md  说明文档：Submissions
-│   │   │       │   │   │       └── TEMPLATE.json  结构化配置与索引
-│   │   │       │   │   ├── template-guide.md  按镜头需求选25类模板及处理冲突
-│   │   │       │   │   └── upstream.json  第三方来源、固定版本与三类许可
 │   │   │       │   ├── README.md  跨片型通用制作经验
-│   │   │       │   └── tools/  按已选平台查生成技巧、参数边界与案例
-│   │   │       │       ├── README.md  工具索引
-│   │   │       │       └── seedance/  复用主体、场景参考及提示词的实战经验
-│   │   │       │           ├── practical-workflow.md  实战工作流
-│   │   │       │           ├── prompt-cases.md  提示词案例
-│   │   │       │           ├── prompt-templates.md  提示词模板
-│   │   │       │           └── README.md  Seedance 工具入口
+│   │   │       │   └── seedance/  Seedance 视频提示词唯一目录：建委实战在前，第三方模板库在 awesome-seedance/
+│   │   │       │       ├── awesome-seedance/  第三方 awesome-seedance 模板与案例库（中英文，已删日文）
+│   │   │       │       │   ├── lookup.py  只读提取模板、案例原文和复测状态
+│   │   │       │       │   ├── README.md  能力边界、主动调用、来源与后续沉淀
+│   │   │       │       │   ├── source/  上游完整快照，共 144 个文件；展开可核查内部层级
+│   │   │       │       │   │   ├── .claude-plugin/  目录入口
+│   │   │       │       │   │   │   └── marketplace.json  结构化配置与索引
+│   │   │       │       │   │   ├── .github/  目录入口
+│   │   │       │       │   │   │   ├── CODEOWNERS  资料与资源
+│   │   │       │       │   │   │   ├── pull_request_template.md  说明与资料
+│   │   │       │       │   │   │   └── workflows/  目录入口
+│   │   │       │       │   │   │       ├── refresh-site-stats.yml  自动化配置
+│   │   │       │       │   │   │       ├── update-readme.yml  自动化配置
+│   │   │       │       │   │   │       └── validate-submissions.yml  自动化配置
+│   │   │       │       │   │   ├── .gitignore  资料与资源
+│   │   │       │       │   │   ├── agents/  目录入口
+│   │   │       │       │   │   │   └── skills/  目录入口
+│   │   │       │       │   │   │       ├── seedance-3d-cartoon/  目录入口
+│   │   │       │       │   │   │       │   ├── references/  目录入口
+│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · 3D cartoon character short
+│   │   │       │       │   │   │       │   └── SKILL.md  3D cartoon character short · 3D 卡通角色短片
+│   │   │       │       │   │   │       ├── seedance-car-vehicle/  目录入口
+│   │   │       │       │   │   │       │   ├── references/  目录入口
+│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Cars and vehicles at speed
+│   │   │       │       │   │   │       │   └── SKILL.md  Cars and vehicles at speed · 汽车与载具速度片
+│   │   │       │       │   │   │       ├── seedance-epic-fantasy-scifi/  目录入口
+│   │   │       │       │   │   │       │   ├── references/  目录入口
+│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Epic fantasy and sci-fi spectacle
+│   │   │       │       │   │   │       │   └── SKILL.md  Epic fantasy and sci-fi spectacle · 奇幻科幻大场面
+│   │   │       │       │   │   │       ├── seedance-fashion-lookbook/  目录入口
+│   │   │       │       │   │   │       │   ├── references/  目录入口
+│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Fashion lookbook and portrait film
+│   │   │       │       │   │   │       │   └── SKILL.md  Fashion lookbook and portrait film · 时尚 lookbook 与人像写真片
+│   │   │       │       │   │   │       ├── seedance-horror-suspense/  目录入口
+│   │   │       │       │   │   │       │   ├── references/  目录入口
+│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Horror and suspense
+│   │   │       │       │   │   │       │   └── SKILL.md  Horror and suspense · 恐怖悬疑短片
+│   │   │       │       │   │   │       ├── seedance-meme-comedy/  目录入口
+│   │   │       │       │   │   │       │   ├── references/  目录入口
+│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Twist-ending comedy skit
+│   │   │       │       │   │   │       │   └── SKILL.md  Twist-ending comedy skit · 反转结尾搞笑短片
+│   │   │       │       │   │   │       ├── seedance-pet-animal/  目录入口
+│   │   │       │       │   │   │       │   ├── references/  目录入口
+│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Pets and animals as the lead
+│   │   │       │       │   │   │       │   └── SKILL.md  Pets and animals as the lead · 宠物动物当主角
+│   │   │       │       │   │   │       ├── seedance-prompt-library/  目录入口
+│   │   │       │       │   │   │       │   ├── bin/  目录入口
+│   │   │       │       │   │   │       │   │   └── install.mjs  资料与资源
+│   │   │       │       │   │   │       │   ├── CHANGELOG.md  说明文档：Changelog
+│   │   │       │       │   │   │       │   ├── package.json  结构化配置与索引
+│   │   │       │       │   │   │       │   ├── references/  目录入口
+│   │   │       │       │   │   │       │   │   └── style-library.md  说明文档：Seedance Prompt Style Library
+│   │   │       │       │   │   │       │   └── SKILL.md  说明文档：Seedance Prompt Library
+│   │   │       │       │   │   │       ├── seedance-retro-dv-home-video/  目录入口
+│   │   │       │       │   │   │       │   ├── references/  目录入口
+│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Early-2000s DV home video
+│   │   │       │       │   │   │       │   └── SKILL.md  Early-2000s DV home video · 早年 DV 家庭录像
+│   │   │       │       │   │   │       ├── seedance-sports-extreme/  目录入口
+│   │   │       │       │   │   │       │   ├── references/  目录入口
+│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Sports and extreme stunts
+│   │   │       │       │   │   │       │   └── SKILL.md  Sports and extreme stunts · 体育与极限运动
+│   │   │       │       │   │   │       ├── seedance-storyboard-grid-to-video/  目录入口
+│   │   │       │       │   │   │       │   ├── references/  目录入口
+│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Storyboard grid to video
+│   │   │       │       │   │   │       │   └── SKILL.md  Storyboard grid to video · 分镜网格转视频
+│   │   │       │       │   │   │       └── seedance-travel-city-walk/  目录入口
+│   │   │       │       │   │   │           ├── references/  目录入口
+│   │   │       │       │   │   │           │   └── cases.md  说明文档：Case evidence · Cinematic travel vlog montage
+│   │   │       │       │   │   │           └── SKILL.md  Cinematic travel vlog montage · 电影感旅行漫游
+│   │   │       │       │   │   ├── assets/  目录入口
+│   │   │       │       │   │   │   ├── goodcase-retest-evidence.png  图片素材
+│   │   │       │       │   │   │   ├── goodcase-seedance-gallery.png  图片素材
+│   │   │       │       │   │   │   ├── hero.svg  资料与资源
+│   │   │       │       │   │   │   └── retests/  目录入口
+│   │   │       │       │   │   │       ├── seedance-25-diner-frozen-time-rewind.jpg  图片素材
+│   │   │       │       │   │   │       ├── seedance-25-minidv-coffee-asmr-vlog.jpg  图片素材
+│   │   │       │       │   │   │       └── vlog-c8171f712492.jpg  图片素材
+│   │   │       │       │   │   ├── code-of-conduct.md  说明文档：Contributor Covenant Code of Conduct
+│   │   │       │       │   │   ├── contributing.md  说明文档：Contributing to Awesome Seedance
+│   │   │       │       │   │   ├── data/  目录入口
+│   │   │       │       │   │   │   ├── case-taxonomy.json  结构化配置与索引
+│   │   │       │       │   │   │   ├── cases.json  结构化配置与索引
+│   │   │       │       │   │   │   ├── fixtures/  目录入口
+│   │   │       │       │   │   │   │   ├── cases.fixture.json  结构化配置与索引
+│   │   │       │       │   │   │   │   └── style-library.fixture.json  结构化配置与索引
+│   │   │       │       │   │   │   ├── site.json  结构化配置与索引
+│   │   │       │       │   │   │   ├── skills.json  结构化配置与索引
+│   │   │       │       │   │   │   ├── stats.json  结构化配置与索引
+│   │   │       │       │   │   │   ├── style-library.json  结构化配置与索引
+│   │   │       │       │   │   │   └── templates-local.json  结构化配置与索引
+│   │   │       │       │   │   ├── docs/  目录入口
+│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-1.md  说明文档：Seedance 2.0 — Full Gallery (Part 1/3)
+│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-1.zh.md  Seedance 2.0 — 全量案例（第 1/3 页）
+│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-2.md  说明文档：Seedance 2.0 — Full Gallery (Part 2/3)
+│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-2.zh.md  Seedance 2.0 — 全量案例（第 2/3 页）
+│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-3.md  说明文档：Seedance 2.0 — Full Gallery (Part 3/3)
+│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-3.zh.md  Seedance 2.0 — 全量案例（第 3/3 页）
+│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-1.md  说明文档：Seedance 2.5 — Full Gallery (Part 1/4)
+│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-1.zh.md  Seedance 2.5 — 全量案例（第 1/4 页）
+│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-2.md  说明文档：Seedance 2.5 — Full Gallery (Part 2/4)
+│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-2.zh.md  Seedance 2.5 — 全量案例（第 2/4 页）
+│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-3.md  说明文档：Seedance 2.5 — Full Gallery (Part 3/4)
+│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-3.zh.md  Seedance 2.5 — 全量案例（第 3/4 页）
+│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-4.md  说明文档：Seedance 2.5 — Full Gallery (Part 4/4)
+│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-4.zh.md  Seedance 2.5 — 全量案例（第 4/4 页）
+│   │   │       │       │   │   │   ├── gallery.md  说明文档：Awesome Seedance — Gallery Index
+│   │   │       │       │   │   │   ├── gallery.zh.md  Awesome Seedance — 画廊总览
+│   │   │       │       │   │   │   └── templates/  目录入口
+│   │   │       │       │   │   │       ├── en/  说明文档：Prompt Templates by Category (25)
+│   │   │       │       │   │   │       │   ├── 3d-cartoon.md  说明文档：🎨 3D cartoon character short
+│   │   │       │       │   │   │       │   ├── anime-style-lock.md  说明文档：🎨 Anime and stylized style lock
+│   │   │       │       │   │   │       │   ├── car-vehicle.md  说明文档：💥 Cars and vehicles at speed
+│   │   │       │       │   │   │       │   ├── character-reference-lock.md  说明文档：🧱 Reference image identity lock
+│   │   │       │       │   │   │       │   ├── cinematic-narrative-short.md  说明文档：🎭 Cinematic narrative short
+│   │   │       │       │   │   │       │   ├── combat-choreography.md  说明文档：💥 Combat choreography
+│   │   │       │       │   │   │       │   ├── dialogue-performance-beats.md  说明文档：🎭 Dialogue and performance beats
+│   │   │       │       │   │   │       │   ├── epic-fantasy-scifi.md  说明文档：💥 Epic fantasy and sci-fi spectacle
+│   │   │       │       │   │   │       │   ├── fashion-lookbook.md  说明文档：🛒 Fashion lookbook and portrait film
+│   │   │       │       │   │   │       │   ├── handheld-ugc-vlog.md  说明文档：📱 Handheld UGC vlog
+│   │   │       │       │   │   │       │   ├── horror-suspense.md  说明文档：🎭 Horror and suspense
+│   │   │       │       │   │   │       │   ├── meme-comedy.md  说明文档：🎭 Twist-ending comedy skit
+│   │   │       │       │   │   │       │   ├── music-beat-sync-mv.md  说明文档：💥 Beat-synced music video
+│   │   │       │       │   │   │       │   ├── pet-animal.md  说明文档：📱 Pets and animals as the lead
+│   │   │       │       │   │   │       │   ├── pov-continuous-take.md  说明文档：📱 First-person continuous take
+│   │   │       │       │   │   │       │   ├── process-transformation-montage.md  说明文档：🛒 Process and transformation montage
+│   │   │       │       │   │   │       │   ├── product-commercial-shotlist.md  说明文档：🛒 Cinematic product commercial shot list
+│   │   │       │       │   │   │       │   ├── README.md  说明文档：Prompt Templates by Category (25)
+│   │   │       │       │   │   │       │   ├── retro-found-footage.md  说明文档：📱 Early-2000s DV home video
+│   │   │       │       │   │   │       │   ├── sports-extreme.md  说明文档：💥 Sports and extreme stunts
+│   │   │       │       │   │   │       │   ├── stop-motion-cadence.md  说明文档：🎨 Stop motion and stepped cadence
+│   │   │       │       │   │   │       │   ├── storyboard-grid-to-video.md  说明文档：🧱 Storyboard grid to video
+│   │   │       │       │   │   │       │   ├── time-freeze-rewind.md  说明文档：💥 Time freeze and rewind set piece
+│   │   │       │       │   │   │       │   ├── timeline-shot-script.md  说明文档：🧱 Second-by-second timeline script
+│   │   │       │       │   │   │       │   ├── travel-city-walk.md  说明文档：🎭 Cinematic travel vlog montage
+│   │   │       │       │   │   │       │   └── ugc-creator-review.md  说明文档：🛒 UGC creator review with spoken lines
+│   │   │       │       │   │   │       └── zh/  分类提示语模板（25 个）
+│   │   │       │       │   │   │           ├── 3d-cartoon.md  🎨 3D 卡通角色短片
+│   │   │       │       │   │   │           ├── anime-style-lock.md  🎨 动漫与风格化画风固定
+│   │   │       │       │   │   │           ├── car-vehicle.md  💥 汽车与载具速度片
+│   │   │       │       │   │   │           ├── character-reference-lock.md  🧱 参考图身份锁定
+│   │   │       │       │   │   │           ├── cinematic-narrative-short.md  🎭 电影级叙事短片
+│   │   │       │       │   │   │           ├── combat-choreography.md  💥 打斗编排
+│   │   │       │       │   │   │           ├── dialogue-performance-beats.md  🎭 对白与表演节拍
+│   │   │       │       │   │   │           ├── epic-fantasy-scifi.md  💥 奇幻科幻大场面
+│   │   │       │       │   │   │           ├── fashion-lookbook.md  🛒 时尚 lookbook 与人像写真片
+│   │   │       │       │   │   │           ├── handheld-ugc-vlog.md  📱 手持 UGC vlog
+│   │   │       │       │   │   │           ├── horror-suspense.md  🎭 恐怖悬疑短片
+│   │   │       │       │   │   │           ├── meme-comedy.md  🎭 反转结尾搞笑短片
+│   │   │       │       │   │   │           ├── music-beat-sync-mv.md  💥 音乐卡点 MV
+│   │   │       │       │   │   │           ├── pet-animal.md  📱 宠物动物当主角
+│   │   │       │       │   │   │           ├── pov-continuous-take.md  📱 第一人称一镜到底
+│   │   │       │       │   │   │           ├── process-transformation-montage.md  🛒 流程与变换蒙太奇
+│   │   │       │       │   │   │           ├── product-commercial-shotlist.md  🛒 电影级产品广告分镜
+│   │   │       │       │   │   │           ├── README.md  分类提示语模板（25 个）
+│   │   │       │       │   │   │           ├── retro-found-footage.md  📱 早年 DV 家庭录像
+│   │   │       │       │   │   │           ├── sports-extreme.md  💥 体育与极限运动
+│   │   │       │       │   │   │           ├── stop-motion-cadence.md  🎨 定格动画与步进节奏
+│   │   │       │       │   │   │           ├── storyboard-grid-to-video.md  🧱 分镜网格转视频
+│   │   │       │       │   │   │           ├── time-freeze-rewind.md  💥 时间冻结与倒放奇观
+│   │   │       │       │   │   │           ├── timeline-shot-script.md  🧱 逐秒时间轴分镜脚本
+│   │   │       │       │   │   │           ├── travel-city-walk.md  🎭 电影感旅行漫游
+│   │   │       │       │   │   │           └── ugc-creator-review.md  🛒 UGC 口播测评带货
+│   │   │       │       │   │   ├── LICENSE  资料与资源
+│   │   │       │       │   │   ├── package.json  结构化配置与索引
+│   │   │       │       │   │   ├── README.md  说明文档：Awesome Seedance [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+│   │   │       │       │   │   ├── README_zh.md  说明文档：Awesome Seedance [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+│   │   │       │       │   │   ├── scripts/  目录入口
+│   │   │       │       │   │   │   ├── check-links.mjs  资料与资源
+│   │   │       │       │   │   │   ├── fetch-retest-posters.mjs  资料与资源
+│   │   │       │       │   │   │   ├── fetch-site-stats.mjs  资料与资源
+│   │   │       │       │   │   │   ├── generate-readme.mjs  资料与资源
+│   │   │       │       │   │   │   ├── generate-skill-reference.mjs  资料与资源
+│   │   │       │       │   │   │   ├── generate-standalone-skills.mjs  资料与资源
+│   │   │       │       │   │   │   ├── lib/  目录入口
+│   │   │       │       │   │   │   │   ├── library.mjs  资料与资源
+│   │   │       │       │   │   │   │   ├── render.mjs  资料与资源
+│   │   │       │       │   │   │   │   ├── render.test.mjs  资料与资源
+│   │   │       │       │   │   │   │   ├── sections.mjs  资料与资源
+│   │   │       │       │   │   │   │   ├── sections.test.mjs  资料与资源
+│   │   │       │       │   │   │   │   ├── standalone-skill.mjs  资料与资源
+│   │   │       │       │   │   │   │   ├── standalone-skill.test.mjs  资料与资源
+│   │   │       │       │   │   │   │   ├── submissions.mjs  资料与资源
+│   │   │       │       │   │   │   │   ├── submissions.test.mjs  资料与资源
+│   │   │       │       │   │   │   │   ├── templates.mjs  资料与资源
+│   │   │       │       │   │   │   │   └── templates.test.mjs  资料与资源
+│   │   │       │       │   │   │   ├── taxonomy-todo.mjs  资料与资源
+│   │   │       │       │   │   │   └── validate-submissions.mjs  资料与资源
+│   │   │       │       │   │   └── submissions/  说明文档：Submissions
+│   │   │       │       │   │       ├── README.md  说明文档：Submissions
+│   │   │       │       │   │       └── TEMPLATE.json  结构化配置与索引
+│   │   │       │       │   ├── template-guide.md  按镜头需求选25类模板及处理冲突
+│   │   │       │       │   └── upstream.json  第三方来源、固定版本与三类许可
+│   │   │       │       ├── practical-workflow.md  实战工作流
+│   │   │       │       ├── prompt-cases.md  提示词案例
+│   │   │       │       ├── prompt-templates.md  提示词模板
+│   │   │       │       └── README.md  Seedance 读取顺序、红线与片型分工
 │   │   │       ├── education/  为教师委托的微课与教育交互作品查制作规范
 │   │   │       │   ├── ai-generated-microcourse-video-workflow.md  AI教师微课的音频分段、场景关键图、多镜头提示词与验收方法
+│   │   │       │   ├── case-little-leaf-microcourse-mv.md  《小树叶》AI 教师音乐微课商单案例
 │   │   │       │   ├── interactive-production-workbench.md  仅微课适用：按教学设计、逐字稿与音频组织分镜、参考图、提示词和验收
 │   │   │       │   ├── README.md  微课、精品课、MG 动画与教育课件
 │   │   │       │   └── showcase-guidelines.md  展示微课案例时检查受众、措辞和成果表达
 │   │   │       ├── promo/  查企业与创赛宣传片的分镜、素材和交付经验
+│   │   │       │   ├── case-2026-05-enterprise-prompt-record.md  企业宣传片提示词实战记录
 │   │   │       │   ├── competition-promo-production.md  创赛文稿拆镜、AI与AE模板分工、定格叠字、参考图动态化与迭代验收
 │   │   │       │   ├── prompt-iteration.md  调整企业片的镜头节奏并记录提示词迭代
 │   │   │       │   ├── README.md  企业宣传片制作经验
@@ -280,7 +273,9 @@ ai-context/
 │   │   │           └── README.md  真人实拍故事与电影叙事
 │   │   ├── development/  查网站、应用与自动化开发的方法及工具
 │   │   │   ├── experience/  通用编程经验
+│   │   │   │   ├── backend-auth-payment.md  AI 编程通用后端经验：数据存储、登录身份、签名、密钥、支付
 │   │   │   │   ├── creative-frontend-prompt-patterns.md  创意前端提示词方法
+│   │   │   │   ├── delivery-and-testing.md  AI 编程通用交付与测试：证据分级、干净复建、跨层契约
 │   │   │   │   ├── frontend-ui-quality-standards.md  按布局、响应式和交互状态检查前端成品
 │   │   │   │   ├── README.md  经验索引
 │   │   │   │   ├── reference-materials/  编程参考资料
@@ -298,9 +293,8 @@ ai-context/
 │   │   │   │       └── README.md  开发经验修订记录
 │   │   │   ├── README.md  应用开发与自动化入口
 │   │   │   └── tools/  编程工具
-│   │   │       ├── miaoda/  百度秒哒
+│   │   │       ├── miaoda/  实战经验
 │   │   │       │   ├── basics/  基础与发布
-│   │   │       │   │   ├── current-capabilities.md  当前能力、权益与限制
 │   │   │       │   │   ├── platform-basics.md  平台基础能力
 │   │   │       │   │   ├── publish-channels.md  发布渠道与限制
 │   │   │       │   │   └── README.md  基础资料索引
@@ -308,51 +302,40 @@ ai-context/
 │   │   │       │   │   ├── README.md  开发资料索引
 │   │   │       │   │   ├── skill-as-callable.md  秒哒作为可调用 Skill
 │   │   │       │   │   └── skill-development.md  秒哒 Skill 开发
-│   │   │       │   ├── disambiguation.md  百度秒哒与飞书妙搭的同名辨析
-│   │   │       │   ├── experience/  实战经验
-│   │   │       │   │   ├── cases/  案例
-│   │   │       │   │   │   ├── codex-skill-source-migration.md  官方Skill调度与源码增量实录：附件上传、锁校验及生成平台错误边界
-│   │   │       │   │   │   ├── README.md  案例索引
-│   │   │       │   │   │   ├── yancut-b3-loading-hotfixes.md  加载热修复盘：会话等待、现场证据与下一轮增量保护范围
-│   │   │       │   │   │   └── yungouos-jsapi.md  云购 OS JSAPI 案例
-│   │   │       │   │   ├── patterns/  可复用工作模式
-│   │   │       │   │   │   ├── codex-assisted-workflow.md  Codex 协助秒哒开发流程
-│   │   │       │   │   │   ├── codex-miaoda-iterative-increment-workflow.md  Codex 协助秒哒增量迭代流程
-│   │   │       │   │   │   ├── codex-source-package-deployment.md  源码分包与秒哒交付
-│   │   │       │   │   │   ├── content-rectification-prompts.md  内容整改提示词
-│   │   │       │   │   │   ├── large-video-upload.md  大视频上传方案
-│   │   │       │   │   │   ├── README.md  模式索引
-│   │   │       │   │   │   ├── seo-optimization.md  SEO 优化经验
-│   │   │       │   │   │   └── wechat-urlsec-verification.md  微信 URL 安全验证
-│   │   │       │   │   ├── pitfalls.md  常见坑与规避方式
-│   │   │       │   │   ├── prompt-patterns.md  提示词模式
-│   │   │       │   │   ├── prompts/  按登录、支付、上传和排错等任务选用提示词
-│   │   │       │   │   │   ├── authentication.md  排查短信登录与手机号身份不一致问题
-│   │   │       │   │   │   ├── backend-storage.md  在应用创建时明确形态和真实后端持久化
-│   │   │       │   │   │   ├── execution-and-handoff.md  约定AI修改边界、分批执行和源码交付方式
-│   │   │       │   │   │   ├── payment-integration.md  在匹配的支付环境中复用已验证集成片段
-│   │   │       │   │   │   ├── README.md  秒哒提示词：按任务读取
-│   │   │       │   │   │   ├── runtime-diagnostics.md  给云端或移动端故障补诊断日志与证据回传
-│   │   │       │   │   │   ├── seo-and-content.md  核对公开页面的SEO字段和内容整改覆盖范围
-│   │   │       │   │   │   └── uploads.md  优先核验原生上传限制，再处理大文件与小程序上传
-│   │   │       │   │   ├── README.md  经验索引
-│   │   │       │   │   └── reference-materials/  原始参考资料
-│   │   │       │   │       ├── README.md  参考资料索引
-│   │   │       │   │       └── video-chunked-upload/  保存旧环境的分片上传兜底实现及使用限制
-│   │   │       │   │           ├── legacy-contract.md  核对旧分片代理适用条件，避免覆盖当前原生上传方案
-│   │   │       │   │           ├── README.md  视频分片上传源码说明
-│   │   │       │   │           ├── video-serve.ts  资料与资源
-│   │   │       │   │           ├── video-upload-chunk.ts  资料与资源
-│   │   │       │   │           └── video-upload-complete.ts  资料与资源
+│   │   │       │   ├── facts.md  秒哒当前事实表：会员、限额、计费、版本，唯一出处
 │   │   │       │   ├── llms.txt  秒哒最小读取路由
-│   │   │       │   ├── README.md  秒哒总入口与读取边界
-│   │   │       │   └── updates/  版本与升级
-│   │   │       │       ├── 2026-08-02-version-governance.md  版本知识治理记录
-│   │   │       │       ├── 2026-08-15-cloud-runtime-diagnostics.md  云端运行诊断记录
-│   │   │       │       ├── 2026-08-29-v3.7-and-upload-limit-governance.md  V3.7 与上传限制口径修订
-│   │   │       │       ├── 2026-09-07-codex-miaoda-incremental-loop.md  Codex 协助秒哒增量闭环修订
-│   │   │       │       ├── README.md  版本资料索引
-│   │   │       │       └── version-features.md  历史版本能力时间线
+│   │   │       │   ├── pitfalls.md  秒哒真实踩坑：症状、根因、修复与预防
+│   │   │       │   ├── prompt-templates.md  首次全量、增量、纯提示词三类可粘贴秒哒提示词
+│   │   │       │   ├── README.md  经验索引
+│   │   │       │   ├── reference-materials/  旧后端大视频分片上传兼容源码，默认不读
+│   │   │       │   │   ├── README.md  参考资料索引
+│   │   │       │   │   └── video-chunked-upload/  保存旧环境的分片上传兜底实现及使用限制
+│   │   │       │   │       ├── legacy-contract.md  核对旧分片代理适用条件，避免覆盖当前原生上传方案
+│   │   │       │   │       ├── README.md  视频分片上传源码说明
+│   │   │       │   │       ├── video-serve.ts  资料与资源
+│   │   │       │   │       ├── video-upload-chunk.ts  资料与资源
+│   │   │       │   │       └── video-upload-complete.ts  资料与资源
+│   │   │       │   ├── topics/  秒哒专题：上传、登录、支付、SEO、排错、后端、微信验证
+│   │   │       │   │   ├── authentication.md  排查短信登录与手机号身份不一致问题
+│   │   │       │   │   ├── backend-storage.md  在应用创建时明确形态和真实后端持久化
+│   │   │       │   │   ├── content-rectification.md  内容整改提示词
+│   │   │       │   │   ├── large-video-upload.md  大视频上传方案
+│   │   │       │   │   ├── payment-case-yungouos-jsapi.md  YunGouOS 微信 JSAPI 支付完整接入案例
+│   │   │       │   │   ├── payment.md  在匹配的支付环境中复用已验证集成片段
+│   │   │       │   │   ├── README.md  秒哒专题索引
+│   │   │       │   │   ├── runtime-diagnostics.md  给云端或移动端故障补诊断日志与证据回传
+│   │   │       │   │   ├── seo-and-content.md  核对公开页面的SEO字段和内容整改覆盖范围
+│   │   │       │   │   ├── seo-optimization.md  SEO 优化经验
+│   │   │       │   │   ├── uploads.md  优先核验原生上传限制，再处理大文件与小程序上传
+│   │   │       │   │   └── wechat-urlsec-verification.md  微信 URL 安全验证
+│   │   │       │   ├── updates/  版本与升级
+│   │   │       │   │   ├── 2026-08-02-version-governance.md  版本知识治理记录
+│   │   │       │   │   ├── 2026-08-15-cloud-runtime-diagnostics.md  云端运行诊断记录
+│   │   │       │   │   ├── 2026-08-29-v3.7-and-upload-limit-governance.md  V3.7 与上传限制口径修订
+│   │   │       │   │   ├── 2026-09-07-codex-miaoda-incremental-loop.md  Codex 协助秒哒增量闭环修订
+│   │   │       │   │   ├── README.md  版本资料索引
+│   │   │       │   │   └── version-features.md  历史版本能力时间线
+│   │   │       │   └── workflow.md  Codex × 秒哒协作方法：三条路径、十个阶段的唯一正文
 │   │   │       └── README.md  工具索引
 │   │   ├── other/  收纳跨行业商业方法及通用Skill能力入口
 │   │   │   ├── commercial/  商业化与对外交付
@@ -364,6 +347,7 @@ ai-context/
 │   │   │   │   │       └── README.md  政企Word参考来源与视觉边界
 │   │   │   │   ├── experience/  查需求识别、案例表达与对外交付经验
 │   │   │   │   │   ├── business-analysis-cards.md  梳理产品信息、渠道选择与竞品对标依据
+│   │   │   │   │   ├── business-growth-loop.md  商业增长闭环方法：诊断、渠道适配、信任六步、对标拆解
 │   │   │   │   │   ├── case-result-narrative.md  案例选择、结果证明、观点叙事与产品承接
 │   │   │   │   │   ├── competition-and-investor-materials.md  为赛事、路演与融资材料核对受众和披露边界
 │   │   │   │   │   ├── content-demand-and-conversion.md  从内容反馈识别需求并衔接商业服务
@@ -1257,11 +1241,27 @@ ai-context/
 │   │       │   │   └── README.md  方法索引
 │   │       │   ├── tutorial-writing.md  学员教程写法
 │   │       │   └── visual-and-oral-training-docs.md  飞书培训文档的可视化与口语化
-│   │       ├── materials/  培训资料
+│   │       ├── materials/  外出培训场次（济南干部培训、济南市图书馆）与课件资料索引
+│   │       │   ├── jinan-cadre-ai/  济南市总工会干部AI培训的方案与设计反馈
+│   │       │   │   ├── proposal.md  当前对外培训方案正文
+│   │       │   │   ├── README.md  培训事实、当前设计与文件入口
+│   │       │   │   └── revisions/  本场培训方案方向与版本修订
+│   │       │   │       ├── 2026-09-18-tool-panorama-and-work-scenarios.md  工具全景、提示词与六类工作场景设计反馈
+│   │       │   │       └── README.md  方案修订入口
+│   │       │   ├── jinan-city-library/  查济南市图书馆课程、资料及课后修订
+│   │       │   │   ├── bug-repair/  查图书馆Bug修复实战课的学员资料与证据链
+│   │       │   │   │   ├── README.md  别让 Bug 打败你：秒哒故障定位与修复实战
+│   │       │   │   │   └── revisions/  追溯Bug修复课的演示、学员稿及案例调整
+│   │       │   │   │       ├── 2026-09-09-lesson-6-bug-repair-evidence-chain.md  追溯“第六课优化修订：Bug 修复证据链与一案例多故障演示台”的调整原因与适用范围
+│   │       │   │   │       └── README.md  Bug 修复课程修订
+│   │       │   │   ├── README.md  图书馆资料归属、版本与授课边界
+│   │       │   │   └── revisions/  图书馆培训改稿与反馈
+│   │       │   │       ├── 2026-08-19-lesson-4-student-material-boundary.md  追溯“第 4 课学员正文边界修订”的调整原因与适用范围
+│   │       │   │       ├── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md  追溯“秒哒进阶课：把版本更新改造成使用场景链路”的调整原因与适用范围
+│   │       │   │       └── README.md  图书馆培训修订索引
 │   │       │   └── README.md  资料入口，避免复制项目资料
-│   │       ├── outlines/  培训大纲
-│   │       │   └── README.md  大纲入口，当前无独立通用大纲
-│   │       └── README.md  AI 培训总入口
+│   │       ├── README.md  AI 培训总入口
+│   │       └── topics.md  建委常讲的培训课题库与往期大纲，写大纲和方案前先读
 │   ├── projects/  项目与案例：这件事具体怎样了
 │   │   ├── ai-sixty-jiazi-music-ip/  三级目录：AI 六十甲子古音律与 IP 孵化
 │   │   │   ├── current-operations.md  查当前Web演示的访问和操作方式
@@ -1290,32 +1290,6 @@ ai-context/
 │   │   │       ├── cost-analysis.md  历史成本测算
 │   │   │       ├── pricing-plan-association.md  历史协会定价方案
 │   │   │       └── README.md  VideoAI 历史项目入口
-│   │   ├── cases/  按真实商单或实践记录查过程、结果和可复用方法
-│   │   │   ├── 2026-05-enterprise-prompt-record.md  查看企业片提示词的真实调整过程与适用限制
-│   │   │   ├── angle-revisited-premium-course.md  角的再认识从文稿拆分到AI配图、交互与排版返修的真实记录
-│   │   │   ├── little-leaf-ai-microcourse-mv.md  《小树叶》AI教师音乐微课画面制作与修订复盘
-│   │   │   └── README.md  商单与实践案例
-│   │   ├── external-training/  按机构与场次管理外出授课，和会员社群分开
-│   │   │   ├── jinan-cadre-ai/  济南市总工会干部AI培训的方案与设计反馈
-│   │   │   │   ├── proposal.md  当前对外培训方案正文
-│   │   │   │   ├── README.md  培训事实、当前设计与文件入口
-│   │   │   │   └── revisions/  本场培训方案方向与版本修订
-│   │   │   │       ├── 2026-09-18-tool-panorama-and-work-scenarios.md  工具全景、提示词与六类工作场景设计反馈
-│   │   │   │       └── README.md  方案修订入口
-│   │   │   ├── jinan-city-library/  查济南市图书馆课程、资料及课后修订
-│   │   │   │   ├── README.md  图书馆资料归属、版本与授课边界
-│   │   │   │   └── revisions/  图书馆培训改稿与反馈
-│   │   │   │       ├── 2026-08-19-lesson-4-student-material-boundary.md  追溯“第 4 课学员正文边界修订”的调整原因与适用范围
-│   │   │   │       ├── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md  追溯“秒哒进阶课：把版本更新改造成使用场景链路”的调整原因与适用范围
-│   │   │   │       └── README.md  图书馆培训修订索引
-│   │   │   ├── lessons/  查外部培训的独立课程资料与修订入口
-│   │   │   │   ├── bug-repair/  查图书馆Bug修复实战课的学员资料与证据链
-│   │   │   │   │   ├── README.md  别让 Bug 打败你：秒哒故障定位与修复实战
-│   │   │   │   │   └── revisions/  追溯Bug修复课的演示、学员稿及案例调整
-│   │   │   │   │       ├── 2026-09-09-lesson-6-bug-repair-evidence-chain.md  追溯“第六课优化修订：Bug 修复证据链与一案例多故障演示台”的调整原因与适用范围
-│   │   │   │   │       └── README.md  Bug 修复课程修订
-│   │   │   │   └── README.md  外出培训课程资料
-│   │   │   └── README.md  外出培训
 │   │   ├── feishu-efficient-office/  五级目录：《飞书高效办公》
 │   │   │   ├── all-docs.md  历史培训素材摘要，默认不读
 │   │   │   ├── ch1-editor-feedback-lessons.md  查第1章编辑意见及后续改稿需避免的问题
@@ -1360,8 +1334,10 @@ ai-context/
 │   │   │   │   └── README.md  修订索引与读取边界
 │   │   │   └── technical-dictionary-scope.md  会员配套文章的资料范围与词条边界
 │   │   ├── README.md  项目与案例总入口
-│   │   └── yancut-ai/  五级目录：言剪 AI
+│   │   └── yancut-ai/  言剪从 Vercel 迁到秒哒、B3 热修复盘的阶段实录
 │   │       ├── architecture-and-upstream.md  架构、上游与能力边界
+│   │       ├── case-b3-loading-hotfixes.md  言剪 B3 后加载热修复盘
+│   │       ├── case-miaoda-source-migration.md  言剪从 Vercel 迁到秒哒的阶段实录
 │   │       ├── history.md  已清洗的关键演进摘要
 │   │       ├── README.md  当前项目事实与调用规则
 │   │       ├── revisions/  追溯言剪AI的产品方向、实现调整与验收记录
@@ -1430,13 +1406,12 @@ ai-context/
 │   │   ├── oral.md  口语化论证与前后承接方法
 │   │   ├── README.md  AI 表达总入口、默认激活与组合规则
 │   │   ├── sources.md  核对规则来源，并按证据提炼、晋级或停用方法
+│   │   ├── voice-samples.md  建委本人认可的口语样稿原文与共同特点，写口语化内容前先读
 │   │   └── written.md  书稿、教程、方案和文档表达规则
 │   ├── README.md  AI协作与维护
 │   └── repository/  读取写入、导航与校验
 │       ├── capability-evidence.md  依据本人实践与复用证据更新能力，收藏不算掌握
-│       ├── collaboration-rules.md  明确事实、方法、项目归属和AI执行职责
 │       ├── execution-checks.md  从规则读取到实际交付物验收的执行闭环
-│       ├── information-architecture.md  了解四入口分工、知识归类与长期演进方向
 │       ├── ingestion-workflow.md  写入资料时同步归属、索引、说明、校验和发布
 │       ├── maintenance/  维护工具
 │       │   ├── .gitignore  资料与资源
@@ -1456,6 +1431,7 @@ ai-context/
 │       │   ├── invoke-python.ps1  Windows 兼容入口
 │       │   ├── pre-commit.py  跨平台维护或执行脚本
 │       │   ├── README.md  校验与桌面同步说明
+│       │   ├── relink.py  移动文件后批量修正仓库内的相对链接与路径引用
 │       │   ├── structure-descriptions.json  结构化配置与索引
 │       │   ├── structure-viewer.template.html  HTML 思维导图界面与交互模板
 │       │   ├── sync-desktop-structure.ps1  生成并同步 HTML 到 F 盘桌面
@@ -1466,6 +1442,7 @@ ai-context/
 │       │   │   ├── test_context.py  跨平台维护或执行脚本
 │       │   │   ├── test_deliverable.py  跨平台维护或执行脚本
 │       │   │   ├── test_methods.py  跨领域方法发现、误触发与登记维护回归
+│       │   │   ├── test_real_tasks.py  建委真实任务回归：银行课件、培训宣传、培训方案、秒哒支付、宣传片分镜
 │       │   │   ├── test_retrieval.py  自然任务检索与读取证据回归
 │       │   │   ├── test_seedance.py  视频提示词自动调用、误触发和按需读取回归
 │       │   │   └── test_title_matrix.py  跨平台维护或执行脚本
@@ -1482,44 +1459,7 @@ ai-context/
 │       │   └── task-guide.md  完整任务指南，按主任务和条件依赖读取
 │       ├── README.md  治理总入口
 │       ├── revisions/  仓库级重大修订
-│       │   ├── 2026-04-05-context-repository-established.md  追溯“建立长期AI协作上下文仓库”的调整原因与适用范围
-│       │   ├── 2026-08-18-information-architecture-rebuild.md  五个一级入口的信息架构重构记录
-│       │   ├── 2026-08-20-ai-expression-default-layer.md  AI 表达默认层和语言规则修订
-│       │   ├── 2026-08-21-chinese-quality-and-source-governance.md  中文质量基础层与多来源冲突治理修订
-│       │   ├── 2026-08-21-commercial-delivery-domain.md  商业化与对外交付边界层首次建立记录
-│       │   ├── 2026-08-21-commercial-delivery-relocation.md  商业化迁移到其他领域的修订
-│       │   ├── 2026-08-21-desktop-sync-resilience.md  追溯“桌面 HTML 同步稳定性加固”的调整原因与适用范围
-│       │   ├── 2026-08-21-direct-main-and-desktop-sync.md  直推 main、旧分支清理与桌面同步修订
-│       │   ├── 2026-08-21-interactive-html-structure-viewer.md  交互式 HTML 结构查看与自动同步修订
-│       │   ├── 2026-08-22-cognition-and-content-commercialization.md  追溯“建委认知归组与跨行业内容经营修订”的调整原因与适用范围
-│       │   ├── 2026-08-23-feishu-document-routing-boundary.md  飞书文档承载平台与飞书书籍项目的路由边界
-│       │   ├── 2026-08-24-sixty-jiazi-project-relocation.md  六十甲子项目迁入 other 与唯一路由规则
-│       │   ├── 2026-08-27-commercial-external-material-boundary.md  赛事、路演与融资材料的对外边界修订
-│       │   ├── 2026-09-01-ai-programming-skill-repository.md  AI 编程 Skill 仓库与上游快照治理
-│       │   ├── 2026-09-01-case-result-narrative.md  追溯“案例结果叙事方法入库修订”的调整原因与适用范围
-│       │   ├── 2026-09-01-remotion-skill-confirmation-and-action-contract.md  Remotion Skill 确认门与逐元素动作契约修订
-│       │   ├── 2026-09-01-remotion-skill-director-and-parameterization.md  追溯“Remotion Skill 导演层与参数化默认输出修订”的调整原因与适用范围
-│       │   ├── 2026-09-02-jianwei-remotion-parameterization.md  Studio 右侧 Default Props 可编辑性验收修订 Remotion Skill 导演层、重叠节奏与参数化默认输出修订
-│       │   ├── 2026-09-04-remotion-reference-fidelity-and-preview-gate.md  Remotion Skill 参考图保真、低清预览与最终渲染确认门修订
-│       │   ├── 2026-09-05-remotion-deterministic-layout.md  追溯“Remotion Skill 修订：数字与高密度布局确定性”的调整原因与适用范围
-│       │   ├── 2026-09-05-remotion-director-expansion-and-background-fidelity.md  Remotion Skill 内部导演加工、动作自然度与背景保真修订
-│       │   ├── 2026-09-05-remotion-layout-locked-continuity.md  追溯“Remotion 参考图几何锁定与连续性审计”的调整原因与适用范围
-│       │   ├── 2026-09-05-remotion-text-stability-and-director-console.md  Remotion Skill 文字抗抖、字体锁定、布局稳定校验与导演台固定输出修订
-│       │   ├── 2026-09-05-remotion-text-visibility-and-clipping.md  Remotion Skill 文字与关键元素完整可见、裁剪祖先和最长参数压力测试修订
-│       │   ├── 2026-09-05-remotion-universal-adaptive-architecture.md  Remotion Skill 几何锁定、禁止片尾整图覆盖与连续性审计修订
-│       │   ├── 2026-09-07-structure-sync-and-content-routing.md  结构镜像同步与表达/自媒体分流修订
-│       │   ├── 2026-09-07-training-review-generalization-and-reinforcement.md  AI 培训复盘通用化与重复错误强化机制
-│       │   ├── 2026-09-12-context-operation-and-attribution.md  追溯“上下文运行规则与资料归属纠正”的调整原因与适用范围
-│       │   ├── 2026-09-12-hierarchical-navigation-and-expression.md  追溯“分级导航、项目集中与表达标准调整”的调整原因与适用范围
-│       │   ├── 2026-09-12-personal-expression-and-skill-refinement.md  追溯“个人信息、表达与Skill归属调整”的调整原因与适用范围
-│       │   ├── 2026-09-13-experience-adherence-audit.md  培训经验遵循性审计与执行闭环修订
-│       │   ├── 2026-09-15-writing-dna-review-and-method-routing.md  写作蒸馏器评估、材料提炼与按任务发现方法
-│       │   ├── 2026-09-16-training-attribution-and-navigation.md  本人确认培训归属、文章课程区分与日常导航
-│       │   ├── 2026-09-21-task-retrieval-and-adherence.md  从自然任务到具体经验和成品验收的调用修复
-│       │   ├── 2026-09-24-navigation-descriptions.md  追溯导航中文用途说明补齐、缺项校验和直接发布要求
-│       │   ├── 2026-09-24-title-matrix-integration.md  追溯“Title Matrix收录与自媒体标题调用”的调整原因与适用范围
 │       │   └── README.md  仓库修订索引
-│       ├── roadmap.md  按真实使用问题安排仓库后续改进
 │       ├── templates/  新建项目、案例或方法记录时复用基本字段
 │       │   ├── case.md  记录真实输入、过程、结果、限制与复用方法
 │       │   ├── method.md  写清方法适用条件、执行步骤、来源和验收
@@ -1530,7 +1470,8 @@ ai-context/
 ├── .github/  目录入口
 │   └── workflows/  目录入口
 │       └── context-validation.yml  自动化配置
-└── .gitignore  Git 忽略规则，排除不应入库的本地文件
+├── .gitignore  Git 忽略规则，排除不应入库的本地文件
+└── CLAUDE.md  Claude Code 与 GLM Coding Plan 等工具自动读取的入口，只指向 AGENTS.md
 ```
 
 ## 四个主入口
@@ -1552,7 +1493,7 @@ ai-context/
 
 每个独立激活的领域、工具或项目有README。最近README索引新增文件，上层只列下一层；不预建空门类或同一方法的多个副本。新增资料执行[写入流程](../ingestion-workflow.md)，判定来源、归属、适用范围与证据，再同步登记、引用、结构和验收。
 
-重大变化写就近revisions，history只保留摘要与链接；普通变动交给Git历史。保留价值明确的旧项目进入work/projects/archive。用户明确彻底清除时同时去除当前树和历史引用，不另建归档。
+普通变动交给Git历史；只有仓库结构的重大变化才写system/repository/revisions。保留价值明确的旧项目进入work/projects/archive。用户明确彻底清除时同时去除当前树和历史引用，不另建归档。
 
 动态外部能力按[版本政策](../versioned-knowledge-policy.md)核验。Skill来源、许可和版本独立记录；保留实体不证明本机安装或执行。原始长资料和源码只在核验或执行时读。
 
@@ -1560,6 +1501,6 @@ ai-context/
 
 按[维护步骤](../maintenance/README.md)同步任务导航、关联资产、完整树与交互HTML，再校验和暂存。pre-commit验证暂存快照，不静默生成或暂存额外文件。桌面HTML从同一生成版本同步，Windows桌面暂不可用单独报告。
 
-完整设计理由与后续扩展见[信息架构](../information-architecture.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
+各入口的分工见[仓库运行](../README.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
 *结构最后确认：2026-09-28*

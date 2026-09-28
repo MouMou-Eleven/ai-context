@@ -23,7 +23,7 @@ R8实物迁移名为00018_r8_ai_attempt.sql；本地r8-source另有00018_r8_ai_p
 
 ## 有效沉淀
 
-完整方法在[百度秒哒增量正文](../../../domains/development/tools/miaoda/experience/patterns/codex-miaoda-iterative-increment-workflow.md#一次交付批次与有效完成)，README/llms与自然任务路由提供入口。用自然说法验正向触发，以飞书妙搭、套餐查询验不误触发。路由通过不等于功能完成，实际代码包仍须解压应用复测。
+完整方法在[百度秒哒增量正文](../../../domains/development/tools/miaoda/workflow.md#一次交付批次与有效完成)，README/llms与自然任务路由提供入口。用自然说法验正向触发，以飞书妙搭、套餐查询验不误触发。路由通过不等于功能完成，实际代码包仍须解压应用复测。
 
 ## 本轮已落地与验证
 

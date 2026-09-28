@@ -11,7 +11,7 @@
 
 ## 调用边界
 
-- 只说秒哒先读[平台辨析](./tools/miaoda/disambiguation.md)及[秒哒导航](./tools/miaoda/llms.txt)，不自动读取言剪AI；百度秒哒不能走飞书妙搭接口。
+- 只说秒哒先读[平台辨析](./tools/miaoda/README.md)及[秒哒导航](./tools/miaoda/llms.txt)，不自动读取言剪AI；百度秒哒不能走飞书妙搭接口。
 - 开发某个现有项目先读其README，根据技术需求补工具方法，不把整个开发知识包一次读完。
 - 页面开发、手机适配、UI 审查或用户继续反馈视觉问题时，读取[前端 UI 质量标准](./experience/frontend-ui-quality-standards.md)，匹配其中的步骤与验收。后续反馈先过准入门槛再合并，不能把每个临时参数都沉淀成规则。
 - AI编程课程以[培训](../training/README.md)为主；真实演示需要开发方法时再组合，不据平台判课程归属。

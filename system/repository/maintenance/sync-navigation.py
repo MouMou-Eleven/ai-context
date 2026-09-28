@@ -36,15 +36,13 @@ def outputs(root=ROOT):
     cases, archived = registry.get('cases', []), registry.get('archivedProjects', [])
     guide_path = NAVIGATION + '/task-guide.md'
     result = {
-        'llms.txt': '''# AI Context 读取入口
+        'llms.txt': '''# 杨建委 AI Context 仓库
 
-<!-- generated-from: system/repository/navigation/routes.json; do not edit -->
+<!-- generated-from: system/repository/navigation/sync-navigation.py; do not edit -->
 
-先读[AGENTS](./AGENTS.md)，再用[任务指南](./system/repository/navigation/task-guide.md)进入领域、项目或能力。中文输出遵守[表达短卡](./system/expression/README.md)；写入仓库同时执行[更新流程](./system/repository/ingestion-workflow.md)。简单查询只读必要事实；关键词不能证明课程归属。
+任何 AI（GPT、Claude、GLM、Gemini 等）读取或写入本仓库，都先完整读根目录 [AGENTS.md](./AGENTS.md)，并严格照它执行。AGENTS.md 里有：任务 → 必读文件对照表、组合任务怎么处理、规则冲突怎么取舍、红线，以及写入仓库的规则。
 
-制作成品执行[写前约束与最终版本验收](./system/repository/execution-checks.md)。读到规则不算已遵循，格式解析不算内容合格；分享课件默认学员可见，时长安排不进入正文。
-
-不要求用户报文件名：从当前对话提取任务，进入板块后继续读适用正文。可用检索工具的自然任务计划、板块内候选与正文包；网页宿主按任务指南手动走同一链路。仅说“看仓库”不等于要做仓库维护。
+不需要运行任何脚本。只看文件名或目录不算读过，要读文件正文。
 '''
     }
     guide = '''# 按任务读取仓库
@@ -109,7 +107,8 @@ def outputs(root=ROOT):
         result[name] = block(original, marker, body)
 
     update('work/projects/README.md', 'projects', asset_table('work/projects/README.md', projects, '## 当前项目与活动入口'))
-    update('work/projects/cases/README.md', 'cases', asset_table('work/projects/cases/README.md', cases, '## 已收录案例'))
+    if cases and (root / 'work/projects/cases/README.md').is_file():
+        update('work/projects/cases/README.md', 'cases', asset_table('work/projects/cases/README.md', cases, '## 已收录案例'))
     update('work/projects/archive/README.md', 'archived-projects', asset_table('work/projects/archive/README.md', archived, '## 已归档入口'))
     related = {}
     for item in projects + cases:

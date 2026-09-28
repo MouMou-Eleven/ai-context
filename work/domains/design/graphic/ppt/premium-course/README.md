@@ -13,7 +13,8 @@
 | [动画时机与几何校验](animation-and-geometry.md) | 问答揭示、固定转轴、箭头路径和动态验收 |
 | [逐页录制操作稿](recording-guide.md) | 稿段对应、准确点击句、自动效果、媒体及网页切换 |
 | [动画与录制修订](revisions/2026-09-26-animation-recording-and-arrow-axis.md) | 后续反馈纠正早期口径，说明实际验证边界 |
-| [《角的再认识》案例](../../../../../projects/cases/angle-revisited-premium-course.md) | 真实输入、反馈、失败原因、修改结果与证据边界 |
+| [案例目录](README.md) | 精品课商单案例 |
+| [《角的再认识》案例](case-angle-revisited.md) | 真实输入、反馈、失败原因、修改结果与证据边界 |
 | [2026-09-26 修订](revisions/2026-09-26-layout-and-arrow-review.md) | 从增加装饰转向比例、对齐、留白和箭头接合的验收要求 |
 
 不适用于直接套做商务汇报、路演或全屏自由设计；具体模板、字号、人物区域和费用必须按当前项目确定。本方法已在本案例使用，尚无跨项目独立复用证据。

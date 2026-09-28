@@ -1,74 +1,64 @@
 # 百度秒哒 MIAODA
 
-> 百度秒哒是 AI 编程下面的一个工具知识包，不是独立工作领域，也不是飞书妙搭 Spark。
+建委的主要 AI 开发平台。这里只放**秒哒特有**的知识；测试、UI、后端、商业化这类所有 AI 编程都通用的经验放在[通用开发经验](../../experience/README.md)。
 
-## 必须先识别平台
+## 先确认平台（红线）
 
-- 建委使用“秒嗒/秒哒”指百度秒哒；与建委对话时沿用“秒嗒”，不得自动替换成“妙搭”。
-- `miaoda.cn`、`*.appmiaoda.com`，以及当前网站 `https://jianwei.appmiaoda.com/`，按百度秒哒路由。
-- 飞书妙搭是另一产品。禁止只凭 `Miaoda` 拼写加载 `lark-apps`，禁止使用 `lark-cli apps`、`.spark/meta.json`、Spark SDK 或飞书妙搭发布流程改造百度秒哒应用。
-- 飞书文档可以作为网站内容来源，但不意味着该网站使用飞书妙搭。文档读取与宿主网站开发分别选择对应能力。
-- 生成补丁、压缩包、README 和执行提示词前，核对平台名称、域名、上传规则和接口来源；发现混用必须先修正。
-- 以上为 2026-09-05 建委纠正连续误识别后确认的长期规则。
+**百度秒哒 ≠ 飞书妙搭。** 两个产品读音相同，分属百度和飞书，没有任何关系。
 
-## 目录结构
+| 看到这些 | 是 |
+|---|---|
+| "秒哒""秒嗒""百度秒哒"、`miaoda.cn`、`*.appmiaoda.com`、`miaoda.online`、"秒点" | **百度秒哒**（本目录） |
+| "飞书妙搭"、`miaoda.feishu.cn`、`*.aiforce.cloud`、Spark | 飞书妙搭（不在本仓库） |
+| 只有 Miaoda 拼写、飞书文档链接、"Skill" | 不能判断，看应用域名或问建委 |
+
+- 建委说"秒嗒""秒哒"时一律按百度秒哒处理，回复时沿用"秒嗒"，不要改成"妙搭"。
+- 做百度秒哒的任务时，**不要**加载 `lark-apps` 技能，不要用 `lark-cli apps`、Spark SDK、`.spark/meta.json` 或飞书妙搭的发布流程。
+- 秒哒网站里嵌了飞书文档，只说明内容来自飞书，网站仍然是秒哒做的。
+- 已确认的秒哒网站：`https://jianwei.appmiaoda.com/`、`https://app-e6qfpypd02yp.appmiaoda.com/`。
+- 百度秒哒官网 [miaoda.cn](https://www.miaoda.cn)，官方文档 [cloud.baidu.com/doc/MIAODA](https://cloud.baidu.com/doc/MIAODA/index.html)。
+
+（2026-09-05 建委纠正连续误识别后确认。本机的 `lark-apps` 技能描述里也已写明"不适用于百度秒哒"。）
+
+## 要做什么，读哪个
+
+| 任务 | 读 |
+|---|---|
+| 查秒哒现在能不能做某事、限额、会员、价格 | [facts.md](./facts.md)（唯一的当前事实表） |
+| 用 Codex 开发秒哒项目（新项目、迭代、修问题） | [workflow.md](./workflow.md)：先按顶部表格选路径 A/B/C |
+| 要写给秒哒的提示词 | [prompt-templates.md](./prompt-templates.md) |
+| 上传、登录、支付、SEO、排错、后端、微信验证 | [topics/](./topics/README.md) 里对应的专题 |
+| 报错了、踩坑了 | [pitfalls.md](./pitfalls.md) |
+| 平台运行时、后端底座、首轮三个决定 | [basics/platform-basics.md](./basics/platform-basics.md) |
+| 发布到小程序、APP、自定义域名 | [basics/publish-channels.md](./basics/publish-channels.md) |
+| 开发秒哒 Skill，或让外部 Agent 调用秒哒 | [development/](./development/README.md) |
+| 完整支付接入案例 | [topics/payment-case-yungouos-jsapi.md](./topics/payment-case-yungouos-jsapi.md) |
+| 追溯版本变化 | [updates/](./updates/README.md)（只用来追溯，不代表现状） |
+
+具体项目（比如言剪 AI）的进度和执行卡在项目自己的目录里，见[言剪 AI](../../../../projects/yancut-ai/README.md)。
+
+## 目录
 
 ```text
 miaoda/
-├── README.md          当前入口与目录说明
-├── llms.txt           AI 最小读取路由
-├── disambiguation.md  同名产品辨析
-├── basics/            平台基础与发布渠道
-├── development/       Skill开发与外部调用
-├── experience/        踩坑、提示词主题、案例、处方和参考源码
-└── updates/           版本时间线与重要更新
+├── README.md            本页：平台识别 + 读取路由
+├── llms.txt             给只认 llms.txt 的工具用的短路由
+├── facts.md             当前事实表：会员、限额、计费、版本
+├── workflow.md          Codex × 秒哒协作方法（三条路径、十个阶段）
+├── prompt-templates.md  可粘贴的提示词模板
+├── pitfalls.md          踩坑清单
+├── topics/              专题：上传、登录、支付（含完整支付案例）、SEO、排错、后端、微信验证
+├── basics/              平台基础、发布渠道
+├── development/         Skill 开发、被外部 Agent 调用
+├── reference-materials/ 旧环境兼容源码（默认不读）
+└── updates/             版本时间线（只用于追溯）
 ```
 
-## 读取路由
+## 写入规则
 
-| 问题 | 首读 |
-|---|---|
-| 不确定“秒哒/妙搭”指什么 | [`disambiguation.md`](./disambiguation.md) |
-| 当前版本、会员权益、上传与容量限制 | [`basics/current-capabilities.md`](./basics/current-capabilities.md) |
-| 平台形态、运行时、存储、发布渠道 | [`basics/README.md`](./basics/README.md) |
-| 开发自定义 Skill 或被外部 Agent 调用 | [`development/README.md`](./development/README.md) |
-| Skill 能否查代码、数据库、下载附件，是否值得使用 | [`已安装版本能力矩阵`](./development/skill-as-callable.md#本机已安装版本的能力核查2026-09-25) |
-| 排错、完整案例或重复方案 | [`experience/README.md`](./experience/README.md) |
-| 只需要写执行提示词 | [`experience/prompt-patterns.md`](./experience/prompt-patterns.md)，再选当前主题 |
-| 制作增量包及问题验收清单 | [`版本化增量迭代闭环`](./experience/patterns/codex-miaoda-iterative-increment-workflow.md)；每包单独交付问题对照与手动验收清单 |
-| 根据项目反馈补充认识、纠正旧结论、防止遗忘 | [持续反馈如何修订知识](./experience/patterns/codex-miaoda-iterative-increment-workflow.md#持续反馈如何修订知识)；先比对差异，再修唯一正文和下轮检查，不逐轮堆积文档 |
-| 追溯功能变化和旧环境方案 | [`updates/README.md`](./updates/README.md) |
-
-已有源码要尽快还原原站、一次给齐或减少上传轮次时，读[一次交付批次](./experience/patterns/codex-miaoda-iterative-increment-workflow.md#一次交付批次与有效完成)。阶段号不等于用户上传次数，基线与测试由Codex负责。
-
-## 当前原则
-
-### 先决定本次走哪条流程
-
-| 当前目标或状态 | 首要动作与唯一正文 |
-|---|---|
-| 查询或调用外部 Skill | 读[能力矩阵](./development/skill-as-callable.md)，核对安装版本；区分直接读取、代查回执与人工文件回传 |
-| 本地源码首次迁入 | 读[全量交接](./experience/patterns/codex-source-package-deployment.md)，先确定可复建基线和运行时适配 |
-| 已有本地基线，继续更新或审查回包 | 读[增量闭环](./experience/patterns/codex-miaoda-iterative-increment-workflow.md)，其中包含取证合同；项目已在云端不改变此选择 |
-| 选定增量方式，但云端最新差异缺失 | 先索取限定文件/Schema/回执并回收，保留其他独立工作；不退回长提示词自由重写，也不套用旧基线 |
-| 仅有云端项目，未建立本地源码基线，且用户接受提示词修改 | 才用[受限提示词协作](./experience/patterns/codex-assisted-workflow.md)；收到源码后可转本地增量 |
-
-这是导航，不重复各流程的完整规范。项目当前版本、用户最新要求在项目README/最新修订；方法正文维护通用规则；案例和updates保留当时证据，不能覆盖较新的同环境核验。只查能力不启动开发，查状态不自动发布。
-
-- 秒哒功能、计费、渠道和界面会变化；回答“现在能不能做”前必须重新核验官方资料或实际环境。
-- 当前已核验口径先读 `basics/current-capabilities.md`；历史版本变化只从 `updates/` 追溯，不能反向覆盖当前口径。
-- 秒哒技能运行时与应用运行时是两个环境，密钥和变量不能默认互通。
-- 秒哒收到指令后会直接修改，提示词必须写清红线、顺序和验收。
-- 已有本地项目采用本地修改测试后交付编号 ZIP、用户上传、秒哒应用、回收差异验收的闭环；文本调度不等于附件上传。云端冲突写入不并行，同批多包一次接收后顺序应用；后续增量无需例行重写需求文档或生成无用途 ZIP，见[增量流程](./experience/patterns/codex-miaoda-iterative-increment-workflow.md)。
-- 秒哒云端构建不等于真实浏览器或手机验收；运行时问题应由用户复现并提供日志。
-- `updates/version-features.md` 只用于历史追溯，不能作为当前能力清单。
-
-动态知识治理遵守[版本化知识政策](../../../../../system/repository/versioned-knowledge-policy.md)。
-
-*结构整理：2026-09-12；产品事实按各来源核验日使用*
-
-## 最新项目经验（2026-09-27）
-
-[言剪 B3 后加载热修复盘](./experience/cases/yancut-b3-loading-hotfixes.md)：会话刷新阻塞、弹窗串行依赖、云端热修保护与本地/现场验收边界；单项目证据，不是平台通用限制。
-
-[B6 依赖碰撞（踩坑第30条）](./experience/pitfalls.md)：自带安装器停止与平台能力分开；本地验证依赖不能无差别进入业务增量包。后续反馈按上方持续修订规则处理，应用状态以项目记录为准。
+- 会变的事实（限额、价格、功能）只写在 [facts.md](./facts.md)，其他文件链接过去。
+- 协作方法的改进直接改 [workflow.md](./workflow.md) 对应阶段的原文；专题经验改对应专题。不要在文件末尾追加"最新经验"。
+- 新坑先查 [pitfalls.md](./pitfalls.md) 有没有同类，有就改那一条；没有才新增。
+- 只跟某个项目有关的内容（批次号、具体功能、项目 bug）写在项目目录，不写进本目录。
+- 能用到所有 AI 编程工具的经验，写进[通用开发经验](../../experience/README.md)。
+- 其他规则见仓库[写入规范](../../../../../system/repository/ingestion-workflow.md)。

@@ -1,41 +1,46 @@
 # 培训与教学
 
-保存建委作为讲师开展会员社群、企业、图书馆、夜校和其他培训时的方法、大纲及待归属资料。具体产品和场次进入项目。**培训不等于会员社群；同名课程、相同课号和同一个飞书空间都不能证明属于同一项目。**
+建委作为讲师给别人上课的经验：备课、写课件、讲课、复盘。包括会员社群的课、企业和机关培训、图书馆和夜校的课。
 
-用户只指定本文件夹也执行下方读取链：实际读默认风格与本次方法正文，再写作和验收，不能停在目录。面向学员的实践复盘解释做法与判断；用户明确要讲师内部复盘时才写授课安排。招生介绍转[自媒体](../self-media/README.md)，不因主题是培训就改变宣传用途。
+教师委托建委**制作**的微课、MG 动画、精品课 PPT 不算这里，属于[设计：教育作品](../design/video/education/README.md)。
 
-## 对外方案与课堂资料分开
+## 先分清你要做的是哪一种
 
-用户要提交组织方的“AI培训方案、课程纲要、培训提案”时，先读[商业交付入口](../other/commercial/README.md)与[对外方案设计](../other/commercial/experience/external-proposal-design.md)，Word按[交付格式](../other/commercial/delivery-formats/README.md)处理。方案写培训内容、价值、规模和讲师；操作路径、提示词、内部衔接和资料核验留备课。下文“默认课堂主文档”不覆盖已经明确的对外方案用途。
+| 你要做的 | 给谁看 | 先读 | 再读 |
+|---|---|---|---|
+| **培训方案 / 课程大纲**（报给主办方的） | 主办方、领导 | [常讲课题](./topics.md) → [对外方案写法](../other/commercial/experience/external-proposal-design.md) | 需要 Word 时读[政企 Word 排版](../other/commercial/delivery-formats/gov-enterprise-word.md) |
+| **课件 / 分享资料 / 课堂文档**（上课用的） | 学员 | [建委的培训风格](./experience/jianwei-training-style.md) + [口语样稿](../../../system/expression/voice-samples.md) | [课程怎么组织](./experience/demo-driven-course-design.md)；飞书课件再读[可视化与口语化](./experience/visual-and-oral-training-docs.md) |
+| **实操教程**（学员跟着做的） | 学员 | [教程写法](./experience/tutorial-writing.md) | 当前工具的实际界面 |
+| **讲技术概念**（API、CLI、Skill 这类） | 学员 | [从问题推导概念](./experience/technical-explanation/problem-driven-technical-explanation.md) | — |
+| **讲师备课稿**（时间安排、演示准备，只给自己看） | 建委本人 | 只有建委明确要才写 | [备课与交付物区别](./experience/teaching-and-course-design.md) |
+| **招生宣传 / 课程介绍** | 潜在学员 | [自媒体：宣传写法](../self-media/marketing-copy/reader-question-led-promotion.md) + [口语样稿](../../../system/expression/voice-samples.md) | 本页的课题和课程事实，用来提供干货 |
+| **讲后复盘、沉淀经验** | 以后的 AI | 本页"怎样沉淀" | — |
 
-## 按任务读取
+同一个主题可能要出好几样东西，比如一场培训要方案、课件、朋友圈宣传。每样东西分开按上表选，事实只取一处。
 
-“分享资料、讲课用的文档、拿着讲两小时”默认是**学员可见的课堂主文档**：时长用于控制内容量，不自动产生讲师时间表。先读[唯一风格规则](./experience/jianwei-training-style.md)，按[执行与验收](../../../system/repository/execution-checks.md)固定读者和检查动作；仅用户明确要内部备课稿时改变用途。正文标题、表头、提示块也按学员视角检查。
+## 最容易犯的三个错
 
-| 用户要做什么 | 先读 | 继续读取的条件 |
-|---|---|---|
-| 查会员社群定位、权益或近况 | [社群项目](../../projects/paid-community-course/README.md) | 只查事实时不加载课件写作方法 |
-| 查外出培训、企业/图书馆/夜校课程 | [外出培训](../../projects/external-training/README.md) | 按主题或已确认场次进入，不套用社群权益和课程顺序 |
-| 找课件或某篇飞书资料 | [资料索引](./materials/README.md) | 用标题、链接和受众核对身份；归属不明的资料按原主题查找 |
-| 写、改、审核培训课件或复盘 | [培训经验](./experience/README.md) + [默认培训风格](./experience/jianwei-training-style.md) | 再按任务进入课程组织、技术解释、实操或可视化；明确项目时补该项目事实 |
-| 查可复用大纲 | [大纲](./outlines/README.md) | 区分大纲规划与实际授课 |
-| 沉淀新课程、反馈或改归属 | [归属与更新规则](./attribution-and-updates.md) | AI 自动完成资料、最近一层 README、进度和方法之间的同步 |
+1. **把给学员的课件写成给讲师看的**：出现"本节讲 20 分钟""讲师这里演示""课堂要看什么"。学员课件里一律不写。
+2. **写成书面文章**：课件要能直接讲出来。拿不准时对照[口语样稿](../../../system/expression/voice-samples.md)，读出来不像建委在说话就改。
+3. **把对外方案写成内部稿**：方案给主办方看，只写学什么、有什么用、谁来讲。谈判策略、提示词原文、操作路径、"待核实"之类内部内容不写进方案。
 
-## 目录入口
+## 目录
 
-- [experience/](./experience/README.md)：跨培训可复用的方法与证据来源。
-- [outlines/](./outlines/README.md)：通用大纲；不复制项目课程表。
-- [materials/](./materials/README.md)：资料发现与待归属材料。
-- [项目与案例](../../projects/README.md)：会员社群与外出培训分别管理，事实只保存一份。
-- [attribution-and-updates.md](./attribution-and-updates.md)：课程身份、状态、收录与更新的唯一培训专项规则。
+| 位置 | 内容 |
+|---|---|
+| [topics.md](./topics.md) | 建委常讲的课题（AI 全景、提示词工具、Excel/Word、知识库、自动化、AI 编程……）和往期大纲 |
+| [experience/](./experience/README.md) | 培训方法：风格、课程组织、可视化与口语化、教程写法、技术概念讲解 |
+| [materials/](./materials/README.md) | 外出培训场次（济南干部培训、济南市图书馆）；按课件标题找飞书正文；归属不明的资料 |
+| [attribution-and-updates.md](./attribution-and-updates.md) | 一份资料属于哪个系列、哪场培训的判断规则 |
 
-## 执行边界
+会员社群的课程事实（课序、权益、价格）在[社群项目](../../projects/paid-community-course/README.md)，不在这里。课号只在自己的系列里有效：图书馆的"第 6 课"和社群的"第 6 课"是两回事。
 
-生成中文内容先读 [AI 表达短入口](../../../system/expression/README.md)，按交付形式继续读取；只查位置和状态不预读全部表达与培训规则。一个主任务可以调用完成它所需的专业依赖，AI 应自行选择，不要求建委额外说“结合”。
+## 怎样沉淀
 
-建委作为讲师授课属于本目录；受教师或学校委托制作成品微课、MG 动画属于[设计](../design/video/education/README.md)。课程需要真实开发、视频、演示或招生物料时，按具体工作步骤引用[编程](../development/README.md)、[AI 视频](../design/video/README.md)、设计或[自媒体](../self-media/README.md)；不能因使用了这些手段改变课程归属，也不将招生话术带进正式授课。
-
-2026-09-12 归属整理已将《别让 Bug 打败你》移入外出培训。2026-09-16本人进一步确认济南市图书馆三项资料和会员社群三项课程／文章记录，已归入对应项目；2026-09-17本人继续确认：技术词典是会员配套文章，协作心法是会员系统课程第3课。原课程内容和修订证据保留，不从课号补造日期或授课进度。
+- 讲完课的反馈：能用到别的课上的，直接改 experience/ 里对应的那一条，不要另起新文件；只跟这一场有关的，写进这一场的记录。
+- 新的常讲课题、新的讲法：补进 [topics.md](./topics.md)。
+- 同一个错误又犯了：不要再加一条"必须……"，而是在[培训风格](./experience/jianwei-training-style.md)的"高频失误"表里补上这次的来源，并想办法让检查动作更具体。
+- 具体规则见[仓库写入规范](../../../system/repository/ingestion-workflow.md)。
 
 <!-- generated-related-assets:start -->
 ## 相关项目与案例
@@ -43,8 +48,6 @@
 | 类型 | 项目或案例 | 适用领域 |
 |---|---|---|
 | 长期项目 | [AI 超级个体陪跑社群](../../projects/paid-community-course/README.md) | 会员培训与社群经营 |
-| 活动容器 | [外部培训记录](../../projects/external-training/README.md) | 企业、图书馆、夜校等 |
-| 专题培训 | [济南市领导干部AI专题培训](../../projects/external-training/jinan-cadre-ai/README.md) | 干部AI培训方案与实操设计 |
 <!-- generated-related-assets:end -->
 
 <!-- generated-methods:start -->
