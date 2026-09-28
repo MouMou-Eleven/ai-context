@@ -8,6 +8,7 @@
     "work/projects/yancut-ai/revisions/2026-09-27-b5-guest-pricing-and-doubao-asr.md": "B5游客浏览、用户价格展示和豆包识别接线及测试边界",
     "work/projects/yancut-ai/revisions/2026-09-27-b6-runtime-logs-and-ai-assistance.md": "B6日志和辅助调试交付、依赖碰撞回执与持续知识修订约定",
     "work/projects/yancut-ai/revisions/2026-09-28-b7-admin-mcp.md": "B7管理员MCP、辅助会话、v42热修保护与实连验证边界",
+    "work/projects/yancut-ai/revisions/2026-09-28-b8-creation-review-and-service-tests.md": "B8方案确认与批注范围、服务查询测试、线上MCP证据及v44发布保护",
     "work/projects/yancut-ai/revisions/2026-09-27-paid-source-baseline-ep8e1gojj18g.md": "付费源码归档基线及定点同步约定，避免重复全量导出费用",
     "work/projects/yancut-ai/revisions/2026-09-27-v35-v38-receipts-and-b6-observability.md": "v35至v38登录、后台和二维码热修回执及B6最初需求",
     "work/domains/development/tools/miaoda/experience/cases/codex-skill-source-migration.md": "官方Skill调度与源码增量实录：附件上传、锁校验及生成平台错误边界",

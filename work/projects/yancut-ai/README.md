@@ -1,13 +1,15 @@
 # 言剪 AI（YanCut）
 
-> 状态：用户回传 B6 方案 A 应用与双 Edge 部署成功截图，后续 v42 修正 GET generation 报错。B7 增加仅管理员可用的 MCP 与辅助会话设置，已完成本地验证，待秒哒应用；保留 v42 热修及付费源码基线，不例行重新导出。
+> 状态：用户回传 B7/v43 双 Edge 部署和 v44 发布成功；本轮已通过线上 MCP 查询与权限检查。B8 提供创作确认、画面批注和服务连接测试，待秒哒应用；保留 v42 加载热修、v44 依赖覆盖及付费源码基线，不例行重新导出。
 > 当前口径确认：2026-09-28；云端回执、本地验证与正式站验收分别记录
 
 原 Vercel 测试／回退入口（非秒哒）：[言剪 AI](https://yancut-ai-personal.vercel.app) · [登录/注册](https://yancut-ai-personal.vercel.app/login) · [在线帮助](https://yancut-ai-personal.vercel.app/studio/help)。真实账号、Neon 数据库、管理员和积分继续使用；原片保留本机，云端保存轻量工程与素材描述，旧云素材和明确上传的识别音频/作品仍使用私有 Blob。最新见[工作台更新](./revisions/2026-09-25-editor-voice-integration.md)及[声音定价更正](./revisions/2026-09-25-voice-pricing-v11.md)，存储方向见[统一入口与本机原片](./revisions/2026-09-25-unified-local-media-workspace.md)。[早先云端上线记录](./revisions/2026-09-25-online-cloud-launch.md) 保留历史，但“所有原片上传云端”不再作为当前口径。旧的免登录/个人 Key 模式也未恢复。
 
 ## 最新修订（2026-09-28）
 
-[B7：管理员 MCP、辅助会话与 v42 热修保护](./revisions/2026-09-28-b7-admin-mcp.md)：含密码眼睛、最长7天会话、MCP客户端实连与对抗测试；后台可自检连接和日志查询。当前为本地交付，线上连通待验收。
+[B8：创作确认、画面批注与服务测试](./revisions/2026-09-28-b8-creation-review-and-service-tests.md)：区分线上 MCP 已验证、本地增量和待部署验收；批注支持范围与服务查询结果不夸大。
+
+[B7：管理员 MCP、辅助会话与 v42 热修保护](./revisions/2026-09-28-b7-admin-mcp.md)：含密码眼睛、最长7天会话和后台自检。最新 v43/v44 回执与线上 MCP 实测见 B8，原记录保留当时交付边界。
 
 [B6：真实运行日志与受控 AI 辅助调试增量包](./revisions/2026-09-27-b6-runtime-logs-and-ai-assistance.md)：保留 v39 依赖碰撞与处置历史；新的执行成功截图已由 B7 记录更新，不再按“等待方案 A 结果”处理。同一修订保留精简知识维护约定。
 

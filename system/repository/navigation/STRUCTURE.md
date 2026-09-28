@@ -1407,7 +1407,8 @@ ai-context/
 │   │       │   ├── 2026-09-27-b6-runtime-logs-and-ai-assistance.md  B6日志和辅助调试交付、依赖碰撞回执与持续知识修订约定
 │   │       │   ├── 2026-09-27-paid-source-baseline-ep8e1gojj18g.md  付费源码归档基线及定点同步约定，避免重复全量导出费用
 │   │       │   ├── 2026-09-27-v35-v38-receipts-and-b6-observability.md  v35至v38登录、后台和二维码热修回执及B6最初需求
-│   │       │   └── 2026-09-28-b7-admin-mcp.md  B7管理员MCP、辅助会话、v42热修保护与实连验证边界
+│   │       │   ├── 2026-09-28-b7-admin-mcp.md  B7管理员MCP、辅助会话、v42热修保护与实连验证边界
+│   │       │   └── 2026-09-28-b8-creation-review-and-service-tests.md  B8方案确认与批注范围、服务查询测试、线上MCP证据及v44发布保护
 │   │       └── roadmap.md  开发路线与上线条件
 │   └── README.md  领域知识与项目案例的分级入口
 ├── system/  查AI表达标准、仓库运行规则与本机执行环境
