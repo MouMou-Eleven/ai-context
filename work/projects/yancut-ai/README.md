@@ -1,13 +1,13 @@
 # 言剪 AI（YanCut）
 
-> 状态：用户回传 B7/v43 双 Edge 部署和 v44 发布成功；本轮已通过线上 MCP 查询与权限检查。B8 提供创作确认、画面批注和服务连接测试，待秒哒应用；保留 v42 加载热修、v44 依赖覆盖及付费源码基线，不例行重新导出。
+> 状态：用户回传 B8/v46 应用、双 Edge 部署及测试通过截图，随后 v47 修复游客访问作品广场的预览来源白名单。B8 本地树仍缺 v47 云端热修全文；下一轮必须定点合并并保护 v42 加载、v44 依赖及 v47 CORS，不例行重新导出付费完整源码。
 > 当前口径确认：2026-09-28；云端回执、本地验证与正式站验收分别记录
 
 原 Vercel 测试／回退入口（非秒哒）：[言剪 AI](https://yancut-ai-personal.vercel.app) · [登录/注册](https://yancut-ai-personal.vercel.app/login) · [在线帮助](https://yancut-ai-personal.vercel.app/studio/help)。真实账号、Neon 数据库、管理员和积分继续使用；原片保留本机，云端保存轻量工程与素材描述，旧云素材和明确上传的识别音频/作品仍使用私有 Blob。最新见[工作台更新](./revisions/2026-09-25-editor-voice-integration.md)及[声音定价更正](./revisions/2026-09-25-voice-pricing-v11.md)，存储方向见[统一入口与本机原片](./revisions/2026-09-25-unified-local-media-workspace.md)。[早先云端上线记录](./revisions/2026-09-25-online-cloud-launch.md) 保留历史，但“所有原片上传云端”不再作为当前口径。旧的免登录/个人 Key 模式也未恢复。
 
 ## 最新修订（2026-09-28）
 
-[B8：创作确认、画面批注与服务测试](./revisions/2026-09-28-b8-creation-review-and-service-tests.md)：区分线上 MCP 已验证、本地增量和待部署验收；批注支持范围与服务查询结果不夸大。
+[B8：创作确认、画面批注与服务测试](./revisions/2026-09-28-b8-creation-review-and-service-tests.md)：实现与原始测试范围；最新云端回执及下一轮保护项以本页“当前进度”为准，连接查询不能替代成片功能验收。
 
 [B7：管理员 MCP、辅助会话与 v42 热修保护](./revisions/2026-09-28-b7-admin-mcp.md)：含密码眼睛、最长7天会话和后台自检。最新 v43/v44 回执与线上 MCP 实测见 B8，原记录保留当时交付边界。
 
@@ -16,10 +16,10 @@
 [当前源码基线与不重复付费导出约定](./revisions/2026-09-27-paid-source-baseline-ep8e1gojj18g.md)：完整ZIP已双路径保存、SHA256及全包CRC验证；源码Git HEAD `fd538fe0`。后续优先同步定点diff，不例行要求重新下载源码。本记录取代下方“等待源码”状态。
 
 
-[最新：v35–v38回执与B6实施规格](./revisions/2026-09-27-v35-v38-receipts-and-b6-observability.md)。此记录优先于下方历史“B5待执行”状态；截图报告不等同于完整源码核验，用户已答复将上传最新源码。
+[v35–v38回执与B6实施规格](./revisions/2026-09-27-v35-v38-receipts-and-b6-observability.md)：前期问题范围备查；完整源码已经归档，后续状态以本页当前进度为准。
 
 
-[B5：游客浏览、用户价格表与豆包识别](./revisions/2026-09-27-b5-guest-pricing-and-doubao-asr.md)。B4用户确认已上传；B5本地交付待秒哒执行。公开浏览无需登录，使用功能需登录；消费展示采用极速/标准品牌名称，极速默认；具体测试与边界以B5记录为准。
+[B5：游客浏览、用户价格表与豆包识别](./revisions/2026-09-27-b5-guest-pricing-and-doubao-asr.md)：已纳入当前后续基线；公开浏览无需登录，使用功能需登录；消费展示采用极速/标准品牌名称，极速默认。当前游客来源修复见 v47。
 
 
 [B4：Token结算、双语界面与加载热修保护](./revisions/2026-09-27-b4-token-localization-and-loading-lessons.md)。该记录优先于下方历史B3待上传口径；价格中心位于我的空间后，FlashX默认，50积分为Token预留上限。
@@ -39,9 +39,9 @@
 - AI 工作流：用户输入自然语言 → 生成结构化操作计划 → 缺少必要信息时请求补充 → 用户确认 → 映射到真实剪辑命令。
 - 个人声音库：已建立声音登记、选择、克隆与合成的接口边界；用户必须拥有声音授权，不能克隆未获许可的声音。
 - 视频包装：原生可编辑预设与真实框架渲染分开。B3新增render_motion源码任务、Remotion/HyperFrames独立Worker及可撤销回填同一时间线；两框架可信fixture本机实际出片、HTTP模拟回填通过。Docker生产隔离、公网服务与真实模型整链尚未验收，不能认定上传ZIP即已接通。
-- 默认规划模型配置为智谱 `glm-5.3-flash`，使用 `https://open.bigmodel.cn/api/paas/v4`；统一规划器现支持 Chat Completions、Responses、Anthropic Messages、Gemini generateContent。自动按端点及域名识别，未知中转默认 Chat，特殊中转需手选；新增协议经契约测试，不代表所有厂商已联网实测。独立能力适配器控制图片/视频/JSON/推理参数，协议兼容不保证模型质量一致。素材观察仍为经授权的有限静帧抽样，不等于完整视频或音频理解。
+- 模型默认方向按 B4/B5：FlashX 为极速默认，Flash 为可选标准；公开界面使用言剪品牌名称，已保存的后台配置须单独核对，不用代码默认覆盖密钥或设置。统一规划器的多协议适配不代表所有厂商已联网实测。素材观察仍为经授权的有限静帧抽样，不等于完整视频或音频理解。
 - 原 Vercel 最后记录版本（非秒哒）：2026-09-25 固定域名指向 READY 生产 `dpl_Gbuh1NLbpg7t3zkcDmS3Ks37txoF`；验收 Preview 为 `dpl_FmjyMVSLiHE4yK8YxtBm12LW9E18`，运行代码 `bdd71f13`。前版 `dpl_H4pCaqFCNEuh9RsLtLM8a1ivRBCK` 保留回退，但其旧声音价格预估前提已作废。真实账号、Neon、管理员、积分继续使用；兼容迁移 0009 已执行，回退不删除任务表或账本。国内直连此前失败，本轮使用代理验收，不能保证裸连可用。最终承载平台仍为百度秒哒。
-- 本地开发目录：`F:\桌面文件\言剪AI`（2026-08-13 迁移并完成构建、启动验证）。
+- `F:\桌面文件\言剪AI` 是原源码仓库位置，不直接作为当前秒哒 B8 的修改基线。当前本地目录与热修差异见下方“当前进度”。
 - 源码仓库为私有仓库 `https://github.com/MouMou-Eleven/yancut-ai`，`upstream` 跟踪 `https://github.com/OpenCut-app/OpenCut.git`。09-16 已将多轮实现提交，合并历史至 `b0b24335`，后续测试发现范围修正为 `22023132`；核对和修复了本地/远端历史分离及字体预览损坏。后续任务仍需实际查询最新 HEAD。`ai-context` 保存项目上下文，不保存完整源码。
 - 持续同步约定（本轮更新）：后续以百度秒哒承载和迭代为目标，维护本地权威源码、GitHub及本项目README/修订记录；不再自动继续Vercel发布。旧Vercel作为历史测试／回退入口，秒哒云端适配改动也须同步回源码，避免分叉。
 - 开发与部署分工：采用“本地权威源码 + 百度秒哒云端接管”。前端、业务逻辑、价格权益、数据库 Schema、接口合同、Mock 和自动化测试先在本地完成；验证通过后按编号压缩包交付百度秒哒，由秒哒接入 Auth、Postgres、对象存储、Edge Function、短信能力和部署。
@@ -49,16 +49,32 @@
 
 ## 当前进度
 
-当前执行入口：[B3编辑器运行时与真实动画任务](./revisions/2026-09-27-b3-editor-runtime-and-rendering.md)。B2已由用户确认应用；B3本地交付待秒哒验收。以下B1/B2表格保留当时证据，不覆盖当前状态。批次方法见[完整迁移批次与有效沉淀](./revisions/2026-09-26-batch-delivery-and-effective-context.md)。
+本轮为跨客户端开发交接，尚未指定对标网站与改造范围，不提前生成 B9。后续按[秒哒协作方法路径 B](../../domains/development/tools/miaoda/workflow.md)执行。
 
-| 项目 | 已确认事实与验证边界 |
+| 对象 | 当前事实与边界（2026-09-28） |
 |---|---|
-| 云端回执 | B1 v29报告称三迁移、双Edge、构建、cron通过，预览更新；真实账号/供应商/MP4仍未验收，不把回执当独立云源码核验 |
-| 用户实测 | 新截图显示特效冻结、贴纸空白、提示词未衔接、慢加载和后台问题，已纳入B2；此前v28来源拒绝不再作为当前唯一阻塞 |
-| B2交付 | 一个ZIP，102目标文件，新增00022同码多人兑换，附安装器、回滚、独立清单与实际测试；本地构建和隔离断言通过 |
-| 源码一致性 | 完整导出＋实际R8/B1为本地基线；尚未回收v29完整树，冲突须保留v24认证/工作台及v29热修，按锚点定点合并 |
-| 验证边界 | B2云端尚未应用；真实视频导出、真实多连接兑换、付费接口和公网Worker待验收，不声称完美复刻Vercel |
-| 后续方向 | 继续在秒哒验证迭代，保留Vercel历史对照；收到B2-RESULT后按清单收口，不重复按旧状态要求重传B1 |
+| B8/v46 回执 | 用户图一报告 16 个目标文件 after hash 匹配、7 个保护文件未变、213 项回归通过、双 Edge Deno 检查/部署及根 lint/静态构建通过，无新迁移。这是秒哒执行回执，不是本轮独立下载云端源码或正式域名验收。 |
+| MCP/服务查询回执 | 报告两套 Edge 均发现 8 个工具；LLM 查询 authenticated，声音查询 inconclusive + task_not_exist；游客普通 401 未被当成辅助会话失效，越权/无效令牌拒绝。排查中手工测试令牌不符合 64 位小写十六进制合同，改用合法测试输入后通过；不能据此改弱鉴权。测试管理员会话报告已撤销。 |
+| v47 热修 | 用户图二报告公开广场 `/api/yancut/gallery?scope=public` 被 Edge 的 `ORIGIN_DENIED` 拦截，原因是原来源集合遗漏预览别名。秒哒修改两套 `server/handler.ts` 的 `isAllowedOrigin` 并部署，报告预览 Origin 返回 200、第三方 Origin 返回 403、根 lint 通过。未取得函数全文；不擅自重建其实现或放行所有平台域名。 |
+| 当前云端差异 | 本地 B8 两套 handler 仍是固定来源集合，尚无 v47 的 `isAllowedOrigin`。下一轮优先回收这两个函数文件/精确 diff/哈希；还需保护认证桥、v42 `api-client.ts`、v44 根依赖覆盖及锁文件。暂缺全文时只做不冲突改动，禁止旧整文件覆盖。 |
+| 待验收 | 完整浏览器三身份流程、真实授权素材剪辑导出、长视频/高码率/多轨性能、Windows/Safari、收费识别/声音/生成、公网 Remotion/HyperFrames Worker；B8 的画面批注仅支持定点文字与短素材叠加，不能宣称任意局部重绘。 |
+| 平台边界 | 秒哒对 FFmpeg 的回复已提炼到[当前事实表](../../domains/development/tools/miaoda/facts.md#应用运行时与工具安装边界)和[平台基础](../../domains/development/tools/miaoda/basics/platform-basics.md#引入-ffmpeg浏览器渲染器或-github-项目前怎么选)。应用 Edge、开发工具和外部 Worker 分开，不默认新增收费服务或上传本机原片。 |
+
+### 本机源码与交接入口
+
+工作目录记作 `W = C:\Users\Administrator\Documents\Codex\2026-09-27\codex-threads-01a0dd1d-ccb1-7c73-9cc3-2`。以下路径于本轮检查存在，换设备或后续移动须重新检查，不把存在当成与云端完全一致。
+
+| 路径 | 用途 |
+|---|---|
+| `W\work\b8-app` | B8 完整开发树；下一轮从副本开始，不修改此基线，不含 v47 云端热修。 |
+| `W\work\b8-clean-final-app` | B7 完整树叠加 B8 实际 ZIP 的独立复建树，用于交叉核对。 |
+| `W\work\b8-zip-verify` | B8 实际 ZIP 的解压校验目录，含 manifest、payload、安装器、测试、执行说明与证据；16 个 payload 哈希本轮重新核对。 |
+| `W\work\yancut-b8-release` | B8 制包工作目录，参考用途；以 manifest 白名单为准，不能将整目录压缩（含仅本地依赖或残留文件）。 |
+| `W\work\b8-rebuild.py`、`W\work\build_b8_release.py` | 完整基线复建与增量生成的既有方法；复制后调整下一轮版本，不原地重跑覆盖旧包。 |
+| `C:\Users\Administrator\Documents\Codex\yancut-source-archive\2026-09-27-ep8e1gojj18g` | 用户付费导出的完整归档，含原 ZIP、`BASELINE.json`、清单及 `source` 审阅树。仅归档，禁止直接开发或再次例行收费导出。 |
+| `F:\桌面文件\言剪AI-Claude交接\01-发给ClaudeCode.md` | 本轮同机交接提示词，含入口、文件分层、证据位置和下一轮增量要求。 |
+
+原 `F:\桌面文件\言剪AI-B8\言剪AI-B8-增量包.zip` 本轮检查已不在原位置；不能继续给出失效链接或把重新压缩文件冒充原 ZIP。可核验的 B8 payload 和安装合同仍保存在上述解压目录，无需因此要求用户重新下载源码。
 
 ## 阶段历史（不是当前状态）
 
@@ -213,4 +229,4 @@ R4 源码 `fa3e8625` 已推送迁移分支并应用到秒哒源码树：后台�
 
 ## 后续写入
 
-每次开发更新先按“本地实现、实测范围、生产部署、待验证”更新本页摘要，再将新增能力与测试证据写进对应revision并补索引。被替代的页面、购买方式或接口实现由revision保留取代关系，history只补摘要和链接，不在当前进度里并列为有效能力。源码状态需要实际核对源码仓库，不把本页旧commit称为最新HEAD。
+按根目录 AGENTS 与写入规范，普通更新直接修改本页当前事实或已有专题，不再为每轮反馈新建 revision。新增独立内容才补索引；可复用方法写秒哒领域，项目版本与证据留在项目。源码状态需要实际核对，不把旧 commit、本地 B8 或秒哒截图称为已回收的云端最新源码。

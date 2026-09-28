@@ -32,9 +32,11 @@ class Routes(unittest.TestCase):
     def test_yancut_current_state_separates_cloud_and_history(self):
         page = (ROOT / 'work/projects/yancut-ai/README.md').read_text(encoding='utf-8')
         current = page.split('## 当前进度', 1)[1].split('## 阶段历史', 1)[0]
-        self.assertIn('B1 v29', current)
-        self.assertIn('B2', current)
-        self.assertIn('未验收', current)
+        # Validate evidence boundaries, not a historical release number:
+        # a newer receipt must be able to replace B1/B2 as the current state.
+        self.assertIn('回执', current)
+        self.assertIn('云端差异', current)
+        self.assertIn('待验收', current)
         self.assertIn('本地', current)
         self.assertIn('验收', current)
         self.assertNotIn('R6.1/v15', current)

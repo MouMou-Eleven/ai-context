@@ -66,6 +66,20 @@
 
 平台的运行时、后端底座、首轮要定的三件事，见[平台基础](./basics/platform-basics.md)。发布渠道见[发布渠道](./basics/publish-channels.md)。
 
+## 应用运行时与工具安装边界
+
+2026-09-28 核对言剪 AI 的 B8/v46、v47 执行截图及秒哒对 FFmpeg 安装问题的回复。以下区分项目回执与平台自述，不把一段 AI 回复当作全部套餐的永久限制。项目版本和待回收文件只维护在[言剪当前进度](../../../../projects/yancut-ai/README.md#当前进度)。
+
+| 对象 | 当前认识与证据范围 |
+|---|---|
+| 已生成应用 | 言剪源码与部署回执显示前端为 React/Vite，后端为 Supabase 风格 Deno Edge，数据库为 Postgres。不能据此推定所有历史应用的配置完全相同。 |
+| 应用后端的主机权限 | 秒哒本轮自述：应用后端是受限的 Serverless 环境，不提供可自行管理的 root Linux VPS，不能直接安装原生 FFmpeg、运行 Docker 或常驻渲染进程。未取得独立的系统权限探测结果，后续能力变化须按项目复核。 |
+| 安装依赖 | JS/TS 包要分别验证浏览器或 Deno 兼容性；npm 包可下载不等于运行时可用。秒哒回复把 `canvas` 列为示例，但其中可能存在原生依赖，不能照单认定兼容；涉及 node-gyp、原生 addon、子进程、线程或系统二进制的项目须逐项核验。 |
+| 浏览器处理 | 回复提出 `@ffmpeg/ffmpeg` / WebAssembly 作为候选，不代表言剪已接入，也不代表性能优于现有导出链。ffmpeg.wasm 官方[性能说明](https://ffmpegwasm.netlify.app/docs/performance/)表明其示例测试慢于原生 FFmpeg；此为上游特定环境结果，不能转换成本项目耗时承诺。 |
+| 外部渲染 | 回复提出独立服务通过 HTTP API/Webhook 接入。它是待实施路线，不是秒哒已提供 FFmpeg/Chromium 主机或已有可用 Worker 的证明。 |
+
+[Supabase 官方限制页](https://supabase.com/docs/guides/functions/limits)（2026-09-28 核对）可帮助理解 Edge 的资源与部分原生依赖限制，但其套餐数字不能直接当作百度秒哒限额。开发/构建工具、自定义 Skill、已发布应用的 Edge 是不同执行环境；某次构建能运行命令或浏览器，不证明生产 API 能长期运行同一进程。具体选型方法见[平台基础](./basics/platform-basics.md#三应用底座是-supabase-风格)。
+
 ## 取代（不要再用）
 
 | 旧说法 | 为什么不用 |
