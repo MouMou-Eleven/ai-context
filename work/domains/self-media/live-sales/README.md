@@ -2,7 +2,7 @@
 
 | 文件 | 内容 |
 |---|---|
-| [`conversion-path.md`](./conversion-path.md) | 短视频、资料、评论、直播和社群之间的承接路径 |
+| [自媒体增长、承接与复盘](../experience/media-growth.md) | 短视频、资料、评论、直播和社群之间的承接路径（已并入该文件） |
 
 直播中需要展示产品、课程或社群案例时，组合跨行业案例方法 [`../../other/commercial/experience/case-result-narrative.md`](../../other/commercial/experience/case-result-narrative.md)，并由具体项目 README 提供价格、权益和已核验结果；本目录不复制案例方法。
 

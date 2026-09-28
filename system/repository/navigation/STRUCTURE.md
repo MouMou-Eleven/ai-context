@@ -1193,7 +1193,6 @@ ai-context/
 │   │   │   │   ├── outcome-and-motivation.md  成果展示、用户动机与知识分层
 │   │   │   │   └── README.md  自媒体经验索引
 │   │   │   ├── live-sales/  组织直播话术与销售内容，关联真实产品事实
-│   │   │   │   ├── conversion-path.md  内容到评论、资料和社群的承接
 │   │   │   │   └── README.md  直播销售与转化入口
 │   │   │   ├── marketing-copy/  用读者关心的问题组织介绍页和推广内容
 │   │   │   │   ├── reader-question-led-promotion.md  从报名者真实问题组织宣传内容，含改稿证据与验收

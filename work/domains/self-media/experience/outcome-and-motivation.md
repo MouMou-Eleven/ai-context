@@ -143,7 +143,7 @@
 
 ## 八、AI 调用规则
 
-用户提到“成果展示、用户动机、观点和知识怎么结合、知识内容为什么没人看、怎样把课程知识做成短视频”时，读取本文件，并按需组合 `media-growth.md`、`../video-scripts/script-patterns.md` 和 `../live-sales/conversion-path.md`。
+用户提到“成果展示、用户动机、观点和知识怎么结合、知识内容为什么没人看、怎样把课程知识做成短视频”时，读取本文件，并按需组合 [media-growth.md](./media-growth.md)（含承接路径）和 [script-patterns.md](../video-scripts/script-patterns.md)。
 
 AI 输出时必须：
 
