@@ -414,7 +414,8 @@
     "work/domains/development/experience/backend-auth-payment.md": "AI 编程通用后端经验：数据存储、登录身份、签名、密钥、支付",
     "work/domains/design/common/feedback-iteration.md": "多轮反馈修改方法：可见问题、每轮一类、退回、授权范围",
     "CLAUDE.md": "Claude Code 与 GLM Coding Plan 等工具自动读取的入口，只指向 AGENTS.md",
-    "system/repository/maintenance/tests/test_real_tasks.py": "建委真实任务回归：银行课件、培训宣传、培训方案、秒哒支付、宣传片分镜"
+    "system/repository/maintenance/tests/test_real_tasks.py": "建委真实任务回归：银行课件、培训宣传、培训方案、秒哒支付、宣传片分镜",
+    "brain/preferences.md": "建委的做事与表达偏好：实在、清楚、和 AI 怎样协作"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",
@@ -468,7 +469,8 @@
     "work/projects/yancut-ai/revisions": "项目关键修订记录",
     "work/projects/ai-sixty-jiazi-music-ip/revisions": "项目关键方向和实现修订",
     "work/domains/design/graphic/ppt/premium-course/revisions": "精品课制作修订记录",
-    "brain/business-judgment.md": "商业判断原则"
+    "brain/business-judgment.md": "商业判断原则",
+    "brain/preferences.md": "做事与表达偏好"
   },
   "knowledgeOrder": {
     "work": [

@@ -30,7 +30,7 @@
 | 外出培训某一场（济南干部培训、济南市图书馆等） | [培训资料与场次](work/domains/training/materials/README.md) → 该场次 README |
 | 某个具体项目（社群、言剪、飞书书、六十甲子） | [项目列表](work/projects/README.md) → 该项目 README |
 | 个人简介、讲师介绍、简历 | [个人信息](personal/README.md)；荣誉和数字只按[背书表](personal/credentials.md)写 |
-| 建委的想法、偏好、判断方式 | [建委大脑](brain/README.md) |
+| 建委的想法、偏好、判断方式 | [建委大脑](brain/README.md)；做任何成品前都值得先看一眼[做事与表达偏好](brain/preferences.md) |
 | 用 Skill | [Skill 库](work/domains/other/skills/README.md) |
 | 电脑、网络、本机工具 | [设备环境](system/environment/README.md) |
 | 往仓库里写东西 | 本页第二部分 + [写入规范](system/repository/ingestion-workflow.md) |

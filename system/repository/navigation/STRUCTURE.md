@@ -19,6 +19,7 @@ ai-context/
 │   └── timeline.md  按时间查看成长经历与重要阶段变化
 ├── brain/  建委的认知与判断
 │   ├── business-judgment.md  建委看产品、渠道、信任、对标、客户时的八条总原则
+│   ├── preferences.md  建委的做事与表达偏好：实在、清楚、和 AI 怎样协作
 │   ├── README.md  认知入口、读取路由与写入边界
 │   └── thinking-and-decisions.md  思维、判断、框架拆解、学习与决策方式
 ├── work/  领域知识、项目事实与实践案例

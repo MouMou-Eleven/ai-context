@@ -5,6 +5,7 @@
 | 主题 | 内容 |
 |---|---|
 | [商业判断原则](./business-judgment.md) | 看产品、渠道、信任、对标、客户时的总原则；具体方法在[商业增长闭环](../work/domains/other/commercial/experience/business-growth-loop.md) |
+| [做事与表达偏好](./preferences.md) | 内容要实在、结构要清楚、和 AI 协作的方式 |
 | [思考与决策](./thinking-and-decisions.md) | 学习、分析、行动与决策方式 |
 
 成长、财务、价值观等在形成真实积累后按主题扩展，不提前搭建空目录。
