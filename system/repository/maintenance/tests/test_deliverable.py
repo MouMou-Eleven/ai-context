@@ -17,12 +17,12 @@ class DeliverableChecks(unittest.TestCase):
     def test_cadre_training_keeps_project_and_practical_method(self):
         result = router.resolve('修改济南市总工会AI培训方案，实操先工具全景后场景', 'create')
         self.assertEqual(result['selectedCandidate'], 'external-training')
-        self.assertIn('work/domains/training/materials/jinan-cadre-ai/README.md', result['read'])
+        self.assertIn('work/projects/ai-training/jinan-cadre-ai/README.md', result['read'])
         self.assertIn('work/domains/training/experience/demo-driven-course-design.md', result['read'])
         self.assertIn('work/domains/other/commercial/experience/external-proposal-design.md',result['read'])
         self.assertEqual(checker.inspect('提示词设计与任务表达：讲解提示词构成、优化工具与效果比较。', 'external-proposal'), [])
         result = router.resolve('只查济南市总工会培训方案位置', 'read')
-        self.assertIn('work/domains/training/materials/jinan-cadre-ai/README.md', result['read'])
+        self.assertIn('work/projects/ai-training/jinan-cadre-ai/README.md', result['read'])
         self.assertNotIn('work/domains/training/experience/demo-driven-course-design.md', result['read'])
 
     def test_external_proposal_rejected_fragments(self):

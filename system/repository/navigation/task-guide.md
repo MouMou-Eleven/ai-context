@@ -49,9 +49,9 @@
 | 个人IP与观点海报 | [读取](../../../work/domains/other/skills/qingyun-ip-poster/README.md) |
 | 培训备课与复盘（先核对归属） | [读取](../../../work/domains/training/README.md) |
 | 会员社群（仅明确属于本项目） | [读取](../../../work/projects/paid-community-course/README.md) |
-| 企业、图书馆、夜校与外部培训 | [读取](../../../work/domains/training/materials/README.md) |
-| 济南市图书馆：别让Bug打败你 | [读取](../../../work/domains/training/materials/jinan-city-library/bug-repair/README.md) |
-| 出版体裁与书稿（先明确项目） | [读取](../../expression/genres.md) |
+| 企业、图书馆、夜校与外部培训 | [读取](../../../work/projects/ai-training/sessions-index.md) |
+| 济南市图书馆：别让Bug打败你 | [读取](../../../work/projects/ai-training/jinan-city-library/bug-repair/README.md) |
+| 出版体裁与书稿（先明确项目） | [读取](../../expression/README.md) |
 | 《飞书高效办公》书籍 | [读取](../../../work/projects/feishu-efficient-office/README.md) |
 | 自媒体、个人IP与渠道表达 | [读取](../../../work/domains/self-media/README.md) |
 | 产品信息、渠道选择与商业对标 | [读取](../../../work/domains/other/commercial/experience/business-analysis-cards.md) |
@@ -60,8 +60,8 @@
 | 言剪AI项目 | [读取](../../../work/projects/yancut-ai/README.md) |
 | 当前设备与工具环境 | [读取](../../environment/computers/README.md) |
 | 历史项目与追溯 | [读取](history.md) |
-| 按课号找资料（先核对所属系列） | [读取](../../../work/domains/training/materials/README.md) |
-| 济南市图书馆培训 | [读取](../../../work/domains/training/materials/jinan-city-library/README.md) |
+| 按课号找资料（先核对所属系列） | [读取](../../../work/projects/ai-training/sessions-index.md) |
+| 济南市图书馆培训 | [读取](../../../work/projects/ai-training/jinan-city-library/README.md) |
 | 自媒体标题生成、诊断与评审 | [读取](../../../work/domains/self-media/titles/title-matrix/README.md) |
 | AI视频提示词、模板与案例 | [读取](../../../work/domains/design/video/common/seedance/awesome-seedance/README.md) |
 
@@ -105,7 +105,7 @@
 
 - 实际成品执行[写前约束与最终验收](../execution-checks.md)，记录本次接收者、规则来源、材料覆盖和检查证据；无论最终写入飞书还是本地都适用。
 - “产生中文输出”和“写入仓库”分别判断。修改并沉淀课件时，两类规则同时成立；只移动文件不读取整套写作资料。
-- 中文输出先用[表达短卡](../../expression/README.md)，按成品选择[体裁标准](../../expression/genres.md)中的一项；简单回答遵守短卡即可。实际专业方法来自对应领域，不能把所有体裁全文一起载入。
+- 中文输出先用[表达短卡](../../expression/README.md)，按任务类型自动触发对应规则；简单回答遵守短卡即可。实际专业方法来自对应领域，不能把所有体裁全文一起载入。
 - 产品介绍、社群宣传和报名页组合[读者问题方法](../../../work/domains/self-media/marketing-copy/reader-question-led-promotion.md)与明确项目事实；验问题是否值得问、答案是否回应，不把营销问答套进纯教学。
 - 培训先分会员社群、外部活动或待归属材料；Bug修复课已确认外训，局部“第6课”不决定系列。教学演示不默认叠加销售。
 - 设计统一按交付物进入平面、宣传、教育或故事方向。MG、AE、AI生成是制作方法，单独提MG不等于教师或社群课程。

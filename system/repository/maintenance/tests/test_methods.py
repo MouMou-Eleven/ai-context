@@ -143,6 +143,14 @@ class MethodRegistry(unittest.TestCase):
             for reference in method.get('readWhen', []):
                 paths.update(reference['paths'])
         paths.update(['work/projects/README.md', 'work/projects/cases/README.md', 'work/projects/archive/README.md'])
+        # 包含真实 projects.json 中的所有项目入口，避免创建子文件时留下未注册的目录
+        real_projects_json = ROOT / 'system/repository/navigation/projects.json'
+        if real_projects_json.exists():
+            real_projects_data = json.loads(real_projects_json.read_text(encoding='utf-8'))
+            for proj in real_projects_data.get('projects', []):
+                paths.add(proj['entry'])
+            for proj in real_projects_data.get('archivedProjects', []):
+                paths.add(proj['entry'])
         for path in paths:
             write_text(self.root / path, '# Fixture\n')
         projects = [{'id': path.parent.name, 'name': path.parent.name, 'domain': 'Fixture',
@@ -153,8 +161,11 @@ class MethodRegistry(unittest.TestCase):
                   'entry': path.relative_to(self.root).as_posix()}
                  for path in (self.root / 'work/projects/cases').glob('*.md')
                  if path.name != 'README.md']
+        archived = [{'id': path.parent.name, 'name': path.parent.name, 'domain': 'Fixture',
+                     'entry': path.relative_to(self.root).as_posix()}
+                    for path in (self.root / 'work/projects/archive').glob('*/README.md')]
         write_text(self.root / 'system/repository/navigation/projects.json',
-                   json.dumps({'schemaVersion': 1, 'projects': projects, 'cases': cases}))
+                   json.dumps({'schemaVersion': 1, 'projects': projects, 'cases': cases, 'archivedProjects': archived}))
         self.save()
 
     def save(self):

@@ -36,7 +36,7 @@
 
 建委说"复盘一下""把经验记下来"时：
 
-1. **这一场的事实**（讲了什么、学员反应、哪里卡住）写进这一场的记录：外出培训在 [materials/](../materials/README.md)，会员社群在[社群项目](../../../projects/paid-community-course/README.md)。
+1. **这一场的事实**（讲了什么、学员反应、哪里卡住）写进这一场的记录：外出培训在 [materials/](../../../projects/ai-training/sessions-index.md)，会员社群在[社群项目](../../../projects/paid-community-course/README.md)。
 2. **下次还能用的做法**，直接改本目录里负责这件事的那个文件，改原文，不要追加。
 3. **同一个错误又犯了**：在[培训风格](./jianwei-training-style.md)的"反复出现过的错误"表里补上这次的课名，把"怎么检查"写得更具体。不要再加一条"必须"。
 4. 每条反馈给出一个结论：只留这一场的记录 / 改了哪个通用方法 / 信息不够，暂不推广。

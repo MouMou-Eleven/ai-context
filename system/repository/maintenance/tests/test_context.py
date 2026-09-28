@@ -84,7 +84,7 @@ class Routes(unittest.TestCase):
     def test_named_library_reads_its_materials_without_community(self):
         result = router.resolve('给济南市图书馆写课件解释API概念', 'create')
         self.assertEqual(result['selectedCandidate'], 'jinan-library')
-        self.assertIn('work/domains/training/materials/jinan-city-library/README.md', result['read'])
+        self.assertIn('work/projects/ai-training/jinan-city-library/README.md', result['read'])
         self.assertIn('work/domains/training/experience/jianwei-training-style.md', result['read'])
         self.assertTrue(any(m['id'] == 'problem-driven-explanation' for m in result['methods']))
         self.assertFalse(any('paid-community-course' in path for path in result['read']))
@@ -97,7 +97,7 @@ class Routes(unittest.TestCase):
         self.assertFalse(any('jinan-city-library' in path for path in generic['read']))
         bug = router.resolve('查会员社群的别让Bug打败你第6课', 'read')
         self.assertEqual(bug['selectedCandidate'], 'bug-lesson')
-        self.assertIn('work/domains/training/materials/jinan-city-library/README.md', bug['read'])
+        self.assertIn('work/projects/ai-training/jinan-city-library/README.md', bug['read'])
         self.assertFalse(any('paid-community-course' in path for path in bug['read']))
 
     def test_named_tool_cannot_replace_member_course_context(self):
@@ -151,7 +151,7 @@ class Routes(unittest.TestCase):
             result = router.resolve(task, 'read')
             self.assertEqual(result['selectedCandidate'], 'course-number')
             self.assertTrue(result['courseSeriesUnresolved'])
-            self.assertIn('work/domains/training/materials/README.md', result['read'])
+            self.assertIn('work/projects/ai-training/sessions-index.md', result['read'])
             self.assertIn('work/domains/training/attribution-and-updates.md', result['read'])
             self.assertFalse(any('/training/experience/' in path or 'paid-community-course' in path for path in result['read']))
 
@@ -186,11 +186,11 @@ class Routes(unittest.TestCase):
         self.assertNotIn('system/expression/README.md', result['read'])
         self.assertIn('system/repository/ingestion-workflow.md', result['read'])
 
-    def test_simple_chinese_reply_uses_short_card_without_all_genres(self):
+    def test_simple_query_does_not_load_expression_standards(self):
         result = router.resolve('查个人简介', 'read')
-        self.assertIn('system/expression/README.md', result['read'])
-        self.assertNotIn('system/expression/genres.md', result['read'])
-        self.assertFalse(any(path in {'system/expression/oral.md', 'system/expression/written.md'} for path in result['read']))
+        self.assertNotIn('system/expression/README.md', result['read'])
+        result = router.resolve('谁是建委', 'read')
+        self.assertNotIn('system/expression/README.md', result['read'])
 
     def test_mg_is_a_technique_not_automatic_teacher_ownership(self):
         for task, expected in [('做企业MG动画宣传片', 'enterprise-video'), ('做MG动画', 'video')]:
@@ -201,12 +201,13 @@ class Routes(unittest.TestCase):
     def test_generic_book_request_does_not_invent_feishu_project(self):
         result = router.resolve('帮我写书稿', 'create')
         self.assertFalse(any('/feishu-efficient-office/' in path for path in result['read']))
-        self.assertIn('system/expression/genres.md', result['read'])
+        self.assertIn('system/expression/README.md', result['read'])
 
-    def test_genre_selection_does_not_load_all_modes(self):
+    def test_deliverable_creation_loads_expression_standards(self):
         result = router.resolve('写一份自然口播稿', 'create')
-        self.assertIn('system/expression/oral.md', result['read'])
-        self.assertNotIn('system/expression/written.md', result['read'])
+        self.assertIn('system/expression/README.md', result['read'])
+        result = router.resolve('写培训方案', 'create')
+        self.assertIn('system/expression/README.md', result['read'])
 
     def test_member_course_promotion_is_self_media_with_project_facts(self):
         result = router.resolve('给会员课程写朋友圈宣传', 'create')
@@ -218,7 +219,7 @@ class Routes(unittest.TestCase):
     def test_channel_output_and_training_fact_boundaries(self):
         tasks = [
             ('给会员社群做海报', 'create', 'poster', 'work/projects/paid-community-course/README.md'),
-            ('为外训写朋友圈宣传', 'create', 'self-media', 'work/domains/training/materials/README.md'),
+            ('为外训写朋友圈宣传', 'create', 'self-media', 'work/projects/ai-training/sessions-index.md'),
             ('会员社群状态查询', 'read', 'community', 'work/projects/paid-community-course/README.md'),
         ]
         for task, intent, selected, project in tasks:
@@ -242,14 +243,12 @@ class Routes(unittest.TestCase):
             result = router.resolve(task, 'create')
             self.assertNotIn('ae', [item['id'] for item in result['candidates']])
 
-    def test_classroom_material_does_not_force_written_genre(self):
+    def test_classroom_material_loads_expression_standards(self):
         result = router.resolve('修改并沉淀企业培训课件', 'write')
         self.assertIn('work/domains/training/experience/jianwei-training-style.md', result['read'])
-        self.assertIn('system/expression/genres.md', result['read'])
-        self.assertNotIn('system/expression/written.md', result['read'])
+        self.assertIn('system/expression/README.md', result['read'])
         result = router.resolve('写一份企业培训课件朗读稿', 'create')
-        self.assertIn('system/expression/oral.md', result['read'])
-        self.assertNotIn('system/expression/written.md', result['read'])
+        self.assertIn('system/expression/README.md', result['read'])
 
 
 class ContentValidation(unittest.TestCase):

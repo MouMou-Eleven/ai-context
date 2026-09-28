@@ -65,7 +65,7 @@
 
 - `system/expression/README.md`
 - `work/domains/training/README.md`
-- `work/domains/training/materials/README.md`
+- `work/projects/ai-training/sessions-index.md`
 - `work/domains/training/experience/teaching-and-course-design.md`
 - `work/domains/training/experience/demo-driven-course-design.md`
 - `work/domains/training/experience/tutorial-writing.md`

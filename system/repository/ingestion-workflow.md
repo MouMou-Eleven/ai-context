@@ -120,7 +120,7 @@ python -B system/repository/maintenance/validate-context.py
 
 ## 相关规则
 
-- [素材提炼](../expression/sources.md#好材料怎样提炼成可用方法)：从外部文章、视频里提炼方法时怎么记录来源
+- [素材提炼](../expression/corrections.md#好材料怎样提炼成可用方法)：从外部文章、视频里提炼方法时怎么记录来源
 - [动态知识](./versioned-knowledge-policy.md)：平台功能、价格这类会变的事实怎么管
 - [能力证据](./capability-evidence.md)：什么情况下能说建委"会"某项能力
 - [成品检查](./execution-checks.md)：用仓库经验做出成品后怎么自查

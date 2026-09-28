@@ -144,7 +144,7 @@ def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_r
     course_number = re.search(number_pattern, task) if number_pattern else None
     unresolved_series = bool(course_number and (not selected or selected['id'] not in policy.get('exclusiveProjectIds', [])))
     if unresolved_series:
-        include('work/domains/training/materials/README.md', '课号须先匹配所属课程系列与资料来源')
+        include('work/projects/ai-training/sessions-index.md', '课号须先匹配所属课程系列与资料来源')
         include('work/domains/training/attribution-and-updates.md', '课号不是全仓库唯一身份；所属系列待核对')
     # Training project routes still need the general creative methods when producing content.
     if selected and (teaching or selected['id'] in training_ids - {'community'}) and intent in {'create','write'}:

@@ -117,8 +117,36 @@
   "overlays": [
     {
       "id": "expression",
-      "whenAny": [],
-      "excludeAny": [],
+      "whenAny": [
+        "课件",
+        "教程",
+        "方案",
+        "书稿",
+        "文章",
+        "脚本",
+        "海报",
+        "朋友圈",
+        "公众号",
+        "培训",
+        "讲课",
+        "授课",
+        "演讲",
+        "计划",
+        "申报",
+        "提案",
+        "合同",
+        "协议",
+        "报告"
+      ],
+      "excludeAny": [
+        "查看",
+        "查询",
+        "是谁",
+        "什么",
+        "哪些",
+        "有没有",
+        "能不能"
+      ],
       "intents": [],
       "paths": [
         "system/expression/README.md"
@@ -1103,7 +1131,7 @@
         "济南市领导干部"
       ],
       "excludeAny": [],
-      "entry": "work/domains/training/materials/README.md",
+      "entry": "work/projects/ai-training/sessions-index.md",
       "priority": 85,
       "dependencies": [
         {
@@ -1112,7 +1140,7 @@
           "intents": []
         },
         {
-          "path": "work/domains/training/materials/jinan-cadre-ai/README.md",
+          "path": "work/projects/ai-training/jinan-cadre-ai/README.md",
           "whenAny": [
             "济南市总工会",
             "济南干部培训",
@@ -1132,7 +1160,7 @@
         "Bug 修复课"
       ],
       "excludeAny": [],
-      "entry": "work/domains/training/materials/jinan-city-library/bug-repair/README.md",
+      "entry": "work/projects/ai-training/jinan-city-library/bug-repair/README.md",
       "priority": 100,
       "dependencies": [
         {
@@ -1141,7 +1169,7 @@
           "intents": []
         },
         {
-          "path": "work/domains/training/materials/jinan-city-library/README.md",
+          "path": "work/projects/ai-training/jinan-city-library/README.md",
           "whenAny": [],
           "intents": []
         }
@@ -1157,7 +1185,7 @@
         "写书"
       ],
       "excludeAny": [],
-      "entry": "system/expression/genres.md",
+      "entry": "system/expression/README.md",
       "priority": 65,
       "dependencies": []
     },
@@ -1461,7 +1489,7 @@
         "第\\s*[0-9零〇一二两三四五六七八九十百千]+\\s*(?:课|节)"
       ],
       "excludeAny": [],
-      "entry": "work/domains/training/materials/README.md",
+      "entry": "work/projects/ai-training/sessions-index.md",
       "priority": 45,
       "dependencies": [
         {
@@ -1479,7 +1507,7 @@
         "济南图书馆"
       ],
       "excludeAny": [],
-      "entry": "work/domains/training/materials/jinan-city-library/README.md",
+      "entry": "work/projects/ai-training/jinan-city-library/README.md",
       "priority": 95,
       "dependencies": [
         {
@@ -1585,7 +1613,7 @@
       "requiresChinese": true,
       "paths": [
         "system/expression/voice-samples.md",
-        "system/expression/oral.md"
+        "system/expression/README.md"
       ]
     },
     {
@@ -1610,7 +1638,7 @@
         "直播话术"
       ],
       "paths": [
-        "system/expression/written.md"
+        "system/expression/README.md"
       ]
     },
     {
@@ -1632,7 +1660,7 @@
       ],
       "requiresChinese": true,
       "paths": [
-        "system/expression/genres.md"
+        "system/expression/README.md"
       ]
     }
   ],
@@ -1799,7 +1827,7 @@
       "useWhen": "非技术读者需要理解概念、机制或技术差别，不能只背定义时；主题可以来自提示，也可以来自AI读到的材料",
       "notFor": "纯查询、术语速查、直接操作、已接受稿逐字保护时不展开推导；出版只借解释逻辑，保留出版书面语与编辑规则",
       "acceptance": "读者能说出原问题、关键变化及使用判断；不虚构历史发展、事实或作者经历，不混入讲师指令",
-      "evidence": "system/expression/sources.md",
+      "evidence": "system/expression/corrections.md",
       "confirmedAt": "2026-09-15",
       "entryPoints": [
         "work/domains/training/README.md",
@@ -1998,7 +2026,7 @@
       "useWhen": "面向跨岗位学员设计AI工具全景与工作场景实操课程时",
       "notFor": "单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本",
       "acceptance": "类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对",
-      "evidence": "work/domains/training/materials/jinan-cadre-ai/revisions/2026-09-18-tool-panorama-and-work-scenarios.md",
+      "evidence": "work/projects/ai-training/jinan-cadre-ai/revisions/2026-09-18-tool-panorama-and-work-scenarios.md",
       "confirmedAt": "2026-09-18",
       "entryPoints": [
         "work/domains/training/README.md"
@@ -2705,7 +2733,7 @@
         "work/domains/training/topics.md",
         "work/domains/other/commercial/experience/external-proposal-design.md",
         "work/domains/other/commercial/experience/external-deliverable-language.md",
-        "work/domains/training/materials/README.md"
+        "work/projects/ai-training/sessions-index.md"
       ],
       "readWhen": [
         {

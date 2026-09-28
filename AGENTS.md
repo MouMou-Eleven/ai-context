@@ -27,7 +27,7 @@
 | 用百度秒哒开发 | [秒哒入口](work/domains/development/tools/miaoda/README.md)（先看顶部平台识别）→ 按其中的流程表选一条 |
 | 其他网站 / 应用 / 编程 | [开发入口](work/domains/development/README.md) + [通用开发经验](work/domains/development/experience/README.md) |
 | 商业计划、比赛申报、融资、对外合作材料 | [商业化入口](work/domains/other/commercial/README.md) |
-| 外出培训某一场（济南干部培训、济南市图书馆等） | [培训资料与场次](work/domains/training/materials/README.md) → 该场次 README |
+| 外出培训某一场（济南干部培训、济南市图书馆等） | [培训资料与场次](work/projects/ai-training/sessions-index.md) → 该场次 README |
 | 某个具体项目（社群、言剪、飞书书、六十甲子） | [项目列表](work/projects/README.md) → 该项目 README |
 | 个人简介、讲师介绍、简历 | [个人信息](personal/README.md)；荣誉和数字只按[背书表](personal/credentials.md)写 |
 | 建委的想法、偏好、判断方式 | [建委大脑](brain/README.md)；做任何成品前都值得先看一眼[做事与表达偏好](brain/preferences.md) |

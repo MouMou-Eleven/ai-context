@@ -20,9 +20,9 @@
     "work/domains/other/commercial/experience/business-growth-loop.md",
     "system/expression/README.md",
     "system/expression/corrections.md",
-    "system/expression/oral.md",
-    "system/expression/written.md",
-    "system/expression/sources.md",
+    "system/expression/README.md",
+    "system/expression/README.md",
+    "system/expression/corrections.md",
     "work/README.md",
     "work/domains/design/README.md",
     "work/domains/README.md",
@@ -52,8 +52,8 @@
     "system/README.md",
     "work/projects/README.md",
     "system/repository/navigation/task-guide.md",
-    "system/expression/genres.md",
-    "system/expression/evaluation.md"
+    "system/expression/README.md",
+    "system/expression/README.md"
   ],
   "managedDirectories": [
     "work/domains/design/graphic/ppt",
@@ -67,7 +67,6 @@
     "work/domains/other/skills",
     "work/projects",
     "work/domains/training/experience",
-    "work/domains/training/materials",
     "work/domains/design/video/common/seedance",
     "work/domains/self-media/titles",
     "work/domains/self-media/articles",
@@ -110,7 +109,7 @@
   "requiredLinks": {
     "system/repository/ingestion-workflow.md": [
       "system/repository/capability-evidence.md",
-      "system/expression/sources.md",
+      "system/expression/corrections.md",
       "work/domains/other/skills/README.md",
       "system/repository/execution-checks.md"
     ],
@@ -123,7 +122,7 @@
     ],
     "work/domains/training/README.md": [
       "work/projects/paid-community-course/README.md",
-      "work/domains/training/materials/README.md",
+      "work/projects/ai-training/sessions-index.md",
       "work/domains/design/video/education/README.md",
       "work/domains/training/topics.md",
       "system/expression/voice-samples.md"

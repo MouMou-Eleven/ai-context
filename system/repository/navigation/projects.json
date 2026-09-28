@@ -1,7 +1,17 @@
 {
   "schemaVersion": 1,
-  "purpose": "只登记真正的项目（一件有目标、持续推进的事）的路径、类型与领域关系；当前状态和证据回正文。外出培训场次属于培训领域的授课记录，见 work/domains/training/materials/，不在此登记。",
+  "purpose": "只登记真正的项目（一件有目标、持续推进的事）的路径、类型与领域关系；当前状态和证据回正文。",
   "projects": [
+    {
+      "id": "ai-training",
+      "name": "AI 培训",
+      "kind": "长期项目",
+      "domain": "培训业务",
+      "entry": "work/projects/ai-training/README.md",
+      "domainEntries": [
+        "work/domains/training/README.md"
+      ]
+    },
     {
       "id": "yancut-ai",
       "name": "言剪 AI",

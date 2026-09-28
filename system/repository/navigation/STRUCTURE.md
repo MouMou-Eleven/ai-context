@@ -1241,25 +1241,6 @@ ai-context/
 │   │       │   │   └── README.md  方法索引
 │   │       │   ├── tutorial-writing.md  学员教程写法
 │   │       │   └── visual-and-oral-training-docs.md  飞书培训文档的可视化与口语化
-│   │       ├── materials/  外出培训场次（济南干部培训、济南市图书馆）与课件资料索引
-│   │       │   ├── jinan-cadre-ai/  济南市总工会干部AI培训的方案与设计反馈
-│   │       │   │   ├── proposal.md  当前对外培训方案正文
-│   │       │   │   ├── README.md  培训事实、当前设计与文件入口
-│   │       │   │   └── revisions/  本场培训方案方向与版本修订
-│   │       │   │       ├── 2026-09-18-tool-panorama-and-work-scenarios.md  工具全景、提示词与六类工作场景设计反馈
-│   │       │   │       └── README.md  方案修订入口
-│   │       │   ├── jinan-city-library/  查济南市图书馆课程、资料及课后修订
-│   │       │   │   ├── bug-repair/  查图书馆Bug修复实战课的学员资料与证据链
-│   │       │   │   │   ├── README.md  别让 Bug 打败你：秒哒故障定位与修复实战
-│   │       │   │   │   └── revisions/  追溯Bug修复课的演示、学员稿及案例调整
-│   │       │   │   │       ├── 2026-09-09-lesson-6-bug-repair-evidence-chain.md  追溯“第六课优化修订：Bug 修复证据链与一案例多故障演示台”的调整原因与适用范围
-│   │       │   │   │       └── README.md  Bug 修复课程修订
-│   │       │   │   ├── README.md  图书馆资料归属、版本与授课边界
-│   │       │   │   └── revisions/  图书馆培训改稿与反馈
-│   │       │   │       ├── 2026-08-19-lesson-4-student-material-boundary.md  追溯“第 4 课学员正文边界修订”的调整原因与适用范围
-│   │       │   │       ├── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md  追溯“秒哒进阶课：把版本更新改造成使用场景链路”的调整原因与适用范围
-│   │       │   │       └── README.md  图书馆培训修订索引
-│   │       │   └── README.md  资料入口，避免复制项目资料
 │   │       ├── README.md  AI 培训总入口
 │   │       └── topics.md  建委常讲的培训课题库与往期大纲，写大纲和方案前先读
 │   ├── projects/  项目与案例：这件事具体怎样了
@@ -1282,6 +1263,26 @@ ai-context/
 │   │   │       ├── 2026-09-02-five-tone-product-flow-and-private-audio-demo.md  五音产品流程与私有音频演示修订
 │   │   │       ├── 2026-09-02-harmony-v6-ui-audit-and-interaction-fix.md  V6 界面审计与交互修复
 │   │   │       └── 2026-09-02-product-v7-ui-and-profile-center.md  V7 产品界面与个人中心修订
+│   │   ├── ai-training/  AI培训业务：外出培训各场次记录
+│   │   │   ├── jinan-cadre-ai/  济南市总工会干部AI培训的方案与设计反馈
+│   │   │   │   ├── proposal.md  当前对外培训方案正文
+│   │   │   │   ├── README.md  培训事实、当前设计与文件入口
+│   │   │   │   └── revisions/  本场培训方案方向与版本修订
+│   │   │   │       ├── 2026-09-18-tool-panorama-and-work-scenarios.md  工具全景、提示词与六类工作场景设计反馈
+│   │   │   │       └── README.md  方案修订入口
+│   │   │   ├── jinan-city-library/  查济南市图书馆课程、资料及课后修订
+│   │   │   │   ├── bug-repair/  查图书馆Bug修复实战课的学员资料与证据链
+│   │   │   │   │   ├── README.md  别让 Bug 打败你：秒哒故障定位与修复实战
+│   │   │   │   │   └── revisions/  追溯Bug修复课的演示、学员稿及案例调整
+│   │   │   │   │       ├── 2026-09-09-lesson-6-bug-repair-evidence-chain.md  追溯“第六课优化修订：Bug 修复证据链与一案例多故障演示台”的调整原因与适用范围
+│   │   │   │   │       └── README.md  Bug 修复课程修订
+│   │   │   │   ├── README.md  图书馆资料归属、版本与授课边界
+│   │   │   │   └── revisions/  图书馆培训改稿与反馈
+│   │   │   │       ├── 2026-08-19-lesson-4-student-material-boundary.md  追溯“第 4 课学员正文边界修订”的调整原因与适用范围
+│   │   │   │       ├── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md  追溯“秒哒进阶课：把版本更新改造成使用场景链路”的调整原因与适用范围
+│   │   │   │       └── README.md  图书馆培训修订索引
+│   │   │   ├── README.md  AI培训项目总入口
+│   │   │   └── sessions-index.md  资料入口，避免复制项目资料
 │   │   ├── archive/  查已退出当前主线的项目，避免把旧状态当现状
 │   │   │   ├── openclaw-agent/  追溯已归档AI Agent项目的资料和决策
 │   │   │   │   └── README.md  OpenClaw Agent 历史档案
@@ -1400,14 +1401,9 @@ ai-context/
 │   │   ├── image-generation.md  按本机已确认的通道调用生图并排查鉴权问题
 │   │   └── README.md  环境入口与安全规则
 │   ├── expression/  通用表达与体裁验收
-│   │   ├── corrections.md  把真实改稿反馈转为可执行的中文纠错规则
-│   │   ├── evaluation.md  对照真实稿件检查表达、事实与交付质量
-│   │   ├── genres.md  按课件、书稿、方案等成品类型选择表达要求
-│   │   ├── oral.md  口语化论证与前后承接方法
-│   │   ├── README.md  AI 表达总入口、默认激活与组合规则
-│   │   ├── sources.md  核对规则来源，并按证据提炼、晋级或停用方法
-│   │   ├── voice-samples.md  建委本人认可的口语样稿原文与共同特点，写口语化内容前先读
-│   │   └── written.md  书稿、教程、方案和文档表达规则
+│   │   ├── corrections.md  核对规则来源，并按证据提炼、晋级或停用方法
+│   │   ├── README.md  对照真实稿件检查表达、事实与交付质量
+│   │   └── voice-samples.md  建委本人认可的口语样稿原文与共同特点，写口语化内容前先读
 │   ├── README.md  AI协作与维护
 │   └── repository/  读取写入、导航与校验
 │       ├── capability-evidence.md  依据本人实践与复用证据更新能力，收藏不算掌握

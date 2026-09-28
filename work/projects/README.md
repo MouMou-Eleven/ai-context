@@ -2,9 +2,9 @@
 
 这里保存具体事情的事实：目标、客户或受众、约定、资料、当前状态、交付与修订。按名称进入项目README，再核对当前事实的权威来源。
 
-这里只放长期项目（一件有目标、持续推进的事）。单次商单的案例放在它证明的那个方法旁边（比如设计案例在设计目录里）；外出培训场次在[培训资料](../domains/training/materials/README.md)；已退出主线的资料进入[归档项目](./archive/README.md)。状态变化记录在项目入口，不因每次暂停或恢复就改路径。
+这里只放长期项目（一件有目标、持续推进的事）。单次商单的案例放在它证明的那个方法旁边（比如设计案例在设计目录里）；外出培训场次在[培训资料](ai-training/sessions-index.md)；已退出主线的资料进入[归档项目](./archive/README.md)。状态变化记录在项目入口，不因每次暂停或恢复就改路径。
 
-外部培训入口当前是记录容器，不能据此推造企业、图书馆、夜校的具体场次。待归属材料仍在[培训资料](../domains/training/materials/README.md)。会员社群与外训课程分别判断身份。
+外部培训入口当前是记录容器，不能据此推造企业、图书馆、夜校的具体场次。待归属材料仍在[培训资料](ai-training/sessions-index.md)。会员社群与外训课程分别判断身份。
 
 跨项目可复用做法进入[领域知识](../domains/README.md)，执行能力进入[Skill库](../domains/other/skills/README.md)。正文只存一份，通过登记生成相关领域入口；[项目模板](../../system/repository/templates/project.md)规定最小事实和更新责任。
 
@@ -25,6 +25,7 @@
 
 | 类型 | 项目或案例 | 适用领域 |
 |---|---|---|
+| 长期项目 | [AI 培训](ai-training/README.md) | 培训业务 |
 | 项目 | [言剪 AI](yancut-ai/README.md) | 应用开发 |
 | 长期项目 | [AI 超级个体陪跑社群](paid-community-course/README.md) | 会员培训与社群经营 |
 | 出版项目 | [《飞书高效办公》](feishu-efficient-office/README.md) | 书稿与出版 |

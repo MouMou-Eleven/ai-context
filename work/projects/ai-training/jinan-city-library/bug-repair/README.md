@@ -21,8 +21,8 @@
 
 ## 文件索引与复用
 
-- [修订记录](./revisions/README.md)：Bug 修复证据链、训练台和二次验收变化。
-- [培训经验](../../../experience/README.md)：需要制作或复盘课程时读取；具体工具界面、状态码模拟和案例细节仍以本课及当前核验为准。
-- [归属与更新规则](../../../attribution-and-updates.md)：补充场次、复用或更新本课时执行。
+- [修订记录](../bug-repair/revisions/README.md)：Bug 修复证据链、训练台和二次验收变化。
+- [培训经验](../../../../domains/training/experience/README.md)：需要制作或复盘课程时读取；具体工具界面、状态码模拟和案例细节仍以本课及当前核验为准。
+- [归属与更新规则](../../../../domains/training/attribution-and-updates.md)：补充场次、复用或更新本课时执行。
 
 后续其他培训采用这份资料时，记录采用版本与受众差异；不复制为社群课程，也不把外训课序直接拼进另一个系列。
