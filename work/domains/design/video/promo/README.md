@@ -14,11 +14,11 @@
 | 客户已选城市/产业科技风，需要具体动效参考 | [visual-recipes.md](./visual-recipes.md) | 可选配方；不强制所有片型采用 |
 | 找荣誉、数据、卡片镜头的原提示词与项目语境 | [实战记录](case-2026-05-enterprise-prompt-record.md) | 保留原示例，素材与成片验收仍待补 |
 | AE 工程、排版、合成，或可编辑参数化动画 | [AE 设计能力入口](../common/ae-production.md) | 按工程交付要求选择工具 |
-| 选具体 AI 生成工具 | [视频工具](../common/seedance/README.md) | 当前平台能力须重新核验 |
+| 写 AI 视频提示词（Seedance / 即梦） | [Seedance](../common/seedance/README.md) | 先读建委实战，再按需查第三方模板；平台能力须重新核验 |
 
-## 自动维护
+## 写入
 
-新增商单按 [联合制作与沉淀流程](../../common/production-workflow.md) 记录输入、过程、失败、结果与证据。当前项目事实放项目主文件；通用方法更新工作流；风格配方注明适用条件并回链来源；新案例更新本索引、[视频项目索引](../../../../projects/README.md) 与必要的 [本目录案例](./README.md)。README 不继续追加长提示词。
+新商单做完，按[写入规范 · 新的工作怎么沉淀](../../../../../system/repository/ingestion-workflow.md#新的工作怎么沉淀)拆成事实、案例、方法三样：案例文件 `case-*.md` 放本目录；通用做法改 [workflow.md](./workflow.md)；视觉配方写进 [visual-recipes.md](./visual-recipes.md) 并注明适用条件；提示词经验写进 [Seedance](../common/seedance/README.md)。本 README 只做路由，不追加长提示词。
 
 <!-- generated-related-assets:start -->
 ## 相关项目与案例
