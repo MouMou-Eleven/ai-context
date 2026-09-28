@@ -1463,7 +1463,7 @@ ai-context/
 │       │   ├── case.md  记录真实输入、过程、结果、限制与复用方法
 │       │   ├── method.md  写清方法适用条件、执行步骤、来源和验收
 │       │   ├── project.md  建立长期项目的事实、资料索引与修订入口
-│       │   └── README.md  项目、案例与方法模板
+│       │   └── README.md  写入模板
 │       └── versioned-knowledge-policy.md  动态产品知识与版本治理
 ├── .gitattributes  Git 文本属性与换行规范
 ├── .github/  目录入口
