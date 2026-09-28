@@ -1,11 +1,11 @@
 # 言剪 AI（YanCut）
 
 > 状态：用户回传 B8/v46 应用、双 Edge 部署及测试通过截图，随后 v47 修复游客访问作品广场的预览来源白名单。B8 本地树仍缺 v47 云端热修全文；下一轮必须定点合并并保护 v42 加载、v44 依赖及 v47 CORS，不例行重新导出付费完整源码。
-> 当前口径确认：2026-09-28；云端回执、本地验证与正式站验收分别记录
+> 当前口径确认：2026-09-28。**当前状态看"当前进度"一节**；下面的批次记录只代表各自当时的状态。云端回执、本地验证与正式站验收分别记录
 
-原 Vercel 测试／回退入口（非秒哒）：[言剪 AI](https://yancut-ai-personal.vercel.app) · [登录/注册](https://yancut-ai-personal.vercel.app/login) · [在线帮助](https://yancut-ai-personal.vercel.app/studio/help)。真实账号、Neon 数据库、管理员和积分继续使用；原片保留本机，云端保存轻量工程与素材描述，旧云素材和明确上传的识别音频/作品仍使用私有 Blob。最新见[工作台更新](./revisions/2026-09-25-editor-voice-integration.md)及[声音定价更正](./revisions/2026-09-25-voice-pricing-v11.md)，存储方向见[统一入口与本机原片](./revisions/2026-09-25-unified-local-media-workspace.md)。[早先云端上线记录](./revisions/2026-09-25-online-cloud-launch.md) 保留历史，但“所有原片上传云端”不再作为当前口径。旧的免登录/个人 Key 模式也未恢复。
+原 Vercel 测试／回退入口（非秒哒）：[言剪 AI](https://yancut-ai-personal.vercel.app) · [登录/注册](https://yancut-ai-personal.vercel.app/login) · [在线帮助](https://yancut-ai-personal.vercel.app/studio/help)。真实账号、Neon 数据库、管理员和积分继续使用；原片保留本机，云端保存轻量工程与素材描述，旧云素材和明确上传的识别音频/作品仍使用私有 Blob。09-25 的工作台更新见[这里](./revisions/2026-09-25-editor-voice-integration.md)及[声音定价更正](./revisions/2026-09-25-voice-pricing-v11.md)，存储方向见[统一入口与本机原片](./revisions/2026-09-25-unified-local-media-workspace.md)。[早先云端上线记录](./revisions/2026-09-25-online-cloud-launch.md) 保留历史，但“所有原片上传云端”不再作为当前口径。旧的免登录/个人 Key 模式也未恢复。
 
-## 最新修订（2026-09-28）
+## 各批次记录（按时间倒序；当前状态以下方"当前进度"为准）
 
 [B8：创作确认、画面批注与服务测试](./revisions/2026-09-28-b8-creation-review-and-service-tests.md)：实现与原始测试范围；最新云端回执及下一轮保护项以本页“当前进度”为准，连接查询不能替代成片功能验收。
 
@@ -80,14 +80,14 @@
 
 ### R6至R8当时执行卡
 
-当前执行入口：[完整迁移批次与有效沉淀](./revisions/2026-09-26-batch-delivery-and-effective-context.md)。内部阶段不强制各占一次上传。下方等待实施等是收到回执前的历史，不再据此重复安排。
+当时执行入口：[完整迁移批次与有效沉淀](./revisions/2026-09-26-batch-delivery-and-effective-context.md)。内部阶段不强制各占一次上传。下方等待实施等是收到回执前的历史，不再据此重复安排。
 
 
-当前执行入口：[R8实际AI接线包](./revisions/2026-09-26-r8-ai-implementation.md)。这次包含实现代码、追加迁移和定点安装器；下方云端执行说明为上一轮勘察阶段。
+当时执行入口：[R8实际AI接线包](./revisions/2026-09-26-r8-ai-implementation.md)。这次包含实现代码、追加迁移和定点安装器；下方云端执行说明为上一轮勘察阶段。
 
-最新执行入口：[R8开始与v24云端适配](./revisions/2026-09-26-r8-cloud-adaptation.md)。采用增量代码与限定范围提示词结合，平台故障必须定位、修复或明确阻塞，不能被阶段声明遗漏。以下账户补充记录是上一交付阶段。
+当时执行入口：[R8开始与v24云端适配](./revisions/2026-09-26-r8-cloud-adaptation.md)。采用增量代码与限定范围提示词结合，平台故障必须定位、修复或明确阻塞，不能被阶段声明遗漏。以下账户补充记录是上一交付阶段。
 
-用户已上传 R7，最新独立检查发现该包漏带 studio-shell 的账户确认态修改；本地开发树通过不等于ZIP叠加树通过。现以完整导出＋实际R7 ZIP重建，并交付 R7-PROFILE 账户补充，详见 [本轮修订](./revisions/2026-09-26-r7-profile-feedback.md)。用户验证通过项与未完成的存储/积分/后台整体验收分开记录；当前操作不再要求重新全量导出。
+用户已上传 R7，当时独立检查发现该包漏带 studio-shell 的账户确认态修改；本地开发树通过不等于ZIP叠加树通过。现以完整导出＋实际R7 ZIP重建，并交付 R7-PROFILE 账户补充，详见 [本轮修订](./revisions/2026-09-26-r7-profile-feedback.md)。用户验证通过项与未完成的存储/积分/后台整体验收分开记录；当前操作不再要求重新全量导出。
 
 以下表格保留 **R6.1 时点的历史执行卡**，其中“R7未开始”“待恢复管理员”等不是现状，不再作为执行指令。当前状态以上述本轮修订为准。旧证据见[迁移修订](./revisions/2026-09-25-miaoda-source-migration.md#r61-云端回执审查与知识纠错2026-09-26)。
 
@@ -106,7 +106,7 @@
 
 以下保留各轮当时结论。遇到“等待上传”“未接入”或“最新”等表述，按段落所述版本理解；当前执行只以“当前进度”及对应新证据为准。
 
-最新补充：R6 已上传并由秒哒应用，后续云端热修复补齐构建时 Supabase 公共环境变量，用户实际收到短信；这证明验证码请求链已经跨过前端配置层，但不证明注册完成。注册提交返回“注册信息无效”，本地按云端文件哈希复查到 R6 `PLACEHOLDER_HASH` 摘要长度为 140，违反数据库 `32:128` 合同；原 Deno 测试把 RPC 模拟为恒成功，隔离 SQL 又使用了单独的正确测试值，两层测试没有连接起来。R6 状态改为“已应用、待 R6.1 修复”，R7 暂不开始。临时 `vitesandbox`、HTTP 200、云端 Chromium 自报和构建成功均不作为真实可用验收；完整原因与门禁见[本次修订](./revisions/2026-09-25-miaoda-source-migration.md#r6-云端执行与真实注册失败2026-09-26)。
+（R6 时点）R6 已上传并由秒哒应用，后续云端热修复补齐构建时 Supabase 公共环境变量，用户实际收到短信；这证明验证码请求链已经跨过前端配置层，但不证明注册完成。注册提交返回“注册信息无效”，本地按云端文件哈希复查到 R6 `PLACEHOLDER_HASH` 摘要长度为 140，违反数据库 `32:128` 合同；原 Deno 测试把 RPC 模拟为恒成功，隔离 SQL 又使用了单独的正确测试值，两层测试没有连接起来。R6 状态改为“已应用、待 R6.1 修复”，R7 暂不开始。临时 `vitesandbox`、HTTP 200、云端 Chromium 自报和构建成功均不作为真实可用验收；完整原因与门禁见[本次修订](./revisions/2026-09-25-miaoda-source-migration.md#r6-云端执行与真实注册失败2026-09-26)。
 
 R6.1 已生成不可覆盖交付包 `yancut-JW-20260926-R6.1-increment.zip`，18272 字节，SHA-256 `20e89bd5794a0266c89e926047fc818c8eb5a8c13a739dc2ca5c5ba5db180063`。它只替换两个 Edge 运行副本及两个测试副本，并以追加版回执 hash 保护构建脚本、前端认证桥、云端登录页和 database.ts；不执行新迁移、不自动发短信、不启动 R7。Deno 7 项与解压实物复测通过；隔离 PGlite 直接从本批 Edge 源码提取生成规则，确认旧 32+140 失败、新 32+128 成功创建首个用户/首管。当前状态是“本地已交付、等待上传和真实主链验收”，不是云端完成。
 
@@ -114,11 +114,11 @@ R6.1 已生成不可覆盖交付包 `yancut-JW-20260926-R6.1-increment.zip`，18
 
 R4 源码 `fa3e8625` 已推送迁移分支并应用到秒哒源码树：后台设置、AES 兼容和事务权限门控通过 Deno 19 测试及隔离 SQL 27 断言；应用源码时未执行 SQL、未接通接口、未重建静态前端，不能据此认定后台可用。双配色 Logo、公共品牌配置与管理员上传／恢复入口已打为 R5，源码 `0b0cb006` 及后续文档 `b74e3395` 均已推送迁移分支并远端核实；R5 后由用户手动上传。网站配置 Deno 23 项、隔离 SQL 15 断言通过；R5 独立恢复目录完成 1555 文件哈希、冻结安装、TypeScript 和 Vite 3105 模块构建。管理交互仍是本地模拟 API 验证，云端管理员保存未验收，详见[迁移回执](./revisions/2026-09-25-miaoda-source-migration.md)。
 
-最新见[百度秒哒源码迁移](./revisions/2026-09-25-miaoda-source-migration.md)：R1 `cf9fd133`、R2 `80d49a91`均已推送；修复我的空间对齐、工作台标签滚动、参考上传和画面拒绝优先，补声音配置检查。R2完整叠加树528测试／5670断言和生产构建通过，多宽度真实浏览器通过。R3 `ba81b374`已推送迁移分支，严格类型检查、13项Deno/8项前端/89项SQL及独立Vite构建通过，仍有API与数据待迁，不能称迁移已完成。供应商余额接口已公开但言剪未集成，不构成成本硬封顶。
+（R1～R3 时点）见[百度秒哒源码迁移](./revisions/2026-09-25-miaoda-source-migration.md)：R1 `cf9fd133`、R2 `80d49a91`均已推送；修复我的空间对齐、工作台标签滚动、参考上传和画面拒绝优先，补声音配置检查。R2完整叠加树528测试／5670断言和生产构建通过，多宽度真实浏览器通过。R3 `ba81b374`已推送迁移分支，严格类型检查、13项Deno/8项前端/89项SQL及独立Vite构建通过，仍有API与数据待迁，不能称迁移已完成。供应商余额接口已公开但言剪未集成，不构成成本硬封顶。
 
-最新工作台见[工作台与声音接入](./revisions/2026-09-25-editor-voice-integration.md)：19 个原生动效、20 个 CC0 实体音效、6 种转场，编辑器附件与 @、AI 精确插入、预览异常恢复及 MiniMax 报价任务接口；实际导出约 12 秒 H.264＋AAC。源码 `b23b7625`，526 项测试与正式构建通过；生产已执行兼容迁移 0009。随后用户更正[定价卡 v1.1](./revisions/2026-09-25-voice-pricing-v11.md)，移除误引的供应商预估要求，改为管理员校准和实扣超 9 元告警暂停；Key及真实样本仍待补，不能当付费联调已完成。
+（09-25 时点）工作台见[工作台与声音接入](./revisions/2026-09-25-editor-voice-integration.md)：19 个原生动效、20 个 CC0 实体音效、6 种转场，编辑器附件与 @、AI 精确插入、预览异常恢复及 MiniMax 报价任务接口；实际导出约 12 秒 H.264＋AAC。源码 `b23b7625`，526 项测试与正式构建通过；生产已执行兼容迁移 0009。随后用户更正[定价卡 v1.1](./revisions/2026-09-25-voice-pricing-v11.md)，移除误引的供应商预估要求，改为管理员校准和实扣超 9 元告警暂停；Key及真实样本仍待补，不能当付费联调已完成。
 
-最新交互与验收见[作品发布与统一成片](./revisions/2026-09-25-gallery-protocols-rendering.md)：导出可主动同步广场，用户可另行上传和撤下；首页/广场共用真实瀑布流。移除重复风格选择器，附件有缩略图，浮层不推移输入区；客服二维码本地上传。497 项测试与三平台 CI 通过，真实模型两轮完成12秒裁为10秒、添加入场标题标签并导出MP4。当前结构剪切和包装仍需分轮确认，无声短片不等于真人口播质量通过。
+（09-25 时点）交互与验收见[作品发布与统一成片](./revisions/2026-09-25-gallery-protocols-rendering.md)：导出可主动同步广场，用户可另行上传和撤下；首页/广场共用真实瀑布流。移除重复风格选择器，附件有缩略图，浮层不推移输入区；客服二维码本地上传。497 项测试与三平台 CI 通过，真实模型两轮完成12秒裁为10秒、添加入场标题标签并导出MP4。当前结构剪切和包装仍需分轮确认，无声短片不等于真人口播质量通过。
 
 ## 原 Vercel／本地能力基线（秒哒迁移对照）
 
@@ -140,7 +140,7 @@ R4 源码 `fa3e8625` 已推送迁移分支并应用到秒哒源码树：后台�
 | 豆包 ASR 2.0 标准版 | 已接入服务端异步提交/查询、300 积分/小时报价与确认扣费、失败退分、云端任务归属和刷新恢复；真人长视频、上传速度和供应商等待时长仍待用户实测 |
 | 当前录屏验收 | 账号制已有管理员；本轮验证工程/素材恢复与原生图文导出，另做真实模型文字规划补验。ASR未重跑，不能把白板或小型合成片当作真人语义剪辑质量通过 |
 
-最新验收补充（2026-09-23）：本地干净工程已真实跑通口播停顿精剪、中文本地字幕、AI 标题/信息条包装和关键帧开关；工程重开恢复成功。浏览器实际下载成片，ffprobe 确认 14.001633 秒、H.264＋AAC、640×360。小型合成测试片不等于真人识别准确率或长片性能通过，详细证据和最终测试数见本日浏览器验收记录。
+验收补充（2026-09-23 时点）：本地干净工程已真实跑通口播停顿精剪、中文本地字幕、AI 标题/信息条包装和关键帧开关；工程重开恢复成功。浏览器实际下载成片，ffprobe 确认 14.001633 秒、H.264＋AAC、640×360。小型合成测试片不等于真人识别准确率或长片性能通过，详细证据和最终测试数见本日浏览器验收记录。
 
 当前客服资料、模型参数、套餐试验价格及具体测试细节按相应日期的revision读取，不把开发登记值当成现行商业承诺。已撤销的独立包装中心和旧自动收银台只保留在历史记录中。
 
@@ -167,13 +167,13 @@ R4 源码 `fa3e8625` 已推送迁移分支并应用到秒哒源码树：后台�
 | [`revisions/2026-09-26-r8-ai-implementation.md`](./revisions/2026-09-26-r8-ai-implementation.md) | R8规划器实现、事务迁移、定点安装和本地测试证据 |
 | [`revisions/2026-09-26-r8-cloud-adaptation.md`](./revisions/2026-09-26-r8-cloud-adaptation.md) | v24平台适配、保护文件、R8执行前故障定位与边界 |
 | [`revisions/2026-09-26-batch-delivery-and-effective-context.md`](./revisions/2026-09-26-batch-delivery-and-effective-context.md) | 批次交付纠偏、云端回执核对与自然语言触发回归 |
-| [`revisions/2026-09-25-miaoda-source-migration.md`](./revisions/2026-09-25-miaoda-source-migration.md) | 最新：工作台修复、声音配置检查、R1/R2复建、秒哒实际接收与运行时适配缺口 |
-| [`revisions/2026-09-25-voice-pricing-v11.md`](./revisions/2026-09-25-voice-pricing-v11.md) | 最新声音规则：撤销误引预估接口、实测校准、实扣告警与成本/计费边界 |
-| [`revisions/2026-09-25-editor-voice-integration.md`](./revisions/2026-09-25-editor-voice-integration.md) | 最新：工作台统一、20音效/19动效/6转场、预览修复、MiniMax任务、真实导出与未开放边界 |
-| [`revisions/2026-09-25-gallery-protocols-rendering.md`](./revisions/2026-09-25-gallery-protocols-rendering.md) | 最新：发布与撤下作品、首页交互、模型协议、二维码、统一剪辑成片验收及实际Remotion接线缺口 |
+| [`revisions/2026-09-25-miaoda-source-migration.md`](./revisions/2026-09-25-miaoda-source-migration.md) | 09-25：工作台修复、声音配置检查、R1/R2复建、秒哒实际接收与运行时适配缺口 |
+| [`revisions/2026-09-25-voice-pricing-v11.md`](./revisions/2026-09-25-voice-pricing-v11.md) | 09-25 声音规则：撤销误引预估接口、实测校准、实扣告警与成本/计费边界 |
+| [`revisions/2026-09-25-editor-voice-integration.md`](./revisions/2026-09-25-editor-voice-integration.md) | 09-25：工作台统一、20音效/19动效/6转场、预览修复、MiniMax任务、真实导出与未开放边界 |
+| [`revisions/2026-09-25-gallery-protocols-rendering.md`](./revisions/2026-09-25-gallery-protocols-rendering.md) | 09-25：发布与撤下作品、首页交互、模型协议、二维码、统一剪辑成片验收及实际Remotion接线缺口 |
 | [`revisions/2026-09-17-local-first-manual-spectrum-ui.md`](./revisions/2026-09-17-local-first-manual-spectrum-ui.md) | 本地优先使用手册、工作台与导航修订、Spectrum UI 按需参考边界 |
 | [`revisions/2026-09-25-composable-skills-ui.md`](./revisions/2026-09-25-composable-skills-ui.md) | 前轮：模式与多选技能、统一提示词、响应式UI、注册协议、真实模型组合白板及MP4验收 |
-| [`revisions/2026-09-25-unified-local-media-workspace.md`](./revisions/2026-09-25-unified-local-media-workspace.md) | 最新方向：统一首页、本机原片/云端工程、工具候选编排、模型适配、白板、上游核验、真实浏览器导出与部署 |
+| [`revisions/2026-09-25-unified-local-media-workspace.md`](./revisions/2026-09-25-unified-local-media-workspace.md) | 09-25 方向：统一首页、本机原片/云端工程、工具候选编排、模型适配、白板、上游核验、真实浏览器导出与部署 |
 | [`revisions/2026-09-16-workbench-motion-reference-templates.md`](./revisions/2026-09-16-workbench-motion-reference-templates.md) | 六项目核验、工作台修复、动效/参考/个人模板、线上导出与持续同步约定 |
 | [`revisions/2026-09-15-personal-vercel-testing.md`](./revisions/2026-09-15-personal-vercel-testing.md) | 旧记录修正、个人 Key、Vercel 测试部署与后续迁移边界 |
 | [`revisions/2026-09-15-hypit-montage-overlay-scenario-workflows.md`](./revisions/2026-09-15-hypit-montage-overlay-scenario-workflows.md) | 三个参考项目核验、场景技能、真实动效与文字修订 |
