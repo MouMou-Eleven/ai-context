@@ -26,8 +26,8 @@
 | 视频：宣传片、微课、故事片、AI 视频提示词 | [视频入口](work/domains/design/video/README.md) → 对应片型目录；要写视频提示词再读 [Seedance](work/domains/design/video/common/seedance/README.md) |
 | 用百度秒哒开发 | [秒哒入口](work/domains/development/tools/miaoda/README.md)（先看顶部平台识别）→ 按其中的流程表选一条 |
 | 其他网站 / 应用 / 编程 | [开发入口](work/domains/development/README.md) + [通用开发经验](work/domains/development/experience/README.md) |
-| 商业计划、比赛申报、融资、对外合作材料 | [商业化入口](work/domains/other/commercial/README.md) |
-| 外出培训某一场（济南干部培训、济南市图书馆等） | [培训资料与场次](work/projects/ai-training/sessions-index.md) → 该场次 README |
+| 商业计划、比赛申报、路演、融资、谈单、对外合作材料；给政府 / 企业 / 公益组织的正式方案 | [商业化入口](work/domains/other/commercial/README.md)：先按受众表、再按场景表选文件 |
+| 某一场培训（济南干部培训、济南市图书馆等） | [AI 培训项目](work/projects/ai-training/README.md) → [场次索引](work/projects/ai-training/sessions-index.md) → 该场次 README |
 | 某个具体项目（社群、言剪、飞书书、六十甲子） | [项目列表](work/projects/README.md) → 该项目 README |
 | 个人简介、讲师介绍、简历 | [个人信息](personal/README.md)；荣誉和数字只按[背书表](personal/credentials.md)写 |
 | 建委的想法、偏好、判断方式 | [建委大脑](brain/README.md)；做任何成品前都值得先看一眼[做事与表达偏好](brain/preferences.md) |
@@ -73,23 +73,25 @@
 ### 容易混淆的地方（红线）
 
 - **百度秒哒 ≠ 飞书妙搭。** 建委说"秒哒""秒嗒"、网址含 miaoda.cn 或 appmiaoda.com，都是百度秒哒。**不要**调用 lark-apps、lark-cli apps、Spark 这些飞书妙搭的工具和接口。只有明确出现"飞书妙搭"或 miaoda.feishu.cn 时才是飞书的产品。
-- **培训 ≠ 会员社群。** 企业、图书馆、夜校的培训是外出培训；课号只在自己的系列里有效。
+- **培训 ≠ 会员社群。** 企业、机关、图书馆、夜校的培训属于 [AI 培训项目](work/projects/ai-training/README.md)；课号只在自己的系列里有效。
 - **给学员的 ≠ 给讲师的 ≠ 给主办方的。** 同一场培训，课件、备课稿、方案是三种东西，分开写。
 - **教师委托做的微课、精品课**属于设计，不属于建委讲课。
 - **飞书文档链接**不代表是《飞书高效办公》这本书。
 
 ## 二、写入：往仓库里沉淀经验
 
-建委说"沉淀一下""记到仓库""写进 GitHub"时执行这部分。详细步骤见[写入规范](system/repository/ingestion-workflow.md)。核心规则：
+建委说"沉淀一下""记到仓库""这些是培训的经验，沉淀到培训板块"时执行这部分。**建委只说一句话，拆分和归位由 AI 完成**：把内容拆成事实（写项目或场次）、案例（`case-*.md`，放在它证明的方法旁边）、方法（改领域里的方法原文），写完告诉建委每样放到了哪个文件。详细步骤见[写入规范](system/repository/ingestion-workflow.md)。核心规则：
 
 1. **先找已有位置。** 先搜仓库里有没有讲同一件事的文件。有就改那一处：补充、修正或替换过时内容。不要另起新文件，也不要在末尾追加一条意思相近的新规则。
 2. **写清楚，不要压缩成口号。** 每条经验写明：什么场景、怎么做、一个正例或反例、为什么。"注意口语化"这种一句话规则没法执行；要写"像这样说，不要像那样说"。
 3. **标级别。** 新规则标上红线、默认或可灵活。
 4. **事实和方法分开放。** 某个项目的事实（价格、进度、客户）放项目；能用到别处的做法放领域。一件事两样都有，就各写一部分，互相加链接。
-5. **新建目录或新分类，必须先问建委。** 问的时候同时给两个方案：A. 放进已有的哪个位置；B. 新建什么、叫什么。并说明理由。建委同意后再建。
+5. **新建目录或新分类，先问建委。** 问的时候同时给两个方案：A. 放进已有的哪个位置；B. 新建什么、叫什么。并说明理由。建委同意后再建。**例外**：建委已经点名了位置和名字（如"在微课与教育交互下建一个精品课板块"），直接建，并且板块里必须有方法文件，不能只堆案例。不建"合集""其他""杂项"这类汇总文件夹。
 6. **过时的内容直接改掉或删掉。** 不要新旧并列，Git 历史能找回旧版本。不再单独写"修订记录"文件，除非改的是整个仓库的结构。
 7. **同步索引。** 新增、移动、删除文件后，更新最近一层 README 的目录。移动文件后运行 `python system/repository/maintenance/relink.py 旧路径=新路径` 修正链接。
 8. **校验后再推送。** 运行 `python -B system/repository/maintenance/sync-navigation.py`、`sync-structure.py`、`validate-context.py`，没有错误再提交。
+
+**建委大脑自动提炼（任何对话都适用，不需要建委说"存进大脑"）**：建委在对话里自己说出观点、判断标准、偏好或做事原则时，判断一次要不要写进 [brain/](brain/README.md)：只取建委本人说的或明确认可的；只写抽象原则，不写项目细节；先查重，已有就不写、相近就改进原条目；和已有条目矛盾时先问建委再替换；随口一说、带情绪的不存。存了什么，在回复末尾用一句话告诉建委。细则见[写入规范](system/repository/ingestion-workflow.md#建委大脑自动提炼)。
 
 凭据、Token、密码不入库。文件用 UTF-8、LF 换行、英文小写短横线命名。
 

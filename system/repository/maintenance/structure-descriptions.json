@@ -199,8 +199,8 @@
     "work/domains/self-media/experience/outcome-and-motivation.md": "成果展示、用户动机与知识分层",
     "work/domains/other": "收纳跨行业商业方法及通用Skill能力入口",
     "work/domains/other/README.md": "其他领域与项目索引及准入条件",
-    "work/domains/other/commercial": "商业化与对外交付",
-    "work/domains/other/commercial/README.md": "跨行业商业方法、触发规则与交付边界",
+    "work/domains/other/commercial": "按受众（政府、企业、公益、评委、消费者）和场景（方案、路演、宣传、谈单）组织的对外交付方法",
+    "work/domains/other/commercial/README.md": "受众表、场景表、对外红线与写入位置",
     "work/domains/other/commercial/experience": "查需求识别、案例表达与对外交付经验",
     "work/domains/other/commercial/experience/README.md": "内容经营与商业交付经验索引",
     "work/domains/other/commercial/experience/content-demand-and-conversion.md": "从内容反馈识别需求并衔接商业服务",
@@ -410,7 +410,7 @@
     "CLAUDE.md": "Claude Code 与 GLM Coding Plan 等工具自动读取的入口，只指向 AGENTS.md",
     "system/repository/maintenance/tests/test_real_tasks.py": "建委真实任务回归：银行课件、培训宣传、培训方案、秒哒支付、宣传片分镜",
     "brain/preferences.md": "建委的做事与表达偏好：实在、清楚、和 AI 怎样协作",
-    "work/projects/ai-training": "AI培训业务：外出培训各场次记录",
+    "work/projects/ai-training": "AI培训项目：各单位培训场次、方案与讲后反馈",
     "work/projects/ai-training/README.md": "AI培训项目总入口"
   },
   "knowledgeLabels": {

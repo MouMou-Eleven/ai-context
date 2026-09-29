@@ -50,6 +50,24 @@ class RealTasks(unittest.TestCase):
         self.assertIn('work/domains/design/video/common/seedance/README.md', read)
         self.assertIn('work/domains/design/video/common/seedance/practical-workflow.md', read)
 
+    def test_training_sink_reads_ai_training_project(self):
+        read = router.resolve('这些是培训的经验，沉淀到培训板块', 'write')['read']
+        self.assertIn('work/projects/ai-training/README.md', read)
+        self.assertIn('system/repository/ingestion-workflow.md', read)
+
+    def test_roadshow_reads_competition_rules(self):
+        read = self.reads('准备OPC比赛路演PPT')
+        self.assertIn(CM + 'experience/competition-and-investor-materials.md', read)
+
+    def test_sales_talk_and_nonprofit_reach_commercial_map(self):
+        self.assertIn(CM + 'README.md', self.reads('和企业客户谈单的沟通话术'))
+        self.assertIn(CM + 'README.md', self.reads('给公益组织写一份AI培训方案'))
+
+    def test_brain_auto_distill_rule_is_in_every_entry(self):
+        for rel in ['AGENTS.md', 'brain/README.md', 'system/repository/ingestion-workflow.md']:
+            self.assertIn('建委大脑自动提炼' if rel != 'brain/README.md' else '这里的内容怎么来',
+                          (ROOT / rel).read_text(encoding='utf-8'), rel)
+
     def test_every_agents_table_link_exists(self):
         import re
         text = (ROOT / 'AGENTS.md').read_text(encoding='utf-8')

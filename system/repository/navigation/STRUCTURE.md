@@ -339,7 +339,7 @@ ai-context/
 │   │   │       │   └── workflow.md  Codex × 秒哒协作方法：三条路径、十个阶段的唯一正文
 │   │   │       └── README.md  工具索引
 │   │   ├── other/  收纳跨行业商业方法及通用Skill能力入口
-│   │   │   ├── commercial/  商业化与对外交付
+│   │   │   ├── commercial/  按受众（政府、企业、公益、评委、消费者）和场景（方案、路演、宣传、谈单）组织的对外交付方法
 │   │   │   │   ├── delivery-formats/  按场景选择商业文件交付格式
 │   │   │   │   │   ├── gov-enterprise-word.md  政府与企业Word方案居中题头及正文排版
 │   │   │   │   │   ├── README.md  交付格式索引与新增样式规则
@@ -355,7 +355,7 @@ ai-context/
 │   │   │   │   │   ├── external-deliverable-language.md  把内部工作说明改为客户或机构可直接使用的成品
 │   │   │   │   │   ├── external-proposal-design.md  对外培训及项目方案的内容筛选和验收
 │   │   │   │   │   └── README.md  内容经营与商业交付经验索引
-│   │   │   │   ├── README.md  跨行业商业方法、触发规则与交付边界
+│   │   │   │   ├── README.md  受众表、场景表、对外红线与写入位置
 │   │   │   │   └── revisions/  商业交付规则修订与真实反馈
 │   │   │   │       ├── 2026-09-17-external-proposal-and-word-format.md  对外方案受众纠错、政企Word格式与反例检查
 │   │   │   │       └── README.md  商业交付修订索引
@@ -1263,7 +1263,7 @@ ai-context/
 │   │   │       ├── 2026-09-02-five-tone-product-flow-and-private-audio-demo.md  五音产品流程与私有音频演示修订
 │   │   │       ├── 2026-09-02-harmony-v6-ui-audit-and-interaction-fix.md  V6 界面审计与交互修复
 │   │   │       └── 2026-09-02-product-v7-ui-and-profile-center.md  V7 产品界面与个人中心修订
-│   │   ├── ai-training/  AI培训业务：外出培训各场次记录
+│   │   ├── ai-training/  AI培训项目：各单位培训场次、方案与讲后反馈
 │   │   │   ├── jinan-cadre-ai/  济南市总工会干部AI培训的方案与设计反馈
 │   │   │   │   ├── proposal.md  当前对外培训方案正文
 │   │   │   │   ├── README.md  培训事实、当前设计与文件入口

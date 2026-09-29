@@ -178,7 +178,12 @@
         "对外方案",
         "培训方案",
         "课程纲要",
-        "政企Word"
+        "政企Word",
+        "公益组织",
+        "政府方案",
+        "企业方案",
+        "谈单",
+        "报价"
       ],
       "excludeAny": [
         "内部备课",
@@ -188,7 +193,31 @@
       ],
       "intents": [],
       "paths": [
+        "work/domains/other/commercial/README.md",
         "work/domains/other/commercial/experience/external-deliverable-language.md"
+      ]
+    },
+    {
+      "id": "competition",
+      "whenAny": [
+        "路演",
+        "OPC",
+        "比赛申报",
+        "比赛材料",
+        "申报书",
+        "商业计划",
+        "融资",
+        "评委",
+        "投资人",
+        "答辩"
+      ],
+      "excludeAny": [
+        "只查",
+        "查询位置"
+      ],
+      "intents": [],
+      "paths": [
+        "work/domains/other/commercial/experience/competition-and-investor-materials.md"
       ]
     },
     {
@@ -1048,6 +1077,17 @@
             "create",
             "write"
           ]
+        },
+        {
+          "path": "work/projects/ai-training/README.md",
+          "whenAny": [],
+          "excludeAny": [
+            "社群",
+            "会员"
+          ],
+          "intents": [
+            "write"
+          ]
         }
       ]
     },
@@ -1117,7 +1157,7 @@
     },
     {
       "id": "external-training",
-      "label": "企业、图书馆、夜校与外部培训",
+      "label": "AI培训项目：企业、机关、图书馆、夜校场次",
       "matchAny": [
         "企业培训",
         "图书馆培训",
@@ -1134,6 +1174,11 @@
       "entry": "work/projects/ai-training/sessions-index.md",
       "priority": 85,
       "dependencies": [
+        {
+          "path": "work/projects/ai-training/README.md",
+          "whenAny": [],
+          "intents": []
+        },
         {
           "path": "work/domains/training/README.md",
           "whenAny": [],
@@ -1399,7 +1444,7 @@
     },
     {
       "id": "commercial",
-      "label": "客户交付、提案、招生或销售",
+      "label": "客户交付、提案、路演、谈单或销售",
       "matchAny": [
         "商业计划",
         "商业方案",
@@ -1414,7 +1459,18 @@
         "培训方案",
         "课程纲要",
         "政企Word",
-        "组织方"
+        "组织方",
+        "谈单",
+        "报价",
+        "销售话术",
+        "成交",
+        "OPC",
+        "比赛材料",
+        "申报书",
+        "公益组织",
+        "政府方案",
+        "企业方案",
+        "对外合作"
       ],
       "excludeAny": [
         "纯教学",

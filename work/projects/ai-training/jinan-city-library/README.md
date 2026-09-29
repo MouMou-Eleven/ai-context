@@ -17,7 +17,7 @@
 
 - [修订记录](./revisions/README.md)：网页美化与秒哒进阶的实际改稿证据。
 - [确认依据](https://github.com/MouMou-Eleven/ai-context/blob/9f56e5d47cdf3926c2b7d17bd637ad775d5762d9/system/repository/revisions/2026-09-16-training-attribution-and-navigation.md)：2026-09-16本人归属说明。
-- [外出培训资料总表](../sessions-index.md)与[外出培训入口](../sessions-index.md)。
+- [AI 培训场次索引](../sessions-index.md)与[AI 培训项目](../README.md)。
 - 制作和复盘课程时读[培训经验](../../../domains/training/experience/README.md)，事实留本项目，学员视角、媒体与编辑保护等可复用方法按领域入口调用。
 
 本页为网页美化和秒哒进阶的唯一资料索引，飞书正文不复制进仓库。本次归属确认未重新回读飞书，不更新原正文核验日期。其他场次使用同一资料时引用主文件并记录采用版本，不复制课程全文。

@@ -30,7 +30,7 @@
 |---|---|
 | [topics.md](./topics.md) | 建委常讲的课题（AI 全景、提示词工具、Excel/Word、知识库、自动化、AI 编程……）和往期大纲 |
 | [experience/](./experience/README.md) | 培训方法：风格、课程组织、可视化与口语化、教程写法、技术概念讲解 |
-| [materials/](../../projects/ai-training/sessions-index.md) | 外出培训场次（济南干部培训、济南市图书馆）；按课件标题找飞书正文；归属不明的资料 |
+| [AI 培训项目](../../projects/ai-training/README.md) | 各单位培训场次（济南干部培训、济南市图书馆）、[场次索引](../../projects/ai-training/sessions-index.md)；按课件标题找飞书正文；归属不明的资料 |
 | [attribution-and-updates.md](./attribution-and-updates.md) | 一份资料属于哪个系列、哪场培训的判断规则 |
 
 会员社群的课程事实（课序、权益、价格）在[社群项目](../../projects/paid-community-course/README.md)，不在这里。课号只在自己的系列里有效：图书馆的"第 6 课"和社群的"第 6 课"是两回事。

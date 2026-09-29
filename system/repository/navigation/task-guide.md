@@ -49,13 +49,13 @@
 | 个人IP与观点海报 | [读取](../../../work/domains/other/skills/qingyun-ip-poster/README.md) |
 | 培训备课与复盘（先核对归属） | [读取](../../../work/domains/training/README.md) |
 | 会员社群（仅明确属于本项目） | [读取](../../../work/projects/paid-community-course/README.md) |
-| 企业、图书馆、夜校与外部培训 | [读取](../../../work/projects/ai-training/sessions-index.md) |
+| AI培训项目：企业、机关、图书馆、夜校场次 | [读取](../../../work/projects/ai-training/sessions-index.md) |
 | 济南市图书馆：别让Bug打败你 | [读取](../../../work/projects/ai-training/jinan-city-library/bug-repair/README.md) |
 | 出版体裁与书稿（先明确项目） | [读取](../../expression/README.md) |
 | 《飞书高效办公》书籍 | [读取](../../../work/projects/feishu-efficient-office/README.md) |
 | 自媒体、个人IP与渠道表达 | [读取](../../../work/domains/self-media/README.md) |
 | 产品信息、渠道选择与商业对标 | [读取](../../../work/domains/other/commercial/experience/business-analysis-cards.md) |
-| 客户交付、提案、招生或销售 | [读取](../../../work/domains/other/commercial/README.md) |
+| 客户交付、提案、路演、谈单或销售 | [读取](../../../work/domains/other/commercial/README.md) |
 | 六十甲子项目与独立IP | [读取](../../../work/projects/ai-sixty-jiazi-music-ip/README.md) |
 | 言剪AI项目 | [读取](../../../work/projects/yancut-ai/README.md) |
 | 当前设备与工具环境 | [读取](../../environment/computers/README.md) |
@@ -91,6 +91,7 @@
 | 培训备课与复盘（先核对归属） | 实操、教程、跟做、操作步骤；排除：宣传、朋友圈、招生、只查、查询位置 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/tutorial-writing.md) |
 | 培训备课与复盘（先核对归属） | 飞书、可视化、图示、图片、口语；排除：宣传、朋友圈、招生、只查、查询位置 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/visual-and-oral-training-docs.md) |
 | 培训备课与复盘（先核对归属） | 课程结构、课程大纲、演示、场景实操；排除：宣传、朋友圈、招生、只查、查询位置 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/demo-driven-course-design.md) |
+| 培训备课与复盘（先核对归属） | 本类任务；排除：社群、会员 | 按所查问题 | [正文](../../../work/projects/ai-training/README.md) |
 | 自媒体、个人IP与渠道表达 | 朋友圈、个人IP、个人 IP、建委口吻、我的口吻 | 创作/修改/沉淀 | [正文](../../expression/README.md) |
 | 自媒体、个人IP与渠道表达 | 公众号、图文、长文、文章 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/articles/README.md) |
 | 自媒体、个人IP与渠道表达 | 朋友圈 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/moments-copy/README.md) |

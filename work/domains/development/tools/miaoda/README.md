@@ -54,11 +54,28 @@ miaoda/
 └── updates/             版本时间线（只用于追溯）
 ```
 
-## 写入规则
+## 调用规则：AI 怎么和秒哒打交道
 
-- 会变的事实（限额、价格、功能）只写在 [facts.md](./facts.md)，其他文件链接过去。
-- 协作方法的改进直接改 [workflow.md](./workflow.md) 对应阶段的原文；专题经验改对应专题。不要在文件末尾追加"最新经验"。
-- 新坑先查 [pitfalls.md](./pitfalls.md) 有没有同类，有就改那一条；没有才新增。
-- 只跟某个项目有关的内容（批次号、具体功能、项目 bug）写在项目目录，不写进本目录。
-- 能用到所有 AI 编程工具的经验，写进[通用开发经验](../../experience/README.md)。
-- 其他规则见仓库[写入规范](../../../../../system/repository/ingestion-workflow.md)。
+| 情况 | 怎么做 | 不要做 |
+|---|---|---|
+| 有本地源码（言剪这类） | Codex 在本地改代码、测试，打**增量包**上传给秒哒校验合并，按 [workflow.md](./workflow.md) 路径 B | 不退回让秒哒按长提示词自由重写 |
+| 新项目 | 本地开发完整版，一次打全量包上传，按路径 A | 不边聊边让秒哒一点点生成 |
+| 只在云端、没有源码 | 写给秒哒的提示词，用 [prompt-templates.md](./prompt-templates.md)，按路径 C | 不猜云端代码现状 |
+| 要查云端版本、读回执、下达有限命令 | 用秒哒 Skill / CLI，范围和命令见 [skill-as-callable.md](./development/skill-as-callable.md#当前采用方式)；上一轮结束且建委授权后才下达新命令 | 不把 Skill 当成发布工具，发布仍走线上验收 |
+| 任何时候 | 只用百度秒哒自己的入口 | **不调用** `lark-apps`、`lark-cli apps`、Spark（那是飞书妙搭） |
+
+## 写入规则：新内容放哪
+
+| 新内容是什么 | 写到哪 | 怎么写 |
+|---|---|---|
+| 平台事实变了（限额、价格、会员、新功能） | [facts.md](./facts.md) 对应行 | 改原行，写核验日期和来源；别的文件只链接不抄 |
+| 协作流程有改进（打包、上传、验收顺序） | [workflow.md](./workflow.md) 对应阶段 | 改那一阶段的原文，不在末尾追加"最新经验" |
+| 某类功能的做法（上传、登录、支付、SEO、后端） | [topics/](./topics/README.md) 对应专题 | 同上；完全没有对应专题才新建一个专题文件 |
+| 踩了坑、报错 | [pitfalls.md](./pitfalls.md) | 先查有没有同类，有就补证据改那一条 |
+| 好用的提示词 | [prompt-templates.md](./prompt-templates.md) | 写清适用路径和场景 |
+| 秒哒 Skill、外部调用的新实测 | [development/skill-as-callable.md](./development/skill-as-callable.md) | 按该文件"如何扩展"一节 |
+| 某个项目的进度、批次、bug | 项目自己的目录（如[言剪 AI](../../../../projects/yancut-ai/README.md)） | 不写进本目录 |
+| 换了工具也成立的开发经验（测试、UI、后端设计） | [通用开发经验](../../experience/README.md) | 本目录只留链接 |
+| 官方版本更新记录 | [updates/](./updates/README.md) | 只用于追溯；现状以 facts.md 为准 |
+
+本目录**不再新建子目录**。放不进上表任何一行时，先按[写入规范](../../../../../system/repository/ingestion-workflow.md)给建委 A/B 两个方案。
