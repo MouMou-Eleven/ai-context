@@ -68,6 +68,13 @@ class RealTasks(unittest.TestCase):
             self.assertIn('建委大脑自动提炼' if rel != 'brain/README.md' else '这里的内容怎么来',
                           (ROOT / rel).read_text(encoding='utf-8'), rel)
 
+    def test_expression_source_anchors_resolve(self):
+        text = (ROOT / 'system/expression/corrections.md').read_text(encoding='utf-8')
+        for heading in ['## 来源表', '### 外部表达参考', '## 好材料怎样提炼成可用方法']:
+            self.assertIn('\n' + heading + '\n', text)
+        for code in ['| T1 |', '| G1 |', '| O2 |', '| F8 |']:
+            self.assertIn(code, text)
+
     def test_every_agents_table_link_exists(self):
         import re
         text = (ROOT / 'AGENTS.md').read_text(encoding='utf-8')
