@@ -1,7 +1,7 @@
 # 言剪 AI（YanCut）
 
-> 状态：用户回传 B8/v46 应用、双 Edge 部署及测试通过截图，随后 v47 修复游客访问作品广场的预览来源白名单。B8 本地树仍缺 v47 云端热修全文；下一轮必须定点合并并保护 v42 加载、v44 依赖及 v47 CORS，不例行重新导出付费完整源码。
-> 当前口径确认：2026-09-28。**当前状态看"当前进度"一节**；下面的批次记录只代表各自当时的状态。云端回执、本地验证与正式站验收分别记录
+> 状态：建委确认官方干预后开发对话已恢复；2026-09-30 截图记录 v71–v75 的 UI 修改、静态重建与动态 chunk 发布修复。截图是云端回执，尚未回收 v75 源码或独立复测；此前开发任务 INTERNAL_ERROR 的根因仍未知。下一轮以恢复后的云端差异校准基线，保护加载、认证、依赖、CORS 及静态发布热修，不用旧 B8/B11 覆盖。
+> 当前口径确认：2026-09-30。**当前状态看"当前进度"一节**；下面的批次记录只代表各自当时的状态。云端回执、本地验证与正式站验收分别记录
 
 原 Vercel 测试／回退入口（非秒哒）：[言剪 AI](https://yancut-ai-personal.vercel.app) · [登录/注册](https://yancut-ai-personal.vercel.app/login) · [在线帮助](https://yancut-ai-personal.vercel.app/studio/help)。真实账号、Neon 数据库、管理员和积分继续使用；原片保留本机，云端保存轻量工程与素材描述，旧云素材和明确上传的识别音频/作品仍使用私有 Blob。09-25 的工作台更新见[这里](./revisions/2026-09-25-editor-voice-integration.md)及[声音定价更正](./revisions/2026-09-25-voice-pricing-v11.md)，存储方向见[统一入口与本机原片](./revisions/2026-09-25-unified-local-media-workspace.md)。[早先云端上线记录](./revisions/2026-09-25-online-cloud-launch.md) 保留历史，但“所有原片上传云端”不再作为当前口径。旧的免登录/个人 Key 模式也未恢复。
 
@@ -49,16 +49,23 @@
 
 ## 当前进度
 
-本轮为跨客户端开发交接，尚未指定对标网站与改造范围，不提前生成 B9。后续按[秒哒协作方法路径 B](../../domains/development/tools/miaoda/workflow.md)执行。
+本轮是官方恢复后的故障复盘与经验回写，不追加应用开发或发布。后续按[秒哒协作方法路径 B](../../domains/development/tools/miaoda/workflow.md)执行。
 
-| 对象 | 当前事实与边界（2026-09-28） |
+| 对象 | 当前事实与边界（2026-09-30） |
 |---|---|
+| 开发执行恢复 | 建委明确表示找官方恢复后已能对话和修改。此前四次不可重试 INTERNAL_ERROR 与恢复后的前端问题分开归因；未取得官方后台根因、恢复操作或资源日志，不能认定某增量包、安全漏洞或备份膨胀导致沙箱失效。 |
+| v71–v73 回执 | 截图报告工具栏、我的空间源码修改及 lint 通过，但建委在 v72 后反馈没有变化；v73 才查明页面加载静态产物，需将 preview/apps/web/src 经构建发布到 public/yancut，并切换根 index.html。这是源码到产物未完成更新的证据，不是附件传错应用的证据。 |
+| v74–v75 回执 | 截图报告 v74 调整空间布局；随后进入工作台失败。v75 将错误归于发布时移走 public/yancut 旧目录，旧页面请求旧 hash chunk 返回 404；报告改 tasks/build-static-preview.sh 为合并发布、保留旧 chunk，并在 main.tsx 加 vite:preloadError 的会话内一次刷新恢复。截图末显示“已发布”；具体正式域名当前版本、响应头、保留策略及真实浏览器仍待验收。 |
+| 9/29 源码保全与我方验证缺口 | 既有快照已归档；本轮只读复核根 tsconfig.check.json 的 include 为 ./src，不能证明 preview/apps/web/src 工作台通过检查；根 build 脚本仅输出提示，嵌套 web/build 是 Next 构建，均不能替代秒哒 Vite 产物验证。快照没有 tasks/build-static-preview.sh；不视为已经回收 v75 脚本。此前 B11 的整包验证口径需撤回。 |
+| 备份资源线索 | 已核查快照 .release-backups 有 38 个目录、1,856,067,357 字节，25 份 R7 备份重复保存大素材。资源膨胀确实存在，但没有 OOM、磁盘耗尽或官方因果说明。保全后评估容量及保留策略，不能为减体积直接删恢复点。 |
 | B8/v46 回执 | 用户图一报告 16 个目标文件 after hash 匹配、7 个保护文件未变、213 项回归通过、双 Edge Deno 检查/部署及根 lint/静态构建通过，无新迁移。这是秒哒执行回执，不是本轮独立下载云端源码或正式域名验收。 |
 | MCP/服务查询回执 | 报告两套 Edge 均发现 8 个工具；LLM 查询 authenticated，声音查询 inconclusive + task_not_exist；游客普通 401 未被当成辅助会话失效，越权/无效令牌拒绝。排查中手工测试令牌不符合 64 位小写十六进制合同，改用合法测试输入后通过；不能据此改弱鉴权。测试管理员会话报告已撤销。 |
 | v47 热修 | 用户图二报告公开广场 `/api/yancut/gallery?scope=public` 被 Edge 的 `ORIGIN_DENIED` 拦截，原因是原来源集合遗漏预览别名。秒哒修改两套 `server/handler.ts` 的 `isAllowedOrigin` 并部署，报告预览 Origin 返回 200、第三方 Origin 返回 403、根 lint 通过。未取得函数全文；不擅自重建其实现或放行所有平台域名。 |
-| 当前云端差异 | 本地 B8 两套 handler 仍是固定来源集合，尚无 v47 的 `isAllowedOrigin`。下一轮优先回收这两个函数文件/精确 diff/哈希；还需保护认证桥、v42 `api-client.ts`、v44 根依赖覆盖及锁文件。暂缺全文时只做不冲突改动，禁止旧整文件覆盖。 |
+| 当前云端差异 | 旧 B8 尚缺 v47 handler 热修；恢复后的 v71–v75 又改了工具栏、guest-space.tsx、main.tsx、静态发布脚本及入口。下一包前定点回收这些文件/精确 diff/哈希、实际构建配置及版本引用，并保护认证桥、v42 api-client.ts、v44 根依赖与锁文件。缺全文时只做不冲突改动，禁止旧整文件覆盖。 |
 | 待验收 | 完整浏览器三身份流程、真实授权素材剪辑导出、长视频/高码率/多轨性能、Windows/Safari、收费识别/声音/生成、公网 Remotion/HyperFrames Worker；B8 的画面批注仅支持定点文字与短素材叠加，不能宣称任意局部重绘。 |
 | 平台边界 | 秒哒对 FFmpeg 的回复已提炼到[当前事实表](../../domains/development/tools/miaoda/facts.md#应用运行时与工具安装边界)和[平台基础](../../domains/development/tools/miaoda/basics/platform-basics.md#引入-ffmpeg浏览器渲染器或-github-项目前怎么选)。应用 Edge、开发工具和外部 Worker 分开，不默认新增收费服务或上传本机原片。 |
+
+复盘证据与归因边界见[迁移案例的官方恢复后复盘](./case-miaoda-source-migration.md#官方恢复后的静态发布复盘)。可复用诊断已写入[秒哒运行诊断](../../domains/development/tools/miaoda/topics/runtime-diagnostics.md#源码改了但页面没变先核对构建和入口)，执行门禁已改进[增量流程](../../domains/development/tools/miaoda/workflow.md)。
 
 ### 本机源码与交接入口
 
