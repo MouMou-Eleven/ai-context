@@ -1,7 +1,7 @@
 # 言剪 AI（YanCut）
 
-> 状态：官方恢复后已可对话；2026-10-01 直接查询编辑与已发布版本均为 v75，取回该版本源码资源并完成 ZIP CRC 与逐文件哈希校验。本机统一根目录为 `F:\桌面文件\言剪AI归档版`，后续开发、测试、增量包均在其内进行。快照仍缺实际构建脚本，完整构建环境和线上功能尚未独立验收；此前 INTERNAL_ERROR 根因仍未知。
-> 当前口径确认：2026-10-01。**当前状态看"当前进度"一节**；下面的批次记录只代表各自当时的状态。云端回执、本地验证与正式站验收分别记录
+> 状态：官方恢复后已可对话；2026-10-01 直接查询编辑与已发布版本均为 v75，取回该版本源码资源并完成 ZIP CRC 与逐文件哈希校验。本机统一根目录为 `F:\桌面文件\言剪AI归档版`，后续开发、测试、增量包均在其内进行。2026-10-02 已从回传交接文档补齐构建脚本并做语法检查；完整构建复现和线上功能尚未独立验收；此前 INTERNAL_ERROR 根因仍未知。
+> 当前口径确认：2026-10-02。**当前状态看"当前进度"一节**；下面的批次记录只代表各自当时的状态。云端回执、本地验证与正式站验收分别记录
 
 原 Vercel 测试／回退入口（非秒哒）：[言剪 AI](https://yancut-ai-personal.vercel.app) · [登录/注册](https://yancut-ai-personal.vercel.app/login) · [在线帮助](https://yancut-ai-personal.vercel.app/studio/help)。真实账号、Neon 数据库、管理员和积分继续使用；原片保留本机，云端保存轻量工程与素材描述，旧云素材和明确上传的识别音频/作品仍使用私有 Blob。09-25 的工作台更新见[这里](./revisions/2026-09-25-editor-voice-integration.md)及[声音定价更正](./revisions/2026-09-25-voice-pricing-v11.md)，存储方向见[统一入口与本机原片](./revisions/2026-09-25-unified-local-media-workspace.md)。[早先云端上线记录](./revisions/2026-09-25-online-cloud-launch.md) 保留历史，但“所有原片上传云端”不再作为当前口径。旧的免登录/个人 Key 模式也未恢复。
 
@@ -51,17 +51,17 @@
 
 本轮已在故障复盘基础上回收 v75 源码并统一本机归档，不追加应用开发或发布。后续按[秒哒协作方法路径 B](../../domains/development/tools/miaoda/workflow.md)执行。
 
-| 对象 | 当前事实与边界（2026-10-01） |
+| 对象 | 当前事实与边界（2026-10-02） |
 |---|---|
 | 开发执行恢复 | 建委明确表示找官方恢复后已能对话和修改。此前四次不可重试 INTERNAL_ERROR 与恢复后的前端问题分开归因；未取得官方后台根因、恢复操作或资源日志，不能认定某增量包、安全漏洞或备份膨胀导致沙箱失效。 |
 | v71–v73 回执 | 截图报告工具栏、我的空间源码修改及 lint 通过，但建委在 v72 后反馈没有变化；v73 才查明页面加载静态产物，需将 preview/apps/web/src 经构建发布到 public/yancut，并切换根 index.html。这是源码到产物未完成更新的证据，不是附件传错应用的证据。 |
-| v74–v75 回执 | 截图报告 v74 调整空间布局；随后进入工作台失败。v75 将错误归于发布时移走 public/yancut 旧目录，旧页面请求旧 hash chunk 返回 404；报告改 tasks/build-static-preview.sh 为合并发布、保留旧 chunk，并在 main.tsx 加 vite:preloadError 的会话内一次刷新恢复。本轮平台元数据确认编辑与发布均 v75；取回 main.tsx 的 preload 恢复逻辑和根静态入口。缺完整构建脚本，发布响应头、资源保留策略及真实浏览器仍待验收，不能把回执中的“会话内一次”直接当作代码保证。 |
+| v74–v75 回执 | 截图报告 v74 调整空间布局；随后进入工作台失败。v75 将错误归于发布时移走 public/yancut 旧目录，旧页面请求旧 hash chunk 返回 404；报告改 tasks/build-static-preview.sh 为合并发布、保留旧 chunk，并在 main.tsx 加 vite:preloadError 的会话内一次刷新恢复。本轮平台元数据确认编辑与发布均 v75；取回 main.tsx 的 preload 恢复逻辑和根静态入口。10/2 回传已补齐脚本，发布响应头、资源保留策略及真实浏览器仍待验收。实际代码每次 load 清除恢复标记，隔离事件模拟同会话可刷新两次，“会话内一次”不成立，但尚未在线上复现循环。 |
 | 9/29 源码保全与我方验证缺口 | 既有快照已归档；本轮只读复核根 tsconfig.check.json 的 include 为 ./src，不能证明 preview/apps/web/src 工作台通过检查；根 build 脚本仅输出提示，嵌套 web/build 是 Next 构建，均不能替代秒哒 Vite 产物验证。快照没有 tasks/build-static-preview.sh；不视为已经回收 v75 脚本。此前 B11 的整包验证口径需撤回。 |
 | 备份资源线索 | 已核查快照 .release-backups 有 38 个目录、1,856,067,357 字节，25 份 R7 备份重复保存大素材。资源膨胀确实存在，但没有 OOM、磁盘耗尽或官方因果说明。保全后评估容量及保留策略，不能为减体积直接删恢复点。 |
 | B8/v46 回执 | 用户图一报告 16 个目标文件 after hash 匹配、7 个保护文件未变、213 项回归通过、双 Edge Deno 检查/部署及根 lint/静态构建通过，无新迁移。这是秒哒执行回执，不是本轮独立下载云端源码或正式域名验收。 |
 | MCP/服务查询回执 | 报告两套 Edge 均发现 8 个工具；LLM 查询 authenticated，声音查询 inconclusive + task_not_exist；游客普通 401 未被当成辅助会话失效，越权/无效令牌拒绝。排查中手工测试令牌不符合 64 位小写十六进制合同，改用合法测试输入后通过；不能据此改弱鉴权。测试管理员会话报告已撤销。 |
 | v47 热修 | 用户图二报告公开广场 `/api/yancut/gallery?scope=public` 被 Edge 的 `ORIGIN_DENIED` 拦截，原因是原来源集合遗漏预览别名。秒哒修改两套 `server/handler.ts` 的 `isAllowedOrigin` 并部署，报告预览 Origin 返回 200、第三方 Origin 返回 403、根 lint 通过。未取得函数全文；不擅自重建其实现或放行所有平台域名。 |
-| 当前云端差异 | v75 源码资源已取回为新本地工作基线，原 ZIP、展开清单和文件哈希保存在统一根目录；禁止再以旧 B8/B11 整文件覆盖。下一包前查询是否有更新，并补齐仍缺的 tasks/build-static-preview.sh 及实际构建合同；保护认证桥、CORS、依赖与锁文件、静态资源发布和加载恢复逻辑。 |
+| 当前云端差异 | v75 源码资源已取回为新本地工作基线，原 ZIP、展开清单和文件哈希保存在统一根目录；禁止再以旧 B8/B11 整文件覆盖。下一包前查询是否有更新，并核对安装依赖后的持久文件差异、完成真实构建复建；保护认证桥、CORS、依赖与锁文件、静态资源发布和加载恢复逻辑。 |
 | 待验收 | 完整浏览器三身份流程、真实授权素材剪辑导出、长视频/高码率/多轨性能、Windows/Safari、收费识别/声音/生成、公网 Remotion/HyperFrames Worker；B8 的画面批注仅支持定点文字与短素材叠加，不能宣称任意局部重绘。 |
 | 平台边界 | 秒哒对 FFmpeg 的回复已提炼到[当前事实表](../../domains/development/tools/miaoda/facts.md#应用运行时与工具安装边界)和[平台基础](../../domains/development/tools/miaoda/basics/platform-basics.md#引入-ffmpeg浏览器渲染器或-github-项目前怎么选)。应用 Edge、开发工具和外部 Worker 分开，不默认新增收费服务或上传本机原片。 |
 
@@ -81,7 +81,9 @@
 | `管理与交接` | 故障复盘、上下文仓库、整理清单、私有配置和旧对话兼容入口；私有材料不上传上下文仓库。 |
 | `历史恢复包` | R 系列、B1–B11、旧云端导出/故障快照和早期 Vercel 副本的已校验 ZIP，以及完整 Git bundle；只供恢复，不作为下一轮工作树。 |
 
-**版本证据**：应用 `app-enipq7iozwn5` 的编辑与已发布版本均为 v75、版本 ID 均为 `app_version-ermkdabxiw3k`。消息事件 6485 附带源码快照提交 `2ed6b3cdcad90d13f68055cc67beac8cfcd7c26a`。取回源码有 `vite:preloadError` 处理，根入口指向 `index-CHKgsGFL.js` / `editor-commands-C9joZL2R.js` / `index-Bt1p5jRE.css`。**同步边界**：快照没有 `tasks/build-static-preview.sh`；不能宣称完整云端构建环境已同步。平台代理拒绝底层环境核验后未重试绕过，正常取回消息附带资源，没有再次付费导出、改应用或发布。
+**版本证据**：应用 `app-enipq7iozwn5` 的编辑与已发布版本均为 v75、版本 ID 均为 `app_version-ermkdabxiw3k`。消息事件 6485 附带源码快照提交 `2ed6b3cdcad90d13f68055cc67beac8cfcd7c26a`。取回源码有 `vite:preloadError` 处理，根入口指向 `index-CHKgsGFL.js` / `editor-commands-C9joZL2R.js` / `index-Bt1p5jRE.css`。**同步边界**：原快照没有 `tasks/build-static-preview.sh`，10/2 已由用户提供完整文档补回该文件（SHA256 `40e1af910f059dfac0ffae6c5a96af039683496f638b5c6c39153392fc359926`，提取为 UTF-8 LF）；仅 bash -n 通过，未独立构建，不宣称全部环境/功能同步。平台代理拒绝底层环境核验后未重试绕过，正常取回消息附带资源，没有再次付费导出、改应用或发布。
+
+**交接文档复核（2026-10-02）**：已完整查看建委补充长截图。v71/v72 改源码未生效、v73 重建、v75 保留旧 chunk 的时间线支持原修复方向；本次交接请求事件 6496 附带快照提交与原归档相同，文档 package.json、vite.config.ts 和根 HTML 与本地对应内容相同，平台再查编辑/发布仍 v75。两处说明须按代码修正：api-bridge-plugin.ts 定义无 serve 限制的 transform，参与生产构建；main.tsx 每次 load 清除标记，不能保证同一会话只刷新一次。完整插件本地已有，不重复索要。截图与事件 6515 确认“只整理”时实际执行了冻结锁安装；tsc/head 与 install/tail 后取 $? 且没有显式 pipefail、没有完整输出，不能独立证明 tsc 零错误，不据此反向认定一定失败。脚本无备份容量上限；29 份 R7 是文档回执，非本轮实测。原件和纠错在统一根目录“管理与交接”，补全来源在 v75 目录 JSON；下一轮核对真实退出码、依赖差异、新旧页面与生产状态。此前平台执行失败的根因仍未知。
 
 **整理与恢复**：原散落代码的非缓存文件逐项归档并验证 SHA256，再复核源未变化后清理展开副本；旧对话入口仅作 Junction/导航，不保留第二套代码。旧 Git worktree 恢复时使用保留的主仓库/完整 bundle 重建 Git 关联，不盲用压缩包内原机器绝对 `.git` 路径。扫描排除系统缓存、会话数据和其他项目的 ai-context 文档副本；不能从“搜索到言剪字样”推断都是需要移动的应用源码。
 
