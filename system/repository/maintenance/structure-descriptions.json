@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "confirmedDate": "2026-09-28",
   "descriptions": {
+    "work/domains/design/video/promo/case-zaijing-production-planning.md": "再净先锋一分钟横屏创赛片规划、AI与AE分工及素材证明边界",
     "work/projects/yancut-ai/case-b3-loading-hotfixes.md": "言剪 B3 后加载热修复盘",
     "work/projects/yancut-ai/revisions/2026-09-27-b3-editor-runtime-and-rendering.md": "B3编辑器与动画任务交付、实测证据和未完成的生产渲染验证",
     "work/projects/yancut-ai/revisions/2026-09-27-b4-token-localization-and-loading-lessons.md": "B4计费与双语修订，保护云端加载热修并划分验收证据",
