@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "confirmedDate": "2026-09-28",
+  "confirmedDate": "2026-10-02",
   "descriptions": {
     "work/domains/design/video/promo/case-zaijing-production-planning.md": "再净先锋一分钟横屏创赛片规划、AI与AE分工及素材证明边界",
     "work/projects/yancut-ai/case-b3-loading-hotfixes.md": "言剪 B3 后加载热修复盘",
@@ -412,7 +412,12 @@
     "system/repository/maintenance/tests/test_real_tasks.py": "建委真实任务回归：银行课件、培训宣传、培训方案、秒哒支付、宣传片分镜",
     "brain/preferences.md": "建委的做事与表达偏好：实在、清楚、和 AI 怎样协作",
     "work/projects/ai-training": "AI培训项目：各单位培训场次、方案与讲后反馈",
-    "work/projects/ai-training/README.md": "AI培训项目总入口"
+    "work/projects/ai-training/README.md": "AI培训项目总入口",
+    "work/domains/other/commercial/quotations": "报价：按受众和交付范围评估费用",
+    "work/domains/other/commercial/quotations/README.md": "报价入口：方法、个人基准与单次评估",
+    "work/domains/other/commercial/quotations/method.md": "报价方法：范围、受众、返修与价格状态",
+    "work/domains/other/commercial/quotations/price-baselines.md": "建委亲述报价基准及适用边界",
+    "work/domains/other/commercial/quotations/case-shanju-qiuming.md": "山居秋暝课件报价评估，非成交记录"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

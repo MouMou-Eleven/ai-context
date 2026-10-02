@@ -1638,6 +1638,20 @@
           "intents": []
         }
       ]
+    },
+    {
+      "id": "quotations",
+      "label": "设计、视频与教学开发报价",
+      "matchAny": [
+        "报价",
+        "询价",
+        "修改费",
+        "多少钱",
+        "制作费用"
+      ],
+      "entry": "work/domains/other/commercial/quotations/README.md",
+      "priority": 35,
+      "dependencies": []
     }
   ],
   "outputPolicy": {

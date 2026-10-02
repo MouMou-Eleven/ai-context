@@ -23,7 +23,8 @@
 | 写培训方案、课程大纲给主办方 | [对外方案内容设计](experience/external-proposal-design.md)，课题从[常讲课题](../../training/topics.md)选 | 有真实案例：[济南干部培训](../../../projects/ai-training/jinan-cadre-ai/README.md) |
 | 路演、比赛答辩、OPC 等创业赛事、项目申报 | [赛事、路演与融资材料](experience/competition-and-investor-materials.md) + [案例结果叙事](experience/case-result-narrative.md)；视频部分读[创赛宣传片](../../design/video/promo/competition-promo-production.md) | 有方法；建委获得过 OPC 赛道一等奖（见[背书表](../../../../personal/credentials.md)），比赛材料本身尚未作为案例沉淀 |
 | 对外宣传、公开分享、讲座后的转化 | [内容需求与承接](experience/content-demand-and-conversion.md) + [案例结果叙事](experience/case-result-narrative.md) | 有方法 |
-| 谈单沟通、销售话术、报价解释 | 暂无 | 还没有沉淀。第一次有真实谈单经验时，新建 `experience/sales-conversation.md`（放在已有目录里，不另建文件夹），写清对象、对方顾虑、怎么回应、结果 |
+| 设计、视频、教学交互及修改报价 | [报价分类](quotations/README.md) | 已记录建委价格基准与报价流程；估价不等于成交 |
+| 谈单沟通、销售话术 | 暂无 | 还没有沉淀。第一次有真实谈单经验时，新建 `experience/sales-conversation.md`（放在已有目录里，不另建文件夹），写清对象、对方顾虑、怎么回应、结果 |
 | 判断产品、选渠道、找对标、诊断卖不动的原因 | [商业增长闭环](experience/business-growth-loop.md)（完整方法）→ [分析执行卡](experience/business-analysis-cards.md)（做分析时照着填） | 有方法；总原则在[商业判断原则](../../../../brain/business-judgment.md) |
 
 ## 三、对外成品的底线（红线）
@@ -53,7 +54,7 @@
 - 一次对外交付做完：这一单的事实写成案例（`case-*.md`），放在它证明的那个方法文件旁边（`experience/` 里）；能用到别的单子上的做法，改对应方法文件的原文。
 - 新受众、新场景有了第一次真实经验，就填进上面两张表对应的那一行，不另建目录。
 - 新交付格式（比如公益组织版、画册版）有实际需求或建委认可的参考后，写进 [delivery-formats/](delivery-formats/README.md)。
-- 项目事实（价格、客户名、合同金额）留在项目目录，不写进这里。
+- 项目成交事实（客户名、合同金额）留在项目或一次性案例。建委明确要求长期维护的个人报价基准统一放在[报价分类](quotations/README.md)，与方法及单次估价分开，不把建议价记成成交价。
 - 其他按[写入规范](../../../../system/repository/ingestion-workflow.md)。旧规则的变化原因见[修订记录](revisions/README.md)。
 
 <!-- generated-methods:start -->

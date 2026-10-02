@@ -64,6 +64,7 @@
 | 济南市图书馆培训 | [读取](../../../work/projects/ai-training/jinan-city-library/README.md) |
 | 自媒体标题生成、诊断与评审 | [读取](../../../work/domains/self-media/titles/title-matrix/README.md) |
 | AI视频提示词、模板与案例 | [读取](../../../work/domains/design/video/common/seedance/awesome-seedance/README.md) |
+| 设计、视频与教学开发报价 | [读取](../../../work/domains/other/commercial/quotations/README.md) |
 
 ## 常用板块的继续读取条件
 

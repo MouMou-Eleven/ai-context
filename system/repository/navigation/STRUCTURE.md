@@ -356,6 +356,11 @@ ai-context/
 │   │   │   │   │   ├── external-deliverable-language.md  把内部工作说明改为客户或机构可直接使用的成品
 │   │   │   │   │   ├── external-proposal-design.md  对外培训及项目方案的内容筛选和验收
 │   │   │   │   │   └── README.md  内容经营与商业交付经验索引
+│   │   │   │   ├── quotations/  报价：按受众和交付范围评估费用
+│   │   │   │   │   ├── case-shanju-qiuming.md  山居秋暝课件报价评估，非成交记录
+│   │   │   │   │   ├── method.md  报价方法：范围、受众、返修与价格状态
+│   │   │   │   │   ├── price-baselines.md  建委亲述报价基准及适用边界
+│   │   │   │   │   └── README.md  报价入口：方法、个人基准与单次评估
 │   │   │   │   ├── README.md  受众表、场景表、对外红线与写入位置
 │   │   │   │   └── revisions/  商业交付规则修订与真实反馈
 │   │   │   │       ├── 2026-09-17-external-proposal-and-word-format.md  对外方案受众纠错、政企Word格式与反例检查
@@ -1500,4 +1505,4 @@ ai-context/
 
 各入口的分工见[仓库运行](../README.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-09-28*
+*结构最后确认：2026-10-02*
