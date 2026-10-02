@@ -13,7 +13,7 @@
 | 主画面出场太晚、信息停留不足、生成结果偏离 | [prompt-iteration.md](./prompt-iteration.md) | 以失败对照迭代，时间码不是模型执行保证 |
 | 客户已选城市/产业科技风，需要具体动效参考 | [visual-recipes.md](./visual-recipes.md) | 可选配方；不强制所有片型采用 |
 | 找荣誉、数据、卡片镜头的原提示词与项目语境 | [实战记录](case-2026-05-enterprise-prompt-record.md) | 保留原示例，素材与成片验收仍待补 |
-| 一分钟横屏、人机分工、素材证明边界与内部工作台规划 | [再净先锋制作规划](case-zaijing-production-planning.md) | 仅完成规划与素材检查，AI生成、AE合成与成片尚未验收 |
+| 一分钟横屏、人机分工、工作台及AI片头多轮反馈 | [再净先锋制作规划](case-zaijing-production-planning.md) | 含用户生成截图、居中无框叠字与建筑连续性修订；新稿待验证，完整视频与AE合成未验收 |
 | AE 工程、排版、合成，或可编辑参数化动画 | [AE 设计能力入口](../common/ae-production.md) | 按工程交付要求选择工具 |
 | 写 AI 视频提示词（Seedance / 即梦） | [Seedance](../common/seedance/README.md) | 先读建委实战，再按需查第三方模板；平台能力须重新核验 |
 
