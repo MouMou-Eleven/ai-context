@@ -10,13 +10,15 @@
 
 ## 外部源码入口
 
-以下保留自迁移前c28a8e2项目索引，表示已有源码位置记录，本轮未重新验证各源码项目的线上状态或开发进度：
+以下保留自迁移前 c28a8e2 的源码位置记录。2026-10-03 已核对作品集 GitHub 目录及其 README；目录存在不代表已同步当前秒哒版本，线上状态须另验：
 
 | 对象 | 已记录位置 | 继续任务时 |
 |---|---|---|
 | 言剪AI | [MouMou-Eleven/yancut-ai](https://github.com/MouMou-Eleven/yancut-ai) | 先读[上下文项目](./yancut-ai/README.md)，源码以项目当前声明为准 |
 | 混世魔牛游戏 | [ai-programming-development](https://github.com/MouMou-Eleven/ai-programming-development)中的`projects/hunshi-moniu/` | 进入该源码目录README，核对基线、测试与状态 |
-| 杨建委个人网站 | 同一源码仓库中的`projects/jianwei-portfolio/` | 进入该源码目录README，核对基线、测试与状态 |
+| 建委JIANWEI 作品集网站 | [ai-programming-development 中的 projects/jianwei-portfolio/](https://github.com/MouMou-Eleven/ai-programming-development/tree/main/projects/jianwei-portfolio)（历史登记） | 2026-10-03 远端 README 为 JIANWEI Digital Field 数字场景网站，不能认定已同步秒哒 R44；当前本地工作树见下方项目边界 |
+
+**项目边界（红线，建委 2026-10-03 明确纠正）**：建委JIANWEI 作品集网站与言剪AI是两个独立项目。作品集已核实的本地工作树为 `F:/Codex_Workspaces/2026-09-06/c-users-administrator-documents-codex-2026-4/work/r42-app`（非 Git checkout），含 R42/R43 交付记录；已收到 R44 云端差异包，尚未确认为完整同步基线。`F:/桌面文件/言剪AI归档版`、应用 `app-enipq7iozwn5`、v75 和 `MouMou-Eleven/yancut-ai` 均属于言剪AI，不能套用到作品集。即使聊天窗口混入另一项目内容，也应按项目名、源码证据、应用与仓库重新定位，不能跨项目覆盖、制包或推送。`ai-context` 是跨项目上下文仓库，其本机副本存放在言剪目录中，不代表作品集属于言剪。
 
 新项目登记源码位置、公开范围、基线和待确认项；不复制完整工程到上下文仓库。涉及秒哒分包再读[部署方法](../domains/development/tools/miaoda/workflow.md)。
 
