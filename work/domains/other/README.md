@@ -4,7 +4,7 @@
 
 | 入口 | 职责 |
 |---|---|
-| [跨行业商业方法](./commercial/README.md) | 内容经营、商业交付、提案及内外部稿件边界 |
+| [跨行业商业方法](./commercial/README.md) | 跨领域报价、正式文书、商业计划、商业判断及内外稿边界；不收拢行业SOP |
 | [Skill库](./skills/README.md) | 能力说明、自研／第三方来源、版本与执行入口；跨领域按需调用 |
 
 具体事情统一进入[项目与案例](../../projects/README.md)，包括跨媒介文化产品。六十甲子的唯一事实入口是[项目](../../projects/ai-sixty-jiazi-music-ip/README.md)，相关设计、开发与商业方法分别引用。

@@ -62,6 +62,10 @@
 
 一件事常常两样都有。比如一次培训复盘，场次事实写进 `work/projects/ai-training/<场次>/`，能复用的做法写进 `training/experience/`，两边互相链接，不要复制正文。
 
+### 先按业务确定归属（默认）
+
+用“这是什么业务、什么交付物”决定主目录，再按受众和商务环节链接通用标准。精品课拆页、合并与客户确认仍是设计方法；培训接洽、选题、给主办方写大纲和备课仍是培训流程。预算压力是此次合并的触发原因，不是把页面设计归入商业化的理由。只有跨领域复用的报价口径、合同或正式文书标准、商业计划及对外表达等才归商业化。一个方法维护一处，父目录解释范围并链接子类，不把正文到处复制。
+
 ### 新的工作怎么沉淀
 
 不管是新项目、新设计单、新视频、新开发还是新一场培训，都按同一个办法拆成三样，分开放：
@@ -78,7 +82,7 @@
 | 视频单（宣传片、微课、故事片、漫剧） | 案例里 | `design/video/<片型>/` | 片型方法；提示词经验改 `design/video/common/seedance/` |
 | 用秒哒开发 | 长期的建项目；一次性的写进案例 | 项目目录，或 `development/tools/miaoda/topics/` | 秒哒特有的改 `tools/miaoda/`；所有 AI 编程都成立的改 `development/experience/` |
 | 用其他工具开发 | 同上 | 项目目录 | `development/experience/`，工具特有的改 `tools/<工具>/`（新工具要先问建委） |
-| 一场培训 | `projects/ai-training/<场次>/README.md`，并在 [sessions-index.md](../../work/projects/ai-training/sessions-index.md) 登记 | 同一个 README 里写讲后反馈 | 课件做法改 `training/experience/`；方案写法改 `other/commercial/experience/`；新课题补 `training/topics.md` |
+| 一场培训 | `projects/ai-training/<场次>/README.md`，并在 [sessions-index.md](../../work/projects/ai-training/sessions-index.md) 登记 | 同一个 README 里写讲后反馈 | 接洽、方案、大纲、课件与授课SOP均改 `training/experience/`；跨领域文书、报价、表达标准引用 `other/commercial/`；新课题补 `training/topics.md` |
 | 一篇文章、一条宣传 | 不单独记，除非建委要求 | 不建 | 写法改 `self-media/` 对应类别；建委认可的口语原文补 `voice-samples.md` |
 | 一份商业方案、比赛申报 | 案例里 | `other/commercial/` 下对应方法旁边 | `other/commercial/experience/` |
 | 长期项目的一次推进 | 项目 README 的"当前事实" | 不建案例 | 能用到别处的做法照上面各行写进领域 |

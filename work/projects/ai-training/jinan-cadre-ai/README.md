@@ -9,7 +9,7 @@
 - [培训方案正文](proposal.md)：对外方案的当前文字版本，与本轮交付Word正文一致；Word沿用政企居中题头样式。
 - [修订记录](revisions/README.md)：最新以2026-09-18用户明确调整为准。
 - [培训组织方法](../../../domains/training/experience/demo-driven-course-design.md)：全景认知到真实任务的组织方法及内部备课检查。
-- [对外方案写法](../../../domains/other/commercial/experience/external-proposal-design.md)：正文受众、内容取舍及格式入口。
+- [对外方案写法](../../../domains/training/experience/external-proposal-design.md)：正文受众、内容取舍及格式入口。
 
 实操采用“工具全景—提示词与任务表达—具体工作场景”。方案先列工具类别、用途和组合逻辑，不列产品品牌；国内工具要求继续有效。文本、视频、设计、编程、搜索、知识库、浏览器、3D建模为用户点名类别；音频与多模态、智能办公、智能体与自动化用于补充本次场景所需能力。
 

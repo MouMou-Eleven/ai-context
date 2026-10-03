@@ -1,6 +1,6 @@
 # 商业文件交付格式
 
-先判断用途，再选格式。内容边界由[对外方案](../experience/external-proposal-design.md)与[内外稿规则](../experience/external-deliverable-language.md)负责；本目录只维护版式，不复制教学方法或项目事实。
+先判断业务与文书用途，再选通用格式。培训方案内容回[培训领域](../../../training/experience/external-proposal-design.md)，其他业务回对应领域；本目录只维护可跨领域引用的版式标准与参考。通用表达读[内外稿规则](../experience/external-deliverable-language.md)。
 
 | 格式 | 适用场景 | 不直接套用 |
 |---|---|---|

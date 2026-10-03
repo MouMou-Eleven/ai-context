@@ -5,6 +5,7 @@
 | 内容 | 文件或目录 | 适用场景 |
 |---|---|---|
 | 建委想要的课件是什么样（红线、默认、可灵活） | [`jianwei-training-style.md`](./jianwei-training-style.md) | 写、改、审任何培训课件前必读 |
+| 培训方案与课程大纲 | [external-proposal-design.md](external-proposal-design.md) | 培训接洽后向主办方说明对象、内容与收获；通用格式按需引用 |
 | 通用备课与课件设计 | [`teaching-and-course-design.md`](./teaching-and-course-design.md) | 课程目标、受众、结构和讲师/学员边界 |
 | 工具全景、场景应用与演示驱动 | [`demo-driven-course-design.md`](./demo-driven-course-design.md) | 跨岗位应用入门课由全景到任务、技术概念课、现场演示与复盘 |
 | 实操教程写法 | [`tutorial-writing.md`](./tutorial-writing.md) | 给学员或普通用户写可跟做、可验收的教程 |

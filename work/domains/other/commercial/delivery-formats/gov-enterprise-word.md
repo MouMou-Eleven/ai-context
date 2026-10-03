@@ -29,4 +29,4 @@
 
 对实际DOCX检查Title段落居中及外链情况；渲染全部页面，与原参考比较题头、正文密度、中文字体、章节编号和留白。检查孤行、溢出、跨页表格、页码、异常空白和最后一页。自动检查只覆盖部分结构，颜色、字号、阅读效果仍需看图。
 
-内容检查回[对外方案设计](../experience/external-proposal-design.md)。格式符合不能弥补受众错位；内容正确也不能替代用户选定排版。
+内容检查回所属业务：培训方案读[培训方案设计](../../../training/experience/external-proposal-design.md)，其他方案读[通用内外稿边界](../experience/external-deliverable-language.md)和对应领域方法。格式符合不能弥补受众错位；内容正确也不能替代用户选定排版。

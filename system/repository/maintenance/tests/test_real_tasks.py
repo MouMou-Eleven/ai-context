@@ -35,7 +35,7 @@ class RealTasks(unittest.TestCase):
     def test_training_proposal_is_creation_and_reads_proposal_method(self):
         result = router.resolve('给济南某企业出一份AI培训方案', 'auto')
         self.assertEqual(result['intent'], 'create')
-        self.assertIn(CM + 'experience/external-proposal-design.md', result['read'])
+        self.assertIn(TR + 'experience/external-proposal-design.md', result['read'])
         self.assertIn(CM + 'experience/external-deliverable-language.md', result['read'])
         self.assertIn(TR + 'topics.md', result['read'])
 

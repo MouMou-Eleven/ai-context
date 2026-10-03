@@ -16,7 +16,7 @@
 | 想让 AI 做 | 指给它看 |
 |---|---|
 | 写培训课件 | `work/domains/training/`（风格在 `experience/jianwei-training-style.md`） |
-| 写培训方案、课程大纲 | `work/domains/training/topics.md` ＋ `work/domains/other/commercial/experience/external-proposal-design.md` |
+| 写培训方案、课程大纲 | `work/domains/training/topics.md` ＋ `work/domains/training/experience/external-proposal-design.md` |
 | 查某一场培训 | `work/projects/ai-training/`（济南干部培训、济南市图书馆） |
 | 写得像建委说话 | `system/expression/voice-samples.md` |
 | 写公众号、宣传、朋友圈 | `work/domains/self-media/` |

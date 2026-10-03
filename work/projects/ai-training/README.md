@@ -2,8 +2,8 @@
 
 建委到企业、机关、图书馆、夜校讲 AI 课的长期业务。每家单位或每一场培训是本目录下的一个子目录。
 
-**本目录放什么**：各场次的事实（主办方、受众、方案、授课状态、讲后反馈），以及只适用于培训业务本身的经验（商务对接、定价、场次安排）。
-**不放什么**：课件怎么写、课怎么讲的通用方法，那些在[培训方法](../../domains/training/experience/README.md)；方案怎么写给主办方看，在[商业化](../../domains/other/commercial/README.md)。AI 培训和[会员社群](../paid-community-course/README.md)是两回事。
+**本目录放什么**：各场次的事实（主办方、受众、需求对接、方案、实际报价、场次安排、授课状态、讲后反馈）。
+**不放什么**：可复用的培训接洽、大纲、课件和讲法，统一在[培训与教学](../../domains/training/README.md)维护；给主办方的方案写法见[培训方案与大纲设计](../../domains/training/experience/external-proposal-design.md)。AI 培训和[会员社群](../paid-community-course/README.md)是两回事。
 
 ## 各场次
 
@@ -19,12 +19,12 @@
 建委说"这是培训的经验，沉淀到培训板块"时，AI 自己拆成三样：
 
 1. **这一场的事实**：新建或更新 `<单位英文短名>/README.md`（主办方、日期、受众、时长、课题、资料链接、授课状态、讲后反馈，不知道的写"待确认"），并在上表和[场次索引](sessions-index.md)各加一行。
-2. **下次还能用的做法**：课件和讲法改[培训方法](../../domains/training/experience/README.md)对应文件；方案写法改[商业化](../../domains/other/commercial/README.md)对应文件。在场次 README 里链接过去，不复制正文。
-3. **只适用于培训业务本身的经验**：写在下面一节。
+2. **下次还能用的做法**：课件和讲法改[培训方法](../../domains/training/experience/README.md)对应文件；方案写法改[培训方案与大纲设计](../../domains/training/experience/external-proposal-design.md)。培训专属接洽与交付流程也回培训领域，在场次 README 里链接过去，不复制正文。
+3. **证明方法的案例**：按仓库沉淀流程写在对应方法旁，场次事实仍留在本项目；跨行业报价规则引用[报价方法](../../domains/other/commercial/quotations/method.md)。
 
-## 培训业务本身的经验
+## 培训业务的方法入口
 
-当前还没有只适用于培训业务的通用经验（比如商务对接、定价、场次安排），遇到了写在这里。
+接洽、选题、大纲确认、课程开发与授课复盘的总流程见[培训与教学](../../domains/training/README.md)。2026-10-03 按建委确认的业务归属调整：本项目维护场次事实，培训领域维护复用方法，商业化维护跨行业标准。
 
 <!-- generated-related-assets:start -->
 <!-- generated-related-assets:end -->

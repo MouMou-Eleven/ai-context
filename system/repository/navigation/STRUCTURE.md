@@ -39,13 +39,15 @@ ai-context/
 │   │   │   │   │   ├── premium-course/  教师委托精品课的模板课件、素材、交互及验收经验
 │   │   │   │   │   │   ├── animation-and-geometry.md  按问答安排揭示，联合检查旋转中心、路径尺寸和箭头接合
 │   │   │   │   │   │   ├── case-angle-revisited.md  《角的再认识》数学精品课商单案例
+│   │   │   │   │   │   ├── case-famous-painting-page-merge.md  一幅名扬中外的画从30页合为27页，按同页容量与课堂顺序判断
+│   │   │   │   │   │   ├── case-shanju-qiuming.md  山居秋暝课件报价评估，非成交记录
 │   │   │   │   │   │   ├── README.md  按制作任务进入精品课方法与真实案例
 │   │   │   │   │   │   ├── recording-guide.md  把最终稿段映射为准确点击口令、翻页和网页媒体操作
 │   │   │   │   │   │   ├── revisions/  对照客户修改前后画面，记录布局判断及可观察的检查标准
 │   │   │   │   │   │   │   ├── 2026-09-26-animation-recording-and-arrow-axis.md  记录动画录制补全与箭头轴线返修，明确历史阶段和冻结范围
 │   │   │   │   │   │   │   └── 2026-09-26-layout-and-arrow-review.md  用户前后对照推动的留白对齐、保护页与箭头接缝修订
 │   │   │   │   │   │   ├── visual-design.md  按内容匹配图框与留白，检查透明素材并组织收尾页层级
-│   │   │   │   │   │   └── workflow.md  文稿比对、拆页、排版、AI素材、箭头动画和交付检查
+│   │   │   │   │   │   └── workflow.md  文稿核对、拆页与真实合并、页数确认、模板设计、动画及合成交接
 │   │   │   │   │   └── README.md  PPT 设计经验与项目入口
 │   │   │   │   └── README.md  平面与演示
 │   │   │   ├── README.md  设计制作入口，项目与案例来自统一登记
@@ -354,14 +356,12 @@ ai-context/
 │   │   │   │   │   ├── competition-and-investor-materials.md  为赛事、路演与融资材料核对受众和披露边界
 │   │   │   │   │   ├── content-demand-and-conversion.md  从内容反馈识别需求并衔接商业服务
 │   │   │   │   │   ├── external-deliverable-language.md  把内部工作说明改为客户或机构可直接使用的成品
-│   │   │   │   │   ├── external-proposal-design.md  对外培训及项目方案的内容筛选和验收
 │   │   │   │   │   └── README.md  内容经营与商业交付经验索引
 │   │   │   │   ├── quotations/  报价：按受众和交付范围评估费用
-│   │   │   │   │   ├── case-shanju-qiuming.md  山居秋暝课件报价评估，非成交记录
 │   │   │   │   │   ├── method.md  报价方法：范围、受众、返修与价格状态
 │   │   │   │   │   ├── price-baselines.md  建委亲述报价基准及适用边界
 │   │   │   │   │   └── README.md  报价入口：方法、个人基准与单次评估
-│   │   │   │   ├── README.md  受众表、场景表、对外红线与写入位置
+│   │   │   │   ├── README.md  跨行业报价、文书格式、对外表达与商业判断标准，具体业务流程回领域
 │   │   │   │   └── revisions/  商业交付规则修订与真实反馈
 │   │   │   │       ├── 2026-09-17-external-proposal-and-word-format.md  对外方案受众纠错、政企Word格式与反例检查
 │   │   │   │       └── README.md  商业交付修订索引
@@ -1238,6 +1238,7 @@ ai-context/
 │   │       ├── attribution-and-updates.md  判定课程或文章归属，并同步入口和修订记录
 │   │       ├── experience/  培训经验
 │   │       │   ├── demo-driven-course-design.md  演示驱动课程设计
+│   │       │   ├── external-proposal-design.md  培训方案与课程大纲的受众、内容筛选、语言及验收
 │   │       │   ├── jianwei-training-style.md  建委默认培训风格与课件形态
 │   │       │   ├── README.md  经验索引
 │   │       │   ├── sources.md  核对教学方法的来源、课程身份与验证范围
@@ -1247,7 +1248,7 @@ ai-context/
 │   │       │   │   └── README.md  方法索引
 │   │       │   ├── tutorial-writing.md  学员教程写法
 │   │       │   └── visual-and-oral-training-docs.md  飞书培训文档的可视化与口语化
-│   │       ├── README.md  AI 培训总入口
+│   │       ├── README.md  培训接洽、选题、大纲确认、课程开发与授课复盘的总入口
 │   │       └── topics.md  建委常讲的培训课题库与往期大纲，写大纲和方案前先读
 │   ├── projects/  项目与案例：这件事具体怎样了
 │   │   ├── ai-sixty-jiazi-music-ip/  三级目录：AI 六十甲子古音律与 IP 孵化
@@ -1287,7 +1288,7 @@ ai-context/
 │   │   │   │       ├── 2026-08-19-lesson-4-student-material-boundary.md  追溯“第 4 课学员正文边界修订”的调整原因与适用范围
 │   │   │   │       ├── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md  追溯“秒哒进阶课：把版本更新改造成使用场景链路”的调整原因与适用范围
 │   │   │   │       └── README.md  图书馆培训修订索引
-│   │   │   ├── README.md  AI培训项目总入口
+│   │   │   ├── README.md  各单位AI培训场次事实与归属，复用方法引用培训领域
 │   │   │   └── sessions-index.md  资料入口，避免复制项目资料
 │   │   ├── archive/  查已退出当前主线的项目，避免把旧状态当现状
 │   │   │   ├── openclaw-agent/  追溯已归档AI Agent项目的资料和决策
@@ -1505,4 +1506,4 @@ ai-context/
 
 各入口的分工见[仓库运行](../README.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-10-02*
+*结构最后确认：2026-10-04*

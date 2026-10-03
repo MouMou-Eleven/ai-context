@@ -116,6 +116,16 @@
   ],
   "overlays": [
     {
+      "id": "quotation-standards",
+      "whenAny": ["报价", "询价", "修改费", "制作费用"],
+      "excludeAny": ["只查", "查询位置", "不涉及报价", "不做报价"],
+      "intents": ["create", "write"],
+      "paths": [
+        "work/domains/other/commercial/quotations/method.md",
+        "work/domains/other/commercial/quotations/price-baselines.md"
+      ]
+    },
+    {
       "id": "expression",
       "whenAny": [
         "课件",
@@ -1962,11 +1972,10 @@
     },
     {
       "id": "external-proposal-design",
-      "label": "对外方案内容设计",
+      "label": "培训方案与课程大纲",
       "status": "active",
-      "path": "work/domains/other/commercial/experience/external-proposal-design.md",
+      "path": "work/domains/training/experience/external-proposal-design.md",
       "selectedAny": [
-        "commercial",
         "training",
         "external-training",
         "community",
@@ -1976,12 +1985,10 @@
       "whenAny": [
         "培训方案",
         "课程纲要",
-        "对外方案",
-        "项目方案",
+        "课程大纲",
         "培训提案",
-        "给甲方",
-        "给客户",
-        "组织方"
+        "授课方案",
+        "讲座方案"
       ],
       "excludeAny": [
         "内部备课",
@@ -1996,13 +2003,12 @@
         "create",
         "write"
       ],
-      "useWhen": "向政府、企业或组织方提交培训、课程纲要与项目方案时",
+      "useWhen": "培训业务需要向主办方提交方案、课程大纲与培训提案时",
       "notFor": "课堂课件、讲师备课、教程、研究报告和合同不按方案删去其必要信息",
       "acceptance": "逐段确认内容、场景和价值；移出提示词、操作路径、内部分工、核验过程与免责话语；检查实际DOCX和来源留存",
       "evidence": "work/domains/other/commercial/revisions/2026-09-17-external-proposal-and-word-format.md",
-      "confirmedAt": "2026-09-17",
+      "confirmedAt": "2026-10-03",
       "entryPoints": [
-        "work/domains/other/commercial/README.md",
         "work/domains/training/README.md"
       ],
       "source": "建委2026-09-17对济南干部AI培训方案及四张截图的明确纠正"
@@ -2801,7 +2807,7 @@
       ],
       "paths": [
         "work/domains/training/topics.md",
-        "work/domains/other/commercial/experience/external-proposal-design.md",
+        "work/domains/training/experience/external-proposal-design.md",
         "work/domains/other/commercial/experience/external-deliverable-language.md",
         "work/projects/ai-training/sessions-index.md"
       ],

@@ -34,7 +34,7 @@ AI本轮核验参考：[Ollama官方FAQ](https://github.com/ollama/ollama/blob/m
 ## 通用化结论
 
 1. **修订已有通用规则**：更新[演示驱动课程设计](../../../../domains/training/experience/demo-driven-course-design.md)第四节，在跨岗位应用入门课采用“全景帮助选择—任务表达—场景展示成果”；不把此顺序强加给单工具进阶课。
-2. **修订已有通用规则**：更新[对外方案设计](../../../../domains/other/commercial/experience/external-proposal-design.md)，将“说明提示词教学主题”与“附上提示词操作脚本”分开；用工作任务、成果和收获表达场景，不以品牌数量代替内容。
+2. **修订已有通用规则**：更新[对外方案设计](../../../../domains/training/experience/external-proposal-design.md)，将“说明提示词教学主题”与“附上提示词操作脚本”分开；用工作任务、成果和收获表达场景，不以品牌数量代替内容。
 3. **仅保留项目证据**：本次11类整理、六个场景、人员和时长不是所有AI培训的固定模板，也不登记成已授课成果。
 4. **尚待实测**：具体工具效果、自动化可用性、工作台开发结果和提示词优化收益。
 

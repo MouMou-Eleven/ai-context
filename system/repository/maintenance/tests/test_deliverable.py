@@ -14,12 +14,27 @@ router = load_module('context-route')
 
 
 class DeliverableChecks(unittest.TestCase):
+    def test_domain_sops_keep_ownership_when_using_commercial_standards(self):
+        proposal = 'work/domains/training/experience/external-proposal-design.md'
+        training = router.resolve('写AI培训方案给组织方，Word格式', 'create')
+        self.assertEqual(training['selectedCandidate'], 'training')
+        self.assertIn(proposal, training['read'])
+        generic = router.resolve('写一份商业计划书给投资人', 'create')
+        self.assertNotIn(proposal, generic['read'])
+        course = router.resolve('按客户预算调整精品课报价并合并PPT页数', 'create')
+        self.assertEqual(course['selectedCandidate'], 'microcourse')
+        self.assertIn('work/domains/design/graphic/ppt/premium-course/workflow.md', course['read'])
+        self.assertIn('work/domains/other/commercial/quotations/method.md', course['read'])
+        self.assertIn('work/domains/other/commercial/quotations/price-baselines.md', course['read'])
+        plain = router.resolve('精品课PPT页数合并，不涉及报价', 'create')
+        self.assertNotIn('work/domains/other/commercial/quotations/price-baselines.md', plain['read'])
+
     def test_cadre_training_keeps_project_and_practical_method(self):
         result = router.resolve('修改济南市总工会AI培训方案，实操先工具全景后场景', 'create')
         self.assertEqual(result['selectedCandidate'], 'external-training')
         self.assertIn('work/projects/ai-training/jinan-cadre-ai/README.md', result['read'])
         self.assertIn('work/domains/training/experience/demo-driven-course-design.md', result['read'])
-        self.assertIn('work/domains/other/commercial/experience/external-proposal-design.md',result['read'])
+        self.assertIn('work/domains/training/experience/external-proposal-design.md',result['read'])
         self.assertEqual(checker.inspect('提示词设计与任务表达：讲解提示词构成、优化工具与效果比较。', 'external-proposal'), [])
         result = router.resolve('只查济南市总工会培训方案位置', 'read')
         self.assertIn('work/projects/ai-training/jinan-cadre-ai/README.md', result['read'])
@@ -64,11 +79,11 @@ class DeliverableChecks(unittest.TestCase):
 
     def test_proposal_routes_include_audience_and_format_methods(self):
         result = router.resolve('写AI培训方案给组织方，Word格式', 'create')
-        for name in ['experience/external-proposal-design.md', 'delivery-formats/gov-enterprise-word.md']:
-            self.assertIn('work/domains/other/commercial/'+name, result['read'])
+        for name in ['work/domains/training/experience/external-proposal-design.md', 'work/domains/other/commercial/delivery-formats/gov-enterprise-word.md']:
+            self.assertIn(name, result['read'])
         for task in ['给讲师写内部备课稿', '写内部培训方案', '只查培训方案位置']:
             result = router.resolve(task, 'read' if task.startswith('只查') else 'create')
-            self.assertNotIn('work/domains/other/commercial/experience/external-proposal-design.md',result['read'])
+            self.assertNotIn('work/domains/training/experience/external-proposal-design.md',result['read'])
 
     def test_original_failure_excerpt_is_detected(self):
         # Actual headings/callout fragments from the 2026-09-13 draft; no model facts.

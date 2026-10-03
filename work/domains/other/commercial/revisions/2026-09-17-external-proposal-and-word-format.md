@@ -13,7 +13,7 @@
 | 原状或失误 | 本次修正 |
 |---|---|
 | 用是否含“客户版”等词代替受众判断 | [内外稿边界](../experience/external-deliverable-language.md)增加对外方案用途判断，要求按段审读 |
-| 真实严谨被写成正文中的核验过程 | [对外方案设计](../experience/external-proposal-design.md)规定对外保留课程主题、场景和收获，依据留内部 |
+| 真实严谨被写成正文中的核验过程 | [对外方案设计](../../../training/experience/external-proposal-design.md)规定对外保留课程主题、场景和收获，依据留内部 |
 | 培训方案自动继承课堂主文档或教案形态 | 培训入口增加方案路由，先区分对外方案、学员课件、讲师备课稿 |
 | 首稿左对齐标题与表格堆叠 | [政企Word格式](../delivery-formats/gov-enterprise-word.md)保存居中题头、正式段落及参考图 |
 | 检查器未覆盖对外方案和实际Word | 增加external-proposal模式、DOCX正文及页眉页脚抽取、网址/外链提示、可选Title居中检查及行为回归 |

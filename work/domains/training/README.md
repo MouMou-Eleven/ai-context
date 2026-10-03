@@ -1,6 +1,6 @@
 # 培训与教学
 
-建委作为讲师给别人上课的经验：备课、写课件、讲课、复盘。包括会员社群的课、企业和机关培训、图书馆和夜校的课。
+建委作为讲师的业务流程：需求接洽、课题选择、方案大纲、课程开发、授课和复盘。包括会员社群的课、企业和机关培训、图书馆和夜校的课。
 
 教师委托建委**制作**的微课、MG 动画、精品课 PPT 不算这里，属于[设计：教育作品](../design/video/education/README.md)。
 
@@ -8,7 +8,7 @@
 
 | 你要做的 | 给谁看 | 先读 | 再读 |
 |---|---|---|---|
-| **培训方案 / 课程大纲**（报给主办方的） | 主办方、领导 | [常讲课题](./topics.md) → [对外方案写法](../other/commercial/experience/external-proposal-design.md) | 需要 Word 时读[政企 Word 排版](../other/commercial/delivery-formats/gov-enterprise-word.md) |
+| **培训方案 / 课程大纲**（报给主办方的） | 主办方、领导 | [常讲课题](./topics.md) → [对外方案写法](experience/external-proposal-design.md) | 需要 Word 时读[政企 Word 排版](../other/commercial/delivery-formats/gov-enterprise-word.md) |
 | **课件 / 分享资料 / 课堂文档**（上课用的） | 学员 | [建委的培训风格](./experience/jianwei-training-style.md) + [口语样稿](../../../system/expression/voice-samples.md) | [课程怎么组织](./experience/demo-driven-course-design.md)；飞书课件再读[可视化与口语化](./experience/visual-and-oral-training-docs.md) |
 | **实操教程**（学员跟着做的） | 学员 | [教程写法](./experience/tutorial-writing.md) | 当前工具的实际界面 |
 | **讲技术概念**（API、CLI、Skill 这类） | 学员 | [从问题推导概念](./experience/technical-explanation/problem-driven-technical-explanation.md) | — |
@@ -17,6 +17,20 @@
 | **讲后复盘、沉淀经验** | 以后的 AI | 本页"怎样沉淀" | — |
 
 同一个主题可能要出好几样东西，比如一场培训要方案、课件、朋友圈宣传。每样东西分开按上表选，事实只取一处。
+
+## 从接洽到交付的SOP（默认）
+
+来源：建委2026-10-03明确描述的业务顺序；具体项目是否已确认回项目记录核对。
+
+| 环节 | 要完成的判断与产物 | 下一步依据 |
+|---|---|---|
+| 需求接洽 | 核对学员岗位、水平、要解决的工作问题、人数、授课形式、时长与已有材料 | 从[常讲课题](topics.md)和真实场次找适配内容，不虚构培训能力 |
+| 选择方向 | 在视频、编程、智能体、办公、教育等实际适配方向中确定主题、对象与预期收获 | 客户需求与已核实的可授内容 |
+| 方案与大纲 | 按[培训方案写法](experience/external-proposal-design.md)写主题、模块、场景、时长和收获；Word引用通用格式，正文不变成讲师操作稿 | 交给主办方确认范围；当前会话已明确确认的不重复索要确认 |
+| 课程开发 | 按确认的半天、一天、两天等实际时长组织内容，结合真实场次和资料设计演示、练习与课件 | [课程组织](experience/demo-driven-course-design.md)和[培训风格](experience/jianwei-training-style.md) |
+| 授课与复盘 | 检查成品、工具及现场条件，按实际反馈改课；事实写对应场次，方法改本领域原文 | 不把备课检查通过写成授课效果已验证 |
+
+报价或合同需要时引用商业化的通用标准，不把整套培训流程迁入商业化。资料分成主办方方案、学员课件和讲师备课稿，分别按用途交付。
 
 ## 最容易犯的三个错
 
@@ -59,6 +73,6 @@
 | 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
 |---|---|---|---|
 | 非技术读者需要理解概念、机制或技术差别，不能只背定义时；主题可以来自提示，也可以来自AI读到的材料 | [从问题推导概念](experience/technical-explanation/problem-driven-technical-explanation.md) | 纯查询、术语速查、直接操作、已接受稿逐字保护时不展开推导；出版只借解释逻辑，保留出版书面语与编辑规则 | 读者能说出原问题、关键变化及使用判断；不虚构历史发展、事实或作者经历，不混入讲师指令 |
-| 向政府、企业或组织方提交培训、课程纲要与项目方案时 | [对外方案内容设计](../other/commercial/experience/external-proposal-design.md) | 课堂课件、讲师备课、教程、研究报告和合同不按方案删去其必要信息 | 逐段确认内容、场景和价值；移出提示词、操作路径、内部分工、核验过程与免责话语；检查实际DOCX和来源留存 |
+| 培训业务需要向主办方提交方案、课程大纲与培训提案时 | [培训方案与课程大纲](experience/external-proposal-design.md) | 课堂课件、讲师备课、教程、研究报告和合同不按方案删去其必要信息 | 逐段确认内容、场景和价值；移出提示词、操作路径、内部分工、核验过程与免责话语；检查实际DOCX和来源留存 |
 | 面向跨岗位学员设计AI工具全景与工作场景实操课程时 | [工具全景到工作场景](experience/demo-driven-course-design.md) | 单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本 | 类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对 |
 <!-- generated-methods:end -->

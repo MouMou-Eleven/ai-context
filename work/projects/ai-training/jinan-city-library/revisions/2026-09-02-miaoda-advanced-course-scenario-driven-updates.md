@@ -1,7 +1,7 @@
 # 秒哒进阶课：把版本更新改造成使用场景链路
 
 > 归属确认（2026-09-16）：建委在本轮对话明确确认为济南市图书馆培训。此前2026-09-12因缺少证据暂存待归属区；现按本人确认归位，原反馈日期不改写为授课日期。
-> 当前身份与资料状态见[资料索引](../../../../projects/ai-training/jinan-city-library/README.md)；本次未重新回读飞书，原revision与核验日期保留。
+> 当前身份与资料状态见[资料索引](../README.md)；本次未重新回读飞书，原revision与核验日期保留。
 
 > 日期：2026-09-02
 > 关联正文：[秒哒进阶课｜基础功能之外，还有这些能力值得掌握](https://hv21wf9uao9.feishu.cn/wiki/Ar0ewFGOvizurKkYA8PcYPsynXN?from=from_copylink)
