@@ -9,6 +9,7 @@
 - **贴地气、能实操，不要假大空。** 哪怕讲理论，也要连到对方的实际工作，能演示就演示。纯理论、空口无凭、堆概念的东西建委不要。（课件落地见[培训风格](../work/domains/training/experience/jianwei-training-style.md)；对外方案落地见[对外方案写法](../work/domains/training/experience/external-proposal-design.md)）
 - **说人话。** 建委偏好口语化表达，但这里的口语化是他自己的说话方式，不是加语气词。看[口语样稿](../system/expression/voice-samples.md)。
 - **难懂的东西要可视化。** 晦涩的概念用图、演示、画面帮助理解，不要通篇纯文字。
+- **表现形式要有内容依据（默认）。** 视觉元素应服务当前主题，能解释为什么出现；参考只借适用的优点，不能照搬与本项目无关的装饰。追求冲击力也要有内容逻辑，不能靠无关元素填满画面。（建委2026-10-04创赛画面反馈；执行方法见[创赛制作](../work/domains/design/video/promo/competition-promo-production.md)。）
 
 ## 结构要清楚
 
