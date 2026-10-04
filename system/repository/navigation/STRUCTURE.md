@@ -259,6 +259,7 @@ ai-context/
 │   │   │       │   └── showcase-guidelines.md  展示微课案例时检查受众、措辞和成果表达
 │   │   │       ├── promo/  查企业与创赛宣传片的分镜、素材和交付经验
 │   │   │       │   ├── case-2026-05-enterprise-prompt-record.md  企业宣传片提示词实战记录
+│   │   │       │   ├── case-juhe-title-workbench.md  聚禾为宝：标题片头与正文分段、麦穗丛穿梭及动态落版修订
 │   │   │       │   ├── case-zaijing-production-planning.md  再净先锋一分钟横屏创赛片规划、AI与AE分工及素材证明边界
 │   │   │       │   ├── competition-promo-production.md  创赛文稿拆镜、AI与AE模板分工、定格叠字、参考图动态化与迭代验收
 │   │   │       │   ├── prompt-iteration.md  调整企业片的镜头节奏并记录提示词迭代
