@@ -5,7 +5,7 @@
 | 问题 | 专题 |
 |---|---|
 | 大文件上传、小程序上传 | [uploads.md](./uploads.md)；决策流程见 [large-video-upload.md](./large-video-upload.md) |
-| 登录、验证码、手机号身份 | [authentication.md](./authentication.md) |
+| 登录、验证码、手机号身份、会话刷新锁竞争 | [authentication.md](./authentication.md)；[十一创R9锁竞争复盘](./case-shiyichuang-r9-auth-lock.md) |
 | 支付、签名、回调、退款 | [payment.md](./payment.md)；完整案例 [YunGouOS JSAPI](payment-case-yungouos-jsapi.md) |
 | 云端或真机报错、日志面板、排错 | [runtime-diagnostics.md](./runtime-diagnostics.md) |
 | 数据存哪里、首轮形态、localStorage 迁数据库 | [backend-storage.md](./backend-storage.md) |
