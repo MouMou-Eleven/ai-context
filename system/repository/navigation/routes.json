@@ -5,6 +5,11 @@
     "trainingTaskWhenAny": [
       "分享资料",
       "分享内容",
+      "演讲",
+      "对外分享",
+      "外出分享",
+      "主题分享",
+      "分享稿",
       "讲课文档",
       "课",
       "培训",
@@ -995,6 +1000,11 @@
       "matchAny": [
         "分享资料",
         "分享内容",
+        "演讲",
+        "对外分享",
+        "外出分享",
+        "主题分享",
+        "分享稿",
         "讲课文档",
         "培训",
         "授课",
@@ -1745,6 +1755,24 @@
     }
   ],
   "methodRules": [
+    {
+      "id": "question-meaning-example-sharing",
+      "label": "演讲分享：问题—含义—现实事例",
+      "status": "active",
+      "path": "work/domains/training/experience/demo-driven-course-design.md",
+      "selectedAny": ["training", "community", "external-training", "jinan-library", "bug-lesson"],
+      "whenAny": ["演讲", "对外分享", "外出分享", "主题分享", "分享稿", "分享内容", "分享资料"],
+      "excludeAny": ["逐字保留", "不要改写", "只接受修订", "主持串词", "礼仪致辞", "实操教程", "商业路演", "直播销售"],
+      "intents": ["create", "write"],
+      "useWhen": "准备演讲或对外分享时主动读取课程组织中的三层结构，评估是否适合围绕真实问题讲清观点、现实意义与事例；读取不等于强制采用",
+      "notFor": "实操步骤、礼仪串词、纯查询与逐字保护不套用；商业路演与销售由原领域主导；缺乏适配问题或事例时换结构",
+      "acceptance": "问题得到回答，含义具体且与听众有关，事例支持同一判断并核验来源；假设示例不冒充实绩，同一段不拼接多套主线；交付说明采用或跳过理由",
+      "evidence": "work/domains/training/experience/demo-driven-course-design.md",
+      "confirmedAt": "2026-10-06",
+      "entryPoints": ["work/domains/training/README.md", "work/domains/training/experience/README.md"],
+      "readWith": ["system/expression/voice-samples.md"],
+      "source": "建委2026-10-06明确认可并要求按主题灵活调用；原材料作者与链接未提供，尚无真实演讲效果验证"
+    },
     {
       "id": "interactive-video-production-workbench",
       "label": "微课交互式制作工作台",

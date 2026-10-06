@@ -16,6 +16,7 @@
 
 | 任务 | 必读 |
 |---|---|
+| 准备演讲 / 对外分享 / 外出分享 / 主题分享 / 分享稿 | [培训入口](work/domains/training/README.md) + [课程组织中的演讲与分享方法](work/domains/training/experience/demo-driven-course-design.md#演讲与对外分享问题含义现实事例可灵活) + [口语样稿](system/expression/voice-samples.md)；主动评估三层结构，不要求点名、不强制采用，商业路演与销售仍由对应领域主导 |
 | 写培训**课件** / 分享资料 / 课堂文档 | [培训入口](work/domains/training/README.md) → [培训风格](work/domains/training/experience/jianwei-training-style.md) + [口语样稿](system/expression/voice-samples.md) + [课程组织](work/domains/training/experience/demo-driven-course-design.md)；飞书课件加读[可视化与口语化](work/domains/training/experience/visual-and-oral-training-docs.md) |
 | 写培训**方案 / 大纲**（给主办方） | [常讲课题](work/domains/training/topics.md) + [对外方案写法](work/domains/training/experience/external-proposal-design.md) + [内外稿边界](work/domains/other/commercial/experience/external-deliverable-language.md)；要 Word 加读[政企 Word 排版](work/domains/other/commercial/delivery-formats/gov-enterprise-word.md) |
 | 写实操教程 | [教程写法](work/domains/training/experience/tutorial-writing.md) |

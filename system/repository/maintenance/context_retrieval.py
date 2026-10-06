@@ -17,6 +17,8 @@ def infer_intent(task):
         return 'create'
     if re.search(r'(?:使用|调用|用).{0,8}(?:awesome-seedance|seedance提示词库|视频提示词库)', task, re.I):
         return 'create'
+    if re.search(r'准备.{0,20}(?:演讲|对外分享|外出分享|主题分享|分享稿|分享内容)|(?:演讲|对外分享|外出分享|主题分享).{0,20}准备.{0,8}(?:内容|稿|资料)', task):
+        return 'create'
     if re.search(r'写|改|制作|生成|开发|搭建|实现|修复|优化|审核|审查|备课|出一份|出个|出一版|拟一份|策划|设计一|做.{0,24}(稿|文|资料|方案|页面|程序|脚本|课|视频|短片|工具|分镜|提示词|海报|PPT|大纲|网站|应用|小程序)', task, re.I):
         return 'create'
     return 'read'

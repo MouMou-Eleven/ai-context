@@ -25,6 +25,26 @@ def method_ids(result):
 
 
 class MethodRouting(unittest.TestCase):
+    def test_sharing_structure_is_discovered_without_naming_it(self):
+        for task in ['我要外出演讲，帮我准备演讲内容',
+                     '我要外出分享，帮我准备内容',
+                     '写一份面向办公人员的AI主题分享稿']:
+            with self.subTest(task=task):
+                result = router.resolve(task, 'auto')
+                self.assertEqual(result['selectedCandidate'], 'training')
+                self.assertIn('question-meaning-example-sharing', method_ids(result))
+                self.assertIn('system/expression/voice-samples.md', result['read'])
+
+    def test_sharing_structure_respects_purpose_and_exact_text(self):
+        for task in ['演讲稿逐字保留，只改错字', '写演讲活动主持串词',
+                     '对外分享的实操教程，写清操作步骤',
+                     '写公众号文章', '商业路演PPT', '直播销售会员课程']:
+            with self.subTest(task=task):
+                self.assertNotIn('question-meaning-example-sharing',
+                                 method_ids(router.resolve(task, 'create')))
+        self.assertNotIn('question-meaning-example-sharing',
+                         method_ids(router.resolve('查询演讲资料位置', 'read')))
+
     def test_premium_course_topics_and_recording_do_not_inherit_training(self):
         base = 'work/domains/design/graphic/ppt/premium-course/'
         for task, topic in [

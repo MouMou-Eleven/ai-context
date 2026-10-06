@@ -8,6 +8,7 @@
 
 | 你要做的 | 给谁看 | 先读 | 再读 |
 |---|---|---|---|
+| **演讲 / 对外分享 / 外出分享 / 主题分享 / 分享稿** | 现场听众 | [演讲与分享的可选三层结构](experience/demo-driven-course-design.md#演讲与对外分享问题含义现实事例可灵活) + [口语样稿](../../../system/expression/voice-samples.md) | 主动判断是否适配主题，不强制套用；实操、商业路演与销售采用各自方法，演讲不自动生成课堂练习 |
 | **培训方案 / 课程大纲**（报给主办方的） | 主办方、领导 | [常讲课题](./topics.md) → [对外方案写法](experience/external-proposal-design.md) | 需要 Word 时读[政企 Word 排版](../other/commercial/delivery-formats/gov-enterprise-word.md) |
 | **课件 / 分享资料 / 课堂文档**（上课用的） | 学员 | [建委的培训风格](./experience/jianwei-training-style.md) + [口语样稿](../../../system/expression/voice-samples.md) | [课程怎么组织](./experience/demo-driven-course-design.md)；飞书课件再读[可视化与口语化](./experience/visual-and-oral-training-docs.md) |
 | **实操教程**（学员跟着做的） | 学员 | [教程写法](./experience/tutorial-writing.md) | 当前工具的实际界面 |
@@ -72,6 +73,7 @@
 
 | 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
 |---|---|---|---|
+| 准备演讲或对外分享时主动读取课程组织中的三层结构，评估是否适合围绕真实问题讲清观点、现实意义与事例；读取不等于强制采用 | [演讲分享：问题—含义—现实事例](experience/demo-driven-course-design.md) | 实操步骤、礼仪串词、纯查询与逐字保护不套用；商业路演与销售由原领域主导；缺乏适配问题或事例时换结构 | 问题得到回答，含义具体且与听众有关，事例支持同一判断并核验来源；假设示例不冒充实绩，同一段不拼接多套主线；交付说明采用或跳过理由 |
 | 非技术读者需要理解概念、机制或技术差别，不能只背定义时；主题可以来自提示，也可以来自AI读到的材料 | [从问题推导概念](experience/technical-explanation/problem-driven-technical-explanation.md) | 纯查询、术语速查、直接操作、已接受稿逐字保护时不展开推导；出版只借解释逻辑，保留出版书面语与编辑规则 | 读者能说出原问题、关键变化及使用判断；不虚构历史发展、事实或作者经历，不混入讲师指令 |
 | 培训业务需要向主办方提交方案、课程大纲与培训提案时 | [培训方案与课程大纲](experience/external-proposal-design.md) | 课堂课件、讲师备课、教程、研究报告和合同不按方案删去其必要信息 | 逐段确认内容、场景和价值；移出提示词、操作路径、内部分工、核验过程与免责话语；检查实际DOCX和来源留存 |
 | 面向跨岗位学员设计AI工具全景与工作场景实操课程时 | [工具全景到工作场景](experience/demo-driven-course-design.md) | 单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本 | 类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对 |
