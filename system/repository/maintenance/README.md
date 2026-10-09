@@ -35,7 +35,8 @@ python -B -m unittest discover -s system/repository/maintenance/tests -v
 | [validate-context.py](./validate-context.py) | 校验必需入口、旧路径、Markdown链接、最近README索引、路由路径、Skill来源与能力、敏感线索、重复内容及全部生成漂移 |
 | [validation-policy.json](./validation-policy.json) | 四主目录、必需入口、关键发现链接及废弃路径检查 |
 | [context_common.py](./context_common.py) | 实际文件清单、Markdown链接、快照边界与脚本加载的共用实现 |
-| [pre-commit.py](./pre-commit.py) | 导出 Git 暂存区到临时目录，在同一快照内运行校验与回归，不修改实际索引 |
+| [content-guards.py](./content-guards.py) | 内容规则检查（由校验调用）：领域方法里的本机路径、过长的大脑条目和入口表单元格、跨文件高度相似的规则段落；规则的家见[写入规范](../ingestion-workflow.md#一条规则只有一个家红线) |
+| [pre-commit.py](./pre-commit.py) | 先确认本地没有落后 GitHub（落后就拒绝提交，防止在旧副本上按旧规则写），再导出 Git 暂存区到临时目录，在同一快照内运行校验与回归，不修改实际索引 |
 | [desktop-sync.py](./desktop-sync.py) | Windows桌面镜像，仅复制已存在的仓库HTML并核对hash；其他平台或桌面不可用时不阻断 |
 | [validate-context.ps1](./validate-context.ps1) | Windows旧命令的只读兼容入口 |
 | [invoke-python.ps1](./invoke-python.ps1) | Windows兼容入口共用的Python版本与可执行性探测，跳过空别名 |

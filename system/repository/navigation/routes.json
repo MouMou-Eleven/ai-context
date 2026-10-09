@@ -35,7 +35,13 @@
       "幻灯片美化",
       "首页定调",
       "双图参考",
-      "设计图还原"
+      "设计图还原",
+      "路演",
+      "答辩",
+      "讲师介绍",
+      "个人简介",
+      "自我介绍",
+      "个人介绍"
     ],
     "trainingRouteIds": [
       "bug-lesson",
@@ -119,7 +125,10 @@
       "教会员",
       "教大家"
     ],
-    "courseNumberPattern": "第\\s*[0-9零〇一二两三四五六七八九十百千]+\\s*(?:课|节)"
+    "courseNumberPattern": "第\\s*[0-9零〇一二两三四五六七八九十百千]+\\s*(?:课|节)",
+    "trainingTaskExcludePatterns": [
+      "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计"
+    ]
   },
   "readFirst": [
     "AGENTS.md",
@@ -128,9 +137,22 @@
   "overlays": [
     {
       "id": "quotation-standards",
-      "whenAny": ["报价", "询价", "修改费", "制作费用"],
-      "excludeAny": ["只查", "查询位置", "不涉及报价", "不做报价"],
-      "intents": ["create", "write"],
+      "whenAny": [
+        "报价",
+        "询价",
+        "修改费",
+        "制作费用"
+      ],
+      "excludeAny": [
+        "只查",
+        "查询位置",
+        "不涉及报价",
+        "不做报价"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
       "paths": [
         "work/domains/other/commercial/quotations/method.md",
         "work/domains/other/commercial/quotations/price-baselines.md"
@@ -275,6 +297,58 @@
       "paths": [
         "system/environment/image-generation.md"
       ]
+    },
+    {
+      "id": "tutorial-genre",
+      "whenAny": [
+        "教程",
+        "保姆级",
+        "操作手册",
+        "手把手",
+        "跟着做",
+        "实操指南"
+      ],
+      "excludeAny": [
+        "查看",
+        "查询",
+        "是谁",
+        "什么",
+        "哪些",
+        "有没有",
+        "能不能"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/training/experience/tutorial-writing.md"
+      ]
+    },
+    {
+      "id": "article-genre",
+      "whenAny": [
+        "公众号",
+        "文章",
+        "长文"
+      ],
+      "excludeAny": [
+        "查看",
+        "查询",
+        "是谁",
+        "什么",
+        "哪些",
+        "有没有",
+        "能不能",
+        "书稿"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/self-media/articles/README.md"
+      ]
     }
   ],
   "routes": [
@@ -308,12 +382,26 @@
         "个人简介",
         "个人背书",
         "荣誉",
-        "能力结构"
+        "能力结构",
+        "个人介绍",
+        "自我介绍",
+        "讲师介绍"
       ],
       "excludeAny": [],
       "entry": "personal/README.md",
       "priority": 50,
-      "dependencies": []
+      "dependencies": [
+        {
+          "path": "brain/preferences.md",
+          "whenAny": [
+            "个人简介",
+            "个人介绍",
+            "自我介绍",
+            "讲师介绍"
+          ],
+          "intents": []
+        }
+      ]
     },
     {
       "id": "cognition",
@@ -370,7 +458,10 @@
       "excludeAny": [],
       "entry": "work/domains/design/graphic/ppt/README.md",
       "priority": 50,
-      "dependencies": []
+      "dependencies": [],
+      "matchPatterns": [
+        "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计"
+      ]
     },
     {
       "id": "poster",
@@ -532,7 +623,9 @@
         "MG动画",
         "MG 动画",
         "视频制作",
-        "动画制作"
+        "动画制作",
+        "参赛视频",
+        "比赛视频"
       ],
       "excludeAny": [],
       "entry": "work/domains/design/video/README.md",
@@ -596,7 +689,14 @@
       "excludeAny": [
         "微课",
         "教师委托",
-        "参赛课"
+        "参赛课",
+        "路演稿",
+        "路演演讲",
+        "路演PPT",
+        "答辩",
+        "演讲稿",
+        "申报书",
+        "计划书"
       ],
       "entry": "work/domains/design/video/promo/competition-promo-production.md",
       "priority": 86,
@@ -1037,7 +1137,14 @@
         "教会员",
         "教大家"
       ],
-      "excludeAny": [],
+      "excludeAny": [
+        "路演",
+        "答辩",
+        "讲师介绍",
+        "个人简介",
+        "自我介绍",
+        "个人介绍"
+      ],
       "entry": "work/domains/training/README.md",
       "priority": 40,
       "dependencies": [
@@ -1129,6 +1236,9 @@
             "write"
           ]
         }
+      ],
+      "excludePatterns": [
+        "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计"
       ]
     },
     {
@@ -1151,7 +1261,13 @@
         "与会员课程无关",
         "非会员课程",
         "不是社群",
-        "不属于社群"
+        "不属于社群",
+        "路演",
+        "答辩",
+        "讲师介绍",
+        "个人简介",
+        "自我介绍",
+        "个人介绍"
       ],
       "entry": "work/projects/paid-community-course/README.md",
       "priority": 80,
@@ -1193,6 +1309,9 @@
           ],
           "intents": []
         }
+      ],
+      "excludePatterns": [
+        "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计"
       ]
     },
     {
@@ -1210,7 +1329,14 @@
         "济南干部培训",
         "济南市领导干部"
       ],
-      "excludeAny": [],
+      "excludeAny": [
+        "路演",
+        "答辩",
+        "讲师介绍",
+        "个人简介",
+        "自我介绍",
+        "个人介绍"
+      ],
       "entry": "work/projects/ai-training/sessions-index.md",
       "priority": 85,
       "dependencies": [
@@ -1233,6 +1359,9 @@
           ],
           "intents": []
         }
+      ],
+      "excludePatterns": [
+        "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计"
       ]
     },
     {
@@ -1244,7 +1373,14 @@
         "Bug修复课",
         "Bug 修复课"
       ],
-      "excludeAny": [],
+      "excludeAny": [
+        "路演",
+        "答辩",
+        "讲师介绍",
+        "个人简介",
+        "自我介绍",
+        "个人介绍"
+      ],
       "entry": "work/projects/ai-training/jinan-city-library/bug-repair/README.md",
       "priority": 100,
       "dependencies": [
@@ -1258,6 +1394,9 @@
           "whenAny": [],
           "intents": []
         }
+      ],
+      "excludePatterns": [
+        "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计"
       ]
     },
     {
@@ -1510,7 +1649,9 @@
         "公益组织",
         "政府方案",
         "企业方案",
-        "对外合作"
+        "对外合作",
+        "路演稿",
+        "答辩"
       ],
       "excludeAny": [
         "纯教学",
@@ -1602,7 +1743,14 @@
         "济南市图书馆",
         "济南图书馆"
       ],
-      "excludeAny": [],
+      "excludeAny": [
+        "路演",
+        "答辩",
+        "讲师介绍",
+        "个人简介",
+        "自我介绍",
+        "个人介绍"
+      ],
       "entry": "work/projects/ai-training/jinan-city-library/README.md",
       "priority": 95,
       "dependencies": [
@@ -1611,6 +1759,9 @@
           "whenAny": [],
           "intents": []
         }
+      ],
+      "excludePatterns": [
+        "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计"
       ]
     },
     {
@@ -1724,6 +1875,9 @@
       "paths": [
         "system/expression/voice-samples.md",
         "system/expression/README.md"
+      ],
+      "excludePatterns": [
+        "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计"
       ]
     },
     {
@@ -1780,17 +1934,49 @@
       "label": "演讲分享：问题—含义—现实事例",
       "status": "active",
       "path": "work/domains/training/experience/demo-driven-course-design.md",
-      "selectedAny": ["training", "community", "external-training", "jinan-library", "bug-lesson"],
-      "whenAny": ["演讲", "对外分享", "外出分享", "主题分享", "分享稿", "分享内容", "分享资料"],
-      "excludeAny": ["逐字保留", "不要改写", "只接受修订", "主持串词", "礼仪致辞", "实操教程", "商业路演", "直播销售"],
-      "intents": ["create", "write"],
+      "selectedAny": [
+        "training",
+        "community",
+        "external-training",
+        "jinan-library",
+        "bug-lesson"
+      ],
+      "whenAny": [
+        "演讲",
+        "对外分享",
+        "外出分享",
+        "主题分享",
+        "分享稿",
+        "分享内容",
+        "分享资料"
+      ],
+      "excludeAny": [
+        "逐字保留",
+        "不要改写",
+        "只接受修订",
+        "主持串词",
+        "礼仪致辞",
+        "实操教程",
+        "路演",
+        "直播销售",
+        "答辩"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
       "useWhen": "准备演讲或对外分享时主动读取课程组织中的三层结构，评估是否适合围绕真实问题讲清观点、现实意义与事例；读取不等于强制采用",
       "notFor": "实操步骤、礼仪串词、纯查询与逐字保护不套用；商业路演与销售由原领域主导；缺乏适配问题或事例时换结构",
       "acceptance": "问题得到回答，含义具体且与听众有关，事例支持同一判断并核验来源；假设示例不冒充实绩，同一段不拼接多套主线；交付说明采用或跳过理由",
       "evidence": "work/domains/training/experience/demo-driven-course-design.md",
       "confirmedAt": "2026-10-06",
-      "entryPoints": ["work/domains/training/README.md", "work/domains/training/experience/README.md"],
-      "readWith": ["system/expression/voice-samples.md"],
+      "entryPoints": [
+        "work/domains/training/README.md",
+        "work/domains/training/experience/README.md"
+      ],
+      "readWith": [
+        "system/expression/voice-samples.md"
+      ],
       "source": "建委2026-10-06明确认可并要求按主题灵活调用；原材料作者与链接未提供，尚无真实演讲效果验证"
     },
     {
@@ -2703,7 +2889,10 @@
         "双图参考",
         "不是精品课"
       ],
-      "intents": ["create", "write"],
+      "intents": [
+        "create",
+        "write"
+      ],
       "useWhen": "有指定模板、字号或真人录制合成约束的精品课制作与返修，不因参赛或教师委托自动采用",
       "notFor": "普通商务汇报与自由风格路演；不套用个案费用、字号和人物区域",
       "acceptance": "保护最新用户改稿，按任务检查图文适配、箭头轴线与旋转、准确点击句及媒体返回；冻结HTML时不自动同步",
@@ -2784,7 +2973,10 @@
         "录课课件",
         "精品课制作"
       ],
-      "intents": ["create", "write"],
+      "intents": [
+        "create",
+        "write"
+      ],
       "useWhen": "无强制模板的PPT制作、美化、首页定调、双图逐页设计及参考图重建可编辑成品",
       "notFor": "指定模板/录课合成由精品课主导；旧26页与国风样式不是通用限制，已确认稿从当前阶段接续",
       "acceptance": "内容图文稿先过关；风格图与内容图分工；完整素材用生图重建不裁碎；原生文字可编辑；静态、动画、播放分别验收",
@@ -2830,6 +3022,9 @@
             "work/domains/design/graphic/ppt/ai-assisted-design/prompt-playbook.md"
           ]
         }
+      ],
+      "whenPatterns": [
+        "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计"
       ]
     }
   ],
@@ -2894,6 +3089,9 @@
             "work/domains/training/experience/technical-explanation/problem-driven-technical-explanation.md"
           ]
         }
+      ],
+      "excludePatterns": [
+        "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计"
       ]
     },
     {

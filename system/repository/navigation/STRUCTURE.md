@@ -14,6 +14,8 @@ ai-context/
 ├── personal/  个人信息与事实
 │   ├── business-overview.md  快速了解业务方向及有实践证据的能力概要
 │   ├── credentials.md  查找已确认的获奖、荣誉及成果依据
+│   ├── evidence/  背书表引用的证书、聘书等原件照片
+│   │   └── miaoda-ai-gold-lecturer-2026-05.jpg  百度秒哒 AI 金牌讲师荣誉证书照片（2026年5月签发）
 │   ├── profile.md  了解建委的身份、背景和长期工作方向
 │   ├── README.md  个人信息总窗口、索引、写入准则
 │   └── timeline.md  按时间查看成长经历与重要阶段变化
@@ -1426,6 +1428,7 @@ ai-context/
 │       ├── maintenance/  维护工具
 │       │   ├── .gitignore  资料与资源
 │       │   ├── check-deliverable.py  外部交付物的规则信号检查脚本
+│       │   ├── content-guards.py  提交前拦截本机路径进方法、大脑条目过长、入口表过长、同一规则写在两处
 │       │   ├── context-route.py  跨平台维护或执行脚本
 │       │   ├── context_common.py  跨平台维护或执行脚本
 │       │   ├── context_retrieval.py  任务识别、实时正文检索与完整来源包
@@ -1451,6 +1454,7 @@ ai-context/
 │       │   │   ├── README.md  维护回归测试
 │       │   │   ├── test_context.py  跨平台维护或执行脚本
 │       │   │   ├── test_deliverable.py  跨平台维护或执行脚本
+│       │   │   ├── test_guards.py  内容规则检查回归：确认违规内容真的会被拦下，当前仓库全部通过
 │       │   │   ├── test_methods.py  跨领域方法发现、误触发与登记维护回归
 │       │   │   ├── test_real_tasks.py  建委真实任务回归：银行课件、培训宣传、培训方案、秒哒支付、宣传片分镜
 │       │   │   ├── test_retrieval.py  自然任务检索与读取证据回归

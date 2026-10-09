@@ -425,7 +425,11 @@
     "work/domains/design/graphic/ppt/ai-assisted-design/README.md": "按当前阶段发现自由视觉PPT流程，区分精品课并规定维护边界",
     "work/domains/design/graphic/ppt/ai-assisted-design/workflow.md": "内容图文稿、报价确认、风格设计、分层重建与终审的阶段闸门",
     "work/domains/design/graphic/ppt/ai-assisted-design/layout-and-pagination.md": "按任务拆页并用网格、层级、语义断行和实际渲染检查版式",
-    "work/domains/design/graphic/ppt/ai-assisted-design/prompt-playbook.md": "按实际首页和当前页构思提示词，指导生成、重建与定点返修"
+    "work/domains/design/graphic/ppt/ai-assisted-design/prompt-playbook.md": "按实际首页和当前页构思提示词，指导生成、重建与定点返修",
+    "personal/evidence": "背书表引用的证书、聘书等原件照片",
+    "personal/evidence/miaoda-ai-gold-lecturer-2026-05.jpg": "百度秒哒 AI 金牌讲师荣誉证书照片（2026年5月签发）",
+    "system/repository/maintenance/content-guards.py": "提交前拦截本机路径进方法、大脑条目过长、入口表过长、同一规则写在两处",
+    "system/repository/maintenance/tests/test_guards.py": "内容规则检查回归：确认违规内容真的会被拦下，当前仓库全部通过"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

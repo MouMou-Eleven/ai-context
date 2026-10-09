@@ -14,9 +14,27 @@ def route_matches(task, route):
     return ((bool(route.get('matchAny')) and matches(task, route['matchAny']))
             or any(re.search(pattern, task, re.I) for pattern in route.get('matchPatterns', [])))
 
+def pattern_hit(task, patterns):
+    return any(re.search(pattern, task, re.I) for pattern in patterns or [])
+
+
+def excluded(task, item):
+    """Words and combination patterns (e.g. 课件 + 美化) can both veto an item."""
+    return bool((item.get('excludeAny') and matches(task, item['excludeAny']))
+                or pattern_hit(task, item.get('excludePatterns')))
+
+
+def wanted(task, item):
+    if item.get('whenPatterns') and pattern_hit(task, item['whenPatterns']):
+        return True
+    if item.get('whenPatterns') and not item.get('whenAny'):
+        return False
+    return matches(task, item.get('whenAny', []))
+
+
 def permitted(task, item, intent, produces_chinese=True, writes_repository=False):
-    return (matches(task, item.get('whenAny', []))
-            and not (item.get('excludeAny') and matches(task, item['excludeAny']))
+    return (wanted(task, item)
+            and not excluded(task, item)
             and (not item.get('intents') or intent in item['intents'])
             and (not item.get('requiresChinese') or produces_chinese)
             and (not item.get('requiresWrite') or writes_repository))
@@ -41,8 +59,7 @@ def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_r
         produces_chinese = catalog.get('outputPolicy', {}).get('defaultProducesChinese', True)
     if writes_repository is None:
         writes_repository = intent == 'write'
-    candidates = [r for r in catalog['routes'] if route_matches(task, r)
-                  and not (r.get('excludeAny') and matches(task, r['excludeAny']))]
+    candidates = [r for r in catalog['routes'] if route_matches(task, r) and not excluded(task, r)]
     candidates.sort(key=lambda r: -r['priority'])
     selected = candidates[0] if candidates else None
     scope_entry = None
@@ -61,7 +78,8 @@ def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_r
     policy = catalog.get('selectionPolicy', {})
     training_ids = set(policy.get('trainingRouteIds', []))
     teaching = (matches(task, policy.get('trainingTaskWhenAny', []))
-                and not matches(task, policy.get('trainingTaskExcludeAny', [])))
+                and not matches(task, policy.get('trainingTaskExcludeAny', []))
+                and not pattern_hit(task, policy.get('trainingTaskExcludePatterns')))
     # A course can be the subject of a poster or post without being the requested deliverable.
     output_is_channel_content = (bool(policy.get('channelDeliverableWhenAny'))
                                  and matches(task, policy['channelDeliverableWhenAny']))

@@ -8,7 +8,7 @@
 
 | 你要做的 | 给谁看 | 先读 | 再读 |
 |---|---|---|---|
-| **演讲 / 对外分享 / 外出分享 / 主题分享 / 分享稿** | 现场听众 | [演讲与分享的可选三层结构](experience/demo-driven-course-design.md#演讲与对外分享问题含义现实事例可灵活) + [口语样稿](../../../system/expression/voice-samples.md) | 主动判断是否适配主题，不强制套用；实操、商业路演与销售采用各自方法，演讲不自动生成课堂练习 |
+| **演讲 / 对外分享 / 外出分享 / 主题分享 / 分享稿** | 现场听众 | [演讲与分享的可选三层结构](experience/demo-driven-course-design.md#演讲与对外分享问题含义现实事例可灵活) + [口语样稿](../../../system/expression/voice-samples.md) | 台下是听众、没有评委；有评委提问的路演和答辩走[商业化](../other/commercial/README.md)。主动判断三层结构是否适配主题，不强制套用，演讲不自动生成课堂练习 |
 | **培训方案 / 课程大纲**（报给主办方的） | 主办方、领导 | [常讲课题](./topics.md) → [对外方案写法](experience/external-proposal-design.md) | 需要 Word 时读[政企 Word 排版](../other/commercial/delivery-formats/gov-enterprise-word.md) |
 | **课件 / 分享资料 / 课堂文档**（上课用的） | 学员 | [建委的培训风格](./experience/jianwei-training-style.md) + [口语样稿](../../../system/expression/voice-samples.md) | [课程怎么组织](./experience/demo-driven-course-design.md)；飞书课件再读[可视化与口语化](./experience/visual-and-oral-training-docs.md) |
 | **实操教程**（学员跟着做的） | 学员 | [教程写法](./experience/tutorial-writing.md) | 当前工具的实际界面 |

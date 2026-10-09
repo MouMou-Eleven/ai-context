@@ -63,10 +63,46 @@ class RealTasks(unittest.TestCase):
         self.assertIn(CM + 'README.md', self.reads('和企业客户谈单的沟通话术'))
         self.assertIn(CM + 'README.md', self.reads('给公益组织写一份AI培训方案'))
 
-    def test_brain_auto_distill_rule_is_in_every_entry(self):
-        for rel in ['AGENTS.md', 'brain/README.md', 'system/repository/ingestion-workflow.md']:
-            self.assertIn('建委大脑自动提炼' if rel != 'brain/README.md' else '这里的内容怎么来',
-                          (ROOT / rel).read_text(encoding='utf-8'), rel)
+    def test_brain_auto_distill_rule_has_one_home(self):
+        home = (ROOT / 'system/repository/ingestion-workflow.md').read_text(encoding='utf-8')
+        self.assertIn('### 建委大脑自动提炼', home)
+        for rel in ['AGENTS.md', 'brain/README.md']:
+            text = (ROOT / rel).read_text(encoding='utf-8')
+            self.assertIn('ingestion-workflow.md#建委大脑自动提炼', text, rel)
+            self.assertNotIn('先查重，已有就不写', text, rel)
+
+    def test_courseware_beautify_is_ppt_design_not_training(self):
+        for task in ['给这份课件做美化', '这份培训课件的排版重新设计一下', '幻灯片美化']:
+            result = router.resolve(task, 'create')
+            self.assertEqual(result['selectedCandidate'], 'ppt', task)
+            self.assertIn('work/domains/design/graphic/ppt/ai-assisted-design/workflow.md', result['read'], task)
+            self.assertNotIn(TR + 'experience/jianwei-training-style.md', result['read'], task)
+        self.assertEqual(router.resolve('帮我写一份给银行员工的AI办公培训课件', 'create')['selectedCandidate'], 'training')
+
+    def test_roadshow_is_commercial_and_speech_is_training(self):
+        for task in ['写一份创赛路演演讲稿', '准备项目答辩的路演稿']:
+            result = router.resolve(task, 'create')
+            self.assertEqual(result['selectedCandidate'], 'commercial', task)
+            self.assertIn(CM + 'experience/competition-and-investor-materials.md', result['read'], task)
+            self.assertNotIn('question-meaning-example-sharing', [m['id'] for m in result['methods']], task)
+        speech = router.resolve('准备一场关于AI的主题演讲', 'create')
+        self.assertEqual(speech['selectedCandidate'], 'training')
+        self.assertIn('question-meaning-example-sharing', [m['id'] for m in speech['methods']])
+
+    def test_generic_contest_video_is_not_chuangsai(self):
+        self.assertNotEqual(router.resolve('做一个比赛宣传片', 'create')['selectedCandidate'], 'competition-video')
+        self.assertEqual(router.resolve('做一个AI大赛的参赛视频', 'create')['selectedCandidate'], 'video')
+        self.assertEqual(router.resolve('做一个创赛宣传片', 'create')['selectedCandidate'], 'competition-video')
+
+    def test_lecturer_intro_is_personal_not_training(self):
+        for task in ['写一份讲师介绍', '写个人简介']:
+            result = router.resolve(task, 'create')
+            self.assertEqual(result['selectedCandidate'], 'personal', task)
+            self.assertIn('brain/preferences.md', result['read'], task)
+
+    def test_tutorial_and_article_genres_load_writing_methods_for_any_topic(self):
+        self.assertIn(TR + 'experience/tutorial-writing.md', self.reads('把PPT设计流程写成保姆级教程'))
+        self.assertIn('work/domains/self-media/articles/README.md', router.resolve('写一篇公众号文章介绍我的AI做PPT方法', 'create')['read'])
 
     def test_expression_source_anchors_resolve(self):
         text = (ROOT / 'system/expression/corrections.md').read_text(encoding='utf-8')

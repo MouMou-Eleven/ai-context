@@ -41,7 +41,7 @@
 
 ## 本机已安装版本的能力核查（2026-09-25）
 
-来源：完整读取本机 `C:/Users/Administrator/.openclaw-autoclaw/skills/miaoda-app-builder/SKILL.md`，检查 `scripts/miaoda_api.py` 的命令注册、请求构造、事件解析及 `--help`，并通过官方 CLI 只读获取言剪事件 1708–1710。没有发送修改指令、查询业务数据库或发布。以下只描述这份已安装实现，不推断平台内部没有其他能力，也不代表未来版本不支持。
+来源：完整读取本机 OpenClaw 已安装的 `miaoda-app-builder/SKILL.md`，检查 `scripts/miaoda_api.py` 的命令注册、请求构造、事件解析及 `--help`，并通过官方 CLI 只读获取言剪事件 1708–1710。没有发送修改指令、查询业务数据库或发布。以下只描述这份已安装实现，不推断平台内部没有其他能力，也不代表未来版本不支持。
 
 固定核查版本：SKILL.md SHA-256 `22b0ec486f13890c8f0ca43b4166cb882a7ea82fb4467fab4ed0a7b8a7b86772`；miaoda_api.py SHA-256 `0908c74fa747a7d5119021b67e8be0b13101c6952fc236d9587205fd9cbcb281`。更新 Skill 后重新核查，不沿用旧矩阵。
 

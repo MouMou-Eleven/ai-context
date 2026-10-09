@@ -16,6 +16,6 @@
 
 本会话此前的石墨烯润滑剂创赛视频，建委亲述原单1000元/分钟，作为历史个案保留，不能覆盖当前常用创赛AE档位。AI提出过的修改费没有被用户确认，不记成成交价。
 
-《山居秋暝》建议金额只在[本次评估](../../../design/graphic/ppt/ai-assisted-design/case-shanju-qiuming.md)记录，不新增“希沃统一价格”。旧《角的再认识》的40元/页等仅属该单，见[精品课方法](../../../design/graphic/ppt/premium-course/workflow.md)。
+《山居秋暝》建议金额只在[本次评估](../../../design/graphic/ppt/ai-assisted-design/case-shanju-qiuming.md)记录，不新增“希沃统一价格”。旧《角的再认识》的40元/页等仅属该单，见[《角的再认识》案例](../../../design/graphic/ppt/premium-course/case-angle-revisited.md)。
 
 后续只在用户确认改价或出现已确认成交时更新，保留日期与适用条件。企业／政府与教师个人要分别估价；目前没有已确认的统一倍数。

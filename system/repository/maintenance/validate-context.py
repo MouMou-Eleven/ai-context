@@ -343,6 +343,10 @@ def validate(root=ROOT):
         errors.extend(checker(root, files))
     errors.extend(check_skills(root))
     errors.extend(check_registries(root))
+    try:
+        errors.extend(load_module('content-guards', root).check(root, files))
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        errors.append(f'Cannot run content guards: {exc}')
     secret_errors, duplicate_warnings = check_sensitive_and_duplicates(root, files)
     errors.extend(secret_errors)
     warnings.extend(duplicate_warnings)
