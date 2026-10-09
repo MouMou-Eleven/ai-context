@@ -4,6 +4,6 @@
 
 1. 先读[报价方法](method.md)，确认受众、范围与价格状态。
 2. 查[建委报价基准](price-baselines.md)，不要把个案或AI估价当固定价。
-3. 本次评估记录：[《山居秋暝》智慧课堂参赛课件](../../../design/graphic/ppt/premium-course/case-shanju-qiuming.md)，尚未成交，不是已验证收费案例。
+3. 本次评估记录：[《山居秋暝》智慧课堂参赛课件](../../../design/graphic/ppt/ai-assisted-design/case-shanju-qiuming.md)，已推进至课件制作交付，但成交与结算未确认，不是已验证收费案例。
 
 项目成交及最终结算仍写回相应项目或案例；可复用报价基准只维护一处。返回[商业化入口](../README.md)。

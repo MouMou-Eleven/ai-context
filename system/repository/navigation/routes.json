@@ -29,7 +29,13 @@
       "参赛课",
       "招生海报",
       "招生短视频",
-      "直播销售"
+      "直播销售",
+      "PPT美化",
+      "课件美化",
+      "幻灯片美化",
+      "首页定调",
+      "双图参考",
+      "设计图还原"
     ],
     "trainingRouteIds": [
       "bug-lesson",
@@ -354,7 +360,12 @@
       "label": "PPT设计",
       "matchAny": [
         "PPT",
-        "幻灯片设计"
+        "幻灯片设计",
+        "幻灯片美化",
+        "课件美化",
+        "首页定调",
+        "双图参考",
+        "设计图还原"
       ],
       "excludeAny": [],
       "entry": "work/domains/design/graphic/ppt/README.md",
@@ -414,7 +425,16 @@
         "逐页录制操作稿",
         "教师委托课件"
       ],
-      "excludeAny": [],
+      "excludeAny": [
+        "自由视觉",
+        "自由设计",
+        "没有模板",
+        "无模板",
+        "不留教师出镜",
+        "首页定调",
+        "双图参考",
+        "设计图还原"
+      ],
       "entry": "work/domains/design/video/education/README.md",
       "priority": 85,
       "dependencies": [
@@ -2669,20 +2689,22 @@
       "path": "work/domains/design/graphic/ppt/premium-course/workflow.md",
       "whenAny": [
         "精品课",
-        "参赛课",
-        "教师委托课件",
         "录课课件",
         "逐页录制操作稿"
       ],
       "excludeAny": [
         "商务路演",
-        "只查报价"
+        "只查报价",
+        "自由视觉",
+        "自由设计",
+        "没有模板",
+        "无模板",
+        "首页定调",
+        "双图参考",
+        "不是精品课"
       ],
-      "intents": [
-        "create",
-        "write"
-      ],
-      "useWhen": "精品课或录课课件的文稿、模板、配图排版、动画返修及逐页录制操作稿制作",
+      "intents": ["create", "write"],
+      "useWhen": "有指定模板、字号或真人录制合成约束的精品课制作与返修，不因参赛或教师委托自动采用",
       "notFor": "普通商务汇报与自由风格路演；不套用个案费用、字号和人物区域",
       "acceptance": "保护最新用户改稿，按任务检查图文适配、箭头轴线与旋转、准确点击句及媒体返回；冻结HTML时不自动同步",
       "evidence": "work/domains/design/graphic/ppt/premium-course/case-angle-revisited.md",
@@ -2736,6 +2758,76 @@
           ],
           "paths": [
             "work/domains/design/graphic/ppt/premium-course/recording-guide.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-assisted-ppt-design",
+      "label": "自由视觉PPT全流程协作",
+      "status": "active",
+      "path": "work/domains/design/graphic/ppt/ai-assisted-design/workflow.md",
+      "whenAny": [
+        "PPT",
+        "幻灯片",
+        "课件美化",
+        "首页定调",
+        "双图参考",
+        "设计图还原"
+      ],
+      "excludeAny": [
+        "只查报价",
+        "指定模板",
+        "固定模板",
+        "按模板",
+        "保留教师出镜区",
+        "录课课件",
+        "精品课制作"
+      ],
+      "intents": ["create", "write"],
+      "useWhen": "无强制模板的PPT制作、美化、首页定调、双图逐页设计及参考图重建可编辑成品",
+      "notFor": "指定模板/录课合成由精品课主导；旧26页与国风样式不是通用限制，已确认稿从当前阶段接续",
+      "acceptance": "内容图文稿先过关；风格图与内容图分工；完整素材用生图重建不裁碎；原生文字可编辑；静态、动画、播放分别验收",
+      "evidence": "work/domains/design/graphic/ppt/ai-assisted-design/case-shanju-qiuming.md",
+      "confirmedAt": "2026-10-09",
+      "source": "建委完整口述确认、两段Codex聊天及真实素材和返修记录；跨行业效果尚未验证",
+      "entryPoints": [
+        "work/domains/design/graphic/ppt/README.md",
+        "work/domains/design/graphic/ppt/ai-assisted-design/README.md"
+      ],
+      "selectedAny": [
+        "ppt"
+      ],
+      "readWhen": [
+        {
+          "whenAny": [
+            "拆页",
+            "划分",
+            "文稿",
+            "教学设计",
+            "排版",
+            "字号",
+            "断行",
+            "间距",
+            "美化",
+            "设计"
+          ],
+          "paths": [
+            "work/domains/design/graphic/ppt/ai-assisted-design/layout-and-pagination.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "提示词",
+            "定调",
+            "双图",
+            "参考",
+            "生图",
+            "重建",
+            "还原"
+          ],
+          "paths": [
+            "work/domains/design/graphic/ppt/ai-assisted-design/prompt-playbook.md"
           ]
         }
       ]

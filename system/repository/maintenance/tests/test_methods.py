@@ -59,6 +59,22 @@ class MethodRouting(unittest.TestCase):
         for task in ['制作商务路演PPT', '剪辑直播录像，生成逐字稿', '生成产品配图']:
             self.assertNotIn('premium-course-production', method_ids(router.resolve(task, 'create')))
 
+    def test_free_visual_ppt_is_found_and_separate_from_premium(self):
+        base = 'work/domains/design/graphic/ppt/ai-assisted-design/'
+        for task in ['帮我做一份PPT', '课件美化，双图参考', 'PPT美化，先拆页再首页定调，双图参考',
+                     '语文参赛课PPT，没有模板，自由设计，不是精品课',
+                     '做无模板PPT，不留教师出镜区',
+                     '按设计图还原可编辑PPT，并给出本页生图提示词']:
+            with self.subTest(task=task):
+                result = router.resolve(task, 'create')
+                self.assertIn(base + 'workflow.md', result['read'])
+                self.assertNotIn('premium-course-production', method_ids(result))
+        result = router.resolve('PPT美化，拆页并写双图参考提示词', 'create')
+        self.assertIn(base + 'layout-and-pagination.md', result['read'])
+        self.assertIn(base + 'prompt-playbook.md', result['read'])
+        for task in ['按指定模板制作精品课PPT', 'PPT只查报价', '只查PPT案例位置']:
+            self.assertNotIn('ai-assisted-ppt-design', method_ids(router.resolve(task, 'auto')))
+
     def test_frontend_feedback_routes_for_web_and_miaoda(self):
         for task in ['修改网站移动端UI，导航与分享需要重新排版','秒哒网站改版，修复响应式界面','前端UI设计与手机适配']:
             self.assertIn('frontend-ui-quality', method_ids(router.resolve(task, 'create')))

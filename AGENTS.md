@@ -24,6 +24,7 @@
 | 宣传、招生、产品介绍、报名页 | [宣传写法](work/domains/self-media/marketing-copy/reader-question-led-promotion.md) + [口语样稿](system/expression/voice-samples.md) + 对应项目的事实 |
 | 朋友圈 / 社群话术 / 口播 / 直播 | [自媒体入口](work/domains/self-media/README.md) 里对应的那一类 + [口语样稿](system/expression/voice-samples.md) |
 | 平面设计：PPT、海报、折页、书籍 | [设计入口](work/domains/design/README.md) → 对应交付物目录 |
+| 自由视觉 PPT / PPT美化 / 首页定调 / 双图参考 / 设计图转可编辑PPT | [PPT入口](work/domains/design/graphic/ppt/README.md) → [AI全流程协作](work/domains/design/graphic/ppt/ai-assisted-design/README.md) + [完整流程](work/domains/design/graphic/ppt/ai-assisted-design/workflow.md)；拆页/排版加读对应专题，不因教学或参赛套精品课 |
 | 视频：宣传片、微课、故事片、AI 视频提示词 | [视频入口](work/domains/design/video/README.md) → 对应片型目录；要写视频提示词再读 [Seedance](work/domains/design/video/common/seedance/README.md) |
 | 用百度秒哒开发 | [秒哒入口](work/domains/development/tools/miaoda/README.md)（先看顶部平台识别）→ 按其中的流程表选一条 |
 | 其他网站 / 应用 / 编程 | [开发入口](work/domains/development/README.md) + [通用开发经验](work/domains/development/experience/README.md) |

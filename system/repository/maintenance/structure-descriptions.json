@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "confirmedDate": "2026-10-04",
+  "confirmedDate": "2026-10-09",
   "descriptions": {
     "work/domains/design/video/promo/case-zaijing-production-planning.md": "再净先锋一分钟横屏创赛片规划、AI与AE分工及素材证明边界",
     "work/projects/yancut-ai/case-b3-loading-hotfixes.md": "言剪 B3 后加载热修复盘",
@@ -417,10 +417,15 @@
     "work/domains/other/commercial/quotations/README.md": "报价入口：方法、个人基准与单次评估",
     "work/domains/other/commercial/quotations/method.md": "报价方法：范围、受众、返修与价格状态",
     "work/domains/other/commercial/quotations/price-baselines.md": "建委亲述报价基准及适用边界",
-    "work/domains/design/graphic/ppt/premium-course/case-shanju-qiuming.md": "山居秋暝课件报价评估，非成交记录",
+    "work/domains/design/graphic/ppt/ai-assisted-design/case-shanju-qiuming.md": "山居秋暝报价、视觉迭代、分层制作与未验收边界的单一事实记录",
     "work/domains/design/graphic/ppt/premium-course/case-famous-painting-page-merge.md": "一幅名扬中外的画从30页合为27页，按同页容量与课堂顺序判断",
     "work/domains/design/video/promo/case-juhe-title-workbench.md": "聚禾为宝：标题片头与正文分段、麦穗丛穿梭及动态落版修订",
-    "work/domains/development/tools/miaoda/topics/case-shiyichuang-r9-auth-lock.md": "十一创R9认证锁抢占报错、依赖实测、验收遗漏与云端热修保护"
+    "work/domains/development/tools/miaoda/topics/case-shiyichuang-r9-auth-lock.md": "十一创R9认证锁抢占报错、依赖实测、验收遗漏与云端热修保护",
+    "work/domains/design/graphic/ppt/ai-assisted-design": "无强制模板PPT从内容拆页、首页定调到可编辑重建的完整协作方法",
+    "work/domains/design/graphic/ppt/ai-assisted-design/README.md": "按当前阶段发现自由视觉PPT流程，区分精品课并规定维护边界",
+    "work/domains/design/graphic/ppt/ai-assisted-design/workflow.md": "内容图文稿、报价确认、风格设计、分层重建与终审的阶段闸门",
+    "work/domains/design/graphic/ppt/ai-assisted-design/layout-and-pagination.md": "按任务拆页并用网格、层级、语义断行和实际渲染检查版式",
+    "work/domains/design/graphic/ppt/ai-assisted-design/prompt-playbook.md": "按实际首页和当前页构思提示词，指导生成、重建与定点返修"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",
