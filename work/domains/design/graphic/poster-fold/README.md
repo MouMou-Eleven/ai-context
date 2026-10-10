@@ -9,6 +9,7 @@
 | 需要 | 入口与能力 |
 |---|---|
 | 人物 IP、观点、活动海报与系列竖版视觉 | [qingyun-ip-poster](../../../other/skills/qingyun-ip-poster/README.md)：支持 3:4 / 9:16 视觉系统；先读来源与适用范围，再按任务执行 Skill |
+| 版式、层级、构图、配色、留白怎么判断 | [设计原则与规范](../design-principles/README.md)：海报先分信息层级，再定气质、构图和配色 |
 | AI 图像、风格测试与人工精修 | [AI 设计](../../common/ai-generation-principles.md) |
 | 海报转动态标题/视觉，交付可编辑动画 | [Remotion 能力说明](../../../other/skills/jianwei-ai-community-remotion-video/README.md)；动态任务按实际目标选用 |
 | 查类似商单、沉淀反馈与复盘 | [制作流程](../../common/production-workflow.md#写入) 与 [联合流程](../../common/production-workflow.md) |

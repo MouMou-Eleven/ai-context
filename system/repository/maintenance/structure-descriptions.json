@@ -430,7 +430,18 @@
     "personal/evidence/miaoda-ai-gold-lecturer-2026-05.jpg": "百度秒哒 AI 金牌讲师荣誉证书照片（2026年5月签发）",
     "system/repository/maintenance/content-guards.py": "提交前拦截本机路径进方法、大脑条目过长、入口表过长、同一规则写在两处",
     "system/repository/maintenance/tests/test_guards.py": "内容规则检查回归：确认违规内容真的会被拦下，当前仓库全部通过",
-    "personal/evidence/lecturer-certificates-and-teaching.jpg": "威海OPC一等奖证书、知行商学院聘书与山东高速、能源青年夜校、山东公用水务授课现场拼图"
+    "personal/evidence/lecturer-certificates-and-teaching.jpg": "威海OPC一等奖证书、知行商学院聘书与山东高速、能源青年夜校、山东公用水务授课现场拼图",
+    "work/domains/design/graphic/design-principles": "海报、折页、书籍、PPT共用的设计底层规则：层级、构成、骨架、构图、留白、字体、配色、氛围",
+    "work/domains/design/graphic/design-principles/README.md": "设计一个版面的顺序、按问题找专题、生图时怎么用、交付前检查表",
+    "work/domains/design/graphic/design-principles/information-hierarchy.md": "文案分主要、次要、辅助三层，用字号字重拉开，同层统一",
+    "work/domains/design/graphic/design-principles/composition.md": "点线面、十二种构成、秩序与变化、对比的十个维度、对齐细节",
+    "work/domains/design/graphic/design-principles/layout-skeleton.md": "版心与边距比例、版面率、网格与基线网格、分组、视线流动",
+    "work/domains/design/graphic/design-principles/page-composition.md": "单图七种构图、多图四种构图、平衡与重心",
+    "work/domains/design/graphic/design-principles/whitespace.md": "留白的作用、大小依据、颜色、延伸，以及在图片上放文字",
+    "work/domains/design/graphic/design-principles/typography.md": "字体数量、中西文搭配、字号层级、行距字距行长、字体气质",
+    "work/domains/design/graphic/design-principles/color.md": "明度与辨识度、色调调和、色环配色、面积与数量、颜色气质",
+    "work/domains/design/graphic/design-principles/mood.md": "高级感、力量感、纤细感、热闹与安静各自的手段",
+    "work/domains/design/graphic/design-principles/images-and-charts.md": "选图裁切、多图组织、人物朝向、图上压字、图表做法"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

@@ -23,7 +23,7 @@
 | 公众号 / 图文文章 | [自媒体入口](work/domains/self-media/README.md) → [文章](work/domains/self-media/articles/README.md) + [标题](work/domains/self-media/titles/README.md) |
 | 宣传、招生、产品介绍、报名页 | [宣传写法](work/domains/self-media/marketing-copy/reader-question-led-promotion.md) + [口语样稿](system/expression/voice-samples.md) + 对应项目的事实 |
 | 朋友圈 / 社群话术 / 口播 / 直播 | [自媒体入口](work/domains/self-media/README.md) 里对应的那一类 + [口语样稿](system/expression/voice-samples.md) |
-| 平面设计：PPT、海报、折页、书籍 | [设计入口](work/domains/design/README.md) → 对应交付物目录 |
+| 平面设计：PPT、海报、折页、书籍 | [设计原则与规范](work/domains/design/graphic/design-principles/README.md) + [设计入口](work/domains/design/README.md) → 对应交付物目录 |
 | PPT 美化、课件美化或排版、首页定调、设计图转可编辑 PPT | [PPT入口](work/domains/design/graphic/ppt/README.md) → [自由视觉PPT](work/domains/design/graphic/ppt/ai-assisted-design/README.md)；有指定模板或录课合成才走精品课 |
 | 视频：宣传片、微课、故事片、AI 视频提示词 | [视频入口](work/domains/design/video/README.md) → 对应片型目录；要写视频提示词再读 [Seedance](work/domains/design/video/common/seedance/README.md) |
 | 用百度秒哒开发 | [秒哒入口](work/domains/development/tools/miaoda/README.md)（先看顶部平台识别）→ 按其中的流程表选一条 |

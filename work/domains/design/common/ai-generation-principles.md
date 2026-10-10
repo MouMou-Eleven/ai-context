@@ -1,6 +1,6 @@
 # 设计中用 AI 生成的原则
 
-海报、PPT、视频、微课里用 AI 生图或生成镜头时共同遵守的原则。具体怎么写提示词：图片见[海报与视觉](../graphic/poster-fold/README.md)，视频见 [Seedance](../video/common/seedance/README.md)。
+海报、PPT、视频、微课里用 AI 生图或生成镜头时共同遵守的原则。版式、配色、留白这些设计判断见[设计原则与规范](../graphic/design-principles/README.md)。具体怎么写提示词：图片见[海报与视觉](../graphic/poster-fold/README.md)，视频见 [Seedance](../video/common/seedance/README.md)。
 
 > 来源：企业宣传片、创赛片、《小树叶》微课、《角的再认识》精品课等商单，2026-05～09。
 

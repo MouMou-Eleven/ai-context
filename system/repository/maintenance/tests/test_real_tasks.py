@@ -106,6 +106,24 @@ class RealTasks(unittest.TestCase):
             self.assertEqual(router.resolve(task, 'create')['selectedCandidate'], 'microcourse', task)
         self.assertNotEqual(router.resolve('做一个企业MG动画宣传', 'create')['selectedCandidate'], 'microcourse')
 
+    def test_graphic_design_principles_trigger_for_all_graphic_work(self):
+        base = 'work/domains/design/graphic/design-principles/'
+        for task in ['帮我设计一张活动海报', '做一份PPT', '设计一本画册的内页版式']:
+            result = router.resolve(task, 'create')
+            self.assertIn('graphic-design-principles', [m['id'] for m in result['methods']], task)
+            self.assertIn(base + 'README.md', result['read'], task)
+        self.assertIn(base + 'color.md', self.reads('这张海报配色不好看，帮我改改'))
+        self.assertIn(base + 'mood.md', router.resolve('做一份企业介绍PPT，要有高级感', 'create')['read'])
+        self.assertNotIn('graphic-design-principles', [m['id'] for m in router.resolve('写一份银行员工的AI办公培训课件', 'create')['methods']])
+
+    def test_template_courseware_is_not_premium_course(self):
+        result = router.resolve('给老师美化一份课件，有学校的模板', 'create')
+        self.assertEqual(result['selectedCandidate'], 'ppt')
+        self.assertIn('ai-assisted-ppt-design', [m['id'] for m in result['methods']])
+        premium = router.resolve('最近承接了一个精品课的订单，要录课合成', 'create')
+        self.assertIn('premium-course-production', [m['id'] for m in premium['methods']])
+        self.assertIn('work/domains/design/graphic/ppt/ai-assisted-design/workflow.md', premium['read'])
+
     def test_lecturer_intro_is_personal_not_training(self):
         for task in ['写一份讲师介绍', '写个人简介']:
             result = router.resolve(task, 'create')
