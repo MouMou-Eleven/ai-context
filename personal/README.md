@@ -9,7 +9,7 @@
 | 3 | [背书荣誉和成果](./credentials.md) | 获奖、聘任、成果、客户及数字的核验状态 |
 | 4 | [业务与项目概要](./business-overview.md) | 简短工作方向、实践能力摘要与边界；具体事项进入工作目录 |
 
-证书、聘书等原件照片放在 `evidence/`，背书表逐条引用，例如[百度秒哒 AI 金牌讲师证书](./evidence/miaoda-ai-gold-lecturer-2026-05.jpg)。
+证书、聘书等原件照片放在 `evidence/`，背书表逐条引用，例如[百度秒哒 AI 金牌讲师证书](./evidence/miaoda-ai-gold-lecturer-2026-05.jpg)、[证书与授课现场拼图](./evidence/lecturer-certificates-and-teaching.jpg)。
 
 个人介绍按用途读取，不默认读全部项目。荣誉和数字使用前核对证据状态，资料收录不代表事实已独立核验。
 

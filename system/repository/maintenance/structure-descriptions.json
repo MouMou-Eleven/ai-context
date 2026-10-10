@@ -429,7 +429,8 @@
     "personal/evidence": "背书表引用的证书、聘书等原件照片",
     "personal/evidence/miaoda-ai-gold-lecturer-2026-05.jpg": "百度秒哒 AI 金牌讲师荣誉证书照片（2026年5月签发）",
     "system/repository/maintenance/content-guards.py": "提交前拦截本机路径进方法、大脑条目过长、入口表过长、同一规则写在两处",
-    "system/repository/maintenance/tests/test_guards.py": "内容规则检查回归：确认违规内容真的会被拦下，当前仓库全部通过"
+    "system/repository/maintenance/tests/test_guards.py": "内容规则检查回归：确认违规内容真的会被拦下，当前仓库全部通过",
+    "personal/evidence/lecturer-certificates-and-teaching.jpg": "威海OPC一等奖证书、知行商学院聘书与山东高速、能源青年夜校、山东公用水务授课现场拼图"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",
