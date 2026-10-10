@@ -94,6 +94,18 @@ class RealTasks(unittest.TestCase):
         self.assertEqual(router.resolve('做一个AI大赛的参赛视频', 'create')['selectedCandidate'], 'video')
         self.assertEqual(router.resolve('做一个创赛宣传片', 'create')['selectedCandidate'], 'competition-video')
 
+    def test_teacher_courseware_is_design_and_own_courseware_is_training(self):
+        for task in ['最近承接了一个语文课件的订单', '给老师做一份三年级数学课件', '帮老师美化一下课件']:
+            self.assertEqual(router.resolve(task, 'create')['selectedCandidate'], 'ppt', task)
+        self.assertEqual(router.resolve('最近承接了一个精品课的订单，有指定模板', 'create')['selectedCandidate'], 'microcourse')
+        for task in ['给山东高速做AI办公培训，准备培训课件和演示用的Excel文件', '最近承接了一个企业AI培训，先写培训大纲']:
+            self.assertEqual(router.resolve(task, 'create')['selectedCandidate'], 'training', task)
+
+    def test_wancai_and_education_mg_are_microcourse(self):
+        for task in ['最近需要做一个教育类的万彩微课', '做一个教育类的MG动画']:
+            self.assertEqual(router.resolve(task, 'create')['selectedCandidate'], 'microcourse', task)
+        self.assertNotEqual(router.resolve('做一个企业MG动画宣传', 'create')['selectedCandidate'], 'microcourse')
+
     def test_lecturer_intro_is_personal_not_training(self):
         for task in ['写一份讲师介绍', '写个人简介']:
             result = router.resolve(task, 'create')

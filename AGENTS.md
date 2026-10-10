@@ -79,7 +79,7 @@
 - **百度秒哒 ≠ 飞书妙搭。** 建委说"秒哒""秒嗒"、网址含 miaoda.cn 或 appmiaoda.com，都是百度秒哒。**不要**调用 lark-apps、lark-cli apps、Spark 这些飞书妙搭的工具和接口。只有明确出现"飞书妙搭"或 miaoda.feishu.cn 时才是飞书的产品。
 - **培训 ≠ 会员社群。** 企业、机关、图书馆、夜校的培训属于 [AI 培训项目](work/projects/ai-training/README.md)；课号只在自己的系列里有效。
 - **给学员的 ≠ 给讲师的 ≠ 给主办方的。** 同一场培训，课件、备课稿、方案是三种东西，分开写。
-- **教师委托做的微课、精品课**属于设计，不属于建委讲课。
+- **课件有两种。** 建委自己去讲课用的课件（培训大纲、培训内容、演示用的 Word/Excel 案例）属于[培训](work/domains/training/README.md)；给老师做或美化的课件是客户订单，属于设计：有指定模板或要录课合成走[精品课](work/domains/design/graphic/ppt/premium-course/README.md)，没有约束走[自由视觉PPT](work/domains/design/graphic/ppt/ai-assisted-design/README.md)。教育领域说的**万彩微课就是 MG 动画**，走[微课与教育交互](work/domains/design/video/education/README.md)；企业的 MG 动画按普通视频走。
 - **路演 ≠ 演讲。** 路演、答辩是项目做出来后面对评委或投资人、要回答提问，归[商业化](work/domains/other/commercial/README.md)；演讲、分享是公开讲自己的观点，台下没有评委，归[培训](work/domains/training/README.md)。
 - **比赛宣传片、参赛视频 ≠ 创赛。** 只有大学生创新创业比赛才用创赛方法，其他比赛按[视频入口](work/domains/design/video/README.md)的比赛分流走。
 - **飞书文档链接**不代表是《飞书高效办公》这本书。
