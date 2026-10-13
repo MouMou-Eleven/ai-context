@@ -11,7 +11,7 @@
 | [制作与验收方法](workflow.md) | 文稿核对、拆页与合并、页数确认、模板设计、AI素材、动画及交付 |
 | [图文适配与收尾页](visual-design.md) | 配图、文本框、比例、间距、重点色及最后一页设计 |
 | [动画时机与几何校验](animation-and-geometry.md) | 问答揭示、固定转轴、箭头路径和动态验收 |
-| [逐页录制操作稿](recording-guide.md) | 稿段对应、准确点击句、自动效果、媒体及网页切换 |
+| [逐页录制操作稿](recording-guide.md) | 稿段对应、准确点击句、自动效果、媒体及网页切换；录制剪辑工作台（HTML）的页面结构、禁放内容与单文件离线要求 |
 | [动画与录制修订](revisions/2026-09-26-animation-recording-and-arrow-axis.md) | 后续反馈纠正早期口径，说明实际验证边界 |
 | [《一幅名扬中外的画》合并案例](case-famous-painting-page-merge.md) | 从动画换屏误判改为真实共页，明确27页范围与三个合并组 |
 | [《揠苗助长》排版与笔顺动画案例](case-yamiaozhuzhang-layout-and-stroke-animation.md) | 标题线压字、田字格比例、样片结构误读、擦除方向全反的根因与修法 |
