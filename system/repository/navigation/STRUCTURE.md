@@ -60,6 +60,7 @@ ai-context/
 │   │   │   │   │   │   ├── animation-and-geometry.md  按问答安排揭示，联合检查旋转中心、路径尺寸和箭头接合
 │   │   │   │   │   │   ├── case-angle-revisited.md  《角的再认识》数学精品课商单案例
 │   │   │   │   │   │   ├── case-famous-painting-page-merge.md  一幅名扬中外的画从30页合为27页，按同页容量与课堂顺序判断
+│   │   │   │   │   │   ├── case-tiaowen-guaiguai-recording-workbench.md  条纹乖乖录制剪辑工作台：错误版根因、按完整录音重做与动画顺序冲突
 │   │   │   │   │   │   ├── case-yamiaozhuzhang-layout-and-stroke-animation.md  揠苗助长22页返修：标题线压字、田字格比例、擦除方向全反与笔顺动画
 │   │   │   │   │   │   ├── README.md  按制作任务进入精品课方法与真实案例
 │   │   │   │   │   │   ├── recording-guide.md  把最终稿段映射为准确点击口令、翻页和网页媒体操作
