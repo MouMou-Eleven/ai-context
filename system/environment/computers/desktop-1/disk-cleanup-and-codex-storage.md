@@ -11,7 +11,7 @@
 | 类型 | 当前真实位置与判断 | 清理闸门 |
 |---|---|---|
 | Codex 当前／归档聊天 | `C:\Users\Administrator\.codex\sessions` 和 `archived_sessions` 均为 Junction，实际目标是 `F:\AppData_Migrated\Codex\` 下对应目录；`state_5.sqlite` 索引留 C 盘 | 不能因 C 盘入口可见就再迁移或删除会话；先核对 Junction 目标与数据库索引 |
-| Codex 任务生成的工作产物 | 与聊天记录独立。2026-09-29 将四个旧任务目录迁至 `F:/Codex_Workspaces/<日期>/<任务>`，原 `Documents/Codex/<日期>/<任务>` 保留 Junction；其他工作目录仍在原处。统计前判断真实位置 | **红线**：缺少 `threads.cwd` 不证明废弃。还须核对全局状态中的 `thread-projectless-output-directories`、`thread-workspace-root-hints`、项目根目录、进程和链接。后续聊天可能继续使用旧目录，按建委确认的范围清理；有用源码、网站和素材优先迁移并保留原路径，不按聊天删除状态批删 |
+| Codex 任务生成的工作产物 | 与聊天记录独立。2026-09-29 至 09-30 将六个旧任务目录迁至 `F:/Codex_Workspaces/<日期>/<任务>`，原 `Documents/Codex/<日期>/<任务>` 保留 Junction；其他工作目录仍在原处。统计前判断真实位置 | **红线**：缺少 `threads.cwd` 不证明废弃。还须核对全局状态中的 `thread-projectless-output-directories`、`thread-workspace-root-hints`、项目根目录、进程和链接。后续聊天可能继续使用旧目录，按建委确认的范围清理；有用源码、网站和素材优先迁移并保留原路径，不按聊天删除状态批删 |
 | 应用可重建缓存 | 下表精确根目录；大小会重新增长 | 先确认软件已停、目录没有重解析点，逐文件删除并记录实际卷空闲变化；不能清整个应用目录 |
 
 2026-09-29 实测：只查数据库工作路径会漏判仍被现有聊天使用的大目录，全局输出目录映射可补足关联。本次四个旧目录完整保留内容，迁移前核查相关进程，复制时保留链接本身，逐普通文件 SHA-256 比对并检查源未变化，再切换 C 盘入口；通过原路径抽查后才移除已验证的 C 盘副本。新 F 盘工作根目录沿用原工作区访问权限。脚本文本通常不是占用大头，依赖、模型、媒体和调试文件须分别判断；目录逻辑量可能重复计算共享硬链接，不能当作可释放量。迁移不是两份备份，不能因 C 盘仍有入口就删除 F 盘目标。
@@ -55,6 +55,44 @@
 6. 清理后复读四卷可用空间、Junction 目标、关键程序运行状态及失败项。若净变化反常，先查活动写入者；本轮看到 `SearchIndexer.exe` 短时大量写入后空间回升，不因此清理或关闭 Windows Search。
 
 本次四盘顶层只读扫描显示：C 主要是用户目录约 141.99 GiB、Windows 约 38.60 GiB 和程序目录；E 主要是微信约 77.02 GiB、剪映约 41.59 GiB，均含真实资料／草稿；D 主要是 38 GiB 系统分页文件和用户资料；F 主要是用户文件与迁移后的应用数据。扫描有读取拒绝项，也可能重复计入硬链接，以上数字只用于定位，不作为精确可释放量。一次性逐文件清单、扫描 JSON 和删除结果留在本机任务工作区，不把私人文件名、聊天正文、Token 上传仓库。
+
+## 2026-10-16 应用默认存储复核与清理
+
+### 已完成的实际迁移
+
+建委本次明确要求截图中的 CC Switch、Claude Code、Codex 配置目录都迁至 F 盘，并检查其他工具的 C 盘默认数据；CC Switch 数据希望放在安装目录下。CC Switch 实机版本为 4.0.12。下表已经复制、逐普通文件 SHA-256 比对、建立旧路径 Junction 并移除已验证的 C 盘副本；以后向旧路径写入也会落到 F 盘。没有把代码、草稿和账号数据当垃圾删。
+
+| 原路径（用户根为 `C:/Users/Administrator/`） | 真实目标 | 普通文件逻辑量 |
+|---|---|---:|
+| `.cc-switch/backups` | `F:/CC-Switch/data/backups` | 3.96 GiB |
+| `AppData/Roaming/D5Config` | `F:/AppData_Migrated/D5Config` | 2.91 GiB |
+| `AppData/Roaming/temp/D5` | `F:/AppData_Migrated/D5-Temp` | 1.08 GiB |
+| `AppData/Local/JianyingPro` | `F:/AppData_Migrated/JianyingPro` | 6.38 GiB，清缓存后迁移，草稿与其他数据保留 |
+| `AppData/Local/Wink` | `F:/AppData_Migrated/Wink` | 1.21 GiB |
+| `.vscode` | `F:/AppData_Migrated/VSCode-Extensions` | 1.02 GiB |
+| `AppData/Local/deno` | `F:/AppData_Migrated/Deno-Cache` | 0.86 GiB |
+| `AppData/Local/agent_desktop-updater` | `F:/AppData_Migrated/WorkBuddy-Updater` | 1.33 GiB |
+| `AppData/Local/@genieworkbuddy-desktop-updater` | `F:/AppData_Migrated/WorkBuddy-Updater-Legacy` | 0.50 GiB |
+
+迁移中剪映有两个文件位于尾空格目录，普通父目录检查会误报“不存在”；已使用 Windows 扩展路径重新核对原清单、源/目标哈希后移除残余副本。对迁移算法的普通文件、只读文件、尾空格路径、Junction 保留、不穿透链接目标及旧路径访问做了独立小目录验证，通过后清除测试数据。
+
+本轮另清理 60,468 个可重建缓存文件：C 盘约 3.23 GiB、E 盘约 3.47 GiB、F 盘 AE `.aecache` 约 30.02 GiB；锁定或变化项保留。C 盘实测从约 14.15 GiB 可用提高到约 34.77 GiB，数值会随活动写入波动；D 盘未删除文件，关闭应用后 D 盘空闲变化不计作清理成果。现有 Codex 状态数据库只读检查为 ok、189 个线程，没有修改聊天索引。
+
+### 尚未完成的离线切换
+
+**红线**：下面是已部署的后续方案，不能写成已经迁完。下次先读 `F:/CC-Switch/迁移状态.json` 与实际 Junction，再判断是否已经执行，不能只看计划或 F 盘暂存目录。
+
+CC Switch 关闭窗口后仍留在托盘并转发请求；当前 ChatGPT 也在使用自己的目录。Claude 的现有符号链接在普通权限 Robocopy 下报 1314，万彩动画和 Focusky 的部分组件报拒绝读取，故这些源目录完整保留。尚未切换三处 UI 输入框，也没有重启活动 ChatGPT 或 CC Switch。
+
+一次性工具入口是 `F:/CC-Switch/Complete-Storage-Migration.cmd`，代码和日志在 `F:/CC-Switch/maintenance/20261016/`。建委完全退出 ChatGPT、从托盘退出 CC Switch 后手动启动并接受 Windows 管理员提示；工具只等待应用退出，不强行结束它们。它会保留原安全权限、链接与旧路径，逐文件校验后再释放 C 盘副本；状态、冲突或校验异常会写明并停止。管理员离线执行和应用重新打开的验收尚未进行。
+
+拟定的真实根目录：CC Switch 为 `F:/CC-Switch/data/config`，Claude Code 为 `F:/CC-Switch/data/claude-code`，Codex 为 `F:/CC-Switch/data/codex`。原 C 盘入口继续保留；Claude MCP 文件和配置环境变量一起处理，CC Switch 的目录设置在数据检查后一起更新。CC Switch 的设备级状态不完全随原生“配置目录”设置迁走，因此本次也准备迁移它的 Roaming/Local 界面数据。不能只改三个输入框而不搬文件和统一实际工具路径，见[官方配置目录说明](https://github.com/farion1231/cc-switch/blob/main/docs/user-manual/en/5-faq/5.1-config-files.md)。
+
+这次还发现原先的 `[desktop].projectlessWorkspaceRoot` 已不在活动 TOML 中；本机已安装包仍确认支持该设置，后续工具会补回 `F:/Codex_Workspaces`。同时准备将整个 `Documents/Codex` 迁到 `F:/Codex_Workspaces/legacy-codex`、`Documents/ChatGPT` 迁到 `legacy-chatgpt`，原根保留 Junction，避免默认设置日后被覆盖又占 C 盘。前者跳过链接后普通文件逻辑量约 43.08 GiB、187 万文件，后者约 2.60 GiB；这些不是垃圾清单，不按旧聊天状态批删。文件多，完成前不能重新启动相关应用，释放量以执行后的卷读数为准。
+
+其余准备的离线项是 VS Code 用户数据、npm 下载及运行缓存、pnpm store。npm `_npx` 当前仍承载工具，不能在活动任务里删除；目标配置和原路径迁移一起处理。`ai-context` 仍只有指定的本机仓库，迁移工作目录时只保留原链接，不产生新副本。
+
+一次性详细报告与审计保存在原任务 `Documents/Codex/2026-09-29/c-codex/outputs/2026-10-16清理迁移报告.md` 和 `work/cleanup-20261016/`；凭据和私人项目清单不入库。
 
 ## 2026-09-15 最新复核：迁移已成功，缓存又增长
 
@@ -328,4 +366,4 @@ C:\Users\Administrator\.codex\archived_sessions    Junction 入口
 - [`../windows-junction-migration.md`](../windows-junction-migration.md)：已经验证成功的 Windows AppData Junction 迁移方法与卸载边界。
 - [`history.md`](./history.md)：本机关键变化摘要。
 
-*文件建立：2026-08-30；存储事实最后核验：2026-09-29*
+*文件建立：2026-08-30；存储事实最后核验：2026-10-16*
