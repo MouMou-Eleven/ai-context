@@ -25,9 +25,10 @@
 | 任务 | 读 |
 |---|---|
 | 查秒哒现在能不能做某事、限额、会员、价格 | [facts.md](./facts.md)（唯一的当前事实表） |
-| 用 Codex 开发秒哒项目（新项目、迭代、修问题） | [workflow.md](./workflow.md)：先按顶部表格选路径 A/B/C |
+| 用 Codex 或其他 AI 开发秒哒项目（新项目、迭代、修问题） | [workflow.md](./workflow.md)：先按顶部表格选路径 A/B/C |
 | 要写给秒哒的提示词 | [prompt-templates.md](./prompt-templates.md) |
-| 上传、登录、支付、SEO、排错、后端、微信验证 | [topics/](./topics/README.md) 里对应的专题 |
+| 建数据库、改字段、删字段、备份、单环境和多环境 | [topics/backend-storage.md](./topics/backend-storage.md) |
+| 上传、登录、支付、SEO、排错、微信验证 | [topics/](./topics/README.md) 里对应的专题 |
 | 报错了、踩坑了 | [pitfalls.md](./pitfalls.md) |
 | 平台运行时、后端底座、首轮三个决定 | [basics/platform-basics.md](./basics/platform-basics.md) |
 | 发布到小程序、APP、自定义域名 | [basics/publish-channels.md](./basics/publish-channels.md) |
@@ -47,10 +48,9 @@ miaoda/
 ├── workflow.md          Codex × 秒哒协作方法（三条路径、十个阶段）
 ├── prompt-templates.md  可粘贴的提示词模板
 ├── pitfalls.md          踩坑清单
-├── topics/              专题：上传、登录、支付（含完整支付案例）、SEO、排错、后端、微信验证
+├── topics/              专题：数据库、上传、登录、支付（含完整支付案例）、SEO、排错、微信验证
 ├── basics/              平台基础、发布渠道
 ├── development/         Skill 开发、被外部 Agent 调用
-├── reference-materials/ 旧环境兼容源码（默认不读）
 └── updates/             版本时间线（只用于追溯）
 ```
 
@@ -58,9 +58,11 @@ miaoda/
 
 | 情况 | 怎么做 | 不要做 |
 |---|---|---|
+| 秒哒原生生成、建委下载了源码 | 以下载的 ZIP 为基线转入路径 B，之后只打增量包 | 不每轮都让建委重新下载源码（高级版才能下，300 秒点/次） |
 | 有本地源码（言剪这类） | Codex 在本地改代码、测试，打**增量包**上传给秒哒校验合并，按 [workflow.md](./workflow.md) 路径 B | 不退回让秒哒按长提示词自由重写 |
 | 新项目 | 本地开发完整版，一次打全量包上传，按路径 A | 不边聊边让秒哒一点点生成 |
-| 只在云端、没有源码 | 写给秒哒的提示词，用 [prompt-templates.md](./prompt-templates.md)，按路径 C | 不猜云端代码现状 |
+| 只在云端、没有源码，建委发截图或报错 | 写给秒哒的提示词，用 [prompt-templates.md](./prompt-templates.md)，按路径 C | 不猜云端代码现状 |
+| 任何要动数据库结构的改动 | 先确认单环境还是多环境；只做加法，删改字段先备份，见[数据库专题](./topics/backend-storage.md) | 不在单环境的已发布应用里直接删字段、改名 |
 | 要查云端版本、读回执、下达有限命令 | 用秒哒 Skill / CLI，范围和命令见 [skill-as-callable.md](./development/skill-as-callable.md#当前采用方式)；上一轮结束且建委授权后才下达新命令 | 不把 Skill 当成发布工具，发布仍走线上验收 |
 | 任何时候 | 只用百度秒哒自己的入口 | **不调用** `lark-apps`、`lark-cli apps`、Spark（那是飞书妙搭） |
 

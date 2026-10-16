@@ -6,7 +6,8 @@
 - 当前限额、会员、计费、版本：facts.md
 - Codex × 秒哒协作方法（首次全量 / 增量迭代 / 纯提示词）：workflow.md
 - 可粘贴的提示词模板：prompt-templates.md
-- 上传、登录、支付、SEO、排错、后端、微信验证：topics/
+- 数据库（单/多环境、改字段、备份）：topics/backend-storage.md
+- 上传、登录、支付、SEO、排错、微信验证：topics/
 - 踩坑：pitfalls.md
 - 平台基础与发布渠道：basics/
 - Skill 开发与外部调用：development/

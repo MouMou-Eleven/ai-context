@@ -46,12 +46,14 @@ class TaskRetrieval(unittest.TestCase):
         self.assertTrue(result['needsRouteReview'])
         self.assertFalse(result['needsTaskDescription'])
 
-    def test_miaoda_reads_upload_rules_without_loading_legacy_source(self):
+    def test_miaoda_reads_upload_rules_without_legacy_source(self):
         result = enrich(ROOT, router.resolve('用秒哒开发一个大视频上传页面', 'auto'))
-        self.assertIn('work/domains/development/tools/miaoda/topics/large-video-upload.md', result['read'])
         self.assertIn('work/domains/development/tools/miaoda/topics/uploads.md', result['read'])
-        self.assertTrue(any('large-video-upload.md' in h['path'] for h in result['discovery']))
         self.assertFalse(any('/reference-materials/' in p or '/yancut-ai/' in p for p in result['read']))
+
+    def test_miaoda_schema_change_reads_database_topic(self):
+        result = enrich(ROOT, router.resolve('帮我写秒哒提示词，给已发布的报名应用删一个数据库字段', 'auto'))
+        self.assertIn('work/domains/development/tools/miaoda/topics/backend-storage.md', result['read'])
 
     def test_scope_enables_subdirectory_lookup_without_overriding_deliverable(self):
         result = router.resolve('帮我改这篇文章', 'auto', scope='work/domains/self-media')

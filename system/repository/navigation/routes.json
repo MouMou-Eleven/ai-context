@@ -912,17 +912,7 @@
           "path": "work/domains/development/tools/miaoda/topics/uploads.md",
           "whenAny": [
             "上传",
-            "文件传输"
-          ],
-          "excludeAny": [],
-          "intents": [
-            "create",
-            "write"
-          ]
-        },
-        {
-          "path": "work/domains/development/tools/miaoda/topics/large-video-upload.md",
-          "whenAny": [
+            "文件传输",
             "大视频",
             "大文件",
             "视频上传",
@@ -985,7 +975,14 @@
             "数据库",
             "存储",
             "后端",
-            "localStorage"
+            "localStorage",
+            "字段",
+            "数据表",
+            "表结构",
+            "备份",
+            "保活",
+            "多环境",
+            "单环境"
           ],
           "excludeAny": [],
           "intents": [

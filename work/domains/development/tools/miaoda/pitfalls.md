@@ -164,20 +164,22 @@ https://dejinzhoujin.com/payment/
 
 **根因**：秒哒应用底层确实是 Supabase（Postgres + Edge Functions + Auth），但用户**没有**原生 Supabase 控制台账号——拿不到 Project URL、anon key、service_role key、SQL Editor、Logs Explorer 这些标准工具。
 
-**替代手段**：秒哒应用编辑器侧栏内置的「**后端服务**」面板，4 个 Tab：
+**替代手段**：秒哒应用编辑器侧栏内置的「**后端服务**」面板：
 - **数据表管理**：看表结构、改字段值（一张张点开，无 schema 总览图）
 - **用户管理**：看应用用户列表
 - **后端函数**：看 Edge Functions 列表（有时只读源码）
 - **密钥管理**：增删改全局密钥，但**写入后只显示 `••••`**，不能查看当前值
+- **数据库备份**：查看自动备份、手动备份与恢复（高级版及以上）
 
 **做不到的事**（必记，避免反复尝试）：
 - ❌ 直接在 SQL Editor 里跑 SELECT/UPDATE
 - ❌ 看某个 Edge Function 当前实际生效的 Secrets 名字与值
 - ❌ 看 Postgres 索引、约束、触发器的细节
-- ❌ 看 Edge Function 集中的运行日志（要靠秒哒应用编辑器的"调试"按钮）
+
+**能做的**：数据库维护页可以增删改查、按字段筛选、CSV 导入导出；后端函数面板能看函数运行日志；高级版及以上能手动备份和恢复。
 
 **预防/应对**：
-1. 让秒哒做加字段、修脏数据这种操作时，**强制要求它执行后回贴 schema 字段列表 + SELECT 样例数据**，否则你看不到改动效果
+1. 让秒哒做加字段、修脏数据这种操作时，**强制要求它执行后回贴 schema 字段列表 + SELECT 样例数据**，否则你看不到改动效果；删改字段前先备份，见[数据库与后端存储](./topics/backend-storage.md#二哪些改动是破坏性的红线)
 2. 涉及环境变量的事故，**别浪费时间猜**——直接让 Edge Function 在入口处 `console.log(Object.keys(Deno.env.toObject()))`，几秒锁定真实变量名（见 #11、#12）
 
 详见 [platform-basics.md](basics/platform-basics.md) 第七节。
@@ -252,41 +254,9 @@ console.log("[fnname] env diag:", {
 
 ---
 
-## #14 [历史兼容] 旧后端大视频上传：CORS / Edge Function 资源 / Storage 上限三层叠加
+## #14 （已删除）旧后端大视频分片上传
 
-> **状态：已被 2026-08-27 当前权益口径取代。** 旧环境中这是反复踩坑后已在生产成功的方案；当前限额见[事实表](./facts.md)，付费会员需同步修改前后端限制。本条保留历史发现和旧环境兼容方案，不再作为新项目默认架构。
->
-> 新项目先按 [大视频上传](./topics/large-video-upload.md) 确认会员、对象存储容量并测试当前原生上传；只有旧项目仍复现下列问题时，才启用本条的兼容实现。
->
-> 本条只保留发现叙事 + 根因；
-> 旧实现规范见 [legacy-contract.md](./reference-materials/video-chunked-upload/legacy-contract.md)，
-> 可直接抄走的三段源码见 [`reference-materials/video-chunked-upload/`](./reference-materials/video-chunked-upload/README.md)，
-> 当前上传配置与旧环境兼容提示词见 [上传专题](./topics/uploads.md)。
-
-**症状（四种死法按出现顺序）**：
-
-1. 前端 supabase-js 直传 Storage → 浏览器 CORS 拦截
-   ```
-   Access to fetch at 'https://xxxx.supabase.co/storage/v1/object/...'
-   from origin 'https://app-XXX.miaoda.cn' has been blocked by CORS policy
-   ```
-2. 改"切 5MB 分片传到 Edge Function，最后合并成完整 mp4 写回 Storage" → 合并步骤稳定报
-   `WorkerRequestCancelled: request has been cancelled by supervisor`（文件越大越早死，>200MB 几乎必中）。
-3. 改 TUS / 一次性大上传 → nginx `413 Request Entity Too Large`（实测 178MB 上限）。
-4. 改 `ReadableStream` 流式合并写回 Storage → 仍然 413（写"合并文件"瞬间撞平台级 `storageFileSizeLimit`）。
-
-**根因（三层叠加，缺一不可，修一层另两层照样死）**：
-
-| 限制层 | 触发位置 | 为何把"前端直传 / 合并大文件"全堵死 |
-|---|---|---|
-| CORS 白名单 | 浏览器 → Storage 端点 | 秒哒预览域名 `*.miaoda.cn` 在 **Storage 端点**白名单**没有**，但在 **Edge Function 端点**白名单**有**。协议层拒绝，前端代码改不动。 |
-| Edge Function 资源 | 单函数内存 / CPU / wall-time | 几百 MB 文件 concat 或流式拼装超过百兆级内存或数百秒 wall-time，被 supervisor 强制 kill。 |
-| Storage 全局上限 | 平台级 `storageFileSizeLimit = Math.min(global, bucket)` | 合并后的整文件在写入瞬间被网关 413，调大桶级 limit 也没用。 |
-
-**旧环境兼容解法**：不把分片合并成完整文件。分片以路径 `<upload_id>/<chunk_index>` 永久留在 Storage 桶 `video-chunks` 里，新增一个 `video-serve` Edge Function 用 HTTP Range / 206 Partial Content 把分片伪装成可拖进度条的完整视频文件。它绕开旧环境的 CORS、函数资源和 Storage 上限，但架构复杂、占用对象数量多，不应在新环境未经测试就直接采用。架构图 / 表结构 / 函数契约见 [legacy-contract.md](./reference-materials/video-chunked-upload/legacy-contract.md)，源码见其参考实现索引。
-
-**只有旧项目按当前权益配置后仍失败时才使用兼容提示词**（详见 [上传专题](./topics/uploads.md)）：
-红线“禁止合并分片”+“禁止前端直接调 Storage 端点（含 createSignedUploadUrl / TUS）”+“video-serve 必须返回 206 + Content-Range，不允许 200 全文” + 把 `reference-materials/video-chunked-upload/` 三个 ts 作为“禁止重写、必须照抄”的参考实现塞给它（参考 #5：秒哒会无视已提供实现自己另写一份）。
+V3.7 之前为绕开 50MB 上限、CORS 和 413 做的"5MB 分片 + Range 代理播放"方案，2026-10-16 随参考源码一起删除，不再使用。现在的做法见[上传专题](./topics/uploads.md)。确有 2025 年的老项目还在用这套代码、需要排查时，从 Git 提交 8b63485 取回 `reference-materials/video-chunked-upload/`。
 
 ---
 
@@ -311,19 +281,11 @@ console.log("[fnname] env diag:", {
 
 ## #16 首轮没明确后端存储 → 数据实际只存在浏览器缓存
 
-**症状**：应用里录入的数据在当前浏览器能看到，但换浏览器、无痕模式、清缓存或换设备后数据丢失。用户以为“秒哒已经保存数据”，实际只是本地缓存。
+**症状**：当前浏览器里能看到录入的数据，换浏览器、无痕模式或换设备就没了。
 
-**根因**：首轮 Query 没有明确包含“后端存储 / 生成数据库 / 创建数据表 / 云端保存”等关键词，模型会为了快速完成原型用 `localStorage`、浏览器缓存或前端状态模拟数据。
+**根因**：提示词里没有"后端存储 / 数据库 / 云端保存"这类要求，秒哒为了快速出原型，用 `localStorage` 或前端状态模拟了数据。
 
-**修复**：让秒哒基于现有应用补充真实后端数据库，并迁移读写逻辑：
-
-```text
-请基于当前应用补充真实后端数据库存储功能，不允许继续使用浏览器缓存或 localStorage 作为业务数据来源。
-请创建必要的数据表，补充数据的增删改查操作，并基于现有表结构生成管理员可用的数据查看维护页面。
-完成后请按表回贴字段列表，并说明如何用无痕窗口验证数据持久化。
-```
-
-**预防**：首轮提示词里直接写“真实后端数据库存储 + 增删改查 + 数据查看维护页面”。验证时用无痕窗口或另一台设备复查，不要只看当前浏览器。
+**修复与预防**：首轮就按业务对象写明要真实后端数据库；已经生成的，用对话补数据库并迁移读写逻辑。两段提示词和验收方法都在[数据库与后端存储](./topics/backend-storage.md#三让秒哒建库改库的提示词)。
 
 ---
 

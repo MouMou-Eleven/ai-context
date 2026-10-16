@@ -79,12 +79,11 @@
 | 百度秒嗒平台 | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/development/experience/README.md) |
 | 百度秒嗒平台 | 当前、功能、限制、限额、容量、权益、会员、价格、秒点、能不能 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/facts.md) |
 | 百度秒嗒平台 | 报错、故障、排错、失败、白屏、踩坑 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/pitfalls.md) |
-| 百度秒嗒平台 | 上传、文件传输 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/uploads.md) |
-| 百度秒嗒平台 | 大视频、大文件、视频上传、分片上传 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/large-video-upload.md) |
+| 百度秒嗒平台 | 上传、文件传输、大视频、大文件、视频上传、分片上传 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/uploads.md) |
 | 百度秒嗒平台 | 登录、认证、验证码、鉴权、手机号 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/authentication.md) |
 | 百度秒嗒平台 | 支付、收款、退款、订单 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/payment.md) |
 | 百度秒嗒平台 | 报错、故障、排错、无法运行、白屏、日志 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/runtime-diagnostics.md) |
-| 百度秒嗒平台 | 数据库、存储、后端、localStorage | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/backend-storage.md) |
+| 百度秒嗒平台 | 数据库、存储、后端、localStorage、字段、数据表、表结构、备份、保活、多环境、单环境 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/backend-storage.md) |
 | 百度秒嗒平台 | SEO、关键词、备案、整改 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/seo-and-content.md) |
 | 百度秒嗒平台 | Skill、CLI、外部调用、附件、代码仓库、直接查看、直接读取 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/development/skill-as-callable.md) |
 | 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/README.md) |

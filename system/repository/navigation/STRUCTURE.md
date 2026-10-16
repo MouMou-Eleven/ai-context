@@ -333,20 +333,11 @@ ai-context/
 │   │   │       │   ├── pitfalls.md  秒哒真实踩坑：症状、根因、修复与预防
 │   │   │       │   ├── prompt-templates.md  首次全量、增量、纯提示词三类可粘贴秒哒提示词
 │   │   │       │   ├── README.md  经验索引
-│   │   │       │   ├── reference-materials/  旧后端大视频分片上传兼容源码，默认不读
-│   │   │       │   │   ├── README.md  参考资料索引
-│   │   │       │   │   └── video-chunked-upload/  保存旧环境的分片上传兜底实现及使用限制
-│   │   │       │   │       ├── legacy-contract.md  核对旧分片代理适用条件，避免覆盖当前原生上传方案
-│   │   │       │   │       ├── README.md  视频分片上传源码说明
-│   │   │       │   │       ├── video-serve.ts  资料与资源
-│   │   │       │   │       ├── video-upload-chunk.ts  资料与资源
-│   │   │       │   │       └── video-upload-complete.ts  资料与资源
 │   │   │       │   ├── topics/  秒哒专题：上传、登录、支付、SEO、排错、后端、微信验证
 │   │   │       │   │   ├── authentication.md  排查短信登录与手机号身份不一致问题
 │   │   │       │   │   ├── backend-storage.md  在应用创建时明确形态和真实后端持久化
 │   │   │       │   │   ├── case-shiyichuang-r9-auth-lock.md  十一创R9认证锁抢占报错、依赖实测、验收遗漏与云端热修保护
 │   │   │       │   │   ├── content-rectification.md  内容整改提示词
-│   │   │       │   │   ├── large-video-upload.md  大视频上传方案
 │   │   │       │   │   ├── payment-case-yungouos-jsapi.md  YunGouOS 微信 JSAPI 支付完整接入案例
 │   │   │       │   │   ├── payment.md  在匹配的支付环境中复用已验证集成片段
 │   │   │       │   │   ├── README.md  秒哒专题索引
@@ -356,10 +347,6 @@ ai-context/
 │   │   │       │   │   ├── uploads.md  优先核验原生上传限制，再处理大文件与小程序上传
 │   │   │       │   │   └── wechat-urlsec-verification.md  微信 URL 安全验证
 │   │   │       │   ├── updates/  版本与升级
-│   │   │       │   │   ├── 2026-08-02-version-governance.md  版本知识治理记录
-│   │   │       │   │   ├── 2026-08-15-cloud-runtime-diagnostics.md  云端运行诊断记录
-│   │   │       │   │   ├── 2026-08-29-v3.7-and-upload-limit-governance.md  V3.7 与上传限制口径修订
-│   │   │       │   │   ├── 2026-09-07-codex-miaoda-incremental-loop.md  Codex 协助秒哒增量闭环修订
 │   │   │       │   │   ├── README.md  版本资料索引
 │   │   │       │   │   └── version-features.md  历史版本能力时间线
 │   │   │       │   └── workflow.md  Codex × 秒哒协作方法：三条路径、十个阶段的唯一正文
