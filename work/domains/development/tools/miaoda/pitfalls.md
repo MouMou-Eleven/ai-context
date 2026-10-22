@@ -474,36 +474,31 @@ curl -i https://域名/<file>.txt
 
 **预防**：写秒哒提示词前先区分“秒哒能执行的云端静态动作”和“必须由用户完成的动态复现”。诊断提示词统一复用 [运行诊断专题](./topics/runtime-diagnostics.md)，不得凭 Codex 的工具能力脑补秒哒能力。
 
-## #27 云端发布流水线按平台模板重建配置 → 上传源码本地能构建，发布时装依赖或构建失败
+## #27 上传源码与秒哒云端构建环境不一致 → 本地能构建，发布时装依赖或构建失败
 
 **适用**：上传本地写好的 React + Vite 源码给秒哒，秒哒「生成完成」或预览正常，点**发布**时报「编译失败：安装依赖失败」或构建中断。不适用于业务代码本身的报错。
 
-**症状（三次实战）**：
+**已证实的原因**（有报错原文和修复回执）：
 
-| 时间、项目 | 报错 | 直接原因 |
-|---|---|---|
-| 2026-08-30 豆格工坊 | `Failed to load PostCSS config: Cannot find module 'tailwindcss'`，删掉后又报 `'autoprefixer'` | 平台按模板生成了 `postcss.config.js`（tailwindcss + autoprefixer），项目没装这两个包 |
-| 2026-10-22 本命音律用户端、管理后台 | `ERR_PNPM_UNKNOWN: This project is configured to use npm` | `package.json` 写了 `"packageManager": "npm@10.9.2"`，平台发布用 `pnpm install`，pnpm 看到这个字段直接拒绝安装 |
-| 2026-10-22 本命音律管理后台 | 去掉上面字段后仍构建失败 | 平台把 `vite.config.ts` 重置成官方模板（引用 `vite-plugin-svgr`），项目没装该插件；又把模板里的 `pnpm-workspace.yaml` 当遗留文件清掉了 |
+| 时间、项目 | 报错 | 原因 | 修复 |
+|---|---|---|---|
+| 2026-08-30 豆格工坊 | `Failed to load PostCSS config: Cannot find module 'tailwindcss'`，删掉后又报 `'autoprefixer'` | 云端工程里有平台模板的 `postcss.config.js`（tailwindcss + autoprefixer），项目没装这两个包 | 把 `plugins` 置空 `{}` |
+| 2026-10-22 本命音律用户端、管理后台 | `ERR_PNPM_UNKNOWN: This project is configured to use npm` | `package.json` 写了 `"packageManager": "npm@10.9.2"`；平台发布用 `pnpm install`，pnpm 看到这个字段直接拒绝安装 | 删掉 `packageManager` 字段，两个应用都随即发布成功 |
 
-同批秒哒还在生成阶段往工程里注入了 shadcn / Tailwind 文件（`tailwind.config.js`、`src/components/ui/` 等），因为提示词红线写了"保持 plugins 为空或删除"，它自己清掉了。
+**观察到、但没有证实是失败原因的**（来自本命音律云端 git 历史，2026-10-22 下载源码核对）：
 
-**根因**：秒哒的发布流水线不执行上传包里的 `npm ci && npm run build`，而是用平台模板的构建合同：`pnpm install && npx vite build --logLevel error`（10-22 两个应用的修复回执都按这条命令验收），并以平台模板为准维护 `vite.config.ts`、`postcss.config.js`、`pnpm-workspace.yaml`。生成阶段的构建（会跑我们的 `npm run build`）通过，不代表发布阶段能通过。本地没有模板文件，所以本地永远复现不了。
-
-**修复**（按顺序）：
-
-1. 删掉 `package.json` 的 `packageManager` 字段。
-2. 平台模板的 `vite.config.ts` 引用了什么插件，就在 `devDependencies` 补上（10-22 是 `vite-plugin-svgr@^5.2.0`）；不要改回我们自己的 `vite.config.ts`。
-3. 恢复平台模板的 `pnpm-workspace.yaml`。
-4. PostCSS 报错时，首选把 `postcss.config.js` 的 `plugins` 置空 `{}`，不要逐个删插件。
+- 秒哒的应用一创建就有一份平台模板（`vite.config.ts` 引用 `vite-plugin-svgr`、`pnpm-workspace.yaml`、Tailwind、shadcn 组件等）。上传源码后，秒哒在"部署完成"那一步按我们提示词的红线（"与上传清单完全一致、删除注入文件"）**自己删掉了**模板的 `pnpm-workspace.yaml`、`tailwind.config.js`、`src/components/ui/` 等，并把 `vite.config.ts` 换成我们的。
+- 用户端修发布错误时，秒哒又把 `vite.config.ts` 改回平台模板（引用 `vite-plugin-svgr`），但 `package.json` 里始终没有加这个插件，发布照样成功，说明平台构建环境自带它。管理后台修发布错误时，秒哒补了 `vite-plugin-svgr` 依赖并恢复了 `pnpm-workspace.yaml`；用户端始终没恢复 `pnpm-workspace.yaml`，也能发布。所以这两项是否必需，没有证据。
+- 之后在秒哒里改登录的那一轮，秒哒把 `package.json` 的依赖整体换成了模板版本范围（vite 从我们上传的 `7.1.6` 变成 `^8.2.1`，依赖从 11 个变成 24 个），但没有重新生成 `pnpm-lock.yaml`，于是下载回来的锁文件和 `package.json` 对不上。上传时写死的精确版本，不能指望在云端一直保持。
 
 **预防（打包时就做掉）**：
 
-1. 上传包的 `package.json` **不写** `packageManager`；锁文件只作本地复建依据，平台发布用 pnpm 时不读 `package-lock.json`，所以依赖版本要在 `package.json` 里写成精确版本。
-2. 包里放一份 `postcss.config.js`，内容 `export default { plugins: {} }`；`vite.config.ts` 只用 `@vitejs/plugin-react`，不依赖自定义 `root`、`outDir` 等路径（平台可能整份替换）。项目若必须用自定义 Vite 配置，提示词里写明"发布前确认平台模板配置与上传配置的差异并回报"。
-3. 提示词红线写明：平台若注入 Tailwind / shadcn / PostCSS 插件或改写 `vite.config.ts`，保持 `plugins` 为空或删除注入文件；平台模板必须的文件（`pnpm-workspace.yaml`、模板插件依赖）**保留**，不要当成"与清单不一致"删掉。
+1. 上传包的 `package.json` **不写** `packageManager`（这是唯一已证实的发布失败原因）。
+2. 包里放一份 `postcss.config.js`，内容 `export default { plugins: {} }`。
+3. 提示词红线**不要**写"与上传清单完全一致""删除平台注入的文件"这种一刀切的话，那会让秒哒删掉平台模板文件。改成："业务源码以上传包为准；平台模板自带的构建文件（`vite.config.ts`、`pnpm-workspace.yaml`、模板依赖）保留；平台若注入 Tailwind / PostCSS 插件导致构建报错，把 `plugins` 置空"。
 4. 要求秒哒在生成完成后、发布前，按 `pnpm install && npx vite build --logLevel error` 跑一遍并回报退出码；不能只回报 `npm run build` 通过。
-5. 发布报错时把「错误详情」整段发给秒哒修复即可，这类问题对话修复一次通过；修完要把改动（删字段、补依赖、恢复的文件）合回本地源码，下一包不能再带回去。
+5. 增量包不要碰 `package.json`、`vite.config.ts`、锁文件，除非本轮确实要加依赖；要加时以最新下载的云端 `package.json` 为基础改。
+6. 发布报错时把「错误详情」整段发给秒哒修复，这类问题对话修复一次通过；修完要把改动合回本地源码（或重新下载源码），下一包不能再带回去。
 
 ## #28 PATCH 的 JSON 路径过滤触发网关白名单错误，被误读为数据库缺列
 
@@ -577,7 +572,7 @@ R25在本地同步此方向，并在保存前读取 `updated_at`，以 `id` 和�
 
 **适用**：第一个应用已经建好后端；第二个应用在首页点「共享后端」选了第一个项目，然后上传**本地写好的源码**（不是让秒哒从零生成）。源码的前端要靠 `VITE_SUPABASE_URL`、`VITE_SUPABASE_ANON_KEY` 两个构建变量才能调到共享的函数。
 
-**正常流程本身没有问题**：选「共享后端」→ 输入提示词 → 秒哒生成第二个应用，两者自动共享，用户不需要、也拿不到"后端地址"。秒哒自己生成的代码会自动接上共享后端的配置。
+**正常流程本身没有问题**（建委说明的操作方式）：选「共享后端」→ 输入提示词 → 秒哒生成第二个应用，两者自动共享，用户不需要、也拿不到"后端地址"。"秒哒从零生成的第二个应用一定能自动接上配置"目前没有单独实测，下次遇到时补证据。
 
 **这次出的问题**（2026-10-22 本命音律管理后台）：秒哒在新应用里创建沙箱时三次 `Sandbox creation timeout`，工作区 `.env` 只有 `VITE_APP_ID`，共享后端的两个连接变量没写进来，它无法确认共享是否生效，停下来询问。之后它自己从已发布的用户端前端里取出 anon key，探测到真正在用的后端，注入构建变量，后台登录实测正常，共享成立。中途用到过一个 `offline-projects` 开头的地址，那是已暂停的旧后端，不能用。
 
