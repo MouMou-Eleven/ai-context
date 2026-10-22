@@ -336,6 +336,7 @@ ai-context/
 │   │   │       │   ├── topics/  秒哒专题：上传、登录、支付、SEO、排错、后端、微信验证
 │   │   │       │   │   ├── authentication.md  排查短信登录与手机号身份不一致问题
 │   │   │       │   │   ├── backend-storage.md  在应用创建时明确形态和真实后端持久化
+│   │   │       │   │   ├── case-benming-shared-backend.md  本命音律两个应用共享后端：本地预打包函数、上传顺序、发布构建坑与可照搬结论
 │   │   │       │   │   ├── case-shiyichuang-r9-auth-lock.md  十一创R9认证锁抢占报错、依赖实测、验收遗漏与云端热修保护
 │   │   │       │   │   ├── content-rectification.md  内容整改提示词
 │   │   │       │   │   ├── payment-case-yungouos-jsapi.md  YunGouOS 微信 JSAPI 支付完整接入案例

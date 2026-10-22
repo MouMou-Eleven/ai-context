@@ -433,7 +433,8 @@
     "work/domains/design/graphic/design-principles/typography.md": "字体数量、中西文搭配、字号层级、行距字距行长、字体气质",
     "work/domains/design/graphic/design-principles/color.md": "明度与辨识度、色调调和、色环配色、面积与数量、颜色气质",
     "work/domains/design/graphic/design-principles/mood.md": "高级感、力量感、纤细感、热闹与安静各自的手段",
-    "work/domains/design/graphic/design-principles/images-and-charts.md": "选图裁切、多图组织、人物朝向、图上压字、图表做法"
+    "work/domains/design/graphic/design-principles/images-and-charts.md": "选图裁切、多图组织、人物朝向、图上压字、图表做法",
+    "work/domains/development/tools/miaoda/topics/case-benming-shared-backend.md": "本命音律两个应用共享后端：本地预打包函数、上传顺序、发布构建坑与可照搬结论"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

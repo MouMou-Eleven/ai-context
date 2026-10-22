@@ -474,38 +474,36 @@ curl -i https://域名/<file>.txt
 
 **预防**：写秒哒提示词前先区分“秒哒能执行的云端静态动作”和“必须由用户完成的动态复现”。诊断提示词统一复用 [运行诊断专题](./topics/runtime-diagnostics.md)，不得凭 Codex 的工具能力脑补秒哒能力。
 
-## #27 原生 JS + Vite 项目被平台重建 `postcss.config.js` → 构建失败 `Cannot find module 'tailwindcss'`
+## #27 云端发布流水线按平台模板重建配置 → 上传源码本地能构建，发布时装依赖或构建失败
 
-> **实战来源**：2026-08-30「豆格工坊 · 拼豆图纸生成器」bead-grid-studio v1.2.0 秒哒源码包部署。本地 `npm run build` 正常，云端首版构建失败；连修两轮才成功（先删 tailwind 留 autoprefixer → 仍失败；把 plugins 置空 → 成功）。
+**适用**：上传本地写好的 React + Vite 源码给秒哒，秒哒「生成完成」或预览正常，点**发布**时报「编译失败：安装依赖失败」或构建中断。不适用于业务代码本身的报错。
 
-**症状**：秒哒部署/发布时构建中断：
-```
-Build failed with 1 error: /v1/plugin/vite:css
-PostCSS config: Failed to load PostCSS config (searchPath: /app/.sourcecode/app-src)
-Failed to load PostCSS config: Cannot find module 'tailwindcss'
-Require stack:
-- /app/.sourcecode/app-src/postcss.config.js
-```
-只删 tailwindcss、保留 autoprefixer 后，变为：
-```
-Cannot find module 'autoprefixer'
-```
+**症状（三次实战）**：
 
-**根因**：
-1. 本项目是原生 JS（ES Modules）+ Vite 8，**零 PostCSS 生态**：`package.json` 只有 `vite` / `@playwright/test`，没有 `tailwindcss` / `autoprefixer` / `postcss`；`styles.css` 是纯 CSS。
-2. 上传包里**没有** `postcss.config.js`（已核实仓库无此文件、无 `tailwind.config.js`、无任何 postcss 引用）——该配置是**秒哒云端构建环境按平台 Vite 模板自动生成**的（默认 `plugins: { tailwindcss: {}, autoprefixer: {} }`，并可能带 `tailwind.config.js`）。
-3. Vite 构建自动加载 `postcss.config.js` → Node 端 `require('tailwindcss')` 找不到模块 → 构建在 CSS 插件阶段崩溃，与业务代码无关。
-4. 本地不报错的原因：本地没有 `postcss.config.js`，Vite 不加载任何 PostCSS 配置。
+| 时间、项目 | 报错 | 直接原因 |
+|---|---|---|
+| 2026-08-30 豆格工坊 | `Failed to load PostCSS config: Cannot find module 'tailwindcss'`，删掉后又报 `'autoprefixer'` | 平台按模板生成了 `postcss.config.js`（tailwindcss + autoprefixer），项目没装这两个包 |
+| 2026-10-22 本命音律用户端、管理后台 | `ERR_PNPM_UNKNOWN: This project is configured to use npm` | `package.json` 写了 `"packageManager": "npm@10.9.2"`，平台发布用 `pnpm install`，pnpm 看到这个字段直接拒绝安装 |
+| 2026-10-22 本命音律管理后台 | 去掉上面字段后仍构建失败 | 平台把 `vite.config.ts` 重置成官方模板（引用 `vite-plugin-svgr`），项目没装该插件；又把模板里的 `pnpm-workspace.yaml` 当遗留文件清掉了 |
 
-**修复（按实战顺序）**：
-- ❌ 第一轮（无效）：移除 tailwindcss 引用、保留 autoprefixer、删除失效的 tailwind.config.js → 仍报 `Cannot find module 'autoprefixer'`（它同样未安装；逐插件删除会连环踩坑）。
-- ✅ 第二轮（有效）：把 `postcss.config.js` 的 `plugins` 置空 `{}`（纯 CSS 无需任何 PostCSS 处理）→ `pnpm install && npx vite build --logLevel error` exit 0，产物完整，发布成功。
+同批秒哒还在生成阶段往工程里注入了 shadcn / Tailwind 文件（`tailwind.config.js`、`src/components/ui/` 等），因为提示词红线写了"保持 plugins 为空或删除"，它自己清掉了。
 
-**预防**：
-1. 原生 JS/Vite 项目交付秒哒时，提示词红线段写明："本项目无 postcss / tailwindcss / autoprefixer 依赖；如平台生成 `postcss.config.js` 或 `tailwind.config.js`，请将 `plugins` 置空或直接删除两个文件；禁止新增未使用的 PostCSS 插件/依赖。"
-2. 包内 PRD 与清单中标注"无 CSS 预处理器、无 PostCSS/Tailwind 插件"。
-3. 验收以 `vite build --logLevel error` exit 0 且 `dist/` 完整为准，不能只信"秒哒显示创建完成/构建成功"。
-4. 遇到 `Cannot find module 'tailwindcss'` / `'autoprefixer'` 这类报错时，首选修复就是"置空 plugins"，不要逐插件删除。
+**根因**：秒哒的发布流水线不执行上传包里的 `npm ci && npm run build`，而是用平台模板的构建合同：`pnpm install && npx vite build --logLevel error`（10-22 两个应用的修复回执都按这条命令验收），并以平台模板为准维护 `vite.config.ts`、`postcss.config.js`、`pnpm-workspace.yaml`。生成阶段的构建（会跑我们的 `npm run build`）通过，不代表发布阶段能通过。本地没有模板文件，所以本地永远复现不了。
+
+**修复**（按顺序）：
+
+1. 删掉 `package.json` 的 `packageManager` 字段。
+2. 平台模板的 `vite.config.ts` 引用了什么插件，就在 `devDependencies` 补上（10-22 是 `vite-plugin-svgr@^5.2.0`）；不要改回我们自己的 `vite.config.ts`。
+3. 恢复平台模板的 `pnpm-workspace.yaml`。
+4. PostCSS 报错时，首选把 `postcss.config.js` 的 `plugins` 置空 `{}`，不要逐个删插件。
+
+**预防（打包时就做掉）**：
+
+1. 上传包的 `package.json` **不写** `packageManager`；锁文件只作本地复建依据，平台发布用 pnpm 时不读 `package-lock.json`，所以依赖版本要在 `package.json` 里写成精确版本。
+2. 包里放一份 `postcss.config.js`，内容 `export default { plugins: {} }`；`vite.config.ts` 只用 `@vitejs/plugin-react`，不依赖自定义 `root`、`outDir` 等路径（平台可能整份替换）。项目若必须用自定义 Vite 配置，提示词里写明"发布前确认平台模板配置与上传配置的差异并回报"。
+3. 提示词红线写明：平台若注入 Tailwind / shadcn / PostCSS 插件或改写 `vite.config.ts`，保持 `plugins` 为空或删除注入文件；平台模板必须的文件（`pnpm-workspace.yaml`、模板插件依赖）**保留**，不要当成"与清单不一致"删掉。
+4. 要求秒哒在生成完成后、发布前，按 `pnpm install && npx vite build --logLevel error` 跑一遍并回报退出码；不能只回报 `npm run build` 通过。
+5. 发布报错时把「错误详情」整段发给秒哒修复即可，这类问题对话修复一次通过；修完要把改动（删字段、补依赖、恢复的文件）合回本地源码，下一包不能再带回去。
 
 ## #28 PATCH 的 JSON 路径过滤触发网关白名单错误，被误读为数据库缺列
 
@@ -574,3 +572,22 @@ R25在本地同步此方向，并在保存前读取 `updated_at`，以 `id` 和�
 **修复与预防**：打包时把业务改动、运行依赖、仅本地验证用的依赖分开统计；确需更新依赖时写明版本、用途、目标哈希和兼容检查，不要把整个 vendor 目录无差别带上。同名但内容不同的文件，先核对差异再决定。流程见 [workflow.md 第 7 阶段](./workflow.md#第-7-阶段打增量包路径-b)。
 
 来源：言剪 B6（2026-09-27），项目细节见[言剪修订](../../../../projects/yancut-ai/revisions/2026-09-27-b6-runtime-logs-and-ai-assistance.md)。
+
+## #31 共享后端的第二个应用拿不到后端地址 → 识别超时、或用了已暂停的旧后端
+
+**适用**：第一个应用（带后端）已发布；第二个应用（如管理后台）在首页点「共享后端」选了第一个项目，再上传本地源码，源码前端需要 `VITE_SUPABASE_URL`、`VITE_SUPABASE_ANON_KEY` 才能调到共享的函数。
+
+**症状**（2026-10-22 本命音律管理后台）：秒哒按提示词先确认共享后端，三次返回 `Sandbox creation timeout`；工作区 `.env` 里只有 `VITE_APP_ID`，没有共享后端的 URL 和 anon key，它停下来问。建委手动给了一个后端地址 `backend.appmiaoda.com/offline-projects/...`，秒哒探测后发现那是**已暂停的旧后端**（返回"后端服务因长期未使用已暂停"），真正在用的是 `backend.miaoda.online/projects/...`；anon key 最后是它从已发布的用户端 JS 里取出来的。之后构建、注入三个变量、实测后台登录都正常，共享成立。
+
+**根因**：选「共享后端」后，平台会把两个应用标成共享（之后的修改回执里会列出"受本次编辑影响的项目：本命音律、本命音律管理后台"），但**上传的自定义源码里那两个构建变量不会自动填好**；新应用刚建时的沙箱也可能还没就绪。旧应用、旧后端地址（`offline-projects`）可能长期留着但已暂停，凭记忆给地址容易给错。
+
+**预防**：
+
+1. 第一个应用部署完，让秒哒**回报它的后端项目 URL 和 anon key 是否已注入构建**（URL 可以回报全文，anon key 是公开值但不必贴全文），建委记下 URL。
+2. 第二个应用的提示词里直接写："共享后端 URL 为 `<第一个应用回报的 URL>`；anon key 与该应用已发布前端里使用的相同，请从共享后端配置或已发布用户端中取得并注入；工作区读不到时停下回报，不要自造后端。" 同时写明用户端发布网址。
+3. 第二个应用的提示词红线：不新建表、函数、密钥，不重新部署共享函数；完成后让它回报"未新建、未修改任何表/函数/密钥"。
+4. 验收标准是**第二个应用能读到第一个应用写入的数据**（例如后台能看到用户端刚建的档案），不是"选了共享后端"。
+5. 共享后端之后，任何一个应用的对话改动都可能改到共享函数和表（10-22 用户端改登录时，回执提示两个项目都受影响）。改后端的那一轮，要同时验收另一个应用。
+
+来源：本命音律 R1 两个应用的完整秒哒对话（建委 2026-10-22 提供），项目记录见[本命音律案例](./topics/case-benming-shared-backend.md)。
+

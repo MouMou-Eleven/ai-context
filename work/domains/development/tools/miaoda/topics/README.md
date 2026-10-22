@@ -9,6 +9,7 @@
 | 支付、签名、回调、退款 | [payment.md](./payment.md)；完整案例 [YunGouOS JSAPI](payment-case-yungouos-jsapi.md) |
 | 云端或真机报错、日志面板、排错 | [runtime-diagnostics.md](./runtime-diagnostics.md) |
 | 数据库：建库、补库、改字段、删字段、备份、单环境和多环境、增量包迁移 | [backend-storage.md](./backend-storage.md) |
+| 多个应用共享一个后端（用户端 + 管理后台），本地源码上传部署 | [本命音律共享后端案例](./case-benming-shared-backend.md) |
 | SEO | [seo-and-content.md](./seo-and-content.md)（提示词）、[seo-optimization.md](./seo-optimization.md)（全站方法） |
 | 网站公开内容和主体口径整改 | [content-rectification.md](./content-rectification.md) |
 | 微信网址安全验证 | [wechat-urlsec-verification.md](./wechat-urlsec-verification.md) |
