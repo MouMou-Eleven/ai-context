@@ -13,7 +13,7 @@
 | `ai-collaboration` · 【05】第3课 · AI时代的协作心法：从 Prompt 到 Skill、MCP、CLI、API 与 Harness<br>[飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/VsvFwdyHRiHuDIkxx5gcM6nanmh) | 建委2026-09-17明确：会员社群系统课程第3课 | 已发布：完成学习理由开场与学员视角修订，飞书 revision 168；原录播视频、表格和全部既有链接已回读确认 | 2026-08-18；本次未回读飞书 | 系列归属已确认；本次未新增单场授课证据 |
 | `web-infrastructure` · 【07】第5课 · 网页背后的常识：图床、服务器、域名、备案<br>[飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/RFYCwIPd0i7CeZk8e0ycT7Q2nuR?from=from_copylink) | [2026-08-30 修订](./revisions/2026-08-30-lesson-5-purchase-language-and-decision-boundary.md)与[2026-08-31 讲后复盘](./revisions/2026-08-31-lesson-5-post-lecture-ai-era-purpose-and-parameter-explanation.md)明确写会员社群第5课；区别于仅靠旧目录/课号推定 | 已发布：按两轮真实授课反馈完成重构，飞书 revision 82；顶部视频和原有图片保留，新增对象存储与数据库分工、只能浏览与可以下单、一次点外卖3张机制图，回读共16张图片；旧报名案例、前置术语堆叠和定义式参数表已改写 | 2026-09-01；本轮未重新打开飞书 | 原记录明确已直播授课，但具体场次日期未独立核验；不由资料发布日期推断 |
 | `static-web-publishing` · 【06】第4课 · 用 AI 做出并发布一个静态网页<br>[飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/Pwo5wdyFIiB9qVkjFvVclENVnOf?from=from_copylink) | 建委2026-09-16明确确认为会员社群AI编程系列课程；[8月23日修订](./revisions/2026-08-23-lesson-4-visualization-and-case-delivery.md) | 非程序员和 AI 协作初学者；以口语化方式解释 AI 时代为什么仍要看懂网页结构；通过机制型可视化说明网页文件、浏览器渲染、HTML 盒子、CSS 前后变化、JavaScript 交互、静态网页边界、PRD、单文件/多文件、部署、MCP 和 GitHub Pages；配套可运行的三阶段演示、个人简介上传案例与多文件坦克大战；已发布：飞书 revision 35；回读确认 13 个一级章节、25 张图片、1 个案例附件，用户新增的 GitHub Pages 成功图已保留，旧 AI 味标题与专业调试面板内容已删除 | 2026-08-23；本次未回读飞书 | 系列归属已确认；本次未新增单场授课证据 |
-| `bug-evidence-ladder` · 【09】第7课 · 报错不可怕：从"描述给 AI"到"让 AI 自己看"<br>[飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/DGPIw6IeYiKO3wk9wO7cdkb8ngp) | 建委2026-10-21明确：会员社群AI编程第七节课；参考过济南市图书馆Bug课的方法，但两份资料各自独立 | 课前重写：按"说、拍、透视、录、接"五级证据组织；开场用同一Bug模糊提问与带网络证据提问的真实模型对比；控制台用"化验单"、网络用"外卖订单追踪"讲解，含2个文档内交互块（状态码追踪器、Bug分诊台）；第5级用Chrome DevTools MCP/CLI实跑演示页的真实输出；附可下载的"Bug急诊室"演示页（6个病例，真实报错和真实httpbin请求）；回读确认11个一级章节、6张图片、1个附件，飞书 revision 12 | 2026-10-21 | 尚未授课 |
+| `bug-evidence-ladder` · 【09】第7课 · 报错不可怕：从"描述给 AI"到"让 AI 自己看"<br>[飞书 Wiki](https://hv21wf9uao9.feishu.cn/wiki/DGPIw6IeYiKO3wk9wO7cdkb8ngp) | 建委2026-10-21明确：会员社群AI编程第七节课；参考过济南市图书馆Bug课的方法，但两份资料各自独立 | 课前两轮改稿：五级阶梯法（说、拍、透视、录、接）、"Bug急诊室"奶茶点单演示页（6个病例）、真实模型对比开场、中文界面真实截图、控制台与网络的分流判断、第5级"让AI自己看"（Chrome DevTools MCP、诊断日志、网站MCP接口）；第二轮按建委反馈全篇改口语，见[10月21日修订](./revisions/2026-10-21-lesson-7-bug-course-voice-and-structure.md)；回读确认11个一级章节、6张图片、1个附件、2个交互块，飞书 revision 29 | 2026-10-21 | 尚未授课 |
 
 网页基础设施课的归属依据是仓库已有的明确修订记录，并非本轮重新取得的外部证明。如果原需求或建委最新确认不同，应立即按新证据更正；不能把它推广为同号或相邻课程均属于社群。
 
@@ -30,7 +30,7 @@
 
 | 主题 | 已确认 | 仍缺信息 |
 |---|---|---|
-| `miaoda-development-flow` · 秒哒完整开发流程（原记“第六课”） | 建委2026-09-16确认属于会员社群直播后的实战复盘；[9月7日原修订](./revisions/2026-09-07-lesson-6-lecture-review-and-visualization-rules.md)涉及PRD、托管、支付、打包与可视化 | 正文链接、最终正式标题、具体直播日期与使用版本；不与图书馆Bug课合并 |
+| `miaoda-development-flow` · 秒哒完整开发流程（原记“第六课”） | 建委2026-09-16确认属于会员社群直播后的实战复盘；[9月7日原修订](./revisions/2026-09-07-lesson-6-lecture-review-and-visualization-rules.md)涉及PRD、托管、支付、打包与可视化 | 正文链接、最终正式标题、具体直播日期与使用版本；不与图书馆Bug课合并。2026-10-21建委在第7课改稿中说明，社群上一节课带大家了解秒哒、秒哒怎么和Codex结合、用20分钟用秒哒落地网站；是否就是本条复盘对应的那一课，未确认 |
 
 上述复盘已经有本人确认的讲后反馈性质；缺日期不再把项目身份标成待确认。常规直播为每周末晚上8点，不能据此推算该场日期。
 

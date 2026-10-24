@@ -1358,6 +1358,7 @@ ai-context/
 │   │   │   │   ├── 2026-09-15-ai-programming-breadth-rationale-correction.md  追溯“首期 AI 编程论证改为具体工具与连接方式”的调整原因与适用范围
 │   │   │   │   ├── 2026-09-15-public-term-and-internal-continuity.md  追溯“区分对外年度口径与内部持续交付设计”的调整原因与适用范围
 │   │   │   │   ├── 2026-09-15-reader-address-you-and-everyone.md  追溯“社群介绍页统一使用“你／大家”面对读者”的调整原因与适用范围
+│   │   │   │   ├── 2026-10-21-lesson-7-bug-course-voice-and-structure.md  追溯“第7课 Bug 课课前改稿：口语化纠正与排错课结构”的调整原因与适用范围
 │   │   │   │   └── README.md  修订索引与读取边界
 │   │   │   └── technical-dictionary-scope.md  会员配套文章的资料范围与词条边界
 │   │   ├── README.md  项目与案例总入口

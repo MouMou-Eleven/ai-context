@@ -4,6 +4,7 @@
 
 | 文件 | 内容 |
 |---|---|
+| [2026-10-21-lesson-7-bug-course-voice-and-structure.md](./2026-10-21-lesson-7-bug-course-voice-and-structure.md) | 会员AI编程第7课Bug课：课前两轮改稿，建委认可的结构（一个场景串全课、真实截图、双系统快捷键）与口吻修正 |
 | [2026-09-07-lesson-6-lecture-review-and-visualization-rules.md](./2026-09-07-lesson-6-lecture-review-and-visualization-rules.md) | 会员直播后复盘：开发流程与后续课件经验复用；2026-09-16本人确认归属 |
 | [2026-08-29-student-material-definitive-positioning.md](./2026-08-29-student-material-definitive-positioning.md) | 会员配套文章：Git/GitHub，不计课程节数；2026-09-16本人确认归属 |
 | [2026-08-23-lesson-4-visualization-and-case-delivery.md](./2026-08-23-lesson-4-visualization-and-case-delivery.md) | 会员AI编程系列课：静态网页发布；2026-09-16本人确认归属 |
