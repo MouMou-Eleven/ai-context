@@ -17,7 +17,7 @@
 | 任务 | 必读 |
 |---|---|
 | 准备演讲 / 对外分享 / 主题分享（台下是听众，没有评委） | [培训入口](work/domains/training/README.md) + [演讲与分享方法](work/domains/training/experience/demo-driven-course-design.md#演讲与对外分享问题含义现实事例可灵活) + [口语样稿](system/expression/voice-samples.md) |
-| 写培训**课件** / 分享资料 / 课堂文档（讲什么、怎么讲） | [培训入口](work/domains/training/README.md) → [培训风格](work/domains/training/experience/jianwei-training-style.md) + [口语样稿](system/expression/voice-samples.md) + [课程组织](work/domains/training/experience/demo-driven-course-design.md)；飞书课件加读[可视化](work/domains/training/experience/visual-and-oral-training-docs.md) |
+| 写培训**课件** / 分享资料 / 课堂文档（讲什么、怎么讲） | [培训入口](work/domains/training/README.md) → [培训风格](work/domains/training/experience/jianwei-training-style.md) + [口语样稿](system/expression/voice-samples.md) + [课程组织](work/domains/training/experience/demo-driven-course-design.md) |
 | 写培训**方案 / 大纲**（给主办方） | [常讲课题](work/domains/training/topics.md) + [对外方案写法](work/domains/training/experience/external-proposal-design.md) + [内外稿边界](work/domains/other/commercial/experience/external-deliverable-language.md)；Word 加读[政企排版](work/domains/other/commercial/delivery-formats/gov-enterprise-word.md) |
 | 写实操教程、保姆级教程（不管讲什么主题） | [教程写法](work/domains/training/experience/tutorial-writing.md) + 主题所在领域的方法 |
 | 公众号 / 图文文章 | [自媒体入口](work/domains/self-media/README.md) → [文章](work/domains/self-media/articles/README.md) + [标题](work/domains/self-media/titles/README.md) |

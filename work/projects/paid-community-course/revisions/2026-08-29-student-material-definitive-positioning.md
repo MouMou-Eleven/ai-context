@@ -31,7 +31,7 @@
 
 ## 影响范围
 
-- 通用培训规则：`work/domains/training/experience/teaching-and-course-design.md`
+- 通用培训规则：`work/domains/training/experience/README.md`
 - 学员教程规则：`work/domains/training/experience/tutorial-writing.md`
 - 社群配套文章索引：[资料索引](../course-materials-index.md)；不计入系统课程节数。
 - 后续所有面向学员的 AI 技术概念文章、课程正文和教程。

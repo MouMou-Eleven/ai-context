@@ -10,10 +10,10 @@
 |---|---|---|---|
 | **演讲 / 对外分享 / 外出分享 / 主题分享 / 分享稿** | 现场听众 | [演讲与分享的可选三层结构](experience/demo-driven-course-design.md#演讲与对外分享问题含义现实事例可灵活) + [口语样稿](../../../system/expression/voice-samples.md) | 台下是听众、没有评委；有评委提问的路演和答辩走[商业化](../other/commercial/README.md)。主动判断三层结构是否适配主题，不强制套用，演讲不自动生成课堂练习 |
 | **培训方案 / 课程大纲**（报给主办方的） | 主办方、领导 | [常讲课题](./topics.md) → [对外方案写法](experience/external-proposal-design.md) | 需要 Word 时读[政企 Word 排版](../other/commercial/delivery-formats/gov-enterprise-word.md) |
-| **课件 / 分享资料 / 课堂文档**（上课用的） | 学员 | [建委的培训风格](./experience/jianwei-training-style.md) + [口语样稿](../../../system/expression/voice-samples.md) | [课程怎么组织](./experience/demo-driven-course-design.md)；飞书课件再读[可视化与口语化](./experience/visual-and-oral-training-docs.md) |
+| **课件 / 分享资料 / 课堂文档**（上课用的） | 学员 | [建委的培训风格](./experience/jianwei-training-style.md) + [口语样稿](../../../system/expression/voice-samples.md) | [课程怎么组织](./experience/demo-driven-course-design.md) |
 | **实操教程**（学员跟着做的） | 学员 | [教程写法](./experience/tutorial-writing.md) | 当前工具的实际界面 |
 | **讲技术概念**（API、CLI、Skill 这类） | 学员 | [从问题推导概念](./experience/technical-explanation/problem-driven-technical-explanation.md) | — |
-| **讲师备课稿**（时间安排、演示准备，只给自己看） | 建委本人 | 只有建委明确要才写 | [备课与交付物区别](./experience/teaching-and-course-design.md) |
+| **讲师备课稿**（时间安排、演示准备，只给自己看） | 建委本人 | 只有建委明确要才写 | [培训风格 · 分清交付物](./experience/jianwei-training-style.md#五学员同时在看写什么不写什么) |
 | **招生宣传 / 课程介绍** | 潜在学员 | [自媒体：宣传写法](../self-media/marketing-copy/reader-question-led-promotion.md) + [口语样稿](../../../system/expression/voice-samples.md) | 本页的课题和课程事实，用来提供干货 |
 | **讲后复盘、沉淀经验** | 以后的 AI | 本页"怎样沉淀" | — |
 
@@ -44,7 +44,7 @@
 | 位置 | 内容 |
 |---|---|
 | [topics.md](./topics.md) | 建委常讲的课题（AI 全景、提示词工具、Excel/Word、知识库、自动化、AI 编程……）和往期大纲 |
-| [experience/](./experience/README.md) | 培训方法：风格、课程组织、可视化与口语化、教程写法、技术概念讲解 |
+| [experience/](./experience/README.md) | 培训方法：以培训风格为总纲，下分课程组织、技术概念讲解、教程写法、方案写法 |
 | [AI 培训项目](../../projects/ai-training/README.md) | 各单位培训场次（济南干部培训、济南市图书馆）、[场次索引](../../projects/ai-training/sessions-index.md)；按课件标题找飞书正文；归属不明的资料 |
 | [attribution-and-updates.md](./attribution-and-updates.md) | 一份资料属于哪个系列、哪场培训的判断规则 |
 

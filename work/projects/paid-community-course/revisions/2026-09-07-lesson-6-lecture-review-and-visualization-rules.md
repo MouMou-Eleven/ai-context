@@ -39,7 +39,7 @@
 本文件继续作为第六课发生了什么、为什么修改的项目层证据。其中可跨课程复用的口语化、学员视角、整篇可视化审计、截图/逻辑图/生图/视频分工、生图不重复、媒体与标红保护和删除后残留检查，已提升为通用活动方法：
 
 - [默认培训风格](../../../domains/training/experience/jianwei-training-style.md)：最终课件形态和高频失误。
-- [可视化与口语化](../../../domains/training/experience/visual-and-oral-training-docs.md)：飞书课堂文档的口语化、媒体选择、生图和编辑保护。
+- [可视化与口语化](../../../domains/training/experience/jianwei-training-style.md)：飞书课堂文档的口语化、媒体选择、生图和编辑保护。
 - [培训经验入口](../../../domains/training/experience/README.md)：直播复盘向通用经验转化、已有规则重复失误时的强化机制。
 
 秒哒的具体页面、功能名称、案例链接和本课章节调整仍留在本文件，不上升为所有 AI 培训的固定模板。

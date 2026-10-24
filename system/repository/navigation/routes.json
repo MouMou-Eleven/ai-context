@@ -1198,27 +1198,6 @@
           ]
         },
         {
-          "path": "work/domains/training/experience/visual-and-oral-training-docs.md",
-          "whenAny": [
-            "飞书",
-            "可视化",
-            "图示",
-            "图片",
-            "口语"
-          ],
-          "excludeAny": [
-            "宣传",
-            "朋友圈",
-            "招生",
-            "只查",
-            "查询位置"
-          ],
-          "intents": [
-            "create",
-            "write"
-          ]
-        },
-        {
           "path": "work/domains/training/experience/demo-driven-course-design.md",
           "whenAny": [
             "课程结构",
@@ -3367,14 +3346,6 @@
         "work/domains/training/topics.md"
       ],
       "readWhen": [
-        {
-          "whenAny": [
-            "飞书"
-          ],
-          "paths": [
-            "work/domains/training/experience/visual-and-oral-training-docs.md"
-          ]
-        },
         {
           "whenAny": [
             "概念",

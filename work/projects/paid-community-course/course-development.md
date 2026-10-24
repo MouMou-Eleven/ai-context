@@ -59,7 +59,7 @@
 
 ## 课堂交付边界
 
-本项目遵循 [`../../experience/README.md`](../../domains/training/experience/README.md) 和 [`../../experience/jianwei-training-style.md`](../../domains/training/experience/jianwei-training-style.md) 的通用培训方法；课堂主文档的媒体和编辑保护另见 [`../../experience/visual-and-oral-training-docs.md`](../../domains/training/experience/visual-and-oral-training-docs.md)。本文件只记录会员社群的项目事实、课程规划和项目特有边界，不复制通用规则。
+本项目遵循 [`../../experience/README.md`](../../domains/training/experience/README.md) 和 [`../../experience/jianwei-training-style.md`](../../domains/training/experience/jianwei-training-style.md) 的通用培训方法（课堂主文档的媒体和编辑保护也在培训风格里）。本文件只记录会员社群的项目事实、课程规划和项目特有边界，不复制通用规则。
 
 单节时长、章节顺序和具体交付形式服从建委当次任务要求，仓库不固定 90 分钟或 120 分钟模板。
 

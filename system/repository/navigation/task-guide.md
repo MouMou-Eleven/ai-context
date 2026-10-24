@@ -90,7 +90,6 @@
 | 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/README.md) |
 | 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/jianwei-training-style.md) |
 | 培训备课与复盘（先核对归属） | 实操、教程、跟做、操作步骤；排除：宣传、朋友圈、招生、只查、查询位置 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/tutorial-writing.md) |
-| 培训备课与复盘（先核对归属） | 飞书、可视化、图示、图片、口语；排除：宣传、朋友圈、招生、只查、查询位置 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/visual-and-oral-training-docs.md) |
 | 培训备课与复盘（先核对归属） | 课程结构、课程大纲、演示、场景实操；排除：宣传、朋友圈、招生、只查、查询位置 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/demo-driven-course-design.md) |
 | 培训备课与复盘（先核对归属） | 本类任务；排除：社群、会员 | 按所查问题 | [正文](../../../work/projects/ai-training/README.md) |
 | 自媒体、个人IP与渠道表达 | 朋友圈、个人IP、个人 IP、建委口吻、我的口吻 | 创作/修改/沉淀 | [正文](../../expression/README.md) |

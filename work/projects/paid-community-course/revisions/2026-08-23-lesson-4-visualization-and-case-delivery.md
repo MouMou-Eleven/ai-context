@@ -40,6 +40,6 @@
 ## 影响范围
 
 - 通用培训方法：`work/domains/training/experience/demo-driven-course-design.md`
-- 课程与课件入口：`work/domains/training/experience/teaching-and-course-design.md`
+- 课程与课件入口：`work/domains/training/experience/README.md`
 - 学员教程规则：`work/domains/training/experience/tutorial-writing.md`
 - 第 4 课飞书正文与课程资料索引

@@ -1260,15 +1260,13 @@ ai-context/
 │   │       ├── experience/  培训经验
 │   │       │   ├── demo-driven-course-design.md  演示驱动课程设计
 │   │       │   ├── external-proposal-design.md  培训方案与课程大纲的受众、内容筛选、语言及验收
-│   │       │   ├── jianwei-training-style.md  建委默认培训风格与课件形态
-│   │       │   ├── README.md  经验索引
+│   │       │   ├── jianwei-training-style.md  培训风格总纲：为什么这样写、怎么讲、怎么标重点、怎么配画面
+│   │       │   ├── README.md  培训方法总览与读取顺序
 │   │       │   ├── sources.md  核对教学方法的来源、课程身份与验证范围
-│   │       │   ├── teaching-and-course-design.md  备课、课件与课程设计
 │   │       │   ├── technical-explanation/  技术解释方法
 │   │       │   │   ├── problem-driven-technical-explanation.md  问题驱动的技术解释方法
 │   │       │   │   └── README.md  方法索引
-│   │       │   ├── tutorial-writing.md  学员教程写法
-│   │       │   └── visual-and-oral-training-docs.md  飞书培训文档的可视化与口语化
+│   │       │   └── tutorial-writing.md  学员教程写法
 │   │       ├── README.md  培训接洽、选题、大纲确认、课程开发与授课复盘的总入口
 │   │       └── topics.md  建委常讲的培训课题库与往期大纲，写大纲和方案前先读
 │   ├── projects/  项目与案例：这件事具体怎样了
