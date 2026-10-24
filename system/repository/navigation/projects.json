@@ -67,6 +67,17 @@
         "work/domains/development/industry-cases/education/README.md",
         "work/domains/development/README.md"
       ]
+    },
+    {
+      "id": "tianjin-primary-math",
+      "name": "天津小学数学智能体数学搭一搭",
+      "kind": "案例",
+      "domain": "教育行业应用开发",
+      "entry": "work/domains/development/industry-cases/education/case-tianjin-primary-math.md",
+      "domainEntries": [
+        "work/domains/development/industry-cases/education/README.md",
+        "work/domains/development/README.md"
+      ]
     }
   ],
   "archivedProjects": [

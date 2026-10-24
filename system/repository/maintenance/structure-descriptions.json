@@ -443,7 +443,9 @@
     "work/domains/development/industry-cases/education/classroom-agent-design.md": "从课堂任务确定技术组件、学习产物和教师反馈的做法",
     "work/domains/development/industry-cases/education/reference-a02-a08.md": "A02与A08外部分析的可借鉴机制、核验状态和排除项",
     "work/domains/development/industry-cases/education/platform-tianjin-agent.md": "天津指定平台的已核验文档能力与正式账号协作建议",
-    "work/domains/development/industry-cases/education/case-tianjin-education-agents.md": "天津两件小学智能体的需求修订、调研验证和当前未完成项"
+    "work/domains/development/industry-cases/education/case-tianjin-education-agents.md": "天津两件小学智能体的需求修订、调研验证和当前未完成项",
+    "work/domains/development/industry-cases/education/reference-b11-b02.md": "B11与B02数学外部课例的参考机制和采用边界",
+    "work/domains/development/industry-cases/education/case-tianjin-primary-math.md": "数学搭一搭的课堂任务、平台资源、运行验证与依赖修复"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

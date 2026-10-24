@@ -29,6 +29,7 @@
 | 项目 | [言剪 AI](../../projects/yancut-ai/README.md) | 应用开发 |
 | 项目 | [AI 六十甲子古音律与 IP 孵化](../../projects/ai-sixty-jiazi-music-ip/README.md) | 文化产品与IP |
 | 案例 | [天津小学语文与数学智能体开发](industry-cases/education/case-tianjin-education-agents.md) | 教育行业应用开发 |
+| 案例 | [天津小学数学智能体数学搭一搭](industry-cases/education/case-tianjin-primary-math.md) | 教育行业应用开发 |
 <!-- generated-related-assets:end -->
 
 <!-- generated-methods:start -->

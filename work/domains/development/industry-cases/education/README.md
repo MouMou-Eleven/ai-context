@@ -8,7 +8,9 @@
 |---|---|
 | 设计教育智能体与课堂协作流程 | [课堂融合与智能体设计方法](./classroom-agent-design.md) |
 | 借鉴整本书伴读、角色访谈等外部课例 | [A02与A08参考分析](./reference-a02-a08.md)，只取适用机制，不套固定组件 |
+| 借鉴数学项目实践与几何探究课例 | [B11与B02参考分析](./reference-b11-b02.md)，不复制工具链或效果数字 |
 | 接续天津小学语文与数学参赛开发 | [天津教育智能体开发案例](./case-tianjin-education-agents.md)，先看当前事实与未完成项 |
+| 接续数学账号中的实际拼搭原型 | [数学搭一搭开发案例](./case-tianjin-primary-math.md)，含已搭资源、实测与依赖修复 |
 | 核对天津指定平台的已确认能力 | [平台能力与账号协作](./platform-tianjin-agent.md)，操作前重新确认当前界面 |
 
 ## 维护边界
@@ -23,6 +25,7 @@
 | 类型 | 项目或案例 | 适用领域 |
 |---|---|---|
 | 案例 | [天津小学语文与数学智能体开发](case-tianjin-education-agents.md) | 教育行业应用开发 |
+| 案例 | [天津小学数学智能体数学搭一搭](case-tianjin-primary-math.md) | 教育行业应用开发 |
 <!-- generated-related-assets:end -->
 
 <!-- generated-methods:start -->

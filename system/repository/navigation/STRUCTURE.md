@@ -320,10 +320,12 @@ ai-context/
 │   │   │   ├── industry-cases/  按行业保存应用开发方法和真实实践案例
 │   │   │   │   ├── education/  教育智能体与学科应用的课堂融合经验
 │   │   │   │   │   ├── case-tianjin-education-agents.md  天津两件小学智能体的需求修订、调研验证和当前未完成项
+│   │   │   │   │   ├── case-tianjin-primary-math.md  数学搭一搭的课堂任务、平台资源、运行验证与依赖修复
 │   │   │   │   │   ├── classroom-agent-design.md  从课堂任务确定技术组件、学习产物和教师反馈的做法
 │   │   │   │   │   ├── platform-tianjin-agent.md  天津指定平台的已核验文档能力与正式账号协作建议
 │   │   │   │   │   ├── README.md  教育行业开发的任务路由与方法案例索引
-│   │   │   │   │   └── reference-a02-a08.md  A02与A08外部分析的可借鉴机制、核验状态和排除项
+│   │   │   │   │   ├── reference-a02-a08.md  A02与A08外部分析的可借鉴机制、核验状态和排除项
+│   │   │   │   │   └── reference-b11-b02.md  B11与B02数学外部课例的参考机制和采用边界
 │   │   │   │   └── README.md  行业应用案例入口与归属边界
 │   │   │   ├── README.md  应用开发与自动化入口
 │   │   │   └── tools/  编程工具
