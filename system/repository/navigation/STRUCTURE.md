@@ -317,6 +317,14 @@ ai-context/
 │   │   │   │   └── revisions/  追溯开发方法的重要纠正与适用范围变化
 │   │   │   │       ├── 2026-09-15-mobile-ui-verification.md  追溯“移动端 UI：纠正“记录了规则但成品仍遗漏””的调整原因与适用范围
 │   │   │   │       └── README.md  开发经验修订记录
+│   │   │   ├── industry-cases/  按行业保存应用开发方法和真实实践案例
+│   │   │   │   ├── education/  教育智能体与学科应用的课堂融合经验
+│   │   │   │   │   ├── case-tianjin-education-agents.md  天津两件小学智能体的需求修订、调研验证和当前未完成项
+│   │   │   │   │   ├── classroom-agent-design.md  从课堂任务确定技术组件、学习产物和教师反馈的做法
+│   │   │   │   │   ├── platform-tianjin-agent.md  天津指定平台的已核验文档能力与正式账号协作建议
+│   │   │   │   │   ├── README.md  教育行业开发的任务路由与方法案例索引
+│   │   │   │   │   └── reference-a02-a08.md  A02与A08外部分析的可借鉴机制、核验状态和排除项
+│   │   │   │   └── README.md  行业应用案例入口与归属边界
 │   │   │   ├── README.md  应用开发与自动化入口
 │   │   │   └── tools/  编程工具
 │   │   │       ├── miaoda/  实战经验
@@ -1519,4 +1527,4 @@ ai-context/
 
 各入口的分工见[仓库运行](../README.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-10-09*
+*结构最后确认：2026-10-24*

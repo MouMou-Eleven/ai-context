@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "confirmedDate": "2026-10-09",
+  "confirmedDate": "2026-10-24",
   "descriptions": {
     "work/domains/design/video/promo/case-zaijing-production-planning.md": "再净先锋一分钟横屏创赛片规划、AI与AE分工及素材证明边界",
     "work/projects/yancut-ai/case-b3-loading-hotfixes.md": "言剪 B3 后加载热修复盘",
@@ -434,7 +434,15 @@
     "work/domains/design/graphic/design-principles/color.md": "明度与辨识度、色调调和、色环配色、面积与数量、颜色气质",
     "work/domains/design/graphic/design-principles/mood.md": "高级感、力量感、纤细感、热闹与安静各自的手段",
     "work/domains/design/graphic/design-principles/images-and-charts.md": "选图裁切、多图组织、人物朝向、图上压字、图表做法",
-    "work/domains/development/tools/miaoda/topics/case-benming-shared-backend.md": "本命音律两个应用共享后端：本地预打包函数、上传顺序、发布构建坑与可照搬结论"
+    "work/domains/development/tools/miaoda/topics/case-benming-shared-backend.md": "本命音律两个应用共享后端：本地预打包函数、上传顺序、发布构建坑与可照搬结论",
+    "work/domains/development/industry-cases": "按行业保存应用开发方法和真实实践案例",
+    "work/domains/development/industry-cases/README.md": "行业应用案例入口与归属边界",
+    "work/domains/development/industry-cases/education": "教育智能体与学科应用的课堂融合经验",
+    "work/domains/development/industry-cases/education/README.md": "教育行业开发的任务路由与方法案例索引",
+    "work/domains/development/industry-cases/education/classroom-agent-design.md": "从课堂任务确定技术组件、学习产物和教师反馈的做法",
+    "work/domains/development/industry-cases/education/reference-a02-a08.md": "A02与A08外部分析的可借鉴机制、核验状态和排除项",
+    "work/domains/development/industry-cases/education/platform-tianjin-agent.md": "天津指定平台的已核验文档能力与正式账号协作建议",
+    "work/domains/development/industry-cases/education/case-tianjin-education-agents.md": "天津两件小学智能体的需求修订、调研验证和当前未完成项"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

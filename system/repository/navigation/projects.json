@@ -56,7 +56,19 @@
       ]
     }
   ],
-  "cases": [],
+  "cases": [
+    {
+      "id": "tianjin-education-agents",
+      "name": "天津小学语文与数学智能体开发",
+      "kind": "案例",
+      "domain": "教育行业应用开发",
+      "entry": "work/domains/development/industry-cases/education/case-tianjin-education-agents.md",
+      "domainEntries": [
+        "work/domains/development/industry-cases/education/README.md",
+        "work/domains/development/README.md"
+      ]
+    }
+  ],
   "archivedProjects": [
     {
       "id": "openclaw-agent",

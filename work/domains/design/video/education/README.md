@@ -16,7 +16,7 @@
 | AI 生成视频镜头、编写生成提示词 | [AI 视频通用经验](../common/README.md) → 按本次工具选择具体经验 |
 | AE 动画、实拍标注、字幕与后期合成 | [AE 设计](../common/ae-production.md) |
 | 图文转动效、可编辑的文字/颜色/编号动画 | [Remotion Skill 能力说明](../../../other/skills/jianwei-ai-community-remotion-video/README.md) |
-| VR、Coze、交互教学工具或自动生成课件 | [应用开发](../../../development/README.md)；实际教学交付事实留在对应项目或案例 |
+| 教育智能体、Coze、VR交互应用或教学业务系统 | [教育行业开发](../../../development/industry-cases/education/README.md)；课件与微课制作仍按本入口对应交付物选择 |
 | 查同类案例、补本次商单复盘 | [《小树叶》案例](./case-little-leaf-microcourse-mv.md) → [商单模板](../../../../../system/repository/templates/case.md) |
 | 写哞哞微课官网案例简介 | [展示写作规范](./showcase-guidelines.md)，再读对应案例中有证据的事实 |
 

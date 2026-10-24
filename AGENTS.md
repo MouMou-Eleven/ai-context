@@ -28,6 +28,7 @@
 | 视频：宣传片、微课、故事片、AI 视频提示词 | [视频入口](work/domains/design/video/README.md) → 对应片型目录；要写视频提示词再读 [Seedance](work/domains/design/video/common/seedance/README.md) |
 | 用百度秒哒开发 | [秒哒入口](work/domains/development/tools/miaoda/README.md)（先看顶部平台识别）→ 按其中的流程表选一条 |
 | 其他网站 / 应用 / 编程 | [开发入口](work/domains/development/README.md) + [通用开发经验](work/domains/development/experience/README.md) |
+| 教育智能体 / 学科应用 / 课堂业务系统开发 | [教育行业开发](work/domains/development/industry-cases/education/README.md) + [课堂融合方法](work/domains/development/industry-cases/education/classroom-agent-design.md)；教师课件和微课制作仍走设计 |
 | 报价、修改费（PPT、视频、课件等任何单子） | [报价入口](work/domains/other/commercial/quotations/README.md) |
 | 路演、答辩、比赛申报、商业计划、融资（台下有评委或投资人） | [商业化入口](work/domains/other/commercial/README.md) → [赛事和投资人材料](work/domains/other/commercial/experience/competition-and-investor-materials.md) |
 | 合同、正式文书、对外表达标准 | [商业化入口](work/domains/other/commercial/README.md) |

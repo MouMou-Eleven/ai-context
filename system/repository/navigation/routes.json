@@ -1861,6 +1861,57 @@
       "entry": "work/domains/other/commercial/quotations/README.md",
       "priority": 35,
       "dependencies": []
+    },
+    {
+      "id": "education-applications",
+      "label": "教育行业应用与智能体开发",
+      "matchAny": [
+        "教育智能体",
+        "学科智能体",
+        "课堂智能体",
+        "教育行业应用",
+        "教学业务系统",
+        "智能体与课堂融合"
+      ],
+      "excludeAny": [
+        "只查报价",
+        "培训大纲",
+        "培训方案",
+        "培训课件",
+        "智能体培训",
+        "讲师备课"
+      ],
+      "entry": "work/domains/development/industry-cases/education/README.md",
+      "priority": 90,
+      "dependencies": [
+        {
+          "path": "work/domains/development/industry-cases/education/classroom-agent-design.md",
+          "whenAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/industry-cases/education/case-tianjin-education-agents.md",
+          "whenAny": [
+            "天津",
+            "赛道二",
+            "这次参赛"
+          ],
+          "intents": []
+        },
+        {
+          "path": "work/domains/development/industry-cases/education/reference-a02-a08.md",
+          "whenAny": [
+            "A02",
+            "A08",
+            "参考课例",
+            "参考经验"
+          ],
+          "intents": []
+        }
+      ]
     }
   ],
   "outputPolicy": {
@@ -3233,6 +3284,47 @@
           ]
         }
       ]
+    },
+    {
+      "id": "classroom-agent-design",
+      "label": "教育智能体课堂融合",
+      "status": "active",
+      "path": "work/domains/development/industry-cases/education/classroom-agent-design.md",
+      "whenAny": [
+        "教育智能体",
+        "学科智能体",
+        "课堂智能体",
+        "教育行业应用",
+        "教学业务系统",
+        "智能体与课堂融合"
+      ],
+      "excludeAny": [
+        "只查报价",
+        "只做课件排版",
+        "培训大纲",
+        "培训方案",
+        "培训课件",
+        "智能体培训",
+        "讲师备课"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "教师或学校的教育智能体与学科应用需要把学习任务、执行流程、学生作品和教师反馈连接起来时",
+      "notFor": "普通课件美化、微课视频和培训大纲；组件与课堂形式按具体学科和使用条件选择",
+      "acceptance": "课堂任务具体；组件有输入输出与责任；关键核验可复核；学生产物支持教师行动；运行与教学效果分别留证",
+      "evidence": "work/domains/development/industry-cases/education/case-tianjin-education-agents.md",
+      "confirmedAt": "2026-10-24",
+      "source": "建委明确要求课堂融合、整体可用与灵活借鉴；当前采用范围为需求和架构设计，课堂成效待验证",
+      "entryPoints": [
+        "work/domains/development/README.md",
+        "work/domains/development/industry-cases/education/README.md"
+      ],
+      "selectedAny": [
+        "education-applications",
+        "programming"
+      ]
     }
   ],
   "taskRecipes": [
@@ -3475,6 +3567,34 @@
       "paths": [
         "work/domains/design/common/production-workflow.md",
         "work/domains/design/common/feedback-iteration.md"
+      ]
+    },
+    {
+      "id": "education-application-design",
+      "label": "教育智能体与课堂应用开发",
+      "whenAny": [
+        "教育智能体",
+        "学科智能体",
+        "课堂智能体",
+        "教育行业应用",
+        "教学业务系统",
+        "智能体与课堂融合"
+      ],
+      "excludeAny": [
+        "只查报价",
+        "培训大纲",
+        "培训方案",
+        "培训课件",
+        "智能体培训",
+        "讲师备课"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/development/industry-cases/education/README.md",
+        "work/domains/development/industry-cases/education/classroom-agent-design.md"
       ]
     }
   ]
