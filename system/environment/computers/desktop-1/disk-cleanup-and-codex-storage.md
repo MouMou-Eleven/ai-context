@@ -84,7 +84,9 @@
 
 CC Switch 关闭窗口后仍留在托盘并转发请求；当前 ChatGPT 也在使用自己的目录。Claude 的现有符号链接在普通权限 Robocopy 下报 1314，万彩动画和 Focusky 的部分组件报拒绝读取，故这些源目录完整保留。尚未切换三处 UI 输入框，也没有重启活动 ChatGPT 或 CC Switch。
 
-一次性工具入口是 `F:/CC-Switch/Complete-Storage-Migration.cmd`，代码和日志在 `F:/CC-Switch/maintenance/20261016/`。建委完全退出 ChatGPT、从托盘退出 CC Switch 后手动启动并接受 Windows 管理员提示；工具只等待应用退出，不强行结束它们。它会保留原安全权限、链接与旧路径，逐文件校验后再释放 C 盘副本；状态、冲突或校验异常会写明并停止。管理员离线执行和应用重新打开的验收尚未进行。
+当前统一入口是 `F:/CC-Switch/maintenance/storage-migration-v2/Start-Migration.cmd`，原入口转交给它。2026-10-24 13:17 已改由独立 Windows 一次性任务 `AIStorageMigrationOneShot` 执行，没有循环、登录或开机触发器，当前聊天退出不会结束它；任务正在运行时不重复启动。管理员隔离测试 85 项通过，无失败和跳过；真实目录切换和软件重开验收尚未完成。
+
+本机反复退出 CC Switch 又重启的源是 `codex-network-watchdog.ps1`。旧迁移器仅在“只剩 CC Switch”时暂停该循环，播放器同时阻塞就会一直拉起；该条件已修复。看护本身也已关闭自动拉起／强制重启 CC Switch 和改写其代理库，保留系统代理卫生检查，更新后的看护已重新加载。实机正常退出后超过 6 分钟没有重新启动；后续保持用户手动退出决定，不能为了自愈又加回强制拉起。迅雷影音的 7 个残留经正常退出尝试和精确身份、空闲检查后已清除，媒体未修改。详细本地验证见工具目录的 `本次重启与阻塞修复结果.md`。
 
 拟定的真实根目录：CC Switch 为 `F:/CC-Switch/data/config`，Claude Code 为 `F:/CC-Switch/data/claude-code`，Codex 为 `F:/CC-Switch/data/codex`。原 C 盘入口继续保留；Claude MCP 文件和配置环境变量一起处理，CC Switch 的目录设置在数据检查后一起更新。CC Switch 的设备级状态不完全随原生“配置目录”设置迁走，因此本次也准备迁移它的 Roaming/Local 界面数据。不能只改三个输入框而不搬文件和统一实际工具路径，见[官方配置目录说明](https://github.com/farion1231/cc-switch/blob/main/docs/user-manual/en/5-faq/5.1-config-files.md)。
 
