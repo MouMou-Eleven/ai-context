@@ -9,6 +9,8 @@
 - [知识库](https://aiagent.tjtc.edu.cn/site-help/kb.html)、[数据表](https://aiagent.tjtc.edu.cn/site-help/table.html)、[工作空间](https://aiagent.tjtc.edu.cn/site-help/workspace.html)。
 - [大赛作品创建与提交教程](https://www.kdocs.cn/l/cgpNFEkMdyXN)。
 
+用户进一步指出天津平台与 Coze 开源项目的界面和能力结构相近。2026-10-24通过天津大赛入口跳转到 `aiagent.tjtc.edu.cn`，在已登录的语文账号中看到智能体平台首页。结合公开仓库的项目定位，可把当前平台暂时描述为“功能结构与 Coze Studio 高度相近，可能存在定制或衍生关系”；尚未取得天津平台源码、构建清单或官方声明，不能写成已经证明直接基于 `coze-dev/coze-studio`。Coze Loop 的定位更偏提示词开发、评测、追踪和运行观测，与负责智能体和工作流搭建的 Coze Studio 不是同一层产品。
+
 以上相关正文已读取，并进入当前登录账号的编辑界面核查入口。未取得产品来源或源码证据，不能仅凭界面认定是开源Coze改造。
 
 ## 文档已确认的能力
