@@ -77,6 +77,29 @@ class DeliverableChecks(unittest.TestCase):
             with self.assertRaises(zipfile.BadZipFile):
                 checker.check(path, 'external-proposal')
 
+    def test_competition_profile_flags_prompts_clarifications_and_contest_layout(self):
+        for text in ['姓名由真实参与者确认并填写', '本作品由技术人员代做', '真实课堂效果还需要进一步验证', '我问，周长和面积怎么区分']:
+            self.assertTrue(checker.inspect(text, 'competition'), text)
+        self.assertEqual(checker.inspect('学生打开链接就能用，智能体先追问再讲解。', 'competition'), [])
+        ns = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'report.docx'
+            def make(theme=True, caption='left', duty=''):
+                fonts = '<w:rFonts w:asciiTheme="majorHAnsi" w:eastAsiaTheme="majorEastAsia"/>' if theme else '<w:rFonts w:ascii="黑体" w:hAnsi="黑体" w:eastAsia="黑体"/>'
+                cell = lambda t: f'<w:tc><w:p><w:r><w:t>{t}</w:t></w:r></w:p></w:tc>'
+                with zipfile.ZipFile(path, 'w') as z:
+                    z.writestr('word/document.xml', f'<w:document xmlns:w="{ns}"><w:body>'
+                               f'<w:p><w:pPr><w:pStyle w:val="Title"/></w:pPr><w:r><w:rPr><w:rFonts w:ascii="黑体" w:hAnsi="黑体" w:eastAsia="黑体"/></w:rPr><w:t>技术报告</w:t></w:r></w:p>'
+                               f'<w:p><w:pPr><w:jc w:val="{caption}"/></w:pPr><w:r><w:t>图1 功能流程</w:t></w:r></w:p>'
+                               f'<w:tbl><w:tr>{cell("职责")}{cell("姓名")}{cell("工作内容")}</w:tr><w:tr>{cell("平台搭建")}{cell("")}{cell(duty)}</w:tr></w:tbl>'
+                               '</w:body></w:document>')
+                    z.writestr('word/styles.xml', f'<w:styles xmlns:w="{ns}"><w:style w:styleId="Title"><w:name w:val="Title"/><w:rPr>{fonts}</w:rPr></w:style></w:styles>')
+            make()
+            rules = {x['rule'] for x in checker.check(path, 'competition', 'tianjin-contest-word')['findings']}
+            self.assertEqual(rules, {'contest-heading-theme-font', 'contest-caption-center', 'contest-team-duty-blank'})
+            make(theme=False, caption='center', duty='配置智能体与工作流')
+            self.assertEqual(checker.check(path, 'competition', 'tianjin-contest-word')['findings'], [])
+
     def test_proposal_routes_include_audience_and_format_methods(self):
         result = router.resolve('写AI培训方案给组织方，Word格式', 'create')
         for name in ['work/domains/training/experience/external-proposal-design.md', 'work/domains/other/commercial/delivery-formats/gov-enterprise-word.md']:

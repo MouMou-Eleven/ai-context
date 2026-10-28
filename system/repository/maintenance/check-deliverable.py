@@ -51,6 +51,14 @@ PROPOSAL_PATTERNS = [
     ('proposal-url', r'https?://[^\s<>]+|www\.[^\s<>]+'),
 ]
 
+COMPETITION_PATTERNS = [
+    ('fill-in-prompt', r'(?:请|由|待|需|交由|留给).{0,12}(?:填写|填报|补充|补填|确认后填)|(?:真实参与者|客户|老师|教师|申报单位).{0,8}(?:确认|填写|补充)|此处(?:填写|留空)|（?待定）?$'),
+    ('ghostwriting', r'代做|代写|代填|代为(?:制作|开发|填写)|由(?:我们|开发者|技术人员)(?:代|帮)'),
+    ('over-clarification', r'尚未(?:在|经|进行|完成).{0,12}(?:课堂|学校|真实|实际).{0,6}(?:验证|试用|应用|评估)|(?:有待|还需|仍需|需要进一步).{0,8}(?:验证|检验|评估)|仅为(?:模拟|测试|演示)|均为(?:模拟|测试)数据|不代表(?:真实|实际)|不能(?:据此)?(?:说明|证明|宣称)'),
+    ('narration-written', r'^我问[，,]|(?:先|再)看(?:正常|一个|下)?.{0,4}[：:。]|如下所示|综上所述|值得注意的是|其中[，,]'),
+    ('audience-mismatch', r'给(?:老师|教师)看|教师(?:可|请)自行|老师自己(?:再)?填'),
+]
+
 W = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
 
 
@@ -73,7 +81,7 @@ def docx_content(data, layout=None):
                         extra.append({'rule': 'proposal-hyperlink', 'match': rel.get('Target', ''),
                                       'action': '对外方案不默认携带网站链接；核对是否为用户明确要求。'})
         layout_findings = []
-        if layout:
+        if layout == 'gov-enterprise-word':
             styles = ET.fromstring(package.read('word/styles.xml'))
             by_id = {s.get(W+'styleId'): s for s in styles.findall(W+'style')}
 
@@ -102,7 +110,81 @@ def docx_content(data, layout=None):
                         layout_findings.append({'rule': 'word-title-center', 'action': '政企Word主标题应居中；检查段落与样式继承。'})
             if not titles:
                 layout_findings.append({'rule': 'word-title-missing', 'action': '未识别原生Title主标题；人工确认主标题样式及居中。'})
+        if layout == 'tianjin-contest-word':
+            layout_findings.extend(contest_layout(package, document))
         return content, extra, layout_findings
+
+
+def contest_layout(package, document):
+    """Tianjin contest Word rules: 黑体 headings without theme fonts, centered captions, team table."""
+    findings = []
+    styles = ET.fromstring(package.read('word/styles.xml'))
+    by_id = {s.get(W+'styleId'): s for s in styles.findall(W+'style')}
+
+    def chain(sid):
+        seen = []
+        while sid in by_id and sid not in seen:
+            seen.append(sid)
+            base = by_id[sid].find(W+'basedOn')
+            sid = base.get(W+'val') if base is not None else None
+        return [by_id[x] for x in seen]
+
+    def fonts(node):
+        f = node.find(W+'rPr/'+W+'rFonts') if node is not None else None
+        return dict((k.split('}')[1], v) for k, v in f.attrib.items()) if f is not None else {}
+
+    def heading(p):
+        st = p.find(W+'pPr/'+W+'pStyle')
+        sid = st.get(W+'val') if st is not None else ''
+        names = [(s.find(W+'name').get(W+'val') if s.find(W+'name') is not None else '').lower() for s in chain(sid)]
+        return sid, any(n == 'title' or n.startswith('heading') or n.startswith('标题') for n in names)
+
+    reported = set()
+    in_table = {id(x) for t in document.iter(W+'tbl') for x in t.iter(W+'p')}
+    for p in document.iter(W+'p'):
+        text = ''.join(t.text or '' for t in p.iter(W+'t')).strip()
+        if not text:
+            continue
+        sid, is_heading = heading(p)
+        if is_heading:
+            for style in chain(sid):
+                f = fonts(style)
+                if any(k.endswith('Theme') or k == 'cstheme' for k in f if k != 'cstheme') or (f and not f.get('ascii')):
+                    key = style.get(W+'styleId')
+                    if key not in reported:
+                        reported.add(key)
+                        findings.append({'rule': 'contest-heading-theme-font', 'match': key,
+                                         'action': '标题样式仍用主题字体（显示为Cambria/Calibri等英文字体）；样式与每个run的ascii/hAnsi/eastAsia都显式设为黑体。'})
+            for r in p.iter(W+'r'):
+                f = fonts(r)
+                bad = [v for k, v in f.items() if k in ('ascii', 'hAnsi', 'eastAsia') and v != '黑体']
+                if bad or any(k in ('asciiTheme', 'hAnsiTheme', 'eastAsiaTheme') for k in f):
+                    findings.append({'rule': 'contest-heading-font', 'match': text[:30],
+                                     'action': '标题文字的中西文字体都应为黑体，不能是主题字体或Times New Roman。'})
+                    break
+        if id(p) not in in_table and re.match(r'^(?:图|表)\s*\d{1,2}(?!\d)', text) and len(text) < 120:
+            jc = p.find(W+'pPr/'+W+'jc')
+            align = jc.get(W+'val') if jc is not None else None
+            if align is None:
+                for style in chain(sid):
+                    j = style.find(W+'pPr/'+W+'jc')
+                    if j is not None:
+                        align = j.get(W+'val')
+                        break
+            if align != 'center':
+                findings.append({'rule': 'contest-caption-center', 'match': text[:30], 'action': '图注、表注应居中。'})
+    for table in document.iter(W+'tbl'):
+        rows = [[''.join(t.text or '' for t in c.iter(W+'t')).strip() for c in r.findall(W+'tc')] for r in table.findall(W+'tr')]
+        if not rows or '姓名' not in rows[0]:
+            continue
+        head = rows[0]
+        duty = [i for i, h in enumerate(head) if h in ('职责', '分工', '工作内容', '实际贡献', '主要贡献')]
+        for row in rows[1:]:
+            if any(i < len(row) and not row[i] for i in duty):
+                findings.append({'rule': 'contest-team-duty-blank', 'match': ' | '.join(row),
+                                 'action': '团队表只有姓名留空；职责和工作内容按作品实际分工写好。'})
+                break
+    return findings
 
 
 def inspect(content, profile='learner', markup=False):
@@ -113,14 +195,17 @@ def inspect(content, profile='learner', markup=False):
     if not content.strip():
         raise ValueError('No visible draft text; provide the actual deliverable, not an empty export.')
     findings = []
-    if profile in {'learner', 'external-proposal'}:
+    if profile in {'learner', 'external-proposal', 'competition'}:
+        table = {'learner': PATTERNS, 'external-proposal': PROPOSAL_PATTERNS, 'competition': COMPETITION_PATTERNS}[profile]
         for number, line in enumerate(content.splitlines(), 1):
-            for rule, pattern in (PATTERNS if profile == 'learner' else PROPOSAL_PATTERNS):
+            for rule, pattern in table:
                 match = re.search(pattern, line)
                 if match:
                     findings.append({'rule': rule, 'textLine': number, 'match': match.group(),
                                      'excerpt': line[max(0, match.start()-35):match.end()+90],
-                                     'action': ('核对是否为讲师指令；是则移出学员正文。引用、反例或用户明确要求需逐项说明。' if profile == 'learner' else '核对是否为内部设计或来源说明；对外方案应写课程主题、应用场景与学习价值。引用或用户明确要求需逐项复核。')})
+                                     'action': {'learner': '核对是否为讲师指令；是则移出学员正文。引用、反例或用户明确要求需逐项说明。',
+                                                'external-proposal': '核对是否为内部设计或来源说明；对外方案应写课程主题、应用场景与学习价值。引用或用户明确要求需逐项复核。',
+                                                'competition': '评审成品只写给评委看：删掉填写提示、代做字样和非必须的澄清；“存在不足”栏目按字数要求简要写。'}[profile]})
     return findings
 
 
@@ -147,8 +232,8 @@ def check(path, profile='learner', layout=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('artifact', type=Path)
-    parser.add_argument('--profile', choices=['learner', 'instructor', 'general', 'external-proposal'], default='learner')
-    parser.add_argument('--layout', choices=['gov-enterprise-word'])
+    parser.add_argument('--profile', choices=['learner', 'instructor', 'general', 'external-proposal', 'competition'], default='learner')
+    parser.add_argument('--layout', choices=['gov-enterprise-word', 'tianjin-contest-word'])
     args = parser.parse_args()
     try:
         result = check(args.artifact, args.profile, args.layout)

@@ -1,31 +1,46 @@
 # 教育行业
 
-教育智能体、学科应用与教学业务系统的开发入口。先理解课堂任务，再决定工作流、知识库、变量、数据表和输出形式；教师课件、微课、录课合成与视频制作仍由[微课与教育交互](../../../design/video/education/README.md)主导。
+教育行业的 AI 赋能方式之一是开发教育智能体。这里分三块，互不重复：
+
+| 板块 | 管什么 | 跟平台和比赛的关系 |
+|---|---|---|
+| [学科融合](./subject-integration/README.md) | 智能体怎么跟学科、课堂结合：教学研管评育场景、融合手段、新学科推导、融合案例 | 通用，任何平台、任何比赛都适用 |
+| [天津指定平台](./tianjin-platform/README.md) | 天津智能体平台（结构近似开源扣子）的能力体系与搭建流程 | 只要在这个平台上开发都用，不限比赛 |
+| [天津 AI 教育大赛](./tianjin-ai-contest/README.md) | 赛道二提交材料、Word 规范、演示视频，以及已做的作品案例 | 只管这个比赛 |
+
+教师课件、微课、录课合成仍由[微课与教育交互](../../../design/video/education/README.md)负责。
 
 ## 按任务读取
 
-| 要做什么 | 读取文件 |
+| 要做什么 | 读 |
 |---|---|
-| 设计教育智能体与课堂协作流程 | [课堂融合与智能体设计方法](./classroom-agent-design.md) |
-| 借鉴整本书伴读、角色访谈等外部课例 | [A02与A08参考分析](./reference-a02-a08.md)，只取适用机制，不套固定组件 |
-| 借鉴数学项目实践与几何探究课例 | [B11与B02参考分析](./reference-b11-b02.md)，不复制工具链或效果数字 |
-| 接续天津小学语文与数学参赛开发 | [天津教育智能体开发案例](./case-tianjin-education-agents.md)，先看当前事实与未完成项 |
-| 接续数学账号中的实际拼搭原型 | [数学搭一搭开发案例](./case-tianjin-primary-math.md)，含已搭资源、实测与依赖修复 |
-| 核对天津指定平台的已确认能力 | [平台能力与账号协作](./platform-tianjin-agent.md)，操作前重新确认当前界面 |
+| 设计一个教育智能体（任何平台） | [学科融合方法](./subject-integration/classroom-agent-design.md) |
+| 新学科、新场景，想借鉴已有案例 | [学科融合](./subject-integration/README.md)的融合案例对照 |
+| 在天津平台上搭建或修改 | [平台能力体系](./tianjin-platform/capabilities.md) + [搭建流程](./tianjin-platform/build-sop.md) |
+| 准备天津大赛赛道二参赛材料（申报书、技术报告、逐字稿、视频、提交包） | [大赛入口](./tianjin-ai-contest/README.md)，按其中顺序读；所有评审材料都读[文档规范](./tianjin-ai-contest/document-format.md)第一至三节 |
+| 接续某个已做作品 | 该作品案例：[文有回声（语文）](./tianjin-ai-contest/case-wenyouhuisheng-chinese.md)、[空间与图形探究助手（数学）](./tianjin-ai-contest/case-geometry-helper-math.md) |
 
-## 维护边界
+## 写入规则（红线）
 
-方法说明下次如何判断与实施；具体客户要求、赛制、路径、数量和验证结果只维护在案例；动态平台能力只维护在能力记录。外部分析不能写成建委已完成的教学成果，也不把参考里的平台、角色和课时比例设成所有作品的默认模板。通用测试口径引用[交付与测试](../../experience/delivery-and-testing.md)。
+往这三块写东西时，先按下表找到唯一位置，在原有条目上改或补；表里找不到才问建委。
 
-后续开发每完成一个真实阶段，更新同一案例中的资源、节点、用例、课堂反馈和阻塞项；正式课堂试用后再修订方法的适用范围，普通进度不另建修订文件。
+| 新内容 | 写进 | 不要 |
+|---|---|---|
+| 学科融合的新做法、新场景、新手段 | [学科融合方法](./subject-integration/classroom-agent-design.md)对应一节的表或段落 | 不另建"语文融合方法""数学融合方法" |
+| 别人的参考课例 | `subject-integration/case-external-<学科>-<短名>.md`，并在[学科融合](./subject-integration/README.md)对照表加一行 | 不把未核验的获奖、效果数字写成事实 |
+| 天津平台新功能、新限制、新坑 | [能力体系](./tianjin-platform/capabilities.md)对应表 | 不写进作品案例当规则 |
+| 天津平台操作步骤的修正 | [搭建流程](./tianjin-platform/build-sop.md)对应步骤 | 不新建"导出指南""导入指南" |
+| 比赛要求、提交包变化 | [提交材料](./tianjin-ai-contest/submission-package.md) | — |
+| 申报书、技术报告的版式和措辞纠正 | [文档规范](./tianjin-ai-contest/document-format.md) | 不在案例和 README 各写一遍 |
+| 逐字稿、录屏、剪辑、标注的反馈 | [演示视频](./tianjin-ai-contest/demo-video.md)；零散的先进第六节积累区，同类合并 | 不为某个视频新建文件 |
+| 某个作品的 ID、链接、路径、进度、当次问题 | 该作品案例 | 不写进方法和平台文件 |
+
+同样的错误又出现时，说明规则没写具体或没被读到：把那条规则改得更具体（补"像这样写，不要那样写"），并检查 [AGENTS](../../../../../AGENTS.md) 任务表能不能从自然说法找到它；不要再加一条意思相同的"必须"。
 
 <!-- generated-related-assets:start -->
 ## 相关项目与案例
 
-| 类型 | 项目或案例 | 适用领域 |
-|---|---|---|
-| 案例 | [天津小学语文与数学智能体开发](case-tianjin-education-agents.md) | 教育行业应用开发 |
-| 案例 | [天津小学数学智能体数学搭一搭](case-tianjin-primary-math.md) | 教育行业应用开发 |
+暂无已登记关联；不能据此断言没有未登记材料。
 <!-- generated-related-assets:end -->
 
 <!-- generated-methods:start -->
@@ -35,5 +50,5 @@
 
 | 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
 |---|---|---|---|
-| 教师或学校的教育智能体与学科应用需要把学习任务、执行流程、学生作品和教师反馈连接起来时 | [教育智能体课堂融合](classroom-agent-design.md) | 普通课件美化、微课视频和培训大纲；组件与课堂形式按具体学科和使用条件选择 | 课堂任务具体；组件有输入输出与责任；关键核验可复核；学生产物支持教师行动；运行与教学效果分别留证 |
+| 教师或学校的教育智能体与学科应用需要选场景、融合手段，并把学习任务、执行流程、学生作品和教师反馈连接起来时 | [教育智能体课堂融合](subject-integration/classroom-agent-design.md) | 普通课件美化、微课视频和培训大纲；组件与课堂形式按具体学科和使用条件选择 | 课堂任务具体；组件有输入输出与责任；关键核验可复核；学生产物支持教师行动；运行与教学效果分别留证 |
 <!-- generated-methods:end -->

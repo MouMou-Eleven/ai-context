@@ -26,7 +26,7 @@ python -B -m unittest discover -s system/repository/maintenance/tests -v
 |---|---|
 | [context-route.py](./context-route.py) | 从路由注册表解释自然任务的入口、条件依赖和已采用方法建议；不替代材料理解 |
 | [context_retrieval.py](./context_retrieval.py) | 任务意图、限定范围的实时全文候选、完整正文包与读取状态；不维护第二套正文索引、不判定文章质量 |
-| [check-deliverable.py](./check-deliverable.py) | 检查实际学员稿或对外方案的受众错位；支持原生DOCX、外链和可选政企主标题居中检查，输出hash；无命中仍需语义验收 |
+| [check-deliverable.py](./check-deliverable.py) | 检查实际学员稿或对外方案的受众错位；支持原生DOCX、外链和可选政企主标题居中检查，输出hash；无命中仍需语义验收；`--profile competition --layout tianjin-contest-word`检查比赛评审材料 |
 | [sync-navigation.py](./sync-navigation.py) | 从注册表生成短llms、任务指南、项目案例总表、领域关联与方法短表；处理停用后的旧表，支持只读漂移检查 |
 | [relink.py](./relink.py) | 移动文件或目录后批量修正相对链接与路径引用；先 `git mv`，再运行 `relink.py 旧路径=新路径` |
 | [sync-structure.py](./sync-structure.py) | 从同一真实文件树生成完整结构与日常知识导航，保留有效中文描述 |

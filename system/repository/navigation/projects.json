@@ -59,23 +59,23 @@
   "cases": [
     {
       "id": "tianjin-education-agents",
-      "name": "天津小学语文与数学智能体开发",
+      "name": "文有回声——小学语文阅读学伴（天津大赛）",
       "kind": "案例",
       "domain": "教育行业应用开发",
-      "entry": "work/domains/development/industry-cases/education/case-tianjin-education-agents.md",
+      "entry": "work/domains/development/industry-cases/education/tianjin-ai-contest/case-wenyouhuisheng-chinese.md",
       "domainEntries": [
-        "work/domains/development/industry-cases/education/README.md",
+        "work/domains/development/industry-cases/education/tianjin-ai-contest/README.md",
         "work/domains/development/README.md"
       ]
     },
     {
       "id": "tianjin-primary-math",
-      "name": "天津小学数学智能体数学搭一搭",
+      "name": "小学数学空间与图形探究助手（天津大赛）",
       "kind": "案例",
       "domain": "教育行业应用开发",
-      "entry": "work/domains/development/industry-cases/education/case-tianjin-primary-math.md",
+      "entry": "work/domains/development/industry-cases/education/tianjin-ai-contest/case-geometry-helper-math.md",
       "domainEntries": [
-        "work/domains/development/industry-cases/education/README.md",
+        "work/domains/development/industry-cases/education/tianjin-ai-contest/README.md",
         "work/domains/development/README.md"
       ]
     }

@@ -1850,7 +1850,24 @@
         "课堂智能体",
         "教育行业应用",
         "教学业务系统",
-        "智能体与课堂融合"
+        "智能体与课堂融合",
+        "教育行业智能体",
+        "智能体与学科",
+        "学科融合",
+        "天津平台",
+        "天津智能体平台",
+        "天津指定平台",
+        "天津的平台",
+        "aiagent.tjtc",
+        "天津大赛",
+        "天津比赛",
+        "天津智能体比赛",
+        "天津的比赛",
+        "天津市AI教育",
+        "AI教育应用场景",
+        "赛道二",
+        "技术说明与验证报告",
+        "教育智能体设计应用"
       ],
       "excludeAny": [
         "只查报价",
@@ -1864,7 +1881,7 @@
       "priority": 90,
       "dependencies": [
         {
-          "path": "work/domains/development/industry-cases/education/classroom-agent-design.md",
+          "path": "work/domains/development/industry-cases/education/subject-integration/classroom-agent-design.md",
           "whenAny": [],
           "intents": [
             "create",
@@ -1872,21 +1889,58 @@
           ]
         },
         {
-          "path": "work/domains/development/industry-cases/education/case-tianjin-education-agents.md",
+          "path": "work/domains/development/industry-cases/education/tianjin-platform/README.md",
           "whenAny": [
-            "天津",
+            "天津平台",
+            "天津智能体平台",
+            "天津指定平台",
+            "天津的平台",
+            "aiagent.tjtc",
+            "天津大赛",
+            "天津比赛",
+            "天津智能体比赛",
+            "天津的比赛",
+            "天津市AI教育",
+            "AI教育应用场景",
             "赛道二",
-            "这次参赛"
+            "技术说明与验证报告",
+            "教育智能体设计应用",
+            "天津"
           ],
           "intents": []
         },
         {
-          "path": "work/domains/development/industry-cases/education/reference-a02-a08.md",
+          "path": "work/domains/development/industry-cases/education/tianjin-ai-contest/README.md",
           "whenAny": [
+            "天津大赛",
+            "天津比赛",
+            "天津智能体比赛",
+            "天津的比赛",
+            "天津市AI教育",
+            "AI教育应用场景",
+            "赛道二",
+            "技术说明与验证报告",
+            "教育智能体设计应用",
+            "天津",
+            "参赛",
+            "申报书",
+            "逐字稿",
+            "演示视频"
+          ],
+          "intents": []
+        },
+        {
+          "path": "work/domains/development/industry-cases/education/subject-integration/README.md",
+          "whenAny": [
+            "参考课例",
+            "参考经验",
+            "融合案例",
             "A02",
             "A08",
-            "参考课例",
-            "参考经验"
+            "B11",
+            "B02",
+            "新学科",
+            "其他学科"
           ],
           "intents": []
         }
@@ -3268,14 +3322,31 @@
       "id": "classroom-agent-design",
       "label": "教育智能体课堂融合",
       "status": "active",
-      "path": "work/domains/development/industry-cases/education/classroom-agent-design.md",
+      "path": "work/domains/development/industry-cases/education/subject-integration/classroom-agent-design.md",
       "whenAny": [
         "教育智能体",
         "学科智能体",
         "课堂智能体",
         "教育行业应用",
         "教学业务系统",
-        "智能体与课堂融合"
+        "智能体与课堂融合",
+        "教育行业智能体",
+        "智能体与学科",
+        "学科融合",
+        "天津平台",
+        "天津智能体平台",
+        "天津指定平台",
+        "天津的平台",
+        "aiagent.tjtc",
+        "天津大赛",
+        "天津比赛",
+        "天津智能体比赛",
+        "天津的比赛",
+        "天津市AI教育",
+        "AI教育应用场景",
+        "赛道二",
+        "技术说明与验证报告",
+        "教育智能体设计应用"
       ],
       "excludeAny": [
         "只查报价",
@@ -3290,15 +3361,16 @@
         "create",
         "write"
       ],
-      "useWhen": "教师或学校的教育智能体与学科应用需要把学习任务、执行流程、学生作品和教师反馈连接起来时",
+      "useWhen": "教师或学校的教育智能体与学科应用需要选场景、融合手段，并把学习任务、执行流程、学生作品和教师反馈连接起来时",
       "notFor": "普通课件美化、微课视频和培训大纲；组件与课堂形式按具体学科和使用条件选择",
       "acceptance": "课堂任务具体；组件有输入输出与责任；关键核验可复核；学生产物支持教师行动；运行与教学效果分别留证",
-      "evidence": "work/domains/development/industry-cases/education/case-tianjin-education-agents.md",
+      "evidence": "work/domains/development/industry-cases/education/tianjin-ai-contest/case-wenyouhuisheng-chinese.md",
       "confirmedAt": "2026-10-24",
       "source": "建委明确要求课堂融合、整体可用与灵活借鉴；当前采用范围为需求和架构设计，课堂成效待验证",
       "entryPoints": [
         "work/domains/development/README.md",
-        "work/domains/development/industry-cases/education/README.md"
+        "work/domains/development/industry-cases/education/README.md",
+        "work/domains/development/industry-cases/education/subject-integration/README.md"
       ],
       "selectedAny": [
         "education-applications",
@@ -3549,7 +3621,10 @@
         "课堂智能体",
         "教育行业应用",
         "教学业务系统",
-        "智能体与课堂融合"
+        "智能体与课堂融合",
+        "教育行业智能体",
+        "智能体与学科",
+        "学科融合"
       ],
       "excludeAny": [
         "只查报价",
@@ -3565,7 +3640,81 @@
       ],
       "paths": [
         "work/domains/development/industry-cases/education/README.md",
-        "work/domains/development/industry-cases/education/classroom-agent-design.md"
+        "work/domains/development/industry-cases/education/subject-integration/classroom-agent-design.md"
+      ]
+    },
+    {
+      "id": "tianjin-platform-build",
+      "label": "天津智能体平台搭建",
+      "whenAny": [
+        "天津平台",
+        "天津智能体平台",
+        "天津指定平台",
+        "天津的平台",
+        "aiagent.tjtc",
+        "天津的智能体",
+        "天津智能体"
+      ],
+      "excludeAny": [
+        "只查报价"
+      ],
+      "paths": [
+        "work/domains/development/industry-cases/education/tianjin-platform/README.md",
+        "work/domains/development/industry-cases/education/tianjin-platform/capabilities.md",
+        "work/domains/development/industry-cases/education/tianjin-platform/build-sop.md",
+        "work/domains/development/industry-cases/education/subject-integration/classroom-agent-design.md"
+      ]
+    },
+    {
+      "id": "tianjin-contest-materials",
+      "label": "天津AI教育大赛赛道二材料",
+      "whenAny": [
+        "天津大赛",
+        "天津比赛",
+        "天津智能体比赛",
+        "天津的比赛",
+        "天津市AI教育",
+        "AI教育应用场景",
+        "赛道二",
+        "技术说明与验证报告",
+        "教育智能体设计应用"
+      ],
+      "excludeAny": [
+        "只查报价"
+      ],
+      "paths": [
+        "work/domains/development/industry-cases/education/tianjin-ai-contest/README.md",
+        "work/domains/development/industry-cases/education/tianjin-ai-contest/submission-package.md",
+        "work/domains/development/industry-cases/education/tianjin-ai-contest/document-format.md",
+        "work/domains/other/commercial/experience/competition-and-investor-materials.md"
+      ],
+      "readWhen": [
+        {
+          "whenAny": [
+            "视频",
+            "录屏",
+            "逐字稿",
+            "旁白",
+            "剪辑",
+            "配音",
+            "标注"
+          ],
+          "paths": [
+            "work/domains/development/industry-cases/education/tianjin-ai-contest/demo-video.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "导出",
+            "复现",
+            "导出包",
+            "工作流",
+            "平台"
+          ],
+          "paths": [
+            "work/domains/development/industry-cases/education/tianjin-platform/build-sop.md"
+          ]
+        }
       ]
     }
   ]

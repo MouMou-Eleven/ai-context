@@ -28,8 +28,8 @@
 |---|---|---|
 | 项目 | [言剪 AI](../../projects/yancut-ai/README.md) | 应用开发 |
 | 项目 | [AI 六十甲子古音律与 IP 孵化](../../projects/ai-sixty-jiazi-music-ip/README.md) | 文化产品与IP |
-| 案例 | [天津小学语文与数学智能体开发](industry-cases/education/case-tianjin-education-agents.md) | 教育行业应用开发 |
-| 案例 | [天津小学数学智能体数学搭一搭](industry-cases/education/case-tianjin-primary-math.md) | 教育行业应用开发 |
+| 案例 | [文有回声——小学语文阅读学伴（天津大赛）](industry-cases/education/tianjin-ai-contest/case-wenyouhuisheng-chinese.md) | 教育行业应用开发 |
+| 案例 | [小学数学空间与图形探究助手（天津大赛）](industry-cases/education/tianjin-ai-contest/case-geometry-helper-math.md) | 教育行业应用开发 |
 <!-- generated-related-assets:end -->
 
 <!-- generated-methods:start -->
@@ -40,5 +40,5 @@
 | 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
 |---|---|---|---|
 | 页面改版、组件选择、响应式适配、编辑器交互或需要判断界面设计质量时 | [前端 UI 质量标准](experience/frontend-ui-quality-standards.md) | 纯后端、数据库迁移、命令行脚本或无界面任务 | 读方法正文与目标项目 README；检查 1920/1024/768/390/360 布局；验证加载、失败、触控和键盘状态 |
-| 教师或学校的教育智能体与学科应用需要把学习任务、执行流程、学生作品和教师反馈连接起来时 | [教育智能体课堂融合](industry-cases/education/classroom-agent-design.md) | 普通课件美化、微课视频和培训大纲；组件与课堂形式按具体学科和使用条件选择 | 课堂任务具体；组件有输入输出与责任；关键核验可复核；学生产物支持教师行动；运行与教学效果分别留证 |
+| 教师或学校的教育智能体与学科应用需要选场景、融合手段，并把学习任务、执行流程、学生作品和教师反馈连接起来时 | [教育智能体课堂融合](industry-cases/education/subject-integration/classroom-agent-design.md) | 普通课件美化、微课视频和培训大纲；组件与课堂形式按具体学科和使用条件选择 | 课堂任务具体；组件有输入输出与责任；关键核验可复核；学生产物支持教师行动；运行与教学效果分别留证 |
 <!-- generated-methods:end -->

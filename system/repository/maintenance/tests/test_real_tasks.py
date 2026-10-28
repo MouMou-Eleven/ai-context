@@ -141,6 +141,26 @@ class RealTasks(unittest.TestCase):
         for code in ['| T1 |', '| G1 |', '| O2 |', '| F8 |']:
             self.assertIn(code, text)
 
+    def test_tianjin_contest_math_regeneration_reaches_format_rules(self):
+        """2026-10-29: another AI read the repo and still used theme fonts and blank team tables."""
+        ED = 'work/domains/development/industry-cases/education/'
+        read = self.reads('看我的GitHub仓库，重新生成一份天津智能体比赛数学的申报书和技术说明与验证报告')
+        for path in [ED + 'tianjin-ai-contest/README.md', ED + 'tianjin-ai-contest/submission-package.md',
+                     ED + 'tianjin-ai-contest/document-format.md', CM + 'experience/competition-and-investor-materials.md']:
+            self.assertIn(path, read)
+        video = self.reads('帮我写天津大赛赛道二演示视频的逐字稿并录屏')
+        self.assertIn(ED + 'tianjin-ai-contest/demo-video.md', video)
+
+    def test_tianjin_platform_and_subject_integration(self):
+        ED = 'work/domains/development/industry-cases/education/'
+        read = self.reads('在天津平台上给客户搭一个英语智能体')
+        for path in [ED + 'tianjin-platform/capabilities.md', ED + 'tianjin-platform/build-sop.md',
+                     ED + 'subject-integration/classroom-agent-design.md']:
+            self.assertIn(path, read)
+        generic = self.reads('用扣子做一个科学课的教育智能体')
+        self.assertIn(ED + 'subject-integration/classroom-agent-design.md', generic)
+        self.assertNotIn(ED + 'tianjin-ai-contest/document-format.md', generic)
+
     def test_every_agents_table_link_exists(self):
         import re
         text = (ROOT / 'AGENTS.md').read_text(encoding='utf-8')

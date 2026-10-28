@@ -21,6 +21,7 @@
 | 书稿 | 功能、菜单名是否查证过；小白能不能照着做 |
 | 设计 / 视频 | 看实际导出的画面：有没有裁字、漏镜头、声音错位 |
 | 应用开发 | 真实走一遍用户流程和出错的情况，不能只看构建通过 |
+| 比赛评审材料（申报书、技术报告、逐字稿） | 每句是不是写给评委的：没有填写提示、代做、多余澄清；团队表只空姓名；标题黑体、图注居中（[天津大赛文档规范](../../work/domains/development/industry-cases/education/tianjin-ai-contest/document-format.md)） |
 | 仓库写入 | 按[写入规范](./ingestion-workflow.md)跑校验 |
 
 发现问题先改，改完回看受影响的上下文，再交付。
@@ -36,6 +37,7 @@
 ```text
 python system/repository/maintenance/check-deliverable.py <草稿路径> --profile learner            # 学员课件
 python system/repository/maintenance/check-deliverable.py <草稿路径> --profile external-proposal  # 对外方案，支持 DOCX
+python system/repository/maintenance/check-deliverable.py <docx或txt> --profile competition --layout tianjin-contest-word  # 天津大赛评审材料（txt 不加 --layout）
 ```
 
 [脚本](./maintenance/check-deliverable.py)只能发现已知的几类问题（讲师视角词、方案里的内部内容、DOCX 隐藏链接等）。没报错不代表没问题，仍然要自己读一遍。

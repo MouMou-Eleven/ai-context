@@ -112,6 +112,7 @@
 | 一场培训 | `projects/ai-training/<场次>/README.md`，并在 [sessions-index.md](../../work/projects/ai-training/sessions-index.md) 登记 | 同一个 README 里写讲后反馈 | 接洽、方案、大纲、课件与授课SOP均改 `training/experience/`；跨领域文书、报价、表达标准引用 `other/commercial/`；新课题补 `training/topics.md` |
 | 一篇文章、一条宣传 | 不单独记，除非建委要求 | 不建 | 写法改 `self-media/` 对应类别；建委认可的口语原文补 `voice-samples.md` |
 | 一份商业方案、比赛申报 | 案例里 | `other/commercial/` 下对应方法旁边 | `other/commercial/experience/` |
+| 教育智能体开发、天津平台、天津大赛材料与演示视频 | 作品案例 | `development/industry-cases/education/` 对应子目录 | 按[教育行业写入规则](../../work/domains/development/industry-cases/education/README.md#写入规则红线)找唯一位置；视频反馈合并进演示视频方法，不一片一文件 |
 | 长期项目的一次推进 | 项目 README 的"当前事实" | 不建案例 | 能用到别处的做法照上面各行写进领域 |
 
 **不值得写的**：这次一切顺利、没有新做法；只是重复了已有方法；只跟这一次有关、下次不会再遇到的细节。

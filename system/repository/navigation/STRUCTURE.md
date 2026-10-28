@@ -318,14 +318,24 @@ ai-context/
 │   │   │   │       ├── 2026-09-15-mobile-ui-verification.md  追溯“移动端 UI：纠正“记录了规则但成品仍遗漏””的调整原因与适用范围
 │   │   │   │       └── README.md  开发经验修订记录
 │   │   │   ├── industry-cases/  按行业保存应用开发方法和真实实践案例
-│   │   │   │   ├── education/  教育智能体与学科应用的课堂融合经验
-│   │   │   │   │   ├── case-tianjin-education-agents.md  天津两件小学智能体的需求修订、调研验证和当前未完成项
-│   │   │   │   │   ├── case-tianjin-primary-math.md  数学搭一搭的课堂任务、平台资源、运行验证与依赖修复
-│   │   │   │   │   ├── classroom-agent-design.md  从课堂任务确定技术组件、学习产物和教师反馈的做法
-│   │   │   │   │   ├── platform-tianjin-agent.md  天津指定平台的已核验文档能力与正式账号协作建议
-│   │   │   │   │   ├── README.md  教育行业开发的任务路由与方法案例索引
-│   │   │   │   │   ├── reference-a02-a08.md  A02与A08外部分析的可借鉴机制、核验状态和排除项
-│   │   │   │   │   └── reference-b11-b02.md  B11与B02数学外部课例的参考机制和采用边界
+│   │   │   │   ├── education/  教育智能体：学科融合（通用）、天津平台、天津大赛三块
+│   │   │   │   │   ├── README.md  教育行业三块板块的入口、任务路由与写入规则
+│   │   │   │   │   ├── subject-integration/  智能体与学科、课堂融合的通用方法与案例
+│   │   │   │   │   │   ├── case-external-a02-a08-chinese.md  A02与A08语文外部课例的可借鉴机制与排除项
+│   │   │   │   │   │   ├── case-external-b11-b02-math.md  B11与B02数学外部课例的参考机制和采用边界
+│   │   │   │   │   │   ├── classroom-agent-design.md  教学研管评育场景、融合手段、新学科推导与课堂任务链
+│   │   │   │   │   │   └── README.md  学科融合入口与融合案例机制对照
+│   │   │   │   │   ├── tianjin-ai-contest/  天津AI教育大赛赛道二的材料规范与作品案例
+│   │   │   │   │   │   ├── case-geometry-helper-math.md  数学作品空间与图形探究助手的演进、验证与材料问题
+│   │   │   │   │   │   ├── case-wenyouhuisheng-chinese.md  语文作品文有回声的资源、验证、材料与视频
+│   │   │   │   │   │   ├── demo-video.md  演示视频的逐字稿、录屏、剪辑标注与经验积累区
+│   │   │   │   │   │   ├── document-format.md  申报书与技术报告的评委视角、团队表、统一版式、黑体
+│   │   │   │   │   │   ├── README.md  大赛入口：做作品的读取顺序与写入位置
+│   │   │   │   │   │   └── submission-package.md  赛道二要求、提交文件夹、复现材料与交付检查
+│   │   │   │   │   └── tianjin-platform/  天津指定智能体平台（近似扣子）的能力与流程
+│   │   │   │   │       ├── build-sop.md  登录、导入骨架、修改、验收、评审链接、清理、导出
+│   │   │   │   │       ├── capabilities.md  资源模块、节点、组合配方、外部扩展与已知坑
+│   │   │   │   │       └── README.md  天津平台入口
 │   │   │   │   └── README.md  行业应用案例入口与归属边界
 │   │   │   ├── README.md  应用开发与自动化入口
 │   │   │   └── tools/  编程工具
