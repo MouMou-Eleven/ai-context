@@ -99,6 +99,15 @@ class DeliverableChecks(unittest.TestCase):
             self.assertEqual(rules, {'contest-heading-theme-font', 'contest-caption-center', 'contest-team-duty-blank'})
             make(theme=False, caption='center', duty='配置智能体与工作流')
             self.assertEqual(checker.check(path, 'competition', 'tianjin-contest-word')['findings'], [])
+            with zipfile.ZipFile(path, 'w') as z:
+                para = lambda t, jc='': f'<w:p><w:pPr>{jc}</w:pPr><w:r><w:t xml:space="preserve">{t}</w:t></w:r></w:p>'
+                z.writestr('word/document.xml', f'<w:document xmlns:w="{ns}"><w:body>'
+                           + para('数学助手技术说明与验证报告') + para('大赛　赛道二', '<w:jc w:val="center"/>')
+                           + para('四 知识库 图片与记录') + para('          项目详细介绍', '<w:jc w:val="center"/>')
+                           + '</w:body></w:document>')
+                z.writestr('word/styles.xml', f'<w:styles xmlns:w="{ns}"/>')
+            rules = {x['rule'] for x in checker.check(path, 'competition', 'tianjin-contest-word')['findings']}
+            self.assertEqual(rules, {'contest-title-center', 'contest-space-separator', 'contest-number-punctuation', 'contest-project-name-blank'})
 
     def test_proposal_routes_include_audience_and_format_methods(self):
         result = router.resolve('写AI培训方案给组织方，Word格式', 'create')

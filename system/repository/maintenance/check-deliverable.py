@@ -173,6 +173,7 @@ def contest_layout(package, document):
                         break
             if align != 'center':
                 findings.append({'rule': 'contest-caption-center', 'match': text[:30], 'action': '图注、表注应居中。'})
+    findings.extend(contest_structure(document, chain, heading, in_table))
     for table in document.iter(W+'tbl'):
         rows = [[''.join(t.text or '' for t in c.iter(W+'t')).strip() for c in r.findall(W+'tc')] for r in table.findall(W+'tr')]
         if not rows or '姓名' not in rows[0]:
@@ -184,6 +185,77 @@ def contest_layout(package, document):
                 findings.append({'rule': 'contest-team-duty-blank', 'match': ' | '.join(row),
                                  'action': '团队表只有姓名留空；职责和工作内容按作品实际分工写好。'})
                 break
+    return findings
+
+
+def contest_structure(document, chain, heading, in_table):
+    """Alignment, numbering, spacing and filled project-name rules shared by contest documents."""
+    findings = []
+    hanzi_gap = re.compile(r'[一-鿿][ 　]+[一-鿿]')
+    caption = re.compile(r'^(?:图|表)\s*\d')
+
+    def style_name(style):
+        name = style.find(W+'name')
+        return (name.get(W+'val') if name is not None else '').lower()
+
+    def align(p, sid):
+        jc = p.find(W+'pPr/'+W+'jc')
+        if jc is not None:
+            return jc.get(W+'val')
+        for style in chain(sid):
+            j = style.find(W+'pPr/'+W+'jc')
+            if j is not None:
+                return j.get(W+'val')
+        return None
+
+    def indented(p, sid):
+        for node in [p] + chain(sid):
+            ind = node.find(W+'pPr/'+W+'ind')
+            if ind is not None and any(ind.get(W+k) not in (None, '0') for k in ('firstLine', 'firstLineChars')):
+                return True
+        return False
+
+    paragraphs = []
+    for p in document.iter(W+'p'):
+        text = ''.join(t.text or '' for t in p.iter(W+'t')).strip()
+        st = p.find(W+'pPr/'+W+'pStyle')
+        sid = st.get(W+'val') if st is not None else ''
+        paragraphs.append((p, text, sid, id(p) in in_table, p.find('.//'+W+'drawing') is not None))
+    body = [x for x in paragraphs if not x[3]]
+    filled = [x for x in body if x[1]]
+    report = bool(filled) and '技术说明与验证报告' in filled[0][1]
+    if report:
+        for p, text, sid, _, _ in filled[:2]:
+            if len(text) < 80 and align(p, sid) != 'center':
+                findings.append({'rule': 'contest-title-center', 'match': text[:30], 'action': '主标题和副标题行居中。'})
+    unindented, blanks, pending = 0, 0, 0
+    for index, (p, text, sid, _, drawing) in enumerate(body):
+        if not text and not drawing:
+            pending += 1
+            continue
+        blanks, pending = blanks + pending, 0
+        is_heading = heading(p)[1]
+        level_one = any(style_name(s) == 'heading 1' for s in chain(sid))
+        if report and level_one and not re.match(r'^(?:[一二三四五六七八九十]+、|附)', text):
+            findings.append({'rule': 'contest-heading-number', 'match': text[:30], 'action': '一级标题用“一、二、三……”编号。'})
+        if re.match(r'^(?:[一二三四五六七八九十]+|\d+)[ 　]+\S', text):
+            findings.append({'rule': 'contest-number-punctuation', 'match': text[:30], 'action': '编号后用顿号或点号，不用空格。'})
+        if hanzi_gap.search(text) and not caption.match(text):
+            findings.append({'rule': 'contest-space-separator', 'match': text[:30], 'action': '汉字之间不用空格分隔：并列用顿号，前后两部分用冒号或逗号。'})
+        if caption.match(text) and hanzi_gap.search(re.sub(r'^(?:图|表)\s*\d+\s*', '', text)):
+            findings.append({'rule': 'contest-space-separator', 'match': text[:30], 'action': '图注编号后空一格，标题内部用冒号或逗号，不再用空格分隔。'})
+        if text == '项目详细介绍' or text == '项目名称：':
+            findings.append({'rule': 'contest-project-name-blank', 'match': text, 'action': '作品内容的空要填项目名称（写在原下划线上）；只有人员身份字段留空。'})
+        if (report and not is_heading and not drawing and len(text) > 40 and not caption.match(text)
+                and align(p, sid) != 'center' and not indented(p, sid)):
+            unindented += 1
+    for p, text, sid, inside, _ in paragraphs:
+        if inside and hanzi_gap.search(text):
+            findings.append({'rule': 'contest-space-separator', 'match': text[:30], 'action': '表格里的并列词也用顿号，不用空格。'})
+    if unindented:
+        findings.append({'rule': 'contest-body-indent', 'match': f'{unindented}段', 'action': '正文段落首行缩进2字、两端对齐。'})
+    if report and blanks >= 3:
+        findings.append({'rule': 'contest-empty-spacing', 'match': f'{blanks}个空段落', 'action': '用段前段后控制间距，删除用来撑间距的空段落。'})
     return findings
 
 
