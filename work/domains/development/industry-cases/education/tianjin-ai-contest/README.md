@@ -21,6 +21,7 @@
 | [文有回声——小学语文阅读学伴](./case-wenyouhuisheng-chinese.md) | 语文 | 全文知识库、引文核验、过程记录表、教师报告子流程、图片卡；技术报告和流程图的正例 |
 | [小学数学空间与图形探究助手](./case-geometry-helper-math.md) | 数学 | 代码核验数值单位、三维交互网页、示意图、国内部署、旧资源清理 |
 | [幼儿自主游戏观察与支持助手](./case-kindergarten-play-observation.md) | 学前保教 | 图文观察、DeepSeek与GLM视觉分工、连续回访、固定工作台与平台表同步 |
+| [慧评善改——小学语文习作评改与讲评智能体](./case-huipingshangai-chinese.md) | 语文习作 | GLM原生图文识别、确认后评改、修改反馈、可扩充量规与教师讲评 |
 
 ## 新经验写到哪
 

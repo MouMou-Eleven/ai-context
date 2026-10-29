@@ -332,6 +332,7 @@ ai-context/
 │   │   │   │   │   │   └── README.md  学科融合入口与融合案例机制对照
 │   │   │   │   │   ├── tianjin-ai-contest/  天津AI教育大赛赛道二的材料规范与作品案例
 │   │   │   │   │   │   ├── case-geometry-helper-math.md  数学作品空间与图形探究助手的演进、验证与材料问题
+│   │   │   │   │   │   ├── case-huipingshangai-chinese.md  慧评善改小学语文图文习作评改、修改反馈、教师量规扩充与讲评实测
 │   │   │   │   │   │   ├── case-kindergarten-play-observation.md  幼儿自主游戏图文观察、连续支持与固定工作台的搭建和实测记录
 │   │   │   │   │   │   ├── case-wenyouhuisheng-chinese.md  语文作品文有回声的资源、验证、材料与视频
 │   │   │   │   │   │   ├── demo-video.md  演示视频的逐字稿、录屏、剪辑标注与经验积累区
