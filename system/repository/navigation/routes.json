@@ -351,6 +351,34 @@
       "paths": [
         "work/domains/self-media/articles/README.md"
       ]
+    },
+    {
+      "id": "hands-on-video",
+      "note": "AI 自己动手剪辑、包装、加效果、出成片时叠加读取；不管用户有没有说用代码，主片型路由不变",
+      "whenPatterns": [
+        "(视频|镜头|片子|素材|画面|短片|宣传片|片段|录屏|mp4|MP4|动画).{0,15}(剪|包装|特效|效果|字幕|标题|标注|动效|调色|转场|片头|片尾|出片|成片|渲染|合成|坐标|面板|科技感)",
+        "(剪|包装|特效|做效果|加效果|加字幕|加标题|标注|调色|转场|渲染|合成).{0,15}(视频|镜头|片子|素材|画面|短片|宣传片|片段|录屏|mp4|MP4|动画)",
+        "剪辑|剪视频|剪一下|剪成|粗剪|精剪|代码式视频|代码视频|HyperFrames|Remotion|ffmpeg",
+        "(代码|编程|HTML|html|CSS|JS|Python|python|网页|three\\.js|p5|Manim|canvas|Canvas).{0,10}(视频|动画|包装|片头|转场|动效)"
+      ],
+      "excludeAny": [
+        "提示词",
+        "Seedance",
+        "seedance",
+        "即梦",
+        "可灵",
+        "只写脚本",
+        "只要脚本",
+        "只查",
+        "查询位置"
+      ],
+      "intents": [],
+      "paths": [
+        "work/domains/design/common/code-driven-video/README.md",
+        "work/domains/design/common/code-driven-video/layout-and-sizing.md",
+        "work/domains/design/common/code-driven-video/motion-and-verification.md",
+        "work/domains/design/graphic/design-principles/README.md"
+      ]
     }
   ],
   "routes": [
@@ -1954,7 +1982,7 @@
     },
     {
       "id": "code-video",
-      "label": "代码式视频设计经验",
+      "label": "AI 动手剪辑、包装、加效果（代码式视频）",
       "matchAny": [
         "代码式视频",
         "代码视频",
@@ -1972,9 +2000,19 @@
         "画面标注",
         "信息面板"
       ],
-      "excludeAny": [],
+      "excludeAny": [
+        "提示词",
+        "Seedance",
+        "seedance",
+        "即梦",
+        "可灵",
+        "只写脚本",
+        "只要脚本",
+        "只查",
+        "查询位置"
+      ],
       "entry": "work/domains/design/common/code-driven-video/README.md",
-      "priority": 80,
+      "priority": 40,
       "dependencies": [
         {
           "path": "work/domains/design/common/code-driven-video/layout-and-sizing.md",
@@ -1993,8 +2031,10 @@
         }
       ],
       "matchPatterns": [
-        "(代码|编程|HTML|html|CSS|JS|Python|python|网页|three\\.js|p5|Manim|canvas|Canvas).{0,10}(视频|动画|包装|片头|转场|动效)",
-        "(视频|动画).{0,6}(用|写).{0,4}(代码|HTML|Python|网页)"
+        "(视频|镜头|片子|素材|画面|短片|宣传片|片段|录屏|mp4|MP4|动画).{0,15}(剪|包装|特效|效果|字幕|标题|标注|动效|调色|转场|片头|片尾|出片|成片|渲染|合成|坐标|面板|科技感)",
+        "(剪|包装|特效|做效果|加效果|加字幕|加标题|标注|调色|转场|渲染|合成).{0,15}(视频|镜头|片子|素材|画面|短片|宣传片|片段|录屏|mp4|MP4|动画)",
+        "剪辑|剪视频|剪一下|剪成|粗剪|精剪|代码式视频|代码视频|HyperFrames|Remotion|ffmpeg",
+        "(代码|编程|HTML|html|CSS|JS|Python|python|网页|three\\.js|p5|Manim|canvas|Canvas).{0,10}(视频|动画|包装|片头|转场|动效)"
       ]
     }
   ],

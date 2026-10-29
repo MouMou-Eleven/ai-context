@@ -94,6 +94,17 @@ class RealTasks(unittest.TestCase):
         self.assertEqual(router.resolve('做一个AI大赛的参赛视频', 'create')['selectedCandidate'], 'video')
         self.assertEqual(router.resolve('做一个创赛宣传片', 'create')['selectedCandidate'], 'competition-video')
 
+    def test_hands_on_video_reads_code_video_without_saying_code(self):
+        # 2026-10-30: 建委 asks for edits in plain words; the AI still works in code.
+        cv = 'work/domains/design/common/code-driven-video/README.md'
+        for task in ['帮我剪一下这个视频', '在这个视频上给我做个科技感的效果', '给这段视频加字幕和标题',
+                     '把这几个镜头剪成30秒宣传片', '这个创赛视频帮我做一下片头和转场', '微课视频加个动画效果']:
+            self.assertIn(cv, self.reads(task), task)
+        self.assertEqual(router.resolve('把这几个镜头剪成30秒宣传片', 'create')['selectedCandidate'], 'enterprise-video')
+        self.assertEqual(router.resolve('这个创赛视频帮我做一下片头和转场', 'create')['selectedCandidate'], 'competition-video')
+        for task in ['帮我写一段Seedance视频提示词', '写一个企业宣传片的即梦提示词', '帮我设计一张海报']:
+            self.assertNotIn(cv, self.reads(task), task)
+
     def test_teacher_courseware_is_design_and_own_courseware_is_training(self):
         for task in ['最近承接了一个语文课件的订单', '给老师做一份三年级数学课件', '帮老师美化一下课件']:
             self.assertEqual(router.resolve(task, 'create')['selectedCandidate'], 'ppt', task)

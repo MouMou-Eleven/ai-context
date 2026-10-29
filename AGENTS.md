@@ -26,7 +26,7 @@
 | 平面设计：PPT、海报、折页、书籍 | [设计原则与规范](work/domains/design/graphic/design-principles/README.md) + [设计入口](work/domains/design/README.md) → 对应交付物目录 |
 | PPT 美化、课件美化或排版、首页定调、设计图转可编辑 PPT | [PPT入口](work/domains/design/graphic/ppt/README.md) → [自由视觉PPT](work/domains/design/graphic/ppt/ai-assisted-design/README.md)；有指定模板或录课合成才走精品课 |
 | 视频：宣传片、微课、故事片、AI 视频提示词 | [视频入口](work/domains/design/video/README.md) → 对应片型目录；要写视频提示词再读 [Seedance](work/domains/design/video/common/seedance/README.md) |
-| 用代码做视频：包装、标注、动态文字、MG、完整视频（Python、HTML、Remotion、HyperFrames 等） | [代码式视频设计经验](work/domains/design/common/code-driven-video/README.md) + [设计原则与规范](work/domains/design/graphic/design-principles/README.md) |
+| AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、做动画、出成片（不管用户提没提代码） | [代码式视频设计经验](work/domains/design/common/code-driven-video/README.md) + [设计原则与规范](work/domains/design/graphic/design-principles/README.md)；片型照常读上一行 |
 | 用百度秒哒开发 | [秒哒入口](work/domains/development/tools/miaoda/README.md)（先看顶部平台识别）→ 按其中的流程表选一条 |
 | 其他网站 / 应用 / 编程 | [开发入口](work/domains/development/README.md) + [通用开发经验](work/domains/development/experience/README.md) |
 | 教育智能体 / 学科应用 / 课堂业务系统开发（任何平台） | [教育行业入口](work/domains/development/industry-cases/education/README.md) + [学科融合方法](work/domains/development/industry-cases/education/subject-integration/classroom-agent-design.md)；教师课件和微课制作仍走设计 |

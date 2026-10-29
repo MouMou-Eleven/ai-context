@@ -66,7 +66,7 @@
 | AI视频提示词、模板与案例 | [读取](../../../work/domains/design/video/common/seedance/awesome-seedance/README.md) |
 | 设计、视频与教学开发报价 | [读取](../../../work/domains/other/commercial/quotations/README.md) |
 | 教育行业应用与智能体开发 | [读取](../../../work/domains/development/industry-cases/education/README.md) |
-| 代码式视频设计经验 | [读取](../../../work/domains/design/common/code-driven-video/README.md) |
+| AI 动手剪辑、包装、加效果（代码式视频） | [读取](../../../work/domains/design/common/code-driven-video/README.md) |
 
 ## 常用板块的继续读取条件
 
