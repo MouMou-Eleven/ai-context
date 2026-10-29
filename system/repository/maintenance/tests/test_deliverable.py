@@ -14,6 +14,35 @@ router = load_module('context-route')
 
 
 class DeliverableChecks(unittest.TestCase):
+    def test_tianjin_review_link_requires_complete_appid(self):
+        base = 'https://aiagent.tjtc.edu.cn/chat-temp/test-link'
+        for url in [base, base+'?appid=', base+'?appid=123', base+'?appid=1-2&appid=3-4']:
+            self.assertIn('contest-review-link-appid', {x['rule'] for x in checker.inspect(url, 'competition')})
+        for url in [base+'?appid=1-2', base+'?other=yes&appid=1-2&keep=value']:
+            self.assertEqual(checker.tianjin_review_links(url), [])
+        self.assertEqual(checker.inspect(base, 'general'), [])
+
+    def test_tianjin_review_link_checks_split_runs_and_hidden_target(self):
+        ns = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+        base = 'https://aiagent.tjtc.edu.cn/chat-temp/test-link'
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'review.docx'
+            with zipfile.ZipFile(path, 'w') as z:
+                z.writestr('word/document.xml', f'<w:document xmlns:w="{ns}"><w:body><w:p><w:r><w:t>{base[:30]}</w:t></w:r><w:r><w:t>{base[30:]}?appid=1-2</w:t></w:r></w:p></w:body></w:document>')
+                z.writestr('word/_rels/document.xml.rels', f'<Relationships><Relationship Type="test/hyperlink" Target="{base}" TargetMode="External"/></Relationships>')
+            self.assertEqual({x['rule'] for x in checker.check(path, 'competition')['findings']}, {'contest-review-link-appid'})
+
+    def test_tianjin_review_link_display_and_target_must_match(self):
+        ns = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+        rn = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships'
+        base = 'https://aiagent.tjtc.edu.cn/chat-temp/test-link'
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'review.docx'
+            with zipfile.ZipFile(path, 'w') as z:
+                z.writestr('word/document.xml', f'<w:document xmlns:w="{ns}" xmlns:r="{rn}"><w:body><w:p><w:hyperlink r:id="rId1"><w:r><w:t>{base}?appid=1-2</w:t></w:r></w:hyperlink></w:p></w:body></w:document>')
+                z.writestr('word/_rels/document.xml.rels', f'<Relationships><Relationship Id="rId1" Type="test/hyperlink" Target="{base}?appid=3-4" TargetMode="External"/></Relationships>')
+            self.assertEqual({x['rule'] for x in checker.check(path, 'competition')['findings']}, {'contest-review-link-target'})
+
     def test_domain_sops_keep_ownership_when_using_commercial_standards(self):
         proposal = 'work/domains/training/experience/external-proposal-design.md'
         training = router.resolve('写AI培训方案给组织方，Word格式', 'create')

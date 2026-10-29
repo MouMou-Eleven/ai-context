@@ -8,6 +8,7 @@ import re
 import sys
 import zipfile
 from xml.etree import ElementTree as ET
+from urllib.parse import urlsplit, parse_qs
 
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
@@ -112,6 +113,32 @@ def docx_content(data, layout=None):
                 layout_findings.append({'rule': 'word-title-missing', 'action': '未识别原生Title主标题；人工确认主标题样式及居中。'})
         if layout == 'tianjin-contest-word':
             layout_findings.extend(contest_layout(package, document))
+        link_findings = tianjin_review_links(content)
+        main_relationships = {}
+        if 'word/_rels/document.xml.rels' in package.namelist():
+            main_relationships = {r.get('Id'): r.get('Target', '') for r in ET.fromstring(package.read('word/_rels/document.xml.rels'))}
+        relationship_ns = '{http://schemas.openxmlformats.org/officeDocument/2006/relationships}'
+        for hyperlink in document.iter(W+'hyperlink'):
+            displayed = ''.join(t.text or '' for t in hyperlink.iter(W+'t')).strip()
+            target = main_relationships.get(hyperlink.get(relationship_ns+'id'), '')
+            if displayed.startswith('https://aiagent.tjtc.edu.cn/chat-temp/') and target != displayed:
+                link_findings.append({'rule': 'contest-review-link-target', 'match': displayed,
+                                      'action': 'Word显示的评审地址与实际超链接目标不同；两者都应逐字匹配平台复制的完整链接。'})
+        for name in package.namelist():
+            if name.startswith('word/') and name.endswith(('.xml', '.rels')):
+                root = ET.fromstring(package.read(name))
+                for node in root.iter():
+                    for value in node.attrib.values():
+                        link_findings.extend(tianjin_review_links(value))
+                    if node.tag in (W+'instrText', W+'fldSimple') and node.text:
+                        link_findings.extend(tianjin_review_links(node.text))
+        # Deduplicate links found in visible text and their backing relationship.
+        seen = set()
+        for finding in link_findings:
+            key = (finding['rule'], finding['match'])
+            if key not in seen:
+                seen.add(key)
+                extra.append(finding)
         return content, extra, layout_findings
 
 
@@ -259,6 +286,18 @@ def contest_structure(document, chain, heading, in_table):
     return findings
 
 
+def tianjin_review_links(content):
+    """Check full Tianjin temporary URLs without claiming platform access was tested."""
+    findings = []
+    for match in re.finditer(r'https://aiagent\.tjtc\.edu\.cn/chat-temp/[^\s<>"\u0027，。；（）)\]}]+', content):
+        url = match.group().replace('&amp;', '&')
+        values = parse_qs(urlsplit(url).query).get('appid', [])
+        if len(values) != 1 or not re.fullmatch(r'\d+-\d+', values[0]):
+            findings.append({'rule': 'contest-review-link-appid', 'match': url,
+                             'action': '天津临时评审链接必须保留平台复制的完整查询参数及唯一appid；回读登录可用未勾选、有效期为空，并在未登录状态验证。'})
+    return findings
+
+
 def inspect(content, profile='learner', markup=False):
     if markup:
         parser = VisibleText()
@@ -278,6 +317,8 @@ def inspect(content, profile='learner', markup=False):
                                      'action': {'learner': '核对是否为讲师指令；是则移出学员正文。引用、反例或用户明确要求需逐项说明。',
                                                 'external-proposal': '核对是否为内部设计或来源说明；对外方案应写课程主题、应用场景与学习价值。引用或用户明确要求需逐项复核。',
                                                 'competition': '评审成品只写给评委看：删掉填写提示、代做字样和非必须的澄清；“存在不足”栏目按字数要求简要写。'}[profile]})
+    if profile == 'competition':
+        findings.extend(tianjin_review_links(content))
     return findings
 
 
@@ -293,7 +334,11 @@ def check(path, profile='learner', layout=None):
         content = data.decode('utf-8-sig')
     findings = inspect(content, profile, suffix in {'.xml', '.html', '.htm'})
     if profile == 'external-proposal':
-        findings.extend(extra)
+        findings.extend(f for f in extra if f['rule'] == 'proposal-hyperlink')
+    if profile == 'competition':
+        for f in extra:
+            if f['rule'].startswith('contest-review-link') and not any(x['rule'] == f['rule'] and x.get('match') == f.get('match') for x in findings):
+                findings.append(f)
     findings.extend(layout_findings)
     return {'artifact': str(path), 'sha256': hashlib.sha256(data).hexdigest(), 'profile': profile,
             'status': 'needs_revision_or_review' if findings else 'no_pattern_found_requires_semantic_review',
