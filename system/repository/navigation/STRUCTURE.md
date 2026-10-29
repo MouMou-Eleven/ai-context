@@ -30,6 +30,11 @@ ai-context/
 │   │   ├── design/  按交付物组织设计制作经验
 │   │   │   ├── common/  组合手工设计与AI辅助，统一制作和沉淀流程
 │   │   │   │   ├── ai-generation-principles.md  设计中用 AI 生成的五条原则
+│   │   │   │   ├── code-driven-video/  代码式视频：字号、间距、对齐、动效与验收经验
+│   │   │   │   │   ├── case-aircraft-assembly-overlay.md  案例：飞机总装实拍空间坐标包装及返修
+│   │   │   │   │   ├── layout-and-sizing.md  视频画面的安全区、字号换算、间距单位、容器与对齐
+│   │   │   │   │   ├── motion-and-verification.md  出场节奏、停留时间、图层顺序坑与静帧验收
+│   │   │   │   │   └── README.md  代码式视频入口：什么时候读、和平面原则的联动、检查表
 │   │   │   │   ├── feedback-iteration.md  多轮反馈修改方法：可见问题、每轮一类、退回、授权范围
 │   │   │   │   ├── production-workflow.md  从需求到交付组织设计工作，并把经验接回知识库
 │   │   │   │   └── README.md  设计共用方法

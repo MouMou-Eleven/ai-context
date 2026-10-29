@@ -27,6 +27,8 @@
 | 要高级感、力量感、轻盈感 | [情感与氛围](mood.md) |
 | 选图、图上压字、数据做成图表 | [图片与图表](images-and-charts.md) |
 
+视频包装、动画里的文字和面板也是版面，同样用这里的原则；换算到视频画面的字号、间距和动效见[代码式视频设计经验](../../common/code-driven-video/README.md)。
+
 PPT 的落地操作（参考线、主题字体、文本框、蒙版、图表）见 [PPT 拆页与版式](../ppt/ai-assisted-design/layout-and-pagination.md)。
 
 ## 用在 AI 生图和设计图上（默认）

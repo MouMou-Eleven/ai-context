@@ -82,7 +82,8 @@
       "seedance",
       "ae",
       "title-matrix",
-      "awesome-seedance"
+      "awesome-seedance",
+      "code-video"
     ],
     "exclusiveProjectIds": [
       "bug-lesson",
@@ -1055,6 +1056,11 @@
           "path": "work/domains/design/video/README.md",
           "whenAny": [],
           "intents": []
+        },
+        {
+          "path": "work/domains/design/common/code-driven-video/README.md",
+          "whenAny": [],
+          "intents": []
         }
       ]
     },
@@ -1944,6 +1950,51 @@
           ],
           "intents": []
         }
+      ]
+    },
+    {
+      "id": "code-video",
+      "label": "代码式视频设计经验",
+      "matchAny": [
+        "代码式视频",
+        "代码视频",
+        "代码做视频",
+        "代码渲染",
+        "视频包装",
+        "包装视频",
+        "动态文字",
+        "HyperFrames",
+        "HTML视频",
+        "HTML 视频",
+        "HTML动画",
+        "程序化视频",
+        "逐帧绘制",
+        "画面标注",
+        "信息面板"
+      ],
+      "excludeAny": [],
+      "entry": "work/domains/design/common/code-driven-video/README.md",
+      "priority": 80,
+      "dependencies": [
+        {
+          "path": "work/domains/design/common/code-driven-video/layout-and-sizing.md",
+          "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/common/code-driven-video/motion-and-verification.md",
+          "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/graphic/design-principles/README.md",
+          "whenAny": [],
+          "intents": []
+        }
+      ],
+      "matchPatterns": [
+        "(代码|编程|HTML|html|CSS|JS|Python|python|网页|three\\.js|p5|Manim|canvas|Canvas).{0,10}(视频|动画|包装|片头|转场|动效)",
+        "(视频|动画).{0,6}(用|写).{0,4}(代码|HTML|Python|网页)"
       ]
     }
   ],
