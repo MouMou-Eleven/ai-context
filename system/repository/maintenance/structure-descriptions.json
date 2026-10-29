@@ -453,7 +453,8 @@
     "work/domains/development/industry-cases/education/tianjin-ai-contest/document-format.md": "申报书与技术报告的评委视角、团队表、统一版式、黑体",
     "work/domains/development/industry-cases/education/tianjin-ai-contest/demo-video.md": "演示视频的逐字稿、录屏、剪辑标注与经验积累区",
     "work/domains/development/industry-cases/education/tianjin-ai-contest/case-wenyouhuisheng-chinese.md": "语文作品文有回声的资源、验证、材料与视频",
-    "work/domains/development/industry-cases/education/tianjin-ai-contest/case-geometry-helper-math.md": "数学作品空间与图形探究助手的演进、验证与材料问题"
+    "work/domains/development/industry-cases/education/tianjin-ai-contest/case-geometry-helper-math.md": "数学作品空间与图形探究助手的演进、验证与材料问题",
+    "work/domains/development/industry-cases/education/tianjin-ai-contest/case-kindergarten-play-observation.md": "幼儿自主游戏图文观察、连续支持与固定工作台的搭建和实测记录"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",
