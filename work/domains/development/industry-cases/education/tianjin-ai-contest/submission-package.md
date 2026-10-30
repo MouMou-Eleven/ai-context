@@ -62,7 +62,7 @@
 
 ## 四、评审链接和账号
 
-评审入口按[搭建流程第六节](../tianjin-platform/build-sop.md#六生成评审链接红线)执行完整地址、登录选项和未登录运行核对。链接写进申报书“应用成效”末尾、作品访问说明及技术报告第一节，统一取自同一个本机核对源；Word实际跳转目标和ZIP内入口也纳入交付检查。
+评审入口按[搭建流程第六节](../tianjin-platform/build-sop.md#六生成评审链接红线)执行完整地址、登录选项和未登录运行核对。链接写进申报书“应用成效”末尾、作品访问说明及技术报告第一节，统一取自同一个本机核对源（做法见[成品自查 · 链接要整条复制](../../../../../../system/repository/execution-checks.md#链接要整条复制红线)）；Word实际跳转目标和ZIP内入口也纳入交付检查。
 
 ## 五、交付前检查
 
@@ -75,7 +75,7 @@
 - [ ] 复现材料五类覆盖清单齐全，认证已脱敏，哈希已核对。
 
 ```text
-python system/repository/maintenance/check-deliverable.py <docx> --profile competition --layout tianjin-contest-word
+python system/repository/maintenance/check-deliverable.py <docx> --profile competition --layout tianjin-contest-word --links <links.txt>
 python system/repository/maintenance/check-deliverable.py <纯旁白逐字稿.txt> --profile competition
 ```
 

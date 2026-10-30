@@ -22,6 +22,26 @@ class DeliverableChecks(unittest.TestCase):
             self.assertEqual(checker.tianjin_review_links(url), [])
         self.assertEqual(checker.inspect(base, 'general'), [])
 
+    def test_verified_link_list_catches_truncated_and_unlisted_links(self):
+        full = 'https://platform.example.cn/chat-temp/abc?appid=1638-1639&t=9'
+        with tempfile.TemporaryDirectory() as directory:
+            links = Path(directory)/'links.txt'
+            links.write_text('# 平台原样复制\n' + full + '\n', encoding='utf-8')
+            draft = Path(directory)/'draft.txt'
+            draft.write_text(f'专家体验链接：{full}。\n', encoding='utf-8')
+            self.assertEqual(checker.check(draft, 'general', links=links)['findings'], [])
+            draft.write_text('专家体验链接：https://platform.example.cn/chat-temp/abc\n另见 https://other.example.com/x\n', encoding='utf-8')
+            found = {x['rule']: x for x in checker.check(draft, 'general', links=links)['findings']}
+            self.assertEqual(set(found), {'link-incomplete', 'link-unverified'})
+            self.assertEqual(found['link-incomplete']['expected'], full)
+            # A Word hyperlink target that drops parameters is caught even when the visible text is right.
+            ns = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+            docx = Path(directory)/'review.docx'
+            with zipfile.ZipFile(docx, 'w') as z:
+                z.writestr('word/document.xml', f'<w:document xmlns:w="{ns}"><w:body><w:p><w:r><w:t>{full.replace("&", "&amp;")}</w:t></w:r></w:p></w:body></w:document>')
+                z.writestr('word/_rels/document.xml.rels', '<Relationships><Relationship Type="test/hyperlink" Target="https://platform.example.cn/chat-temp/abc?appid=1638" TargetMode="External"/></Relationships>')
+            self.assertEqual({x['rule'] for x in checker.check(docx, 'general', links=links)['findings']}, {'link-incomplete'})
+
     def test_tianjin_review_link_checks_split_runs_and_hidden_target(self):
         ns = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
         base = 'https://aiagent.tjtc.edu.cn/chat-temp/test-link'

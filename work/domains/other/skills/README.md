@@ -11,6 +11,8 @@
 |---|---|---|---|
 | 给自媒体文章、图文或视频拟标题，诊断和比较候选 | [Title Matrix 标题矩阵](../../self-media/titles/title-matrix/README.md) | 第三方：[zhouwei713/title-matrix](https://github.com/zhouwei713/title-matrix)，MIT | 跨发布形态标题、诊断、评审与有可比数据时的复盘；实体按用户指定放在标题与选题板块 |
 | 用一句话、脚本或参考图制作可编辑视频、片头或MG动效 | [建委Remotion视频](jianwei-ai-community-remotion-video/README.md) | 杨建委自研，参考外部规范 | 参数化Remotion工程、完整低清预览与按当前授权渲染的成片 |
+| 网站、软件、App 的产品宣传片；单个镜头的成熟动效；给片子配音效 | [video-shotcraft](video-shotcraft/README.md) | 第三方：[Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft)，Apache 2.0，本机安装 | 真实页面截图的Remotion宣传片、124张镜头卡、音效与卡点 |
+| 把知识主题或文章做成MG科普讲解片 | [anything2explainer](anything2explainer/README.md) | 第三方：[Vincentwei1021/anything2explainer](https://github.com/Vincentwei1021/anything2explainer)，**非商业许可，商单须作者授权**，本机安装 | 配音、字幕、章节进度条的Remotion讲解片与量化QC |
 | 用实验数据做Origin科研图，保留可编辑项目 | [EditaPlot](editaplot/README.md) | 第三方：[hang-jin/editaplot](https://github.com/hang-jin/editaplot) | Origin可编辑OPJU与PNG/PDF/TIF |
 | 按职业、角色或真实工作场景设计AI工作台 | [建委身份工作台](jianwei-ai-learning-community-workbench/README.md) | 杨建委自研 | 工作台方案、信息架构、跨端状态与实现要求 |
 | 制作个人IP、观点、活动嘉宾或创意角色系列海报 | [青云IP海报](qingyun-ip-poster/README.md) | 第三方：[qingyunAGI/qingyun-ip-poster](https://github.com/qingyunAGI/qingyun-ip-poster) | 3:4/9:16海报视觉系统、系列规则与质检 |
@@ -27,7 +29,7 @@ Skill是能力依赖，不是业务项目归属。商单与实践事实进入[�
 
 ## 新增与维护
 
-- 每项独立目录必须包含README能力卡、`upstream.json`与实际实体路径。卡片写清能力、适用/不适用、来源、自研归属、固定版本、依赖、交付、查看/执行边界及更新方法。
+- 每项独立目录必须包含README能力卡、`upstream.json`与实际实体路径。体积大（几十MB以上、含媒体素材）或许可不适合在公开仓库再分发的第三方Skill，经建委同意可用 `storageMode=local-install`：仓库只存能力卡和固定commit，实体按 `installPaths` 装在本机 Claude Code 与 Codex 的 skills 目录，能力卡写清换电脑时怎么重装。卡片写清能力、适用/不适用、来源、自研归属、固定版本、依赖、交付、查看/执行边界及更新方法。
 - 新增后同步本索引、任务所属领域入口和根任务路由；只维护一个实体。README能力变化、调用词变化和路径变化必须同时校验相关索引，不等待建委逐项提醒。
 - 自研更新：核对主文件、引用契约、Schema、脚本与代理配置；从实际案例提炼通用能力，增加 `workflowRevision`、更新同步日期并记录必要变更原因。仅改说明不增加实体版本号。
 - 第三方更新：先比较固定commit与候选commit的许可、依赖、结构和行为差异，再整体替换已跟踪快照；更新commit、同步日和README，并验证实体完整性及适用自检。

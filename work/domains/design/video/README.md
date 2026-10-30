@@ -7,7 +7,7 @@
 | [故事与叙事影片](./story/README.md) | 真人故事、剧情镜头、角色连续性及叙事参考 |
 | [视频共用方法](./common/README.md) | Seedance AI 视频提示词、AE 合成与交付、MG |
 
-**AI 自己动手剪辑、包装、加效果、出成片时（红线）**，不管用户有没有说用代码，都叠加读[代码式视频设计经验](../common/code-driven-video/README.md)：片型目录定内容和结构，它管画面排版、字号、动效和验收。
+**AI 自己动手剪辑、包装、加效果、出成片时（红线）**，不管用户有没有说用代码，都叠加读[代码式视频设计经验](../common/code-driven-video/README.md)和[设计原则与审美](../common/design-principles/README.md)：片型目录定内容和结构，前者管画面排版、字号、动效和验收，后者管审美判断。主体是屏幕录像的演示片，再读[录屏讲解视频](../common/code-driven-video/screen-recording.md)。
 
 **比赛相关的视频先问清是什么比赛（默认）。**“比赛宣传片”“参赛视频”不等于创赛：大学生创新创业比赛的宣传片才用[创赛宣传片制作](./promo/competition-promo-production.md)；教学、微课类比赛的参赛作品进[微课与教育交互](./education/README.md)；AI 大赛等其他比赛的命题视频，按片型（宣传片、故事片、AI 视频）走对应目录，评审要求以该比赛的通知为准，不套创赛的结构和评审逻辑。
 

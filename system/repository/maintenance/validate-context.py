@@ -103,7 +103,9 @@ def check_skills(root):
         except (OSError, ValueError):
             errors.append(f'Skill metadata missing or invalid: {label}/upstream.json')
             continue
-        for field in ['id', 'storageMode', 'sourcePath', 'origin', 'documentationReviewedAt']:
+        local_install = data.get('storageMode') == 'local-install'
+        required = ['id', 'storageMode', 'origin', 'documentationReviewedAt'] + ([] if local_install else ['sourcePath'])
+        for field in required:
             if not isinstance(data.get(field), str) or not data[field].strip():
                 errors.append(f'Skill metadata requires {field}: {label}')
         if data.get('schemaVersion') != 1 or data.get('id') != folder.name:
@@ -115,13 +117,21 @@ def check_skills(root):
                 errors.append(f'Skill requires ISO date {field}: {label}')
         if data.get('origin') not in {'internal', 'third-party'}:
             errors.append(f'Skill origin must be internal or third-party: {label}')
-        if data.get('storageMode') not in {'skill-snapshot', 'full-repository-snapshot'}:
+        if data.get('storageMode') not in {'skill-snapshot', 'full-repository-snapshot', 'local-install'}:
             errors.append(f'Unknown Skill storageMode: {label}')
         for field in ['capabilities', 'useWhen', 'notFor', 'runtimeRequirements']:
             if not isinstance(data.get(field), list) or not data[field] or not all(isinstance(x, str) and x.strip() for x in data[field]):
                 errors.append(f'Skill metadata requires nonempty {field}: {label}')
+        # local-install: the repository keeps only the capability card; the entity is installed per machine from the pinned commit.
+        if local_install:
+            if data.get('origin') != 'third-party' or data.get('sourcePath'):
+                errors.append(f'local-install Skill must be third-party without sourcePath: {label}')
+            if not isinstance(data.get('installPaths'), list) or not data['installPaths']:
+                errors.append(f'local-install Skill needs installPaths: {label}')
         source = (folder / data.get('sourcePath', '')).resolve()
-        if not source.is_relative_to(folder.resolve()) or not source.is_dir():
+        if local_install:
+            pass
+        elif not source.is_relative_to(folder.resolve()) or not source.is_dir():
             errors.append(f'Skill sourcePath is missing or outside wrapper: {label}')
         elif data.get('storageMode') == 'skill-snapshot' and not (source / 'SKILL.md').is_file():
             errors.append(f'Skill source entry is missing: {label}/{data.get("sourcePath")}/SKILL.md')
@@ -141,7 +151,7 @@ def check_skills(root):
                     errors.append(f'Third-party Skill needs {field}: {label}')
             if not re.fullmatch(r'[0-9a-fA-F]{40}', str(data.get('commit', ''))):
                 errors.append(f'Third-party Skill commit must identify exact snapshot: {label}')
-        for runtime_path in data.get('requiredRuntimePaths', []):
+        for runtime_path in ([] if local_install else data.get('requiredRuntimePaths', [])):
             runtime = (source / runtime_path).resolve()
             if not runtime.is_relative_to(source) or not runtime.exists():
                 errors.append(f'Skill runtime path is missing: {label}/{runtime_path}')

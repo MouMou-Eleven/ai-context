@@ -59,7 +59,8 @@ def build_knowledge(root, files, metadata):
     hidden = []
     for path in skill_metadata_paths(root):
         data = json.loads(read_json(path))
-        hidden.append((path.parent / data['sourcePath']).relative_to(root).as_posix())
+        if data.get('sourcePath'):  # local-install cards have no vendored entity to hide
+            hidden.append((path.parent / data['sourcePath']).relative_to(root).as_posix())
     tree = {}
     visible_extensions = {'.md', '.txt', '.docx', '.pdf'}
     for name in files:

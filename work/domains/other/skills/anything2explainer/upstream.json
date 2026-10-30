@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "anything2explainer",
+  "storageMode": "local-install",
+  "origin": "third-party",
+  "defaultBranch": "main",
+  "upstreamRepository": "https://github.com/Vincentwei1021/anything2explainer.git",
+  "upstreamWeb": "https://github.com/Vincentwei1021/anything2explainer",
+  "commit": "735c79c8724e897e8971cd59dde7e5aa11e4d6ce",
+  "syncedCommit": "735c79c8724e897e8971cd59dde7e5aa11e4d6ce",
+  "syncedAt": "2026-10-30",
+  "license": "PolyForm Noncommercial 1.0.0：非商业免费；任何商业使用须事先取得作者授权（产出的视频归制作者）",
+  "installPaths": [
+    "~/.claude/skills/anything2explainer",
+    "~/.codex/skills/anything2explainer"
+  ],
+  "updatePolicy": "review-diff-then-reinstall-pinned-commit",
+  "notes": "仓库只存能力卡；实体按固定 commit 安装在本机 Claude Code 与 Codex 的 skills 目录。商用前先取得作者授权。",
+  "capabilities": [
+    "把一个知识主题或一篇文章做成配音、字幕、章节进度条的 MG 科普讲解片",
+    "Remotion 模板、图元库、配音与时间轴脚本",
+    "多 agent 分工协议和 QC 判据（主角尺寸、光、停留、静止时长量化检查）",
+    "完整样片《RAG 与知识库》作质量标尺"
+  ],
+  "useWhen": [
+    "建委自己的非商业科普内容、学习研究",
+    "已取得作者授权的客户科普讲解片",
+    "想借它的分镜、构图与光、QC 判据来检查自己的讲解片"
+  ],
+  "notFor": [
+    "未获授权的客户商单",
+    "真人口播、实拍为主的片子",
+    "把黑底紫光外观当成建委的默认风格"
+  ],
+  "runtimeRequirements": [
+    "Node.js 18+（模板会安装 Remotion 4）",
+    "ffmpeg",
+    "Python 3 与 edge-tts、numpy、pillow、scipy；每片约 2GB 磁盘"
+  ],
+  "documentationReviewedAt": "2026-10-30"
+}

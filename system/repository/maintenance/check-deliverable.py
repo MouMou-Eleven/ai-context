@@ -1,6 +1,7 @@
 """Read-only audience and optional Word layout checks; no finding is not approval."""
 import argparse
 import hashlib
+import io
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -298,6 +299,41 @@ def tianjin_review_links(content):
     return findings
 
 
+URL_PATTERN = re.compile(r'https?://[^\s<>"\'，。；、（）()\[\]{}【】]+')
+
+
+def docx_hyperlink_targets(data):
+    """Return external hyperlink targets stored in a DOCX package."""
+    targets = []
+    with zipfile.ZipFile(io.BytesIO(data)) as package:
+        for name in package.namelist():
+            if name.startswith('word/') and name.endswith('.rels'):
+                for rel in ET.fromstring(package.read(name)):
+                    if rel.get('Type', '').endswith('/hyperlink') and rel.get('TargetMode') == 'External':
+                        targets.append(rel.get('Target', ''))
+    return targets
+
+
+def expected_link_findings(texts, expected):
+    """Every URL in the deliverable must equal one verified URL copied from the platform."""
+    findings, seen = [], set()
+    for text in texts:
+        for match in URL_PATTERN.finditer(text.replace('&amp;', '&')):
+            url = match.group().rstrip('.,;:!?')
+            if url in expected or url in seen:
+                continue
+            seen.add(url)
+            base = url.split('?', 1)[0].split('#', 1)[0]
+            related = [e for e in expected if e.startswith(url) or e.split('?', 1)[0].split('#', 1)[0] == base]
+            if related:
+                findings.append({'rule': 'link-incomplete', 'match': url, 'expected': related[0],
+                                 'action': '这条链接和核对文件里的不一致（被截断、少了参数或改过）；从核对文件整条复制替换，正文和超链接目标都要改。'})
+            else:
+                findings.append({'rule': 'link-unverified', 'match': url,
+                                 'action': '核对文件里没有这条链接；确认来源后整条加入核对文件，或从成品里删除。'})
+    return findings
+
+
 def inspect(content, profile='learner', markup=False):
     if markup:
         parser = VisibleText()
@@ -322,7 +358,7 @@ def inspect(content, profile='learner', markup=False):
     return findings
 
 
-def check(path, profile='learner', layout=None):
+def check(path, profile='learner', layout=None, links=None):
     data = Path(path).read_bytes()
     suffix = Path(path).suffix.lower()
     extra, layout_findings = [], []
@@ -340,6 +376,13 @@ def check(path, profile='learner', layout=None):
             if f['rule'].startswith('contest-review-link') and not any(x['rule'] == f['rule'] and x.get('match') == f.get('match') for x in findings):
                 findings.append(f)
     findings.extend(layout_findings)
+    if links is not None:
+        expected = {line.strip() for line in Path(links).read_text(encoding='utf-8-sig').splitlines()
+                    if line.strip() and not line.strip().startswith('#')}
+        if not expected:
+            raise ValueError('Link list is empty; put each verified URL on its own line.')
+        texts = [content] + (docx_hyperlink_targets(data) if suffix == '.docx' else [])
+        findings.extend(expected_link_findings(texts, expected))
     return {'artifact': str(path), 'sha256': hashlib.sha256(data).hexdigest(), 'profile': profile,
             'status': 'needs_revision_or_review' if findings else 'no_pattern_found_requires_semantic_review',
             'findings': findings, 'approved': False,
@@ -351,9 +394,10 @@ if __name__ == '__main__':
     parser.add_argument('artifact', type=Path)
     parser.add_argument('--profile', choices=['learner', 'instructor', 'general', 'external-proposal', 'competition'], default='learner')
     parser.add_argument('--layout', choices=['gov-enterprise-word', 'tianjin-contest-word'])
+    parser.add_argument('--links', type=Path, help='verified URL list, one per line; every URL in the artifact must match one exactly')
     args = parser.parse_args()
     try:
-        result = check(args.artifact, args.profile, args.layout)
+        result = check(args.artifact, args.profile, args.layout, args.links)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         raise SystemExit(1 if result['findings'] else 0)
     except (OSError, UnicodeError, ValueError, KeyError, zipfile.BadZipFile, ET.ParseError) as exc:

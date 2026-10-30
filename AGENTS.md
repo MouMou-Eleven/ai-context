@@ -23,15 +23,15 @@
 | 公众号 / 图文文章 | [自媒体入口](work/domains/self-media/README.md) → [文章](work/domains/self-media/articles/README.md) + [标题](work/domains/self-media/titles/README.md) |
 | 宣传、招生、产品介绍、报名页 | [宣传写法](work/domains/self-media/marketing-copy/reader-question-led-promotion.md) + [口语样稿](system/expression/voice-samples.md) + 对应项目的事实 |
 | 朋友圈 / 社群话术 / 口播 / 直播 | [自媒体入口](work/domains/self-media/README.md) 里对应的那一类 + [口语样稿](system/expression/voice-samples.md) |
-| 平面设计：PPT、海报、折页、书籍 | [设计原则与规范](work/domains/design/graphic/design-principles/README.md) + [设计入口](work/domains/design/README.md) → 对应交付物目录 |
+| 任何设计成品：PPT、海报、折页、书籍、视频画面、网页界面、流程图；用户只说“做好看点”“高级点” | [设计原则与审美](work/domains/design/common/design-principles/README.md)（含[审美词库](work/domains/design/common/design-principles/aesthetic-vocabulary.md)）+ [设计入口](work/domains/design/README.md) → 对应交付物目录 |
 | PPT 美化、课件美化或排版、首页定调、设计图转可编辑 PPT | [PPT入口](work/domains/design/graphic/ppt/README.md) → [自由视觉PPT](work/domains/design/graphic/ppt/ai-assisted-design/README.md)；有指定模板或录课合成才走精品课 |
 | 视频：宣传片、微课、故事片、AI 视频提示词 | [视频入口](work/domains/design/video/README.md) → 对应片型目录；要写视频提示词再读 [Seedance](work/domains/design/video/common/seedance/README.md) |
-| AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、做动画、出成片（不管用户提没提代码） | [代码式视频设计经验](work/domains/design/common/code-driven-video/README.md) + [设计原则与规范](work/domains/design/graphic/design-principles/README.md)；片型照常读上一行 |
+| AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、录屏演示、做动画、出成片（不管用户提没提代码） | [代码式视频设计经验](work/domains/design/common/code-driven-video/README.md) + [设计原则与审美](work/domains/design/common/design-principles/README.md)；录屏演示加读[录屏讲解视频](work/domains/design/common/code-driven-video/screen-recording.md)；片型照常读上一行 |
 | 用百度秒哒开发 | [秒哒入口](work/domains/development/tools/miaoda/README.md)（先看顶部平台识别）→ 按其中的流程表选一条 |
-| 其他网站 / 应用 / 编程 | [开发入口](work/domains/development/README.md) + [通用开发经验](work/domains/development/experience/README.md) |
+| 其他网站 / 应用 / 编程 | [开发入口](work/domains/development/README.md) + [通用开发经验](work/domains/development/experience/README.md)；有界面时加读[设计原则与审美](work/domains/design/common/design-principles/README.md) |
 | 教育智能体 / 学科应用 / 课堂业务系统开发（任何平台） | [教育行业入口](work/domains/development/industry-cases/education/README.md) + [学科融合方法](work/domains/development/industry-cases/education/subject-integration/classroom-agent-design.md)；教师课件和微课制作仍走设计 |
 | 在天津智能体平台（aiagent.tjtc，近似扣子）上搭建、修改、导入导出 | [平台能力体系](work/domains/development/industry-cases/education/tianjin-platform/capabilities.md) + [搭建流程](work/domains/development/industry-cases/education/tianjin-platform/build-sop.md) + 上一行的学科融合方法 |
-| 天津 AI 教育大赛赛道二材料：申报书、技术说明与验证报告、逐字稿、演示视频、提交包 | [大赛入口](work/domains/development/industry-cases/education/tianjin-ai-contest/README.md) → 按任务读；评审材料都要读[文档规范](work/domains/development/industry-cases/education/tianjin-ai-contest/document-format.md) |
+| 天津 AI 教育大赛赛道二材料：申报书、技术说明与验证报告、逐字稿、演示视频、提交包；其他智能体比赛的全包 | [大赛入口](work/domains/development/industry-cases/education/tianjin-ai-contest/README.md) → 按任务读（别的比赛看其中“换一个比赛”）；评审材料都要读[文档规范](work/domains/development/industry-cases/education/tianjin-ai-contest/document-format.md) |
 | 报价、修改费（PPT、视频、课件等任何单子） | [报价入口](work/domains/other/commercial/quotations/README.md) |
 | 路演、答辩、比赛申报、商业计划、融资（台下有评委或投资人） | [商业化入口](work/domains/other/commercial/README.md) → [赛事和投资人材料](work/domains/other/commercial/experience/competition-and-investor-materials.md) |
 | 合同、正式文书、对外表达标准 | [商业化入口](work/domains/other/commercial/README.md) |

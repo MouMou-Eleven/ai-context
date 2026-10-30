@@ -34,14 +34,10 @@ ai-context/
 │   │   │   │   │   ├── case-aircraft-assembly-overlay.md  案例：飞机总装实拍空间坐标包装及返修
 │   │   │   │   │   ├── layout-and-sizing.md  视频画面的安全区、字号换算、间距单位、容器与对齐
 │   │   │   │   │   ├── motion-and-verification.md  出场节奏、停留时间、图层顺序坑与静帧验收
-│   │   │   │   │   └── README.md  代码式视频入口：什么时候读、和平面原则的联动、检查表
-│   │   │   │   ├── feedback-iteration.md  多轮反馈修改方法：可见问题、每轮一类、退回、授权范围
-│   │   │   │   ├── production-workflow.md  从需求到交付组织设计工作，并把经验接回知识库
-│   │   │   │   └── README.md  设计共用方法
-│   │   │   ├── graphic/  按PPT、海报折页和书籍版式查设计经验
-│   │   │   │   ├── book/  查找书籍封面、装帧与内页版式的方法
-│   │   │   │   │   └── README.md  书籍装帧与版式设计入口
+│   │   │   │   │   ├── README.md  代码式视频入口：什么时候读、和平面原则的联动、检查表
+│   │   │   │   │   └── screen-recording.md  录屏讲解视频：录制、先全景后局部运镜、框选跟踪、说明栏版式、换配音对齐
 │   │   │   │   ├── design-principles/  海报、折页、书籍、PPT共用的设计底层规则：层级、构成、骨架、构图、留白、字体、配色、氛围
+│   │   │   │   │   ├── aesthetic-vocabulary.md  审美词库：把“好看”翻成气质和设计简报；光影、空间、材质；跨媒介用法
 │   │   │   │   │   ├── color.md  明度与辨识度、色调调和、色环配色、面积与数量、颜色气质
 │   │   │   │   │   ├── composition.md  点线面、十二种构成、秩序与变化、对比的十个维度、对齐细节
 │   │   │   │   │   ├── images-and-charts.md  选图裁切、多图组织、人物朝向、图上压字、图表做法
@@ -49,9 +45,15 @@ ai-context/
 │   │   │   │   │   ├── layout-skeleton.md  版心与边距比例、版面率、网格与基线网格、分组、视线流动
 │   │   │   │   │   ├── mood.md  高级感、力量感、纤细感、热闹与安静各自的手段
 │   │   │   │   │   ├── page-composition.md  单图七种构图、多图四种构图、平衡与重心
-│   │   │   │   │   ├── README.md  设计一个版面的顺序、按问题找专题、生图时怎么用、交付前检查表
+│   │   │   │   │   ├── README.md  所有设计共用的审美底座：设计顺序、按问题找专题、生图用法、交付前检查表
 │   │   │   │   │   ├── typography.md  字体数量、中西文搭配、字号层级、行距字距行长、字体气质
 │   │   │   │   │   └── whitespace.md  留白的作用、大小依据、颜色、延伸，以及在图片上放文字
+│   │   │   │   ├── feedback-iteration.md  多轮反馈修改方法：可见问题、每轮一类、退回、授权范围
+│   │   │   │   ├── production-workflow.md  从需求到交付组织设计工作，并把经验接回知识库
+│   │   │   │   └── README.md  设计共用方法
+│   │   │   ├── graphic/  按PPT、海报折页和书籍版式查设计经验
+│   │   │   │   ├── book/  查找书籍封面、装帧与内页版式的方法
+│   │   │   │   │   └── README.md  书籍装帧与版式设计入口
 │   │   │   │   ├── poster-fold/  制作海报、折页等平面宣传物料的经验入口
 │   │   │   │   │   └── README.md  海报、折页及平面物料设计入口
 │   │   │   │   ├── ppt/  制作演示文稿时查内容组织与视觉设计要求
@@ -405,6 +407,9 @@ ai-context/
 │   │   │   │       └── README.md  商业交付修订索引
 │   │   │   ├── README.md  其他领域与项目索引及准入条件
 │   │   │   └── skills/  按任务找Skill，并核对来源、版本与执行条件
+│   │   │       ├── anything2explainer/  第三方 MG 科普讲解片 Skill 能力卡（本机安装，非商业许可）
+│   │   │       │   ├── README.md  anything2explainer：MG 科普讲解片
+│   │   │       │   └── upstream.json  结构化配置与索引
 │   │   │       ├── editaplot/  用实验数据制作可编辑的Origin科研图
 │   │   │       │   ├── README.md  科研绘图 Skill 的调用、前提与更新方法
 │   │   │       │   ├── source/  上游完整快照，共 662 个文件；展开可核查内部层级
@@ -1226,7 +1231,10 @@ ai-context/
 │   │   │       │   │   │   └── version-matrix.md  版本矩阵与系列差异控制
 │   │   │       │   │   └── SKILL.md  说明文档：Qingyun IP Poster · Visual System Edition
 │   │   │       │   └── upstream.json  上游仓库、固定 commit、版本与更新规则
-│   │   │       └── README.md  Skill 实体索引、来源与更新规则
+│   │   │       ├── README.md  Skill 实体索引、来源与更新规则
+│   │   │       └── video-shotcraft/  第三方产品宣传片 Skill 能力卡（本机安装，Apache 2.0）
+│   │   │           ├── README.md  video-shotcraft：产品宣传片镜头库
+│   │   │           └── upstream.json  结构化配置与索引
 │   │   ├── README.md  设计、开发、培训、自媒体和其他领域的知识入口
 │   │   ├── self-media/  按文章、口播、宣传和运营任务查创作经验
 │   │   │   ├── articles/  组织公众号等文章与图文内容，按读者需要展开

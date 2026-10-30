@@ -118,7 +118,7 @@ class RealTasks(unittest.TestCase):
         self.assertNotEqual(router.resolve('做一个企业MG动画宣传', 'create')['selectedCandidate'], 'microcourse')
 
     def test_graphic_design_principles_trigger_for_all_graphic_work(self):
-        base = 'work/domains/design/graphic/design-principles/'
+        base = 'work/domains/design/common/design-principles/'
         for task in ['帮我设计一张活动海报', '做一份PPT', '设计一本画册的内页版式']:
             result = router.resolve(task, 'create')
             self.assertIn('graphic-design-principles', [m['id'] for m in result['methods']], task)
@@ -181,3 +181,35 @@ class RealTasks(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class DesignAndContestTasks(unittest.TestCase):
+    """建委 2026-10-30：设计经验躺在平面目录用不上、录屏剪辑经验困在天津目录、"好看"没人翻译。"""
+    DP = 'work/domains/design/common/design-principles/'
+    CV = 'work/domains/design/common/code-driven-video/'
+
+    def reads(self, task):
+        return router.resolve(task, 'auto')['read']
+
+    def test_video_beautify_reads_shared_principles_and_vocabulary(self):
+        read = self.reads('把这个视频包装得好看一点，要有科技感')
+        for path in [self.CV + 'README.md', self.DP + 'README.md', self.DP + 'aesthetic-vocabulary.md']:
+            self.assertIn(path, read)
+
+    def test_screen_recording_edit_reads_generic_method_outside_contest(self):
+        read = self.reads('帮我剪一下这个智能体演示录屏，加框选标注')
+        self.assertIn(self.CV + 'screen-recording.md', read)
+        self.assertFalse(any('tianjin' in p for p in read))
+
+    def test_tianjin_demo_video_reads_generic_editing_method(self):
+        read = self.reads('天津大赛的演示视频，帮我剪辑一下')
+        self.assertIn('work/domains/development/industry-cases/education/tianjin-ai-contest/demo-video.md', read)
+        self.assertIn(self.CV + 'screen-recording.md', read)
+
+    def test_website_redesign_reads_design_principles(self):
+        read = self.reads('给网站首页改版，要更有设计感')
+        self.assertIn('work/domains/development/experience/frontend-ui-quality-standards.md', read)
+        self.assertIn(self.DP + 'README.md', read)
+
+    def test_poster_not_premium_reads_vocabulary(self):
+        self.assertIn(self.DP + 'aesthetic-vocabulary.md', self.reads('这个海报不够高级，帮我改改'))

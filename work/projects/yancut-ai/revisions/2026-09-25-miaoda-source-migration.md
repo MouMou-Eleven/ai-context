@@ -166,7 +166,7 @@ R5 不是完成百分比。当前处于页面迁入、部分后端适配、身�
 
 R5 ZIP 的实际 file part 仅含文件名、MIME 与 `/workspace/...` 路径，没有字节或可用下载地址；仍需用户回传。内联的回执文字可直接读取，源码解析器也支持部分 filePart.text，须检查实际返回与截断，不能一概说所有附件都能读或都不能读。事件 1710 显示 canceled 而 CLI isTerminal=false，发现其取消状态未计入结束判断；不据此撤销 1709 完成事实，也不自动重发。
 
-用户确认将必要取证要求随增量包交付，秒哒执行时输出指定源码差异、Schema/迁移和测试证据，由用户回传或从内联轨迹读取。已写入[云端取证与回传合同](../../../domains/development/tools/miaoda/workflow.md#增量包内的云端取证与回传合同)；[能力矩阵](../../../domains/development/tools/miaoda/development/skill-as-callable.md#本机已安装版本的能力核查2026-09-25)保存版本哈希与核查边界。建议保留 Skill 用于辅助查状态/读回执，代码更新仍走本地增量包，不声称已证明提效。当前包序号是 R5，不是 R25。
+用户确认将必要取证要求随增量包交付，秒哒执行时输出指定源码差异、Schema/迁移和测试证据，由用户回传或从内联轨迹读取。已写入[云端取证与回传合同](../../../domains/development/tools/miaoda/workflow.md)；[能力矩阵](../../../domains/development/tools/miaoda/development/skill-as-callable.md#本机已安装版本的能力核查2026-09-25)保存版本哈希与核查边界。建议保留 Skill 用于辅助查状态/读回执，代码更新仍走本地增量包，不声称已证明提效。当前包序号是 R5，不是 R25。
 
 ## R6 本地交付与沙箱渲染口径更正
 
@@ -213,7 +213,7 @@ R6 **未完成，不能进入 R7**。下一交付应标为 R6.1（或 R6-hotfix�
 3. 用实际站点完成注册、首个管理员绑定、退出后手机号＋密码登录、找回密码、重复注册/错误验证码/密码仅创建拒绝；分别记录网络状态码和页面结果。
 4. 回收合并后的完整 `platform.ts`、`platform-auth.ts`、`auth-page.tsx`、构建脚本和迁移清单。真实短信供应商已由用户操作证明可下发，但仍不得在自动测试中重复发送付费短信。
 
-只有上述门禁通过，R6 才能标记完成并开始 R7。通用防漏规则已写入[版本化增量闭环](../../../domains/development/tools/miaoda/workflow.md#构建时公共环境变量与跨层契约)和[踩坑 #29](../../../domains/development/tools/miaoda/pitfalls.md#29-增量包修复了业务代码却漏掉云端构建变量且跨层假数据掩盖格式错误)。
+只有上述门禁通过，R6 才能标记完成并开始 R7。通用防漏规则已写入[版本化增量闭环](../../../domains/development/tools/miaoda/workflow.md)和[踩坑 #29](../../../domains/development/tools/miaoda/pitfalls.md#29-增量包修复了业务代码却漏掉云端构建变量且跨层假数据掩盖格式错误)。
 
 ### R6.1 本地交付
 

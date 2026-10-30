@@ -54,5 +54,5 @@
 
 - 擦除方向与笔顺动画：[动画时机与几何校验](animation-and-geometry.md#擦除方向要用视频抽帧核对红线)。
 - 标题装饰线、田字格比例、样片结构：[图文适配](visual-design.md#标题田字格与生字页默认)。
-- 视频页不重复台词：[图文适配](visual-design.md#视频页视频说过的话不再上字默认)；插视频保护已有动画：[动画校验](animation-and-geometry.md#在已有动画的页插视频红线)；分栏文字组居中：[留白](../../design-principles/whitespace.md#分栏里的文字组居中默认)。
+- 视频页不重复台词：[图文适配](visual-design.md#视频页视频说过的话不再上字默认)；插视频保护已有动画：[动画校验](animation-and-geometry.md#在已有动画的页插视频红线)；分栏文字组居中：[留白](../../../common/design-principles/whitespace.md#分栏里的文字组居中默认)。
 - 单版交付与文件命名：[制作与验收方法第8节](workflow.md#8-用户改稿保护与交付)。

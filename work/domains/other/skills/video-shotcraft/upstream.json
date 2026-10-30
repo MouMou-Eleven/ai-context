@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "video-shotcraft",
+  "storageMode": "local-install",
+  "origin": "third-party",
+  "defaultBranch": "main",
+  "upstreamRepository": "https://github.com/Vincentwei1021/video-shotcraft.git",
+  "upstreamWeb": "https://github.com/Vincentwei1021/video-shotcraft",
+  "commit": "1266a3ec4831289c4d893d42dd5102723658039a",
+  "syncedCommit": "1266a3ec4831289c4d893d42dd5102723658039a",
+  "syncedAt": "2026-10-30",
+  "upstreamVersion": "1.0.0",
+  "license": "Apache-2.0（可商用；保留 LICENSE 与 NOTICE；assets/audio 的 BGM 各自许可见 assets/audio/ATTRIBUTION.md）",
+  "installPaths": [
+    "~/.claude/skills/video-shotcraft",
+    "~/.codex/skills/video-shotcraft"
+  ],
+  "updatePolicy": "review-diff-then-reinstall-pinned-commit",
+  "notes": "仓库只存能力卡；实体按固定 commit 安装在本机 Claude Code 与 Codex 的 skills 目录。",
+  "capabilities": [
+    "用真实页面截图做网站、软件、App 产品宣传片",
+    "124 张镜头配方卡及 demo 源码，可单独抽卡做某一个镜头",
+    "Ink Press 成片模板与 Remotion 组件",
+    "音效检索、BGM 与卡点、审美准则自检"
+  ],
+  "useWhen": [
+    "客户要网站、SaaS、App 的产品宣传片或功能介绍片",
+    "某一个镜头想要成熟的运镜、转场、数据或字体动效",
+    "给已完成的片子找音效、对齐声音"
+  ],
+  "notFor": [
+    "教师微课、科普讲解（读微课与教育交互或 anything2explainer）",
+    "只写视频提示词",
+    "把 Ink Press 外观当成建委的默认风格"
+  ],
+  "runtimeRequirements": [
+    "Node.js 18+ 与 npm（Remotion 渲染）",
+    "ffmpeg / ffprobe",
+    "真实页面截图需要可访问的网页或本地项目"
+  ],
+  "documentationReviewedAt": "2026-10-30"
+}

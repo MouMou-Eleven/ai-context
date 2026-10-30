@@ -377,7 +377,7 @@
         "work/domains/design/common/code-driven-video/README.md",
         "work/domains/design/common/code-driven-video/layout-and-sizing.md",
         "work/domains/design/common/code-driven-video/motion-and-verification.md",
-        "work/domains/design/graphic/design-principles/README.md"
+        "work/domains/design/common/design-principles/README.md"
       ]
     }
   ],
@@ -2025,8 +2025,44 @@
           "intents": []
         },
         {
-          "path": "work/domains/design/graphic/design-principles/README.md",
+          "path": "work/domains/design/common/design-principles/README.md",
           "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/common/code-driven-video/screen-recording.md",
+          "whenAny": [
+            "录屏",
+            "演示",
+            "讲解",
+            "智能体",
+            "产品演示",
+            "教程",
+            "操作",
+            "录制",
+            "框选",
+            "标注"
+          ],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/common/design-principles/aesthetic-vocabulary.md",
+          "whenAny": [
+            "好看",
+            "漂亮",
+            "高级",
+            "设计感",
+            "质感",
+            "审美",
+            "光影",
+            "氛围",
+            "科技感",
+            "温暖",
+            "不好看",
+            "太乱",
+            "太素",
+            "风格"
+          ],
           "intents": []
         }
       ],
@@ -2275,7 +2311,10 @@
         "work/domains/development/README.md",
         "work/domains/development/experience/README.md"
       ],
-      "source": "用户明确偏好、2026-09-15 第二轮截图纠错及 R27 本地受控浏览器检查；不代表上线或用户视觉认可"
+      "source": "用户明确偏好、2026-09-15 第二轮截图纠错及 R27 本地受控浏览器检查；不代表上线或用户视觉认可",
+      "readWith": [
+        "work/domains/design/common/design-principles/README.md"
+      ]
     },
     {
       "id": "problem-driven-explanation",
@@ -3156,7 +3195,7 @@
       ],
       "readWith": [
         "work/domains/design/graphic/ppt/ai-assisted-design/workflow.md",
-        "work/domains/design/graphic/design-principles/README.md"
+        "work/domains/design/common/design-principles/README.md"
       ]
     },
     {
@@ -3235,9 +3274,9 @@
     },
     {
       "id": "graphic-design-principles",
-      "label": "平面设计原则与规范",
+      "label": "设计原则与审美（所有设计共用）",
       "status": "active",
-      "path": "work/domains/design/graphic/design-principles/README.md",
+      "path": "work/domains/design/common/design-principles/README.md",
       "whenAny": [
         "设计",
         "排版",
@@ -3258,7 +3297,18 @@
         "留白",
         "构图",
         "网格",
-        "对齐"
+        "对齐",
+        "好看",
+        "高级",
+        "设计感",
+        "质感",
+        "光影",
+        "氛围",
+        "界面",
+        "UI",
+        "网页",
+        "视频包装",
+        "流程图"
       ],
       "excludeAny": [
         "只查报价",
@@ -3269,14 +3319,15 @@
         "create",
         "write"
       ],
-      "useWhen": "任何平面或演示设计动手前：先分信息层级，再定气质、骨架、构图、字体配色和留白；也用于写整页设计图的生图提示词和检查成品",
-      "notFor": "客户有品牌规范或指定模板时以客户为准；纯视频镜头设计、课程内容设计不套用",
+      "useWhen": "任何设计动手前（平面、PPT、视频画面与包装、动画、网页界面、Word版式、流程图）：先分信息层级，再定气质、骨架、构图、字体配色、光影和留白；用户只说“好看点”时先用审美词库定气质；也用于写生图提示词和检查成品",
+      "notFor": "客户有品牌规范或指定模板时以客户为准；课程内容设计、纯文案不套用；风格每单按内容重定，不套上一单的外观",
       "acceptance": "缩略图第一眼是主角；同层统一；元素都有对齐对象；字体不超过两款；文字与背景明度差足够；颜色有主次；留白有意安排；气质与内容相符",
-      "evidence": "work/domains/design/graphic/design-principles/README.md",
+      "evidence": "work/domains/design/common/design-principles/README.md",
       "confirmedAt": "2026-10-10",
-      "source": "建委2026-10-10提供的设计教程书照片、飞书《版式设计》笔记、两本版式设计书与PPT手册，并口述要点；尚未在实际订单中验证",
+      "source": "建委2026-10-10提供的设计教程书照片、飞书《版式设计》笔记、两本版式设计书与PPT手册，并口述要点；尚未在实际订单中验证；2026-10-30 建委提供《设计师审美词库》，目录移到 design/common，扩展到视频、界面与文档版式",
       "entryPoints": [
-        "work/domains/design/graphic/README.md"
+        "work/domains/design/graphic/README.md",
+        "work/domains/design/common/README.md"
       ],
       "selectedAny": [
         "ppt",
@@ -3296,7 +3347,7 @@
             "封面"
           ],
           "paths": [
-            "work/domains/design/graphic/design-principles/information-hierarchy.md"
+            "work/domains/design/common/design-principles/information-hierarchy.md"
           ]
         },
         {
@@ -3311,7 +3362,7 @@
             "平衡"
           ],
           "paths": [
-            "work/domains/design/graphic/design-principles/composition.md"
+            "work/domains/design/common/design-principles/composition.md"
           ]
         },
         {
@@ -3327,7 +3378,7 @@
             "版式"
           ],
           "paths": [
-            "work/domains/design/graphic/design-principles/layout-skeleton.md"
+            "work/domains/design/common/design-principles/layout-skeleton.md"
           ]
         },
         {
@@ -3340,7 +3391,7 @@
             "排版"
           ],
           "paths": [
-            "work/domains/design/graphic/design-principles/page-composition.md"
+            "work/domains/design/common/design-principles/page-composition.md"
           ]
         },
         {
@@ -3352,7 +3403,7 @@
             "通透"
           ],
           "paths": [
-            "work/domains/design/graphic/design-principles/whitespace.md"
+            "work/domains/design/common/design-principles/whitespace.md"
           ]
         },
         {
@@ -3365,7 +3416,7 @@
             "文字"
           ],
           "paths": [
-            "work/domains/design/graphic/design-principles/typography.md"
+            "work/domains/design/common/design-principles/typography.md"
           ]
         },
         {
@@ -3376,7 +3427,7 @@
             "色调"
           ],
           "paths": [
-            "work/domains/design/graphic/design-principles/color.md"
+            "work/domains/design/common/design-principles/color.md"
           ]
         },
         {
@@ -3392,7 +3443,7 @@
             "定调"
           ],
           "paths": [
-            "work/domains/design/graphic/design-principles/mood.md"
+            "work/domains/design/common/design-principles/mood.md"
           ]
         },
         {
@@ -3404,7 +3455,31 @@
             "配图"
           ],
           "paths": [
-            "work/domains/design/graphic/design-principles/images-and-charts.md"
+            "work/domains/design/common/design-principles/images-and-charts.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "好看",
+            "漂亮",
+            "高级",
+            "设计感",
+            "质感",
+            "审美",
+            "光影",
+            "打光",
+            "空间感",
+            "纵深",
+            "材质",
+            "氛围",
+            "科技感",
+            "温暖",
+            "不好看",
+            "太乱",
+            "太素"
+          ],
+          "paths": [
+            "work/domains/design/common/design-principles/aesthetic-vocabulary.md"
           ]
         }
       ]
@@ -3791,7 +3866,10 @@
             "标注"
           ],
           "paths": [
-            "work/domains/development/industry-cases/education/tianjin-ai-contest/demo-video.md"
+            "work/domains/development/industry-cases/education/tianjin-ai-contest/demo-video.md",
+            "work/domains/design/common/code-driven-video/README.md",
+            "work/domains/design/common/code-driven-video/screen-recording.md",
+            "work/domains/design/common/code-driven-video/motion-and-verification.md"
           ]
         },
         {

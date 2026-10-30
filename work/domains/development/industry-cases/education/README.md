@@ -18,7 +18,8 @@
 | 新学科、新场景，想借鉴已有案例 | [学科融合](./subject-integration/README.md)的融合案例对照 |
 | 在天津平台上搭建或修改 | [平台能力体系](./tianjin-platform/capabilities.md) + [搭建流程](./tianjin-platform/build-sop.md) |
 | 准备天津大赛赛道二参赛材料（申报书、技术报告、逐字稿、视频、提交包） | [大赛入口](./tianjin-ai-contest/README.md)，按其中顺序读；所有评审材料都读[文档规范](./tianjin-ai-contest/document-format.md)第一至三节 |
-| 接续某个已做作品 | 该作品案例：[文有回声（语文）](./tianjin-ai-contest/case-wenyouhuisheng-chinese.md)、[空间与图形探究助手（数学）](./tianjin-ai-contest/case-geometry-helper-math.md) |
+| 接续某个已做作品 | 该作品案例，列表见[大赛入口 · 已做的作品](./tianjin-ai-contest/README.md#已做的作品) |
+| 别的智能体比赛、别的客户要全包 | [大赛入口 · 换一个比赛](./tianjin-ai-contest/README.md#换一个比赛换一个客户时默认)：哪些直接用、哪些按新比赛重定 |
 
 ## 写入规则（红线）
 
@@ -32,7 +33,8 @@
 | 天津平台操作步骤的修正 | [搭建流程](./tianjin-platform/build-sop.md)对应步骤 | 不新建"导出指南""导入指南" |
 | 比赛要求、提交包变化 | [提交材料](./tianjin-ai-contest/submission-package.md) | — |
 | 申报书、技术报告的版式和措辞纠正 | [文档规范](./tianjin-ai-contest/document-format.md) | 不在案例和 README 各写一遍 |
-| 逐字稿、录屏、剪辑、标注的反馈 | [演示视频](./tianjin-ai-contest/demo-video.md)；零散的先进第六节积累区，同类合并 | 不为某个视频新建文件 |
+| 逐字稿、本赛录制和视频结构的反馈 | [演示视频](./tianjin-ai-contest/demo-video.md)；零散的先进第六节积累区，同类合并 | 不为某个视频新建文件 |
+| 剪辑、运镜、框选标注、版式、转场、出片自检的反馈 | [代码式视频设计经验](../../../design/common/code-driven-video/README.md)对应文件（录屏类进[录屏讲解视频](../../../design/common/code-driven-video/screen-recording.md)） | 不写进比赛目录，别的片子也要用 |
 | 某个作品的 ID、链接、路径、进度、当次问题 | 该作品案例 | 不写进方法和平台文件 |
 
 同样的错误又出现时，说明规则没写具体或没被读到：把那条规则改得更具体（补"像这样写，不要那样写"），并检查 [AGENTS](../../../../../AGENTS.md) 任务表能不能从自然说法找到它；不要再加一条意思相同的"必须"。
