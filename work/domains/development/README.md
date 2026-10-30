@@ -28,8 +28,8 @@
 |---|---|---|
 | 项目 | [言剪 AI](../../projects/yancut-ai/README.md) | 应用开发 |
 | 项目 | [AI 六十甲子古音律与 IP 孵化](../../projects/ai-sixty-jiazi-music-ip/README.md) | 文化产品与IP |
-| 案例 | [文有回声——小学语文阅读学伴（天津大赛）](industry-cases/education/tianjin-ai-contest/case-wenyouhuisheng-chinese.md) | 教育行业应用开发 |
-| 案例 | [小学数学空间与图形探究助手（天津大赛）](industry-cases/education/tianjin-ai-contest/case-geometry-helper-math.md) | 教育行业应用开发 |
+| 案例 | [文有回声——小学语文阅读学伴（天津大赛）](industry-cases/education/tianjin-agent-contest/case-wenyouhuisheng-chinese.md) | 教育行业应用开发 |
+| 案例 | [小学数学空间与图形探究助手（天津大赛）](industry-cases/education/tianjin-agent-contest/case-geometry-helper-math.md) | 教育行业应用开发 |
 <!-- generated-related-assets:end -->
 
 <!-- generated-methods:start -->

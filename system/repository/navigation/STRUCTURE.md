@@ -34,8 +34,7 @@ ai-context/
 │   │   │   │   │   ├── case-aircraft-assembly-overlay.md  案例：飞机总装实拍空间坐标包装及返修
 │   │   │   │   │   ├── layout-and-sizing.md  视频画面的安全区、字号换算、间距单位、容器与对齐
 │   │   │   │   │   ├── motion-and-verification.md  出场节奏、停留时间、图层顺序坑与静帧验收
-│   │   │   │   │   ├── README.md  代码式视频入口：什么时候读、和平面原则的联动、检查表
-│   │   │   │   │   └── screen-recording.md  录屏讲解视频：录制、先全景后局部运镜、框选跟踪、说明栏版式、换配音对齐
+│   │   │   │   │   └── README.md  代码式视频入口：什么时候读、和平面原则的联动、检查表
 │   │   │   │   ├── design-principles/  海报、折页、书籍、PPT共用的设计底层规则：层级、构成、骨架、构图、留白、字体、配色、氛围
 │   │   │   │   │   ├── aesthetic-vocabulary.md  审美词库：把“好看”翻成气质和设计简报；光影、空间、材质；跨媒介用法
 │   │   │   │   │   ├── color.md  明度与辨识度、色调调和、色环配色、面积与数量、颜色气质
@@ -325,26 +324,26 @@ ai-context/
 │   │   │   │       ├── 2026-09-15-mobile-ui-verification.md  追溯“移动端 UI：纠正“记录了规则但成品仍遗漏””的调整原因与适用范围
 │   │   │   │       └── README.md  开发经验修订记录
 │   │   │   ├── industry-cases/  按行业保存应用开发方法和真实实践案例
-│   │   │   │   ├── education/  教育智能体：学科融合（通用）、天津平台、天津大赛三块
+│   │   │   │   ├── education/  教育智能体：学科融合（通用）＋一个比赛一个文件夹（天津智能体比赛）
 │   │   │   │   │   ├── README.md  教育行业三块板块的入口、任务路由与写入规则
 │   │   │   │   │   ├── subject-integration/  智能体与学科、课堂融合的通用方法与案例
 │   │   │   │   │   │   ├── case-external-a02-a08-chinese.md  A02与A08语文外部课例的可借鉴机制与排除项
 │   │   │   │   │   │   ├── case-external-b11-b02-math.md  B11与B02数学外部课例的参考机制和采用边界
 │   │   │   │   │   │   ├── classroom-agent-design.md  教学研管评育场景、融合手段、新学科推导与课堂任务链
 │   │   │   │   │   │   └── README.md  学科融合入口与融合案例机制对照
-│   │   │   │   │   ├── tianjin-ai-contest/  天津AI教育大赛赛道二的材料规范与作品案例
-│   │   │   │   │   │   ├── case-geometry-helper-math.md  数学作品空间与图形探究助手的演进、验证与材料问题
-│   │   │   │   │   │   ├── case-huipingshangai-chinese.md  慧评善改小学语文图文习作评改、修改反馈、教师量规扩充与讲评实测
-│   │   │   │   │   │   ├── case-kindergarten-play-observation.md  幼儿自主游戏图文观察、连续支持与固定工作台的搭建和实测记录
-│   │   │   │   │   │   ├── case-wenyouhuisheng-chinese.md  语文作品文有回声的资源、验证、材料与视频
-│   │   │   │   │   │   ├── demo-video.md  演示视频的逐字稿、录屏、剪辑标注与经验积累区
-│   │   │   │   │   │   ├── document-format.md  申报书与技术报告的评委视角、团队表、统一版式、黑体
-│   │   │   │   │   │   ├── README.md  大赛入口：做作品的读取顺序与写入位置
-│   │   │   │   │   │   └── submission-package.md  赛道二要求、提交文件夹、复现材料与交付检查
-│   │   │   │   │   └── tianjin-platform/  天津指定智能体平台（近似扣子）的能力与流程
-│   │   │   │   │       ├── build-sop.md  登录、导入骨架、修改、验收、评审链接、清理、导出
-│   │   │   │   │       ├── capabilities.md  资源模块、节点、组合配方、外部扩展与已知坑
-│   │   │   │   │       └── README.md  天津平台入口
+│   │   │   │   │   └── tianjin-agent-contest/  天津智能体比赛：指定平台、提交材料、文档规范、演示视频与作品案例
+│   │   │   │   │       ├── case-geometry-helper-math.md  数学作品空间与图形探究助手的演进、验证与材料问题
+│   │   │   │   │       ├── case-huipingshangai-chinese.md  慧评善改小学语文图文习作评改、修改反馈、教师量规扩充与讲评实测
+│   │   │   │   │       ├── case-kindergarten-play-observation.md  幼儿自主游戏图文观察、连续支持与固定工作台的搭建和实测记录
+│   │   │   │   │       ├── case-wenyouhuisheng-chinese.md  语文作品文有回声的资源、验证、材料与视频
+│   │   │   │   │       ├── demo-video.md  演示视频的逐字稿、录屏、剪辑标注与经验积累区
+│   │   │   │   │       ├── document-format.md  申报书与技术报告的评委视角、团队表、统一版式、黑体
+│   │   │   │   │       ├── platform/  比赛指定智能体平台（近似扣子）的能力与流程
+│   │   │   │   │       │   ├── build-sop.md  登录、导入骨架、修改、验收、评审链接、清理、导出
+│   │   │   │   │       │   ├── capabilities.md  资源模块、节点、组合配方、外部扩展与已知坑
+│   │   │   │   │       │   └── README.md  比赛指定平台入口
+│   │   │   │   │       ├── README.md  比赛入口：文件夹内容、做作品的读取顺序与写入位置
+│   │   │   │   │       └── submission-package.md  赛道二要求、提交文件夹、复现材料与交付检查
 │   │   │   │   └── README.md  行业应用案例入口与归属边界
 │   │   │   ├── README.md  应用开发与自动化入口
 │   │   │   └── tools/  编程工具

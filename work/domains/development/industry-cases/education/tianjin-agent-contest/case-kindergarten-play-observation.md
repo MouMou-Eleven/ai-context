@@ -91,4 +91,4 @@ ImageGen已生成4张虚构场景图，放录制资料的“演示图片”：�
 
 ## 可复用经验归属
 
-平台图片接入与思考文本处理写回[平台能力体系](../tianjin-platform/capabilities.md)，固定页面同步与外部参数验收按该文件的组合配方；教学方法继续按[学科融合](../subject-integration/classroom-agent-design.md)。当前只增加本作品的运行证据，不据AI独立配置升级个人能力摘要。
+平台图片接入与思考文本处理写回[平台能力体系](platform/capabilities.md)，固定页面同步与外部参数验收按该文件的组合配方；教学方法继续按[学科融合](../subject-integration/classroom-agent-design.md)。当前只增加本作品的运行证据，不据AI独立配置升级个人能力摘要。

@@ -1,12 +1,13 @@
 # 教育行业
 
-教育行业的 AI 赋能方式之一是开发教育智能体。这里分三块，互不重复：
+教育行业的 AI 赋能方式之一是开发教育智能体。这里分两类，互不重复：
 
-| 板块 | 管什么 | 跟平台和比赛的关系 |
+| 板块 | 管什么 | 适用范围 |
 |---|---|---|
 | [学科融合](./subject-integration/README.md) | 智能体怎么跟学科、课堂结合：教学研管评育场景、融合手段、新学科推导、融合案例 | 通用，任何平台、任何比赛都适用 |
-| [天津指定平台](./tianjin-platform/README.md) | 天津智能体平台（结构近似开源扣子）的能力体系与搭建流程 | 只要在这个平台上开发都用，不限比赛 |
-| [天津 AI 教育大赛](./tianjin-ai-contest/README.md) | 赛道二提交材料、Word 规范、演示视频，以及已做的作品案例 | 只管这个比赛 |
+| [天津智能体比赛](./tianjin-agent-contest/README.md) | 这个比赛从中沉淀的一切：指定平台的能力与搭建流程、提交材料、Word 规范、演示视频、已做的作品案例 | 只管这个比赛 |
+
+**一个比赛一个文件夹（红线）。** 以后有别的省份、别的智能体比赛，按建委的安排在这里另建一个比赛文件夹，那个比赛的平台、材料规范、视频要求、作品案例都放进去；不往天津的文件夹里塞，也不拿天津的规定套别的比赛。只有学科融合这类跟比赛无关的通用做法，才写进[学科融合](./subject-integration/README.md)。
 
 教师课件、微课、录课合成仍由[微课与教育交互](../../../design/video/education/README.md)负责。
 
@@ -16,25 +17,23 @@
 |---|---|
 | 设计一个教育智能体（任何平台） | [学科融合方法](./subject-integration/classroom-agent-design.md) |
 | 新学科、新场景，想借鉴已有案例 | [学科融合](./subject-integration/README.md)的融合案例对照 |
-| 在天津平台上搭建或修改 | [平台能力体系](./tianjin-platform/capabilities.md) + [搭建流程](./tianjin-platform/build-sop.md) |
-| 准备天津大赛赛道二参赛材料（申报书、技术报告、逐字稿、视频、提交包） | [大赛入口](./tianjin-ai-contest/README.md)，按其中顺序读；所有评审材料都读[文档规范](./tianjin-ai-contest/document-format.md)第一至三节 |
-| 接续某个已做作品 | 该作品案例，列表见[大赛入口 · 已做的作品](./tianjin-ai-contest/README.md#已做的作品) |
-| 别的智能体比赛、别的客户要全包 | [大赛入口 · 换一个比赛](./tianjin-ai-contest/README.md#换一个比赛换一个客户时默认)：哪些直接用、哪些按新比赛重定 |
+| 在天津比赛指定平台上搭建或修改 | [平台能力体系](./tianjin-agent-contest/platform/capabilities.md) + [搭建流程](./tianjin-agent-contest/platform/build-sop.md) |
+| 准备天津大赛赛道二参赛材料（申报书、技术报告、逐字稿、视频、提交包） | [大赛入口](./tianjin-agent-contest/README.md)，按其中顺序读；所有评审材料都读[文档规范](./tianjin-agent-contest/document-format.md)第一至三节 |
+| 接续某个已做作品 | 该作品案例，列表见[天津智能体比赛 · 已做的作品](./tianjin-agent-contest/README.md#已做的作品) |
 
 ## 写入规则（红线）
 
-往这三块写东西时，先按下表找到唯一位置，在原有条目上改或补；表里找不到才问建委。
+往这里写东西时，先按下表找到唯一位置，在原有条目上改或补；表里找不到才问建委。
 
 | 新内容 | 写进 | 不要 |
 |---|---|---|
 | 学科融合的新做法、新场景、新手段 | [学科融合方法](./subject-integration/classroom-agent-design.md)对应一节的表或段落 | 不另建"语文融合方法""数学融合方法" |
 | 别人的参考课例 | `subject-integration/case-external-<学科>-<短名>.md`，并在[学科融合](./subject-integration/README.md)对照表加一行 | 不把未核验的获奖、效果数字写成事实 |
-| 天津平台新功能、新限制、新坑 | [能力体系](./tianjin-platform/capabilities.md)对应表 | 不写进作品案例当规则 |
-| 天津平台操作步骤的修正 | [搭建流程](./tianjin-platform/build-sop.md)对应步骤 | 不新建"导出指南""导入指南" |
-| 比赛要求、提交包变化 | [提交材料](./tianjin-ai-contest/submission-package.md) | — |
-| 申报书、技术报告的版式和措辞纠正 | [文档规范](./tianjin-ai-contest/document-format.md) | 不在案例和 README 各写一遍 |
-| 逐字稿、本赛录制和视频结构的反馈 | [演示视频](./tianjin-ai-contest/demo-video.md)；零散的先进第六节积累区，同类合并 | 不为某个视频新建文件 |
-| 剪辑、运镜、框选标注、版式、转场、出片自检的反馈 | [代码式视频设计经验](../../../design/common/code-driven-video/README.md)对应文件（录屏类进[录屏讲解视频](../../../design/common/code-driven-video/screen-recording.md)） | 不写进比赛目录，别的片子也要用 |
+| 天津平台新功能、新限制、新坑 | [能力体系](./tianjin-agent-contest/platform/capabilities.md)对应表 | 不写进作品案例当规则 |
+| 天津平台操作步骤的修正 | [搭建流程](./tianjin-agent-contest/platform/build-sop.md)对应步骤 | 不新建"导出指南""导入指南" |
+| 比赛要求、提交包变化 | [提交材料](./tianjin-agent-contest/submission-package.md) | — |
+| 申报书、技术报告的版式和措辞纠正 | [文档规范](./tianjin-agent-contest/document-format.md) | 不在案例和 README 各写一遍 |
+| 逐字稿、录屏、剪辑、标注的反馈 | [演示视频](./tianjin-agent-contest/demo-video.md)；零散的先进第六节积累区，同类合并 | 不为某个视频新建文件 |
 | 某个作品的 ID、链接、路径、进度、当次问题 | 该作品案例 | 不写进方法和平台文件 |
 
 同样的错误又出现时，说明规则没写具体或没被读到：把那条规则改得更具体（补"像这样写，不要那样写"），并检查 [AGENTS](../../../../../AGENTS.md) 任务表能不能从自然说法找到它；不要再加一条意思相同的"必须"。

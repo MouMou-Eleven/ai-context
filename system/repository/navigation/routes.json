@@ -379,6 +379,95 @@
         "work/domains/design/common/code-driven-video/motion-and-verification.md",
         "work/domains/design/common/design-principles/README.md"
       ]
+    },
+    {
+      "id": "deliverable-word-format",
+      "whenAny": [
+        "Word",
+        "word",
+        "docx",
+        "DOCX",
+        "Word文档",
+        "word文档",
+        "Word文件",
+        "正式文件",
+        "文档交付"
+      ],
+      "excludeAny": [
+        "只查",
+        "查询位置",
+        "指定模板",
+        "按模板",
+        "按他们的模板",
+        "比赛模板",
+        "申报书",
+        "技术说明与验证报告",
+        "内部备课",
+        "学员课件",
+        "合同",
+        "标书"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/other/commercial/delivery-formats/README.md",
+        "work/domains/other/commercial/delivery-formats/gov-enterprise-word.md",
+        "work/domains/other/commercial/experience/external-deliverable-language.md"
+      ]
+    },
+    {
+      "id": "visual-deliverable-design",
+      "whenAny": [
+        "PPT",
+        "ppt",
+        "幻灯片",
+        "课件美化",
+        "海报",
+        "折页",
+        "画册",
+        "封面",
+        "KV",
+        "展板",
+        "易拉宝",
+        "视频",
+        "宣传片",
+        "微课",
+        "动画",
+        "片头",
+        "包装",
+        "界面",
+        "网页",
+        "网站",
+        "页面",
+        "UI",
+        "流程图",
+        "图表",
+        "信息图",
+        "好看",
+        "设计感",
+        "高级感",
+        "美化",
+        "排版"
+      ],
+      "excludeAny": [
+        "只查",
+        "查询位置",
+        "纯后端",
+        "数据库迁移",
+        "命令行脚本",
+        "只写脚本",
+        "只要脚本",
+        "只写文案"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/design/common/design-principles/README.md"
+      ]
     }
   ],
   "routes": [
@@ -1923,7 +2012,7 @@
           ]
         },
         {
-          "path": "work/domains/development/industry-cases/education/tianjin-platform/README.md",
+          "path": "work/domains/development/industry-cases/education/tianjin-agent-contest/platform/README.md",
           "whenAny": [
             "天津平台",
             "天津智能体平台",
@@ -1944,7 +2033,7 @@
           "intents": []
         },
         {
-          "path": "work/domains/development/industry-cases/education/tianjin-ai-contest/README.md",
+          "path": "work/domains/development/industry-cases/education/tianjin-agent-contest/README.md",
           "whenAny": [
             "天津大赛",
             "天津比赛",
@@ -2027,22 +2116,6 @@
         {
           "path": "work/domains/design/common/design-principles/README.md",
           "whenAny": [],
-          "intents": []
-        },
-        {
-          "path": "work/domains/design/common/code-driven-video/screen-recording.md",
-          "whenAny": [
-            "录屏",
-            "演示",
-            "讲解",
-            "智能体",
-            "产品演示",
-            "教程",
-            "操作",
-            "录制",
-            "框选",
-            "标注"
-          ],
           "intents": []
         },
         {
@@ -3530,7 +3603,7 @@
       "useWhen": "教师或学校的教育智能体与学科应用需要选场景、融合手段，并把学习任务、执行流程、学生作品和教师反馈连接起来时",
       "notFor": "普通课件美化、微课视频和培训大纲；组件与课堂形式按具体学科和使用条件选择",
       "acceptance": "课堂任务具体；组件有输入输出与责任；关键核验可复核；学生产物支持教师行动；运行与教学效果分别留证",
-      "evidence": "work/domains/development/industry-cases/education/tianjin-ai-contest/case-wenyouhuisheng-chinese.md",
+      "evidence": "work/domains/development/industry-cases/education/tianjin-agent-contest/case-wenyouhuisheng-chinese.md",
       "confirmedAt": "2026-10-24",
       "source": "建委明确要求课堂融合、整体可用与灵活借鉴；当前采用范围为需求和架构设计，课堂成效待验证",
       "entryPoints": [
@@ -3825,9 +3898,9 @@
         "只查报价"
       ],
       "paths": [
-        "work/domains/development/industry-cases/education/tianjin-platform/README.md",
-        "work/domains/development/industry-cases/education/tianjin-platform/capabilities.md",
-        "work/domains/development/industry-cases/education/tianjin-platform/build-sop.md",
+        "work/domains/development/industry-cases/education/tianjin-agent-contest/platform/README.md",
+        "work/domains/development/industry-cases/education/tianjin-agent-contest/platform/capabilities.md",
+        "work/domains/development/industry-cases/education/tianjin-agent-contest/platform/build-sop.md",
         "work/domains/development/industry-cases/education/subject-integration/classroom-agent-design.md"
       ]
     },
@@ -3849,9 +3922,9 @@
         "只查报价"
       ],
       "paths": [
-        "work/domains/development/industry-cases/education/tianjin-ai-contest/README.md",
-        "work/domains/development/industry-cases/education/tianjin-ai-contest/submission-package.md",
-        "work/domains/development/industry-cases/education/tianjin-ai-contest/document-format.md",
+        "work/domains/development/industry-cases/education/tianjin-agent-contest/README.md",
+        "work/domains/development/industry-cases/education/tianjin-agent-contest/submission-package.md",
+        "work/domains/development/industry-cases/education/tianjin-agent-contest/document-format.md",
         "work/domains/other/commercial/experience/competition-and-investor-materials.md"
       ],
       "readWhen": [
@@ -3866,10 +3939,7 @@
             "标注"
           ],
           "paths": [
-            "work/domains/development/industry-cases/education/tianjin-ai-contest/demo-video.md",
-            "work/domains/design/common/code-driven-video/README.md",
-            "work/domains/design/common/code-driven-video/screen-recording.md",
-            "work/domains/design/common/code-driven-video/motion-and-verification.md"
+            "work/domains/development/industry-cases/education/tianjin-agent-contest/demo-video.md"
           ]
         },
         {
@@ -3881,7 +3951,7 @@
             "平台"
           ],
           "paths": [
-            "work/domains/development/industry-cases/education/tianjin-platform/build-sop.md"
+            "work/domains/development/industry-cases/education/tianjin-agent-contest/platform/build-sop.md"
           ]
         }
       ]

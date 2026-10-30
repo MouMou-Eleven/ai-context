@@ -47,4 +47,4 @@
 
 ## 复用归属
 
-原生视觉、参数调用时机、确定回显与引文换行核验回写[平台能力体系](../tianjin-platform/capabilities.md)。教学任务、维护标准与学生身份继续按[学科融合方法](../subject-integration/classroom-agent-design.md)。密钥、认证原件和完整临时链接不入仓库。
+原生视觉、参数调用时机、确定回显与引文换行核验回写[平台能力体系](platform/capabilities.md)。教学任务、维护标准与学生身份继续按[学科融合方法](../subject-integration/classroom-agent-design.md)。密钥、认证原件和完整临时链接不入仓库。

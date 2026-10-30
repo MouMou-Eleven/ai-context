@@ -156,21 +156,21 @@ class RealTasks(unittest.TestCase):
         """2026-10-29: another AI read the repo and still used theme fonts and blank team tables."""
         ED = 'work/domains/development/industry-cases/education/'
         read = self.reads('看我的GitHub仓库，重新生成一份天津智能体比赛数学的申报书和技术说明与验证报告')
-        for path in [ED + 'tianjin-ai-contest/README.md', ED + 'tianjin-ai-contest/submission-package.md',
-                     ED + 'tianjin-ai-contest/document-format.md', CM + 'experience/competition-and-investor-materials.md']:
+        for path in [ED + 'tianjin-agent-contest/README.md', ED + 'tianjin-agent-contest/submission-package.md',
+                     ED + 'tianjin-agent-contest/document-format.md', CM + 'experience/competition-and-investor-materials.md']:
             self.assertIn(path, read)
         video = self.reads('帮我写天津大赛赛道二演示视频的逐字稿并录屏')
-        self.assertIn(ED + 'tianjin-ai-contest/demo-video.md', video)
+        self.assertIn(ED + 'tianjin-agent-contest/demo-video.md', video)
 
     def test_tianjin_platform_and_subject_integration(self):
         ED = 'work/domains/development/industry-cases/education/'
         read = self.reads('在天津平台上给客户搭一个英语智能体')
-        for path in [ED + 'tianjin-platform/capabilities.md', ED + 'tianjin-platform/build-sop.md',
+        for path in [ED + 'tianjin-agent-contest/platform/capabilities.md', ED + 'tianjin-agent-contest/platform/build-sop.md',
                      ED + 'subject-integration/classroom-agent-design.md']:
             self.assertIn(path, read)
         generic = self.reads('用扣子做一个科学课的教育智能体')
         self.assertIn(ED + 'subject-integration/classroom-agent-design.md', generic)
-        self.assertNotIn(ED + 'tianjin-ai-contest/document-format.md', generic)
+        self.assertNotIn(ED + 'tianjin-agent-contest/document-format.md', generic)
 
     def test_every_agents_table_link_exists(self):
         import re
@@ -184,7 +184,7 @@ if __name__ == '__main__':
 
 
 class DesignAndContestTasks(unittest.TestCase):
-    """建委 2026-10-30：设计经验躺在平面目录用不上、录屏剪辑经验困在天津目录、"好看"没人翻译。"""
+    """建委 2026-10-30：设计经验躺在平面目录用不上、"好看"没人翻译；比赛视频经验只留在比赛目录。"""
     DP = 'work/domains/design/common/design-principles/'
     CV = 'work/domains/design/common/code-driven-video/'
 
@@ -196,15 +196,15 @@ class DesignAndContestTasks(unittest.TestCase):
         for path in [self.CV + 'README.md', self.DP + 'README.md', self.DP + 'aesthetic-vocabulary.md']:
             self.assertIn(path, read)
 
-    def test_screen_recording_edit_reads_generic_method_outside_contest(self):
+    def test_generic_screen_edit_does_not_pull_contest_rules(self):
+        # 比赛视频的专属做法只留在比赛目录；普通录屏剪辑不能读到天津的要求。
         read = self.reads('帮我剪一下这个智能体演示录屏，加框选标注')
-        self.assertIn(self.CV + 'screen-recording.md', read)
+        self.assertIn(self.CV + 'README.md', read)
         self.assertFalse(any('tianjin' in p for p in read))
 
-    def test_tianjin_demo_video_reads_generic_editing_method(self):
+    def test_tianjin_demo_video_reads_contest_video_method(self):
         read = self.reads('天津大赛的演示视频，帮我剪辑一下')
-        self.assertIn('work/domains/development/industry-cases/education/tianjin-ai-contest/demo-video.md', read)
-        self.assertIn(self.CV + 'screen-recording.md', read)
+        self.assertIn('work/domains/development/industry-cases/education/tianjin-agent-contest/demo-video.md', read)
 
     def test_website_redesign_reads_design_principles(self):
         read = self.reads('给网站首页改版，要更有设计感')
@@ -213,3 +213,28 @@ class DesignAndContestTasks(unittest.TestCase):
 
     def test_poster_not_premium_reads_vocabulary(self):
         self.assertIn(self.DP + 'aesthetic-vocabulary.md', self.reads('这个海报不够高级，帮我改改'))
+
+
+class DeliverableAutoTriggers(unittest.TestCase):
+    """建委 2026-10-31：顺带要交 Word、要出画面时自动用规范，不等他提；比赛模板优先。"""
+    FMT = 'work/domains/other/commercial/delivery-formats/gov-enterprise-word.md'
+    DP = 'work/domains/design/common/design-principles/README.md'
+
+    def reads(self, task):
+        return router.resolve(task, 'auto')['read']
+
+    def test_word_for_government_school_enterprise_reads_delivery_format(self):
+        for task in ['帮我写一份项目总结报告，用Word交付给区教育局', '给这个企业客户出一份合作方案的Word文档',
+                     '把这个智能体的使用说明整理成Word交给学校']:
+            self.assertIn(self.FMT, self.reads(task), task)
+
+    def test_contest_template_word_does_not_take_business_format(self):
+        self.assertNotIn(self.FMT, self.reads('重写天津大赛数学作品的申报书Word'))
+
+    def test_any_visual_deliverable_reads_design_principles(self):
+        for task in ['做一个介绍我们产品的PPT', '给智能体比赛做个流程图', '给课程做个招生海报']:
+            self.assertIn(self.DP, self.reads(task), task)
+
+    def test_lookup_does_not_trigger_deliverable_rules(self):
+        read = self.reads('看一下仓库里有哪些PPT经验')
+        self.assertNotIn(self.FMT, read)

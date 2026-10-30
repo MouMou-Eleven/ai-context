@@ -19,4 +19,4 @@
 
 拼搭与表面积本身是常见教学内容，不能宣称全网首创。可展示的实现贡献由原创任务、数据契约、计面代码、反馈控制和教师实际调整共同构成，正式原创性比较仍需核对相近公开作品。
 
-具体运行与未完成项见[数学开发案例](../tianjin-ai-contest/case-geometry-helper-math.md)，可复用做法只在[课堂融合方法](./classroom-agent-design.md)维护。
+具体运行与未完成项见[数学开发案例](../tianjin-agent-contest/case-geometry-helper-math.md)，可复用做法只在[课堂融合方法](./classroom-agent-design.md)维护。

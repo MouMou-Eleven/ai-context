@@ -1,6 +1,6 @@
 # 天津大赛赛道二：提交材料与文件夹
 
-给客户准备 2026 年天津市 AI 教育应用场景、智能体设计应用和课程案例大赛**赛道二（教育智能体设计应用）**的参赛材料时按本页做。Word 怎么排版、字怎么写见[文档规范](./document-format.md)；视频和逐字稿见[演示视频](./demo-video.md)；平台导出的具体按钮见[搭建流程 · 导出交付](../tianjin-platform/build-sop.md#七导出交付)。
+给客户准备 2026 年天津市 AI 教育应用场景、智能体设计应用和课程案例大赛**赛道二（教育智能体设计应用）**的参赛材料时按本页做。Word 怎么排版、字怎么写见[文档规范](./document-format.md)；视频和逐字稿见[演示视频](./demo-video.md)；平台导出的具体按钮见[搭建流程 · 导出交付](platform/build-sop.md#七导出交付)。
 
 ## 一、比赛要求（2026 年通知原文要点）
 
@@ -55,14 +55,14 @@
 
 ## 三、复现材料怎么准备（默认）
 
-1. 从正式 Agent 递归列出实际依赖，按 Agent、Workflow、Plugin、Table、MCP 五类逐项导出（按钮见[导出交付](../tianjin-platform/build-sop.md#七导出交付)）。没用到的类别在覆盖清单里写"未使用"，不建空资源。
+1. 从正式 Agent 递归列出实际依赖，按 Agent、Workflow、Plugin、Table、MCP 五类逐项导出（按钮见[导出交付](platform/build-sop.md#七导出交付)）。没用到的类别在覆盖清单里写"未使用"，不建空资源。
 2. 导出配置不带知识库文档和表数据：用到知识库就另附全文与 QA；表只交结构，说明数据范围。
 3. 递归扫描所有包和嵌套快照里的认证，对外包脱敏，在"恢复与授权说明"里写清导入顺序、要重新绑定的资源和要重新填的认证。
 4. 覆盖清单每项写类别、名称、ID、被谁引用、文件名、SHA-256；打包后再核对压缩包 CRC 和逐文件哈希，防止 F 盘最新材料和旧副本不一致。
 
 ## 四、评审链接和账号
 
-评审入口按[搭建流程第六节](../tianjin-platform/build-sop.md#六生成评审链接红线)执行完整地址、登录选项和未登录运行核对。链接写进申报书“应用成效”末尾、作品访问说明及技术报告第一节，统一取自同一个本机核对源（做法见[成品自查 · 链接要整条复制](../../../../../../system/repository/execution-checks.md#链接要整条复制红线)）；Word实际跳转目标和ZIP内入口也纳入交付检查。
+评审入口按[搭建流程第六节](platform/build-sop.md#六生成评审链接红线)执行完整地址、登录选项和未登录运行核对。链接写进申报书“应用成效”末尾、作品访问说明及技术报告第一节，统一取自同一个本机核对源；Word实际跳转目标和ZIP内入口也纳入交付检查。
 
 ## 五、交付前检查
 
@@ -71,11 +71,11 @@
 - [ ] 技术报告覆盖第一节"技术说明""验证报告"两行的每一项。
 - [ ] 视频 ≤5 分钟、MP4、≤500MB，完整播放一遍。
 - [ ] 申报书、技术报告、视频、访问说明里的作品名、节点数、模型名、链接一致。
-- [ ] 评审入口已完成[平台核对](../tianjin-platform/build-sop.md#六生成评审链接红线)，正文、超链接目标、二维码及压缩包内文件均保留完整查询参数。
+- [ ] 评审入口已完成[平台核对](platform/build-sop.md#六生成评审链接红线)，正文、超链接目标、二维码及压缩包内文件均保留完整查询参数。
 - [ ] 复现材料五类覆盖清单齐全，认证已脱敏，哈希已核对。
 
 ```text
-python system/repository/maintenance/check-deliverable.py <docx> --profile competition --layout tianjin-contest-word --links <links.txt>
+python system/repository/maintenance/check-deliverable.py <docx> --profile competition --layout tianjin-contest-word
 python system/repository/maintenance/check-deliverable.py <纯旁白逐字稿.txt> --profile competition
 ```
 

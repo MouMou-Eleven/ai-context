@@ -24,7 +24,7 @@
 
 ## 建委要求与课堂设计
 
-初版只有系统预设，建委要求把真实工作流、知识、状态与记录接入具体课堂，技术组件按内容灵活选用，不能照搬外部案例。参考见[A02与A08](../subject-integration/case-external-a02-a08-chinese.md)，平台事实见[平台能力](../tianjin-platform/capabilities.md)。本项目不属于秒哒。
+初版只有系统预设，建委要求把真实工作流、知识、状态与记录接入具体课堂，技术组件按内容灵活选用，不能照搬外部案例。参考见[A02与A08](../subject-integration/case-external-a02-a08-chinese.md)，平台事实见[平台能力](platform/capabilities.md)。本项目不属于秒哒。
 
 语文参赛名称定为“文有回声——小学语文阅读学伴”，平台显示名为“文有回声”。课堂任务是：学生先用自己的话讲一处理解，找出原句，解释原句为什么支持理解，按一次追问修订，再交换讲解卡。教师据过程挑选样例集中讲评。引用存在和解释合理分开判断，不用漂亮图片证明理解提升。
 
@@ -78,4 +78,4 @@
 
 ## 沉淀位置与来源边界
 
-通用做法维护在[学科融合方法](../subject-integration/classroom-agent-design.md)：课堂任务链、可维护全文资料、分步交互和教师操作入口。平台能力与坑只写在[平台能力体系](../tianjin-platform/capabilities.md)，操作流程只写在[搭建流程](../tianjin-platform/build-sop.md)。外部TXT获奖、人数或平台来源推测未经验证，不当作本次事实；有限检索也不保证全网无同类作品。
+通用做法维护在[学科融合方法](../subject-integration/classroom-agent-design.md)：课堂任务链、可维护全文资料、分步交互和教师操作入口。平台能力与坑只写在[平台能力体系](platform/capabilities.md)，操作流程只写在[搭建流程](platform/build-sop.md)。外部TXT获奖、人数或平台来源推测未经验证，不当作本次事实；有限检索也不保证全网无同类作品。

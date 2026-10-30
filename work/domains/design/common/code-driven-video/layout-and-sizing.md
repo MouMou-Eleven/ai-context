@@ -91,4 +91,4 @@
 - 安全区是电视和视频行业的通用做法。
 - 间距的组内、组间关系来自[平面设计原则 · 留白](../design-principles/whitespace.md)。
 - 手机观看的字幕档、实际像素验收、“要读还是纹理”二选一来自外部 Skill [video-shotcraft](../../../other/skills/video-shotcraft/README.md) 审美准则 Q11（多支宣传片返工判例）；三档尺寸来自 [anything2explainer](../../../other/skills/anything2explainer/README.md) 构图与光第 1 节。两者都还没在本仓的片子里验证。
-- 目前两个本仓案例验证（飞机 4K 包装、文有回声 1080p 录屏），表里的比例区间在更多片子里校正。
+- 目前一个本仓案例验证，表里的比例区间在更多片子里校正。
