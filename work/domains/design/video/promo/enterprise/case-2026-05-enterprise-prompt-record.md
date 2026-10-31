@@ -121,6 +121,6 @@
 
 ## 后续维护
 
-补材料时完善本记录的输入、实际过程、失败对照和验收证据；新客户案例另建记录。跨领域从 [宣传片案例](./README.md) 和 [AI 视频项目入口](../../../../projects/README.md) 发现本案例；通用方法只在 [工作流](workflow.md) 或 [可选视觉配方](visual-recipes.md) 维护。
+补材料时完善本记录的输入、实际过程、失败对照和验收证据；新客户案例另建记录。跨领域从 [宣传片案例](../README.md) 和 [AI 视频项目入口](../../../../../projects/README.md) 发现本案例；通用方法只在 [工作流](workflow.md) 或 [可选视觉配方](visual-recipes.md) 维护。
 
 原始材料定位：[拆分前的 README](https://github.com/MouMou-Eleven/ai-context/blob/8f5bd42/work/ai/video/types/enterprise-promo/README.md)。该链接用于追溯记录来源，不代表额外验收证明。

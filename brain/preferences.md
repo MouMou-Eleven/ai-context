@@ -9,7 +9,8 @@
 - **贴地气、能实操，不要假大空。** 哪怕讲理论，也要连到对方的实际工作，能演示就演示。纯理论、空口无凭、堆概念的东西建委不要。（课件落地见[培训风格](../work/domains/training/experience/jianwei-training-style.md)；对外方案落地见[对外方案写法](../work/domains/training/experience/external-proposal-design.md)）
 - **说人话。** 建委偏好口语化表达，但这里的口语化是他自己的说话方式，不是加语气词。看[口语样稿](../system/expression/voice-samples.md)。
 - **难懂的东西要可视化。** 晦涩的概念用图、演示、画面帮助理解，不要通篇纯文字。
-- **表现形式要有内容依据（默认）。** 视觉元素应服务当前主题，能解释为什么出现；参考只借适用的优点，不能照搬与本项目无关的装饰。追求冲击力也要有内容逻辑，不能靠无关元素填满画面。（建委2026-10-04创赛画面反馈；执行方法见[创赛制作](../work/domains/design/video/promo/competition-promo-production.md)。）
+- **表现形式要有内容依据（默认）。** 视觉元素应服务当前主题，能解释为什么出现；参考只借适用的优点，不能照搬与本项目无关的装饰。追求冲击力也要有内容逻辑，不能靠无关元素填满画面。（建委2026-10-04创赛画面反馈；执行方法见[创赛制作](../work/domains/design/video/promo/competition/competition-promo-production.md)。）
+- **AI 的成品要对标行业成品的完成度（默认）。** 能看清、没出错还不够；建委给的参考（如 AE 模板）代表要达到的精致程度，AI 交出的东西不能比他自己用模板做的更简陋。每次被指出差距，要沉淀下来，让下次直接达标。（2026-10-31创赛包装反馈；执行见[创赛视频人机分工](../work/domains/design/video/promo/competition/ai-production-workflow.md#ae-级包装的标准红线)。）
 - **审美是一套底层判断，作用于所有设计（默认）。** 平面、PPT、视频、动画、界面考的是同一套审美；“好看”要从内容推出气质，再落到具体手段，不能每次靠建委手把手调位置和大小。（2026-10-30；执行见[设计原则与审美](../work/domains/design/common/design-principles/README.md)。）
 - **介绍自己靠事实撑，不靠形容词（默认）。** 用真实项目和客户让读者自己看出他是复合型人才，不自夸，也不记流水账。（建委2026-10-10明确；写法见[个人信息 · 对外介绍怎么写](../personal/README.md#对外介绍怎么写默认)。）
 

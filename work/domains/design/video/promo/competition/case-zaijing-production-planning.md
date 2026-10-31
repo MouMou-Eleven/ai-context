@@ -13,7 +13,7 @@
 
 ## 过程与决定
 
-先读取[创赛制作方法](./competition-promo-production.md)、[宣传片流程](./workflow.md)、[AE边界](../common/ae-production.md)和[Seedance实战](../common/seedance/practical-workflow.md)。检查照片、机理图、Word内嵌页及3段视频元数据和代表帧，未把抽帧当连续视频验收。
+先读取[创赛制作方法](./competition-promo-production.md)、[宣传片流程](../enterprise/workflow.md)、[AE边界](../../common/ae-production.md)和[Seedance实战](../../common/seedance/practical-workflow.md)。检查照片、机理图、Word内嵌页及3段视频元数据和代表帧，未把抽帧当连续视频验收。
 
 初稿准备按约100秒规划，建委补充一分钟默认后改为60秒预算。16个单元覆盖原旁白：行业环境与价值意象用AI，精确字用AE；调研取样用实拍；团队、材料、论文专利、检测合作用原素材及模板；科学机理单列可控动画。比例与时间仍需正式配音校准。
 
@@ -100,4 +100,4 @@ V2.10生成后，建委反馈镜头一与镜头二不连贯，像两组镜头拼
 - [创赛制作方法](./competition-promo-production.md)“下次收到创赛文稿，先做什么”：一分钟横屏与人机分工。
 - 同文件“指向性与准确性”：核对原件类型及证明边界。
 - 同文件“景别、光影与包装”：AE式空间表现落实为构图、视差、主运镜与稳定文字区。
-- “实践→沉淀→再用→更强”在[做事偏好](../../../../../brain/preferences.md)已有同义原则，不重复新增。
+- “实践→沉淀→再用→更强”在[做事偏好](../../../../../../brain/preferences.md)已有同义原则，不重复新增。

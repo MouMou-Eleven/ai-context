@@ -284,15 +284,23 @@ ai-context/
 │   │   │       │   ├── interactive-production-workbench.md  仅微课适用：按教学设计、逐字稿与音频组织分镜、参考图、提示词和验收
 │   │   │       │   ├── README.md  微课、精品课、MG 动画与教育课件
 │   │   │       │   └── showcase-guidelines.md  展示微课案例时检查受众、措辞和成果表达
-│   │   │       ├── promo/  查企业与创赛宣传片的分镜、素材和交付经验
-│   │   │       │   ├── case-2026-05-enterprise-prompt-record.md  企业宣传片提示词实战记录
-│   │   │       │   ├── case-juhe-title-workbench.md  聚禾为宝：标题片头与正文分段、麦穗丛穿梭及动态落版修订
-│   │   │       │   ├── case-zaijing-production-planning.md  再净先锋一分钟横屏创赛片规划、AI与AE分工及素材证明边界
-│   │   │       │   ├── competition-promo-production.md  创赛文稿拆镜、AI与AE模板分工、定格叠字、参考图动态化与迭代验收
-│   │   │       │   ├── prompt-iteration.md  调整企业片的镜头节奏并记录提示词迭代
-│   │   │       │   ├── README.md  企业宣传片制作经验
-│   │   │       │   ├── visual-recipes.md  为科技企业片选择可选视觉表现与组合方式
-│   │   │       │   └── workflow.md  按流程组织企业片制作并检查交付结果
+│   │   │       ├── promo/  按创赛、企业、产品三类查宣传片的分镜、素材、制作与交付经验
+│   │   │       │   ├── competition/  创赛宣传片：文稿拆镜、人机分工、AE级包装与案例
+│   │   │       │   │   ├── ai-production-workflow.md  创赛视频人机分工：AI改AE模板或代码复刻AE效果、配音定时长、AE级包装标准与经验回流
+│   │   │       │   │   ├── case-jingchi-ae-packaging.md  精尺匠造：代码包装从简约改到AE式（三维穿梭、标题模板、三联屏、素材放慢）
+│   │   │       │   │   ├── case-juhe-title-workbench.md  聚禾为宝：标题片头与正文分段、麦穗丛穿梭及动态落版修订
+│   │   │       │   │   ├── case-zaijing-production-planning.md  再净先锋一分钟横屏创赛片规划、AI与AE分工及素材证明边界
+│   │   │       │   │   ├── competition-promo-production.md  创赛文稿拆镜、AI与AE模板分工、定格叠字、参考图动态化与迭代验收
+│   │   │       │   │   └── README.md  创赛宣传片入口
+│   │   │       │   ├── enterprise/  企业宣传片：通用流程、提示词迭代、视觉配方与案例
+│   │   │       │   │   ├── case-2026-05-enterprise-prompt-record.md  企业宣传片提示词实战记录
+│   │   │       │   │   ├── prompt-iteration.md  调整企业片的镜头节奏并记录提示词迭代
+│   │   │       │   │   ├── README.md  企业宣传片入口
+│   │   │       │   │   ├── visual-recipes.md  为科技企业片选择可选视觉表现与组合方式
+│   │   │       │   │   └── workflow.md  按流程组织企业片制作并检查交付结果
+│   │   │       │   ├── product/  产品宣传片：起步做法，待第一单案例验证
+│   │   │       │   │   └── README.md  产品宣传片入口与起步做法
+│   │   │       │   └── README.md  宣传片入口：按创赛、企业、产品三类分流
 │   │   │       ├── README.md  类型索引
 │   │   │       ├── revisions/  视频制作方法的方向与适用范围修订
 │   │   │       │   ├── 2026-09-18-competition-and-microcourse-scope.md  创赛画面反馈沉淀，微课工作台迁移并收窄适用范围
@@ -1552,4 +1560,4 @@ ai-context/
 
 各入口的分工见[仓库运行](../README.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-10-24*
+*结构最后确认：2026-10-31*

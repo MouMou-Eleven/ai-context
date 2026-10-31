@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "confirmedDate": "2026-10-24",
+  "confirmedDate": "2026-10-31",
   "descriptions": {
-    "work/domains/design/video/promo/case-zaijing-production-planning.md": "再净先锋一分钟横屏创赛片规划、AI与AE分工及素材证明边界",
+    "work/domains/design/video/promo/competition/case-zaijing-production-planning.md": "再净先锋一分钟横屏创赛片规划、AI与AE分工及素材证明边界",
     "work/projects/yancut-ai/case-b3-loading-hotfixes.md": "言剪 B3 后加载热修复盘",
     "work/projects/yancut-ai/revisions/2026-09-27-b3-editor-runtime-and-rendering.md": "B3编辑器与动画任务交付、实测证据和未完成的生产渲染验证",
     "work/projects/yancut-ai/revisions/2026-09-27-b4-token-localization-and-loading-lessons.md": "B4计费与双语修订，保护云端加载热修并划分验收证据",
@@ -159,7 +159,7 @@
     "work/domains/design/video/common/README.md": "跨片型通用制作经验",
     "work/domains/design/video/education/interactive-production-workbench.md": "仅微课适用：按教学设计、逐字稿与音频组织分镜、参考图、提示词和验收",
     "work/domains/design/video/story/motion-comic.md": "漫剧制作入口",
-    "work/domains/design/video/promo/README.md": "企业宣传片制作经验",
+    "work/domains/design/video/promo/README.md": "宣传片入口：按创赛、企业、产品三类分流",
     "work/domains/design/video/story/README.md": "真人实拍故事与电影叙事",
     "work/domains/design/video/common/seedance": "Seedance 视频提示词唯一目录：建委实战在前，第三方模板库在 awesome-seedance/",
     "work/domains/design/video/common/seedance/README.md": "Seedance 读取顺序、红线与片型分工",
@@ -257,7 +257,7 @@
     "work/domains/design/graphic/ppt": "制作演示文稿时查内容组织与视觉设计要求",
     "work/domains/design/graphic/poster-fold": "制作海报、折页等平面宣传物料的经验入口",
     "work/domains/design/graphic/book": "查找书籍封面、装帧与内页版式的方法",
-    "work/domains/design/video/promo": "查企业与创赛宣传片的分镜、素材和交付经验",
+    "work/domains/design/video/promo": "按创赛、企业、产品三类查宣传片的分镜、素材、制作与交付经验",
     "work/domains/design/video/education": "为教师委托的微课与教育交互作品查制作规范",
     "work/domains/design/video/story": "查找真人故事与漫剧的叙事制作入口",
     "work/domains/design/video/common": "跨片型复用分镜、AI生成、合成与验收方法",
@@ -286,7 +286,7 @@
     "work/projects/ai-training/jinan-cadre-ai/revisions": "本场培训方案方向与版本修订",
     "work/projects/ai-training/jinan-cadre-ai/revisions/README.md": "方案修订入口",
     "work/projects/ai-training/jinan-cadre-ai/revisions/2026-09-18-tool-panorama-and-work-scenarios.md": "工具全景、提示词与六类工作场景设计反馈",
-    "work/domains/design/video/promo/competition-promo-production.md": "创赛文稿拆镜、AI与AE模板分工、定格叠字、参考图动态化与迭代验收",
+    "work/domains/design/video/promo/competition/competition-promo-production.md": "创赛文稿拆镜、AI与AE模板分工、定格叠字、参考图动态化与迭代验收",
     "work/domains/design/video/revisions": "视频制作方法的方向与适用范围修订",
     "work/domains/design/video/revisions/2026-09-18-competition-and-microcourse-scope.md": "创赛画面反馈沉淀，微课工作台迁移并收窄适用范围",
     "work/domains/design/video/revisions/2026-09-18-competition-opening-visual-rollback.md": "撤回全景与扫描包装过度修订，保留机械质感并尝试三维图板",
@@ -301,9 +301,9 @@
     "work/domains/design/video/common/seedance/awesome-seedance/upstream.json": "第三方来源、固定版本与三类许可",
     "work/domains/design/video/revisions/2026-09-24-awesome-seedance-integration.md": "第三方视频库收录、按需读取与既有经验保护",
     "system/repository/maintenance/tests/test_seedance.py": "视频提示词自动调用、误触发和按需读取回归",
-    "work/domains/design/video/promo/prompt-iteration.md": "调整企业片的镜头节奏并记录提示词迭代",
-    "work/domains/design/video/promo/visual-recipes.md": "为科技企业片选择可选视觉表现与组合方式",
-    "work/domains/design/video/promo/workflow.md": "按流程组织企业片制作并检查交付结果",
+    "work/domains/design/video/promo/enterprise/prompt-iteration.md": "调整企业片的镜头节奏并记录提示词迭代",
+    "work/domains/design/video/promo/enterprise/visual-recipes.md": "为科技企业片选择可选视觉表现与组合方式",
+    "work/domains/design/video/promo/enterprise/workflow.md": "按流程组织企业片制作并检查交付结果",
     "work/domains/design/video/education/showcase-guidelines.md": "展示微课案例时检查受众、措辞和成果表达",
     "work/domains/design/common/production-workflow.md": "从需求到交付组织设计工作，并把经验接回知识库",
     "work/domains/development/experience/frontend-ui-quality-standards.md": "按布局、响应式和交互状态检查前端成品",
@@ -340,7 +340,7 @@
     "work/projects/feishu-efficient-office/publication-acceptance-checklist.md": "检查章节基线、编辑反馈、飞书回写与Word交稿",
     "work/projects/feishu-efficient-office/writing-style-history.md": "核对旧风格规则的来源；默认写作不加载",
     "work/projects/ai-sixty-jiazi-music-ip/current-operations.md": "查当前Web演示的访问和操作方式",
-    "work/domains/design/video/promo/case-2026-05-enterprise-prompt-record.md": "企业宣传片提示词实战记录",
+    "work/domains/design/video/promo/enterprise/case-2026-05-enterprise-prompt-record.md": "企业宣传片提示词实战记录",
     "work/projects/archive/openclaw-agent": "追溯已归档AI Agent项目的资料和决策",
     "work/projects/archive/videoai": "追溯已归档营销视频自动化平台的项目资料",
     "system/repository/capability-evidence.md": "依据本人实践与复用证据更新能力，收藏不算掌握",
@@ -415,7 +415,7 @@
     "work/domains/design/graphic/ppt/premium-course/case-famous-painting-page-merge.md": "一幅名扬中外的画从30页合为27页，按同页容量与课堂顺序判断",
     "work/domains/design/graphic/ppt/premium-course/case-tiaowen-guaiguai-recording-workbench.md": "条纹乖乖录制剪辑工作台：错误版根因、按完整录音重做与动画顺序冲突",
     "work/domains/design/graphic/ppt/premium-course/case-yamiaozhuzhang-layout-and-stroke-animation.md": "揠苗助长22页返修：标题线压字、田字格比例、擦除方向全反与笔顺动画",
-    "work/domains/design/video/promo/case-juhe-title-workbench.md": "聚禾为宝：标题片头与正文分段、麦穗丛穿梭及动态落版修订",
+    "work/domains/design/video/promo/competition/case-juhe-title-workbench.md": "聚禾为宝：标题片头与正文分段、麦穗丛穿梭及动态落版修订",
     "work/domains/development/tools/miaoda/topics/case-shiyichuang-r9-auth-lock.md": "十一创R9认证锁抢占报错、依赖实测、验收遗漏与云端热修保护",
     "work/domains/design/graphic/ppt/ai-assisted-design": "无强制模板PPT从内容拆页、首页定调到可编辑重建的完整协作方法",
     "work/domains/design/graphic/ppt/ai-assisted-design/README.md": "按当前阶段发现自由视觉PPT流程，区分精品课并规定维护边界",
@@ -463,7 +463,15 @@
     "work/domains/development/industry-cases/education/tianjin-agent-contest/case-huipingshangai-chinese.md": "慧评善改小学语文图文习作评改、修改反馈、教师量规扩充与讲评实测",
     "work/domains/design/common/design-principles/aesthetic-vocabulary.md": "审美词库：把“好看”翻成气质和设计简报；光影、空间、材质；跨媒介用法",
     "work/domains/other/skills/video-shotcraft": "第三方产品宣传片 Skill 能力卡（本机安装，Apache 2.0）",
-    "work/domains/other/skills/anything2explainer": "第三方 MG 科普讲解片 Skill 能力卡（本机安装，非商业许可）"
+    "work/domains/other/skills/anything2explainer": "第三方 MG 科普讲解片 Skill 能力卡（本机安装，非商业许可）",
+    "work/domains/design/video/promo/competition": "创赛宣传片：文稿拆镜、人机分工、AE级包装与案例",
+    "work/domains/design/video/promo/competition/README.md": "创赛宣传片入口",
+    "work/domains/design/video/promo/competition/ai-production-workflow.md": "创赛视频人机分工：AI改AE模板或代码复刻AE效果、配音定时长、AE级包装标准与经验回流",
+    "work/domains/design/video/promo/competition/case-jingchi-ae-packaging.md": "精尺匠造：代码包装从简约改到AE式（三维穿梭、标题模板、三联屏、素材放慢）",
+    "work/domains/design/video/promo/enterprise": "企业宣传片：通用流程、提示词迭代、视觉配方与案例",
+    "work/domains/design/video/promo/enterprise/README.md": "企业宣传片入口",
+    "work/domains/design/video/promo/product": "产品宣传片：起步做法，待第一单案例验证",
+    "work/domains/design/video/promo/product/README.md": "产品宣传片入口与起步做法"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",
@@ -518,7 +526,10 @@
     "brain/business-judgment.md": "商业判断原则",
     "brain/preferences.md": "做事与表达偏好",
     "work/projects/ai-training": "AI培训",
-    "work/projects/ai-training/README.md": "AI培训"
+    "work/projects/ai-training/README.md": "AI培训",
+    "work/domains/design/video/promo/competition": "创赛宣传片",
+    "work/domains/design/video/promo/enterprise": "企业宣传片",
+    "work/domains/design/video/promo/product": "产品宣传片"
   },
   "knowledgeOrder": {
     "work": [
@@ -579,6 +590,11 @@
       "written.md",
       "evaluation.md",
       "sources.md"
+    ],
+    "work/domains/design/video/promo": [
+      "competition",
+      "enterprise",
+      "product"
     ]
   }
 }

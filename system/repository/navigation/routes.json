@@ -832,7 +832,7 @@
         "申报书",
         "计划书"
       ],
-      "entry": "work/domains/design/video/promo/competition-promo-production.md",
+      "entry": "work/domains/design/video/promo/competition/competition-promo-production.md",
       "priority": 86,
       "dependencies": [
         {
@@ -841,7 +841,7 @@
           "intents": []
         },
         {
-          "path": "work/domains/design/video/promo/workflow.md",
+          "path": "work/domains/design/video/promo/enterprise/workflow.md",
           "whenAny": [],
           "intents": []
         }
@@ -2656,7 +2656,7 @@
       "id": "competition-promo-production",
       "label": "创赛宣传片制作",
       "status": "active",
-      "path": "work/domains/design/video/promo/competition-promo-production.md",
+      "path": "work/domains/design/video/promo/competition/competition-promo-production.md",
       "selectedAny": [
         "competition-video",
         "enterprise-video",

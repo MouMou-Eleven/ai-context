@@ -18,6 +18,7 @@
 | Clash Verge Rev | 2.5.2；已从 2.3.2 更新，持久运行配置统一为规则模式，活动配置同步为当前可用的 iKuuu 配置 |
 | GitHub 推送 | `ai-context` 使用专用 SSH 443 别名、独立密钥和本地代理自动选择；fetch、dry-run push、真实 push 均已验证 |
 | Codex++ | 1.2.41；供应商自动切换当前关闭 |
+| After Effects | 可脚本操控的是 AE 2023（23.5），在 `F:\AE2023\Adobe After Effects 2023\Support Files\`：`AfterFX.exe -r 脚本.jsx` 带界面执行脚本，`aerender.exe` 命令行渲染；2026-10-31 实测新建工程、导入、改倍速、文字、关键帧、保存、渲染均可用，`-noui` 不执行脚本。E 盘 `Ae2020`、`Ae2024` 只有插件、预设和缓存，不是可执行安装。用法见[创赛视频人机分工](../../../../work/domains/design/video/promo/competition/ai-production-workflow.md#模式-a-怎么做默认) |
 | 磁盘状态 | 2026-10-31 又完成部分闲置工作目录、应用数据和开发缓存的保留迁移，C 盘可用约 68 GiB；CC Switch 三处主目录及全部工作根的整体离线迁移仍未完成。完成范围、兼容例外与验收边界见[磁盘专文](./disk-cleanup-and-codex-storage.md#2026-10-31-扩大保留迁移后的实际验收) |
 | Codex 会话存储 | 2026-08-31 已完成迁移，2026-09-15 实测 `sessions` 与 `archived_sessions` 均为指向 F 盘的 Junction；会话约 6.29 GiB，数据库留 C 盘。不要再次安排迁移或重启 |
 

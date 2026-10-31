@@ -23,7 +23,7 @@
 
 片型方法决定这一段要讲什么、节奏怎样；这里只负责"这个镜头的提示词怎么写"。
 
-- 宣传片、创赛片：[宣传片方法](../../promo/README.md)、[创赛片制作](../../promo/competition-promo-production.md)（带字图片做参考、照片人物动态化、多轮调校）
+- 宣传片、创赛片：[宣传片方法](../../promo/README.md)、[创赛片制作](../../promo/competition/competition-promo-production.md)（带字图片做参考、照片人物动态化、多轮调校）
 - 教师微课：[AI 微课画面方法](../../education/ai-generated-microcourse-video-workflow.md)
 - 故事片、漫剧：[故事片方法](../../story/README.md)
 - 合成、字幕、包装：[AE 制作](../ae-production.md)

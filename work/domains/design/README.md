@@ -21,7 +21,7 @@
 
 | 案例 | 位置 |
 |---|---|
-| 企业宣传片提示词实战 | [video/promo/case-2026-05-enterprise-prompt-record.md](./video/promo/case-2026-05-enterprise-prompt-record.md) |
+| 企业宣传片提示词实战 | [video/promo/case-2026-05-enterprise-prompt-record.md](./video/promo/enterprise/case-2026-05-enterprise-prompt-record.md) |
 | 《小树叶》AI 教师音乐微课 | [video/education/case-little-leaf-microcourse-mv.md](./video/education/case-little-leaf-microcourse-mv.md) |
 | 《角的再认识》数学精品课 PPT | [graphic/ppt/premium-course/case-angle-revisited.md](./graphic/ppt/premium-course/case-angle-revisited.md) |
 | 创赛宣传片完工复盘 | [video/revisions/](./video/revisions/2026-09-21-competition-production-retrospective.md) |

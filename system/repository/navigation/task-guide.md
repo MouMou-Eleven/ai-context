@@ -36,7 +36,7 @@
 | AI辅助视觉生产 | [读取](../../../work/domains/design/common/ai-generation-principles.md) |
 | 视频、动画与生成素材 | [读取](../../../work/domains/design/video/README.md) |
 | 企业宣传片 | [读取](../../../work/domains/design/video/promo/README.md) |
-| 创赛宣传片制作 | [读取](../../../work/domains/design/video/promo/competition-promo-production.md) |
+| 创赛宣传片制作 | [读取](../../../work/domains/design/video/promo/competition/competition-promo-production.md) |
 | 漫剧 | [读取](../../../work/domains/design/video/story/motion-comic.md) |
 | 真人故事影片 | [读取](../../../work/domains/design/video/story/README.md) |
 | Seedance工具 | [读取](../../../work/domains/design/video/common/seedance/README.md) |
@@ -132,7 +132,7 @@
 | 培训业务需要向主办方提交方案、课程大纲与培训提案时 | [培训方案与课程大纲](../../../work/domains/training/experience/external-proposal-design.md) | 课堂课件、讲师备课、教程、研究报告和合同不按方案删去其必要信息 | 逐段确认内容、场景和价值；移出提示词、操作路径、内部分工、核验过程与免责话语；检查实际DOCX和来源留存 |
 | 政府与企业的培训方案、课程纲要或商业项目方案需要Word排版时 | [政企Word方案排版](../../../work/domains/other/commercial/delivery-formats/gov-enterprise-word.md) | 法定公文、合同、指定标书模板、画册及其他用户明确视觉要求 | 主副标题居中、深蓝层级、宋体正文、首行缩进；按参考渲染逐页查看，不把参考内容当项目事实 |
 | 面向跨岗位学员设计AI工具全景与工作场景实操课程时 | [工具全景到工作场景](../../../work/domains/training/experience/demo-driven-course-design.md) | 单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本 | 类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对 |
-| 收到创赛文稿，需要分析叙事、拆分画面、选择AI／真实素材／AE模板，或调整参考图、人物动作与运镜时 | [创赛宣传片制作](../../../work/domains/design/video/promo/competition-promo-production.md) | 不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴 | 核对文稿与画面、素材及制作分工、定格叠字、参考图文字、人物姿态与机位、连续衔接；提示词和用户完工反馈不代替成片逐镜验收 |
+| 收到创赛文稿，需要分析叙事、拆分画面、选择AI／真实素材／AE模板，或调整参考图、人物动作与运镜时 | [创赛宣传片制作](../../../work/domains/design/video/promo/competition/competition-promo-production.md) | 不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴 | 核对文稿与画面、素材及制作分工、定格叠字、参考图文字、人物姿态与机位、连续衔接；提示词和用户完工反馈不代替成片逐镜验收 |
 | 为自媒体文章、图文或视频拟发布标题；写公众号等完整文章时即使未点名Skill也用于标题环节；亦可明确调用诊断、评审 | [Title Matrix 标题矩阵](../../../work/domains/self-media/titles/title-matrix/README.md) | 只查资料、只改正文或保留原标题不生成新题；合同、出版章节和学员课件不自动套营销标题；不覆盖文章正文方法 | 实际读Skill和平台参考，逐项对正文核对标题承诺、读者与发布形态；不编实测、数据或资源，不保证点击率；整篇创作交付标题加正文，不强塞矩阵 |
 | 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](../../../work/domains/design/video/common/seedance/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
 | 精品课：要录课合成、教师出镜的课件制作与返修；只有模板没有录课合成的不走 | [精品课制作与验收](../../../work/domains/design/graphic/ppt/premium-course/workflow.md) | 普通商务汇报与自由风格路演；不套用个案费用、字号和人物区域 | 保护最新用户改稿，按任务检查图文适配、箭头轴线与旋转、准确点击句及媒体返回；冻结HTML时不自动同步 |
