@@ -6,6 +6,7 @@
 |---|---|---|
 | AI 视频提示词（Seedance / 即梦） | [seedance/](./seedance/README.md) | 要 AI 生成镜头、写视频提示词、让参考图动起来 |
 | AE 制作与工程交付 | [ae-production.md](./ae-production.md) | 信息包装、合成、字幕、源工程、最终导出 |
+| 代码生成动画：程序化搭三维场景、设计运镜、渲染成片 | [code-rendered-animation/](./code-rendered-animation/README.md) | 科技工业场景、原理动画、数字孪生这类要精确控制结构和运镜的镜头；写实人物和质感走 Seedance |
 | AI 动手剪辑、包装、加效果、出成片（实际都是代码完成） | [代码式视频设计经验](../../common/code-driven-video/README.md) | 字号、间距、对齐、容器、出场节奏和验收；用 Remotion、HTML、Python 都先读 |
 | 可编辑参数化动画（Remotion） | [Remotion Skill](../../../other/skills/jianwei-ai-community-remotion-video/README.md) | 文字、颜色、数据要能改的动画 |
 

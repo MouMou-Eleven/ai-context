@@ -81,6 +81,12 @@ ai-context/
 │   │   │   └── video/  按宣传、教育、故事片型组合制作方法
 │   │   │       ├── common/  跨片型复用分镜、AI生成、合成与验收方法
 │   │   │       │   ├── ae-production.md  AE包装、合成与工程交付要求
+│   │   │       │   ├── code-rendered-animation/  代码生成动画：程序化三维场景、运镜与渲染（科技工业、原理动画）
+│   │   │       │   │   ├── camera-motion.md  运镜路线、平滑、速度曲线、转向与运动模糊
+│   │   │       │   │   ├── case-jingchi-smart-factory.md  精尺匠造第4幕智慧工厂三维动画两轮返修
+│   │   │       │   │   ├── README.md  适用边界、与Seedance/AE怎么选、读取顺序与检查表
+│   │   │       │   │   ├── visual-toolkit.md  科技感元素手法库与分寸
+│   │   │       │   │   └── workflow.md  定调、搭场景、渲染管线、迭代节奏与技术坑
 │   │   │       │   ├── README.md  跨片型通用制作经验
 │   │   │       │   └── seedance/  Seedance 视频提示词唯一目录：建委实战在前，第三方模板库在 awesome-seedance/
 │   │   │       │       ├── awesome-seedance/  第三方 awesome-seedance 模板与案例库（中英文，已删日文）

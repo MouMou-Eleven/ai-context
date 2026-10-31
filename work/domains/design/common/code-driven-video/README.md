@@ -18,7 +18,7 @@ AI 自己动手做出来的视频：剪辑、加包装、加特效、加字幕�
 
 宣传片、创赛、微课这些片型照常走各自的目录定内容和结构；比赛视频还要读该比赛自己的目录（片头、字幕区、时长等要求以比赛为准）。本目录叠加在上面，管画面上的排版、尺寸、动效和验收。
 
-不读的情况：只写 AI 视频模型的提示词（读 [Seedance](../../video/common/seedance/README.md)）；只写脚本、分镜、口播稿，不动手出片；给人用的 AE 手工工程（读 [AE 制作](../../video/common/ae-production.md)，其中的排版判断仍可参考本目录）。纯剪接、画面上什么都不加时，读[动效与验收](motion-and-verification.md)里的节奏和验收部分即可。
+不读的情况：只写 AI 视频模型的提示词（读 [Seedance](../../video/common/seedance/README.md)）；只写脚本、分镜、口播稿，不动手出片；给人用的 AE 手工工程（读 [AE 制作](../../video/common/ae-production.md)，其中的排版判断仍可参考本目录）。纯剪接、画面上什么都不加时，读[动效与验收](motion-and-verification.md)里的节奏和验收部分即可。画面本身也要用代码从零生成（三维场景、运镜、原理动画）时，另读[代码生成动画](../../video/common/code-rendered-animation/README.md)，本目录照常管排版和验收。
 
 ## 和设计原则的关系（默认）
 
