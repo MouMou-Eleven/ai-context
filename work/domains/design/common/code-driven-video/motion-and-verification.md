@@ -63,6 +63,6 @@
 
 ## 来源与状态
 
-- 出场顺序、图层顺序、发光和跟踪的做法来自[飞机总装空间坐标包装](case-aircraft-assembly-overlay.md)。
+- 出场顺序、图层顺序、发光和跟踪的做法来自 2026-10-29 一次厂房实拍包装（这类活儿的完整做法见[成片上叠加包装](../../video/common/code-rendered-animation/footage-overlay/README.md)）。
 - 不用闪白转场来自建委对创赛视频的反馈（2026-10-27）。- 节奏宁慢勿快、落定后停留、光跟主角、特效不群发、一种手法只当一次主角、镜头不抖：与外部 Skill [video-shotcraft](../../../other/skills/video-shotcraft/README.md) 审美准则 R1—R4、Q3—Q5、P4 和 [anything2explainer](../../../other/skills/anything2explainer/README.md) 构图与光第 1—3、7 节一致，两者都是多支片子返工后的判例；在本仓片子里继续校正。
 - 时间数值（间隔、时长）是本案例实际采用的值，待更多片子校正。

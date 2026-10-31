@@ -31,7 +31,6 @@ ai-context/
 │   │   │   ├── common/  组合手工设计与AI辅助，统一制作和沉淀流程
 │   │   │   │   ├── ai-generation-principles.md  设计中用 AI 生成的五条原则
 │   │   │   │   ├── code-driven-video/  代码式视频：字号、间距、对齐、动效与验收经验
-│   │   │   │   │   ├── case-aircraft-assembly-overlay.md  案例：飞机总装实拍空间坐标包装及返修
 │   │   │   │   │   ├── layout-and-sizing.md  视频画面的安全区、字号换算、间距单位、容器与对齐
 │   │   │   │   │   ├── motion-and-verification.md  出场节奏、停留时间、图层顺序坑与静帧验收
 │   │   │   │   │   └── README.md  代码式视频入口：什么时候读、和平面原则的联动、检查表
@@ -81,12 +80,15 @@ ai-context/
 │   │   │   └── video/  按宣传、教育、故事片型组合制作方法
 │   │   │       ├── common/  跨片型复用分镜、AI生成、合成与验收方法
 │   │   │       │   ├── ae-production.md  AE包装、合成与工程交付要求
-│   │   │       │   ├── code-rendered-animation/  代码生成动画：程序化三维场景、运镜与渲染（科技工业、原理动画）
-│   │   │       │   │   ├── camera-motion.md  运镜路线、平滑、速度曲线、转向与运动模糊
-│   │   │       │   │   ├── case-jingchi-smart-factory.md  精尺匠造第4幕智慧工厂三维动画两轮返修
-│   │   │       │   │   ├── README.md  适用边界、与Seedance/AE怎么选、读取顺序与检查表
-│   │   │       │   │   ├── visual-toolkit.md  科技感元素手法库与分寸
-│   │   │       │   │   └── workflow.md  定调、搭场景、渲染管线、迭代节奏与技术坑
+│   │   │       │   ├── code-rendered-animation/  代码生成动画：按效果类型分门类（三维、成片包装、MG、手绘），门类内再分片型
+│   │   │       │   │   ├── 3d-scene/  三维场景与运镜：程序化建模、镜头路线与渲染
+│   │   │       │   │   │   ├── camera-motion.md  三维运镜：路线、平滑、速度曲线、转向、避让与运动模糊
+│   │   │       │   │   │   ├── README.md  三维适用边界、各片型用法、搭场景与WebGL技术坑
+│   │   │       │   │   │   └── visual-toolkit.md  三维科技感元素手法库与分寸
+│   │   │       │   │   ├── footage-overlay/  成片上叠加包装：已有视频上逐帧画标注、坐标、面板、名称条
+│   │   │       │   │   │   └── README.md  拆素材、定标注、跟踪、分层、各片型用法与常见返修改法
+│   │   │       │   │   ├── README.md  门类总览、与Seedance/AE怎么选、读取顺序与检查表
+│   │   │       │   │   └── workflow.md  所有门类通用：定调、镜头脚本、确定性、渲染管线、迭代节奏
 │   │   │       │   ├── README.md  跨片型通用制作经验
 │   │   │       │   └── seedance/  Seedance 视频提示词唯一目录：建委实战在前，第三方模板库在 awesome-seedance/
 │   │   │       │       ├── awesome-seedance/  第三方 awesome-seedance 模板与案例库（中英文，已删日文）
