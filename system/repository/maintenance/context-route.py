@@ -91,7 +91,7 @@ def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_r
     delivery_candidates = [r for r in candidates if r['id'] in policy.get('deliveryRouteIds', [])]
     if teaching and teaching_candidates:
         selected = teaching_candidates[0]
-    elif delivery_candidates and selected and selected['id'] in policy.get('capabilityRouteIds', []) + policy.get('projectContextRouteIds', []):
+    elif delivery_candidates and selected and selected['id'] in policy.get('capabilityRouteIds', []) + policy.get('projectContextRouteIds', []) + policy.get('factContextRouteIds', []):
         selected = delivery_candidates[0]
     reads = list(catalog['readFirst'])
     reasons = []
@@ -115,6 +115,13 @@ def resolve(task, intent='read', repo_root=ROOT, produces_chinese=None, writes_r
                 for dependency in project.get('dependencies', []):
                     if dependency['path'].startswith('work/projects/') and permitted(task, dependency, intent, produces_chinese, writes_repository):
                         include(dependency['path'], '明确项目的具体事实资料；不把项目全部教学方法附加到宣传稿')
+        # A self-introduction PPT is a PPT; personal facts feed its content but do not replace the deliverable workflow.
+        for fact in candidates:
+            if fact['id'] in policy.get('factContextRouteIds', []) and fact is not selected:
+                include(fact['entry'], '交付物里用到的人物事实与背书；结构由主候选决定')
+                for dependency in fact.get('dependencies', []):
+                    if permitted(task, dependency, intent, produces_chinese, writes_repository):
+                        include(dependency['path'], '人物事实的条件依赖')
         if teaching or selected in delivery_candidates:
             for capability in candidates:
                 if capability['id'] in policy.get('capabilityRouteIds', []):

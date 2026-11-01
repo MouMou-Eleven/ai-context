@@ -24,7 +24,7 @@
 | 宣传、招生、产品介绍、报名页 | [宣传写法](work/domains/self-media/marketing-copy/reader-question-led-promotion.md) + [口语样稿](system/expression/voice-samples.md) + 对应项目的事实 |
 | 朋友圈 / 社群话术 / 口播 / 直播 | [自媒体入口](work/domains/self-media/README.md) 里对应的那一类 + [口语样稿](system/expression/voice-samples.md) |
 | 任何设计成品：PPT、海报、折页、书籍、视频画面、网页界面、流程图；用户只说“做好看点”“高级点” | [设计原则与审美](work/domains/design/common/design-principles/README.md)（含[审美词库](work/domains/design/common/design-principles/aesthetic-vocabulary.md)）+ [设计入口](work/domains/design/README.md) → 对应交付物目录 |
-| PPT 美化、课件美化或排版、首页定调、设计图转可编辑 PPT | [PPT入口](work/domains/design/graphic/ppt/README.md) → [自由视觉PPT](work/domains/design/graphic/ppt/ai-assisted-design/README.md)；有指定模板或录课合成才走精品课 |
+| 做任何 PPT（含自我介绍、作品集、公司介绍）、PPT 美化、课件美化或排版、首页定调、设计图转可编辑 PPT | [PPT入口](work/domains/design/graphic/ppt/README.md) → [自由视觉PPT](work/domains/design/graphic/ppt/ai-assisted-design/README.md) + [拆页与版式](work/domains/design/graphic/ppt/ai-assisted-design/layout-and-pagination.md)；有指定模板或录课合成才走精品课 |
 | 视频：宣传片、微课、故事片、AI 视频提示词 | [视频入口](work/domains/design/video/README.md) → 对应片型目录；要写视频提示词再读 [Seedance](work/domains/design/video/common/seedance/README.md) |
 | AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、做动画、出成片（不管用户提没提代码） | [代码式视频设计经验](work/domains/design/common/code-driven-video/README.md) + [设计原则与审美](work/domains/design/common/design-principles/README.md)；片型照常读上一行，比赛视频再读该比赛目录 |
 | 用百度秒哒开发 | [秒哒入口](work/domains/development/tools/miaoda/README.md)（先看顶部平台识别）→ 按其中的流程表选一条 |
@@ -37,7 +37,7 @@
 | 合同、正式文书、对外表达标准 | [商业化入口](work/domains/other/commercial/README.md) |
 | 某一场培训（济南干部培训、济南市图书馆等） | [AI 培训项目](work/projects/ai-training/README.md) → [场次索引](work/projects/ai-training/sessions-index.md) → 该场次 README |
 | 某个具体项目（社群、言剪、飞书书、六十甲子） | [项目列表](work/projects/README.md) → 该项目 README |
-| 个人简介、讲师介绍、简历 | [个人信息](personal/README.md)；荣誉和数字只按[背书表](personal/credentials.md)写 |
+| 个人简介、讲师介绍、简历 | [个人信息](personal/README.md)；荣誉和数字只按[背书表](personal/credentials.md)写；要做成 PPT、海报、视频时，结构按那个成品的行走，这里只提供事实 |
 | 建委的想法、偏好、判断方式 | [建委大脑](brain/README.md)；做任何成品前都值得先看一眼[做事与表达偏好](brain/preferences.md) |
 | 用 Skill | [Skill 库](work/domains/other/skills/README.md) |
 | 电脑、网络、本机工具 | [设备环境](system/environment/README.md) |

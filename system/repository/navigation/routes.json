@@ -130,6 +130,9 @@
     "trainingTaskExcludePatterns": [
       "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计",
       "^(?!.*培训).*((给|帮|替|为)(老师|教师|学校)|老师的|教师的|订单|接单|承接|委托).{0,15}(课件|幻灯片)|^(?!.*培训).*(课件|幻灯片).{0,15}(订单|单子)"
+    ],
+    "factContextRouteIds": [
+      "personal"
     ]
   },
   "readFirst": [
@@ -3319,10 +3322,22 @@
             "断行",
             "间距",
             "美化",
-            "设计"
+            "设计",
+            "作品",
+            "案例",
+            "展示",
+            "自我介绍",
+            "作品集",
+            "视频",
+            "动图",
+            "GIF",
+            "留白",
+            "空白",
+            "对齐"
           ],
           "paths": [
-            "work/domains/design/graphic/ppt/ai-assisted-design/layout-and-pagination.md"
+            "work/domains/design/graphic/ppt/ai-assisted-design/layout-and-pagination.md",
+            "work/domains/design/graphic/ppt/ai-assisted-design/case-self-intro-share-deck.md"
           ]
         },
         {
@@ -3343,6 +3358,10 @@
       "whenPatterns": [
         "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计",
         "^(?!.*培训).*((给|帮|替|为)(老师|教师|学校)|老师的|教师的|订单|接单|承接|委托).{0,15}(课件|幻灯片)|^(?!.*培训).*(课件|幻灯片).{0,15}(订单|单子)"
+      ],
+      "readWith": [
+        "work/domains/design/graphic/ppt/ai-assisted-design/layout-and-pagination.md",
+        "work/domains/design/common/design-principles/README.md"
       ]
     },
     {

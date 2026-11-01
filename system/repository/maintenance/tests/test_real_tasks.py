@@ -141,6 +141,15 @@ class RealTasks(unittest.TestCase):
             self.assertEqual(result['selectedCandidate'], 'personal', task)
             self.assertIn('brain/preferences.md', result['read'], task)
 
+    def test_self_intro_ppt_is_ppt_with_personal_facts(self):
+        # 2026-11-01：建委要求做 PPT 时自动带上版式经验，自我介绍 PPT 不能只走个人简介。
+        for task in ['帮我做一份外出分享用的自我介绍PPT', '做一份讲师介绍PPT']:
+            result = router.resolve(task, 'create')
+            self.assertEqual(result['selectedCandidate'], 'ppt', task)
+            self.assertIn('personal/README.md', result['read'], task)
+            self.assertIn('work/domains/design/graphic/ppt/ai-assisted-design/layout-and-pagination.md', result['read'], task)
+        self.assertIn('work/domains/design/graphic/ppt/ai-assisted-design/layout-and-pagination.md', router.resolve('做一份公司介绍PPT', 'create')['read'])
+
     def test_tutorial_and_article_genres_load_writing_methods_for_any_topic(self):
         self.assertIn(TR + 'experience/tutorial-writing.md', self.reads('把PPT设计流程写成保姆级教程'))
         self.assertIn('work/domains/self-media/articles/README.md', router.resolve('写一篇公众号文章介绍我的AI做PPT方法', 'create')['read'])
