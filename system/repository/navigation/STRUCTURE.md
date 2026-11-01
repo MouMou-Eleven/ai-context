@@ -56,6 +56,7 @@ ai-context/
 │   │   │   │   │   └── README.md  海报、折页及平面物料设计入口
 │   │   │   │   ├── ppt/  制作演示文稿时查内容组织与视觉设计要求
 │   │   │   │   │   ├── ai-assisted-design/  无强制模板PPT从内容拆页、首页定调到可编辑重建的完整协作方法
+│   │   │   │   │   │   ├── case-self-intro-share-deck.md  外出分享用自我介绍PPT：代码直出、作品展示页排版纠错与动图素材处理
 │   │   │   │   │   │   ├── case-shanju-qiuming.md  山居秋暝报价、视觉迭代、分层制作与未验收边界的单一事实记录
 │   │   │   │   │   │   ├── layout-and-pagination.md  按任务拆页并用网格、层级、语义断行和实际渲染检查版式
 │   │   │   │   │   │   ├── prompt-playbook.md  按实际首页和当前页构思提示词，指导生成、重建与定点返修
