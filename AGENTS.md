@@ -40,6 +40,7 @@
 | 个人简介、讲师介绍、简历 | [个人信息](personal/README.md)；荣誉和数字只按[背书表](personal/credentials.md)写；要做成 PPT、海报、视频时，结构按那个成品的行走，这里只提供事实 |
 | 建委的想法、偏好、判断方式 | [建委大脑](brain/README.md)；做任何成品前都值得先看一眼[做事与表达偏好](brain/preferences.md) |
 | 用 Skill | [Skill 库](work/domains/other/skills/README.md) |
+| 访问网站、查看在线对话、浏览器操作或网站验收 | [本机浏览器调用约定](system/environment/computers/desktop-1/README.md#浏览器调用约定2026-11-05建委明确要求) |
 | 电脑、网络、本机工具 | [设备环境](system/environment/README.md) |
 | 往仓库里写东西 | 本页第二部分 + [写入规范](system/repository/ingestion-workflow.md) |
 
