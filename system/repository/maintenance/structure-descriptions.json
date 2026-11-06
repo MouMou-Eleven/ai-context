@@ -294,7 +294,7 @@
     "work/projects/ai-training/jinan-cadre-ai/revisions": "本场培训方案方向与版本修订",
     "work/projects/ai-training/jinan-cadre-ai/revisions/README.md": "方案修订入口",
     "work/projects/ai-training/jinan-cadre-ai/revisions/2026-09-18-tool-panorama-and-work-scenarios.md": "工具全景、提示词与六类工作场景设计反馈",
-    "work/domains/design/video/promo/competition/competition-promo-production.md": "创赛文稿拆镜、AI与AE模板分工、定格叠字、参考图动态化与迭代验收",
+    "work/domains/design/video/promo/competition/competition-promo-basics.md": "创赛片基础：是什么、接单规格、原句画面素材对应、叙事结构、按指向性选做法",
     "work/domains/design/video/revisions": "视频制作方法的方向与适用范围修订",
     "work/domains/design/video/revisions/2026-09-18-competition-and-microcourse-scope.md": "创赛画面反馈沉淀，微课工作台迁移并收窄适用范围",
     "work/domains/design/video/revisions/2026-09-18-competition-opening-visual-rollback.md": "撤回全景与扫描包装过度修订，保留机械质感并尝试三维图板",
@@ -470,14 +470,16 @@
     "work/domains/design/common/design-principles/aesthetic-vocabulary.md": "审美词库：把“好看”翻成气质和设计简报；光影、空间、材质；跨媒介用法",
     "work/domains/other/skills/video-shotcraft": "第三方产品宣传片 Skill 能力卡（本机安装，Apache 2.0）",
     "work/domains/other/skills/anything2explainer": "第三方 MG 科普讲解片 Skill 能力卡（本机安装，非商业许可）",
-    "work/domains/design/video/promo/competition": "创赛宣传片：文稿拆镜与交接、AI出片人机分工与AE级包装",
+    "work/domains/design/video/promo/competition": "创赛宣传片：分基础概念、AI生视频、AI代码与AE自动化三块，按要做的事读",
     "work/domains/design/video/promo/competition/README.md": "创赛宣传片入口",
-    "work/domains/design/video/promo/competition/ai-production-workflow.md": "创赛视频人机分工：AI改AE模板或代码复刻AE效果、配音定时长、AE级包装标准与经验回流",
+    "work/domains/design/video/promo/competition/ai-code-ae-pipeline.md": "创赛片AI代码与AE自动化：代码预览定版面、AE MCP改模板、AE级包装标准、经验回流",
     "work/domains/design/video/promo/enterprise": "企业宣传片：总流程、按信息类型拆镜头、提示词与返修、按风格分",
     "work/domains/design/video/promo/enterprise/README.md": "企业宣传片入口",
     "work/domains/design/video/promo/product": "产品宣传片：起步做法，待第一单案例验证",
     "work/domains/design/video/promo/product/README.md": "产品宣传片入口与起步做法",
-    "work/domains/design/video/promo/enterprise/info-shots.md": "企业片按信息类型拆镜头：开篇、数据、荣誉、文化、战略、业务、落版"
+    "work/domains/design/video/promo/enterprise/info-shots.md": "企业片按信息类型拆镜头：开篇、数据、荣誉、文化、战略、业务、落版",
+    "work/domains/design/video/promo/competition/ai-video-generation.md": "创赛片AI生视频：片头片尾背景提示词交接、AI片头接AE标题、参考图、照片动态化、调校",
+    "work/domains/design/video/promo/competition/ae-template-layout.md": "改AE模板的排版判断与交付前排版验收表：样例残留、重叠、字号梯度、图框、人像、多余光效"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",

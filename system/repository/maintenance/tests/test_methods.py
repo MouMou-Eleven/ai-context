@@ -151,8 +151,8 @@ class MethodRouting(unittest.TestCase):
     def test_competition_promo_discovers_its_own_method(self):
         result = router.resolve('创赛视频开场太灰暗，改全景和轻量科技包装', 'create')
         self.assertEqual(result['selectedCandidate'], 'competition-video')
-        self.assertIn('competition-promo-production', method_ids(result))
-        self.assertNotIn('competition-promo-production', method_ids(router.resolve('教师微课参赛课画面工作台', 'create')))
+        self.assertIn('competition-promo-basics', method_ids(result))
+        self.assertNotIn('competition-promo-basics', method_ids(router.resolve('教师微课参赛课画面工作台', 'create')))
 
     def test_professional_ai_workbench_does_not_activate_video_method(self):
         result = router.resolve('为教师设计一个日常AI工作台', 'create')

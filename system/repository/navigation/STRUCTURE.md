@@ -294,9 +294,11 @@ ai-context/
 │   │   │       │   ├── README.md  微课、精品课、MG 动画与教育课件
 │   │   │       │   └── showcase-guidelines.md  展示微课案例时检查受众、措辞和成果表达
 │   │   │       ├── promo/  按创赛、企业、产品三类查宣传片的分镜、素材、制作与交付经验
-│   │   │       │   ├── competition/  创赛宣传片：文稿拆镜与交接、AI出片人机分工与AE级包装
-│   │   │       │   │   ├── ai-production-workflow.md  创赛视频人机分工：AI改AE模板或代码复刻AE效果、配音定时长、AE级包装标准与经验回流
-│   │   │       │   │   ├── competition-promo-production.md  创赛文稿拆镜、AI与AE模板分工、定格叠字、参考图动态化与迭代验收
+│   │   │       │   ├── competition/  创赛宣传片：分基础概念、AI生视频、AI代码与AE自动化三块，按要做的事读
+│   │   │       │   │   ├── ae-template-layout.md  改AE模板的排版判断与交付前排版验收表：样例残留、重叠、字号梯度、图框、人像、多余光效
+│   │   │       │   │   ├── ai-code-ae-pipeline.md  创赛片AI代码与AE自动化：代码预览定版面、AE MCP改模板、AE级包装标准、经验回流
+│   │   │       │   │   ├── ai-video-generation.md  创赛片AI生视频：片头片尾背景提示词交接、AI片头接AE标题、参考图、照片动态化、调校
+│   │   │       │   │   ├── competition-promo-basics.md  创赛片基础：是什么、接单规格、原句画面素材对应、叙事结构、按指向性选做法
 │   │   │       │   │   └── README.md  创赛宣传片入口
 │   │   │       │   ├── enterprise/  企业宣传片：总流程、按信息类型拆镜头、提示词与返修、按风格分
 │   │   │       │   │   ├── info-shots.md  企业片按信息类型拆镜头：开篇、数据、荣誉、文化、战略、业务、落版

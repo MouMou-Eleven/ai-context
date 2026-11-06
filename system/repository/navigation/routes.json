@@ -835,9 +835,74 @@
         "申报书",
         "计划书"
       ],
-      "entry": "work/domains/design/video/promo/competition/competition-promo-production.md",
+      "entry": "work/domains/design/video/promo/competition/README.md",
       "priority": 86,
       "dependencies": [
+        {
+          "path": "work/domains/design/video/promo/competition/competition-promo-basics.md",
+          "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/promo/competition/ai-video-generation.md",
+          "whenAny": [
+            "片头",
+            "片尾",
+            "提示词",
+            "Seedance",
+            "AI视频",
+            "AI 视频",
+            "生视频",
+            "背景",
+            "参考图",
+            "照片动态",
+            "运镜",
+            "人物动作"
+          ],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/promo/competition/ai-code-ae-pipeline.md",
+          "whenAny": [
+            "AE",
+            "模板",
+            "代码",
+            "出片",
+            "成片",
+            "渲染",
+            "排版",
+            "版面",
+            "包装",
+            "剪辑",
+            "合成",
+            "预览",
+            "做出来",
+            "返修",
+            "配音"
+          ],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/promo/competition/ae-template-layout.md",
+          "whenAny": [
+            "AE",
+            "模板",
+            "代码",
+            "出片",
+            "成片",
+            "渲染",
+            "排版",
+            "版面",
+            "包装",
+            "剪辑",
+            "合成",
+            "预览",
+            "做出来",
+            "返修",
+            "配音"
+          ],
+          "intents": []
+        },
         {
           "path": "work/domains/design/video/promo/README.md",
           "whenAny": [],
@@ -2656,10 +2721,10 @@
       "source": "建委2026-09-18干部AI培训实操方案调整；课前设计要求"
     },
     {
-      "id": "competition-promo-production",
-      "label": "创赛宣传片制作",
+      "id": "competition-promo-basics",
+      "label": "创赛宣传片基础",
       "status": "active",
-      "path": "work/domains/design/video/promo/competition/competition-promo-production.md",
+      "path": "work/domains/design/video/promo/competition/competition-promo-basics.md",
       "selectedAny": [
         "competition-video",
         "enterprise-video",
@@ -2680,15 +2745,150 @@
         "create",
         "write"
       ],
-      "useWhen": "收到创赛文稿，需要分析叙事、拆分画面、选择AI／真实素材／AE模板，或调整参考图、人物动作与运镜时",
+      "useWhen": "接到任何创赛宣传片任务：弄清交付范围，读文稿和素材建立原句、画面、素材对应，按指向性给每个画面选做法时",
       "notFor": "不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴",
-      "acceptance": "核对文稿与画面、素材及制作分工、定格叠字、参考图文字、人物姿态与机位、连续衔接；提示词和用户完工反馈不代替成片逐镜验收",
+      "acceptance": "核对文稿每个信息点都有画面、证据镜头和概念镜头不混用、每个画面的做法按指向性选定",
       "evidence": "work/domains/design/video/revisions/2026-09-21-competition-production-retrospective.md",
       "confirmedAt": "2026-09-21",
       "entryPoints": [
-        "work/domains/design/video/promo/README.md"
+        "work/domains/design/video/promo/competition/README.md"
       ],
       "source": "建委2026-09-21完工复盘及Seedance名称纠正，结合本片多轮截图与调校；方法有条件复用，最终成片未独立审核"
+    },
+    {
+      "id": "competition-ai-video",
+      "label": "创赛片AI生视频方法",
+      "status": "active",
+      "path": "work/domains/design/video/promo/competition/ai-video-generation.md",
+      "selectedAny": [
+        "competition-video",
+        "enterprise-video",
+        "video"
+      ],
+      "whenAny": [
+        "片头",
+        "片尾",
+        "提示词",
+        "Seedance",
+        "AI视频",
+        "AI 视频",
+        "生视频",
+        "背景",
+        "参考图",
+        "照片动态",
+        "运镜",
+        "人物动作"
+      ],
+      "excludeAny": [
+        "微课",
+        "教师委托",
+        "参赛课"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "创赛片里要用AI视频生成片头、片尾、背景、过渡或缺口画面，写或改Seedance提示词、参考图、照片动态化时",
+      "notFor": "不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴",
+      "acceptance": "提示词只引用实际上传素材；片头落版、运镜、光线和多轮调校在生成结果里逐段核对",
+      "evidence": "work/domains/design/video/revisions/2026-09-21-competition-production-retrospective.md",
+      "confirmedAt": "2026-09-21",
+      "entryPoints": [
+        "work/domains/design/video/promo/competition/README.md"
+      ],
+      "source": "2026-11-06 由创赛宣传片制作拆出：石墨烯、再净先锋、聚禾为宝三单的提示词与建委反馈"
+    },
+    {
+      "id": "competition-code-ae-pipeline",
+      "label": "创赛片AI代码与AE自动化流程",
+      "status": "active",
+      "path": "work/domains/design/video/promo/competition/ai-code-ae-pipeline.md",
+      "selectedAny": [
+        "competition-video",
+        "enterprise-video",
+        "video"
+      ],
+      "whenAny": [
+        "AE",
+        "模板",
+        "代码",
+        "出片",
+        "成片",
+        "渲染",
+        "排版",
+        "版面",
+        "包装",
+        "剪辑",
+        "合成",
+        "预览",
+        "做出来",
+        "返修",
+        "配音"
+      ],
+      "excludeAny": [
+        "微课",
+        "教师委托",
+        "参赛课"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "AI要实际做创赛片：代码出预览、用AE MCP改模板、做画面包装、按配音合成出片，或按建委反馈返修并沉淀经验时",
+      "notFor": "不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴",
+      "acceptance": "先有代码预览定版面；改模板按预览版面实现；出片带真实配音并核对音画；每轮反馈按回流规则写入",
+      "evidence": "work/domains/design/video/promo/competition/ai-code-ae-pipeline.md",
+      "confirmedAt": "2026-11-06",
+      "entryPoints": [
+        "work/domains/design/video/promo/competition/README.md"
+      ],
+      "source": "精尺匠造创赛片第4—8幕（2026-10-31至11-06）建委逐轮意见"
+    },
+    {
+      "id": "competition-ae-template-layout",
+      "label": "改AE模板的排版与验收",
+      "status": "active",
+      "path": "work/domains/design/video/promo/competition/ae-template-layout.md",
+      "selectedAny": [
+        "competition-video",
+        "enterprise-video",
+        "video"
+      ],
+      "whenAny": [
+        "AE",
+        "模板",
+        "代码",
+        "出片",
+        "成片",
+        "渲染",
+        "排版",
+        "版面",
+        "包装",
+        "剪辑",
+        "合成",
+        "预览",
+        "做出来",
+        "返修",
+        "配音"
+      ],
+      "excludeAny": [
+        "微课",
+        "教师委托",
+        "参赛课"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "AI改AE模板做创赛片画面时，判断版面取舍、字号比例、图框人像，并在交付前逐帧做排版验收",
+      "notFor": "不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴",
+      "acceptance": "每个镜头字图到位那一帧出全分辨率图，按排版验收表逐行通过后才渲染交付",
+      "evidence": "work/domains/design/video/promo/competition/ae-template-layout.md",
+      "confirmedAt": "2026-11-06",
+      "entryPoints": [
+        "work/domains/design/video/promo/competition/README.md"
+      ],
+      "source": "精尺匠造第4—8幕建委排版意见，2026-11-06第7—8幕第一版“太乱”逐张指出"
     },
     {
       "id": "title-matrix",
