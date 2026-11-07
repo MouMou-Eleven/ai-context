@@ -898,6 +898,14 @@
             "合成",
             "预览",
             "做出来",
+        "证书",
+        "频闪",
+        "闪烁",
+        "光效",
+        "字体",
+        "调色",
+        "验收",
+        "人物",
             "返修",
             "配音"
           ],
@@ -2880,11 +2888,11 @@
         "create",
         "write"
       ],
-      "useWhen": "AI改AE模板做创赛片画面时，判断版面取舍、字号比例、图框人像，并在交付前逐帧做排版验收",
+      "useWhen": "AI改AE模板做创赛片画面时，判断版面取舍、字号比例、图框人像、证书边框、同组字体颜色、频闪光效，并在交付前逐帧做排版验收",
       "notFor": "不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴",
-      "acceptance": "每个镜头字图到位那一帧出全分辨率图，按排版验收表逐行通过后才渲染交付",
+      "acceptance": "开工时把验收表复制成本单检查单，开工前、字图到位静帧、动起来以后三段逐行填实测值（最低内容y、字号、证书留白、素材色差、亮度跳变），全部通过才交付",
       "evidence": "work/domains/design/video/promo/competition/ae-template-layout.md",
-      "confirmedAt": "2026-11-06",
+      "confirmedAt": "2026-11-07",
       "entryPoints": [
         "work/domains/design/video/promo/competition/README.md"
       ],
