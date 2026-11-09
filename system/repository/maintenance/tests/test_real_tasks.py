@@ -26,6 +26,16 @@ class RealTasks(unittest.TestCase):
                      TR + 'experience/demo-driven-course-design.md', TR + 'topics.md']:
             self.assertIn(path, read)
 
+    def test_prepare_next_lesson_reads_training_style(self):
+        # 建委 2026-11-08/09 原话：没有“课件”二字，也要读到培训风格和课程组织
+        for task in ['给我准备一节AI办公课，素材你来做，要真实操作截图',
+                     '帮我做WorkBuddy训练营第3课']:
+            read = self.reads(task)
+            self.assertIn(TR + 'experience/jianwei-training-style.md', read, task)
+            self.assertIn(TR + 'experience/demo-driven-course-design.md', read, task)
+        camp = router.resolve('帮我做WorkBuddy训练营第3课', 'auto')
+        self.assertEqual(camp['selectedCandidate'], 'workbuddy-camp')
+
     def test_training_promotion_article_combines_domains(self):
         read = self.reads('写一篇公众号文章，宣传我下个月的AI培训，既要有干货又要招生')
         self.assertIn('work/domains/self-media/marketing-copy/reader-question-led-promotion.md', read)

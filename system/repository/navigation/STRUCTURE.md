@@ -1343,10 +1343,12 @@ ai-context/
 │   │   │   │   │       ├── 2026-09-09-lesson-6-bug-repair-evidence-chain.md  追溯“第六课优化修订：Bug 修复证据链与一案例多故障演示台”的调整原因与适用范围
 │   │   │   │   │       └── README.md  Bug 修复课程修订
 │   │   │   │   ├── README.md  图书馆资料归属、版本与授课边界
-│   │   │   │   └── revisions/  图书馆培训改稿与反馈
-│   │   │   │       ├── 2026-08-19-lesson-4-student-material-boundary.md  追溯“第 4 课学员正文边界修订”的调整原因与适用范围
-│   │   │   │       ├── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md  追溯“秒哒进阶课：把版本更新改造成使用场景链路”的调整原因与适用范围
-│   │   │   │       └── README.md  图书馆培训修订索引
+│   │   │   │   ├── revisions/  图书馆培训改稿与反馈
+│   │   │   │   │   ├── 2026-08-19-lesson-4-student-material-boundary.md  追溯“第 4 课学员正文边界修订”的调整原因与适用范围
+│   │   │   │   │   ├── 2026-09-02-miaoda-advanced-course-scenario-driven-updates.md  追溯“秒哒进阶课：把版本更新改造成使用场景链路”的调整原因与适用范围
+│   │   │   │   │   └── README.md  图书馆培训修订索引
+│   │   │   │   └── workbuddy-camp/  查图书馆豆包工作×WorkBuddy办公训练营的课次、规划与实测记录
+│   │   │   │       └── README.md  豆包工作 × WorkBuddy AI 办公实战训练营（济南市图书馆）
 │   │   │   ├── README.md  各单位AI培训场次事实与归属，复用方法引用培训领域
 │   │   │   └── sessions-index.md  资料入口，避免复制项目资料
 │   │   ├── archive/  查已退出当前主线的项目，避免把旧状态当现状

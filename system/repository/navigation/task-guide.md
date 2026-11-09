@@ -51,6 +51,7 @@
 | 会员社群（仅明确属于本项目） | [读取](../../../work/projects/paid-community-course/README.md) |
 | AI培训项目：企业、机关、图书馆、夜校场次 | [读取](../../../work/projects/ai-training/sessions-index.md) |
 | 济南市图书馆：别让Bug打败你 | [读取](../../../work/projects/ai-training/jinan-city-library/bug-repair/README.md) |
+| 济南市图书馆：豆包工作 × WorkBuddy AI办公实战训练营 | [读取](../../../work/projects/ai-training/jinan-city-library/workbuddy-camp/README.md) |
 | 出版体裁与书稿（先明确项目） | [读取](../../expression/README.md) |
 | 《飞书高效办公》书籍 | [读取](../../../work/projects/feishu-efficient-office/README.md) |
 | 自媒体、个人IP与渠道表达 | [读取](../../../work/domains/self-media/README.md) |

@@ -1595,6 +1595,62 @@
       ]
     },
     {
+      "id": "workbuddy-camp",
+      "label": "济南市图书馆：豆包工作 × WorkBuddy AI办公实战训练营",
+      "matchAny": [
+        "WorkBuddy训练营",
+        "WorkBuddy 训练营",
+        "AI办公实战训练营",
+        "AI 办公实战训练营",
+        "豆包工作 × WorkBuddy",
+        "豆包工作和WorkBuddy",
+        "WorkBuddy第",
+        "WorkBuddy 第"
+      ],
+      "excludeAny": [
+        "路演",
+        "答辩",
+        "讲师介绍",
+        "个人简介",
+        "自我介绍",
+        "个人介绍"
+      ],
+      "entry": "work/projects/ai-training/jinan-city-library/workbuddy-camp/README.md",
+      "priority": 100,
+      "dependencies": [
+        {
+          "path": "work/domains/training/README.md",
+          "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/projects/ai-training/jinan-city-library/README.md",
+          "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/training/experience/jianwei-training-style.md",
+          "whenAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/training/experience/demo-driven-course-design.md",
+          "whenAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        }
+      ],
+      "excludePatterns": [
+        "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计",
+        "^(?!.*培训).*((给|帮|替|为)(老师|教师|学校)|老师的|教师的|订单|接单|承接|委托).{0,15}(课件|幻灯片)|^(?!.*培训).*(课件|幻灯片).{0,15}(订单|单子)"
+      ]
+    },
+    {
       "id": "publishing",
       "label": "出版体裁与书稿（先明确项目）",
       "matchAny": [
@@ -3855,7 +3911,13 @@
         "课堂文档",
         "培训内容",
         "讲课稿",
-        "培训文"
+        "培训文",
+        "备课",
+        "准备一节",
+        "一节课",
+        "这节课",
+        "下节课",
+        "准备第"
       ],
       "excludeAny": [
         "方案",
