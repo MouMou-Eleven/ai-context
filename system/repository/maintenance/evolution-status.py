@@ -22,6 +22,7 @@ OBSERVATIONS = 'system/repository/observations.md'
 MARKER = re.compile(r'<!--\s*last-upgrade:\s*(\d{4}-\d{2}-\d{2})\s*-->')
 DATE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 LINK_TARGET = re.compile(r'\]\(([^)\s]+)\)')
+FAILURE_TYPE = re.compile(r'(?<![A-Za-z])[ABC](?![A-Za-z])')
 
 # Default thresholds; evolution.md explains them and says when to adjust.
 ROUTINE_LOG_ROWS = 20
@@ -69,19 +70,24 @@ def read(root, name):
 
 
 def status(root=ROOT):
+    """Triggers 1-3 count every row still in the tables (handled rows are deleted at an
+    upgrade, unhandled ones stay and keep counting); trigger 4 counts rows dated on or
+    after the last upgrade."""
     root = Path(root)
     log_text = read(root, LOG)
     marker = MARKER.search(log_text)
     last = marker.group(1) if marker else '0000-00-00'
-    entries = []
+    entries, warnings = [], []
     for cells in table_rows(log_text, '日志'):
-        if len(cells) < 6 or not DATE.match(cells[0]) or cells[0] <= last:
+        if len(cells) < 6 or not DATE.match(cells[0]):
+            warnings.append(f'使用日志有一行没被计数（日期要写成 YYYY-MM-DD，至少 6 列）：{" | ".join(cells)[:60]}')
             continue
-        entries.append({'date': cells[0], 'task': cells[1], 'types': set(re.findall(r'[ABC]', cells[4])),
-                        'rules': [normalise_target(t) for t in LINK_TARGET.findall(cells[5])]})
+        entries.append({'date': cells[0], 'types': set(FAILURE_TYPE.findall(cells[4])),
+                        'rules': sorted({normalise_target(t) for t in LINK_TARGET.findall(cells[5])})})
+    recent = [entry for entry in entries if entry['date'] >= last]
     reasons = []
-    if len(entries) >= ROUTINE_LOG_ROWS:
-        reasons.append(f'上次升级（{last}）以来已记 {len(entries)} 条使用日志，该做一次例行复盘')
+    if len(recent) >= ROUTINE_LOG_ROWS:
+        reasons.append(f'上次升级（{last}）以来已记 {len(recent)} 条使用日志，该做一次例行复盘')
     b_hits = defaultdict(list)
     for entry in entries:
         if 'B' in entry['types']:
@@ -95,13 +101,16 @@ def status(root=ROOT):
         reasons.append(f'有 {len(missed)} 次该读的经验没读到（A 类），入口或任务表要改')
     groups = defaultdict(set)
     for cells in table_rows(read(root, OBSERVATIONS), '观察'):
-        if len(cells) < 8 or not DATE.match(cells[0]) or not cells[7].startswith('待定'):
+        if len(cells) < 8 or not DATE.match(cells[0]):
+            warnings.append(f'观察记录有一行没被计数（日期要写成 YYYY-MM-DD，8 列）：{" | ".join(cells)[:60]}')
             continue
-        groups[cells[2]].add(cells[1])
+        if cells[7].startswith('待定') and cells[2]:
+            groups[cells[2]].add(cells[1])
     for category, projects in sorted(groups.items()):
-        if category and len(projects) >= PROJECTS_FOR_PROMOTION:
+        if len(projects) >= PROJECTS_FOR_PROMOTION:
             reasons.append(f'观察“{category}”已在 {len(projects)} 个项目出现（{"、".join(sorted(projects))}），可以考虑升成通用规则')
-    return {'lastUpgrade': last, 'entriesSinceUpgrade': len(entries), 'due': bool(reasons), 'reasons': reasons}
+    return {'lastUpgrade': last, 'entries': len(entries), 'entriesSinceUpgrade': len(recent),
+            'due': bool(reasons), 'reasons': reasons, 'warnings': warnings}
 
 
 def reminder(result):
@@ -125,3 +134,5 @@ if __name__ == '__main__':
     else:
         print(reminder(result) if result['due'] else
               f'仓库暂不需要升级：上次升级 {result["lastUpgrade"]}，之后已记 {result["entriesSinceUpgrade"]} 条使用日志。')
+        for warning in result['warnings']:
+            print('注意：' + warning)

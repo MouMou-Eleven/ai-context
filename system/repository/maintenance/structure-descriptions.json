@@ -435,7 +435,7 @@
     "work/domains/design/graphic/ppt/ai-assisted-design/prompt-playbook.md": "按实际首页和当前页构思提示词，指导生成、重建与定点返修",
     "personal/evidence": "背书表引用的证书、聘书等原件照片",
     "personal/evidence/miaoda-ai-gold-lecturer-2026-05.jpg": "百度秒哒 AI 金牌讲师荣誉证书照片（2026年5月签发）",
-    "system/repository/maintenance/content-guards.py": "提交前拦截本机路径进方法、大脑条目过长、入口表过长、同一规则写在两处、红线数量增加",
+    "system/repository/maintenance/content-guards.py": "提交前拦截本机路径进方法、大脑条目过长、入口表过长、同一规则写在两处、任何文件红线数增加",
     "system/repository/maintenance/evolution-status.py": "按使用日志和观察记录判断仓库该不该升级；会话开始钩子到期才提醒",
     "system/repository/maintenance/tests/test_evolution.py": "进化机制回归：升级提醒按内容触发、钩子输出、红线预算拦截",
     "system/repository/maintenance/tests/test_guards.py": "内容规则检查回归：确认违规内容真的会被拦下，当前仓库全部通过",

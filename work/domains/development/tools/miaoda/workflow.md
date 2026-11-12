@@ -47,7 +47,7 @@ Codex 交付前至少做到：
 
 ## 第 3 阶段：统一技术栈，做运行时闭包（路径 A）
 
-**红线**：秒哒 Web 应用是 **React + Vite**，产物是 `dist/`。不能用 Next.js、SSR、Next API Routes，也不能用必须常驻 Node 服务才能打开的方案。Vercel、Cloudflare 的专用配置不带过去。
+**默认**：秒哒 Web 应用是 **React + Vite**，产物是 `dist/`。不能用 Next.js、SSR、Next API Routes，也不能用必须常驻 Node 服务才能打开的方案。Vercel、Cloudflare 的专用配置不带过去。
 
 只交付运行时真正用到的文件：
 

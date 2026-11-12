@@ -1483,7 +1483,7 @@ ai-context/
 │       ├── maintenance/  维护工具
 │       │   ├── .gitignore  资料与资源
 │       │   ├── check-deliverable.py  外部交付物的规则信号检查脚本
-│       │   ├── content-guards.py  提交前拦截本机路径进方法、大脑条目过长、入口表过长、同一规则写在两处、红线数量增加
+│       │   ├── content-guards.py  提交前拦截本机路径进方法、大脑条目过长、入口表过长、同一规则写在两处、任何文件红线数增加
 │       │   ├── context-route.py  跨平台维护或执行脚本
 │       │   ├── context_common.py  跨平台维护或执行脚本
 │       │   ├── context_retrieval.py  任务识别、实时正文检索与完整来源包

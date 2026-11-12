@@ -59,15 +59,32 @@ class Evolution(unittest.TestCase):
     def test_quiet_after_upgrade(self):
         result = self.status(row('2026-11-14'), obs('2026-11-14', '甲项目', '画面饱满'))
         self.assertFalse(result['due'])
-        self.assertEqual(result['entriesSinceUpgrade'], 1)
+        self.assertEqual(result['entriesSinceUpgrade'], 2)
 
-    def test_rows_on_or_before_last_upgrade_do_not_count(self):
-        result = self.status(''.join(row('2026-11-12', 'B', RULE) for _ in range(3)))
+    def test_unhandled_rows_from_before_the_upgrade_still_count(self):
+        result = self.status(row('2026-11-01', 'B', RULE) + row('2026-11-20', 'B', RULE))
+        self.assertTrue(any('B 类' in r for r in result['reasons']))
+        self.assertEqual(result['entriesSinceUpgrade'], 2)  # 2026-11-20 and the upgrade-day row
+
+    def test_routine_review_counts_only_since_the_upgrade(self):
+        old = ''.join(row(f'2026-10-{d:02d}') for d in range(1, 21))
+        self.assertFalse(self.status(old)['due'])
+
+    def test_failure_type_letters_must_stand_alone(self):
+        result = self.status(row('2026-11-20', 'N/A') + row('2026-11-21', 'NA'))
         self.assertFalse(result['due'])
-        self.assertEqual(result['entriesSinceUpgrade'], 0)
+
+    def test_same_link_twice_in_one_row_counts_once(self):
+        self.assertFalse(self.status(row('2026-11-20', 'B', RULE + '、' + RULE))['due'])
+
+    def test_malformed_dates_are_reported(self):
+        result = self.status(row('2026-11-3', 'A') + row('2026-11-04', 'A'))
+        self.assertFalse(result['due'])
+        self.assertTrue(result['warnings'])
 
     def test_twenty_entries_trigger_routine_review(self):
-        result = self.status(''.join(row(f'2026-12-{d:02d}') for d in range(1, 21)))
+        self.assertFalse(self.status(''.join(row(f'2026-12-{d:02d}') for d in range(1, 19)))['due'])
+        result = self.status(''.join(row(f'2026-12-{d:02d}') for d in range(1, 20)))  # + upgrade-day row = 20
         self.assertTrue(result['due'])
         self.assertIn('20 条使用日志', result['reasons'][0])
 
@@ -114,6 +131,10 @@ class Evolution(unittest.TestCase):
         result = evolution.status(ROOT)
         self.assertRegex(result['lastUpgrade'], r'^\d{4}-\d{2}-\d{2}$')
         self.assertNotEqual(result['lastUpgrade'], '0000-00-00')
+        self.assertGreater(result['entries'], 0, '使用日志的“## 日志”表没解析出行，标题或表格格式可能改坏了')
+        self.assertEqual(result['warnings'], [])
+        observed = evolution.table_rows((ROOT / evolution.OBSERVATIONS).read_text(encoding='utf-8'), '观察')
+        self.assertTrue(observed and all(len(cells) == 8 for cells in observed), '观察表没解析出 8 列的行')
 
     def test_agents_links_the_loop(self):
         agents = (ROOT / 'AGENTS.md').read_text(encoding='utf-8')
@@ -129,9 +150,18 @@ class RedlineBudget(unittest.TestCase):
 
     def test_new_red_line_is_blocked(self):
         files = repo_files(ROOT)
+        budget = guards.redline_budget()
         self.assertEqual([e for e in guards.check(ROOT, files) if '红线标记' in e], [])
-        blocked = guards.check(ROOT, files, redline_budget=guards.REDLINE_BUDGET - 1)
-        self.assertTrue(any('红线标记' in e and '建委' in e for e in blocked))
+        self.assertEqual(guards.redline_counts(ROOT, files), budget, '红线减少后请同步调低 redlineBudget')
+        name = 'AGENTS.md'
+        moved = dict(budget, **{name: budget[name] - 1})
+        blocked = guards.check(ROOT, files, budget=moved)
+        self.assertTrue(any('红线标记' in e and name in e and '建委' in e for e in blocked))
+
+    def test_red_lines_in_projects_and_cases_are_counted(self):
+        self.assertTrue(guards.redline_scope('work/projects/README.md'))
+        self.assertTrue(guards.redline_scope('work/domains/design/case-a.md'))
+        self.assertFalse(guards.redline_scope('system/repository/revisions/2026-11-13-x.md'))
 
 
 if __name__ == '__main__':
