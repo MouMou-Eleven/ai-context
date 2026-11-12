@@ -21,23 +21,21 @@
 
 只留违反了、改稿也补不回来的事：编造事实；把内部内容交给外部的人；虚报做到了哪一步；用错平台；动线上数据、删改别人亲手改过的成果；泄露凭据；违反许可。**新的红线只有建委能定**，AI 觉得重要的规则标默认，并写进检查单。降为默认不等于不重要：没有特别理由照样要做，能在成品上核对的，仍在各领域的检查表、验收表里逐行查。
 
-## 请建委确认（9 条）
+## 建委对 9 条待定项的决定（2026-11-13）
 
-拿不准的都没有擅自定：建委定过或可能定过的，保持红线不动；只是强调过的，降为默认但列在这里。建委说一句“第几条降”或“第几条恢复”就改。
+交付时拿不准的 9 条没有擅自定，列给建委；建委当天逐条答复，已按答复改好：
 
-| 位置 | 内容 | 现在 | 为什么请建委定 |
+| 位置 | 内容 | 建委的决定 | 现在 |
 |---|---|---|---|
-| work/domains/design/graphic/ppt/premium-course/workflow.md:50 | 封面保护：只改课程标题，其余原样保留 | 仍是红线 | 建委当时亲口定为红线；按新范围属于改稿能补回的事 |
-| work/domains/design/graphic/ppt/premium-course/workflow.md:52 | 片头 5 秒静止、无声 | 仍是红线 | 建委当时亲口定为红线；按新范围属于改稿能补回的事 |
-| work/projects/README.md:25 | 作品集网站与言剪AI是两个独立项目 | 仍是红线 | 建委当时亲口定为红线；按新范围属于改稿能补回的事 |
-| work/domains/design/video/promo/competition/ae-template-layout.md:70 | - 画面里不能有任何闪：发现就修，光效引起的就删光效（红线）。 建委原话：“… | 仍是红线 | 本机记忆里这条标着“红线，2026-11-07”，查不到是建委定的还是 AI 标的；按新范围属于改稿能补回的事 |
-| work/domains/design/video/promo/competition/ai-code-ae-pipeline.md:106 | 建委按画面给了模板，就每个画面用它对应的模板做（红线）。 建委常按“第N幕画… | 仍是红线 | 同上，本机记忆里标着“红线，2026-11-07”（第14—15幕被批“完全是错的”） |
-| work/domains/development/industry-cases/education/tianjin-agent-contest/platform/build-sop.md:54 | 六、生成评审链接（红线） | 仍是红线 | 不在红线的几类里，但评审链接一旦交出去错了就补不回来；保留还是降，请建委定 |
-| work/domains/design/video/promo/competition/ai-code-ae-pipeline.md:104 | 只改、只渲模板里对应的那一段（红线）。 一个 AE 模板通常 40 多秒，是… | 已降为默认 | 建委 2026-11-04 说过“一定要记住，后面不再反复提醒”，但没说是红线；要恢复就说一句 |
-| brain/preferences.md:29 | - 讲 AI 培训从自己的长处出发（红线）。 建委的长处是善用 AI，能借 … | 已降为默认 | 建委反复强调的讲课定位；讲偏了能改，所以降了；要恢复就说一句 |
-| work/domains/training/experience/jianwei-training-style.md:29 | 先站对位置：从“怎么用 AI 驾驭它”出发，不从软件专家的角度讲（红线） | 已降为默认 | 和上一条是同一条规则的执行细则，跟着上一条定 |
-
-另外请看一眼下面“保留的红线”：有不该算红线的，或者“降为默认”里有该保留的，直接说。
+| work/domains/design/graphic/ppt/premium-course/workflow.md:50 | 精品课封面只改课程标题 | 确认，其他保持不变；精品课的字体、字号有严格要求 | 红线；另把正文模板的“字体字号”定为红线（建委新定） |
+| work/domains/design/graphic/ppt/premium-course/workflow.md:52 | 片头 5 秒静止、无声 | 确认 | 红线 |
+| work/projects/README.md:25 | 作品集网站与言剪AI是两个独立项目 | 确认：作品集网站是建委JIANWEI独立设计师在线平台，言剪AI是 AI 剪辑项目，不要混为一谈 | 红线，补上两个项目的全称 |
+| work/domains/design/video/promo/competition/ae-template-layout.md:70 | 画面里的闪 | 调倍速后闪的频次跟着变，所以最好不要闪；但闪分整个画面的和点缀的，不是所有闪都移除 | 默认：整个画面的闪必须修，点缀的闪按情况判断 |
+| work/domains/design/video/promo/competition/ai-code-ae-pipeline.md:106 | 按画面给的模板 | 尽量用；用的是场景、出现效果、运镜、文字效果和标题素材，要按现有素材重新排版、布局和设计，不是原样套 | 默认，按说明重写 |
+| work/domains/development/industry-cases/education/tianjin-agent-contest/platform/build-sop.md:54 | 天津大赛评审链接 | 保持原样；目前没有新的天津订单，有了再沉淀 | 红线，不动 |
+| work/domains/design/video/promo/competition/ai-code-ae-pipeline.md:104 | 只渲模板里用到的那一段 | 确认：比如 30 秒模板只用了 10 秒，就只渲那 10 秒 | 默认，补上这个例子 |
+| brain/preferences.md:29 | 讲 AI 培训的站位 | 纠正：不是从建委的长处出发，核心是让大家用 AI 的思维找解决方案，而不是传统的角度和思维 | 默认，按纠正重写 |
+| work/domains/training/experience/jianwei-training-style.md:29 | 同一条规则在培训风格里的具体做法 | 随上一条 | 默认，标题和“为什么”按纠正重写，具体做法和对照例子保留 |
 
 ## 保留的红线（35 处）
 
