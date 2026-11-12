@@ -44,6 +44,7 @@ ai-context/
 │   │   │   │   │   ├── mood.md  高级感、力量感、纤细感、热闹与安静各自的手段
 │   │   │   │   │   ├── page-composition.md  单图七种构图、多图四种构图、平衡与重心
 │   │   │   │   │   ├── README.md  所有设计共用的审美底座：设计顺序、按问题找专题、生图用法、交付前检查表
+│   │   │   │   │   ├── taste-benchmarks.md  建委审美标尺：认可过的成品当下限，真实正反例对照，补规则写不到的判断
 │   │   │   │   │   ├── typography.md  字体数量、中西文搭配、字号层级、行距字距行长、字体气质
 │   │   │   │   │   └── whitespace.md  留白的作用、大小依据、颜色、延伸，以及在图片上放文字
 │   │   │   │   ├── feedback-iteration.md  多轮反馈修改方法：可见问题、每轮一类、退回、授权范围
@@ -286,7 +287,7 @@ ai-context/
 │   │   │       │       ├── practical-workflow.md  实战工作流
 │   │   │       │       ├── prompt-cases.md  提示词案例
 │   │   │       │       ├── prompt-templates.md  提示词模板
-│   │   │       │       └── README.md  Seedance 读取顺序、红线与片型分工
+│   │   │       │       └── README.md  Seedance 读取顺序、几条要点与片型分工
 │   │   │       ├── education/  为教师委托的微课与教育交互作品查制作规范
 │   │   │       │   ├── ai-generated-microcourse-video-workflow.md  AI教师微课的音频分段、场景关键图、多镜头提示词与验收方法
 │   │   │       │   ├── case-little-leaf-microcourse-mv.md  《小树叶》AI 教师音乐微课商单案例
@@ -1476,16 +1477,18 @@ ai-context/
 │   ├── README.md  AI协作与维护
 │   └── repository/  读取写入、导航与校验
 │       ├── capability-evidence.md  依据本人实践与复用证据更新能力，收藏不算掌握
-│       ├── execution-checks.md  从规则读取到实际交付物验收的执行闭环
+│       ├── evolution.md  仓库怎么越用越好用：三类失败、使用日志、观察记录、规则晋升与降级、按内容量升级
+│       ├── execution-checks.md  从规则读取到交付物验收的执行闭环：本单检查单、正式交付前的独立审查
 │       ├── ingestion-workflow.md  写入资料时同步归属、索引、说明、校验和发布
 │       ├── maintenance/  维护工具
 │       │   ├── .gitignore  资料与资源
 │       │   ├── check-deliverable.py  外部交付物的规则信号检查脚本
-│       │   ├── content-guards.py  提交前拦截本机路径进方法、大脑条目过长、入口表过长、同一规则写在两处
+│       │   ├── content-guards.py  提交前拦截本机路径进方法、大脑条目过长、入口表过长、同一规则写在两处、红线数量增加
 │       │   ├── context-route.py  跨平台维护或执行脚本
 │       │   ├── context_common.py  跨平台维护或执行脚本
 │       │   ├── context_retrieval.py  任务识别、实时正文检索与完整来源包
 │       │   ├── desktop-sync.py  跨平台维护或执行脚本
+│       │   ├── evolution-status.py  按使用日志和观察记录判断仓库该不该升级；会话开始钩子到期才提醒
 │       │   ├── generate-structure-html.ps1  从 Markdown 生成交互式 HTML
 │       │   ├── git-hooks/  本机自动同步触发器
 │       │   │   ├── post-checkout  检出或切换后自愈桌面结构
@@ -1507,6 +1510,7 @@ ai-context/
 │       │   │   ├── README.md  维护回归测试
 │       │   │   ├── test_context.py  跨平台维护或执行脚本
 │       │   │   ├── test_deliverable.py  跨平台维护或执行脚本
+│       │   │   ├── test_evolution.py  进化机制回归：升级提醒按内容触发、钩子输出、红线预算拦截
 │       │   │   ├── test_guards.py  内容规则检查回归：确认违规内容真的会被拦下，当前仓库全部通过
 │       │   │   ├── test_methods.py  跨领域方法发现、误触发与登记维护回归
 │       │   │   ├── test_real_tasks.py  建委真实任务回归：银行课件、培训宣传、培训方案、秒哒支付、宣传片分镜
@@ -1524,14 +1528,17 @@ ai-context/
 │       │   ├── STRUCTURE.html  日常知识导航与完整文件视图
 │       │   ├── STRUCTURE.md  完整物理文件树与结构约定
 │       │   └── task-guide.md  完整任务指南，按主任务和条件依赖读取
+│       ├── observations.md  观察记录：建委纠正或认可成品时的原话和成品，待晋升成通用规则
 │       ├── README.md  治理总入口
 │       ├── revisions/  仓库级重大修订
+│       │   ├── 2026-11-13-evolution-and-redline-review.md  第八轮整改说明：进化机制、审美标尺、红线收紧及全部红线去向表
 │       │   └── README.md  仓库修订索引
 │       ├── templates/  新建项目、案例或方法记录时复用基本字段
 │       │   ├── case.md  记录真实输入、过程、结果、限制与复用方法
 │       │   ├── method.md  写清方法适用条件、执行步骤、来源和验收
 │       │   ├── project.md  建立长期项目的事实、资料索引与修订入口
 │       │   └── README.md  写入模板
+│       ├── usage-log.md  使用日志：每次用仓库做完成品记一行，升级仓库的依据
 │       └── versioned-knowledge-policy.md  动态产品知识与版本治理
 ├── .gitattributes  Git 文本属性与换行规范
 ├── .github/  目录入口
@@ -1570,4 +1577,4 @@ ai-context/
 
 各入口的分工见[仓库运行](../README.md)。命名使用kebab-case，固定工具文件名除外；文本UTF-8与LF，使用相对链接，凭据不入库。
 
-*结构最后确认：2026-10-31*
+*结构最后确认：2026-11-13*

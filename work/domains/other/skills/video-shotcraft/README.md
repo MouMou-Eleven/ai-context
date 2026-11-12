@@ -19,7 +19,7 @@
 
 调用时它会先让你在三种模式里选：直接套 Ink Press 模板、AI 自主创作、共同创作（逐步确认）。建委要掌控方向的商单，选共同创作。
 
-**Ink Press 的外观是这个 Skill 的样式，不是建委的默认风格。** 借它的流程、镜头卡和检查方法，配色、字体、版式按本次内容定（见[代码式视频设计经验 · 复用的是手法](../../../design/common/code-driven-video/README.md#复用的是手法不是样式红线)）。交付前仍按[代码式视频设计经验](../../../design/common/code-driven-video/README.md)的检查表验收。
+**Ink Press 的外观是这个 Skill 的样式，不是建委的默认风格。** 借它的流程、镜头卡和检查方法，配色、字体、版式按本次内容定（见[代码式视频设计经验 · 复用的是手法](../../../design/common/code-driven-video/README.md#复用的是手法不是样式默认)）。交付前仍按[代码式视频设计经验](../../../design/common/code-driven-video/README.md)的检查表验收。
 
 ## 怎么调用
 

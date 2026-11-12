@@ -19,7 +19,10 @@ AI 在各领域里是工具或主题，不单独成为一个大类。比如"用 
 | 文件 | 作用 |
 |---|---|
 | [ingestion-workflow.md](./ingestion-workflow.md) | 往仓库写东西的规范：值不值得写、放哪、怎么改、怎么同步 |
-| [execution-checks.md](./execution-checks.md) | 用仓库经验做成品后怎么自查 |
+| [execution-checks.md](./execution-checks.md) | 用仓库经验做成品后怎么自查，正式交付前怎么请独立审查 |
+| [evolution.md](./evolution.md) | 仓库怎么越用越好用：三类失败、使用日志、观察记录、规则晋升与降级、按内容量升级 |
+| [usage-log.md](./usage-log.md) | 使用日志：每次用仓库做完成品记一行，升级仓库的依据 |
+| [observations.md](./observations.md) | 观察记录：建委纠正或认可成品时的原话和成品，待晋升成规则 |
 | [versioned-knowledge-policy.md](./versioned-knowledge-policy.md) | 平台功能、价格这类会变的事实怎么管 |
 | [capability-evidence.md](./capability-evidence.md) | 什么情况下能说建委"会"某项能力 |
 | [templates/](./templates/README.md) | 项目、场次、方法的记录模板 |
@@ -41,4 +44,4 @@ git config core.hooksPath system/repository/maintenance/git-hooks
 
 ## 以后怎么检验仓库好不好用
 
-用真实任务检验，不看文件数量。每次大改之后，用几句建委平时的说法（比如"看我的仓库，帮我写一份给银行的 AI 办公课件"），在一个全新的对话里测：AI 有没有找到对的文件、有没有用上里面的经验、成品有没有违反红线。发现漏读，就改 AGENTS.md 的任务表或对应 README；发现读了还犯错，就把规则改得更具体。
+用真实任务检验，不看文件数量。每次大改之后，用几句建委平时的说法（比如"看我的仓库，帮我写一份给银行的 AI 办公课件"），在一个全新的对话里测：AI 有没有找到对的文件、有没有用上里面的经验、成品有没有违反红线。发现漏读，就改 AGENTS.md 的任务表或对应 README；发现读了还犯错，就把这条变成交付前的检查动作。平时每次使用都记进[使用日志](./usage-log.md)，什么时候该改、怎么改见[进化机制](./evolution.md)。

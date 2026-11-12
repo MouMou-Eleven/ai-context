@@ -23,7 +23,7 @@
 | 公众号 / 图文文章 | [自媒体入口](work/domains/self-media/README.md) → [文章](work/domains/self-media/articles/README.md) + [标题](work/domains/self-media/titles/README.md) |
 | 宣传、招生、产品介绍、报名页 | [宣传写法](work/domains/self-media/marketing-copy/reader-question-led-promotion.md) + [口语样稿](system/expression/voice-samples.md) + 对应项目的事实 |
 | 朋友圈 / 社群话术 / 口播 / 直播 | [自媒体入口](work/domains/self-media/README.md) 里对应的那一类 + [口语样稿](system/expression/voice-samples.md) |
-| 任何设计成品：PPT、海报、折页、书籍、视频画面、网页界面、流程图；用户只说“做好看点”“高级点” | [设计原则与审美](work/domains/design/common/design-principles/README.md)（含[审美词库](work/domains/design/common/design-principles/aesthetic-vocabulary.md)）+ [设计入口](work/domains/design/README.md) → 对应交付物目录 |
+| 任何设计成品：PPT、海报、折页、书籍、视频画面、网页界面、流程图；用户只说“做好看点”“高级点” | [设计原则与审美](work/domains/design/common/design-principles/README.md)（含[审美词库](work/domains/design/common/design-principles/aesthetic-vocabulary.md)、[建委审美标尺](work/domains/design/common/design-principles/taste-benchmarks.md)）+ [设计入口](work/domains/design/README.md) → 对应交付物目录 |
 | 做任何 PPT（含自我介绍、作品集、公司介绍）、PPT 美化、课件美化或排版、首页定调、设计图转可编辑 PPT | [PPT入口](work/domains/design/graphic/ppt/README.md) → [自由视觉PPT](work/domains/design/graphic/ppt/ai-assisted-design/README.md) + [拆页与版式](work/domains/design/graphic/ppt/ai-assisted-design/layout-and-pagination.md)；有指定模板或录课合成才走精品课 |
 | 视频：宣传片、微课、故事片、AI 视频提示词 | [视频入口](work/domains/design/video/README.md) → 对应片型目录；要写视频提示词再读 [Seedance](work/domains/design/video/common/seedance/README.md) |
 | AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、做动画、出成片（不管用户提没提代码） | [代码式视频设计经验](work/domains/design/common/code-driven-video/README.md) + [设计原则与审美](work/domains/design/common/design-principles/README.md)；片型照常读上一行，比赛视频再读该比赛目录 |
@@ -42,9 +42,10 @@
 | 用 Skill | [Skill 库](work/domains/other/skills/README.md) |
 | 访问网站、查看在线对话、浏览器操作或网站验收 | [本机浏览器调用约定](system/environment/computers/desktop-1/README.md#浏览器调用约定2026-11-05建委明确要求) |
 | 电脑、网络、本机工具 | [设备环境](system/environment/README.md) |
-| 往仓库里写东西 | 本页第二部分 + [写入规范](system/repository/ingestion-workflow.md) |
+| 往仓库里写东西 | 本页第二部分 + [写入规范](system/repository/ingestion-workflow.md)；建委纠正或认可成品时加读[进化机制](system/repository/evolution.md) |
+| 仓库该升级了、维护或整改仓库 | [进化机制 · 升级怎么做](system/repository/evolution.md#七升级怎么做) + [使用日志](system/repository/usage-log.md) + [观察记录](system/repository/observations.md) + [写入规范](system/repository/ingestion-workflow.md) |
 
-**按交付物自动叠加（红线）**：不管主任务是什么，只要这次要交出下面这些东西，就自动加读右边的规范，不等建委提：
+**按交付物自动叠加（默认）**：不管主任务是什么，只要这次要交出下面这些东西，就自动加读右边的规范，不等建委提：
 
 | 这次要交出 | 自动加读 |
 |---|---|
@@ -79,7 +80,7 @@
 
 规则分三级：
 
-- **红线**：不能违反，比如给学员的课件不写讲师安排、荣誉数字不能编、百度秒哒不用飞书妙搭的接口。
+- **红线**：违反了，改稿也补不回来的事，不能违反。只有这几类：编造事实（荣誉、数字、身份、签名证书、史料）；把内部内容交给外部的人（讲师安排给学员、工作提示给评委、内部推敲给客户）；虚报做到了哪一步；用错平台（百度秒哒不用飞书妙搭的接口）；动线上数据、删改别人亲手改过的成果；泄露凭据；违反许可。比如给学员的课件不写讲师安排、荣誉数字不能编。**新的红线只有建委能定**；AI 觉得某条很重要，就标默认，并把它写进检查单。
 - **默认**：没有特别理由就照做。
 - **可灵活**：看具体场景判断，比如课件里用生图还是现场演示，由知识点决定。
 
@@ -87,11 +88,15 @@
 
 ### 第 4 步：交付前自查，并告诉建委用了什么
 
-把读到的红线逐条对照成品检查一遍（方法见[成品自查](system/repository/execution-checks.md)），再交付。交付时用一两句话告诉建委：这次读了仓库里哪几个文件、用了哪几条经验、有没有哪条没照做以及原因。这一步不能省，建委靠它判断经验有没有被用上。
+开工时把这次要守的规则抄成本单检查单，交付前逐条对照成品检查；正式交付前另开一个全新的审查者再查一遍（只给它成品、要求和检查单，不给自己的结论）。方法都在[成品自查](system/repository/execution-checks.md)。交付时用一两句话告诉建委：这次读了仓库里哪几个文件、用了哪几条经验、有没有哪条没照做以及原因。这一步不能省，建委靠它判断经验有没有被用上。
 
-### 容易混淆的地方（红线）
+交付后在[使用日志](system/repository/usage-log.md)记一行：读了什么、返工几轮、错在哪一类（A 没读到、B 读了没做到、C 照做了仍不好）。这是以后升级仓库的依据，写法见[进化机制](system/repository/evolution.md)。
 
-- **百度秒哒 ≠ 飞书妙搭。** 建委说"秒哒""秒嗒"、网址含 miaoda.cn 或 appmiaoda.com，都是百度秒哒。**不要**调用 lark-apps、lark-cli apps、Spark 这些飞书妙搭的工具和接口。只有明确出现"飞书妙搭"或 miaoda.feishu.cn 时才是飞书的产品。
+**仓库升级提醒**：开工读完本页后，运行 `python -B system/repository/maintenance/evolution-status.py`（不能运行脚本就按[进化机制第六节](system/repository/evolution.md#六仓库什么时候该升级看内容量不看日期)自己数）。显示“该升级”时，在每次回复末尾用一句话提醒建委，直到升级完成。
+
+### 容易混淆的地方（默认，第一条是红线）
+
+- **百度秒哒 ≠ 飞书妙搭（红线）。** 建委说"秒哒""秒嗒"、网址含 miaoda.cn 或 appmiaoda.com，都是百度秒哒。**不要**调用 lark-apps、lark-cli apps、Spark 这些飞书妙搭的工具和接口。只有明确出现"飞书妙搭"或 miaoda.feishu.cn 时才是飞书的产品。
 - **培训 ≠ 会员社群。** 企业、机关、图书馆、夜校的培训属于 [AI 培训项目](work/projects/ai-training/README.md)；课号只在自己的系列里有效。
 - **给学员的 ≠ 给讲师的 ≠ 给主办方的。** 同一场培训，课件、备课稿、方案是三种东西，分开写。
 - **课件有两种。** 建委自己去讲课用的课件（培训大纲、培训内容、演示用的 Word/Excel 案例）属于[培训](work/domains/training/README.md)；给老师做或美化的课件是客户订单，属于设计：有指定模板或要录课合成走[精品课](work/domains/design/graphic/ppt/premium-course/README.md)，没有约束走[自由视觉PPT](work/domains/design/graphic/ppt/ai-assisted-design/README.md)。教育领域说的**万彩微课就是 MG 动画**，走[微课与教育交互](work/domains/design/video/education/README.md)；企业的 MG 动画按普通视频走。
@@ -106,14 +111,16 @@
 
 1. **先拉最新。** 写之前 `git pull`，本地落后远端时提交会被拦下。本机的旧副本不要用。
 2. **先找已有位置。** 先搜仓库里有没有讲同一件事的文件。有就改那一处：补充、修正或替换过时内容。不要另起新文件，也不要在末尾追加一条意思相近的新规则。
-3. **一条规则只写一处。** 规则已经在别的文件有正文，就改那里，别处只放一句话加链接；收到建委纠正时改规则的家，不要在入口、README、大脑各补一遍。各类规则的家见[写入规范](system/repository/ingestion-workflow.md#一条规则只有一个家红线)。方法正文只写做法，来源和验证状态放文件末尾。
+3. **一条规则只写一处。** 规则已经在别的文件有正文，就改那里，别处只放一句话加链接；收到建委纠正时改规则的家，不要在入口、README、大脑各补一遍。各类规则的家见[写入规范](system/repository/ingestion-workflow.md#一条规则只有一个家默认)。方法正文只写做法，来源和验证状态放文件末尾。
 4. **写清楚，不要压缩成口号。** 每条经验写明：什么场景、怎么做、一个正例或反例、为什么。"注意口语化"这种一句话规则没法执行；要写"像这样说，不要像那样说"。
-5. **标级别。** 新规则标上红线、默认或可灵活。
+5. **标级别。** 新规则标上默认或可灵活。红线只有建委能定，AI 不自己加；提交检查会拦下红线数量的增加。
 6. **按业务归属放，事实和方法分开。** 归属怎么判断见[写入规范](system/repository/ingestion-workflow.md#先按业务确定归属默认)。某个项目的事实（价格、进度、客户、本机路径）放项目或案例；能用到别处的做法放领域，两边互相链接。
 7. **新建目录或新分类，先问建委。** 问的时候同时给两个方案：A. 放进已有的哪个位置；B. 新建什么、叫什么。并说明理由。建委同意后再建。**例外**：建委已经点名了位置和名字（如"在微课与教育交互下建一个精品课板块"），直接建，并且板块里必须有方法文件，不能只堆案例。不建"合集""其他""杂项"这类汇总文件夹。
 8. **过时的内容直接改掉或删掉。** 不要新旧并列，Git 历史能找回旧版本。不再单独写"修订记录"文件，除非改的是整个仓库的结构。
 9. **同步索引。** 新增、移动、删除文件后，更新最近一层 README 的目录。移动文件后运行 `python system/repository/maintenance/relink.py 旧路径=新路径` 修正链接。
 10. **校验后再推送。** 运行 `python -B system/repository/maintenance/sync-navigation.py`、`sync-structure.py`、`validate-context.py`，没有错误再提交。
+
+**建委纠正或认可成品时（任何对话都适用）**：这一单马上照他说的改；要不要写成以后通用的规则，先把原话和成品记进[观察记录](system/repository/observations.md)，由 AI 按[晋升条件](system/repository/evolution.md#三什么时候把观察升成通用规则ai-自己判断默认)自己判断，升了什么在回复末尾告诉建委。建委明确说“记住这条”“以后都这样”“沉淀到××”时，直接按写入规范写进方法。
 
 **建委大脑自动提炼（任何对话都适用）**：建委自己说出观点、判断标准或做事原则时，按[写入规范 · 建委大脑自动提炼](system/repository/ingestion-workflow.md#建委大脑自动提炼)判断要不要存进 [brain/](brain/README.md)，存了什么在回复末尾告诉建委。
 

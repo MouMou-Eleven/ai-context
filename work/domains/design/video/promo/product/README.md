@@ -10,7 +10,7 @@
 2. **结构和验收借企业片流程**：需求、素材核验、分镜、制作与验收按[企业宣传片通用制作与验收流程](../enterprise/workflow.md)走，把“企业事实”换成“产品事实”。
 3. **软件、网站、App 类产品**：用真实页面截图做镜头，可以调用 [video-shotcraft](../../../../other/skills/video-shotcraft/README.md) 的流程和镜头卡；外观按本次产品重新定，不套它自带的模板风格。
 4. **硬件产品**：真实产品照片或视频优先；结构说明用可控的三维或 AE 动画，AI 生成的产品画面不能当成实物证据。
-5. **AI 自己动手出片**时，叠加[代码式视频设计经验](../../../common/code-driven-video/README.md)；包装完成度参照[创赛视频 · AE 级包装的标准](../competition/ai-code-ae-pipeline.md#ae-级包装的标准红线)。
+5. **AI 自己动手出片**时，叠加[代码式视频设计经验](../../../common/code-driven-video/README.md)；包装完成度参照[创赛视频 · AE 级包装的标准](../competition/ai-code-ae-pipeline.md#ae-级包装的标准默认)。
 
 ## 写入
 

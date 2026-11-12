@@ -40,6 +40,18 @@ Codex -> CC Switch 本地端口 127.0.0.1:15721 -> 当前外部供应商
 
 此约定只管浏览器通道。普通本地文件校验、无UI的类型检查和纯HTTP接口诊断仍按任务正常执行；一旦需要真实网页操作与可视验收，就回到上述Ego空间。来源为建委本次明确要求与标注截图；已实际接管其指定空间并读到建委网站项目。
 
+## 仓库升级提醒
+
+2026-11-13 起，本机按[进化机制第六节](../../../repository/evolution.md#六仓库什么时候该升级看内容量不看日期)提醒建委升级仓库：
+
+| 工具 | 怎么提醒 |
+|---|---|
+| Claude Code（VS Code 插件） | `~/.claude/settings.json` 的 `hooks.SessionStart` 在每次开新对话时运行 `python -B "C:/Users/Administrator/Documents/ai-context/system/repository/maintenance/evolution-status.py" --hook 2>/dev/null \|\| true`。不到期时没有任何输出；到期时把原因放进对话上下文，AI 在每次回复末尾提醒建委，直到升级完成 |
+| Codex（ChatGPT 桌面版） | 没有配会话开始钩子。`~/.codex/AGENTS.md` 写了：处理建委的仓库任务时，读完 AGENTS 后运行同一个脚本（不带 `--hook`） |
+| 其他工具 | 按根目录 AGENTS 第 4 步自己运行脚本，不能运行就按第六节自己数 |
+
+改设置前的备份是 `~/.claude/settings.json.bak-20261113`。换供应商、重装插件之后，在 Claude Code 里打开 `/hooks` 看这一条还在不在；不在就照上表补回，补完用 `echo '{}' | 上面的命令` 试一次，退出码为 0 即可。
+
 ## 言剪 AI 项目工作位置
 
 2026-10-01 建委指定唯一根目录 `F:\桌面文件\言剪AI归档版`，后续源码、增量包、测试和临时文件全部在其内，先读根 AGENTS 与开始查看。本机 Codex 全局规则已经固定此入口；旧对话路径只保留兼容导航，不能在其旁边重建一套代码。版本和同步边界以[项目入口](../../../../work/projects/yancut-ai/README.md#本机源码与交接入口)为准；Codex 会话数据库与软件环境不随项目迁移。

@@ -3837,6 +3837,23 @@
           "paths": [
             "work/domains/design/common/design-principles/aesthetic-vocabulary.md"
           ]
+        },
+        {
+          "whenAny": [
+            "好看",
+            "审美",
+            "不好看",
+            "返修",
+            "认可",
+            "不如上一版",
+            "简陋",
+            "太简约",
+            "low",
+            "标尺"
+          ],
+          "paths": [
+            "work/domains/design/common/design-principles/taste-benchmarks.md"
+          ]
         }
       ]
     },

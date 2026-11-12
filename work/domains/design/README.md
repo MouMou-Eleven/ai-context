@@ -10,7 +10,7 @@
 
 ## 做一单设计之前
 
-1. 先弄清交付物：提示词、风格参考、AE 工程、还是成片（见[制作流程](./common/production-workflow.md#交付物判断红线)）。
+1. 先弄清交付物：提示词、风格参考、AE 工程、还是成片（见[制作流程](./common/production-workflow.md#交付物判断默认)）。
 2. 不管做平面、视频、动画还是界面，先读[设计原则与审美](./common/design-principles/README.md)：同一套审美判断用在所有设计上。用户只说“做好看点”时，先按其中的[审美词库](./common/design-principles/aesthetic-vocabulary.md)定气质。再进对应片型或门类目录，读方法正文。
 3. AI 自己动手剪辑、包装、加效果、出成片时（不管用户提没提代码），读[代码式视频设计经验](./common/code-driven-video/README.md)。需要 AI 生成镜头时读 [Seedance](./video/common/seedance/README.md)；需要生图时按[AI 生成原则](./common/ai-generation-principles.md)。
 4. 中文脚本、文案按[表达短卡](../../../system/expression/README.md)，需要口语化时读[口语样稿](../../../system/expression/voice-samples.md)。

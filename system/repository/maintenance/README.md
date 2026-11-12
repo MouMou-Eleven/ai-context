@@ -35,7 +35,8 @@ python -B -m unittest discover -s system/repository/maintenance/tests -v
 | [validate-context.py](./validate-context.py) | 校验必需入口、旧路径、Markdown链接、最近README索引、路由路径、Skill来源与能力、敏感线索、重复内容及全部生成漂移 |
 | [validation-policy.json](./validation-policy.json) | 四主目录、必需入口、关键发现链接及废弃路径检查 |
 | [context_common.py](./context_common.py) | 实际文件清单、Markdown链接、快照边界与脚本加载的共用实现 |
-| [content-guards.py](./content-guards.py) | 内容规则检查（由校验调用）：领域方法里的本机路径、过长的大脑条目和入口表单元格、跨文件高度相似的规则段落；规则的家见[写入规范](../ingestion-workflow.md#一条规则只有一个家红线) |
+| [content-guards.py](./content-guards.py) | 内容规则检查（由校验调用）：领域方法里的本机路径、过长的大脑条目和入口表单元格、跨文件高度相似的规则段落、红线数量超过预算（新红线只有建委能定）；规则的家见[写入规范](../ingestion-workflow.md#一条规则只有一个家默认) |
+| [evolution-status.py](./evolution-status.py) | 读[使用日志](../usage-log.md)和[观察记录](../observations.md)，按[进化机制第六节](../evolution.md#六仓库什么时候该升级看内容量不看日期)判断仓库该不该升级；`--hook` 供 Claude Code 会话开始时提醒，不到期不输出；只读不写 |
 | [pre-commit.py](./pre-commit.py) | 先确认本地没有落后 GitHub（落后就拒绝提交，防止在旧副本上按旧规则写），再导出 Git 暂存区到临时目录，在同一快照内运行校验与回归，不修改实际索引 |
 | [desktop-sync.py](./desktop-sync.py) | Windows桌面镜像，仅复制已存在的仓库HTML并核对hash；其他平台或桌面不可用时不阻断 |
 | [validate-context.ps1](./validate-context.ps1) | Windows旧命令的只读兼容入口 |

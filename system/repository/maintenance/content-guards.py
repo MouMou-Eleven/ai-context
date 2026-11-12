@@ -1,7 +1,11 @@
 """Content rules that keep the repository maintainable by any AI.
 
-Each rule has one home (see ingestion-workflow.md#一条规则只有一个家红线); these checks
+Each rule has one home (see ingestion-workflow.md#一条规则只有一个家默认); these checks
 block the most common ways that home gets bypassed.
+
+Red lines are only set by Jianwei (AGENTS.md, step 3). REDLINE_BUDGET is the number of
+red-line marks in the rule layer after the 2026-11-13 review; a commit that adds more is
+blocked. Lower it when red lines are removed; raise it only after Jianwei confirms a new one.
 """
 import re
 from collections import defaultdict
@@ -12,12 +16,14 @@ BRAIN_LINE_LIMIT = 220
 AGENTS_CELL_LIMIT = 130
 SIMILARITY_LIMIT = 0.6
 MIN_PARAGRAPH_HANZI = 50
+REDLINE_BUDGET = 45
 
 LOCAL_PATH = re.compile(r'(?<![\w/.])(?:[A-Za-z]:[\\/][^\s`)|，。]*|/c/Users/[^\s`)|，。]*|~/[^\s`)|，。]*)')
 GENERATED = re.compile(r'<!-- generated[^>]*start -->[\s\S]*?<!-- generated[^>]*end -->')
 FENCE = re.compile(r'```[\s\S]*?```')
 LINK = re.compile(r'\[([^\]]*)\]\([^)]*\)')
 HANZI = re.compile(r'[一-鿿]')
+REDLINE_MARK = re.compile(r'（红线|\*\*红线|红线\*\*|\| 红线 \||^#+ .*红线', re.M)
 
 
 def visible(text):
@@ -43,6 +49,10 @@ def rule_layer(name):
     if name == 'AGENTS.md' or name.startswith('brain/') or name.startswith('work/domains/'):
         return True
     return name.startswith('system/') and not name.startswith(('system/repository/navigation/', 'system/repository/maintenance/'))
+
+
+def redline_marks(text):
+    return len(REDLINE_MARK.findall(prose(text)))
 
 
 def local_paths(text):
@@ -91,10 +101,12 @@ def similar_paragraphs(texts):
     return sorted(found, reverse=True)
 
 
-def check(root, files):
+def check(root, files, redline_budget=None):
     root = Path(root)
+    budget = REDLINE_BUDGET if redline_budget is None else redline_budget
     errors = []
     texts = {}
+    redlines = 0
     for name in files:
         if not name.endswith('.md'):
             continue
@@ -110,6 +122,9 @@ def check(root, files):
                 errors.append(f'AGENTS任务表单元格过长（{length}字>{AGENTS_CELL_LIMIT}），细则放进链接的入口: AGENTS.md:{line}')
         if rule_layer(name):
             texts[name] = text
+            redlines += redline_marks(text)
     for score, a, b, excerpt in similar_paragraphs(texts):
         errors.append(f'同一规则写在两处（相似度{score}），只保留一处正文、另一处改为链接: {a} <> {b}: {excerpt}')
+    if redlines > budget:
+        errors.append(f'红线标记从{budget}处增加到{redlines}处：新的红线只有建委能定，AI 写的规则请标默认；建委确认过的新红线，同时调高 content-guards.py 的 REDLINE_BUDGET')
     return errors

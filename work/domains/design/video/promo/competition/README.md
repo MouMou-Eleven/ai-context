@@ -26,7 +26,7 @@ AI 自己动手出片时，画面排版、字号、动效验收照常叠加[代�
 
 ## 写入
 
-每轮反馈后，按[经验怎么回流](./ai-code-ae-pipeline.md#经验怎么回流默认)判断要不要写：只收新的判断，写进它所属的那一块；能在画面上核对的，同时在[排版验收](./ae-template-layout.md#排版验收红线)表里加一行；已经写过还犯的，把那一行改成要填数的标准。不新建按片子命名的案例文件；报价改[报价基线](../../../../other/commercial/quotations/price-baselines.md)。规则见[写入规范 · 新的工作怎么沉淀](../../../../../../system/repository/ingestion-workflow.md#新的工作怎么沉淀)。
+每轮反馈后，先把建委原话和成品记进[观察记录](../../../../../../system/repository/observations.md)，再按[经验怎么回流](./ai-code-ae-pipeline.md#经验怎么回流默认)判断要不要写：只收新的判断，写进它所属的那一块；能在画面上核对的，同时在[排版验收](./ae-template-layout.md#排版验收默认)表里加一行；已经写过还犯的，把那一行改成要填数的标准。不新建按片子命名的案例文件；报价改[报价基线](../../../../other/commercial/quotations/price-baselines.md)。规则见[写入规范 · 新的工作怎么沉淀](../../../../../../system/repository/ingestion-workflow.md#新的工作怎么沉淀)。
 
 <!-- generated-methods:start -->
 ## 按实际需要选择方法
