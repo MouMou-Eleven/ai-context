@@ -11,6 +11,7 @@
 |---|---|---|
 | [济南市领导干部 AI 专题培训](jinan-cadre-ai/README.md) | 济南市总工会；各区县副处级以上约 200 人 | 方案设计阶段，授课日期未确认 |
 | [济南市图书馆培训](jinan-city-library/README.md) | 济南市图书馆 | 2026-09-16 建委确认；具体班次和日期未提供 |
+| [山东省图书馆 · WorkBuddy AI 办公实战课](shandong-library/README.md) | 山东省图书馆；馆内工作人员 | 2026-11-13 大纲交付（90／180 分钟两版），授课日期待确认 |
 
 更多已讲过但还没收进仓库的单位、按课件找资料、归属不明的资料，见[场次索引](sessions-index.md)。常讲课题见[常讲课题](../../domains/training/topics.md)。
 

@@ -16,7 +16,8 @@ ai-context/
 │   ├── credentials.md  查找已确认的获奖、荣誉及成果依据
 │   ├── evidence/  背书表引用的证书、聘书等原件照片
 │   │   ├── lecturer-certificates-and-teaching.jpg  威海OPC一等奖证书、知行商学院聘书与山东高速、能源青年夜校、山东公用水务授课现场拼图
-│   │   └── miaoda-ai-gold-lecturer-2026-05.jpg  百度秒哒 AI 金牌讲师荣誉证书照片（2026年5月签发）
+│   │   ├── miaoda-ai-gold-lecturer-2026-05.jpg  百度秒哒 AI 金牌讲师荣誉证书照片（2026年5月签发）
+│   │   └── weibo-ai-creation-camp-2024.jpg  微博2024 AI创造营年度人气奖证书
 │   ├── profile.md  了解建委的身份、背景和长期工作方向
 │   ├── README.md  个人信息总窗口、索引、写入准则
 │   └── timeline.md  按时间查看成长经历与重要阶段变化
@@ -1351,7 +1352,9 @@ ai-context/
 │   │   │   │   └── workbuddy-camp/  查图书馆豆包工作×WorkBuddy办公训练营的课次、规划与实测记录
 │   │   │   │       └── README.md  豆包工作 × WorkBuddy AI 办公实战训练营（济南市图书馆）
 │   │   │   ├── README.md  各单位AI培训场次事实与归属，复用方法引用培训领域
-│   │   │   └── sessions-index.md  资料入口，避免复制项目资料
+│   │   │   ├── sessions-index.md  资料入口，避免复制项目资料
+│   │   │   └── shandong-library/  山东省图书馆WorkBuddy办公课的场次事实与大纲格式
+│   │   │       └── README.md  主办、受众、讲师、课程结构与交付文件
 │   │   ├── archive/  查已退出当前主线的项目，避免把旧状态当现状
 │   │   │   ├── openclaw-agent/  追溯已归档AI Agent项目的资料和决策
 │   │   │   │   └── README.md  OpenClaw Agent 历史档案

@@ -487,7 +487,10 @@
     "work/domains/design/video/promo/product/README.md": "产品宣传片入口与起步做法",
     "work/domains/design/video/promo/enterprise/info-shots.md": "企业片按信息类型拆镜头：开篇、数据、荣誉、文化、战略、业务、落版",
     "work/domains/design/video/promo/competition/ai-video-generation.md": "创赛片AI生视频：片头片尾背景提示词交接、AI片头接AE标题、参考图、照片动态化、调校",
-    "work/domains/design/video/promo/competition/ae-template-layout.md": "改AE模板的排版判断与交付前排版验收表：样例残留、重叠、字号梯度、图框、人像、多余光效"
+    "work/domains/design/video/promo/competition/ae-template-layout.md": "改AE模板的排版判断与交付前排版验收表：样例残留、重叠、字号梯度、图框、人像、多余光效",
+    "work/projects/ai-training/shandong-library": "山东省图书馆WorkBuddy办公课的场次事实与大纲格式",
+    "work/projects/ai-training/shandong-library/README.md": "主办、受众、讲师、课程结构与交付文件",
+    "personal/evidence/weibo-ai-creation-camp-2024.jpg": "微博2024 AI创造营年度人气奖证书"
   },
   "knowledgeLabels": {
     "README.md": "建委日常使用的四个主入口",
