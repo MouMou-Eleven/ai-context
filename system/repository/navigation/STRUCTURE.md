@@ -301,7 +301,9 @@ ai-context/
 │   │   │       │   │   ├── ai-code-ae-pipeline.md  创赛片AI代码与AE自动化：代码预览定版面、AE MCP改模板、AE级包装标准、经验回流
 │   │   │       │   │   ├── ai-video-generation.md  创赛片AI生视频：片头片尾背景提示词交接、AI片头接AE标题、参考图、照片动态化、调校
 │   │   │       │   │   ├── competition-promo-basics.md  创赛片基础：是什么、接单规格、原句画面素材对应、叙事结构、按指向性选做法
-│   │   │       │   │   └── README.md  创赛宣传片入口
+│   │   │       │   │   ├── README.md  创赛宣传片入口
+│   │   │       │   │   └── tools/  目录入口
+│   │   │       │   │       └── ae_dialog_guard.py  跨平台维护或执行脚本
 │   │   │       │   ├── enterprise/  企业宣传片：总流程、按信息类型拆镜头、提示词与返修、按风格分
 │   │   │       │   │   ├── info-shots.md  企业片按信息类型拆镜头：开篇、数据、荣誉、文化、战略、业务、落版
 │   │   │       │   │   ├── prompt-iteration.md  企业片生成镜头的提示词写法与返修
