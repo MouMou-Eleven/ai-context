@@ -1356,6 +1356,8 @@ ai-context/
 │   │   │   │       └── README.md  豆包工作 × WorkBuddy AI 办公实战训练营（济南市图书馆）
 │   │   │   ├── README.md  各单位AI培训场次事实与归属，复用方法引用培训领域
 │   │   │   ├── sessions-index.md  资料入口，避免复制项目资料
+│   │   │   ├── shandong-electric-consulting/  山东电力咨询院WorkBuddy培训的场次事实、方案结构与CAD案例备课
+│   │   │   │   └── README.md  对方需求原话、方案结构、交付文件与讲前待办
 │   │   │   └── shandong-library/  山东省图书馆WorkBuddy办公课的场次事实与大纲格式
 │   │   │       └── README.md  主办、受众、讲师、课程结构与交付文件
 │   │   ├── archive/  查已退出当前主线的项目，避免把旧状态当现状
