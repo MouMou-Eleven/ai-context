@@ -17,6 +17,7 @@ ai-context/
 │   ├── evidence/  背书表引用的证书、聘书等原件照片
 │   │   ├── lecturer-certificates-and-teaching.jpg  威海OPC一等奖证书、知行商学院聘书与山东高速、能源青年夜校、山东公用水务授课现场拼图
 │   │   ├── miaoda-ai-gold-lecturer-2026-05.jpg  百度秒哒 AI 金牌讲师荣誉证书照片（2026年5月签发）
+│   │   ├── tencent-workbuddy-opc-practitioner.jpg  图片素材
 │   │   └── weibo-ai-creation-camp-2024.jpg  微博2024 AI创造营年度人气奖证书
 │   ├── profile.md  了解建委的身份、背景和长期工作方向
 │   ├── README.md  个人信息总窗口、索引、写入准则
