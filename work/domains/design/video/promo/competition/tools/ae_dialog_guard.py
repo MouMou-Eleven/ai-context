@@ -1,12 +1,23 @@
 # Resident AE dialog guard: auto-clicks known AE pop-ups so no human is needed.
 # Runs forever (single instance via lock file), logs next to this script (aeguard.log).
 # Start: pythonw ae_dialog_guard.py   (needs: pip install pywinauto psutil)
+# ONLY acts while automation runs: the wrapper that runs AE scripts/renders must create guard.active next to
+# this script and keep touching it (e.g. every few seconds) while it waits, then delete it when done.
+# No flag, or flag not touched for ACTIVE_TTL seconds -> the guard does nothing, so manual AE use is never touched.
 import time, os, sys, psutil, ctypes
 from pywinauto import Desktop
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LOG = os.path.join(HERE, 'aeguard.log')
 LOCK = os.path.join(HERE, 'aeguard.pid')
+FLAG = os.path.join(HERE, 'guard.active')
+ACTIVE_TTL = 60
+
+def automation_active():
+    try:
+        return time.time() - os.path.getmtime(FLAG) < ACTIVE_TTL
+    except OSError:
+        return False
 
 def log(s):
     with open(LOG, 'a', encoding='utf-8') as f:
@@ -28,6 +39,8 @@ PREFER = ['继续', 'Continue', '确定', 'OK', '关闭', 'Close']
 AVOID = ['安全模式', 'Safe', '重置', 'Reset', '管理增效', 'Manage']
 
 while True:
+    if not automation_active():
+        time.sleep(1); continue
     try:
         ae = [p.pid for p in psutil.process_iter(['name']) if (p.info['name'] or '').lower() in ('afterfx.exe', 'aerender.exe')]
         wer = [p for p in psutil.process_iter(['name', 'cmdline']) if (p.info['name'] or '').lower() == 'werfault.exe']

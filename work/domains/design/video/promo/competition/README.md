@@ -24,7 +24,7 @@
 
 AI 自己动手出片时，画面排版、字号、动效验收照常叠加[代码式视频设计经验](../../../common/code-driven-video/README.md)；要做三维动画或在成片上加包装，读[代码生成动画](../../common/code-rendered-animation/README.md)。
 
-AI 跑 AE 脚本或渲染前，先后台启动 [AE 弹窗守护](./tools/ae_dialog_guard.py)（`pythonw ae_dialog_guard.py`），全程不需要建委点弹窗；用法和边界见[流程里的实测坑](./ai-code-ae-pipeline.md)。
+AI 跑 AE 脚本或渲染前，先后台启动 [AE 弹窗守护](./tools/ae_dialog_guard.py)（`pythonw ae_dialog_guard.py`），全程不需要建委点弹窗，守护只在封装脚本刷新运行标记期间动手，建委手动用 AE 时不碰；用法和边界见[流程里的实测坑](./ai-code-ae-pipeline.md)。
 
 ## 写入
 
