@@ -12,6 +12,8 @@
 
 表里的文件都要读完正文，只看标题或目录不算读过。一个任务同时属于几行时，每行都读。
 
+读完表里的文件，再打开[观察记录](system/repository/observations.md)，按本次的项目名和交付物类别（课件、PPT、视频、方案等）找状态为“待定”的行。那是建委刚纠正过、还没升成通用规则的判断，同类成品这一单也照做；它们不在任何领域文件里，不看观察表就读不到（2026-11-18 付费社群第 10 课的表格列宽就是这样漏的）。
+
 表里找不到对应的任务时：打开 [work/domains/README.md](work/domains/README.md) 和 [work/projects/README.md](work/projects/README.md)，按领域和项目名找最接近的目录，读它的 README；再用任务里的关键词搜仓库。实在找不到，照常完成任务，并告诉建委"仓库里没找到相关经验"，不要编造"仓库里说……"。
 
 | 任务 | 必读 |
@@ -20,6 +22,7 @@
 | 写培训**课件** / 分享资料 / 课堂文档（讲什么、怎么讲） | [培训入口](work/domains/training/README.md) → [培训风格](work/domains/training/experience/jianwei-training-style.md) + [口语样稿](system/expression/voice-samples.md) + [课程组织](work/domains/training/experience/demo-driven-course-design.md) |
 | 写培训**方案 / 大纲**（给主办方） | [常讲课题](work/domains/training/topics.md) + [对外方案写法](work/domains/training/experience/external-proposal-design.md) + [内外稿边界](work/domains/other/commercial/experience/external-deliverable-language.md)；Word 加读[政企排版](work/domains/other/commercial/delivery-formats/gov-enterprise-word.md) |
 | 写实操教程、保姆级教程（不管讲什么主题） | [教程写法](work/domains/training/experience/tutorial-writing.md) + 主题所在领域的方法 |
+| 写这个仓库本身：个人或企业知识库、数字分身怎么搭、怎么演进（文章、分享、介绍都算） | 按成品类型读上下行；仓库的事实只从[仓库重大变化](system/repository/revisions/README.md)、[历次升级](system/repository/usage-log.md#历次升级)和 `git log` 取，日期、文件数、哪一轮被推翻都要对着提交记录核对，不凭记忆写 |
 | 公众号 / 图文文章 | [自媒体入口](work/domains/self-media/README.md) → [文章](work/domains/self-media/articles/README.md) + [标题](work/domains/self-media/titles/README.md) |
 | 宣传、招生、产品介绍、报名页 | [宣传写法](work/domains/self-media/marketing-copy/reader-question-led-promotion.md) + [口语样稿](system/expression/voice-samples.md) + 对应项目的事实 |
 | 朋友圈 / 社群话术 / 口播 / 直播 | [自媒体入口](work/domains/self-media/README.md) 里对应的那一类 + [口语样稿](system/expression/voice-samples.md) |
