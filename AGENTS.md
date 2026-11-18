@@ -20,7 +20,7 @@
 |---|---|
 | 准备演讲 / 对外分享 / 主题分享（台下是听众，没有评委） | [培训入口](work/domains/training/README.md) + [演讲与分享方法](work/domains/training/experience/demo-driven-course-design.md#演讲与对外分享问题含义现实事例可灵活) + [口语样稿](system/expression/voice-samples.md) |
 | 写培训**课件** / 分享资料 / 课堂文档（讲什么、怎么讲） | [培训入口](work/domains/training/README.md) → [培训风格](work/domains/training/experience/jianwei-training-style.md) + [口语样稿](system/expression/voice-samples.md) + [课程组织](work/domains/training/experience/demo-driven-course-design.md) |
-| 写培训**方案 / 大纲**（给主办方） | [常讲课题](work/domains/training/topics.md) + [对外方案写法](work/domains/training/experience/external-proposal-design.md) + [内外稿边界](work/domains/other/commercial/experience/external-deliverable-language.md)；Word 加读[政企排版](work/domains/other/commercial/delivery-formats/gov-enterprise-word.md) |
+| 写培训**方案 / 大纲**（给主办方） | [常讲课题](work/domains/training/topics.md) + [对外方案写法](work/domains/training/experience/external-proposal-design.md) + [内外稿边界](work/domains/other/commercial/experience/external-deliverable-language.md)；Word 加读[政企排版](work/domains/other/commercial/delivery-formats/gov-enterprise-word.md)；含讲师介绍加读[个人信息](personal/README.md) |
 | 写实操教程、保姆级教程（不管讲什么主题） | [教程写法](work/domains/training/experience/tutorial-writing.md) + 主题所在领域的方法 |
 | 写这个仓库本身：个人或企业知识库、数字分身怎么搭、怎么演进（文章、分享、介绍都算） | 按成品类型读上下行；仓库的事实只从[仓库重大变化](system/repository/revisions/README.md)、[历次升级](system/repository/usage-log.md#历次升级)和 `git log` 取，日期、文件数、哪一轮被推翻都要对着提交记录核对，不凭记忆写 |
 | 公众号 / 图文文章 | [自媒体入口](work/domains/self-media/README.md) → [文章](work/domains/self-media/articles/README.md) + [标题](work/domains/self-media/titles/README.md) |
