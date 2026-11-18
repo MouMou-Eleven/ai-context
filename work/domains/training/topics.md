@@ -67,6 +67,7 @@ AI 搜索引擎；公开信息检索、原始出处溯源、舆情整理；和�
 | 济南市领导干部 AI 专题培训（济南市总工会，2026-09） | 各区县副处级以上约 200 人；总 3 小时，建委负责实操 1.5～2 小时 | 一、二、三（Word、Excel）、四、六、七、九 | [方案正文](../../projects/ai-training/jinan-cadre-ai/proposal.md) |
 | 山东省图书馆 WorkBuddy AI 办公实战课（2026-11） | 馆内工作人员，零基础；90 分钟／180 分钟两版 | 一、二、三（Excel、Word）、四、五、八、九 | [场次记录](../../projects/ai-training/shandong-library/README.md) |
 | 山东电力咨询院 WorkBuddy 智能体办公实战培训（2026-11） | 全员（设计、技经、办公），现场 20 人＋线上 200 人；2 小时 | 三（Excel、Word）、四、五、八（Skill 为重点）、九；新增 AI + CAD 识图画图 | [场次记录](../../projects/ai-training/shandong-electric-consulting/README.md) |
+| 济南城市建设集团 WorkBuddy 办公提效实操工作坊（2026-11） | 宣传岗负责人、信息联络员、网评员、舆情人员约 60 人；2 小时 | 二（五个问题）、三、四（ima）、六（定时汇总公开报道）、八（Skill）；宣传稿件、照片海报、报送台账 | [场次记录](../../projects/ai-training/jinan-urban-construction/README.md) |
 | 会员社群第一季度（AI 编程方向） | 非程序员会员；12 节 | 一、二、八、九为主 | [社群课程结构](../../projects/paid-community-course/curriculum-design.md) |
 
 有新的大纲或方案时，在这张表加一行，并链接到正文。

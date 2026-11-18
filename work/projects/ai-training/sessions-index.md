@@ -12,6 +12,7 @@
 | [济南市图书馆培训](jinan-city-library/README.md) | 济南市图书馆 | 秒哒网页美化、秒哒进阶、[别让 Bug 打败你](jinan-city-library/bug-repair/README.md)；[豆包工作 × WorkBuddy AI 办公实战训练营](jinan-city-library/workbuddy-camp/README.md) | AI 编程那期 2026-09-16 建委确认；训练营 2026-11 开讲，第 1 课已讲、第 2 课待看 |
 | [山东省图书馆 · WorkBuddy AI 办公实战课](shandong-library/README.md) | 山东省图书馆；馆内工作人员 | WorkBuddy AI 办公 90／180 分钟两版大纲，杨建委、江坤主讲；含山东省图书馆要的大纲格式 | 大纲已交付，授课日期待确认 |
 | [山东电力咨询院 · WorkBuddy 智能体办公实战培训](shandong-electric-consulting/README.md) | 山东电力咨询院；全员（设计、技经、办公），现场约 20 人、线上约 200 人 | 2 小时：技能/专家/连接器、设计咨询场景、Skill 原理与定制、AI + CAD 识图画图、数字员工与工作台 | 方案已交付建委，授课日期待定 |
+| [济南城市建设集团 · WorkBuddy 办公提效实操工作坊](jinan-urban-construction/README.md) | 济南城市建设集团（万融渠道）；宣传岗负责人、信息联络员、网评员、舆情人员约 60 人 | 2 小时：安全使用、宣传稿件、照片海报与报送台账、Skill/ima/定时任务 | 2026-11-18 方案交付建委，11-20 下午授课 |
 
 建委确认讲过的政企单位还有山东高速集团、万融集团、山东省图书馆、山东水发、海右博纳（见[个人背书](../../../personal/credentials.md)），这些场次的课件和方案还没收进仓库。
 

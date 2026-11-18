@@ -13,6 +13,7 @@
 | [济南市图书馆培训](jinan-city-library/README.md) | 济南市图书馆 | 2026-09-16 建委确认；具体班次和日期未提供 |
 | [山东省图书馆 · WorkBuddy AI 办公实战课](shandong-library/README.md) | 山东省图书馆；馆内工作人员 | 2026-11-13 大纲交付（90／180 分钟两版），授课日期待确认 |
 | [山东电力咨询院 · WorkBuddy 智能体办公实战培训](shandong-electric-consulting/README.md) | 山东电力咨询院；全员，现场约 20 人、线上约 200 人 | 2026-11-16 方案交付建委（2 小时，Skill 为重点，含 AI + CAD），授课日期待定 |
+| [济南城市建设集团 · WorkBuddy 办公提效实操工作坊](jinan-urban-construction/README.md) | 济南城市建设集团；宣传岗约 60 人 | 2026-11-18 方案交付建委（2 小时含 5 分钟休息，接手江坤的框架），11-20 授课 |
 
 更多已讲过但还没收进仓库的单位、按课件找资料、归属不明的资料，见[场次索引](sessions-index.md)。常讲课题见[常讲课题](../../domains/training/topics.md)。
 
