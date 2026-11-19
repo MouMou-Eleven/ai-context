@@ -1307,6 +1307,7 @@ ai-context/
 │   │       │   ├── external-proposal-design.md  培训方案与课程大纲的受众、内容筛选、语言及验收
 │   │       │   ├── jianwei-training-style.md  培训风格总纲：为什么这样写、怎么讲、怎么标重点、怎么配画面
 │   │       │   ├── README.md  培训方法总览与读取顺序
+│   │       │   ├── role-specific-scenarios.md  各岗位与行业专属的AI应用场景、风险点与说法边界
 │   │       │   ├── sources.md  核对教学方法的来源、课程身份与验证范围
 │   │       │   ├── technical-explanation/  技术解释方法
 │   │       │   │   ├── problem-driven-technical-explanation.md  问题驱动的技术解释方法
@@ -1360,8 +1361,10 @@ ai-context/
 │   │   │   ├── sessions-index.md  资料入口，避免复制项目资料
 │   │   │   ├── shandong-electric-consulting/  山东电力咨询院WorkBuddy培训的场次事实、方案结构与CAD案例备课
 │   │   │   │   └── README.md  对方需求原话、方案结构、交付文件与讲前待办
-│   │   │   └── shandong-library/  山东省图书馆WorkBuddy办公课的场次事实与大纲格式
-│   │   │       └── README.md  主办、受众、讲师、课程结构与交付文件
+│   │   │   ├── shandong-library/  山东省图书馆WorkBuddy办公课的场次事实与大纲格式
+│   │   │   │   └── README.md  主办、受众、讲师、课程结构与交付文件
+│   │   │   └── wanrong-commissioned/  万融委托培训的WorkBuddy企业版推广口径、植入点与触发条件
+│   │   │       └── README.md  触发条件、软植入原则、对外口径、企业版事实与联系人
 │   │   ├── archive/  查已退出当前主线的项目，避免把旧状态当现状
 │   │   │   ├── openclaw-agent/  追溯已归档AI Agent项目的资料和决策
 │   │   │   │   └── README.md  OpenClaw Agent 历史档案

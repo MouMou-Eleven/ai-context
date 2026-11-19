@@ -15,6 +15,8 @@
 | [山东电力咨询院 · WorkBuddy 智能体办公实战培训](shandong-electric-consulting/README.md) | 山东电力咨询院；全员，现场约 20 人、线上约 200 人 | 2026-11-16 方案交付建委（2 小时，Skill 为重点，含 AI + CAD），授课日期待定 |
 | [济南城市建设集团 · WorkBuddy 办公提效实操工作坊](jinan-urban-construction/README.md) | 济南城市建设集团；宣传岗约 60 人 | 2026-11-18 方案交付建委（2 小时含 5 分钟休息，接手江坤的框架），11-20 授课 |
 
+**万融委托的场次**（目前是山东电力咨询院、济南城市建设集团）写方案和课件时要软植入 WorkBuddy 企业版推广，口径见[万融委托培训](wanrong-commissioned/README.md)；其他场次不植入。新场次在 README 基本情况里写明委托方。
+
 更多已讲过但还没收进仓库的单位、按课件找资料、归属不明的资料，见[场次索引](sessions-index.md)。常讲课题见[常讲课题](../../domains/training/topics.md)。
 
 ## 新的一场怎么沉淀

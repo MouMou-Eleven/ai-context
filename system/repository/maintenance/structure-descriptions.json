@@ -139,6 +139,7 @@
     "work/domains/training/experience/README.md": "培训方法总览与读取顺序",
     "work/domains/training/experience/jianwei-training-style.md": "培训风格总纲：为什么这样写、怎么讲、怎么标重点、怎么配画面",
     "work/domains/training/experience/demo-driven-course-design.md": "演示驱动课程设计",
+    "work/domains/training/experience/role-specific-scenarios.md": "各岗位与行业专属的AI应用场景、风险点与说法边界",
     "work/domains/training/experience/tutorial-writing.md": "学员教程写法",
     "work/domains/training/experience/technical-explanation": "技术解释方法",
     "work/domains/training/experience/technical-explanation/README.md": "方法索引",
@@ -492,6 +493,8 @@
     "work/projects/ai-training/shandong-library/README.md": "主办、受众、讲师、课程结构与交付文件",
     "work/projects/ai-training/shandong-electric-consulting": "山东电力咨询院WorkBuddy培训的场次事实、方案结构与CAD案例备课",
     "work/projects/ai-training/shandong-electric-consulting/README.md": "对方需求原话、方案结构、交付文件与讲前待办",
+    "work/projects/ai-training/wanrong-commissioned": "万融委托培训的WorkBuddy企业版推广口径、植入点与触发条件",
+    "work/projects/ai-training/wanrong-commissioned/README.md": "触发条件、软植入原则、对外口径、企业版事实与联系人",
     "work/projects/ai-training/jinan-urban-construction": "济南城市建设集团宣传岗WorkBuddy工作坊的场次事实与方案结构",
     "work/projects/ai-training/jinan-urban-construction/README.md": "接手背景、主办方口径、方案结构、交付文件与讲前待办",
     "personal/evidence/weibo-ai-creation-camp-2024.jpg": "微博2024 AI创造营年度人气奖证书"

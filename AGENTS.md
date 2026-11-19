@@ -38,7 +38,7 @@
 | 报价、修改费（PPT、视频、课件等任何单子） | [报价入口](work/domains/other/commercial/quotations/README.md) |
 | 路演、答辩、比赛申报、商业计划、融资（台下有评委或投资人） | [商业化入口](work/domains/other/commercial/README.md) → [赛事和投资人材料](work/domains/other/commercial/experience/competition-and-investor-materials.md) |
 | 合同、正式文书、对外表达标准 | [商业化入口](work/domains/other/commercial/README.md) |
-| 某一场培训（济南干部培训、济南市图书馆等） | [AI 培训项目](work/projects/ai-training/README.md) → [场次索引](work/projects/ai-training/sessions-index.md) → 该场次 README |
+| 某一场培训（济南干部培训、济南市图书馆等） | [AI 培训项目](work/projects/ai-training/README.md) → [场次索引](work/projects/ai-training/sessions-index.md) → 该场次 README；委托方是万融的加读[万融委托培训](work/projects/ai-training/wanrong-commissioned/README.md)（植入企业版推广），其他场次不读 |
 | 某个具体项目（社群、言剪、飞书书、六十甲子） | [项目列表](work/projects/README.md) → 该项目 README |
 | 个人简介、讲师介绍、简历 | [个人信息](personal/README.md)；荣誉和数字只按[背书表](personal/credentials.md)写；要做成 PPT、海报、视频时，结构按那个成品的行走，这里只提供事实 |
 | 建委的想法、偏好、判断方式 | [建委大脑](brain/README.md)；做任何成品前都值得先看一眼[做事与表达偏好](brain/preferences.md) |
