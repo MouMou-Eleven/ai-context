@@ -19,7 +19,7 @@
 | 工具实操场景课、讲师定位、截图标注 | [WorkBuddy 训练营](../../../projects/ai-training/jinan-city-library/workbuddy-camp/README.md) | 济南市图书馆 AI 办公实战训练营；2026-11-09 本人确认 | 第 2 课备课：四个场景真跑并对照标准答案，AI 判错后纠正写成反面教材；建委看过做法后认可，并讲清“从善用 AI 出发、不从软件专家角度讲”的定位；尚未授课，不代表课堂效果 |
 | 训练营第 3 课：提示词新旧写法、表格对齐、附件打包 | [训练营场次记录](../../../projects/ai-training/jinan-city-library/workbuddy-camp/README.md) | 济南市图书馆 AI 办公实战训练营；2026-11-15 建委备课反馈 | 课前改稿反馈；第 3 课已授课，未单独复盘 |
 | 社群第 10 课浏览器插件课：效果可见、表格列宽 | [社群项目](../../../projects/paid-community-course/README.md) | 会员社群；2026-11-18 建委反馈 | 课件反馈 |
-| 宣传岗场景、文字量、案例知识点与深度、图上标注、提示词八层 | [城建工作坊场次记录](../../../projects/ai-training/jinan-urban-construction/README.md) | 济南城市建设集团工作坊；2026-11-20 授课，11-21 建委讲后口述 | 真实讲后反馈，分量最高；提示词八层改造版尚未上课验证 |
+| 宣传岗场景、文字量、案例知识点与深度、图上标注、提示词对照表 | [城建工作坊场次记录](../../../projects/ai-training/jinan-urban-construction/README.md) | 济南城市建设集团工作坊；2026-11-20 授课，11-21 建委讲后口述 | 真实讲后反馈，分量最高；提示词对照表尚未上课验证 |
 | 电力工程咨询岗位场景 | [电力咨询院场次记录](../../../projects/ai-training/shandong-electric-consulting/README.md) | 山东电力咨询院；2026-11-16 方案定稿 | 方案独审后口径，尚未授课 |
 | 飞天闪客技术科普 | [技术解释方法](./technical-explanation/problem-driven-technical-explanation.md)及其原来源 | 外部表达/解释方法 | 原材料是外部参考证据；整理后的问题驱动方法当前按限定场景采用，新增推断仍为候选，不是建委授课经历 |
 
