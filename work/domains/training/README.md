@@ -43,7 +43,7 @@
 
 | 位置 | 内容 |
 |---|---|
-| [topics.md](./topics.md) | 建委常讲的课题（AI 全景、提示词工具、Excel/Word、知识库、自动化、AI 编程……）和往期大纲 |
+| [topics.md](./topics.md) | 建委常讲的课题（AI 全景、提示词讲法、Excel/Word、知识库、自动化、AI 编程……）和往期大纲 |
 | [experience/](./experience/README.md) | 培训方法：以培训风格为总纲，下分课程组织、技术概念讲解、教程写法、方案写法 |
 | [AI 培训项目](../../projects/ai-training/README.md) | 各单位培训场次（济南干部培训、济南市图书馆）、[场次索引](../../projects/ai-training/sessions-index.md)；按课件标题找飞书正文；归属不明的资料 |
 | [attribution-and-updates.md](./attribution-and-updates.md) | 一份资料属于哪个系列、哪场培训的判断规则 |
@@ -54,7 +54,7 @@
 
 - 讲完课的反馈：能用到别的课上的，直接改 experience/ 里对应的那一条，不要另起新文件；只跟这一场有关的，写进这一场的记录。
 - 新的常讲课题、新的讲法：补进 [topics.md](./topics.md)。
-- 同一个错误又犯了：不要再加一条"必须……"，而是在[培训风格](./experience/jianwei-training-style.md)的"高频失误"表里补上这次的来源，并想办法让检查动作更具体。
+- 同一个错误又犯了：不要再加一条"必须……"，而是在[培训风格](./experience/jianwei-training-style.md)的"反复出现过的错误"表里补上这次的来源，并想办法让检查动作更具体。
 - 具体规则见[仓库写入规范](../../../system/repository/ingestion-workflow.md)。
 
 <!-- generated-related-assets:start -->

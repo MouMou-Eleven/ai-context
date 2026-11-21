@@ -25,9 +25,10 @@
 1. 读[培训风格](./jianwei-training-style.md)和[口语样稿](../../../../system/expression/voice-samples.md)。
 2. 确认培训对象、已有基础、授课场景和要做出的结果；判断交付物（默认课堂主文档）。演讲与对外分享先看[可选三层结构](./demo-driven-course-design.md#演讲与对外分享问题含义现实事例可灵活)是否适配。
 3. 核实项目与系列归属，读当前事实和同一系列的前课；归属不明从[培训资料总入口](../../../projects/ai-training/sessions-index.md)按主题核对，不能按课号接续社群。
-4. 用[课程组织](./demo-driven-course-design.md)设计课程逻辑、案例和画面。
-5. 出现技术概念时，用[从问题推导概念](./technical-explanation/problem-driven-technical-explanation.md)先筛选要不要讲，再决定角度。
-6. 学员确实要跟着操作时，再叠加[教程写法](./tutorial-writing.md)。
+4. 先看[常讲课题](../topics.md)有没有这个课题的现成讲法（提示词看第二节）；培训对象是具体岗位或行业时，读[岗位与行业场景](./role-specific-scenarios.md)。
+5. 用[课程组织](./demo-driven-course-design.md)设计课程逻辑、案例和画面。
+6. 出现技术概念时，用[从问题推导概念](./technical-explanation/problem-driven-technical-explanation.md)先筛选要不要讲，再决定角度。
+7. 学员确实要跟着操作时，再叠加[教程写法](./tutorial-writing.md)。
 
 文章、短视频、销售页、飞书书稿、教师微课不因为内容里出现"课程""技术"就套用本目录：付费社群课程先读项目 README；招生物料走 AI 自媒体并取真实项目事实；正式授课按实际步骤调用编程、设计或视频依赖，不叠加销售话术；教师微课、精品课、参赛课进入[教育作品](../../design/video/education/README.md)。
 
