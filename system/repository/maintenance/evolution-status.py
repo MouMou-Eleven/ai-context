@@ -91,7 +91,7 @@ def status(root=ROOT):
     log_text = read(root, LOG)
     marker = MARKER.search(log_text)
     last = marker.group(1) if marker else '0000-00-00'
-    entries, warnings = [], []
+    entries, warnings, unlinked_b = [], [], []
     for name, text, heading in ((LOG, log_text, '日志'), (OBSERVATIONS, read(root, OBSERVATIONS), '观察')):
         if misplaced_rows(text, heading):
             warnings.append(f'{name} 有 {misplaced_rows(text, heading)} 行写在表头和分隔行（|---|）之间，脚本数不到；把分隔行挪回表头正下方，新行写在分隔行下面')
@@ -99,6 +99,8 @@ def status(root=ROOT):
         if len(cells) < 6 or not DATE.match(cells[0]):
             warnings.append(f'使用日志有一行没被计数（日期要写成 YYYY-MM-DD，至少 6 列）：{" | ".join(cells)[:60]}')
             continue
+        if 'B' in FAILURE_TYPE.findall(cells[4]) and not LINK_TARGET.search(cells[5]):
+            unlinked_b.append(f'{cells[0]} {cells[1][:20]}')
         entries.append({'date': cells[0], 'types': set(FAILURE_TYPE.findall(cells[4])),
                         'rules': sorted({normalise_target(t) for t in LINK_TARGET.findall(cells[5])})})
     recent = [entry for entry in entries if entry['date'] >= last]
@@ -130,7 +132,7 @@ def status(root=ROOT):
             reasons.append(f'观察“{category}”已在 {len(projects)} 个项目出现（{"、".join(sorted(projects))}），可以考虑升成通用规则')
     # A disputed observation waits for one answer from Jianwei; it is not an upgrade.
     return {'lastUpgrade': last, 'entries': len(entries), 'entriesSinceUpgrade': len(recent),
-            'due': bool(reasons), 'reasons': reasons, 'disputed': disputed, 'warnings': warnings}
+            'due': bool(reasons), 'reasons': reasons, 'disputed': disputed, 'unlinkedB': unlinked_b, 'warnings': warnings}
 
 
 def reminder(result):
@@ -162,5 +164,8 @@ if __name__ == '__main__':
             print(f'仓库暂不需要升级：上次升级 {result["lastUpgrade"]}，之后已记 {result["entriesSinceUpgrade"]} 条使用日志。')
         if result['due'] or result['disputed']:
             print(reminder(result))
+        if result['unlinkedB']:
+            print(f'提示：{len(result["unlinkedB"])} 条 B 类日志的“涉及规则”没写链接，同一规则反复被违反时数不出来：'
+                  + '；'.join(result['unlinkedB']))
         for warning in result['warnings']:
             print('注意：' + warning)

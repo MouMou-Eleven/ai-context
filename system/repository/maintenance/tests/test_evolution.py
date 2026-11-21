@@ -116,6 +116,11 @@ class Evolution(unittest.TestCase):
         self.assertEqual(evolution.misplaced_rows(head, '日志'), 1)
         self.assertEqual(evolution.misplaced_rows(LOG_HEAD, '日志'), 0)
 
+    def test_b_without_rule_link_is_listed(self):
+        result = self.status(row('2026-11-20', 'B') + row('2026-11-21', 'B', RULE))
+        self.assertEqual(len(result['unlinkedB']), 1)
+        self.assertFalse(result['due'])
+
     def test_disputed_observation_needs_jianwei(self):
         result = self.status(obs_rows=obs('2026-11-21', '甲项目', '提示词框架', '冲突待定：和[某规则](x.md)打架'))
         self.assertFalse(result['due'])  # 等建委回答一个问题，不是升级仓库
