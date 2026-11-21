@@ -19,7 +19,7 @@ AI访问仓库先核对分支/commit或读取时间，读AGENTS和llms，再进�
 
 ## 任务对照（taskRecipes）
 
-`routes.json` 的 `taskRecipes` 与根目录 AGENTS.md 的"任务 → 必读"表一一对应，是那张表的机器版。改 AGENTS.md 的任务表时同步改这里，反之亦然；[真实任务回归](../maintenance/tests/test_real_tasks.py)会检查两者没有脱节。一个组合任务可以同时命中多条。
+`routes.json` 的 `taskRecipes` 与根目录 AGENTS.md 的"任务 → 必读"表一一对应，是那张表的机器版。改 AGENTS.md 的任务表时同步改这里，反之亦然。`agentsRowExamples` 给 AGENTS 表的每一行配一两句真实任务说法，[校验](../maintenance/validate-context.py)每次提交都拿它们跑路由，读不全这一行列的文件、或者 AGENTS 新增改名了一行而这里没跟上，提交就被拦下；使用日志里出现 A 类（没读到）时，把那次的任务原话加进对应行。[真实任务回归](../maintenance/tests/test_real_tasks.py)另外检查若干历史失败。一个组合任务可以同时命中多条。
 
 ## 方法条件登记
 

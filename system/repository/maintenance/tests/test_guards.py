@@ -31,6 +31,19 @@ class Guards(unittest.TestCase):
         self.assertTrue(guards.similar_paragraphs({'a.md': RULE, 'b.md': reworded}))
         self.assertFalse(guards.similar_paragraphs({'a.md': RULE, 'b.md': '规则见[写入规范](x.md)。'}))
 
+    def test_retired_saying_is_caught_outside_history(self):
+        register = (ROOT / guards.RETIRED).read_text(encoding='utf-8')
+        terms = guards.retired_terms(register)
+        self.assertIn('五问法', terms)
+        self.assertTrue(guards.retired_hits('## 课上怎么讲\n\n先用五问法把要求说清楚。', terms))
+        # 说明它已被取代的句子、来历小节里的记录，都不算复活
+        self.assertFalse(guards.retired_hits('## 课上怎么讲\n\n以前的五问法已经拆进对照表。', terms))
+        self.assertFalse(guards.retired_hits('## 来源与状态\n\n- 第 3 课用了五问法。', terms))
+
+    def test_agents_entry_stays_under_codex_limit(self):
+        size = len((ROOT / 'AGENTS.md').read_text(encoding='utf-8').encode('utf-8'))
+        self.assertLessEqual(size, guards.AGENTS_MAX_BYTES)
+
 
 if __name__ == '__main__':
     unittest.main()

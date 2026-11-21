@@ -345,6 +345,58 @@ def check_sensitive_and_duplicates(root, files):
     return errors, warnings
 
 
+def agents_task_rows(text):
+    """Rows of the tables in AGENTS.md step 2: {first cell: (linked repo paths, pass-through READMEs)}.
+    A README written as `[入口](x/README.md) →` is a pass-through: the row says “start here, then go on”,
+    so reaching a file inside that folder counts as reaching it."""
+    section = text.split('### 第 2 步')[1].split('### 第 3 步')[0] if '### 第 2 步' in text else ''
+    rows = {}
+    for line in section.splitlines():
+        if not line.startswith('| ') or set(line) <= set('|-: '):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip('|').split('|')]
+        if cells[0] in ('任务', '这次要交出', '组合'):
+            continue
+        body = ' | '.join(cells[1:])
+        links = set(re.findall(r'\]\(([^)#\s:]+)', body))
+        through = {t for t in re.findall(r'\]\(([^)#\s:]+README\.md)[^)]*\)\s*→', body)}
+        rows[cells[0]] = (links, through)
+    return rows
+
+
+def check_agents_routes(root):
+    """AGENTS.md is what AIs read; routes.json is its machine copy. Every AGENTS row needs example
+    tasks in routes.json agentsRowExamples, and the router must reach every file the row lists for
+    those examples (a pass-through README counts as reached when the router went straight into its folder).
+    Examples should be Jianwei's own wording; a missed read (type A) adds that task's original words.
+    Changing one side without the other fails here, so the two cannot drift apart silently."""
+    agents = root / 'AGENTS.md'
+    routes = root / 'system/repository/navigation/routes.json'
+    if not agents.is_file() or not routes.is_file():
+        return []
+    rows = agents_task_rows(agents.read_text(encoding='utf-8-sig'))
+    examples = json.loads(routes.read_text(encoding='utf-8-sig')).get('agentsRowExamples', {})
+    router = load_module('context-route', root)
+    errors = []
+    for row, (links, through) in rows.items():
+        if not links:
+            continue
+        tasks = examples.get(row)
+        if not tasks:
+            errors.append(f'AGENTS任务表这一行在 routes.json 的 agentsRowExamples 里没有示例任务，路由脚本和入口表会脱节: {row[:40]}')
+            continue
+        reached = set()
+        for task in tasks:
+            reached |= set(router.resolve(task, 'auto', repo_root=root)['read'])
+        missing = sorted(link for link in links - reached
+                         if not (link in through and any(r.startswith(link[:-len('README.md')]) for r in reached)))
+        if missing:
+            errors.append(f'AGENTS任务表“{row[:30]}”列出的文件，路由脚本按示例任务读不到（改 routes.json 让它读到，或改示例任务）: {", ".join(missing)}')
+    for row in sorted(set(examples) - set(rows)):
+        errors.append(f'routes.json 的 agentsRowExamples 有一行在 AGENTS 任务表里已经不存在（入口表改了名或删了，这里要跟着改）: {row[:40]}')
+    return errors
+
+
 def validate(root=ROOT):
     root = Path(root).resolve()
     files = repo_files(root)
@@ -353,6 +405,10 @@ def validate(root=ROOT):
         errors.extend(checker(root, files))
     errors.extend(check_skills(root))
     errors.extend(check_registries(root))
+    try:
+        errors.extend(check_agents_routes(root))
+    except (OSError, ValueError, KeyError, TypeError, IndexError) as exc:
+        errors.append(f'Cannot compare AGENTS task table with routes.json: {exc}')
     try:
         errors.extend(load_module('content-guards', root).check(root, files))
     except (OSError, ValueError, KeyError, TypeError) as exc:

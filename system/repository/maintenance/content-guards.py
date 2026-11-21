@@ -8,6 +8,13 @@ records, per file, how many red-line marks each file had after the 2026-11-13 re
 with more marks than its budget (or a new file with any) is blocked, so a red line cannot be
 moved or swapped in silently. Lower a count when red lines are removed; raise it only after
 Jianwei confirms a new one.
+
+Retired sayings (system/repository/retired-rules.md) must not come back into rule files: the
+current text holds only the new rule, the register keeps the trace, and this check blocks the
+detection words of a retired rule from reappearing outside history sections.
+
+AGENTS.md is loaded whole by every tool; Codex stops loading project instructions at 32 KiB,
+so the entry is kept under AGENTS_MAX_BYTES.
 """
 import re
 from collections import defaultdict
@@ -16,6 +23,17 @@ from pathlib import Path
 
 BRAIN_LINE_LIMIT = 220
 AGENTS_CELL_LIMIT = 130
+AGENTS_MAX_BYTES = 30000
+RETIRED = 'system/repository/retired-rules.md'
+RETIRED_EXEMPT = {RETIRED, 'system/repository/observations.md', 'system/repository/usage-log.md',
+                  'system/repository/evolution.md'}
+HISTORY_HEADING = re.compile(r'^## .*(来源|来历|来源与状态|修订记录)\s*$')
+# Words just before a retired saying that mark it as superseded (而不是 X / 以前的 X / 替换掉错写的 X) ...
+SUPERSEDED_BEFORE = re.compile(r'不是|不再|不要求|不用|替换掉|以前的|错写的|退役的|旧的')
+# ... or just after it (X 已被取代 / X 已经拆进对照表).
+SUPERSEDED_AFTER = re.compile(r'^[”」』"]?(已被|已经被|被)?(取代|退役|废弃|拆进|并进|并入|改掉|改成|替换)|^[”」』"]?已经?(拆进|并进|并入|退役|取消|改掉)')
+SUPERSEDED_AFTER_NEAR = re.compile(r'被纠正|被推翻|被取代|已退役')
+NEARBY = 6
 SIMILARITY_LIMIT = 0.6
 MIN_PARAGRAPH_HANZI = 50
 POLICY = Path(__file__).with_name('validation-policy.json')
@@ -125,6 +143,46 @@ def similar_paragraphs(texts):
     return sorted(found, reverse=True)
 
 
+def retired_terms(text):
+    """{detection word: old saying} from the 退役表 in retired-rules.md."""
+    terms, in_table = {}, False
+    for line in text.splitlines():
+        if line.startswith('## '):
+            in_table = line.strip() == '## 退役表'
+            continue
+        if not in_table or not line.startswith('|') or set(line) <= set('|-: '):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip('|').split('|')]
+        # A row Jianwei took back (退役日期 cell notes 要回) no longer blocks its words.
+        if len(cells) >= 3 and cells[0] != '退役日期' and '要回' not in cells[0]:
+            for word in re.findall(r'`([^`]+)`', cells[2]):
+                terms[word] = cells[1][:30]
+    return terms
+
+
+def retired_hits(text, terms):
+    """Uses of a retired saying outside a level-2 history section (来源 / 来历 …, until the next
+    level-2 heading). A use is allowed only when the words right around it say it was superseded."""
+    hits, exempt = [], False
+    for line in prose(text).splitlines():
+        if line.startswith('## '):
+            exempt = bool(HISTORY_HEADING.match(line))
+            continue
+        if exempt or line.startswith('#'):
+            continue
+        for word, old in terms.items():
+            start = line.find(word)
+            while start != -1:
+                before = line[max(0, start - NEARBY):start]
+                after = line[start + len(word):start + len(word) + NEARBY]
+                if not (SUPERSEDED_BEFORE.search(before) or SUPERSEDED_AFTER.search(after)
+                        or SUPERSEDED_AFTER_NEAR.search(after)):
+                    hits.append((word, old))
+                    break
+                start = line.find(word, start + 1)
+    return hits
+
+
 def check(root, files, budget=None):
     root = Path(root)
     budget = redline_budget() if budget is None else budget
@@ -141,10 +199,20 @@ def check(root, files, budget=None):
             for line, length in long_brain_lines(text):
                 errors.append(f'大脑条目过长（{length}字>{BRAIN_LINE_LIMIT}），只留原则并链接执行细节: {name}:{line}')
         if name == 'AGENTS.md':
+            size = len(text.encode('utf-8'))
+            if size > AGENTS_MAX_BYTES:
+                errors.append(f'AGENTS.md 有 {size} 字节，超过 {AGENTS_MAX_BYTES}：Codex 读到 32 KiB 就不再往下读，细则移到链接的入口里')
             for line, length in long_agents_cells(text):
                 errors.append(f'AGENTS任务表单元格过长（{length}字>{AGENTS_CELL_LIMIT}），细则放进链接的入口: AGENTS.md:{line}')
         if rule_layer(name):
             texts[name] = text
+    register = root / RETIRED
+    terms = retired_terms(register.read_text(encoding='utf-8')) if register.is_file() else {}
+    for name, text in sorted(texts.items()):
+        if name in RETIRED_EXEMPT:
+            continue
+        for word, old in retired_hits(text, terms):
+            errors.append(f'已退役的说法又出现了（“{word}”，旧说法：{old}），正文按退役表里“现在以哪里为准”的写法改: {name}')
     for score, a, b, excerpt in similar_paragraphs(texts):
         errors.append(f'同一规则写在两处（相似度{score}），只保留一处正文、另一处改为链接: {a} <> {b}: {excerpt}')
     for name, n in sorted(redline_counts(root, files).items()):

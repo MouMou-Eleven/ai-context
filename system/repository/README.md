@@ -23,6 +23,7 @@ AI 在各领域里是工具或主题，不单独成为一个大类。比如"用 
 | [evolution.md](./evolution.md) | 仓库怎么越用越好用：三类失败、使用日志、观察记录、规则晋升与降级、按内容量升级 |
 | [usage-log.md](./usage-log.md) | 使用日志：每次用仓库做完成品记一行，升级仓库的依据 |
 | [observations.md](./observations.md) | 观察记录：建委纠正或认可成品时的原话和成品，待晋升成规则 |
+| [retired-rules.md](./retired-rules.md) | 已退役的说法：被推翻或取代的规则留痕，提交检查拦住它们回到正文；平时做任务不读 |
 | [versioned-knowledge-policy.md](./versioned-knowledge-policy.md) | 平台功能、价格这类会变的事实怎么管 |
 | [capability-evidence.md](./capability-evidence.md) | 什么情况下能说建委"会"某项能力 |
 | [templates/](./templates/README.md) | 项目、场次、方法的记录模板 |

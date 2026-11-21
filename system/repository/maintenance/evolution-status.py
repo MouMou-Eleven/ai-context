@@ -58,6 +58,20 @@ def table_rows(text, heading):
     return rows
 
 
+def misplaced_rows(text, heading):
+    """Rows written between a table's header and its |---| line are skipped by table_rows and break
+    the table on GitHub. New rows must go below the separator."""
+    lines = text.split('\n')
+    start = next((i for i, line in enumerate(lines) if line.strip() == '## ' + heading), None)
+    if start is None:
+        return 0
+    table = [line.strip() for line in lines[start + 1:] if line.strip().startswith('|')]
+    for n, line in enumerate(table):
+        if set(line) <= set('|-: '):
+            return max(n - 1, 0)
+    return 0
+
+
 def normalise_target(target):
     target = target.split('?')[0]
     target = re.sub(r'^(\.\./)+', '', target)
@@ -78,6 +92,9 @@ def status(root=ROOT):
     marker = MARKER.search(log_text)
     last = marker.group(1) if marker else '0000-00-00'
     entries, warnings = [], []
+    for name, text, heading in ((LOG, log_text, '日志'), (OBSERVATIONS, read(root, OBSERVATIONS), '观察')):
+        if misplaced_rows(text, heading):
+            warnings.append(f'{name} 有 {misplaced_rows(text, heading)} 行写在表头和分隔行（|---|）之间，脚本数不到；把分隔行挪回表头正下方，新行写在分隔行下面')
     for cells in table_rows(log_text, '日志'):
         if len(cells) < 6 or not DATE.match(cells[0]):
             warnings.append(f'使用日志有一行没被计数（日期要写成 YYYY-MM-DD，至少 6 列）：{" | ".join(cells)[:60]}')
@@ -99,23 +116,32 @@ def status(root=ROOT):
     missed = [entry for entry in entries if 'A' in entry['types']]
     if len(missed) >= MISSED_READS:
         reasons.append(f'有 {len(missed)} 次该读的经验没读到（A 类），入口或任务表要改')
-    groups = defaultdict(set)
+    groups, disputed = defaultdict(set), []
     for cells in table_rows(read(root, OBSERVATIONS), '观察'):
         if len(cells) < 8 or not DATE.match(cells[0]):
             warnings.append(f'观察记录有一行没被计数（日期要写成 YYYY-MM-DD，8 列）：{" | ".join(cells)[:60]}')
             continue
         if cells[7].startswith('待定') and cells[2]:
             groups[cells[2]].add(cells[1])
+        if cells[7].startswith('冲突待定'):
+            disputed.append(f'{cells[0]} {cells[1]}（{cells[2]}）')
     for category, projects in sorted(groups.items()):
         if len(projects) >= PROJECTS_FOR_PROMOTION:
             reasons.append(f'观察“{category}”已在 {len(projects)} 个项目出现（{"、".join(sorted(projects))}），可以考虑升成通用规则')
+    # A disputed observation waits for one answer from Jianwei; it is not an upgrade.
     return {'lastUpgrade': last, 'entries': len(entries), 'entriesSinceUpgrade': len(recent),
-            'due': bool(reasons), 'reasons': reasons, 'warnings': warnings}
+            'due': bool(reasons), 'reasons': reasons, 'disputed': disputed, 'warnings': warnings}
 
 
 def reminder(result):
-    return ('仓库该升级了：' + '；'.join(result['reasons']) +
-            '。按 system/repository/evolution.md 的“升级怎么做”处理；在升级完成前，每次回复末尾用一句话提醒建委。')
+    parts = []
+    if result['due']:
+        parts.append('仓库该升级了：' + '；'.join(result['reasons']) +
+                     '。按 system/repository/evolution.md 的“升级怎么做”处理；在升级完成前，每次回复末尾用一句话提醒建委。')
+    if result.get('disputed'):
+        parts.append(f'有 {len(result["disputed"])} 条规则冲突等建委定（观察记录里状态为“冲突待定”）：'
+                     + '；'.join(result['disputed']) + '。在回复末尾把冲突列给建委问一次，答了按进化机制第三节处理。')
+    return '\n'.join(parts)
 
 
 if __name__ == '__main__':
@@ -126,13 +152,15 @@ if __name__ == '__main__':
     args = parser.parse_args()
     result = status(args.root)
     if args.hook:
-        if result['due']:
+        if result['due'] or result['disputed']:
             print(json.dumps({'hookSpecificOutput': {'hookEventName': 'SessionStart',
                                                      'additionalContext': reminder(result)}}, ensure_ascii=False))
     elif args.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))
     else:
-        print(reminder(result) if result['due'] else
-              f'仓库暂不需要升级：上次升级 {result["lastUpgrade"]}，之后已记 {result["entriesSinceUpgrade"]} 条使用日志。')
+        if not result['due']:
+            print(f'仓库暂不需要升级：上次升级 {result["lastUpgrade"]}，之后已记 {result["entriesSinceUpgrade"]} 条使用日志。')
+        if result['due'] or result['disputed']:
+            print(reminder(result))
         for warning in result['warnings']:
             print('注意：' + warning)

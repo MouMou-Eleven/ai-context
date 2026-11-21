@@ -110,6 +110,19 @@ class Evolution(unittest.TestCase):
         handled = obs('2026-11-14', '甲项目', '配色') + obs('2026-11-20', '乙项目', '配色', '已晋升 → 链接')
         self.assertFalse(self.status(obs_rows=same + handled)['due'])
 
+    def test_rows_above_the_separator_are_reported(self):
+        header = '| 日期 | 任务 | 读了 | 结果 | 失败类型 | 涉及规则 | 说明 |\n'
+        head = LOG_HEAD.replace(header, header + row('2026-11-20', 'A'))
+        self.assertEqual(evolution.misplaced_rows(head, '日志'), 1)
+        self.assertEqual(evolution.misplaced_rows(LOG_HEAD, '日志'), 0)
+
+    def test_disputed_observation_needs_jianwei(self):
+        result = self.status(obs_rows=obs('2026-11-21', '甲项目', '提示词框架', '冲突待定：和[某规则](x.md)打架'))
+        self.assertFalse(result['due'])  # 等建委回答一个问题，不是升级仓库
+        self.assertTrue(any('甲项目' in d for d in result['disputed']))
+        self.assertIn('等建委定', evolution.reminder(result))
+        self.assertNotIn('该升级', evolution.reminder(result))
+
     def test_hook_is_silent_when_not_due_and_valid_json_when_due(self):
         script = ROOT / MAINTENANCE / 'evolution-status.py'
         with tempfile.TemporaryDirectory() as tmp:

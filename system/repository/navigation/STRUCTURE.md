@@ -1521,6 +1521,7 @@ ai-context/
 │       │   ├── sync-structure.py  跨平台维护或执行脚本
 │       │   ├── tests/  验证调用、归属、成品检查及导航维护的行为
 │       │   │   ├── README.md  维护回归测试
+│       │   │   ├── test_agents_routes.py  入口表和路由不脱节：AGENTS 每行的示例任务都要读到这一行列的文件
 │       │   │   ├── test_context.py  跨平台维护或执行脚本
 │       │   │   ├── test_deliverable.py  跨平台维护或执行脚本
 │       │   │   ├── test_evolution.py  进化机制回归：升级提醒按内容触发、钩子输出、红线预算拦截
@@ -1543,6 +1544,7 @@ ai-context/
 │       │   └── task-guide.md  完整任务指南，按主任务和条件依赖读取
 │       ├── observations.md  观察记录：建委纠正或认可成品时的原话和成品，待晋升成通用规则
 │       ├── README.md  治理总入口
+│       ├── retired-rules.md  已退役的说法：被推翻或取代的规则留痕，提交检查拦住旧说法回到正文
 │       ├── revisions/  仓库级重大修订
 │       │   ├── 2026-11-13-evolution-and-redline-review.md  第八轮整改说明：进化机制、审美标尺、红线收紧及全部红线去向表
 │       │   └── README.md  仓库修订索引

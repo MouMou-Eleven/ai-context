@@ -352,7 +352,8 @@
         "write"
       ],
       "paths": [
-        "work/domains/self-media/articles/README.md"
+        "work/domains/self-media/articles/README.md",
+        "work/domains/self-media/titles/README.md"
       ]
     },
     {
@@ -452,7 +453,8 @@
         "设计感",
         "高级感",
         "美化",
-        "排版"
+        "排版",
+        "画面"
       ],
       "excludeAny": [
         "只查",
@@ -898,14 +900,14 @@
             "合成",
             "预览",
             "做出来",
-        "证书",
-        "频闪",
-        "闪烁",
-        "光效",
-        "字体",
-        "调色",
-        "验收",
-        "人物",
+            "证书",
+            "频闪",
+            "闪烁",
+            "光效",
+            "字体",
+            "调色",
+            "验收",
+            "人物",
             "返修",
             "配音"
           ],
@@ -3940,7 +3942,6 @@
         "方案",
         "大纲给",
         "招生",
-        "宣传",
         "朋友圈",
         "公众号",
         "微课",
@@ -3975,11 +3976,26 @@
           "paths": [
             "work/domains/training/experience/technical-explanation/problem-driven-technical-explanation.md"
           ]
+        },
+        {
+          "whenAny": [
+            "岗",
+            "部门",
+            "行业",
+            "员工",
+            "集团",
+            "单位",
+            "公司"
+          ],
+          "paths": [
+            "work/domains/training/experience/role-specific-scenarios.md"
+          ]
         }
       ],
       "excludePatterns": [
         "(课件|幻灯片|演示文稿|PPT).{0,6}(美化|排版|版式|视觉|配色|改版|设计感|重新设计|页面设计|视觉设计)|(美化|排版|重新设计|改版).{0,6}(课件|幻灯片|演示文稿)|课件设计",
-        "^(?!.*培训).*((给|帮|替|为)(老师|教师|学校)|老师的|教师的|订单|接单|承接|委托).{0,15}(课件|幻灯片)|^(?!.*培训).*(课件|幻灯片).{0,15}(订单|单子)"
+        "^(?!.*培训).*((给|帮|替|为)(老师|教师|学校)|老师的|教师的|订单|接单|承接|委托).{0,15}(课件|幻灯片)|^(?!.*培训).*(课件|幻灯片).{0,15}(订单|单子)",
+        "^(?!.*(课件|备课|一节课|这节课|下节课|讲课)).*宣传"
       ]
     },
     {
@@ -4031,6 +4047,30 @@
           "paths": [
             "work/domains/other/commercial/delivery-formats/gov-enterprise-word.md"
           ]
+        },
+        {
+          "whenAny": [
+            "岗",
+            "部门",
+            "行业",
+            "员工",
+            "集团",
+            "单位",
+            "公司"
+          ],
+          "paths": [
+            "work/domains/training/experience/role-specific-scenarios.md"
+          ]
+        },
+        {
+          "whenAny": [
+            "讲师介绍",
+            "讲师简介",
+            "讲师信息"
+          ],
+          "paths": [
+            "personal/README.md"
+          ]
         }
       ]
     },
@@ -4075,6 +4115,10 @@
             "work/domains/other/commercial/experience/external-deliverable-language.md"
           ]
         }
+      ],
+      "excludePatterns": [
+        "宣传(岗|部|科|口|处|干事|人员)",
+        "培训课件|备课|一节课|这节课|讲课"
       ]
     },
     {
@@ -4261,6 +4305,411 @@
           ]
         }
       ]
+    },
+    {
+      "id": "repository-as-topic",
+      "label": "写这个仓库本身（文章、分享、介绍）",
+      "whenAll": [
+        [
+          "仓库",
+          "知识库",
+          "数字分身"
+        ],
+        [
+          "文章",
+          "分享",
+          "介绍",
+          "演讲",
+          "怎么搭",
+          "演进",
+          "复盘"
+        ]
+      ],
+      "excludeAny": [
+        "沉淀到",
+        "记到仓库",
+        "升级仓库",
+        "仓库该升级"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "system/repository/revisions/README.md",
+        "system/repository/usage-log.md"
+      ]
+    },
+    {
+      "id": "quotation-entry",
+      "label": "报价、修改费",
+      "whenAny": [
+        "报价",
+        "报个价",
+        "报一下价",
+        "询价",
+        "修改费",
+        "多少钱",
+        "制作费用",
+        "怎么收费"
+      ],
+      "intents": [],
+      "paths": [
+        "work/domains/other/commercial/quotations/README.md"
+      ]
+    },
+    {
+      "id": "formal-documents",
+      "label": "合同、正式文书、对外表达标准",
+      "whenAny": [
+        "合同",
+        "合作协议",
+        "服务协议",
+        "保密协议",
+        "正式文书",
+        "公函",
+        "函件",
+        "对外表达"
+      ],
+      "intents": [],
+      "paths": [
+        "work/domains/other/commercial/README.md"
+      ]
+    },
+    {
+      "id": "wanrong-session",
+      "label": "万融委托的培训",
+      "whenAny": [
+        "万融"
+      ],
+      "intents": [],
+      "paths": [
+        "work/projects/ai-training/wanrong-commissioned/README.md"
+      ]
+    },
+    {
+      "id": "personal-intro",
+      "label": "个人简介、讲师介绍、简历",
+      "whenAny": [
+        "个人简介",
+        "讲师介绍",
+        "讲师简介",
+        "简历",
+        "自我介绍",
+        "个人介绍"
+      ],
+      "intents": [],
+      "paths": [
+        "personal/README.md",
+        "personal/credentials.md"
+      ],
+      "readWhen": [],
+      "whenPatterns": [
+        "(荣誉|背书).{0,12}(简介|介绍|简历)|(简介|介绍|简历).{0,12}(荣誉|背书)"
+      ]
+    },
+    {
+      "id": "jianwei-brain",
+      "label": "建委的想法、偏好、判断方式",
+      "whenAny": [
+        "偏好",
+        "判断方式",
+        "我的想法",
+        "建委的想法",
+        "建委的判断",
+        "做事原则",
+        "怎么想的"
+      ],
+      "intents": [],
+      "paths": [
+        "brain/README.md",
+        "brain/preferences.md"
+      ]
+    },
+    {
+      "id": "skill-library",
+      "label": "用 Skill",
+      "whenAny": [
+        "Skill",
+        "skill",
+        "SKILL"
+      ],
+      "intents": [],
+      "paths": [
+        "work/domains/other/skills/README.md"
+      ]
+    },
+    {
+      "id": "browser-use",
+      "label": "访问网站、浏览器操作、网站验收",
+      "whenAny": [
+        "打开网站",
+        "访问网站",
+        "打开这个网站",
+        "打开网页",
+        "浏览器",
+        "网站验收",
+        "验收一下页面",
+        "在线对话",
+        "登录网站"
+      ],
+      "intents": [],
+      "paths": [
+        "system/environment/computers/desktop-1/README.md"
+      ]
+    },
+    {
+      "id": "local-environment",
+      "label": "电脑、网络、本机工具",
+      "whenAny": [
+        "代理端口",
+        "代理设置",
+        "科学上网",
+        "本机",
+        "VPN",
+        "C盘",
+        "卸载软件",
+        "我电脑",
+        "这台电脑",
+        "电脑环境",
+        "电脑配置",
+        "网络设置",
+        "网络不通"
+      ],
+      "intents": [],
+      "paths": [
+        "system/environment/README.md"
+      ]
+    },
+    {
+      "id": "repository-write",
+      "label": "往仓库里写东西",
+      "whenAny": [
+        "沉淀",
+        "记到仓库",
+        "写入仓库",
+        "写进仓库",
+        "入库",
+        "记住这条",
+        "以后都这样"
+      ],
+      "intents": [],
+      "paths": [
+        "system/repository/ingestion-workflow.md"
+      ],
+      "readWhen": [
+        {
+          "whenAny": [
+            "纠正",
+            "认可",
+            "不对",
+            "不好",
+            "返工",
+            "记住这条",
+            "以后都这样"
+          ],
+          "paths": [
+            "system/repository/evolution.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repository-upgrade",
+      "label": "仓库该升级了、维护或整改仓库",
+      "whenAny": [
+        "升级仓库",
+        "仓库该升级",
+        "整改仓库",
+        "维护仓库",
+        "仓库维护",
+        "仓库体检",
+        "体检仓库"
+      ],
+      "intents": [],
+      "paths": [
+        "system/repository/evolution.md",
+        "system/repository/usage-log.md",
+        "system/repository/observations.md",
+        "system/repository/ingestion-workflow.md"
+      ]
+    },
+    {
+      "id": "design-taste",
+      "label": "任何设计成品（审美词库与建委审美标尺）",
+      "whenAny": [
+        "海报",
+        "折页",
+        "书籍",
+        "画册",
+        "封面",
+        "KV",
+        "展板",
+        "PPT",
+        "ppt",
+        "幻灯片",
+        "画面",
+        "界面",
+        "网页设计",
+        "流程图",
+        "好看",
+        "高级",
+        "美化",
+        "包装",
+        "网页界面"
+      ],
+      "excludeAny": [
+        "提示词",
+        "只查",
+        "查询位置",
+        "宣传片的分镜",
+        "报价",
+        "询价",
+        "多少钱",
+        "爬虫",
+        "抓取"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/design/common/design-principles/aesthetic-vocabulary.md",
+        "work/domains/design/common/design-principles/taste-benchmarks.md"
+      ]
+    },
+    {
+      "id": "ppt-free-visual",
+      "label": "做 PPT（没有指定模板、不录课）",
+      "whenAny": [
+        "PPT",
+        "ppt",
+        "幻灯片",
+        "演示文稿"
+      ],
+      "excludeAny": [
+        "精品课",
+        "指定模板",
+        "录课",
+        "只查",
+        "查询位置"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "paths": [
+        "work/domains/design/graphic/ppt/ai-assisted-design/README.md",
+        "work/domains/design/graphic/ppt/ai-assisted-design/layout-and-pagination.md"
+      ]
     }
-  ]
+  ],
+  "agentsRowExamples": {
+    "准备演讲 / 对外分享 / 主题分享（台下是听众，没有评委）": [
+      "下周我要去一个行业大会做主题分享，讲AI怎么改变工作，帮我准备内容"
+    ],
+    "写培训**课件** / 分享资料 / 课堂文档（讲什么、怎么讲）": [
+      "给济南城市建设集团宣传岗写一节培训课件，讲提示词怎么写",
+      "给城建集团宣传岗写一节培训课件，讲怎么用AI写宣传稿",
+      "帮我写一份给银行员工的AI办公培训课件，3小时"
+    ],
+    "写培训**方案 / 大纲**（给主办方）": [
+      "给山东电力咨询院的设计岗出一份AI培训方案，Word版，里面要有讲师介绍"
+    ],
+    "写实操教程、保姆级教程（不管讲什么主题）": [
+      "写一篇WorkBuddy安装的保姆级教程"
+    ],
+    "写这个仓库本身：个人或企业知识库、数字分身怎么搭、怎么演进（文章、分享、介绍都算）": [
+      "写一篇文章介绍我的个人知识库仓库是怎么一步步演进的"
+    ],
+    "公众号 / 图文文章": [
+      "帮我写一篇公众号文章，讲AI办公的三个误区"
+    ],
+    "宣传、招生、产品介绍、报名页": [
+      "给我的AI社群写一段招生宣传文案"
+    ],
+    "朋友圈 / 社群话术 / 口播 / 直播": [
+      "写一条朋友圈，发我今天培训的照片"
+    ],
+    "任何设计成品：PPT、海报、折页、书籍、视频画面、网页界面、流程图；用户只说“做好看点”“高级点”": [
+      "帮我做一张活动海报，要高级一点"
+    ],
+    "做任何 PPT（含自我介绍、作品集、公司介绍）、PPT 美化、课件美化或排版、首页定调、设计图转可编辑 PPT": [
+      "帮我做一份公司介绍PPT"
+    ],
+    "视频：宣传片、微课、故事片、AI 视频提示词": [
+      "帮我写一个企业宣传片的分镜和AI视频提示词"
+    ],
+    "AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、做动画、出成片（不管用户提没提代码）": [
+      "把这段录屏剪一下，加上标题和标注，出成片"
+    ],
+    "用百度秒哒开发": [
+      "用秒哒做一个报名小程序"
+    ],
+    "其他网站 / 应用 / 编程": [
+      "帮我写一个网站，有登录页面"
+    ],
+    "教育智能体 / 学科应用 / 课堂业务系统开发（任何平台）": [
+      "用扣子做一个科学课的教育智能体"
+    ],
+    "在天津智能体平台（aiagent.tjtc，近似扣子）上搭建、修改、导入导出": [
+      "在天津智能体平台上搭建一个数学智能体"
+    ],
+    "天津 AI 教育大赛赛道二材料：申报书、技术说明与验证报告、逐字稿、演示视频、提交包": [
+      "写天津AI教育大赛赛道二的申报书"
+    ],
+    "报价、修改费（PPT、视频、课件等任何单子）": [
+      "客户要做一个3分钟宣传片，帮我报个价"
+    ],
+    "路演、答辩、比赛申报、商业计划、融资（台下有评委或投资人）": [
+      "帮我准备言剪AI的决赛路演PPT和讲稿"
+    ],
+    "合同、正式文书、对外表达标准": [
+      "帮我起草一份培训服务合同"
+    ],
+    "某一场培训（济南干部培训、济南市图书馆等）": [
+      "济南市图书馆训练营第4课怎么准备",
+      "万融委托的那场企业培训，帮我准备课件"
+    ],
+    "某个具体项目（社群、言剪、飞书书、六十甲子）": [
+      "言剪AI现在进度到哪了"
+    ],
+    "个人简介、讲师介绍、简历": [
+      "帮我写一段讲师介绍"
+    ],
+    "建委的想法、偏好、判断方式": [
+      "我做事有哪些偏好和判断方式"
+    ],
+    "用 Skill": [
+      "用一个Skill帮我批量重命名文件"
+    ],
+    "访问网站、查看在线对话、浏览器操作或网站验收": [
+      "打开这个网站帮我验收一下页面"
+    ],
+    "电脑、网络、本机工具": [
+      "我电脑的代理端口是多少"
+    ],
+    "往仓库里写东西": [
+      "把这次的培训经验沉淀到仓库",
+      "建委纠正了课件里的表格列宽，把这条记到仓库"
+    ],
+    "仓库该升级了、维护或整改仓库": [
+      "仓库该升级了，开始升级仓库"
+    ],
+    "任何有画面的东西：PPT、海报、视频、动画、网页界面、流程图、图表": [
+      "帮我画一张流程图"
+    ],
+    "Word 文档，而对方没有给模板或格式": [
+      "给学校写一份Word版的合作说明"
+    ],
+    "给外部的人看的任何文字": [
+      "给客户写一份项目说明"
+    ],
+    "自媒体内容讲 AI 技术": [
+      "写一篇公众号文章讲清楚什么是MCP"
+    ],
+    "培训＋自媒体＋商业化一起（比如一场付费公开课的招生文章）": [
+      "写一篇付费公开课的招生文章"
+    ]
+  }
 }
