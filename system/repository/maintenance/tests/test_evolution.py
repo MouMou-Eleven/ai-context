@@ -74,6 +74,18 @@ class Evolution(unittest.TestCase):
         result = self.status(row('2026-11-20', 'N/A') + row('2026-11-21', 'NA'))
         self.assertFalse(result['due'])
 
+    def test_denied_failure_types_are_not_counted(self):
+        rows = (row('2026-11-20', '用户返工 0 轮，无 A/B 类。C：未达标') + row('2026-11-21', 'A/B/C 无。独审未执行')
+                + row('2026-11-22', '无A类'))
+        result = self.status(rows)
+        self.assertFalse(any('A 类' in r for r in result['reasons']))
+        self.assertTrue(any('A 类' in r for r in self.status(row('2026-11-20', 'A') + row('2026-11-21', 'A、B'))['reasons']))
+        # A single letter followed by an unrelated 无 is still a real type.
+        kept = self.status(row('2026-11-20', 'A无误读；B', RULE) + row('2026-11-21', 'A；B 无独审', RULE))
+        self.assertTrue(any('A 类' in r for r in kept['reasons']))
+        self.assertTrue(any('B 类' in r for r in kept['reasons']))
+        self.assertTrue(any('B 类' in r for r in self.status(row('2026-11-20', 'C无法达标；B', RULE) + row('2026-11-21', 'B', RULE))['reasons']))
+
     def test_same_link_twice_in_one_row_counts_once(self):
         self.assertFalse(self.status(row('2026-11-20', 'B', RULE + '、' + RULE))['due'])
 

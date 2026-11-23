@@ -23,6 +23,8 @@ MARKER = re.compile(r'<!--\s*last-upgrade:\s*(\d{4}-\d{2}-\d{2})\s*-->')
 DATE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 LINK_TARGET = re.compile(r'\]\(([^)\s]+)\)')
 FAILURE_TYPE = re.compile(r'(?<![A-Za-z])[ABC](?![A-Za-z])')
+# "无 A/B 类", "A/B/C 无": letters that are explicitly denied (2026-11-23: two such rows were counted as A).
+DENIED_TYPES = re.compile(r'无\s*[ABC](?:\s*[/、，,]\s*[ABC])*\s*类|无\s*[ABC](?=\s*$|[。；，,\s])|[ABC](?:\s*[/、，,]\s*[ABC])+\s*类?\s*都?无')
 
 # Default thresholds; evolution.md explains them and says when to adjust.
 ROUTINE_LOG_ROWS = 20
@@ -99,9 +101,10 @@ def status(root=ROOT):
         if len(cells) < 6 or not DATE.match(cells[0]):
             warnings.append(f'使用日志有一行没被计数（日期要写成 YYYY-MM-DD，至少 6 列）：{" | ".join(cells)[:60]}')
             continue
-        if 'B' in FAILURE_TYPE.findall(cells[4]) and not LINK_TARGET.search(cells[5]):
+        types = set(FAILURE_TYPE.findall(DENIED_TYPES.sub(' ', cells[4])))
+        if 'B' in types and not LINK_TARGET.search(cells[5]):
             unlinked_b.append(f'{cells[0]} {cells[1][:20]}')
-        entries.append({'date': cells[0], 'types': set(FAILURE_TYPE.findall(cells[4])),
+        entries.append({'date': cells[0], 'types': types,
                         'rules': sorted({normalise_target(t) for t in LINK_TARGET.findall(cells[5])})})
     recent = [entry for entry in entries if entry['date'] >= last]
     reasons = []

@@ -6,7 +6,7 @@
 
 | 内容 | 文件 | 什么时候读 |
 |---|---|---|
-| 交付与测试：证据分级、干净复建、跨层契约、字段矩阵、线上版本确认、性能不降质 | [delivery-and-testing.md](./delivery-and-testing.md) | 任何要交付、要测试、要上线的开发任务 |
+| 交付与测试：开工前倒推范围定验收线、证据分级、测试先查测试本身、交给人实测前清旧状态、只停自己的进程、修到第二次换路、干净复建、跨层契约、字段矩阵、线上版本确认、性能不降质 | [delivery-and-testing.md](./delivery-and-testing.md) | 任何要交付、要测试、要上线的开发任务 |
 | 后端、登录、支付：数据存哪、手机号身份、签名、密钥、多通道支付、兑换码事务 | [backend-auth-payment.md](./backend-auth-payment.md) | 涉及数据库、登录、支付、积分 |
 | 前端 UI 质量：层级、间距、多端、状态体验、移动端验收 | [frontend-ui-quality-standards.md](./frontend-ui-quality-standards.md) | 页面改版、组件、响应式、需要判断界面好不好看 |
 | 创意前端提示词：视频、3D、滚动叙事、空间画廊 | [creative-frontend-prompt-patterns.md](./creative-frontend-prompt-patterns.md) | 要做有视觉冲击力的前端页面 |
