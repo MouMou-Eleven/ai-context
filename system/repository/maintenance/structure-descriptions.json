@@ -51,6 +51,7 @@
     "work/domains/design/video/education/README.md": "微课、精品课、MG 动画与教育课件",
     "work/domains/design/video/education/ai-generated-microcourse-video-workflow.md": "AI教师微课的音频分段、场景关键图、多镜头提示词与验收方法",
     "work/domains/design/video/common/ae-production.md": "AE包装、合成与工程交付要求",
+    "work/domains/design/video/common/ai-ae-collaboration.md": "AI与AE协作：本机两个AE MCP怎么挑、先用自带工具不自己写脚本、保持最新、操作与渲染检查、经验写到哪里",
     "work/domains/design/video/common/code-rendered-animation": "代码生成动画：按效果类型分门类（三维、成片包装、MG、手绘），门类内再分片型",
     "work/domains/design/video/common/code-rendered-animation/README.md": "门类总览、与Seedance/AE怎么选、读取顺序与检查表",
     "work/domains/design/video/common/code-rendered-animation/workflow.md": "所有门类通用：定调、镜头脚本、确定性、渲染管线、迭代节奏",

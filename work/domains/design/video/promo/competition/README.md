@@ -24,7 +24,7 @@
 
 AI 自己动手出片时，画面排版、字号、动效验收照常叠加[代码式视频设计经验](../../../common/code-driven-video/README.md)；要做三维动画或在成片上加包装，读[代码生成动画](../../common/code-rendered-animation/README.md)。
 
-AI 跑 AE 脚本或渲染前，先后台启动 [AE 弹窗守护](./tools/ae_dialog_guard.py)（`pythonw ae_dialog_guard.py`），全程不需要建委点弹窗，守护只在封装脚本刷新运行标记期间动手，建委手动用 AE 时不碰；用法和边界见[流程里的实测坑](./ai-code-ae-pipeline.md)。
+AI 操作 AE（改模板、渲染）先读视频共用的[AI 与 AE 协作](../../common/ai-ae-collaboration.md)：本机两个 AE MCP 怎么挑、先用 MCP 自带工具不自己写脚本、通用的操作坑和渲染检查都在那里，本板块只写创赛片特有的。两个 MCP 都连不上、退回命令行脚本时，才后台启动 [AE 弹窗守护](../../common/tools/ae_dialog_guard.py)。经验写到哪一边，按那篇的[经验写到哪里](../../common/ai-ae-collaboration.md#经验写到哪里默认)判断：换到 MG 动画、自媒体短视频还成立的写那里，只在创赛里成立的（证书、按画面用模板、主色、字体统一、包装套路）写本板块。
 
 ## 写入
 

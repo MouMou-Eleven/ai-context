@@ -706,12 +706,23 @@
         "AE后期",
         "AE 后期",
         "AE合成",
-        "AE 合成"
+        "AE 合成",
+        "aep",
+        ".aep",
+        "AE工程",
+        "AE 工程",
+        "AE模板",
+        "AE 模板"
       ],
       "excludeAny": [],
       "entry": "work/domains/design/video/common/ae-production.md",
       "priority": 70,
       "dependencies": [
+        {
+          "path": "work/domains/design/video/common/ai-ae-collaboration.md",
+          "whenAny": [],
+          "intents": []
+        },
         {
           "path": "work/domains/design/common/production-workflow.md",
           "whenAny": [],
@@ -781,6 +792,15 @@
             "AE",
             "合成",
             "后期"
+          ],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/common/ai-ae-collaboration.md",
+          "whenAny": [
+            "AE",
+            "After Effects",
+            "MCP"
           ],
           "intents": []
         },
@@ -2865,14 +2885,53 @@
       "source": "2026-11-06 由创赛宣传片制作拆出：石墨烯、再净先锋、聚禾为宝三单的提示词与建委反馈"
     },
     {
+      "id": "ai-ae-collaboration",
+      "label": "AI与AE协作（两个AE MCP）",
+      "status": "active",
+      "path": "work/domains/design/video/common/ai-ae-collaboration.md",
+      "selectedAny": [
+        "ae",
+        "video",
+        "competition-video",
+        "enterprise-video",
+        "self-media",
+        "code-video"
+      ],
+      "whenAny": [
+        "AE",
+        "After Effects",
+        "MCP",
+        "模板",
+        "渲染",
+        "aep"
+      ],
+      "excludeAny": [
+        "视频提示词",
+        "Seedance",
+        "Remotion"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "AI要在After Effects里读工程、改模板、做动画或包装、渲染出片时，不管片型（MG、自媒体、特效包装、企业片、创赛片）",
+      "notFor": "只写AE风格的视频提示词，或只用Remotion、Python代码做动画不碰AE时；片型自己的版面和设计规则仍读片型目录",
+      "acceptance": "交付前检查表填实测值：用了哪个MCP的哪些工具、命令行脚本几次及原因、两个MCP版本、ae_proof结果、黑帧频闪接缝",
+      "evidence": "work/domains/design/video/common/ai-ae-collaboration.md",
+      "confirmedAt": "2026-11-23",
+      "entryPoints": [
+        "work/domains/design/video/common/README.md"
+      ],
+      "source": "2026-11-23建委要求：装surehand，两个MCP写进视频共用方法由AI自己挑，先用自带工具不自己写脚本；通用操作要点从创赛片流程搬来"
+    },
+    {
       "id": "competition-code-ae-pipeline",
       "label": "创赛片AI代码与AE自动化流程",
       "status": "active",
       "path": "work/domains/design/video/promo/competition/ai-code-ae-pipeline.md",
       "selectedAny": [
         "competition-video",
-        "enterprise-video",
-        "video"
+        "enterprise-video"
       ],
       "whenAny": [
         "AE",
@@ -2917,8 +2976,7 @@
       "path": "work/domains/design/video/promo/competition/ae-template-layout.md",
       "selectedAny": [
         "competition-video",
-        "enterprise-video",
-        "video"
+        "enterprise-video"
       ],
       "whenAny": [
         "AE",
@@ -4642,6 +4700,9 @@
     ],
     "AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、做动画、出成片（不管用户提没提代码）": [
       "把这段录屏剪一下，加上标题和标注，出成片"
+    ],
+    "AI 操作 After Effects：改 AE 模板、在 AE 里做动画或包装、渲染 AE 工程（任何片型，不管用户提没提 MCP）": [
+      "用AE把这个模板改成我的文字和照片，再渲染出来"
     ],
     "用百度秒哒开发": [
       "用秒哒做一个报名小程序"

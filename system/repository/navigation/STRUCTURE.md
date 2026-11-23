@@ -84,6 +84,7 @@ ai-context/
 │   │   │   └── video/  按宣传、教育、故事片型组合制作方法
 │   │   │       ├── common/  跨片型复用分镜、AI生成、合成与验收方法
 │   │   │       │   ├── ae-production.md  AE包装、合成与工程交付要求
+│   │   │       │   ├── ai-ae-collaboration.md  AI与AE协作：本机两个AE MCP怎么挑、先用自带工具不自己写脚本、保持最新、操作与渲染检查、经验写到哪里
 │   │   │       │   ├── code-rendered-animation/  代码生成动画：按效果类型分门类（三维、成片包装、MG、手绘），门类内再分片型
 │   │   │       │   │   ├── 3d-scene/  三维场景与运镜：程序化建模、镜头路线与渲染
 │   │   │       │   │   │   ├── camera-motion.md  三维运镜：路线、平滑、速度曲线、转向、避让与运动模糊
@@ -94,202 +95,204 @@ ai-context/
 │   │   │       │   │   ├── README.md  门类总览、与Seedance/AE怎么选、读取顺序与检查表
 │   │   │       │   │   └── workflow.md  所有门类通用：定调、镜头脚本、确定性、渲染管线、迭代节奏
 │   │   │       │   ├── README.md  跨片型通用制作经验
-│   │   │       │   └── seedance/  Seedance 视频提示词唯一目录：建委实战在前，第三方模板库在 awesome-seedance/
-│   │   │       │       ├── awesome-seedance/  第三方 awesome-seedance 模板与案例库（中英文，已删日文）
-│   │   │       │       │   ├── lookup.py  只读提取模板、案例原文和复测状态
-│   │   │       │       │   ├── README.md  能力边界、主动调用、来源与后续沉淀
-│   │   │       │       │   ├── source/  上游完整快照，共 144 个文件；展开可核查内部层级
-│   │   │       │       │   │   ├── .claude-plugin/  目录入口
-│   │   │       │       │   │   │   └── marketplace.json  结构化配置与索引
-│   │   │       │       │   │   ├── .github/  目录入口
-│   │   │       │       │   │   │   ├── CODEOWNERS  资料与资源
-│   │   │       │       │   │   │   ├── pull_request_template.md  说明与资料
-│   │   │       │       │   │   │   └── workflows/  目录入口
-│   │   │       │       │   │   │       ├── refresh-site-stats.yml  自动化配置
-│   │   │       │       │   │   │       ├── update-readme.yml  自动化配置
-│   │   │       │       │   │   │       └── validate-submissions.yml  自动化配置
-│   │   │       │       │   │   ├── .gitignore  资料与资源
-│   │   │       │       │   │   ├── agents/  目录入口
-│   │   │       │       │   │   │   └── skills/  目录入口
-│   │   │       │       │   │   │       ├── seedance-3d-cartoon/  目录入口
-│   │   │       │       │   │   │       │   ├── references/  目录入口
-│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · 3D cartoon character short
-│   │   │       │       │   │   │       │   └── SKILL.md  3D cartoon character short · 3D 卡通角色短片
-│   │   │       │       │   │   │       ├── seedance-car-vehicle/  目录入口
-│   │   │       │       │   │   │       │   ├── references/  目录入口
-│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Cars and vehicles at speed
-│   │   │       │       │   │   │       │   └── SKILL.md  Cars and vehicles at speed · 汽车与载具速度片
-│   │   │       │       │   │   │       ├── seedance-epic-fantasy-scifi/  目录入口
-│   │   │       │       │   │   │       │   ├── references/  目录入口
-│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Epic fantasy and sci-fi spectacle
-│   │   │       │       │   │   │       │   └── SKILL.md  Epic fantasy and sci-fi spectacle · 奇幻科幻大场面
-│   │   │       │       │   │   │       ├── seedance-fashion-lookbook/  目录入口
-│   │   │       │       │   │   │       │   ├── references/  目录入口
-│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Fashion lookbook and portrait film
-│   │   │       │       │   │   │       │   └── SKILL.md  Fashion lookbook and portrait film · 时尚 lookbook 与人像写真片
-│   │   │       │       │   │   │       ├── seedance-horror-suspense/  目录入口
-│   │   │       │       │   │   │       │   ├── references/  目录入口
-│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Horror and suspense
-│   │   │       │       │   │   │       │   └── SKILL.md  Horror and suspense · 恐怖悬疑短片
-│   │   │       │       │   │   │       ├── seedance-meme-comedy/  目录入口
-│   │   │       │       │   │   │       │   ├── references/  目录入口
-│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Twist-ending comedy skit
-│   │   │       │       │   │   │       │   └── SKILL.md  Twist-ending comedy skit · 反转结尾搞笑短片
-│   │   │       │       │   │   │       ├── seedance-pet-animal/  目录入口
-│   │   │       │       │   │   │       │   ├── references/  目录入口
-│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Pets and animals as the lead
-│   │   │       │       │   │   │       │   └── SKILL.md  Pets and animals as the lead · 宠物动物当主角
-│   │   │       │       │   │   │       ├── seedance-prompt-library/  目录入口
-│   │   │       │       │   │   │       │   ├── bin/  目录入口
-│   │   │       │       │   │   │       │   │   └── install.mjs  资料与资源
-│   │   │       │       │   │   │       │   ├── CHANGELOG.md  说明文档：Changelog
-│   │   │       │       │   │   │       │   ├── package.json  结构化配置与索引
-│   │   │       │       │   │   │       │   ├── references/  目录入口
-│   │   │       │       │   │   │       │   │   └── style-library.md  说明文档：Seedance Prompt Style Library
-│   │   │       │       │   │   │       │   └── SKILL.md  说明文档：Seedance Prompt Library
-│   │   │       │       │   │   │       ├── seedance-retro-dv-home-video/  目录入口
-│   │   │       │       │   │   │       │   ├── references/  目录入口
-│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Early-2000s DV home video
-│   │   │       │       │   │   │       │   └── SKILL.md  Early-2000s DV home video · 早年 DV 家庭录像
-│   │   │       │       │   │   │       ├── seedance-sports-extreme/  目录入口
-│   │   │       │       │   │   │       │   ├── references/  目录入口
-│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Sports and extreme stunts
-│   │   │       │       │   │   │       │   └── SKILL.md  Sports and extreme stunts · 体育与极限运动
-│   │   │       │       │   │   │       ├── seedance-storyboard-grid-to-video/  目录入口
-│   │   │       │       │   │   │       │   ├── references/  目录入口
-│   │   │       │       │   │   │       │   │   └── cases.md  说明文档：Case evidence · Storyboard grid to video
-│   │   │       │       │   │   │       │   └── SKILL.md  Storyboard grid to video · 分镜网格转视频
-│   │   │       │       │   │   │       └── seedance-travel-city-walk/  目录入口
-│   │   │       │       │   │   │           ├── references/  目录入口
-│   │   │       │       │   │   │           │   └── cases.md  说明文档：Case evidence · Cinematic travel vlog montage
-│   │   │       │       │   │   │           └── SKILL.md  Cinematic travel vlog montage · 电影感旅行漫游
-│   │   │       │       │   │   ├── assets/  目录入口
-│   │   │       │       │   │   │   ├── goodcase-retest-evidence.png  图片素材
-│   │   │       │       │   │   │   ├── goodcase-seedance-gallery.png  图片素材
-│   │   │       │       │   │   │   ├── hero.svg  资料与资源
-│   │   │       │       │   │   │   └── retests/  目录入口
-│   │   │       │       │   │   │       ├── seedance-25-diner-frozen-time-rewind.jpg  图片素材
-│   │   │       │       │   │   │       ├── seedance-25-minidv-coffee-asmr-vlog.jpg  图片素材
-│   │   │       │       │   │   │       └── vlog-c8171f712492.jpg  图片素材
-│   │   │       │       │   │   ├── code-of-conduct.md  说明文档：Contributor Covenant Code of Conduct
-│   │   │       │       │   │   ├── contributing.md  说明文档：Contributing to Awesome Seedance
-│   │   │       │       │   │   ├── data/  目录入口
-│   │   │       │       │   │   │   ├── case-taxonomy.json  结构化配置与索引
-│   │   │       │       │   │   │   ├── cases.json  结构化配置与索引
-│   │   │       │       │   │   │   ├── fixtures/  目录入口
-│   │   │       │       │   │   │   │   ├── cases.fixture.json  结构化配置与索引
-│   │   │       │       │   │   │   │   └── style-library.fixture.json  结构化配置与索引
-│   │   │       │       │   │   │   ├── site.json  结构化配置与索引
-│   │   │       │       │   │   │   ├── skills.json  结构化配置与索引
-│   │   │       │       │   │   │   ├── stats.json  结构化配置与索引
-│   │   │       │       │   │   │   ├── style-library.json  结构化配置与索引
-│   │   │       │       │   │   │   └── templates-local.json  结构化配置与索引
-│   │   │       │       │   │   ├── docs/  目录入口
-│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-1.md  说明文档：Seedance 2.0 — Full Gallery (Part 1/3)
-│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-1.zh.md  Seedance 2.0 — 全量案例（第 1/3 页）
-│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-2.md  说明文档：Seedance 2.0 — Full Gallery (Part 2/3)
-│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-2.zh.md  Seedance 2.0 — 全量案例（第 2/3 页）
-│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-3.md  说明文档：Seedance 2.0 — Full Gallery (Part 3/3)
-│   │   │       │       │   │   │   ├── gallery-seedance-2-0-part-3.zh.md  Seedance 2.0 — 全量案例（第 3/3 页）
-│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-1.md  说明文档：Seedance 2.5 — Full Gallery (Part 1/4)
-│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-1.zh.md  Seedance 2.5 — 全量案例（第 1/4 页）
-│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-2.md  说明文档：Seedance 2.5 — Full Gallery (Part 2/4)
-│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-2.zh.md  Seedance 2.5 — 全量案例（第 2/4 页）
-│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-3.md  说明文档：Seedance 2.5 — Full Gallery (Part 3/4)
-│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-3.zh.md  Seedance 2.5 — 全量案例（第 3/4 页）
-│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-4.md  说明文档：Seedance 2.5 — Full Gallery (Part 4/4)
-│   │   │       │       │   │   │   ├── gallery-seedance-2-5-part-4.zh.md  Seedance 2.5 — 全量案例（第 4/4 页）
-│   │   │       │       │   │   │   ├── gallery.md  说明文档：Awesome Seedance — Gallery Index
-│   │   │       │       │   │   │   ├── gallery.zh.md  Awesome Seedance — 画廊总览
-│   │   │       │       │   │   │   └── templates/  目录入口
-│   │   │       │       │   │   │       ├── en/  说明文档：Prompt Templates by Category (25)
-│   │   │       │       │   │   │       │   ├── 3d-cartoon.md  说明文档：🎨 3D cartoon character short
-│   │   │       │       │   │   │       │   ├── anime-style-lock.md  说明文档：🎨 Anime and stylized style lock
-│   │   │       │       │   │   │       │   ├── car-vehicle.md  说明文档：💥 Cars and vehicles at speed
-│   │   │       │       │   │   │       │   ├── character-reference-lock.md  说明文档：🧱 Reference image identity lock
-│   │   │       │       │   │   │       │   ├── cinematic-narrative-short.md  说明文档：🎭 Cinematic narrative short
-│   │   │       │       │   │   │       │   ├── combat-choreography.md  说明文档：💥 Combat choreography
-│   │   │       │       │   │   │       │   ├── dialogue-performance-beats.md  说明文档：🎭 Dialogue and performance beats
-│   │   │       │       │   │   │       │   ├── epic-fantasy-scifi.md  说明文档：💥 Epic fantasy and sci-fi spectacle
-│   │   │       │       │   │   │       │   ├── fashion-lookbook.md  说明文档：🛒 Fashion lookbook and portrait film
-│   │   │       │       │   │   │       │   ├── handheld-ugc-vlog.md  说明文档：📱 Handheld UGC vlog
-│   │   │       │       │   │   │       │   ├── horror-suspense.md  说明文档：🎭 Horror and suspense
-│   │   │       │       │   │   │       │   ├── meme-comedy.md  说明文档：🎭 Twist-ending comedy skit
-│   │   │       │       │   │   │       │   ├── music-beat-sync-mv.md  说明文档：💥 Beat-synced music video
-│   │   │       │       │   │   │       │   ├── pet-animal.md  说明文档：📱 Pets and animals as the lead
-│   │   │       │       │   │   │       │   ├── pov-continuous-take.md  说明文档：📱 First-person continuous take
-│   │   │       │       │   │   │       │   ├── process-transformation-montage.md  说明文档：🛒 Process and transformation montage
-│   │   │       │       │   │   │       │   ├── product-commercial-shotlist.md  说明文档：🛒 Cinematic product commercial shot list
-│   │   │       │       │   │   │       │   ├── README.md  说明文档：Prompt Templates by Category (25)
-│   │   │       │       │   │   │       │   ├── retro-found-footage.md  说明文档：📱 Early-2000s DV home video
-│   │   │       │       │   │   │       │   ├── sports-extreme.md  说明文档：💥 Sports and extreme stunts
-│   │   │       │       │   │   │       │   ├── stop-motion-cadence.md  说明文档：🎨 Stop motion and stepped cadence
-│   │   │       │       │   │   │       │   ├── storyboard-grid-to-video.md  说明文档：🧱 Storyboard grid to video
-│   │   │       │       │   │   │       │   ├── time-freeze-rewind.md  说明文档：💥 Time freeze and rewind set piece
-│   │   │       │       │   │   │       │   ├── timeline-shot-script.md  说明文档：🧱 Second-by-second timeline script
-│   │   │       │       │   │   │       │   ├── travel-city-walk.md  说明文档：🎭 Cinematic travel vlog montage
-│   │   │       │       │   │   │       │   └── ugc-creator-review.md  说明文档：🛒 UGC creator review with spoken lines
-│   │   │       │       │   │   │       └── zh/  分类提示语模板（25 个）
-│   │   │       │       │   │   │           ├── 3d-cartoon.md  🎨 3D 卡通角色短片
-│   │   │       │       │   │   │           ├── anime-style-lock.md  🎨 动漫与风格化画风固定
-│   │   │       │       │   │   │           ├── car-vehicle.md  💥 汽车与载具速度片
-│   │   │       │       │   │   │           ├── character-reference-lock.md  🧱 参考图身份锁定
-│   │   │       │       │   │   │           ├── cinematic-narrative-short.md  🎭 电影级叙事短片
-│   │   │       │       │   │   │           ├── combat-choreography.md  💥 打斗编排
-│   │   │       │       │   │   │           ├── dialogue-performance-beats.md  🎭 对白与表演节拍
-│   │   │       │       │   │   │           ├── epic-fantasy-scifi.md  💥 奇幻科幻大场面
-│   │   │       │       │   │   │           ├── fashion-lookbook.md  🛒 时尚 lookbook 与人像写真片
-│   │   │       │       │   │   │           ├── handheld-ugc-vlog.md  📱 手持 UGC vlog
-│   │   │       │       │   │   │           ├── horror-suspense.md  🎭 恐怖悬疑短片
-│   │   │       │       │   │   │           ├── meme-comedy.md  🎭 反转结尾搞笑短片
-│   │   │       │       │   │   │           ├── music-beat-sync-mv.md  💥 音乐卡点 MV
-│   │   │       │       │   │   │           ├── pet-animal.md  📱 宠物动物当主角
-│   │   │       │       │   │   │           ├── pov-continuous-take.md  📱 第一人称一镜到底
-│   │   │       │       │   │   │           ├── process-transformation-montage.md  🛒 流程与变换蒙太奇
-│   │   │       │       │   │   │           ├── product-commercial-shotlist.md  🛒 电影级产品广告分镜
-│   │   │       │       │   │   │           ├── README.md  分类提示语模板（25 个）
-│   │   │       │       │   │   │           ├── retro-found-footage.md  📱 早年 DV 家庭录像
-│   │   │       │       │   │   │           ├── sports-extreme.md  💥 体育与极限运动
-│   │   │       │       │   │   │           ├── stop-motion-cadence.md  🎨 定格动画与步进节奏
-│   │   │       │       │   │   │           ├── storyboard-grid-to-video.md  🧱 分镜网格转视频
-│   │   │       │       │   │   │           ├── time-freeze-rewind.md  💥 时间冻结与倒放奇观
-│   │   │       │       │   │   │           ├── timeline-shot-script.md  🧱 逐秒时间轴分镜脚本
-│   │   │       │       │   │   │           ├── travel-city-walk.md  🎭 电影感旅行漫游
-│   │   │       │       │   │   │           └── ugc-creator-review.md  🛒 UGC 口播测评带货
-│   │   │       │       │   │   ├── LICENSE  资料与资源
-│   │   │       │       │   │   ├── package.json  结构化配置与索引
-│   │   │       │       │   │   ├── README.md  说明文档：Awesome Seedance [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-│   │   │       │       │   │   ├── README_zh.md  说明文档：Awesome Seedance [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-│   │   │       │       │   │   ├── scripts/  目录入口
-│   │   │       │       │   │   │   ├── check-links.mjs  资料与资源
-│   │   │       │       │   │   │   ├── fetch-retest-posters.mjs  资料与资源
-│   │   │       │       │   │   │   ├── fetch-site-stats.mjs  资料与资源
-│   │   │       │       │   │   │   ├── generate-readme.mjs  资料与资源
-│   │   │       │       │   │   │   ├── generate-skill-reference.mjs  资料与资源
-│   │   │       │       │   │   │   ├── generate-standalone-skills.mjs  资料与资源
-│   │   │       │       │   │   │   ├── lib/  目录入口
-│   │   │       │       │   │   │   │   ├── library.mjs  资料与资源
-│   │   │       │       │   │   │   │   ├── render.mjs  资料与资源
-│   │   │       │       │   │   │   │   ├── render.test.mjs  资料与资源
-│   │   │       │       │   │   │   │   ├── sections.mjs  资料与资源
-│   │   │       │       │   │   │   │   ├── sections.test.mjs  资料与资源
-│   │   │       │       │   │   │   │   ├── standalone-skill.mjs  资料与资源
-│   │   │       │       │   │   │   │   ├── standalone-skill.test.mjs  资料与资源
-│   │   │       │       │   │   │   │   ├── submissions.mjs  资料与资源
-│   │   │       │       │   │   │   │   ├── submissions.test.mjs  资料与资源
-│   │   │       │       │   │   │   │   ├── templates.mjs  资料与资源
-│   │   │       │       │   │   │   │   └── templates.test.mjs  资料与资源
-│   │   │       │       │   │   │   ├── taxonomy-todo.mjs  资料与资源
-│   │   │       │       │   │   │   └── validate-submissions.mjs  资料与资源
-│   │   │       │       │   │   └── submissions/  说明文档：Submissions
-│   │   │       │       │   │       ├── README.md  说明文档：Submissions
-│   │   │       │       │   │       └── TEMPLATE.json  结构化配置与索引
-│   │   │       │       │   ├── template-guide.md  按镜头需求选25类模板及处理冲突
-│   │   │       │       │   └── upstream.json  第三方来源、固定版本与三类许可
-│   │   │       │       ├── practical-workflow.md  实战工作流
-│   │   │       │       ├── prompt-cases.md  提示词案例
-│   │   │       │       ├── prompt-templates.md  提示词模板
-│   │   │       │       └── README.md  Seedance 读取顺序、几条要点与片型分工
+│   │   │       │   ├── seedance/  Seedance 视频提示词唯一目录：建委实战在前，第三方模板库在 awesome-seedance/
+│   │   │       │   │   ├── awesome-seedance/  第三方 awesome-seedance 模板与案例库（中英文，已删日文）
+│   │   │       │   │   │   ├── lookup.py  只读提取模板、案例原文和复测状态
+│   │   │       │   │   │   ├── README.md  能力边界、主动调用、来源与后续沉淀
+│   │   │       │   │   │   ├── source/  上游完整快照，共 144 个文件；展开可核查内部层级
+│   │   │       │   │   │   │   ├── .claude-plugin/  目录入口
+│   │   │       │   │   │   │   │   └── marketplace.json  结构化配置与索引
+│   │   │       │   │   │   │   ├── .github/  目录入口
+│   │   │       │   │   │   │   │   ├── CODEOWNERS  资料与资源
+│   │   │       │   │   │   │   │   ├── pull_request_template.md  说明与资料
+│   │   │       │   │   │   │   │   └── workflows/  目录入口
+│   │   │       │   │   │   │   │       ├── refresh-site-stats.yml  自动化配置
+│   │   │       │   │   │   │   │       ├── update-readme.yml  自动化配置
+│   │   │       │   │   │   │   │       └── validate-submissions.yml  自动化配置
+│   │   │       │   │   │   │   ├── .gitignore  资料与资源
+│   │   │       │   │   │   │   ├── agents/  目录入口
+│   │   │       │   │   │   │   │   └── skills/  目录入口
+│   │   │       │   │   │   │   │       ├── seedance-3d-cartoon/  目录入口
+│   │   │       │   │   │   │   │       │   ├── references/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · 3D cartoon character short
+│   │   │       │   │   │   │   │       │   └── SKILL.md  3D cartoon character short · 3D 卡通角色短片
+│   │   │       │   │   │   │   │       ├── seedance-car-vehicle/  目录入口
+│   │   │       │   │   │   │   │       │   ├── references/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Cars and vehicles at speed
+│   │   │       │   │   │   │   │       │   └── SKILL.md  Cars and vehicles at speed · 汽车与载具速度片
+│   │   │       │   │   │   │   │       ├── seedance-epic-fantasy-scifi/  目录入口
+│   │   │       │   │   │   │   │       │   ├── references/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Epic fantasy and sci-fi spectacle
+│   │   │       │   │   │   │   │       │   └── SKILL.md  Epic fantasy and sci-fi spectacle · 奇幻科幻大场面
+│   │   │       │   │   │   │   │       ├── seedance-fashion-lookbook/  目录入口
+│   │   │       │   │   │   │   │       │   ├── references/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Fashion lookbook and portrait film
+│   │   │       │   │   │   │   │       │   └── SKILL.md  Fashion lookbook and portrait film · 时尚 lookbook 与人像写真片
+│   │   │       │   │   │   │   │       ├── seedance-horror-suspense/  目录入口
+│   │   │       │   │   │   │   │       │   ├── references/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Horror and suspense
+│   │   │       │   │   │   │   │       │   └── SKILL.md  Horror and suspense · 恐怖悬疑短片
+│   │   │       │   │   │   │   │       ├── seedance-meme-comedy/  目录入口
+│   │   │       │   │   │   │   │       │   ├── references/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Twist-ending comedy skit
+│   │   │       │   │   │   │   │       │   └── SKILL.md  Twist-ending comedy skit · 反转结尾搞笑短片
+│   │   │       │   │   │   │   │       ├── seedance-pet-animal/  目录入口
+│   │   │       │   │   │   │   │       │   ├── references/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Pets and animals as the lead
+│   │   │       │   │   │   │   │       │   └── SKILL.md  Pets and animals as the lead · 宠物动物当主角
+│   │   │       │   │   │   │   │       ├── seedance-prompt-library/  目录入口
+│   │   │       │   │   │   │   │       │   ├── bin/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── install.mjs  资料与资源
+│   │   │       │   │   │   │   │       │   ├── CHANGELOG.md  说明文档：Changelog
+│   │   │       │   │   │   │   │       │   ├── package.json  结构化配置与索引
+│   │   │       │   │   │   │   │       │   ├── references/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── style-library.md  说明文档：Seedance Prompt Style Library
+│   │   │       │   │   │   │   │       │   └── SKILL.md  说明文档：Seedance Prompt Library
+│   │   │       │   │   │   │   │       ├── seedance-retro-dv-home-video/  目录入口
+│   │   │       │   │   │   │   │       │   ├── references/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Early-2000s DV home video
+│   │   │       │   │   │   │   │       │   └── SKILL.md  Early-2000s DV home video · 早年 DV 家庭录像
+│   │   │       │   │   │   │   │       ├── seedance-sports-extreme/  目录入口
+│   │   │       │   │   │   │   │       │   ├── references/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Sports and extreme stunts
+│   │   │       │   │   │   │   │       │   └── SKILL.md  Sports and extreme stunts · 体育与极限运动
+│   │   │       │   │   │   │   │       ├── seedance-storyboard-grid-to-video/  目录入口
+│   │   │       │   │   │   │   │       │   ├── references/  目录入口
+│   │   │       │   │   │   │   │       │   │   └── cases.md  说明文档：Case evidence · Storyboard grid to video
+│   │   │       │   │   │   │   │       │   └── SKILL.md  Storyboard grid to video · 分镜网格转视频
+│   │   │       │   │   │   │   │       └── seedance-travel-city-walk/  目录入口
+│   │   │       │   │   │   │   │           ├── references/  目录入口
+│   │   │       │   │   │   │   │           │   └── cases.md  说明文档：Case evidence · Cinematic travel vlog montage
+│   │   │       │   │   │   │   │           └── SKILL.md  Cinematic travel vlog montage · 电影感旅行漫游
+│   │   │       │   │   │   │   ├── assets/  目录入口
+│   │   │       │   │   │   │   │   ├── goodcase-retest-evidence.png  图片素材
+│   │   │       │   │   │   │   │   ├── goodcase-seedance-gallery.png  图片素材
+│   │   │       │   │   │   │   │   ├── hero.svg  资料与资源
+│   │   │       │   │   │   │   │   └── retests/  目录入口
+│   │   │       │   │   │   │   │       ├── seedance-25-diner-frozen-time-rewind.jpg  图片素材
+│   │   │       │   │   │   │   │       ├── seedance-25-minidv-coffee-asmr-vlog.jpg  图片素材
+│   │   │       │   │   │   │   │       └── vlog-c8171f712492.jpg  图片素材
+│   │   │       │   │   │   │   ├── code-of-conduct.md  说明文档：Contributor Covenant Code of Conduct
+│   │   │       │   │   │   │   ├── contributing.md  说明文档：Contributing to Awesome Seedance
+│   │   │       │   │   │   │   ├── data/  目录入口
+│   │   │       │   │   │   │   │   ├── case-taxonomy.json  结构化配置与索引
+│   │   │       │   │   │   │   │   ├── cases.json  结构化配置与索引
+│   │   │       │   │   │   │   │   ├── fixtures/  目录入口
+│   │   │       │   │   │   │   │   │   ├── cases.fixture.json  结构化配置与索引
+│   │   │       │   │   │   │   │   │   └── style-library.fixture.json  结构化配置与索引
+│   │   │       │   │   │   │   │   ├── site.json  结构化配置与索引
+│   │   │       │   │   │   │   │   ├── skills.json  结构化配置与索引
+│   │   │       │   │   │   │   │   ├── stats.json  结构化配置与索引
+│   │   │       │   │   │   │   │   ├── style-library.json  结构化配置与索引
+│   │   │       │   │   │   │   │   └── templates-local.json  结构化配置与索引
+│   │   │       │   │   │   │   ├── docs/  目录入口
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-0-part-1.md  说明文档：Seedance 2.0 — Full Gallery (Part 1/3)
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-0-part-1.zh.md  Seedance 2.0 — 全量案例（第 1/3 页）
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-0-part-2.md  说明文档：Seedance 2.0 — Full Gallery (Part 2/3)
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-0-part-2.zh.md  Seedance 2.0 — 全量案例（第 2/3 页）
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-0-part-3.md  说明文档：Seedance 2.0 — Full Gallery (Part 3/3)
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-0-part-3.zh.md  Seedance 2.0 — 全量案例（第 3/3 页）
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-5-part-1.md  说明文档：Seedance 2.5 — Full Gallery (Part 1/4)
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-5-part-1.zh.md  Seedance 2.5 — 全量案例（第 1/4 页）
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-5-part-2.md  说明文档：Seedance 2.5 — Full Gallery (Part 2/4)
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-5-part-2.zh.md  Seedance 2.5 — 全量案例（第 2/4 页）
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-5-part-3.md  说明文档：Seedance 2.5 — Full Gallery (Part 3/4)
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-5-part-3.zh.md  Seedance 2.5 — 全量案例（第 3/4 页）
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-5-part-4.md  说明文档：Seedance 2.5 — Full Gallery (Part 4/4)
+│   │   │       │   │   │   │   │   ├── gallery-seedance-2-5-part-4.zh.md  Seedance 2.5 — 全量案例（第 4/4 页）
+│   │   │       │   │   │   │   │   ├── gallery.md  说明文档：Awesome Seedance — Gallery Index
+│   │   │       │   │   │   │   │   ├── gallery.zh.md  Awesome Seedance — 画廊总览
+│   │   │       │   │   │   │   │   └── templates/  目录入口
+│   │   │       │   │   │   │   │       ├── en/  说明文档：Prompt Templates by Category (25)
+│   │   │       │   │   │   │   │       │   ├── 3d-cartoon.md  说明文档：🎨 3D cartoon character short
+│   │   │       │   │   │   │   │       │   ├── anime-style-lock.md  说明文档：🎨 Anime and stylized style lock
+│   │   │       │   │   │   │   │       │   ├── car-vehicle.md  说明文档：💥 Cars and vehicles at speed
+│   │   │       │   │   │   │   │       │   ├── character-reference-lock.md  说明文档：🧱 Reference image identity lock
+│   │   │       │   │   │   │   │       │   ├── cinematic-narrative-short.md  说明文档：🎭 Cinematic narrative short
+│   │   │       │   │   │   │   │       │   ├── combat-choreography.md  说明文档：💥 Combat choreography
+│   │   │       │   │   │   │   │       │   ├── dialogue-performance-beats.md  说明文档：🎭 Dialogue and performance beats
+│   │   │       │   │   │   │   │       │   ├── epic-fantasy-scifi.md  说明文档：💥 Epic fantasy and sci-fi spectacle
+│   │   │       │   │   │   │   │       │   ├── fashion-lookbook.md  说明文档：🛒 Fashion lookbook and portrait film
+│   │   │       │   │   │   │   │       │   ├── handheld-ugc-vlog.md  说明文档：📱 Handheld UGC vlog
+│   │   │       │   │   │   │   │       │   ├── horror-suspense.md  说明文档：🎭 Horror and suspense
+│   │   │       │   │   │   │   │       │   ├── meme-comedy.md  说明文档：🎭 Twist-ending comedy skit
+│   │   │       │   │   │   │   │       │   ├── music-beat-sync-mv.md  说明文档：💥 Beat-synced music video
+│   │   │       │   │   │   │   │       │   ├── pet-animal.md  说明文档：📱 Pets and animals as the lead
+│   │   │       │   │   │   │   │       │   ├── pov-continuous-take.md  说明文档：📱 First-person continuous take
+│   │   │       │   │   │   │   │       │   ├── process-transformation-montage.md  说明文档：🛒 Process and transformation montage
+│   │   │       │   │   │   │   │       │   ├── product-commercial-shotlist.md  说明文档：🛒 Cinematic product commercial shot list
+│   │   │       │   │   │   │   │       │   ├── README.md  说明文档：Prompt Templates by Category (25)
+│   │   │       │   │   │   │   │       │   ├── retro-found-footage.md  说明文档：📱 Early-2000s DV home video
+│   │   │       │   │   │   │   │       │   ├── sports-extreme.md  说明文档：💥 Sports and extreme stunts
+│   │   │       │   │   │   │   │       │   ├── stop-motion-cadence.md  说明文档：🎨 Stop motion and stepped cadence
+│   │   │       │   │   │   │   │       │   ├── storyboard-grid-to-video.md  说明文档：🧱 Storyboard grid to video
+│   │   │       │   │   │   │   │       │   ├── time-freeze-rewind.md  说明文档：💥 Time freeze and rewind set piece
+│   │   │       │   │   │   │   │       │   ├── timeline-shot-script.md  说明文档：🧱 Second-by-second timeline script
+│   │   │       │   │   │   │   │       │   ├── travel-city-walk.md  说明文档：🎭 Cinematic travel vlog montage
+│   │   │       │   │   │   │   │       │   └── ugc-creator-review.md  说明文档：🛒 UGC creator review with spoken lines
+│   │   │       │   │   │   │   │       └── zh/  分类提示语模板（25 个）
+│   │   │       │   │   │   │   │           ├── 3d-cartoon.md  🎨 3D 卡通角色短片
+│   │   │       │   │   │   │   │           ├── anime-style-lock.md  🎨 动漫与风格化画风固定
+│   │   │       │   │   │   │   │           ├── car-vehicle.md  💥 汽车与载具速度片
+│   │   │       │   │   │   │   │           ├── character-reference-lock.md  🧱 参考图身份锁定
+│   │   │       │   │   │   │   │           ├── cinematic-narrative-short.md  🎭 电影级叙事短片
+│   │   │       │   │   │   │   │           ├── combat-choreography.md  💥 打斗编排
+│   │   │       │   │   │   │   │           ├── dialogue-performance-beats.md  🎭 对白与表演节拍
+│   │   │       │   │   │   │   │           ├── epic-fantasy-scifi.md  💥 奇幻科幻大场面
+│   │   │       │   │   │   │   │           ├── fashion-lookbook.md  🛒 时尚 lookbook 与人像写真片
+│   │   │       │   │   │   │   │           ├── handheld-ugc-vlog.md  📱 手持 UGC vlog
+│   │   │       │   │   │   │   │           ├── horror-suspense.md  🎭 恐怖悬疑短片
+│   │   │       │   │   │   │   │           ├── meme-comedy.md  🎭 反转结尾搞笑短片
+│   │   │       │   │   │   │   │           ├── music-beat-sync-mv.md  💥 音乐卡点 MV
+│   │   │       │   │   │   │   │           ├── pet-animal.md  📱 宠物动物当主角
+│   │   │       │   │   │   │   │           ├── pov-continuous-take.md  📱 第一人称一镜到底
+│   │   │       │   │   │   │   │           ├── process-transformation-montage.md  🛒 流程与变换蒙太奇
+│   │   │       │   │   │   │   │           ├── product-commercial-shotlist.md  🛒 电影级产品广告分镜
+│   │   │       │   │   │   │   │           ├── README.md  分类提示语模板（25 个）
+│   │   │       │   │   │   │   │           ├── retro-found-footage.md  📱 早年 DV 家庭录像
+│   │   │       │   │   │   │   │           ├── sports-extreme.md  💥 体育与极限运动
+│   │   │       │   │   │   │   │           ├── stop-motion-cadence.md  🎨 定格动画与步进节奏
+│   │   │       │   │   │   │   │           ├── storyboard-grid-to-video.md  🧱 分镜网格转视频
+│   │   │       │   │   │   │   │           ├── time-freeze-rewind.md  💥 时间冻结与倒放奇观
+│   │   │       │   │   │   │   │           ├── timeline-shot-script.md  🧱 逐秒时间轴分镜脚本
+│   │   │       │   │   │   │   │           ├── travel-city-walk.md  🎭 电影感旅行漫游
+│   │   │       │   │   │   │   │           └── ugc-creator-review.md  🛒 UGC 口播测评带货
+│   │   │       │   │   │   │   ├── LICENSE  资料与资源
+│   │   │       │   │   │   │   ├── package.json  结构化配置与索引
+│   │   │       │   │   │   │   ├── README.md  说明文档：Awesome Seedance [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+│   │   │       │   │   │   │   ├── README_zh.md  说明文档：Awesome Seedance [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+│   │   │       │   │   │   │   ├── scripts/  目录入口
+│   │   │       │   │   │   │   │   ├── check-links.mjs  资料与资源
+│   │   │       │   │   │   │   │   ├── fetch-retest-posters.mjs  资料与资源
+│   │   │       │   │   │   │   │   ├── fetch-site-stats.mjs  资料与资源
+│   │   │       │   │   │   │   │   ├── generate-readme.mjs  资料与资源
+│   │   │       │   │   │   │   │   ├── generate-skill-reference.mjs  资料与资源
+│   │   │       │   │   │   │   │   ├── generate-standalone-skills.mjs  资料与资源
+│   │   │       │   │   │   │   │   ├── lib/  目录入口
+│   │   │       │   │   │   │   │   │   ├── library.mjs  资料与资源
+│   │   │       │   │   │   │   │   │   ├── render.mjs  资料与资源
+│   │   │       │   │   │   │   │   │   ├── render.test.mjs  资料与资源
+│   │   │       │   │   │   │   │   │   ├── sections.mjs  资料与资源
+│   │   │       │   │   │   │   │   │   ├── sections.test.mjs  资料与资源
+│   │   │       │   │   │   │   │   │   ├── standalone-skill.mjs  资料与资源
+│   │   │       │   │   │   │   │   │   ├── standalone-skill.test.mjs  资料与资源
+│   │   │       │   │   │   │   │   │   ├── submissions.mjs  资料与资源
+│   │   │       │   │   │   │   │   │   ├── submissions.test.mjs  资料与资源
+│   │   │       │   │   │   │   │   │   ├── templates.mjs  资料与资源
+│   │   │       │   │   │   │   │   │   └── templates.test.mjs  资料与资源
+│   │   │       │   │   │   │   │   ├── taxonomy-todo.mjs  资料与资源
+│   │   │       │   │   │   │   │   └── validate-submissions.mjs  资料与资源
+│   │   │       │   │   │   │   └── submissions/  说明文档：Submissions
+│   │   │       │   │   │   │       ├── README.md  说明文档：Submissions
+│   │   │       │   │   │   │       └── TEMPLATE.json  结构化配置与索引
+│   │   │       │   │   │   ├── template-guide.md  按镜头需求选25类模板及处理冲突
+│   │   │       │   │   │   └── upstream.json  第三方来源、固定版本与三类许可
+│   │   │       │   │   ├── practical-workflow.md  实战工作流
+│   │   │       │   │   ├── prompt-cases.md  提示词案例
+│   │   │       │   │   ├── prompt-templates.md  提示词模板
+│   │   │       │   │   └── README.md  Seedance 读取顺序、几条要点与片型分工
+│   │   │       │   └── tools/  目录入口
+│   │   │       │       └── ae_dialog_guard.py  跨平台维护或执行脚本
 │   │   │       ├── education/  为教师委托的微课与教育交互作品查制作规范
 │   │   │       │   ├── ai-generated-microcourse-video-workflow.md  AI教师微课的音频分段、场景关键图、多镜头提示词与验收方法
 │   │   │       │   ├── case-little-leaf-microcourse-mv.md  《小树叶》AI 教师音乐微课商单案例
@@ -302,9 +305,7 @@ ai-context/
 │   │   │       │   │   ├── ai-code-ae-pipeline.md  创赛片AI代码与AE自动化：代码预览定版面、AE MCP改模板、AE级包装标准、经验回流
 │   │   │       │   │   ├── ai-video-generation.md  创赛片AI生视频：片头片尾背景提示词交接、AI片头接AE标题、参考图、照片动态化、调校
 │   │   │       │   │   ├── competition-promo-basics.md  创赛片基础：是什么、接单规格、原句画面素材对应、叙事结构、按指向性选做法
-│   │   │       │   │   ├── README.md  创赛宣传片入口
-│   │   │       │   │   └── tools/  目录入口
-│   │   │       │   │       └── ae_dialog_guard.py  跨平台维护或执行脚本
+│   │   │       │   │   └── README.md  创赛宣传片入口
 │   │   │       │   ├── enterprise/  企业宣传片：总流程、按信息类型拆镜头、提示词与返修、按风格分
 │   │   │       │   │   ├── info-shots.md  企业片按信息类型拆镜头：开篇、数据、荣誉、文化、战略、业务、落版
 │   │   │       │   │   ├── prompt-iteration.md  企业片生成镜头的提示词写法与返修

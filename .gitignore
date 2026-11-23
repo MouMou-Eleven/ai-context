@@ -14,3 +14,8 @@ Desktop.ini
 # Local scratch files
 *.tmp
 *.bak
+
+# AE dialog guard runtime files
+work/domains/design/video/common/tools/aeguard.log
+work/domains/design/video/common/tools/aeguard.pid
+work/domains/design/video/common/tools/guard.active
