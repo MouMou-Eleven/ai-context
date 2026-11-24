@@ -75,7 +75,7 @@ ai-context/
 │   │   │   │   └── README.md  平面与演示
 │   │   │   ├── README.md  设计制作入口，项目与案例来自统一登记
 │   │   │   └── video/  按宣传、教育、故事片型组合制作方法
-│   │   │       ├── common/  跨片型复用分镜、AI生成、合成与验收方法
+│   │   │       ├── common/  视频共用方法：通用层加四种做法（AI生成、代码生成、AI操作Blender、AI接入AE），含每个文件夹的写入与触发表
 │   │   │       │   ├── ae/  AI接入AE：AI通过MCP操作本机After Effects改模板、做包装、渲染
 │   │   │       │   │   ├── ae-template-design.md  改AE模板的设计判断：先设计版面、模板文字组件要用上、只用对应一段、光效对位、改模板验收表
 │   │   │       │   │   ├── ai-ae-collaboration.md  AI与AE协作：本机两个AE MCP怎么挑、先用自带工具不自己写脚本、保持最新、操作与渲染检查、经验写到哪里
@@ -280,18 +280,18 @@ ai-context/
 │   │   │       │   │       ├── prompt-cases.md  提示词案例
 │   │   │       │   │       ├── prompt-templates.md  提示词模板
 │   │   │       │   │       └── README.md  Seedance 读取顺序、几条要点与片型分工
+│   │   │       │   ├── blender/  AI操作Blender：视频四种做法之一，AI写Python驱动三维软件建模、动画、渲染
+│   │   │       │   │   ├── modeled-explainer.md  Blender建模解说视频：照片定模型、推近检查、交接工程、配音对齐、验收与量产
+│   │   │       │   │   ├── previs-for-ai-video.md  白模预演控AI视频：参考视频复刻或原创白模，定死镜头走位后交给视频模型
+│   │   │       │   │   └── README.md  AI操作Blender入口：两种用法、开工前准备与开工指令
 │   │   │       │   ├── code-generation/  代码生成动画：按效果类型分门类（三维、成片包装、MG、手绘），门类内再分片型
 │   │   │       │   │   ├── 3d-scene/  三维场景与运镜：程序化建模、镜头路线与渲染
 │   │   │       │   │   │   ├── camera-motion.md  三维运镜：路线、平滑、速度曲线、转向、避让与运动模糊
 │   │   │       │   │   │   ├── README.md  三维适用边界、各片型用法、搭场景与WebGL技术坑
 │   │   │       │   │   │   └── visual-toolkit.md  三维科技感元素手法库与分寸
-│   │   │       │   │   ├── blender/  Blender建模动画：AI写Python驱动Blender建模、动画、渲染
-│   │   │       │   │   │   ├── modeled-explainer.md  Blender建模解说视频：照片定模型、推近检查、交接工程、配音对齐、验收与量产
-│   │   │       │   │   │   ├── previs-for-ai-video.md  白模预演控AI视频：参考视频复刻或原创白模，定死镜头走位后交给视频模型
-│   │   │       │   │   │   └── README.md  Blender门类入口：两种用法、开工指令、和three.js的区别
 │   │   │       │   │   ├── footage-overlay/  成片上叠加包装：已有视频上逐帧画标注、坐标、面板、名称条
 │   │   │       │   │   │   └── README.md  拆素材、定标注、跟踪、分层、各片型用法与常见返修改法
-│   │   │       │   │   ├── README.md  门类总览、与Seedance/AE怎么选、读取顺序与检查表
+│   │   │       │   │   ├── README.md  代码生成入口：门类总览、读取顺序、交付检查表与外部Skill
 │   │   │       │   │   └── workflow.md  所有门类通用：定调、镜头脚本、确定性、渲染管线、迭代节奏
 │   │   │       │   ├── README.md  跨片型通用制作经验
 │   │   │       │   └── video-craft/  视频通用设计与验收：不管AI生成、代码还是AE都成立的字号、间距、动效、出片检查

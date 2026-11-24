@@ -27,11 +27,11 @@
 - 教师微课：[AI 微课画面方法](../../../education/ai-generated-microcourse-video-workflow.md)
 - 故事片、漫剧：[故事片方法](../../../story/README.md)
 - 合成、字幕、包装：[AI 与 AE 协作](../../ae/ai-ae-collaboration.md)
-- 镜头轨迹、人物走位必须可控（复杂运镜、多人走位、要反复改的镜头）：先用 Blender 搭白模再生成，见[白模预演控 AI 视频](../../code-generation/blender/previs-for-ai-video.md)
+- 镜头轨迹、人物走位必须可控（复杂运镜、多人走位、要反复改的镜头）：先用 Blender 搭白模再生成，见[白模预演控 AI 视频](../../blender/previs-for-ai-video.md)
 
 ## 写入
 
-- 用完把这次的模型、日期、素材、改前改后的提示词、结果或失败点，写回真实项目；能复用的结论补进 [practical-workflow.md](./practical-workflow.md) 或 [prompt-cases.md](./prompt-cases.md)，改原文，不另起新文件。
+- 能复用的经验写进本目录哪个文件，按[视频共用方法 · 写入与触发](../../README.md#写入与触发默认)；这一单的模型、日期、素材、改前改后的提示词、结果或失败点写回真实项目。
 - 不在 `awesome-seedance/source/` 里写建委的经验，那是第三方原文。
 - 第三方库更新时按 [awesome-seedance/upstream.json](./awesome-seedance/upstream.json) 的说明替换快照，然后重新删掉日文文件。
 

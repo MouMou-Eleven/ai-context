@@ -147,13 +147,13 @@
 
 ### 视频经验写到哪一层（默认）
 
-视频的经验最容易“记乱”（写错地方）和“乱记”（把一单的事当规则）。AI 做视频有三种做法：**AI 生成**（Seedance 等扩散模型：文生、图生、参考视频、图加音频）、**代码生成**（three.js 三维运镜和包装、Python 逐帧合成、Python 驱动 Blender 建模出片）、**AI 接入传统软件**（AI 通过 MCP 操作 AE）。一条经验按下表从上往下问，第一个答“成立”的就是它的家：
+视频的经验最容易“记乱”（写错地方）和“乱记”（把一单的事当规则）。AI 做视频有四种做法：**AI 生成**（Seedance 等扩散模型：文生、图生、参考视频、图加音频）、**代码生成**（three.js 三维运镜和包装、Python 逐帧合成）、**AI 操作 Blender**（AI 写 Python 驱动三维软件建模、动画、渲染）、**AI 接入 AE**（AI 通过 MCP 操作 After Effects）。一条经验按下表从上往下问，第一个答“成立”的就是它的家：
 
 | 先问 | 成立就写进 | 例子 |
 |---|---|---|
 | 1. 放到一页 PPT、一张海报上还成立吗？ | [设计原则与审美](../../work/domains/design/common/design-principles/README.md)（视频画面也是版面） | 组内缝小于组间缝、外沿落在共同的线上、对比用不同色相不用灰、字不压同色系背景 |
-| 2. 换成任何一种做法（生成、代码、AE、剪辑）做的任何片子都成立吗？ | [视频通用设计与验收](../../work/domains/design/video/common/video-craft/README.md)：尺寸进排版与尺寸，节奏、转场、停留、脚本怎么上画面进动效与节奏，怎么查进出片检查 | 不闪白、整帧闪必修、淡化 ≥ 0.3 秒、切走前到位、片尾多停 1 秒、黑帧和接缝怎么查、字号下限 |
-| 3. 只在某一种做法里成立？ | [视频共用方法](../../work/domains/design/video/common/README.md)下那种做法的文件夹：[ai-generation/](../../work/domains/design/video/common/ai-generation/README.md)（按模型分，目前是 seedance/）；[code-generation/](../../work/domains/design/video/common/code-generation/README.md)（按门类分：3d-scene、footage-overlay、blender）；[ae/](../../work/domains/design/video/common/ae/README.md) 分两份：用模板的设计判断进[改 AE 模板的设计判断](../../work/domains/design/video/common/ae/ae-template-design.md)，在 AE 里怎么操作进[AI 与 AE 协作](../../work/domains/design/video/common/ae/ai-ae-collaboration.md) | 提示词怎么写镜头；所有动画只由时间 t 决定；Blender 交接交 .blend 工程不只交 MP4；模板文字组件要用上；aerender 分段黑帧 |
+| 2. 换成任何一种做法（生成、代码、Blender、AE、剪辑）做的任何片子都成立吗？ | [视频通用设计与验收](../../work/domains/design/video/common/video-craft/README.md)：尺寸进排版与尺寸，节奏、转场、停留、脚本怎么上画面进动效与节奏，怎么查进出片检查 | 不闪白、整帧闪必修、淡化 ≥ 0.3 秒、切走前到位、片尾多停 1 秒、黑帧和接缝怎么查、字号下限 |
+| 3. 只在某一种做法里成立？ | [视频共用方法](../../work/domains/design/video/common/README.md)下那种做法的文件夹（ai-generation、code-generation、blender、ae），每个文件夹里写到哪个文件按它的[写入与触发](../../work/domains/design/video/common/README.md#写入与触发默认)表 | 提示词怎么写镜头；所有动画只由时间 t 决定；Blender 交接交 .blend 工程不只交 MP4；模板文字组件要用上；aerender 分段黑帧 |
 | 4. 只在某个片型、某个比赛里成立？ | 片型或比赛的目录（如[创赛片](../../work/domains/design/video/promo/competition/README.md)） | 创赛片文字包装要科技炫酷、底部给剪映字幕留一行、证书框收拢、全片主色、统一思源黑体 |
 | 5. 只是这一单的事实？ | 项目记录 | 工程路径、模板名、配音起止秒、客户名 |
 

@@ -159,7 +159,7 @@ AE 同一时间只执行一个脚本，MCP 工具在 AE 里也是一段一段脚
 
 ## 经验写到哪里（默认）
 
-做完一单、建委反馈之后，先按[写入规范 · 视频经验写到哪一层](../../../../../../system/repository/ingestion-workflow.md#视频经验写到哪一层默认)判断放哪一层。属于本文件的只有：怎么连 AE、两个 MCP 怎么挑、工具怎么用、AE 操作和渲染的坑（例：AI 自己写脚本不调 MCP；出帧发暗是色深；aerender 分段黑帧）。改模板时的设计判断放[改 AE 模板的设计判断](ae-template-design.md)；本机装了什么、端口、版本放[设备环境](../../../../../../system/environment/computers/desktop-1/README.md)。
+做完一单、建委反馈之后，先按[写入规范 · 视频经验写到哪一层](../../../../../../system/repository/ingestion-workflow.md#视频经验写到哪一层默认)定层，属于 AE 这种做法的，再按[视频共用方法 · 写入与触发](../README.md#写入与触发默认)决定进本文件还是[改 AE 模板的设计判断](ae-template-design.md)；本机装了什么、端口、版本放[设备环境](../../../../../../system/environment/computers/desktop-1/README.md)。
 
 - 两个 MCP 升级后行为变了（新工具、旧坑修掉了），更新本文件和设备环境，旧说法直接改掉。
 - 能在成品上核对的新规则，同时加进下面的检查表。

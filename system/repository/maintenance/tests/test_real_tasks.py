@@ -115,6 +115,26 @@ class RealTasks(unittest.TestCase):
         for task in ['帮我写一段Seedance视频提示词', '写一个企业宣传片的即梦提示词', '帮我设计一张海报']:
             self.assertNotIn(cv, self.reads(task), task)
 
+    def test_video_common_write_and_trigger_table_matches_routes(self):
+        # 2026-11-24: 建委 asked every folder in video/common to have its write and trigger rules;
+        # each row's example sentence must actually read a file in that folder.
+        import re
+        base = 'work/domains/design/video/common/'
+        text = (ROOT / base / 'README.md').read_text(encoding='utf-8')
+        section = text.split('## 写入与触发', 1)[1].split('\n## ', 1)[0]
+        rows = [l for l in section.splitlines() if l.startswith('| [')]
+        folders = {re.match(r'\| \[([\w-]+)/\]', l).group(1) for l in rows}
+        actual = {p.name for p in (ROOT / base).iterdir() if p.is_dir()}
+        self.assertEqual(folders, actual, 'every folder needs one row, and only real folders')
+        for line in rows:
+            folder = re.match(r'\| \[([\w-]+)/\]', line).group(1)
+            cell = line.rstrip().rstrip('|').split('|')[-1]
+            examples = re.findall(r'“([^”]+)”', cell)
+            self.assertTrue(examples, folder)
+            for example in examples:
+                reads = self.reads(example)
+                self.assertTrue(any(r.startswith(base + folder + '/') for r in reads), (folder, example, reads))
+
     def test_teacher_courseware_is_design_and_own_courseware_is_training(self):
         for task in ['最近承接了一个语文课件的订单', '给老师做一份三年级数学课件', '帮老师美化一下课件']:
             self.assertEqual(router.resolve(task, 'create')['selectedCandidate'], 'ppt', task)

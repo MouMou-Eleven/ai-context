@@ -1,6 +1,6 @@
 # Blender 建模动画
 
-让 AI（Codex、Claude Code 等）写 Python 脚本驱动 Blender：建模、上材质、布光、设相机、打关键帧、渲染。人不用会 Blender，只负责说清要求、给参考、看渲染图挑错。它是[代码生成](../README.md)的一个门类：模型的形状、材质、灯光、相机、动画都存在 Blender 工程里，AI 不是凭空生成画面，而是替人操作这个三维软件。在浏览器里用 three.js 搭场景是另一个门类，见[三维场景与运镜](../3d-scene/README.md)。
+让 AI（Codex、Claude Code 等）写 Python 脚本驱动 Blender：建模、上材质、布光、设相机、打关键帧、渲染。人不用会 Blender，只负责说清要求、给参考、看渲染图挑错。它是 AI 出视频的四种做法之一（另三种是 [AI 生成](../ai-generation/README.md)、[代码生成](../code-generation/README.md)、[AI 接入 AE](../ae/README.md)，怎么选见[视频共用方法](../README.md#四种做法怎么选默认)）：模型的形状、材质、灯光、相机、动画都存在 Blender 工程里，AI 不是凭空生成画面，也不是用代码直接画出画面，而是替人操作这个三维软件。在浏览器里用 three.js 搭场景属于代码生成，见[三维场景与运镜](../code-generation/3d-scene/README.md)。写入和触发见[视频共用方法 · 写入与触发](../README.md#写入与触发默认)。
 
 ## 两种用法
 
@@ -9,7 +9,7 @@
 | 建模解说视频 | 模型本身就是成片：结构拆开、构件依次出现、高亮、箭头，配旁白和字幕 | 讲清一个结构或原理，要能推近看、能拆开讲、能换主题量产（课件只实践过桥梁） | [modeled-explainer.md](./modeled-explainer.md) |
 | 白模预演控 AI 视频 | 灰白粗模的“会动的分镜”，再交给视频模型出写实画面 | 用 AI 生成视频，但镜头轨迹、人物走位、动作时间点、遮挡必须可控，或同一镜头要反复改、批量复用 | [previs-for-ai-video.md](./previs-for-ai-video.md) |
 
-两种用法的开工方式见本页“开工前”；定调、镜头脚本、迭代节奏见[代码生成 · 通用流程](../workflow.md)；成片怎么查见[出片检查](../../video-craft/verification.md)。
+两种用法的开工方式见本页“开工前”；定调、镜头脚本、迭代节奏可借用[代码生成 · 通用流程](../code-generation/workflow.md)；成片怎么查见[出片检查](../video-craft/verification.md)。
 
 ## 开工前（默认）
 

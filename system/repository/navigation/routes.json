@@ -401,7 +401,44 @@
       ],
       "intents": [],
       "paths": [
-        "work/domains/design/video/common/code-generation/blender/README.md"
+        "work/domains/design/video/common/blender/README.md",
+        "work/domains/design/video/common/video-craft/README.md"
+      ]
+    },
+    {
+      "id": "ai-generation-video",
+      "note": "用扩散模型生成视频镜头（文生、图生、参考视频、图加音频）时叠加读取做法入口和当前模型目录",
+      "whenPatterns": [
+        "(参考图|图片|照片|图).{0,6}(动起来|动态化|变成视频)",
+        "(AI|ai).{0,4}生成.{0,8}(视频|镜头|片段)",
+        "文生视频|图生视频|参考视频|对口型|视频提示词|Seedance|seedance|即梦|可灵"
+      ],
+      "excludeAny": [
+        "只查",
+        "查询位置"
+      ],
+      "intents": [],
+      "paths": [
+        "work/domains/design/video/common/ai-generation/README.md",
+        "work/domains/design/video/common/ai-generation/seedance/README.md"
+      ]
+    },
+    {
+      "id": "code-generation-video",
+      "note": "用代码直接画出视频画面（three.js、HTML、Python 逐帧、Remotion、HyperFrames）时叠加读取代码生成入口",
+      "whenPatterns": [
+        "Remotion|remotion|HyperFrames|hyperframes|three\\.js|threejs",
+        "(代码|编程|HTML|html|Python|python|网页|p5|Manim|canvas|Canvas).{0,10}(视频|动画|包装|片头|转场|动效)"
+      ],
+      "excludeAny": [
+        "Blender",
+        "blender",
+        "只查",
+        "查询位置"
+      ],
+      "intents": [],
+      "paths": [
+        "work/domains/design/video/common/code-generation/README.md"
       ]
     },
     {
@@ -2264,10 +2301,7 @@
         "逐帧绘制",
         "画面标注",
         "信息面板",
-        "Blender",
-        "blender",
         "三维动画",
-        "建模动画",
         "three.js",
         "threejs"
       ],
@@ -2288,11 +2322,8 @@
         {
           "path": "work/domains/design/video/common/code-generation/README.md",
           "whenAny": [
-            "Blender",
-            "blender",
             "三维",
             "three",
-            "建模",
             "程序化",
             "逐帧",
             "叠加包装",
@@ -4785,7 +4816,7 @@
     "视频：宣传片、微课、故事片、AI 视频提示词": [
       "帮我写一个企业宣传片的分镜和AI视频提示词"
     ],
-    "AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、做动画、出成片（不管用户提没提代码，不管用 AI 生成、代码还是 AE）": [
+    "AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、做动画、出成片（不管用户提没提代码，不管用哪种做法）": [
       "把这段录屏剪一下，加上标题和标注，出成片"
     ],
     "AI 操作 After Effects：改 AE 模板、在 AE 里做动画或包装、渲染 AE 工程（任何片型，不管用户提没提 MCP）": [

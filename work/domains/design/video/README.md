@@ -5,7 +5,7 @@
 | [宣传片](./promo/README.md) | 企业、产品、创赛等宣传交付；按片型读取制作方法与提示词记录 |
 | [微课与教育交互](./education/README.md) | 教师或学校委托的微课、教学动画、VR和交互课件 |
 | [故事与叙事影片](./story/README.md) | 真人故事、剧情镜头、角色连续性及叙事参考 |
-| [视频共用方法](./common/README.md) | 通用设计与验收（video-craft）＋ AI 出视频的三种做法：AI 生成（Seedance）、代码生成（three.js、成片包装、Blender）、AI 接入 AE |
+| [视频共用方法](./common/README.md) | 通用设计与验收（video-craft）＋ AI 出视频的四种做法：AI 生成（Seedance）、代码生成（three.js、成片包装）、AI 操作 Blender（建模解说、白模预演）、AI 接入 AE；每个文件夹写什么、什么任务读，见其中“写入与触发” |
 
 **AI 自己动手剪辑、包装、加效果、出成片时（默认）**，不管用户有没有说用代码，都叠加读[视频通用设计与验收](common/video-craft/README.md)和[设计原则与审美](../common/design-principles/README.md)：片型目录定内容和结构，前者管画面排版、字号、动效和验收，后者管审美判断。比赛要交的视频，先读该比赛自己目录里的视频要求和经验，比赛的规定优先。
 

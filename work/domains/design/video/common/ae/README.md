@@ -1,6 +1,6 @@
 # AI 接入 AE
 
-AI 通过 MCP 操作本机的 After Effects：读工程、改模板、做动画和包装、渲染出片。它是 AI 出视频的三种做法之一，另两种是 [AI 生成](../ai-generation/README.md)和[代码生成](../code-generation/README.md)；三种怎么选见[视频共用方法](../README.md#三种做法怎么选默认)。适合借现成模板的高完成度效果（证书墙、粒子、插件光效、三维相机），MG、自媒体、企业片、创赛片都一样。
+AI 通过 MCP 操作本机的 After Effects：读工程、改模板、做动画和包装、渲染出片。它是 AI 出视频的四种做法之一，另三种是 [AI 生成](../ai-generation/README.md)、[代码生成](../code-generation/README.md)和 [AI 操作 Blender](../blender/README.md)；四种怎么选见[视频共用方法](../README.md#四种做法怎么选默认)，写入和触发见[视频共用方法 · 写入与触发](../README.md#写入与触发默认)。适合借现成模板的高完成度效果（证书墙、粒子、插件光效、三维相机），MG、自媒体、企业片、创赛片都一样。
 
 | 内容 | 入口 | 什么时候用 |
 |---|---|---|
