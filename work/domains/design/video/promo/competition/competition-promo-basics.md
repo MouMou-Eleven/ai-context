@@ -3,7 +3,7 @@
 创赛宣传片是大学生创新创业比赛（创赛、大创、科创项目）里，用来介绍项目、配合路演的一分钟左右的宣传视频：客户给批准过的逐字稿和素材，片子按逐字稿逐句出画面，讲清楚痛点、方案、团队、成果和应用。本文件只写“这是什么、要交什么、画面和素材怎么对应、每个画面该用哪种做法”。具体怎么做出来，按做法读：
 
 - AI 视频生成（片头、片尾、背景、缺口画面）：[AI 生视频方法](./ai-video-generation.md)
-- AI 代码预览 + AE 模板出片（正文的大部分画面）：[AI 代码与 AE 自动化流程](./ai-code-ae-pipeline.md)，排版按[改模板的排版与验收](./ae-template-layout.md)
+- AI 代码预览 + AE 模板出片（正文的大部分画面）：[AI 代码与 AE 自动化流程](./ai-code-ae-pipeline.md)，排版按[视频通用设计与验收](../../common/video-craft/README.md)和[改 AE 模板的设计判断](../../common/ae-template-design.md)，创赛专属要求见[创赛片改模板的专属要求与验收](./ae-template-layout.md)
 
 其他比赛的命题宣传片按[宣传片通用流程](../enterprise/workflow.md)走；教学、微课类比赛的参赛作品走[微课与教育交互](../../education/README.md)。
 

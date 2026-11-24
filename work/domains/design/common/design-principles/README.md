@@ -2,7 +2,7 @@
 
 建委所有设计工作共用的审美底座：海报、折页、书籍、PPT、KV，视频画面、动画和包装，网页和 App 界面，Word 版式和流程图，AI 生图和生视频的提示词。表面上这些是不同的行当，考的是同一套设计审美：信息有主次、元素有秩序、空间有呼吸、气质对得上内容。好的设计看起来天马行空，背后都有这些规律。AI 做任何排版、配色、出设计图、包装视频、做界面、写生图提示词之前，先按这里的顺序做判断，再动手。
 
-各媒介只在这套判断之上补自己特有的东西：视频多了时间（[代码式视频设计经验](../code-driven-video/README.md)），界面多了交互（[前端 UI 质量标准](../../../development/experience/frontend-ui-quality-standards.md)），PPT 多了软件操作（[PPT 拆页与版式](../../graphic/ppt/ai-assisted-design/layout-and-pagination.md)）。
+各媒介只在这套判断之上补自己特有的东西：视频多了时间（[视频通用设计与验收](../../video/common/video-craft/README.md)），界面多了交互（[前端 UI 质量标准](../../../development/experience/frontend-ui-quality-standards.md)），PPT 多了软件操作（[PPT 拆页与版式](../../graphic/ppt/ai-assisted-design/layout-and-pagination.md)）。
 
 ## 设计一个版面的顺序（默认）
 
@@ -23,9 +23,9 @@
 | 文案一堆，不知道谁大谁小、分几层 | [信息层级](information-hierarchy.md) |
 | 画面乱、呆板、没重点；想做对比、节奏、特异 | [构成法则](composition.md) |
 | 页边距留多少、怎么分栏、怎么对齐 | [版面骨架](layout-skeleton.md) |
-| 图和字怎么摆：上下、左右、包围、满版、多图 | [构图](page-composition.md) |
+| 图和字怎么摆：上下、左右、包围、满版、多图；按内容关系选版式；平衡、视线怎么走 | [构图](page-composition.md) |
 | 太满、太空、文字压到图的主体 | [留白](whitespace.md) |
-| 选什么字体、中英文怎么配、字号行距怎么定 | [字体与文字](typography.md) |
+| 选什么字体、中英文怎么配、字号行距怎么定；怎么断行、放不下怎么办 | [字体与文字](typography.md) |
 | 配色不协调、字看不清、颜色太多 | [配色](color.md) |
 | 要高级感、力量感、温暖、科技感、信任感等某种气质 | [情感与氛围](mood.md) |
 | 选图、图上压字、数据做成图表 | [图片与图表](images-and-charts.md) |
@@ -74,4 +74,4 @@ PPT 的落地操作（参考线、主题字体、文本框、蒙版、图表）�
 - 建委口述列出的要点：中西文搭配、色环配色、各类构图、网格与边距比例等。其中照片没有拍到的部分（色环角度、范德格拉夫和威廉·莫里斯的具体比例），按通用设计理论写成，建委可对照原书校正。
 - 建委 2026-10-30 提供的《设计师审美词库》（光影、空间、材质、情绪等八类），写成[审美词库](aesthetic-vocabulary.md)并补进[情感与氛围](mood.md)。同日目录从 `graphic/` 移到 `common/`，因为视频、界面、文档版式都用同一套判断。
 
-规范写成后还没有在实际订单里系统验证。设计返修中建委的新评价，先按[观察记录](../../../../../system/repository/observations.md)记下原话和成品，满足[晋升条件](../../../../../system/repository/evolution.md#三什么时候把观察升成通用规则ai-自己判断默认)后回写到对应专题，不另起新文件；典型的正反例补进[建委审美标尺](taste-benchmarks.md)。
+已在实际订单里使用：自我介绍 PPT（第三版获建委认可）、《揠苗助长》《一幅名扬中外的画》精品课返修、驰热固芯和精尺匠造创赛片的多轮返修；这些单里通用的纠正已回写到对应专题（只属于某个比赛或模板的留在各自目录），正反例收在[建委审美标尺](taste-benchmarks.md)。书籍、海报折页还没有实战订单。设计返修中建委的新评价，先按[观察记录](../../../../../system/repository/observations.md)记下原话和成品，满足[晋升条件](../../../../../system/repository/evolution.md#三什么时候把观察升成通用规则ai-自己判断默认)后回写到对应专题，不另起新文件；典型的正反例补进[建委审美标尺](taste-benchmarks.md)。

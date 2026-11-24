@@ -32,7 +32,7 @@
 | 海报与平面设计 | [读取](../../../work/domains/design/graphic/poster-fold/README.md) |
 | 书籍装帧和版式 | [读取](../../../work/domains/design/graphic/book/README.md) |
 | 教师微课与教育交互 | [读取](../../../work/domains/design/video/education/README.md) |
-| AE包装与后期合成 | [读取](../../../work/domains/design/video/common/ae-production.md) |
+| AE包装与后期合成 | [读取](../../../work/domains/design/video/common/ai-ae-collaboration.md) |
 | AI辅助视觉生产 | [读取](../../../work/domains/design/common/ai-generation-principles.md) |
 | 视频、动画与生成素材 | [读取](../../../work/domains/design/video/README.md) |
 | 企业宣传片 | [读取](../../../work/domains/design/video/promo/README.md) |
@@ -67,7 +67,7 @@
 | AI视频提示词、模板与案例 | [读取](../../../work/domains/design/video/common/seedance/awesome-seedance/README.md) |
 | 设计、视频与教学开发报价 | [读取](../../../work/domains/other/commercial/quotations/README.md) |
 | 教育行业应用与智能体开发 | [读取](../../../work/domains/development/industry-cases/education/README.md) |
-| AI 动手剪辑、包装、加效果（代码式视频） | [读取](../../../work/domains/design/common/code-driven-video/README.md) |
+| AI 动手剪辑、包装、加效果、出成片（视频通用设计与验收） | [读取](../../../work/domains/design/video/common/video-craft/README.md) |
 
 ## 常用板块的继续读取条件
 
@@ -135,9 +135,10 @@
 | 面向跨岗位学员设计AI工具全景与工作场景实操课程时 | [工具全景到工作场景](../../../work/domains/training/experience/demo-driven-course-design.md) | 单工具进阶课不强制全景；事实查询不读课程方法；方案不含讲师脚本 | 类别帮助选择，提示词连接任务，场景说明熟悉工作与可见成果；本地存储与模型处理分别核对 |
 | 接到任何创赛宣传片任务：弄清交付范围，读文稿和素材建立原句、画面、素材对应，按指向性给每个画面选做法时 | [创赛宣传片基础](../../../work/domains/design/video/promo/competition/competition-promo-basics.md) | 不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴 | 核对文稿每个信息点都有画面、证据镜头和概念镜头不混用、每个画面的做法按指向性选定 |
 | 创赛片里要用AI视频生成片头、片尾、背景、过渡或缺口画面，写或改Seedance提示词、参考图、照片动态化时 | [创赛片AI生视频方法](../../../work/domains/design/video/promo/competition/ai-video-generation.md) | 不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴 | 提示词只引用实际上传素材；片头落版、运镜、光线和多轮调校在生成结果里逐段核对 |
-| AI要在After Effects里读工程、改模板、做动画或包装、渲染出片时，不管片型（MG、自媒体、特效包装、企业片、创赛片） | [AI与AE协作（两个AE MCP）](../../../work/domains/design/video/common/ai-ae-collaboration.md) | 只写AE风格的视频提示词，或只用Remotion、Python代码做动画不碰AE时；片型自己的版面和设计规则仍读片型目录 | 交付前检查表填实测值：用了哪个MCP的哪些工具、命令行脚本几次及原因、两个MCP版本、ae_proof结果、黑帧频闪接缝 |
+| AI要在After Effects里读工程、改模板、做动画或包装、渲染出片时，不管片型（MG、自媒体、特效包装、企业片、创赛片） | [AI与AE协作（两个AE MCP）](../../../work/domains/design/video/common/ai-ae-collaboration.md) | 只写AE风格的视频提示词，或只用Remotion、Python代码做动画不碰AE时；片型自己的版面和设计规则仍读片型目录 | 交付前检查表填实测值：用了哪个MCP的哪些工具、命令行脚本几次及原因、两个MCP版本、ae_proof结果；成片按出片检查的通用验收表查黑帧频闪接缝 |
+| 用现成AE模板做画面时，不管片型（MG、自媒体、企业片、创赛片）：先设计版面再用模板实现、模板文字组件要用上、只用对应一段、模板自带光效倒影年份卡逐个对位、新加层做进模板 | [改AE模板的设计判断](../../../work/domains/design/video/common/ae-template-design.md) | 从零在AE里做动画不用模板，或只用代码出片时；片型专属要求（如创赛字幕区、主色）读片型目录 | 改模板验收表逐行填实测值：关掉的模板层清单及理由、模板主体位置、排版区距离、灯光强度与色差、光效位置、新加层开关、延长段尾帧 |
 | AI要实际做创赛片：代码出预览、用AE MCP改模板、做画面包装、按配音合成出片，或按建委反馈返修并沉淀经验时 | [创赛片AI代码与AE自动化流程](../../../work/domains/design/video/promo/competition/ai-code-ae-pipeline.md) | 不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴 | 先有代码预览定版面；改模板按预览版面实现；出片带真实配音并核对音画；每轮反馈按回流规则写入 |
-| AI改AE模板做创赛片画面时，判断版面取舍、字号比例、图框人像、证书边框、同组字体颜色、频闪光效，并在交付前逐帧做排版验收 | [改AE模板的排版与验收](../../../work/domains/design/video/promo/competition/ae-template-layout.md) | 不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴 | 开工时把验收表复制成本单检查单，开工前、字图到位静帧、动起来以后三段逐行填实测值（最低内容y、字号、证书留白、素材色差、亮度跳变），全部通过才交付 |
+| AI改AE模板做创赛片画面时，守创赛专属要求：底部字幕区、真实签名证书、证书框收拢、同组统一字体颜色、全片主色，并在交付前填创赛专属验收表 | [创赛片改模板的专属要求与验收](../../../work/domains/design/video/promo/competition/ae-template-layout.md) | 不用于教师微课和非创赛的企业片；通用排版、动效、改模板判断不在这里，读设计原则、视频通用设计与验收、改AE模板的设计判断 | 三张表（出片检查通用表、改模板验收、创赛专属验收）复制成本单检查单，逐行填实测值（最低内容y、证书留白、飘带RGB、同组最小字号、首尾余量），全部通过才交付 |
 | 为自媒体文章、图文或视频拟发布标题；写公众号等完整文章时即使未点名Skill也用于标题环节；亦可明确调用诊断、评审 | [Title Matrix 标题矩阵](../../../work/domains/self-media/titles/title-matrix/README.md) | 只查资料、只改正文或保留原标题不生成新题；合同、出版章节和学员课件不自动套营销标题；不覆盖文章正文方法 | 实际读Skill和平台参考，逐项对正文核对标题承诺、读者与发布形态；不编实测、数据或资源，不保证点击率；整篇创作交付标题加正文，不强塞矩阵 |
 | 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](../../../work/domains/design/video/common/seedance/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
 | 精品课：要录课合成、教师出镜的课件制作与返修；只有模板没有录课合成的不走 | [精品课制作与验收](../../../work/domains/design/graphic/ppt/premium-course/workflow.md) | 普通商务汇报与自由风格路演；不套用个案费用、字号和人物区域 | 保护最新用户改稿，按任务检查图文适配、箭头轴线与旋转、准确点击句及媒体返回；冻结HTML时不自动同步 |

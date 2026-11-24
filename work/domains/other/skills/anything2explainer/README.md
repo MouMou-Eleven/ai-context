@@ -23,7 +23,7 @@
 
 它会在四个确认点停下来等用户：时长和语言、解说词定稿、配音选择、前 30 秒样片。
 
-**黑底、紫光、超粗黑体是这个 Skill 的固定样式，不是建委的默认风格。** 交付前仍按[代码式视频设计经验](../../../design/common/code-driven-video/README.md)的检查表验收。
+**黑底、紫光、超粗黑体是这个 Skill 的固定样式，不是建委的默认风格。** 交付前仍按[视频通用设计与验收](../../../design/video/common/video-craft/README.md)的检查表验收。
 
 ## 怎么调用
 
@@ -37,4 +37,4 @@
 
 ## 来源与状态
 
-建委 2026-10-30 指定收录。已安装并确认 Claude Code 能识别；还没有用它出过片。它的构图与光、持续动作和停留规则中与本仓经验一致的部分已并入[动效与验收](../../../design/common/code-driven-video/motion-and-verification.md)和[排版与尺寸](../../../design/common/code-driven-video/layout-and-sizing.md)。
+建委 2026-10-30 指定收录。已安装并确认 Claude Code 能识别；还没有用它出过片。它的构图与光、持续动作和停留规则中与本仓经验一致的部分已并入[动效与验收](../../../design/video/common/video-craft/motion-and-verification.md)和[排版与尺寸](../../../design/video/common/video-craft/layout-and-sizing.md)。

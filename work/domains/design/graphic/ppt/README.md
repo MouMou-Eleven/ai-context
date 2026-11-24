@@ -20,11 +20,11 @@
 | 所有PPT的制作与美化（自由设计，或有教学模板、企业模板等指定模板） | [AI全流程协作](ai-assisted-design/README.md) | 先内容图文稿，再定调（有模板时模板代替定调）和逐页设计，最后分层重建 |
 | 精品课：要录课合成、教师出镜 | [精品课制作](premium-course/README.md) | 在上一行流程之上，加教师留位、封面保护、逐页录制等精品课要求 |
 
-“有模板”不等于精品课：只有要录课合成、教师出镜时才走精品课。出现“教学设计、语文、参赛课”也不自动等于精品课。所有排版判断都按[设计原则与规范](../../common/design-principles/README.md)。
+“有模板”不等于精品课：只有要录课合成、教师出镜时才走精品课。出现“教学设计、语文、参赛课”也不自动等于精品课。所有排版判断都按[设计原则与审美](../../common/design-principles/README.md)。
 
 ## 当前状态与维护
 
-[《山居秋暝》](ai-assisted-design/case-shanju-qiuming.md)记录自由视觉与可编辑重建；[《角的再认识》](premium-course/case-angle-revisited.md)记录指定模板精品课。按[联合流程](../../common/production-workflow.md)维护真实事实、方法与验收边界，不根据能力标签补猜结果。
+现有 6 个案例。自由视觉 2 个：[《山居秋暝》](ai-assisted-design/case-shanju-qiuming.md)（设计图重建可编辑 PPT）、[自我介绍 PPT](ai-assisted-design/case-self-intro-share-deck.md)（代码直出，第三版获建委认可）。精品课 4 个：[《角的再认识》](premium-course/case-angle-revisited.md)、[《一幅名扬中外的画》](premium-course/case-famous-painting-page-merge.md)、[《揠苗助长》](premium-course/case-yamiaozhuzhang-layout-and-stroke-animation.md)、[《条纹乖乖》录制剪辑工作台](premium-course/case-tiaowen-guaiguai-recording-workbench.md)。本目录还没有商务汇报、路演类的案例。按[联合流程](../../common/production-workflow.md)维护真实事实、方法与验收边界，不根据能力标签补猜结果。
 
 <!-- generated-related-assets:start -->
 ## 相关项目与案例

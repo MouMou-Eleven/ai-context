@@ -19,7 +19,7 @@
 
 调用时它会先让你在三种模式里选：直接套 Ink Press 模板、AI 自主创作、共同创作（逐步确认）。建委要掌控方向的商单，选共同创作。
 
-**Ink Press 的外观是这个 Skill 的样式，不是建委的默认风格。** 借它的流程、镜头卡和检查方法，配色、字体、版式按本次内容定（见[代码式视频设计经验 · 复用的是手法](../../../design/common/code-driven-video/README.md#复用的是手法不是样式默认)）。交付前仍按[代码式视频设计经验](../../../design/common/code-driven-video/README.md)的检查表验收。
+**Ink Press 的外观是这个 Skill 的样式，不是建委的默认风格。** 借它的流程、镜头卡和检查方法，配色、字体、版式按本次内容定（见[视频通用设计与验收 · 复用的是手法](../../../design/video/common/video-craft/README.md#复用的是手法不是样式默认)）。交付前仍按[视频通用设计与验收](../../../design/video/common/video-craft/README.md)的检查表验收。
 
 ## 怎么调用
 
@@ -33,4 +33,4 @@
 
 ## 来源与状态
 
-建委 2026-10-30 指定收录。已安装并确认 Claude Code 能识别；还没有用它做过建委的订单，第一次实际出片后在这里补一句效果和注意事项。它的审美准则里与本仓经验一致的条目（节奏、特效分寸、字幕字高等）已并入[动效与验收](../../../design/common/code-driven-video/motion-and-verification.md)和[排版与尺寸](../../../design/common/code-driven-video/layout-and-sizing.md)。
+建委 2026-10-30 指定收录。已安装并确认 Claude Code 能识别；还没有用它做过建委的订单，第一次实际出片后在这里补一句效果和注意事项。它的审美准则里与本仓经验一致的条目（节奏、特效分寸、字幕字高等）已并入[动效与验收](../../../design/video/common/video-craft/motion-and-verification.md)和[排版与尺寸](../../../design/video/common/video-craft/layout-and-sizing.md)。

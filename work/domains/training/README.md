@@ -15,9 +15,16 @@
 | **讲技术概念**（API、CLI、Skill 这类） | 学员 | [从问题推导概念](./experience/technical-explanation/problem-driven-technical-explanation.md) | — |
 | **讲师备课稿**（时间安排、演示准备，只给自己看） | 建委本人 | 只有建委明确要才写 | [培训风格 · 分清交付物](./experience/jianwei-training-style.md#五学员同时在看写什么不写什么) |
 | **招生宣传 / 课程介绍** | 潜在学员 | [自媒体：宣传写法](../self-media/marketing-copy/reader-question-led-promotion.md) + [口语样稿](../../../system/expression/voice-samples.md) | 本页的课题和课程事实，用来提供干货 |
-| **讲后复盘、沉淀经验** | 以后的 AI | 本页"怎样沉淀" | — |
+| **讲后复盘、沉淀经验** | 以后的 AI | [讲完课怎样沉淀](experience/README.md#讲完课怎样沉淀) | — |
 
 同一个主题可能要出好几样东西，比如一场培训要方案、课件、朋友圈宣传。每样东西分开按上表选，事实只取一处。
+
+做课件时，上表之外还要看情况补读：
+- 先核实这份资料属于哪个项目、哪个系列，读当前事实和同一系列的前课；归属不明从[场次索引](../../projects/ai-training/sessions-index.md)按主题核对，不能按课号接续社群（规则见[归属与更新](attribution-and-updates.md)）。
+- 先看[常讲课题](./topics.md)有没有这个课题的现成讲法（提示词看第二节）；培训对象是具体岗位或行业时，读[岗位与行业场景](./experience/role-specific-scenarios.md)。
+- 学员确实要跟着操作的那几段，再叠加[教程写法](./experience/tutorial-writing.md)。
+
+文章、短视频、销售页、飞书书稿、教师微课不因为内容里出现"课程""技术"就套用本板块：付费社群课程先读项目 README；招生物料走 AI 自媒体并取真实项目事实；正式授课按实际步骤调用编程、设计或视频依赖，不叠加销售话术；教师微课、精品课、参赛课进入[教育作品](../design/video/education/README.md)。
 
 ## 从接洽到交付的SOP（默认）
 
@@ -29,7 +36,7 @@
 | 选择方向 | 在视频、编程、智能体、办公、教育等实际适配方向中确定主题、对象与预期收获 | 客户需求与已核实的可授内容 |
 | 方案与大纲 | 按[培训方案写法](experience/external-proposal-design.md)写主题、模块、场景、时长和收获；Word引用通用格式，正文不变成讲师操作稿 | 交给主办方确认范围；当前会话已明确确认的不重复索要确认 |
 | 课程开发 | 按确认的半天、一天、两天等实际时长组织内容，结合真实场次和资料设计演示、练习与课件 | [课程组织](experience/demo-driven-course-design.md)和[培训风格](experience/jianwei-training-style.md) |
-| 授课与复盘 | 检查成品、工具及现场条件，按实际反馈改课；事实写对应场次，方法改本领域原文 | 不把备课检查通过写成授课效果已验证 |
+| 授课与复盘 | 课前向主办方核对技术条件：学员带不带电脑、能不能课前装好要用的软件、会场网络能不能撑住同时上线的人数、账号额度够不够、单位网络能不能装软件或用某项服务（城建、电力咨询两场都要问）；检查成品和工具；讲后按实际反馈改课，怎么沉淀见[讲完课怎样沉淀](experience/README.md#讲完课怎样沉淀) | 不把备课检查通过写成授课效果已验证 |
 
 报价或合同需要时引用商业化的通用标准，不把整套培训流程迁入商业化。资料分成主办方方案、学员课件和讲师备课稿，分别按用途交付。
 
@@ -45,17 +52,14 @@
 |---|---|
 | [topics.md](./topics.md) | 建委常讲的课题（AI 全景、提示词讲法、Excel/Word、知识库、自动化、AI 编程……）和往期大纲 |
 | [experience/](./experience/README.md) | 培训方法：以培训风格为总纲，下分课程组织、技术概念讲解、教程写法、方案写法 |
-| [AI 培训项目](../../projects/ai-training/README.md) | 各单位培训场次（济南干部培训、济南市图书馆）、[场次索引](../../projects/ai-training/sessions-index.md)；按课件标题找飞书正文；归属不明的资料 |
+| [AI 培训项目](../../projects/ai-training/README.md) | 各单位培训场次（济南干部培训、济南市图书馆）、[场次索引](../../projects/ai-training/sessions-index.md)；按课件标题找飞书正文；归属不明的资料；[WorkBuddy 工具事实](../../projects/ai-training/workbuddy-tool-facts.md)（按钮、入口、限制及核实日期） |
 | [attribution-and-updates.md](./attribution-and-updates.md) | 一份资料属于哪个系列、哪场培训的判断规则 |
 
 会员社群的课程事实（课序、权益、价格）在[社群项目](../../projects/paid-community-course/README.md)，不在这里。课号只在自己的系列里有效：图书馆的"第 6 课"和社群的"第 6 课"是两回事。
 
 ## 怎样沉淀
 
-- 讲完课的反馈：能用到别的课上的，直接改 experience/ 里对应的那一条，不要另起新文件；只跟这一场有关的，写进这一场的记录。
-- 新的常讲课题、新的讲法：补进 [topics.md](./topics.md)。
-- 同一个错误又犯了：不要再加一条"必须……"，而是在[培训风格](./experience/jianwei-training-style.md)的"反复出现过的错误"表里补上这次的来源，并想办法让检查动作更具体。
-- 具体规则见[仓库写入规范](../../../system/repository/ingestion-workflow.md)。
+讲完课、建委说"复盘一下""记下来"时，按[讲完课怎样沉淀](experience/README.md#讲完课怎样沉淀)做；场次事实写进 [AI 培训项目](../../projects/ai-training/README.md#新的一场怎么沉淀)对应场次。
 
 <!-- generated-related-assets:start -->
 ## 相关项目与案例

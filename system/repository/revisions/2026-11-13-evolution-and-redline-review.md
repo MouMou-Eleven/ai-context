@@ -92,11 +92,11 @@
 | system/repository/templates/case.md:5 | 按一类任务写，不按单个对象写（红线）：标题写“这一类任务学到什么”（例：“实… | 写仓库的做法，写错了能改回；“拉最新”另有提交检查兜底 |
 | work/domains/design/common/ai-generation-principles.md:7 | 1. 精确信息交给后期（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
 | work/domains/design/common/ai-generation-principles.md:27 | 4. 只引用真实存在的素材（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
-| work/domains/design/common/code-driven-video/README.md:7 | 什么时候读（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
-| work/domains/design/common/code-driven-video/README.md:33 | 复用的是手法，不是样式（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
-| work/domains/design/common/code-driven-video/layout-and-sizing.md:46 | 容器跟着内容走（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
-| work/domains/design/common/code-driven-video/motion-and-verification.md:17 | 转场（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
-| work/domains/design/common/code-driven-video/motion-and-verification.md:53 | 验收流程（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
+| work/domains/design/video/common/video-craft/README.md:7 | 什么时候读（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
+| work/domains/design/video/common/video-craft/README.md:33 | 复用的是手法，不是样式（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
+| work/domains/design/video/common/video-craft/layout-and-sizing.md:46 | 容器跟着内容走（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
+| work/domains/design/video/common/video-craft/motion-and-verification.md:17 | 转场（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
+| work/domains/design/video/common/video-craft/motion-and-verification.md:53 | 验收流程（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
 | work/domains/design/common/design-principles/aesthetic-vocabulary.md:33 | 防止生搬硬套（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
 | work/domains/design/common/feedback-iteration.md:11 | 2. 分清保留什么、改什么（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
 | work/domains/design/common/production-workflow.md:18 | 交付物判断（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
@@ -181,7 +181,7 @@
 | system/repository/ingestion-workflow.md:204 | - 红线放在任务一定会读到的那个文件的前面，不要埋在长文件的中段或积累区。 | 只是提到“红线”这个词或链接到红线小节，不是一条规则；链接已随标题更新 |
 | system/repository/revisions/README.md:8 | 2026-09-28  仓库整改：AGENTS.md 改为一页"任务 → 必… | 只是提到“红线”这个词或链接到红线小节，不是一条规则；链接已随标题更新 |
 | system/repository/templates/method.md:19 | - 红线：不能违反（例：给学员的课件不写讲师安排）。 | 方法模板里的级别说明，已按新的红线范围改写 |
-| work/domains/design/common/code-driven-video/motion-and-verification.md:47 | 容器尺寸写死  内容少时留大块空白，内容多时溢出  按容器跟着内容走计算尺寸 | 只是提到“红线”这个词或链接到红线小节，不是一条规则；链接已随标题更新 |
+| work/domains/design/video/common/video-craft/motion-and-verification.md:47 | 容器尺寸写死  内容少时留大块空白，内容多时溢出  按容器跟着内容走计算尺寸 | 只是提到“红线”这个词或链接到红线小节，不是一条规则；链接已随标题更新 |
 | work/domains/design/common/design-principles/README.md:66 | 除了审美词库里“防止生搬硬套”一节是红线，其余都是默认：没有特别理由就照做。… | 级别说明，已改成“本目录都是默认” |
 | work/domains/design/graphic/ppt/premium-course/case-yamiaozhuzhang-layout-and-stroke-animation.md:34 | 建委用这版工作台实际剪辑后（2026-10-14）指出对位错误：第2页视频应… | 只是提到“红线”这个词或链接到红线小节，不是一条规则；链接已随标题更新 |
 | work/domains/design/video/promo/competition/README.md:29 | 每轮反馈后，按经验怎么回流判断要不要写：只收新的判断，写进它所属的那一块；能… | 只是提到“红线”这个词或链接到红线小节，不是一条规则；链接已随标题更新 |

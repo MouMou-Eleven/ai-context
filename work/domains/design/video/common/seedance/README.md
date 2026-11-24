@@ -26,7 +26,7 @@
 - 宣传片、创赛片：[宣传片方法](../../promo/README.md)、[创赛片的 AI 生视频方法](../../promo/competition/ai-video-generation.md)（带字图片做参考、照片人物动态化、多轮调校）
 - 教师微课：[AI 微课画面方法](../../education/ai-generated-microcourse-video-workflow.md)
 - 故事片、漫剧：[故事片方法](../../story/README.md)
-- 合成、字幕、包装：[AE 制作](../ae-production.md)
+- 合成、字幕、包装：[AI 与 AE 协作](../ai-ae-collaboration.md)
 
 ## 写入
 

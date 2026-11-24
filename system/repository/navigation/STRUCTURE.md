@@ -32,10 +32,6 @@ ai-context/
 │   │   ├── design/  按交付物组织设计制作经验
 │   │   │   ├── common/  组合手工设计与AI辅助，统一制作和沉淀流程
 │   │   │   │   ├── ai-generation-principles.md  设计中用 AI 生成的五条原则
-│   │   │   │   ├── code-driven-video/  代码式视频：字号、间距、对齐、动效与验收经验
-│   │   │   │   │   ├── layout-and-sizing.md  视频画面的安全区、字号换算、间距单位、容器与对齐
-│   │   │   │   │   ├── motion-and-verification.md  出场节奏、停留时间、图层顺序坑与静帧验收
-│   │   │   │   │   └── README.md  代码式视频入口：什么时候读、和平面原则的联动、检查表
 │   │   │   │   ├── design-principles/  海报、折页、书籍、PPT共用的设计底层规则：层级、构成、骨架、构图、留白、字体、配色、氛围
 │   │   │   │   │   ├── aesthetic-vocabulary.md  审美词库：把“好看”翻成气质和设计简报；光影、空间、材质；跨媒介用法
 │   │   │   │   │   ├── color.md  明度与辨识度、色调调和、色环配色、面积与数量、颜色气质
@@ -73,9 +69,6 @@ ai-context/
 │   │   │   │   │   │   ├── case-yamiaozhuzhang-layout-and-stroke-animation.md  揠苗助长22页返修：标题线压字、田字格比例、擦除方向全反与笔顺动画
 │   │   │   │   │   │   ├── README.md  按制作任务进入精品课方法与真实案例
 │   │   │   │   │   │   ├── recording-guide.md  把最终稿段映射为准确点击口令、翻页和网页媒体操作
-│   │   │   │   │   │   ├── revisions/  对照客户修改前后画面，记录布局判断及可观察的检查标准
-│   │   │   │   │   │   │   ├── 2026-09-26-animation-recording-and-arrow-axis.md  记录动画录制补全与箭头轴线返修，明确历史阶段和冻结范围
-│   │   │   │   │   │   │   └── 2026-09-26-layout-and-arrow-review.md  用户前后对照推动的留白对齐、保护页与箭头接缝修订
 │   │   │   │   │   │   ├── visual-design.md  按内容匹配图框与留白，检查透明素材并组织收尾页层级
 │   │   │   │   │   │   └── workflow.md  文稿核对、拆页与真实合并、页数确认、模板设计、动画及合成交接
 │   │   │   │   │   └── README.md  PPT 设计经验与项目入口
@@ -83,7 +76,7 @@ ai-context/
 │   │   │   ├── README.md  设计制作入口，项目与案例来自统一登记
 │   │   │   └── video/  按宣传、教育、故事片型组合制作方法
 │   │   │       ├── common/  跨片型复用分镜、AI生成、合成与验收方法
-│   │   │       │   ├── ae-production.md  AE包装、合成与工程交付要求
+│   │   │       │   ├── ae-template-design.md  改AE模板的设计判断：先设计版面、模板文字组件要用上、只用对应一段、光效对位、改模板验收表
 │   │   │       │   ├── ai-ae-collaboration.md  AI与AE协作：本机两个AE MCP怎么挑、先用自带工具不自己写脚本、保持最新、操作与渲染检查、经验写到哪里
 │   │   │       │   ├── code-rendered-animation/  代码生成动画：按效果类型分门类（三维、成片包装、MG、手绘），门类内再分片型
 │   │   │       │   │   ├── 3d-scene/  三维场景与运镜：程序化建模、镜头路线与渲染
@@ -291,8 +284,13 @@ ai-context/
 │   │   │       │   │   ├── prompt-cases.md  提示词案例
 │   │   │       │   │   ├── prompt-templates.md  提示词模板
 │   │   │       │   │   └── README.md  Seedance 读取顺序、几条要点与片型分工
-│   │   │       │   └── tools/  目录入口
-│   │   │       │       └── ae_dialog_guard.py  跨平台维护或执行脚本
+│   │   │       │   ├── tools/  目录入口
+│   │   │       │   │   └── ae_dialog_guard.py  跨平台维护或执行脚本
+│   │   │       │   └── video-craft/  视频通用设计与验收：不管AI生成、代码还是AE都成立的字号、间距、动效、出片检查
+│   │   │       │       ├── layout-and-sizing.md  视频画面的安全区、字号换算、间距单位、容器与对齐
+│   │   │       │       ├── motion-and-verification.md  动效与节奏：出场间隔、转场与闪、停留时间、跟配音走、画面之间怎么接
+│   │   │       │       ├── README.md  视频通用设计与验收入口：什么时候读、和平面原则的联动、做一条视频的顺序
+│   │   │       │       └── verification.md  出片检查：先眼睛后数字、黑帧频闪接缝终稿的查法、通用验收表
 │   │   │       ├── education/  为教师委托的微课与教育交互作品查制作规范
 │   │   │       │   ├── ai-generated-microcourse-video-workflow.md  AI教师微课的音频分段、场景关键图、多镜头提示词与验收方法
 │   │   │       │   ├── case-little-leaf-microcourse-mv.md  《小树叶》AI 教师音乐微课商单案例
@@ -301,7 +299,7 @@ ai-context/
 │   │   │       │   └── showcase-guidelines.md  展示微课案例时检查受众、措辞和成果表达
 │   │   │       ├── promo/  按创赛、企业、产品三类查宣传片的分镜、素材、制作与交付经验
 │   │   │       │   ├── competition/  创赛宣传片：分基础概念、AI生视频、AI代码与AE自动化三块，按要做的事读
-│   │   │       │   │   ├── ae-template-layout.md  改AE模板的排版判断与交付前排版验收表：样例残留、重叠、字号梯度、图框、人像、多余光效
+│   │   │       │   │   ├── ae-template-layout.md  创赛片改模板的专属要求与验收：字幕区、真实签名、证书框收拢、同组统一、主色、创赛专属验收表
 │   │   │       │   │   ├── ai-code-ae-pipeline.md  创赛片AI代码与AE自动化：代码预览定版面、AE MCP改模板、AE级包装标准、经验回流
 │   │   │       │   │   ├── ai-video-generation.md  创赛片AI生视频：片头片尾背景提示词交接、AI片头接AE标题、参考图、照片动态化、调校
 │   │   │       │   │   ├── competition-promo-basics.md  创赛片基础：是什么、接单规格、原句画面素材对应、叙事结构、按指向性选做法
@@ -1364,8 +1362,9 @@ ai-context/
 │   │   │   │   └── README.md  对方需求原话、方案结构、交付文件与讲前待办
 │   │   │   ├── shandong-library/  山东省图书馆WorkBuddy办公课的场次事实与大纲格式
 │   │   │   │   └── README.md  主办、受众、讲师、课程结构与交付文件
-│   │   │   └── wanrong-commissioned/  万融委托培训的WorkBuddy企业版推广口径、植入点与触发条件
-│   │   │       └── README.md  触发条件、软植入原则、对外口径、企业版事实与联系人
+│   │   │   ├── wanrong-commissioned/  万融委托培训的WorkBuddy企业版推广口径、植入点与触发条件
+│   │   │   │   └── README.md  触发条件、软植入原则、对外口径、企业版事实与联系人
+│   │   │   └── workbuddy-tool-facts.md  WorkBuddy 按钮、入口、限制等工具事实，标版本与最后核实日期，各培训场次共用
 │   │   ├── archive/  查已退出当前主线的项目，避免把旧状态当现状
 │   │   │   ├── openclaw-agent/  追溯已归档AI Agent项目的资料和决策
 │   │   │   │   └── README.md  OpenClaw Agent 历史档案

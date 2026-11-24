@@ -171,7 +171,7 @@ class Routes(unittest.TestCase):
     def test_ai_video_automatically_reads_design_dependency(self):
         result = router.resolve('AI视频素材交给AE后期合成', 'create')
         self.assertIn('work/domains/design/video/README.md', result['read'])
-        self.assertIn('work/domains/design/video/common/ae-production.md', result['read'])
+        self.assertIn('work/domains/design/video/common/ai-ae-collaboration.md', result['read'])
 
     def test_pure_teaching_does_not_activate_sales(self):
         result = router.resolve('培训纯教学案例演示，不涉及招生与销售', 'create')
@@ -238,7 +238,7 @@ class Routes(unittest.TestCase):
     def test_ae_matches_chinese_boundaries_without_matching_unrelated_words(self):
         result = router.resolve('用AE做企业MG宣传片', 'create')
         self.assertEqual(result['selectedCandidate'], 'enterprise-video')
-        self.assertIn('work/domains/design/video/common/ae-production.md', result['read'])
+        self.assertIn('work/domains/design/video/common/ai-ae-collaboration.md', result['read'])
         for task in ['为SAE产品做企业宣传片', '做AEROSPACE企业宣传片', '分析AEs数据']:
             result = router.resolve(task, 'create')
             self.assertNotIn('ae', [item['id'] for item in result['candidates']])

@@ -106,7 +106,7 @@ class RealTasks(unittest.TestCase):
 
     def test_hands_on_video_reads_code_video_without_saying_code(self):
         # 2026-10-30: 建委 asks for edits in plain words; the AI still works in code.
-        cv = 'work/domains/design/common/code-driven-video/README.md'
+        cv = 'work/domains/design/video/common/video-craft/README.md'
         for task in ['帮我剪一下这个视频', '在这个视频上给我做个科技感的效果', '给这段视频加字幕和标题',
                      '把这几个镜头剪成30秒宣传片', '这个创赛视频帮我做一下片头和转场', '微课视频加个动画效果']:
             self.assertIn(cv, self.reads(task), task)
@@ -205,7 +205,7 @@ if __name__ == '__main__':
 class DesignAndContestTasks(unittest.TestCase):
     """建委 2026-10-30：设计经验躺在平面目录用不上、"好看"没人翻译；比赛视频经验只留在比赛目录。"""
     DP = 'work/domains/design/common/design-principles/'
-    CV = 'work/domains/design/common/code-driven-video/'
+    CV = 'work/domains/design/video/common/video-craft/'
 
     def reads(self, task):
         return router.resolve(task, 'auto')['read']

@@ -14,7 +14,7 @@
 | 根据歌曲、旁白或故事音频制作AI微课画面，设计场景图与段内多镜头提示词 | [AI教师微课画面生成与多镜头制作方法](./ai-generated-microcourse-video-workflow.md) → 再按本次平台读取工具经验 |
 | 把教学设计、逐字稿、音频、参考图、提示词和验收按现有素材整理成可操作页面 | [微课交互式制作工作台](./interactive-production-workbench.md) |
 | AI 生成视频镜头、编写生成提示词 | [AI 视频通用经验](../common/README.md) → 按本次工具选择具体经验 |
-| AE 动画、实拍标注、字幕与后期合成 | [AE 设计](../common/ae-production.md) |
+| AE 动画、实拍标注、字幕与后期合成 | [AI 与 AE 协作](../common/ai-ae-collaboration.md)、改模板时加读[改 AE 模板的设计判断](../common/ae-template-design.md) |
 | 图文转动效、可编辑的文字/颜色/编号动画 | [Remotion Skill 能力说明](../../../other/skills/jianwei-ai-community-remotion-video/README.md) |
 | 教育智能体、Coze、VR交互应用或教学业务系统 | [教育行业开发](../../../development/industry-cases/education/README.md)；课件与微课制作仍按本入口对应交付物选择 |
 | 查同类案例、补本次商单复盘 | [《小树叶》案例](./case-little-leaf-microcourse-mv.md) → [商单模板](../../../../../system/repository/templates/case.md) |

@@ -363,7 +363,9 @@
         "(视频|镜头|片子|素材|画面|短片|宣传片|片段|录屏|mp4|MP4|动画).{0,15}(剪|包装|特效|效果|字幕|标题|标注|动效|调色|转场|片头|片尾|出片|成片|渲染|合成|坐标|面板|科技感)",
         "(剪|包装|特效|做效果|加效果|加字幕|加标题|标注|调色|转场|渲染|合成).{0,15}(视频|镜头|片子|素材|画面|短片|宣传片|片段|录屏|mp4|MP4|动画)",
         "剪辑|剪视频|剪一下|剪成|粗剪|精剪|代码式视频|代码视频|HyperFrames|Remotion|ffmpeg",
-        "(代码|编程|HTML|html|CSS|JS|Python|python|网页|three\\.js|p5|Manim|canvas|Canvas).{0,10}(视频|动画|包装|片头|转场|动效)"
+        "(代码|编程|HTML|html|CSS|JS|Python|python|网页|three\\.js|p5|Manim|canvas|Canvas).{0,10}(视频|动画|包装|片头|转场|动效)",
+        "(做|出|渲染|制作).{0,8}(MG|动画|短视频|宣传片|片子|成片)",
+        "Blender|blender|three\\.js|threejs"
       ],
       "excludeAny": [
         "提示词",
@@ -378,9 +380,10 @@
       ],
       "intents": [],
       "paths": [
-        "work/domains/design/common/code-driven-video/README.md",
-        "work/domains/design/common/code-driven-video/layout-and-sizing.md",
-        "work/domains/design/common/code-driven-video/motion-and-verification.md",
+        "work/domains/design/video/common/video-craft/README.md",
+        "work/domains/design/video/common/video-craft/layout-and-sizing.md",
+        "work/domains/design/video/common/video-craft/motion-and-verification.md",
+        "work/domains/design/video/common/video-craft/verification.md",
         "work/domains/design/common/design-principles/README.md"
       ]
     },
@@ -715,11 +718,20 @@
         "AE 模板"
       ],
       "excludeAny": [],
-      "entry": "work/domains/design/video/common/ae-production.md",
+      "entry": "work/domains/design/video/common/ai-ae-collaboration.md",
       "priority": 70,
       "dependencies": [
         {
-          "path": "work/domains/design/video/common/ai-ae-collaboration.md",
+          "path": "work/domains/design/video/common/ae-template-design.md",
+          "whenAny": [
+            "模板",
+            "aep",
+            ".aep"
+          ],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/common/video-craft/README.md",
           "whenAny": [],
           "intents": []
         },
@@ -787,18 +799,11 @@
           "intents": []
         },
         {
-          "path": "work/domains/design/video/common/ae-production.md",
-          "whenAny": [
-            "AE",
-            "合成",
-            "后期"
-          ],
-          "intents": []
-        },
-        {
           "path": "work/domains/design/video/common/ai-ae-collaboration.md",
           "whenAny": [
             "AE",
+            "合成",
+            "后期",
             "After Effects",
             "MCP"
           ],
@@ -1273,7 +1278,7 @@
           "intents": []
         },
         {
-          "path": "work/domains/design/common/code-driven-video/README.md",
+          "path": "work/domains/design/video/common/video-craft/README.md",
           "whenAny": [],
           "intents": []
         }
@@ -2225,7 +2230,7 @@
     },
     {
       "id": "code-video",
-      "label": "AI 动手剪辑、包装、加效果（代码式视频）",
+      "label": "AI 动手剪辑、包装、加效果、出成片（视频通用设计与验收）",
       "matchAny": [
         "代码式视频",
         "代码视频",
@@ -2241,7 +2246,13 @@
         "程序化视频",
         "逐帧绘制",
         "画面标注",
-        "信息面板"
+        "信息面板",
+        "Blender",
+        "blender",
+        "三维动画",
+        "建模动画",
+        "three.js",
+        "threejs"
       ],
       "excludeAny": [
         "提示词",
@@ -2254,16 +2265,39 @@
         "只查",
         "查询位置"
       ],
-      "entry": "work/domains/design/common/code-driven-video/README.md",
+      "entry": "work/domains/design/video/common/video-craft/README.md",
       "priority": 40,
       "dependencies": [
         {
-          "path": "work/domains/design/common/code-driven-video/layout-and-sizing.md",
+          "path": "work/domains/design/video/common/code-rendered-animation/README.md",
+          "whenAny": [
+            "Blender",
+            "blender",
+            "三维",
+            "three",
+            "建模",
+            "程序化",
+            "逐帧",
+            "叠加包装",
+            "HTML",
+            "Python",
+            "python",
+            "代码"
+          ],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/common/video-craft/layout-and-sizing.md",
           "whenAny": [],
           "intents": []
         },
         {
-          "path": "work/domains/design/common/code-driven-video/motion-and-verification.md",
+          "path": "work/domains/design/video/common/video-craft/motion-and-verification.md",
+          "whenAny": [],
+          "intents": []
+        },
+        {
+          "path": "work/domains/design/video/common/video-craft/verification.md",
           "whenAny": [],
           "intents": []
         },
@@ -2847,9 +2881,7 @@
       "status": "active",
       "path": "work/domains/design/video/promo/competition/ai-video-generation.md",
       "selectedAny": [
-        "competition-video",
-        "enterprise-video",
-        "video"
+        "competition-video"
       ],
       "whenAny": [
         "片头",
@@ -2916,7 +2948,7 @@
       ],
       "useWhen": "AI要在After Effects里读工程、改模板、做动画或包装、渲染出片时，不管片型（MG、自媒体、特效包装、企业片、创赛片）",
       "notFor": "只写AE风格的视频提示词，或只用Remotion、Python代码做动画不碰AE时；片型自己的版面和设计规则仍读片型目录",
-      "acceptance": "交付前检查表填实测值：用了哪个MCP的哪些工具、命令行脚本几次及原因、两个MCP版本、ae_proof结果、黑帧频闪接缝",
+      "acceptance": "交付前检查表填实测值：用了哪个MCP的哪些工具、命令行脚本几次及原因、两个MCP版本、ae_proof结果；成片按出片检查的通用验收表查黑帧频闪接缝",
       "evidence": "work/domains/design/video/common/ai-ae-collaboration.md",
       "confirmedAt": "2026-11-23",
       "entryPoints": [
@@ -2925,13 +2957,52 @@
       "source": "2026-11-23建委要求：装surehand，两个MCP写进视频共用方法由AI自己挑，先用自带工具不自己写脚本；通用操作要点从创赛片流程搬来"
     },
     {
+      "id": "ae-template-design",
+      "label": "改AE模板的设计判断",
+      "status": "active",
+      "path": "work/domains/design/video/common/ae-template-design.md",
+      "selectedAny": [
+        "ae",
+        "video",
+        "competition-video",
+        "enterprise-video",
+        "self-media",
+        "code-video"
+      ],
+      "whenAny": [
+        "AE模板",
+        "AE 模板",
+        "模板",
+        "aep"
+      ],
+      "excludeAny": [
+        "视频提示词",
+        "Seedance",
+        "PPT模板",
+        "ppt模板",
+        "Word模板"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "用现成AE模板做画面时，不管片型（MG、自媒体、企业片、创赛片）：先设计版面再用模板实现、模板文字组件要用上、只用对应一段、模板自带光效倒影年份卡逐个对位、新加层做进模板",
+      "notFor": "从零在AE里做动画不用模板，或只用代码出片时；片型专属要求（如创赛字幕区、主色）读片型目录",
+      "acceptance": "改模板验收表逐行填实测值：关掉的模板层清单及理由、模板主体位置、排版区距离、灯光强度与色差、光效位置、新加层开关、延长段尾帧",
+      "evidence": "work/domains/design/video/promo/competition/ae-template-layout.md",
+      "confirmedAt": "2026-11-24",
+      "entryPoints": [
+        "work/domains/design/video/common/README.md"
+      ],
+      "source": "2026-11-24仓库整理：从创赛片排版与验收、AI代码与AE流程中按“放进MG动画还成立吗”拆出；例子来自精尺匠造、驰热固芯建委逐张意见"
+    },
+    {
       "id": "competition-code-ae-pipeline",
       "label": "创赛片AI代码与AE自动化流程",
       "status": "active",
       "path": "work/domains/design/video/promo/competition/ai-code-ae-pipeline.md",
       "selectedAny": [
-        "competition-video",
-        "enterprise-video"
+        "competition-video"
       ],
       "whenAny": [
         "AE",
@@ -2971,12 +3042,11 @@
     },
     {
       "id": "competition-ae-template-layout",
-      "label": "改AE模板的排版与验收",
+      "label": "创赛片改模板的专属要求与验收",
       "status": "active",
       "path": "work/domains/design/video/promo/competition/ae-template-layout.md",
       "selectedAny": [
-        "competition-video",
-        "enterprise-video"
+        "competition-video"
       ],
       "whenAny": [
         "AE",
@@ -3004,9 +3074,9 @@
         "create",
         "write"
       ],
-      "useWhen": "AI改AE模板做创赛片画面时，判断版面取舍、字号比例、图框人像、证书边框、同组字体颜色、频闪光效，并在交付前逐帧做排版验收",
-      "notFor": "不用于教师微课；不固定所有视频的叙事顺序、设备、蓝色背景或镜头数量，按具体场景借鉴",
-      "acceptance": "开工时把验收表复制成本单检查单，开工前、字图到位静帧、动起来以后三段逐行填实测值（最低内容y、字号、证书留白、素材色差、亮度跳变），全部通过才交付",
+      "useWhen": "AI改AE模板做创赛片画面时，守创赛专属要求：底部字幕区、真实签名证书、证书框收拢、同组统一字体颜色、全片主色，并在交付前填创赛专属验收表",
+      "notFor": "不用于教师微课和非创赛的企业片；通用排版、动效、改模板判断不在这里，读设计原则、视频通用设计与验收、改AE模板的设计判断",
+      "acceptance": "三张表（出片检查通用表、改模板验收、创赛专属验收）复制成本单检查单，逐行填实测值（最低内容y、证书留白、飘带RGB、同组最小字号、首尾余量），全部通过才交付",
       "evidence": "work/domains/design/video/promo/competition/ae-template-layout.md",
       "confirmedAt": "2026-11-07",
       "entryPoints": [
@@ -4698,7 +4768,7 @@
     "视频：宣传片、微课、故事片、AI 视频提示词": [
       "帮我写一个企业宣传片的分镜和AI视频提示词"
     ],
-    "AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、做动画、出成片（不管用户提没提代码）": [
+    "AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、做动画、出成片（不管用户提没提代码，不管用 AI 生成、代码还是 AE）": [
       "把这段录屏剪一下，加上标题和标注，出成片"
     ],
     "AI 操作 After Effects：改 AE 模板、在 AE 里做动画或包装、渲染 AE 工程（任何片型，不管用户提没提 MCP）": [
