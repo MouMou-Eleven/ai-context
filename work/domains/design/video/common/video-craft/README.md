@@ -16,9 +16,9 @@
 - “这个 AI 生成的视频字糊了，你帮我重新做一下文字”
 - 明确说用 Python、HTML、Remotion、HyperFrames 做视频或动画
 
-宣传片、创赛、微课这些片型照常走各自的目录定内容和结构；比赛视频还要读该比赛自己的目录（片头、字幕区、时长等要求以比赛为准）。本目录叠加在上面，管画面上的排版、尺寸、动效和验收；用哪种做法再加读那种做法的目录（[Seedance](../seedance/README.md)、[代码生成动画](../code-rendered-animation/README.md)、AE 的[改模板判断](../ae-template-design.md)和[AI 与 AE 协作](../ai-ae-collaboration.md)）。
+宣传片、创赛、微课这些片型照常走各自的目录定内容和结构；比赛视频还要读该比赛自己的目录（片头、字幕区、时长等要求以比赛为准）。本目录叠加在上面，管画面上的排版、尺寸、动效和验收；用哪种做法再加读那种做法的目录（[AI 生成](../ai-generation/README.md)、[代码生成](../code-generation/README.md)、[AI 接入 AE](../ae/README.md)）。
 
-不读的情况：只写 AI 视频模型的提示词、不出片（读 [Seedance](../seedance/README.md)）；只写脚本、分镜、口播稿，不动手出片。纯剪接、画面上什么都不加时，读[动效与节奏](motion-and-verification.md)和[出片检查](verification.md)即可。
+不读的情况：只写 AI 视频模型的提示词、不出片（读 [Seedance](../ai-generation/seedance/README.md)）；只写脚本、分镜、口播稿，不动手出片。纯剪接、画面上什么都不加时，读[动效与节奏](motion-and-verification.md)和[出片检查](verification.md)即可。
 
 ## 和设计原则的关系（默认）
 
@@ -66,4 +66,4 @@
 ## 来源与状态
 
 建委 2026-10-29 提出建立本目录：每次用 AI 编程做视频都要反复纠正字号、间距、对齐这类基础问题，要求沉淀成跨工具、跨风格的共用经验，并与设计原则联动。2026-10-30 吸收两个外部 Skill（video-shotcraft 审美准则、anything2explainer 构图与光）里与本仓经验一致的通用判断。比赛视频的专属做法（如天津大赛演示视频的录制和标注）留在各比赛目录，不放这里。目前经过厂房实拍包装、创赛装备名条、三维工厂动画三次实战验证；新的返修意见回写到对应文件，不另起新文件，也不再单独建按某个片子命名的案例。
-- 2026-11-24 仓库整理：建委说明视频有三种做法（AI 生成、代码生成、AI 接入 AE），通用的和专属的要分开。本目录由“代码式视频设计经验”改名为“视频通用设计与验收”，从 design/common 移到 video/common；创赛文件和 AI 与 AE 协作里换哪种做法都成立的节奏、转场、检查搬进来，新建[出片检查](verification.md)；代码实现的坑和外部 Skill 移到[代码生成动画](../code-rendered-animation/README.md)。
+- 2026-11-24 仓库整理：建委说明视频有三种做法（AI 生成、代码生成、AI 接入 AE），通用的和专属的要分开。本目录由“代码式视频设计经验”改名为“视频通用设计与验收”，从 design/common 移到 video/common；创赛文件和 AI 与 AE 协作里换哪种做法都成立的节奏、转场、检查搬进来，新建[出片检查](verification.md)；代码实现的坑和外部 Skill 移到[代码生成动画](../code-generation/README.md)。

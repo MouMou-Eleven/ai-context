@@ -10,7 +10,7 @@
 | 用 AI 视频生成片头、片尾、背景、过渡或缺口画面，写 Seedance 提示词 | [AI 生视频方法](./ai-video-generation.md) | 提示词交接和工作台、AI 片头接 AE 标题、参考图、照片动态化、多轮调校 |
 | AI 实际出片：代码预览、改 AE 模板、包装、按配音合成 | [AI 代码与 AE 自动化流程](./ai-code-ae-pipeline.md) + [创赛片改模板的专属要求与验收](./ae-template-layout.md) | 一单怎么走、代码和 AE 两种做法、AE MCP 改模板、AE 级包装标准、经验回流；字幕区、真实签名、证书框、同组统一、主色和创赛专属验收表 |
 
-**接到创赛单都先读基础**，再按这一单要做的事读对应的一块；同一单既要 AI 视频又要 AE 出片，两块都读。只要 AI 动手改 AE 模板，除了这两篇，还要读视频共用的[改 AE 模板的设计判断](../../common/ae-template-design.md)和[视频通用设计与验收](../../common/video-craft/README.md)：开工时把三张验收表（通用、改模板、创赛专属）复制成本单检查单，逐行填实测值，全部通过才交付。分工：换到 MG、自媒体视频也成立的写在视频共用；本目录只写创赛片专属的要求（[专属要求与验收](./ae-template-layout.md)）和做法（[流程](./ai-code-ae-pipeline.md)），同一条要求只在一处有正文。
+**接到创赛单都先读基础**，再按这一单要做的事读对应的一块；同一单既要 AI 视频又要 AE 出片，两块都读。只要 AI 动手改 AE 模板，除了这两篇，还要读视频共用的[改 AE 模板的设计判断](../../common/ae/ae-template-design.md)和[视频通用设计与验收](../../common/video-craft/README.md)：开工时把三张验收表（通用、改模板、创赛专属）复制成本单检查单，逐行填实测值，全部通过才交付。分工：换到 MG、自媒体视频也成立的写在视频共用；本目录只写创赛片专属的要求（[专属要求与验收](./ae-template-layout.md)）和做法（[流程](./ai-code-ae-pipeline.md)），同一条要求只在一处有正文。
 
 ## 一部创赛片怎么做
 
@@ -22,9 +22,9 @@
   → 按配音合成，逐幕验收，经验写回仓库
 ```
 
-AI 自己动手出片时，画面排版、字号、动效验收照常叠加[视频通用设计与验收](../../common/video-craft/README.md)；要做三维动画或在成片上加包装，读[代码生成动画](../../common/code-rendered-animation/README.md)。
+AI 自己动手出片时，画面排版、字号、动效验收照常叠加[视频通用设计与验收](../../common/video-craft/README.md)；要做三维动画或在成片上加包装，读[代码生成动画](../../common/code-generation/README.md)。
 
-AI 操作 AE（改模板、渲染）先读视频共用的[AI 与 AE 协作](../../common/ai-ae-collaboration.md)：本机两个 AE MCP 怎么挑、先用 MCP 自带工具不自己写脚本、通用的操作坑和渲染检查都在那里，本板块只写创赛片特有的。两个 MCP 都连不上、退回命令行脚本时，才后台启动 [AE 弹窗守护](../../common/tools/ae_dialog_guard.py)。经验写到哪一边，按那篇的[经验写到哪里](../../common/ai-ae-collaboration.md#经验写到哪里默认)判断：换到 MG 动画、自媒体短视频还成立的写那里，只在创赛里成立的（证书、按画面用模板、主色、字体统一、包装套路）写本板块。
+AI 操作 AE（改模板、渲染）先读视频共用的[AI 与 AE 协作](../../common/ae/ai-ae-collaboration.md)：本机两个 AE MCP 怎么挑、先用 MCP 自带工具不自己写脚本、通用的操作坑和渲染检查都在那里，本板块只写创赛片特有的。两个 MCP 都连不上、退回命令行脚本时，才后台启动 [AE 弹窗守护](../../common/ae/tools/ae_dialog_guard.py)。经验写到哪一边，按那篇的[经验写到哪里](../../common/ae/ai-ae-collaboration.md#经验写到哪里默认)判断：换到 MG 动画、自媒体短视频还成立的写那里，只在创赛里成立的（证书、按画面用模板、主色、字体统一、包装套路）写本板块。
 
 ## 写入
 

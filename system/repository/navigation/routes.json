@@ -388,6 +388,23 @@
       ]
     },
     {
+      "id": "blender-video",
+      "note": "AI 驱动 Blender 建模出片，或先搭白模再交给 AI 视频模型；不管主片型是什么都叠加读取",
+      "whenPatterns": [
+        "Blender|blender",
+        "白模|动态分镜|三维预演|(Blender|blender).{0,4}预演",
+        "(三维|3D|建模).{0,6}解说"
+      ],
+      "excludeAny": [
+        "只查",
+        "查询位置"
+      ],
+      "intents": [],
+      "paths": [
+        "work/domains/design/video/common/code-generation/blender/README.md"
+      ]
+    },
+    {
       "id": "deliverable-word-format",
       "whenAny": [
         "Word",
@@ -718,11 +735,11 @@
         "AE 模板"
       ],
       "excludeAny": [],
-      "entry": "work/domains/design/video/common/ai-ae-collaboration.md",
+      "entry": "work/domains/design/video/common/ae/ai-ae-collaboration.md",
       "priority": 70,
       "dependencies": [
         {
-          "path": "work/domains/design/video/common/ae-template-design.md",
+          "path": "work/domains/design/video/common/ae/ae-template-design.md",
           "whenAny": [
             "模板",
             "aep",
@@ -799,7 +816,7 @@
           "intents": []
         },
         {
-          "path": "work/domains/design/video/common/ai-ae-collaboration.md",
+          "path": "work/domains/design/video/common/ae/ai-ae-collaboration.md",
           "whenAny": [
             "AE",
             "合成",
@@ -982,7 +999,7 @@
         "Dreamina"
       ],
       "excludeAny": [],
-      "entry": "work/domains/design/video/common/seedance/README.md",
+      "entry": "work/domains/design/video/common/ai-generation/seedance/README.md",
       "priority": 70,
       "dependencies": [
         {
@@ -2099,11 +2116,11 @@
         "参考图动态化"
       ],
       "excludeAny": [],
-      "entry": "work/domains/design/video/common/seedance/awesome-seedance/README.md",
+      "entry": "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/README.md",
       "priority": 72,
       "dependencies": [
         {
-          "path": "work/domains/design/video/common/seedance/awesome-seedance/upstream.json",
+          "path": "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/upstream.json",
           "whenAny": [],
           "intents": []
         }
@@ -2269,7 +2286,7 @@
       "priority": 40,
       "dependencies": [
         {
-          "path": "work/domains/design/video/common/code-rendered-animation/README.md",
+          "path": "work/domains/design/video/common/code-generation/README.md",
           "whenAny": [
             "Blender",
             "blender",
@@ -2920,7 +2937,7 @@
       "id": "ai-ae-collaboration",
       "label": "AI与AE协作（两个AE MCP）",
       "status": "active",
-      "path": "work/domains/design/video/common/ai-ae-collaboration.md",
+      "path": "work/domains/design/video/common/ae/ai-ae-collaboration.md",
       "selectedAny": [
         "ae",
         "video",
@@ -2949,7 +2966,7 @@
       "useWhen": "AI要在After Effects里读工程、改模板、做动画或包装、渲染出片时，不管片型（MG、自媒体、特效包装、企业片、创赛片）",
       "notFor": "只写AE风格的视频提示词，或只用Remotion、Python代码做动画不碰AE时；片型自己的版面和设计规则仍读片型目录",
       "acceptance": "交付前检查表填实测值：用了哪个MCP的哪些工具、命令行脚本几次及原因、两个MCP版本、ae_proof结果；成片按出片检查的通用验收表查黑帧频闪接缝",
-      "evidence": "work/domains/design/video/common/ai-ae-collaboration.md",
+      "evidence": "work/domains/design/video/common/ae/ai-ae-collaboration.md",
       "confirmedAt": "2026-11-23",
       "entryPoints": [
         "work/domains/design/video/common/README.md"
@@ -2960,7 +2977,7 @@
       "id": "ae-template-design",
       "label": "改AE模板的设计判断",
       "status": "active",
-      "path": "work/domains/design/video/common/ae-template-design.md",
+      "path": "work/domains/design/video/common/ae/ae-template-design.md",
       "selectedAny": [
         "ae",
         "video",
@@ -3163,7 +3180,7 @@
       "id": "awesome-seedance",
       "label": "Awesome Seedance 视频提示词方法",
       "status": "active",
-      "path": "work/domains/design/video/common/seedance/awesome-seedance/README.md",
+      "path": "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/README.md",
       "selectedAny": [
         "awesome-seedance",
         "seedance",
@@ -3236,23 +3253,23 @@
       "useWhen": "实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板",
       "notFor": "纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围",
       "acceptance": "实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目",
-      "evidence": "work/domains/design/video/common/seedance/awesome-seedance/README.md",
+      "evidence": "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/README.md",
       "confirmedAt": "2026-09-24",
       "source": "建委指定收录LearnPrompt/awesome-seedance并接入主动调用；第三方报告按固定快照保留，未在本轮独立出片复测",
       "entryPoints": [
         "work/domains/design/video/README.md",
         "work/domains/design/video/common/README.md",
-        "work/domains/design/video/common/seedance/README.md",
+        "work/domains/design/video/common/ai-generation/seedance/README.md",
         "work/domains/design/video/education/README.md",
         "work/domains/design/video/promo/README.md",
         "work/domains/design/video/story/README.md",
         "work/domains/self-media/video-scripts/README.md"
       ],
       "readWith": [
-        "work/domains/design/video/common/seedance/awesome-seedance/upstream.json",
-        "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-prompt-library/SKILL.md",
-        "work/domains/design/video/common/seedance/awesome-seedance/template-guide.md",
-        "work/domains/design/video/common/seedance/practical-workflow.md"
+        "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/upstream.json",
+        "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-prompt-library/SKILL.md",
+        "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/template-guide.md",
+        "work/domains/design/video/common/ai-generation/seedance/practical-workflow.md"
       ],
       "readWhen": [
         {
@@ -3264,7 +3281,7 @@
             "镜头顺序"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/timeline-shot-script.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/timeline-shot-script.md"
           ]
         },
         {
@@ -3279,7 +3296,7 @@
             "换脸"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/character-reference-lock.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/character-reference-lock.md"
           ]
         },
         {
@@ -3290,7 +3307,7 @@
             "生活记录"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/handheld-ugc-vlog.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/handheld-ugc-vlog.md"
           ]
         },
         {
@@ -3300,7 +3317,7 @@
             "POV"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/pov-continuous-take.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/pov-continuous-take.md"
           ]
         },
         {
@@ -3311,7 +3328,7 @@
             "UGC测评"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/ugc-creator-review.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/ugc-creator-review.md"
           ]
         },
         {
@@ -3324,7 +3341,7 @@
             "商业广告"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/product-commercial-shotlist.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/product-commercial-shotlist.md"
           ]
         },
         {
@@ -3335,7 +3352,7 @@
             "说话人物"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/dialogue-performance-beats.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/dialogue-performance-beats.md"
           ]
         },
         {
@@ -3345,7 +3362,7 @@
             "故事短片"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/cinematic-narrative-short.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/cinematic-narrative-short.md"
           ]
         },
         {
@@ -3355,7 +3372,7 @@
             "画风固定"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/anime-style-lock.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/anime-style-lock.md"
           ]
         },
         {
@@ -3365,7 +3382,7 @@
             "步进节奏"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/stop-motion-cadence.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/stop-motion-cadence.md"
           ]
         },
         {
@@ -3376,7 +3393,7 @@
             "延时摄影"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/process-transformation-montage.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/process-transformation-montage.md"
           ]
         },
         {
@@ -3387,7 +3404,7 @@
             "战斗"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/combat-choreography.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/combat-choreography.md"
           ]
         },
         {
@@ -3397,7 +3414,7 @@
             "音乐MV"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/music-beat-sync-mv.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/music-beat-sync-mv.md"
           ]
         },
         {
@@ -3407,7 +3424,7 @@
             "时间静止"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/time-freeze-rewind.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/time-freeze-rewind.md"
           ]
         },
         {
@@ -3419,9 +3436,9 @@
             "故事板整图"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/storyboard-grid-to-video.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-storyboard-grid-to-video/SKILL.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-storyboard-grid-to-video/references/cases.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/storyboard-grid-to-video.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-storyboard-grid-to-video/SKILL.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-storyboard-grid-to-video/references/cases.md"
           ]
         },
         {
@@ -3433,9 +3450,9 @@
             "年代感"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/retro-found-footage.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-retro-dv-home-video/SKILL.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-retro-dv-home-video/references/cases.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/retro-found-footage.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-retro-dv-home-video/SKILL.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-retro-dv-home-video/references/cases.md"
           ]
         },
         {
@@ -3446,9 +3463,9 @@
             "city walk"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/travel-city-walk.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-travel-city-walk/SKILL.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-travel-city-walk/references/cases.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/travel-city-walk.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-travel-city-walk/SKILL.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-travel-city-walk/references/cases.md"
           ]
         },
         {
@@ -3460,9 +3477,9 @@
             "动物主角"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/pet-animal.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-pet-animal/SKILL.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-pet-animal/references/cases.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/pet-animal.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-pet-animal/SKILL.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-pet-animal/references/cases.md"
           ]
         },
         {
@@ -3472,9 +3489,9 @@
             "赛车"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/car-vehicle.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-car-vehicle/SKILL.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-car-vehicle/references/cases.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/car-vehicle.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-car-vehicle/SKILL.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-car-vehicle/references/cases.md"
           ]
         },
         {
@@ -3485,9 +3502,9 @@
             "写真"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/fashion-lookbook.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-fashion-lookbook/SKILL.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-fashion-lookbook/references/cases.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/fashion-lookbook.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-fashion-lookbook/SKILL.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-fashion-lookbook/references/cases.md"
           ]
         },
         {
@@ -3498,9 +3515,9 @@
             "沙雕"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/meme-comedy.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-meme-comedy/SKILL.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-meme-comedy/references/cases.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/meme-comedy.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-meme-comedy/SKILL.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-meme-comedy/references/cases.md"
           ]
         },
         {
@@ -3509,9 +3526,9 @@
             "悬疑"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/horror-suspense.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-horror-suspense/SKILL.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-horror-suspense/references/cases.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/horror-suspense.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-horror-suspense/SKILL.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-horror-suspense/references/cases.md"
           ]
         },
         {
@@ -3522,9 +3539,9 @@
             "黏土"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/3d-cartoon.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-3d-cartoon/SKILL.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-3d-cartoon/references/cases.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/3d-cartoon.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-3d-cartoon/SKILL.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-3d-cartoon/references/cases.md"
           ]
         },
         {
@@ -3535,9 +3552,9 @@
             "怪兽"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/epic-fantasy-scifi.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-epic-fantasy-scifi/SKILL.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-epic-fantasy-scifi/references/cases.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/epic-fantasy-scifi.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-epic-fantasy-scifi/SKILL.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-epic-fantasy-scifi/references/cases.md"
           ]
         },
         {
@@ -3548,9 +3565,9 @@
             "滑板"
           ],
           "paths": [
-            "work/domains/design/video/common/seedance/awesome-seedance/source/docs/templates/zh/sports-extreme.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-sports-extreme/SKILL.md",
-            "work/domains/design/video/common/seedance/awesome-seedance/source/agents/skills/seedance-sports-extreme/references/cases.md"
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/docs/templates/zh/sports-extreme.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-sports-extreme/SKILL.md",
+            "work/domains/design/video/common/ai-generation/seedance/awesome-seedance/source/agents/skills/seedance-sports-extreme/references/cases.md"
           ]
         }
       ],
@@ -4301,8 +4318,8 @@
         "write"
       ],
       "paths": [
-        "work/domains/design/video/common/seedance/README.md",
-        "work/domains/design/video/common/seedance/practical-workflow.md",
+        "work/domains/design/video/common/ai-generation/seedance/README.md",
+        "work/domains/design/video/common/ai-generation/seedance/practical-workflow.md",
         "work/domains/design/common/ai-generation-principles.md"
       ]
     },

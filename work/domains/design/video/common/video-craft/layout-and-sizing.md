@@ -97,7 +97,7 @@
 
 ## 来源与状态
 
-- 字号和间距比例来自 2026-10-29 一次厂房实拍包装的返修（这类活儿的完整做法见[成片上叠加包装](../../common/code-rendered-animation/footage-overlay/README.md)）：客户认可的版本是 4K 正文 72 px（约 3.3% H）、标题 74 px，内边距约 0.4u；被否的第一版正文 46 px（约 2.1% H）。
+- 字号和间距比例来自 2026-10-29 一次厂房实拍包装的返修（这类活儿的完整做法见[成片上叠加包装](../code-generation/footage-overlay/README.md)）：客户认可的版本是 4K 正文 72 px（约 3.3% H）、标题 74 px，内边距约 0.4u；被否的第一版正文 46 px（约 2.1% H）。
 - 安全区是电视和视频行业的通用做法。
 - 间距的组内、组间关系来自[平面设计原则 · 留白](../../../common/design-principles/whitespace.md)。
 - 手机观看的字幕档、实际像素验收、“要读还是纹理”二选一来自外部 Skill [video-shotcraft](../../../../other/skills/video-shotcraft/README.md) 审美准则 Q11（多支宣传片返工判例）；三档尺寸来自 [anything2explainer](../../../../other/skills/anything2explainer/README.md) 构图与光第 1 节。两者都还没在本仓的片子里验证。

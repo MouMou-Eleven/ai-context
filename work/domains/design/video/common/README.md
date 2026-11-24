@@ -14,14 +14,15 @@
 
 ## 做法层：AI 出视频的三种做法
 
-| 做法 | 入口 | 什么时候用 |
-|---|---|---|
-| AI 生成（扩散模型：文生视频、图生视频、参考视频、图加音频） | [seedance/](./seedance/README.md) | 要 AI 生成镜头、写视频提示词、让参考图动起来 |
-| 代码生成（three.js 三维运镜、成片上逐帧叠加包装、Python 驱动 Blender 建模、MG） | [code-rendered-animation/](./code-rendered-animation/README.md) | 结构、文字、运镜要精确可控的画面和效果 |
-| AI 接入 AE：用模板时的设计判断 | [改 AE 模板的设计判断](./ae-template-design.md) | 拿现成 AE 模板做画面，任何片型 |
-| AI 接入 AE：怎么连、两个 AE MCP 怎么挑、操作和渲染的坑 | [AI 与 AE 协作](./ai-ae-collaboration.md) | AI 要在 AE 里读工程、改模板、做动画、渲染，任何片型（MG、自媒体、特效包装、企业片、创赛片） |
-| AE 弹窗守护（命令行后备用） | [tools/ae_dialog_guard.py](./tools/ae_dialog_guard.py) | 两个 AE MCP 都连不上、只能用命令行脚本时 |
-| 可编辑参数化动画（Remotion） | [Remotion Skill](../../../other/skills/jianwei-ai-community-remotion-video/README.md) | 文字、颜色、数据要能改的动画 |
+每种做法一个文件夹，先读它的入口，再按入口里的表读具体文件。
+
+| 做法 | 文件夹 | 里面有什么 | 什么时候用 |
+|---|---|---|---|
+| AI 生成：扩散模型文生视频、图生视频、参考视频、图加音频 | [ai-generation/](./ai-generation/README.md) | [seedance/](./ai-generation/seedance/README.md)：建委实战、提示词模板与案例、第三方模板库 | 要写实、要人物、要氛围；写视频提示词、让参考图动起来 |
+| 代码生成：AI 写代码出画面 | [code-generation/](./code-generation/README.md) | [3d-scene/](./code-generation/3d-scene/README.md) three.js 三维场景与运镜；[footage-overlay/](./code-generation/footage-overlay/README.md) 成片上逐帧叠加包装；[blender/](./code-generation/blender/README.md) Python 驱动 Blender 建模解说（课件实践的是桥梁）、白模预演控 AI 视频 | 结构、文字、运镜要精确可控 |
+| AI 接入 AE：AI 通过 MCP 操作 After Effects | [ae/](./ae/README.md) | 改 AE 模板的设计判断、AI 与 AE 协作（两个 AE MCP）、弹窗守护脚本 | 借现成模板的高完成度效果，任何片型 |
+
+可编辑参数化动画（文字、颜色、数据要能改）可以用 [Remotion Skill](../../../other/skills/jianwei-ai-community-remotion-video/README.md)，它也属于代码生成。
 
 “AE 风格”的生成视频提示词不证明存在可编辑 AE 工程；这单要求交 AE 工程时，必须实际交付并验收工程。
 
@@ -35,7 +36,8 @@
 | 短板 | 写实质感、有机形体、真人 | 结构准确、精确文字、指定运镜 | 没有现成模板的内容；第三方插件本机没装就缺效果 |
 
 - **画面上要有清楚的文字、数字、标注时，用代码。** 例：飞机总装实拍上的坐标包装，先用 AI 视频模型生成过一版，文字是糊的，改用代码逐帧绘制才清楚。
-- **结构必须讲对、运镜必须指定时，用代码。** 例：“智慧工厂整体解决方案”要讲清产线、仓储、数据中枢的关系，Seedance 生成的工厂结构不可控，改用代码搭三维场景。要真实建模（产品拆解、设备结构、三维解说）可以用 Python 驱动 Blender，建委做过，做法还没沉淀进仓库。
+- **结构必须讲对、运镜必须指定时，用代码。** 例：“智慧工厂整体解决方案”要讲清产线、仓储、数据中枢的关系，Seedance 生成的工厂结构不可控，改用代码搭三维场景。要真实建模（产品拆解、设备结构、三维解说）用 Python 驱动 [Blender](./code-generation/blender/README.md)。
+- **用 AI 生成、但镜头和走位必须可控时，先用 Blender 搭白模定镜头，再交给视频模型**（[白模预演控 AI 视频](./code-generation/blender/previs-for-ai-video.md)）。3—5 秒、没有复杂动作的氛围镜头，直接生成可能更划算。
 - **要写实、要人物、要情绪时，用 Seedance 或实拍。**
 - **用户已经挑好 AE 模板、或要模板级的插件效果时，用 AE。** 平面文字包装用代码往往比改模板快（创赛片的实测对比见[两种分工模式](../promo/competition/ai-code-ae-pipeline.md#两种分工模式默认)）。
 - 一条片子可以混用：写实镜头用 Seedance 或实拍，结构和原理镜头用代码，模板镜头用 AE，最后统一按配音合成。不管哪种做出来的镜头，都按[出片检查](video-craft/verification.md)验收。
@@ -53,7 +55,7 @@ MG 是一种动态图形表达方式，企业、产品、教育都能用。先�
 
 | 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
 |---|---|---|---|
-| AI要在After Effects里读工程、改模板、做动画或包装、渲染出片时，不管片型（MG、自媒体、特效包装、企业片、创赛片） | [AI与AE协作（两个AE MCP）](ai-ae-collaboration.md) | 只写AE风格的视频提示词，或只用Remotion、Python代码做动画不碰AE时；片型自己的版面和设计规则仍读片型目录 | 交付前检查表填实测值：用了哪个MCP的哪些工具、命令行脚本几次及原因、两个MCP版本、ae_proof结果；成片按出片检查的通用验收表查黑帧频闪接缝 |
-| 用现成AE模板做画面时，不管片型（MG、自媒体、企业片、创赛片）：先设计版面再用模板实现、模板文字组件要用上、只用对应一段、模板自带光效倒影年份卡逐个对位、新加层做进模板 | [改AE模板的设计判断](ae-template-design.md) | 从零在AE里做动画不用模板，或只用代码出片时；片型专属要求（如创赛字幕区、主色）读片型目录 | 改模板验收表逐行填实测值：关掉的模板层清单及理由、模板主体位置、排版区距离、灯光强度与色差、光效位置、新加层开关、延长段尾帧 |
-| 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](seedance/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
+| AI要在After Effects里读工程、改模板、做动画或包装、渲染出片时，不管片型（MG、自媒体、特效包装、企业片、创赛片） | [AI与AE协作（两个AE MCP）](ae/ai-ae-collaboration.md) | 只写AE风格的视频提示词，或只用Remotion、Python代码做动画不碰AE时；片型自己的版面和设计规则仍读片型目录 | 交付前检查表填实测值：用了哪个MCP的哪些工具、命令行脚本几次及原因、两个MCP版本、ae_proof结果；成片按出片检查的通用验收表查黑帧频闪接缝 |
+| 用现成AE模板做画面时，不管片型（MG、自媒体、企业片、创赛片）：先设计版面再用模板实现、模板文字组件要用上、只用对应一段、模板自带光效倒影年份卡逐个对位、新加层做进模板 | [改AE模板的设计判断](ae/ae-template-design.md) | 从零在AE里做动画不用模板，或只用代码出片时；片型专属要求（如创赛字幕区、主色）读片型目录 | 改模板验收表逐行填实测值：关掉的模板层清单及理由、模板主体位置、排版区距离、灯光强度与色差、光效位置、新加层开关、延长段尾帧 |
+| 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](ai-generation/seedance/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
 <!-- generated-methods:end -->

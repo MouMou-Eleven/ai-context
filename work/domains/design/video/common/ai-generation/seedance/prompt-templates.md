@@ -173,8 +173,8 @@
 ## 与现有资料的关系
 
 - 通用的主体、场景、声音和镜头原则，以 [`practical-workflow.md`](./practical-workflow.md) 为准。
-- 多镜头故事、角色连续性和《丧尸清道夫》案例，以 [`live-action-story/README.md`](../../story/README.md) 为准。
-- 企业数据、荣誉、业务和 AE 包装，以 [`enterprise-promo/README.md`](../../promo/README.md) 为准。
+- 多镜头故事、角色连续性和《丧尸清道夫》案例，以 [`live-action-story/README.md`](../../../story/README.md) 为准。
+- 企业数据、荣誉、业务和 AE 包装，以 [`enterprise-promo/README.md`](../../../promo/README.md) 为准。
 - 本文件只保存可调用的角色 Prompt，不重复保存三份本地 txt 原文。
 - 完整实测 Prompt、效果判断与失败风险统一进入 `prompt-cases.md`，不继续堆进模板正文。
 

@@ -151,7 +151,7 @@
 | 视频画面、动画、包装 | 多了时间：出场顺序、停留、运镜；字号按画面高度换算。见[视频通用设计与验收](../../video/common/video-craft/README.md) |
 | 网页、App 界面 | 多了状态和交互：按钮主次、悬停和按下、空状态、各种屏宽。见[前端 UI 质量标准](../../../development/experience/frontend-ui-quality-standards.md) |
 | Word 文档、申报书、流程图 | 常有模板约束，以模板为准；层级、对齐、间距照样适用。流程图方框等大、对齐成行，两三种浅色 |
-| AI 生图、生视频提示词 | 把选好的词和对应手段写进提示词，见[设计原则 · 用在 AI 生图和设计图上](README.md#用在-ai-生图和设计图上默认)；视频提示词见 [Seedance](../../video/common/seedance/README.md) |
+| AI 生图、生视频提示词 | 把选好的词和对应手段写进提示词，见[设计原则 · 用在 AI 生图和设计图上](README.md#用在-ai-生图和设计图上默认)；视频提示词见 [Seedance](../../video/common/ai-generation/seedance/README.md) |
 
 ## 来源与状态
 

@@ -22,7 +22,7 @@
 | 写公众号、宣传、朋友圈 | `work/domains/self-media/` |
 | 做 PPT、海报 | `work/domains/design/graphic/` |
 | 做宣传片、微课、故事片 | `work/domains/design/video/`（宣传片 `promo/`、微课 `education/`、故事片 `story/`） |
-| 写 AI 视频提示词 | `work/domains/design/video/common/seedance/` |
+| 写 AI 视频提示词 | `work/domains/design/video/common/ai-generation/seedance/` |
 | 用百度秒哒开发 | `work/domains/development/tools/miaoda/`（先读 `README.md`，事实表 `facts.md`，方法 `workflow.md`） |
 | 其他 AI 编程通用经验 | `work/domains/development/experience/` |
 | 商业计划、比赛申报、对外方案 | `work/domains/other/commercial/` |

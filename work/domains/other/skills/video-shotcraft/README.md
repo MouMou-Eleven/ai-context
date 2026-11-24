@@ -14,7 +14,7 @@
 | 用 | 不用 |
 |---|---|
 | 客户要网站、SaaS、App 的产品宣传片或功能介绍片 | 教师微课、科普讲解（走[微课与教育交互](../../../design/video/education/README.md)或 [anything2explainer](../anything2explainer/README.md)） |
-| 某一个镜头想要成熟的运镜、转场、数据或字体动效 | 只写 AI 视频提示词（走 [Seedance](../../../design/video/common/seedance/README.md)） |
+| 某一个镜头想要成熟的运镜、转场、数据或字体动效 | 只写 AI 视频提示词（走 [Seedance](../../../design/video/common/ai-generation/seedance/README.md)） |
 | 给已经做好的片子找音效、对齐声音 | — |
 
 调用时它会先让你在三种模式里选：直接套 Ink Press 模板、AI 自主创作、共同创作（逐步确认）。建委要掌控方向的商单，选共同创作。

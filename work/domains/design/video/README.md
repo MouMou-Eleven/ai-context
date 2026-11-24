@@ -5,7 +5,7 @@
 | [宣传片](./promo/README.md) | 企业、产品、创赛等宣传交付；按片型读取制作方法与提示词记录 |
 | [微课与教育交互](./education/README.md) | 教师或学校委托的微课、教学动画、VR和交互课件 |
 | [故事与叙事影片](./story/README.md) | 真人故事、剧情镜头、角色连续性及叙事参考 |
-| [视频共用方法](./common/README.md) | Seedance AI 视频提示词、AE 合成与交付、MG |
+| [视频共用方法](./common/README.md) | 通用设计与验收（video-craft）＋ AI 出视频的三种做法：AI 生成（Seedance）、代码生成（three.js、成片包装、Blender）、AI 接入 AE |
 
 **AI 自己动手剪辑、包装、加效果、出成片时（默认）**，不管用户有没有说用代码，都叠加读[视频通用设计与验收](common/video-craft/README.md)和[设计原则与审美](../common/design-principles/README.md)：片型目录定内容和结构，前者管画面排版、字号、动效和验收，后者管审美判断。比赛要交的视频，先读该比赛自己目录里的视频要求和经验，比赛的规定优先。
 
@@ -24,7 +24,7 @@ AE、MG、AI生成是可组合的制作技术。只说“MG动画”先进入共
 
 | 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
 |---|---|---|---|
-| 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](common/seedance/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
+| 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](common/ai-generation/seedance/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
 <!-- generated-methods:end -->
 
 <!-- generated-related-assets:start -->

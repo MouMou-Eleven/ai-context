@@ -57,8 +57,8 @@ class RealTasks(unittest.TestCase):
 
     def test_promo_storyboard_reads_seedance(self):
         read = self.reads('帮我做一个企业宣传片的分镜和提示词')
-        self.assertIn('work/domains/design/video/common/seedance/README.md', read)
-        self.assertIn('work/domains/design/video/common/seedance/practical-workflow.md', read)
+        self.assertIn('work/domains/design/video/common/ai-generation/seedance/README.md', read)
+        self.assertIn('work/domains/design/video/common/ai-generation/seedance/practical-workflow.md', read)
 
     def test_training_sink_reads_ai_training_project(self):
         read = router.resolve('这些是培训的经验，沉淀到培训板块', 'write')['read']

@@ -2,7 +2,7 @@
 
 写 AI 视频提示词、做 AI 生成镜头、让参考图动起来时，读这里。所有 Seedance 相关内容都在这个目录：先读建委自己的实战，再按需要查第三方模板库。
 
-**什么时候不用**：纯 AE 合成、Remotion 图形动画、只写口播文案、写介绍 Seedance 的文章、只查资料。只说"做视频"但还没决定哪些镜头要 AI 生成时，先按片型（[宣传片](../../promo/README.md)、[微课](../../education/README.md)、[故事片](../../story/README.md)）决定，需要生成时再来这里。
+**什么时候不用**：纯 AE 合成、Remotion 图形动画、只写口播文案、写介绍 Seedance 的文章、只查资料。只说"做视频"但还没决定哪些镜头要 AI 生成时，先按片型（[宣传片](../../../promo/README.md)、[微课](../../../education/README.md)、[故事片](../../../story/README.md)）决定，需要生成时再来这里。
 
 ## 读取顺序
 
@@ -23,10 +23,11 @@
 
 片型方法决定这一段要讲什么、节奏怎样；这里只负责"这个镜头的提示词怎么写"。
 
-- 宣传片、创赛片：[宣传片方法](../../promo/README.md)、[创赛片的 AI 生视频方法](../../promo/competition/ai-video-generation.md)（带字图片做参考、照片人物动态化、多轮调校）
-- 教师微课：[AI 微课画面方法](../../education/ai-generated-microcourse-video-workflow.md)
-- 故事片、漫剧：[故事片方法](../../story/README.md)
-- 合成、字幕、包装：[AI 与 AE 协作](../ai-ae-collaboration.md)
+- 宣传片、创赛片：[宣传片方法](../../../promo/README.md)、[创赛片的 AI 生视频方法](../../../promo/competition/ai-video-generation.md)（带字图片做参考、照片人物动态化、多轮调校）
+- 教师微课：[AI 微课画面方法](../../../education/ai-generated-microcourse-video-workflow.md)
+- 故事片、漫剧：[故事片方法](../../../story/README.md)
+- 合成、字幕、包装：[AI 与 AE 协作](../../ae/ai-ae-collaboration.md)
+- 镜头轨迹、人物走位必须可控（复杂运镜、多人走位、要反复改的镜头）：先用 Blender 搭白模再生成，见[白模预演控 AI 视频](../../code-generation/blender/previs-for-ai-video.md)
 
 ## 写入
 

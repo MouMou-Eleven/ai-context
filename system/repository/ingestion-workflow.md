@@ -153,13 +153,13 @@
 |---|---|---|
 | 1. 放到一页 PPT、一张海报上还成立吗？ | [设计原则与审美](../../work/domains/design/common/design-principles/README.md)（视频画面也是版面） | 组内缝小于组间缝、外沿落在共同的线上、对比用不同色相不用灰、字不压同色系背景 |
 | 2. 换成任何一种做法（生成、代码、AE、剪辑）做的任何片子都成立吗？ | [视频通用设计与验收](../../work/domains/design/video/common/video-craft/README.md)：尺寸进排版与尺寸，节奏、转场、停留、脚本怎么上画面进动效与节奏，怎么查进出片检查 | 不闪白、整帧闪必修、淡化 ≥ 0.3 秒、切走前到位、片尾多停 1 秒、黑帧和接缝怎么查、字号下限 |
-| 3. 只在某一种做法里成立？ | 那种做法的目录：[Seedance](../../work/domains/design/video/common/seedance/README.md)；[代码生成动画](../../work/domains/design/video/common/code-rendered-animation/README.md)（含 Blender）；AE 分两份：用模板的设计判断进[改 AE 模板的设计判断](../../work/domains/design/video/common/ae-template-design.md)，在 AE 里怎么操作进[AI 与 AE 协作](../../work/domains/design/video/common/ai-ae-collaboration.md) | 提示词怎么写镜头；所有动画只由时间 t 决定；模板文字组件要用上；aerender 分段黑帧 |
+| 3. 只在某一种做法里成立？ | [视频共用方法](../../work/domains/design/video/common/README.md)下那种做法的文件夹：[ai-generation/](../../work/domains/design/video/common/ai-generation/README.md)（按模型分，目前是 seedance/）；[code-generation/](../../work/domains/design/video/common/code-generation/README.md)（按门类分：3d-scene、footage-overlay、blender）；[ae/](../../work/domains/design/video/common/ae/README.md) 分两份：用模板的设计判断进[改 AE 模板的设计判断](../../work/domains/design/video/common/ae/ae-template-design.md)，在 AE 里怎么操作进[AI 与 AE 协作](../../work/domains/design/video/common/ae/ai-ae-collaboration.md) | 提示词怎么写镜头；所有动画只由时间 t 决定；Blender 交接交 .blend 工程不只交 MP4；模板文字组件要用上；aerender 分段黑帧 |
 | 4. 只在某个片型、某个比赛里成立？ | 片型或比赛的目录（如[创赛片](../../work/domains/design/video/promo/competition/README.md)） | 创赛片文字包装要科技炫酷、底部给剪映字幕留一行、证书框收拢、全片主色、统一思源黑体 |
 | 5. 只是这一单的事实？ | 项目记录 | 工程路径、模板名、配音起止秒、客户名 |
 
 - **拿第 2、4 层举例最容易错**：创赛片的文字包装要做得有科技感、炫酷，是创赛片的口味，写第 4 层；但“闪白、黑屏、版面乱、静止画面排版不好”是所有视频都有的毛病，写第 2 层（建委 2026-11-24 举例说明）。判断时问自己：把这条放进一条 MG 动画或自媒体短视频里还成立吗？成立就不是片型专属。
 - **一条只写一处。** 下层目录里发现某条其实是上层的，就搬上去，原处只留一句链接；写之前先搜这四层，有矛盾就改掉旧的。
-- **能在成品上核对的，同时进它那一层的验收表**：通用的进[出片检查 · 通用验收表](../../work/domains/design/video/common/video-craft/verification.md#通用验收表默认)，改模板的进[改模板验收](../../work/domains/design/video/common/ae-template-design.md#改模板验收默认)，片型专属的进片型自己的表（如[创赛专属验收](../../work/domains/design/video/promo/competition/ae-template-layout.md#创赛专属验收默认)）。
+- **能在成品上核对的，同时进它那一层的验收表**：通用的进[出片检查 · 通用验收表](../../work/domains/design/video/common/video-craft/verification.md#通用验收表默认)，改模板的进[改模板验收](../../work/domains/design/video/common/ae/ae-template-design.md#改模板验收默认)，片型专属的进片型自己的表（如[创赛专属验收](../../work/domains/design/video/promo/competition/ae-template-layout.md#创赛专属验收默认)）。
 - 例子里的片名、幕号可以保留，方便回查；规则本身要写成那一层都成立的说法。拿不准是第 2 层还是第 4 层时，先留在第 4 层，等另一个片型也出现同类问题再上移（见[进化机制](evolution.md#三什么时候把观察升成通用规则ai-自己判断默认)）。
 
 ### 放哪里拿不准，或者想新建目录时

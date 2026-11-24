@@ -31,8 +31,8 @@
 ## 不在这里的
 
 - 创赛片走[创赛宣传片](../competition/README.md)；介绍单个产品走[产品宣传片](../product/README.md)。
-- 提示词的基本结构和模型当前限制：[Seedance](../../common/seedance/README.md)。
-- AE 工程、合成、字幕：[AI 与 AE 协作](../../common/ai-ae-collaboration.md)，用模板加读[改 AE 模板的设计判断](../../common/ae-template-design.md)；AI 自己动手做包装和出片：[视频通用设计与验收](../../common/video-craft/README.md)。
+- 提示词的基本结构和模型当前限制：[Seedance](../../common/ai-generation/seedance/README.md)。
+- AE 工程、合成、字幕：[AI 与 AE 协作](../../common/ae/ai-ae-collaboration.md)，用模板加读[改 AE 模板的设计判断](../../common/ae/ae-template-design.md)；AI 自己动手做包装和出片：[视频通用设计与验收](../../common/video-craft/README.md)。
 
 ## 写入
 

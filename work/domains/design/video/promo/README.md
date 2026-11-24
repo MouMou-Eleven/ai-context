@@ -13,12 +13,12 @@
 | 任务 | 文件 | 使用边界 |
 |---|---|---|
 | AE 工程、排版、合成，或可编辑参数化动画 | [视频共用方法](../common/README.md)（三种做法怎么选、AE 的改模板判断和 AI 与 AE 协作） | 按工程交付要求选择工具 |
-| 写 AI 视频提示词（Seedance / 即梦） | [Seedance](../common/seedance/README.md) | 先读建委实战，再按需查第三方模板；平台能力须重新核验 |
+| 写 AI 视频提示词（Seedance / 即梦） | [Seedance](../common/ai-generation/seedance/README.md) | 先读建委实战，再按需查第三方模板；平台能力须重新核验 |
 | AI 自己动手剪辑、加包装、出成片 | [视频通用设计与验收](../common/video-craft/README.md) | 片型目录定内容和结构，它管排版、字号、动效和验收 |
 
 ## 写入
 
-新单做完，按[写入规范 · 新的工作怎么沉淀](../../../../../system/repository/ingestion-workflow.md#新的工作怎么沉淀)拆成事实、案例、方法三样，放进对应片型目录：案例 `case-*.md` 放该目录，通用做法改该目录的方法文件；提示词经验写进 [Seedance](../common/seedance/README.md)。本 README 只做路由。
+新单做完，按[写入规范 · 新的工作怎么沉淀](../../../../../system/repository/ingestion-workflow.md#新的工作怎么沉淀)拆成事实、案例、方法三样，放进对应片型目录：案例 `case-*.md` 放该目录，通用做法改该目录的方法文件；提示词经验写进 [Seedance](../common/ai-generation/seedance/README.md)。本 README 只做路由。
 
 <!-- generated-related-assets:start -->
 ## 相关项目与案例
@@ -33,5 +33,5 @@
 
 | 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
 |---|---|---|---|
-| 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](../common/seedance/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
+| 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](../common/ai-generation/seedance/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
 <!-- generated-methods:end -->

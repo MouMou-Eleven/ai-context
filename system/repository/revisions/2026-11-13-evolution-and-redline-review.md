@@ -113,8 +113,8 @@
 | work/domains/design/graphic/ppt/premium-course/recording-guide.md:119 | 单文件离线，发给谁都能用（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
 | work/domains/design/graphic/ppt/premium-course/workflow.md:54 | 正文模板（红线）： 内容只进入指定空白区域，字体字号、上下色带和标识沿用当前… | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
 | work/domains/design/video/README.md:10 | AI 自己动手剪辑、包装、加效果、出成片时（红线），不管用户有没有说用代码，… | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
-| work/domains/design/video/common/code-rendered-animation/workflow.md:21 | - 所有动画只由时间 t 决定（红线）。 任何位置、角度、透明度都写成 t … | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
-| work/domains/design/video/common/seedance/README.md:14 | 几条红线 | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
+| work/domains/design/video/common/code-generation/workflow.md:21 | - 所有动画只由时间 t 决定（红线）。 任何位置、角度、透明度都写成 t … | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
+| work/domains/design/video/common/ai-generation/seedance/README.md:14 | 几条红线 | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
 | work/domains/design/video/promo/competition/ae-template-layout.md:7 | 怎么用本文件（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
 | work/domains/design/video/promo/competition/ae-template-layout.md:18 | 先设计版面，再用模板去实现（红线） | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |
 | work/domains/design/video/promo/competition/ae-template-layout.md:25 | - 模板自带的文字组件必须用上，改字改色，不自己另画（红线）。 模板的标题框… | 设计与制作做法，违反了返修能改好；能核对的已在检查表或验收表里逐行查 |

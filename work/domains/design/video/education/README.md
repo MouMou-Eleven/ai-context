@@ -14,7 +14,7 @@
 | 根据歌曲、旁白或故事音频制作AI微课画面，设计场景图与段内多镜头提示词 | [AI教师微课画面生成与多镜头制作方法](./ai-generated-microcourse-video-workflow.md) → 再按本次平台读取工具经验 |
 | 把教学设计、逐字稿、音频、参考图、提示词和验收按现有素材整理成可操作页面 | [微课交互式制作工作台](./interactive-production-workbench.md) |
 | AI 生成视频镜头、编写生成提示词 | [AI 视频通用经验](../common/README.md) → 按本次工具选择具体经验 |
-| AE 动画、实拍标注、字幕与后期合成 | [AI 与 AE 协作](../common/ai-ae-collaboration.md)、改模板时加读[改 AE 模板的设计判断](../common/ae-template-design.md) |
+| AE 动画、实拍标注、字幕与后期合成 | [AI 与 AE 协作](../common/ae/ai-ae-collaboration.md)、改模板时加读[改 AE 模板的设计判断](../common/ae/ae-template-design.md) |
 | 图文转动效、可编辑的文字/颜色/编号动画 | [Remotion Skill 能力说明](../../../other/skills/jianwei-ai-community-remotion-video/README.md) |
 | 教育智能体、Coze、VR交互应用或教学业务系统 | [教育行业开发](../../../development/industry-cases/education/README.md)；课件与微课制作仍按本入口对应交付物选择 |
 | 查同类案例、补本次商单复盘 | [《小树叶》案例](./case-little-leaf-microcourse-mv.md) → [商单模板](../../../../../system/repository/templates/case.md) |
@@ -62,7 +62,7 @@
 | 需要解决什么 | 方法正文 | 不适用／保留边界 | 成品怎样检查 |
 |---|---|---|---|
 | 微课需要按教学设计、逐字稿、音频或混合素材组织分镜、参考图、提示词、状态与返工时 | [微课交互式制作工作台](interactive-production-workbench.md) | 不适用于创赛宣传片、企业宣传片、普通视频或故事影片；简单微课可用短分镜表，最终成片及多人协作另行验收；精品课录课用的录制剪辑工作台不走本方法，按精品课逐页录制操作稿 | 检查输入素材与画面逐项对应、提示词复制、图片路径、单元锚点、状态反馈和窄屏布局；有音频时再测试时间码与播放，网页打开不能替代交互与成片验收 |
-| 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](../common/seedance/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
+| 实际需要AI生成视频素材、参考图动态化或镜头提示词时；可明确调用，也可按制作环节主动识别，再按镜头意图读具体模板 | [Awesome Seedance 视频提示词方法](../common/ai-generation/seedance/awesome-seedance/README.md) | 纯AE／Remotion动效、仅口播文案、模型介绍或查询不自动套用；不覆盖片型设计、已验证经验或用户保护范围 | 实际读对应模板和一个锚点；核对主体／动作／镜头／声音、当前模型限制和复测状态；有生成产物才做成片验收，失败回写原项目 |
 | 精品课：要录课合成、教师出镜的课件制作与返修；只有模板没有录课合成的不走 | [精品课制作与验收](../../graphic/ppt/premium-course/workflow.md) | 普通商务汇报与自由风格路演；不套用个案费用、字号和人物区域 | 保护最新用户改稿，按任务检查图文适配、箭头轴线与旋转、准确点击句及媒体返回；冻结HTML时不自动同步 |
 <!-- generated-methods:end -->
 
