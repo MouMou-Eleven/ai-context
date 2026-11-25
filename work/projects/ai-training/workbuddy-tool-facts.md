@@ -48,6 +48,6 @@
 
 - 备课时为了自动截图、录屏，用调试端口启动过 WorkBuddy 的，**上课前正常重启一次**（训练营第 3 课、城建工作坊都这样做过）。
 - 演示会在建委账号里留下产物，课后可删或停用：
-  - 山东电力咨询院课件（2026-11-25）：技能 design-spec-precheck、main-wiring-material-takeoff，专家“变电设计预检员”（substation-design-prechecker）；示例文件在 `C:\电力咨询院示例\`。
+  - 山东电力咨询院课件（2026-11-25）：技能、专家和概算比对工作台课后已按建委要求删掉，素材包里留有副本。本机删干净的做法：先退出 WorkBuddy；删 `~/.workbuddy/skills/<技能名>`；专家要删 `plugins/marketplaces/my-experts/plugins/<专家名>`，再从同一 marketplace 的 `.codebuddy-plugin/marketplace.json` 和 `experts/custom/<账号>/experts.json` 里去掉这一项；重启后技能缓存会自己刷新。
   - 训练营第 4 课（2026-11-23）：定时任务“每周一 门店销售周汇总”（开启，每周一 9:00）、技能 gongwen-paiban、已发布的差旅费计算器网站。
   - 城建工作坊（2026-11-20）：技能“城建写稿规范”、定时任务“济南城市建设集团 每日公开报道汇总”（工作日 8:30）。
