@@ -427,6 +427,15 @@ class ContentValidation(unittest.TestCase):
         self.assertIn('system/repository/capability-evidence.md',
                       policy['requiredLinks']['system/repository/ingestion-workflow.md'])
 
+    def test_git_inherited_environment_preserves_empty_config_and_index(self):
+        with patch.dict(os.environ, {'GIT_CONFIG_COUNT': '1', 'GIT_CONFIG_KEY_0': 'safe.directory', 'GIT_CONFIG_VALUE_0': '', 'GIT_INDEX_FILE': 'test-index'}):
+            with patch('context_common.subprocess.check_output', return_value=b'') as call:
+                git(self.root, 'ls-files', inherit_repository_env=True)
+        inherited = call.call_args.kwargs['env']
+        self.assertEqual(inherited['GIT_CONFIG_VALUE_0'], '')
+        self.assertEqual(inherited['GIT_CONFIG_COUNT'], '1')
+        self.assertEqual(inherited['GIT_INDEX_FILE'], 'test-index')
+
     def test_staged_snapshot_ignores_unstaged_repairs_and_does_not_stage(self):
         git(self.root, 'init', '-q')
         git(self.root, 'config', 'core.autocrlf', 'false')

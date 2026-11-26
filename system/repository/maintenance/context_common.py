@@ -36,7 +36,10 @@ def clean_git_environment():
 
 
 def git(root, *args, inherit_repository_env=False):
-    env = None if inherit_repository_env else clean_git_environment()
+    # Windows os.putenv may drop an empty value while os.environ still contains
+    # it (for example after patch.dict restores GIT_CONFIG_VALUE_0=''). Pass the
+    # complete mapping so paired Git config options and index variables survive.
+    env = dict(os.environ) if inherit_repository_env else clean_git_environment()
     return subprocess.check_output(['git', '-c', 'safe.directory=' + str(root), '-C', str(root), *args], env=env)
 
 
