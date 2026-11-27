@@ -87,7 +87,8 @@
 | 百度秒嗒平台 | 支付、收款、退款、订单 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/payment.md) |
 | 百度秒嗒平台 | 报错、故障、排错、无法运行、白屏、日志 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/runtime-diagnostics.md) |
 | 百度秒嗒平台 | 数据库、存储、后端、localStorage、字段、数据表、表结构、备份、保活、多环境、单环境 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/backend-storage.md) |
-| 百度秒嗒平台 | SEO、关键词、备案、整改 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/seo-and-content.md) |
+| 百度秒嗒平台 | SEO、关键词 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/seo-optimization.md) |
+| 百度秒嗒平台 | 备案、整改 | 创作/修改/沉淀 | [正文](../../../work/domains/development/tools/miaoda/topics/content-rectification.md) |
 | 百度秒嗒平台 | Skill、CLI、外部调用、附件、代码仓库、直接查看、直接读取 | 按所查问题 | [正文](../../../work/domains/development/tools/miaoda/development/skill-as-callable.md) |
 | 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/README.md) |
 | 培训备课与复盘（先核对归属） | 本类任务 | 创作/修改/沉淀 | [正文](../../../work/domains/training/experience/jianwei-training-style.md) |

@@ -138,7 +138,7 @@
 
 | 问题类型 | 拆批顺序 | 专题 |
 |---|---|---|
-| 内容、SEO、主体口径整改 | SEO 与分享信息 → 导航页脚等公共组件 → 首页首屏 → 高风险主体页 → 关于页 → 商品详情 → 文章 → 残留词清理 | [SEO 与内容](./topics/seo-and-content.md) |
+| 内容、SEO、主体口径整改 | SEO 与分享信息 → 导航页脚等公共组件 → 首页首屏 → 高风险主体页 → 关于页 → 商品详情 → 文章 → 残留词清理 | [SEO](./topics/seo-optimization.md)、[内容整改](./topics/content-rectification.md) |
 | 前端 UI、移动端 | 只改样式和当前组件、不动数据加载 → 保持桌面端效果 → 单独检查移动端菜单、按钮、弹窗、滚动 → 难复现时加临时日志面板 | [运行诊断](./topics/runtime-diagnostics.md) |
 | 支付、订单、退款 | 原有稳定支付链路一行不动；新通道按 `pay_channel` 分流；密钥不进前端和日志；新 Edge Function 先验证环境变量名 | [支付](./topics/payment.md) |
 | 上传、存储、大文件 | 先按会员配置原生上限并实测，不自己做分片架构 | [上传](./topics/uploads.md) |

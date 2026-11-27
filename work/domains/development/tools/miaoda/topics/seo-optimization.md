@@ -1,7 +1,5 @@
 # 秒哒站点 SEO 优化处方
 
-> 来源：2026-06-09 与秒哒的一次 SEO 优化对话截图。场景是对秒哒生成的 React/Vite 单页站点做全站 SEO，第一次只做了 `index.html`、`useSEO` 与基础 meta，第二次发现 `keywords` 仍可能漏掉，改为用统一 `SEOHead` 组件收口。
-
 ## 适用场景
 
 | 场景 | 是否适用 |
@@ -179,3 +177,7 @@ Sitemap: https://your-domain.com/sitemap.xml
 - 对 Home、Navigate、About、Feedback 逐页检查
 
 沉淀下来的经验：**SEO 优化要按“页面矩阵 + 字段矩阵”验收，而不是按“我已经做了 SEO”验收。页面矩阵是 Home / Navigate / About / Feedback；字段矩阵是 title / description / keywords。两个矩阵交叉处都非空，才算完成。**
+
+## 来源与状态
+
+来源：2026-06-09 与秒哒的一次 SEO 优化对话截图。场景是对秒哒生成的 React/Vite 单页站点做全站 SEO，第一次只做了 `index.html`、`useSEO` 与基础 meta，第二次发现 `keywords` 仍可能漏掉，改为用统一 `SEOHead` 组件收口。

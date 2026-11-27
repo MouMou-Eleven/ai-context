@@ -126,7 +126,7 @@ sortedEntries.sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
 
 **修复**：脚本里严格区分 `required` 和 `optional` 两组字段，只把 `required` 喂给 sign 函数。
 
-**预防**：写脚本时为每个接口列出明确的 required / optional 清单（[case-yungouos-jsapi.md](./topics/payment-case-yungouos-jsapi.md) 末尾有 5 个接口的完整字段表）。
+**预防**：写脚本时为每个接口列出明确的 required / optional 清单（[YunGouOS 支付完整案例](./topics/payment-case-yungouos-jsapi.md) 末尾有 5 个接口的完整字段表）。
 
 ---
 
@@ -160,29 +160,11 @@ https://dejinzhoujin.com/payment/
 
 ## #10 用户没有 Supabase 控制台访问权 → 想"对比"做不到
 
-**症状**：调试时想对比"秒哒新建的字段是否真的加上了"、"两个 Edge Function 实际生效的 Secrets 列表是否一致"、"某条 SQL 跑出来什么结果"，但发现自己根本没有 Supabase 后台的访问权限。
+**症状**：想核对“字段真的加上了没有”“两个 Edge Function 的密钥是否一致”“某条 SQL 的结果”，却没有 Supabase 后台权限。
 
-**根因**：秒哒应用底层确实是 Supabase（Postgres + Edge Functions + Auth），但用户**没有**原生 Supabase 控制台账号——拿不到 Project URL、anon key、service_role key、SQL Editor、Logs Explorer 这些标准工具。
+**根因**：秒哒底层是 Supabase，但用户拿不到原生控制台（SQL Editor、Logs、service_role key），只能用编辑器侧栏的「后端服务」面板，密钥写入后也看不到值。
 
-**替代手段**：秒哒应用编辑器侧栏内置的「**后端服务**」面板：
-- **数据表管理**：看表结构、改字段值（一张张点开，无 schema 总览图）
-- **用户管理**：看应用用户列表
-- **后端函数**：看 Edge Functions 列表（有时只读源码）
-- **密钥管理**：增删改全局密钥，但**写入后只显示 `••••`**，不能查看当前值
-- **数据库备份**：查看自动备份、手动备份与恢复（高级版及以上）
-
-**做不到的事**（必记，避免反复尝试）：
-- ❌ 直接在 SQL Editor 里跑 SELECT/UPDATE
-- ❌ 看某个 Edge Function 当前实际生效的 Secrets 名字与值
-- ❌ 看 Postgres 索引、约束、触发器的细节
-
-**能做的**：数据库维护页可以增删改查、按字段筛选、CSV 导入导出；后端函数面板能看函数运行日志；高级版及以上能手动备份和恢复。
-
-**预防/应对**：
-1. 让秒哒做加字段、修脏数据这种操作时，**强制要求它执行后回贴 schema 字段列表 + SELECT 样例数据**，否则你看不到改动效果；删改字段前先备份，见[数据库与后端存储](./topics/backend-storage.md#二哪些改动是破坏性的红线)
-2. 涉及环境变量的事故，**别浪费时间猜**——直接让 Edge Function 在入口处 `console.log(Object.keys(Deno.env.toObject()))`，几秒锁定真实变量名（见 #11、#12）
-
-详见 [platform-basics.md](basics/platform-basics.md) 第七节。
+**做法**：让秒哒改库后回贴字段列表和 SELECT 样例数据；环境变量问题直接让函数入口打印变量名（见 #11、#12）。面板能做什么、不能做什么见[平台基础第七节](basics/platform-basics.md#七秒哒后端服务面板你能看到的数据库)，删改字段前先备份见[数据库专题](./topics/backend-storage.md#二哪些改动是破坏性的红线)。
 
 ---
 
@@ -262,20 +244,11 @@ V3.7 之前为绕开 50MB 上限、CORS 和 413 做的"5MB 分片 + Range 代理
 
 ## #15 只改 `index.html` / `useSEO` → SPA 页面级 `keywords` 容易漏
 
-> 完整处方见 [SEO 全站方法](./topics/seo-optimization.md)，提示词片段见 [SEO 提示词](./topics/seo-and-content.md)。
+**症状**：秒哒说 SEO 做完了，逐页检查发现部分路由没有 `keywords`，或切换页面后没跟着变。
 
-**症状**：让秒哒“做 SEO”后，它的 Summary 看起来完成了 `index.html`、`title`、`description`、`robots.txt`、`sitemap.xml` 等任务，但继续检查每个页面时发现：部分路由没有 `meta[name="keywords"]`，或页面切换后 `keywords` 没有跟着变。
+**根因**：React 单页应用的 `<head>` 是运行时状态，秒哒第一轮常分散修改 `title`、`description`，漏掉 `keywords`。
 
-**根因**：React SPA 的 `<head>` 是运行时状态，不是只看 `index.html`。秒哒第一轮容易用 `useSEO` 或手动 DOM 操作分散修改 `title` / `description`，但漏掉 `keywords`；多页面路由越多，越容易出现“首页有、Navigate / About / Feedback 没有”的不一致。
-
-**修复**：
-1. 用 `react-helmet-async` 包住应用根部。
-2. 建统一 `SEOHead` 组件，组件参数必须包含 `title`、`description`、`keywords`。
-3. Home / Navigate / About / Feedback 等每个路由页面都显式渲染 `<SEOHead />`。
-4. Settings 增加 `site_keywords`，与 `site_description` 一起保存、加载、回显。
-5. 改完后逐页检查 `document.title`、`meta[name="description"]`、`meta[name="keywords"]`。
-
-**预防**：提示词里不要只写“帮我做 SEO”。要明确要求秒哒按“页面矩阵 × 字段矩阵”验收：每个页面都要有 `title` / `description` / `keywords`，并要求它回报逐页检查表。
+**做法**：统一 `SEOHead` 组件、每个路由显式渲染、按“页面 × 字段”逐页验收。完整处方和提示词见 [SEO 专题](./topics/seo-optimization.md)。
 
 ---
 
@@ -327,19 +300,11 @@ V3.7 之前为绕开 50MB 上限、CORS 和 413 做的"5MB 分片 + Range 代理
 
 ## #19 短信验证码登录让秒哒自写 Edge Function → `Edge Function returned a non-2xx status code`
 
-**症状**：短信验证码登录失败，前端报 `Edge Function returned a non-2xx status code`，但业务侧看不出具体原因。
+**症状**：短信验证码登录失败，前端只报 `non-2xx status code`，看不出原因。
 
-**根因**：秒哒生成登录时可能自己写 Edge Function 包一层验证码登录逻辑，反而绕开了平台内置的 Supabase Auth 能力。登录这类基础能力越绕，越容易在验证码、会话、用户表同步上出错。
+**根因**：秒哒自己写了一层 Edge Function 包验证码登录，绕开了平台内置的 Supabase Auth。
 
-**修复**：让秒哒改回 Supabase Auth 登录：
-
-```text
-当前短信验证码登录失败，不要使用自写 Edge Function 实现登录。
-请采用 Supabase Auth / 秒哒内置用户体系重新实现登录注册流程，并删除绕过 Auth 的自写登录函数。
-完成后请说明前端调用的是哪个 Auth 方法，后端是否仍残留自写登录 Edge Function。
-```
-
-**预防**：登录、注册、验证码、账号密码这类基础用户体系，优先要求使用 Supabase Auth / 秒哒内置用户体系，不要让模型自由发挥写一套“看起来能跑”的认证后端。
+**做法**：让秒哒把绕过 Auth 的那部分登录职责换回 Supabase Auth（必要的业务认证桥不删），并回报前端调的是哪个 Auth 方法、后端还剩哪些自写登录逻辑。提示词和检查清单见[登录专题](./topics/authentication.md#登录优先使用-supabase-auth不自建验证码签发器)。
 
 ---
 
@@ -357,72 +322,29 @@ V3.7 之前为绕开 50MB 上限、CORS 和 413 做的"5MB 分片 + Range 代理
 
 ## #21 微信恢复访问 txt 验证文件被 SPA fallback 吃掉 → 校验失败
 
-> 完整处方见 [微信网址安全验证](./topics/wechat-urlsec-verification.md)。
+**症状**：微信提示“无法确认该网页的安全性”，按要求在根目录放了 txt 验证文件，秒哒说已创建，微信仍提示校验失败。
 
-**症状**：微信内置浏览器访问网站时出现“无法确认该网页的安全性，请谨慎访问”。点击“申请恢复访问”后，微信要求在网站根目录部署 txt 验证文件。秒哒 Summary 显示已在 `public/` 目录创建文件，但微信页面仍提示“校验失败，请按要求部署文件及内容”。
+**根因**：公网地址 `https://域名/<file>.txt` 返回的是首页 HTML，被单页应用的路由回退接管了。
 
-**根因**：文件虽然在源码或项目目录里出现了，但线上公网路径 `https://域名/<file>.txt` 并没有返回验证码纯文本，而是被 React/Vite SPA 的路由回退或平台发布层接管，返回了首页 HTML。对微信校验服务器来说，这等于文件内容不匹配。
-
-**诊断手法**：
-
-```bash
-curl -i https://域名/<file>.txt
-```
-
-如果结果是 `Content-Type: text/html`，正文是 `<!doctype html>` 或站点首页内容，即使状态码是 `200`，也一定会校验失败。
-
-**修复**：
-
-1. 让验证文件作为根目录静态文件优先返回。
-2. 确认 `/<file>.txt` 不经过 React Router、SPA fallback、`index.html` 或业务页面渲染。
-3. 如果平台静态发布层做不到，就用 Nginx/CDN/边缘规则单独为 `/<file>.txt` 返回纯文本。
-4. 用公网 `curl -i` 确认状态码、Content-Type、响应正文都正确后，再回微信页面点击“已部署，开始验证”。
-
-**当前边界（2026-06-23 复测）**：
-
-- 秒哒构建后的 BOS/CDN 源文件已经正确返回 `text/plain`，内容也匹配微信验证码，说明源码和构建产物不是问题。
-- 正式绑定域名 `moumou.shiyichuang.com` 下的同名 txt 路径仍返回首页 HTML，说明问题在秒哒域名服务层/发布层的 SPA fallback。
-- 秒哒尝试在 `index.html` 中用前端 JS 判断路径并 `document.write` 验证码，但微信校验服务器不会执行浏览器 JS，所以这种修法无效。
-- 在继续使用当前秒哒绑定域名链路的前提下，秒哒应用代码层暂时无法独立解决；需要秒哒官方/平台人员在服务端路由层排除该 txt 路径，或走微信“仅提交证明材料”的人工兜底。
-
-**预防**：任何“站长验证 txt 文件”类任务，都不要以“项目里创建了文件”为验收标准；必须以公网 URL 的实际响应为准。
+**做法**：用 `curl -i https://域名/<file>.txt` 看返回的是不是纯文本；“项目里有这个文件”不算验收，以公网实际响应为准。秒哒绑定域名下目前代码层无法独立解决（2026-06-23 复测），诊断、修法和人工兜底见[微信网址安全验证](./topics/wechat-urlsec-verification.md)。
 
 ---
 
 ## #22 手机号未做唯一身份规范化 → `+86` 与裸号变成两个账户 / 登录失败
 
-> **风险等级：最高危。** 来源：建委 2026-07-16 提供的真实秒哒应用问题。完整可执行提示词见[登录专题](./topics/authentication.md)。
+> **风险等级：最高危。**
 
-**症状**：
+**症状**：裸号注册后用 `+86` 登录被当成另一个人，或误报“密码错误”；重复注册产生两个账户。
 
-1. 用户用 `13xxxxxxxxx` 注册后，再用 `+8613xxxxxxxxx` 登录，系统把两种写法当成不同身份；重复注册会产生两个账户。
-2. 手机号登录时，`getUserByPhone` RPC 因网络抖动等异常进入 catch 块，兜底代码用原始 `input` 拼 Auth email。输入含 `+86` 时，email 与注册时的规范化手机号映射不一致，最终误报“密码错误”。
-3. 旧用户兼容分支调用 `getUserByUsername(input)`，并用原始 `input` 拼 email；`+86` 输入同样无法命中原账户。
-4. 注册成功但 Supabase 未返回 session 时，只提示“请手动登录”，却清空表单且不切换登录 Tab，用户不知道应输入什么。
+**根因**：注册、主登录、异常兜底、旧用户兼容等几条路径各自处理手机号，有的用原始输入，有的去了 `+86`，拼 Auth 邮箱的公式没有收口成一个函数。
 
-**根因**：手机号在注册、主登录、RPC 异常兜底、旧用户兼容和注册后 UI 这五条路径中被重复处理。部分分支使用原始输入，部分分支使用去掉 `+86` 的号码，且 email 映射公式没有收口为一个函数。
-
-**修复**：
-
-1. 在 `Login.tsx` 入口只做一次手机号规范化：当前中国手机号场景中，把前后空格、连接符清理掉；若以 `+86` 开头则去掉此前缀，最终只接受 11 位 `1` 开头的手机号。后续逻辑只使用 `normalizedInput`。
-2. 把“规范化手机号 → Auth email”的规则提取为唯一 helper。注册、正常登录、catch 兜底和旧用户兼容路径都调用它，**禁止**各分支手写 `${input}@miaoda.com` 或其他拼接。
-3. 主路径的 `getUserByPhone`、旧用户路径的 `getUserByUsername` 都必须传 `normalizedInput`；catch 块和旧用户登录都必须用 `toPhoneAuthEmail(normalizedInput)`。
-4. 注册成功但 session 为 `null` 时，自动切换到登录 Tab，并把 `normalizedInput` 预填到现有“用户名/手机号”字段；只让用户补输密码。
-5. 注册前按规范化手机号检查既有账户，避免 `+86` 与裸号再次创建两条身份记录。已经存在的重复账户不要在同一修复中自动合并，必须先核验用户身份、业务数据和 Auth 记录后单独迁移。
-
-**投产前必核**：本次问题描述中同时出现 `phone_<手机号>@miaoda.com` 与 `<手机号>@miaoda.com` 两种示例。修改前必须检查当前注册分支和真实已注册用户使用的 email 公式；helper 必须复用已生效的公式，不能为了“统一”而改写旧用户 email。
-
-**预防**：
-
-- 手机号是身份键，不是展示字符串；数据库、RPC、Auth email 和表单预填都以同一份规范化值为准。
-- 所有登录分支共用同一组 helper，例如 `normalizeChinaPhone(raw)` 与 `toPhoneAuthEmail(normalizedPhone)`；代码审查时搜索 `input`、`@miaoda.com`、`getUserByPhone`、`getUserByUsername`，逐一确认没有绕过 helper。
-- 回归测试至少覆盖：裸号注册后用 `+86` 登录、`+86` 注册后用裸号登录、RPC 抛异常后的 catch 兜底、旧用户兼容路径、session 为 `null` 的注册完成页，以及重复注册拦截。
+**做法**：入口只规范化一次，所有分支共用同一个“手机号 → Auth 邮箱”函数；已有的重复账户不在同一次修复里自动合并。完整修复步骤、投产前必核和回归测试见[登录专题 · 历史兼容](./topics/authentication.md#历史兼容仅对已有手机号拼邮箱方案规范化)，通用原则见[后端、登录、支付](../../experience/backend-auth-payment.md#登录与身份默认最后一条是红线)。
 
 ---
 
 ## #23 把 Next.js 源码直接导入秒哒 Web 项目 → 构建后黑屏
 
-**实战边界**：2026-08-09「混世魔牛」源码交接中确认。它是当前环境的硬性限制，不代表秒哒未来版本永久不支持 Next.js。
+**实战边界**：2026-08-09「混世魔牛」源码交接中确认。它是当前环境的硬性限制，不代表秒哒未来版本永久不支持 Next.js。2026-11-27 复查：官方文档里没找到支持 Next.js 的说明，一篇第三方技术栈对比博文（blog.3vshej.cn《秒悟、秒哒技术栈》）列的秒哒前端是 React、Tailwind、Shadcn 等、不含 Next.js；建委判断仍不支持，官方说明支持后再改。
 
 **症状**：附件能上传，秒哒也显示创建完成，但 Web 预览或部署页面黑屏；构建链找不到 Next.js 运行时、SSR 入口或 API Routes。
 
@@ -438,7 +360,7 @@ curl -i https://域名/<file>.txt
 
 **根因**：对话附件只是交接载体，不是浏览器可长期请求的生产 URL。只保留 ZIP，或者继续使用本机绝对路径、Blob URL、Base64 与临时签名地址，都没有完成云端资源迁移。
 
-**修复与预防**：要求秒哒逐包解压，把静态素材写入云端文件/对象存储，并生成“原相对路径 → 对象键 → 稳定 HTTPS URL → SHA-256”映射；上线前检查 HTTPS、MIME、CORS、音视频 Range、缓存和存储额度。完整处方见 [codex-source-package-deployment.md](./workflow.md)。
+**修复与预防**：要求秒哒逐包解压，把静态素材写入云端文件/对象存储，并生成“原相对路径 → 对象键 → 稳定 HTTPS URL → SHA-256”映射；上线前检查 HTTPS、MIME、CORS、音视频 Range、缓存和存储额度。完整处方见[协作方法第 4 阶段](./workflow.md#第-4-阶段分包上传先校验再创作路径-a)。
 
 ---
 

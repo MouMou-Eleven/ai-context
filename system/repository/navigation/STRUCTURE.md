@@ -396,7 +396,6 @@ ai-context/
 │   │   │       │   │   ├── payment.md  在匹配的支付环境中复用已验证集成片段
 │   │   │       │   │   ├── README.md  秒哒专题索引
 │   │   │       │   │   ├── runtime-diagnostics.md  给云端或移动端故障补诊断日志与证据回传
-│   │   │       │   │   ├── seo-and-content.md  核对公开页面的SEO字段和内容整改覆盖范围
 │   │   │       │   │   ├── seo-optimization.md  SEO 优化经验
 │   │   │       │   │   ├── uploads.md  优先核验原生上传限制，再处理大文件与小程序上传
 │   │   │       │   │   └── wechat-urlsec-verification.md  微信 URL 安全验证

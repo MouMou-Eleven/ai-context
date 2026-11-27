@@ -1279,10 +1279,20 @@
           ]
         },
         {
-          "path": "work/domains/development/tools/miaoda/topics/seo-and-content.md",
+          "path": "work/domains/development/tools/miaoda/topics/seo-optimization.md",
           "whenAny": [
             "SEO",
-            "关键词",
+            "关键词"
+          ],
+          "excludeAny": [],
+          "intents": [
+            "create",
+            "write"
+          ]
+        },
+        {
+          "path": "work/domains/development/tools/miaoda/topics/content-rectification.md",
+          "whenAny": [
             "备案",
             "整改"
           ],
