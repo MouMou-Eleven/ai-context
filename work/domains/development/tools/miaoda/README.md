@@ -26,7 +26,7 @@
 |---|---|
 | 任何开发任务的测试、交付、界面验收；**加功能、改功能、加一种类型或页面**（不分平台，本目录不重复写） | [通用开发经验](../../experience/README.md)，加改功能必读[影响面与同级样式](../../experience/delivery-and-testing.md#加功能改功能先列影响面新界面沿用同级的旧样式默认) |
 | 查秒哒现在能不能做某事、限额、会员、价格 | [facts.md](./facts.md)（唯一的当前事实表） |
-| 用 Codex 或其他 AI 开发秒哒项目（新项目、迭代、修问题） | [workflow.md](./workflow.md)：先按顶部表格选路径 A/B/C |
+| 用 AI（Codex、Claude Code 等）在本地开发秒哒项目（新项目、迭代、修问题） | [workflow.md](./workflow.md)：先按顶部表格选路径 A/B/C |
 | 要写给秒哒的提示词 | [prompt-templates.md](./prompt-templates.md) |
 | 建数据库、改字段、删字段、备份、单环境和多环境 | [topics/backend-storage.md](./topics/backend-storage.md) |
 | 上传、登录、支付、SEO、排错、微信验证 | [topics/](./topics/README.md) 里对应的专题 |
@@ -46,7 +46,7 @@ miaoda/
 ├── README.md            本页：平台识别 + 读取路由
 ├── llms.txt             给只认 llms.txt 的工具用的短路由
 ├── facts.md             当前事实表：会员、限额、计费、版本
-├── workflow.md          Codex × 秒哒协作方法（三条路径、十个阶段）
+├── workflow.md          AI × 秒哒协作方法（迭代循环、手动与 Ego 自动两种方式、三条路径、十个阶段）
 ├── prompt-templates.md  可粘贴的提示词模板
 ├── pitfalls.md          踩坑清单
 ├── topics/              专题：数据库、上传、登录、支付（含完整支付案例）、SEO、排错、微信验证
@@ -60,7 +60,7 @@ miaoda/
 | 情况 | 怎么做 | 不要做 |
 |---|---|---|
 | 秒哒原生生成、建委下载了源码 | 以下载的 ZIP 为基线转入路径 B，之后只打增量包 | 不每轮都让建委重新下载源码（高级版才能下，300 秒点/次） |
-| 有本地源码（言剪这类） | Codex 在本地改代码、测试，打**增量包**上传给秒哒校验合并，按 [workflow.md](./workflow.md) 路径 B | 不退回让秒哒按长提示词自由重写 |
+| 有本地源码（言剪这类） | AI 在本地改代码、测试，打**增量包**上传给秒哒校验合并，点发布后线上验收，按 [workflow.md](./workflow.md) 路径 B；建委没说用 Ego 自动上传时，把包和提示词交给建委，说了就按[自动闭环](./workflow.md#一轮迭代长什么样默认)自己跑 | 不退回让秒哒按长提示词自由重写 |
 | 新项目 | 本地开发完整版，一次打全量包上传，按路径 A | 不边聊边让秒哒一点点生成 |
 | 只在云端、没有源码，建委发截图或报错 | 写给秒哒的提示词，用 [prompt-templates.md](./prompt-templates.md)，按路径 C | 不猜云端代码现状 |
 | 任何要动数据库结构的改动 | 先确认单环境还是多环境；只做加法，删改字段先备份，见[数据库专题](./topics/backend-storage.md) | 不在单环境的已发布应用里直接删字段、改名 |

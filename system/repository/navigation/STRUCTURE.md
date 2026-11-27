@@ -402,7 +402,7 @@ ai-context/
 │   │   │       │   ├── updates/  版本与升级
 │   │   │       │   │   ├── README.md  版本资料索引
 │   │   │       │   │   └── version-features.md  历史版本能力时间线
-│   │   │       │   └── workflow.md  Codex × 秒哒协作方法：三条路径、十个阶段的唯一正文
+│   │   │       │   └── workflow.md  AI × 秒哒协作方法（手动上传或 Ego 自动闭环）：三条路径、十个阶段的唯一正文
 │   │   │       └── README.md  工具索引
 │   │   ├── other/  收纳跨行业商业方法及通用Skill能力入口
 │   │   │   ├── commercial/  按受众（政府、企业、公益、评委、消费者）和场景（方案、路演、宣传、谈单）组织的对外交付方法
