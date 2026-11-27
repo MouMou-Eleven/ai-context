@@ -85,6 +85,26 @@ class MethodRouting(unittest.TestCase):
         self.assertEqual(method_ids(result), {TECHNICAL})
         self.assertIn(TRAINING_STYLE, result['read'])
 
+    def test_shared_feature_impact_routes_by_user_task(self):
+        method = 'shared-feature-impact'
+        for task in ['修复网站新建二级分类后，发布页只显示旧的分类',
+                     '给审批小程序新增假别，审批和导出都要可用',
+                     '秒哒修改共享组件，原有页面和新建页面都要能用']:
+            with self.subTest(task=task):
+                result = router.resolve(task, 'auto')
+                self.assertIn(method, method_ids(result))
+                self.assertIn('work/domains/development/experience/delivery-and-testing.md', result['read'])
+        visual = router.resolve('修改网站公共组件，加载动画在小卡片里太大了', 'auto')
+        self.assertTrue({method, 'frontend-ui-quality'} <= method_ids(visual))
+        backend = router.resolve('修复网站纯后端共享组件的缓存', 'auto')
+        self.assertIn(method, method_ids(backend))
+        self.assertNotIn('frontend-ui-quality', method_ids(backend))
+        for task, intent in [('修改网站首页独有的一句文案', 'create'),
+                             ('给培训课件新增分类练习', 'create'),
+                             ('查询网站新增分类的方法放在哪', 'read')]:
+            with self.subTest(task=task):
+                self.assertNotIn(method, method_ids(router.resolve(task, intent)))
+
     def test_self_media_explanation_does_not_inherit_teacher_style(self):
         result = router.resolve('给自媒体写文章，解释API概念', 'create')
         self.assertEqual(method_ids(result), {TECHNICAL, 'title-matrix'})

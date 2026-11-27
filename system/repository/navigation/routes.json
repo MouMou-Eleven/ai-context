@@ -2582,6 +2582,58 @@
       ]
     },
     {
+      "id": "shared-feature-impact",
+      "label": "共享功能变更的影响范围",
+      "status": "active",
+      "path": "work/domains/development/experience/delivery-and-testing.md",
+      "selectedAny": [
+        "programming",
+        "miaoda",
+        "workbench"
+      ],
+      "whenAny": [
+        "新增类型",
+        "新增分类",
+        "新建分类",
+        "新增二级",
+        "新建二级",
+        "旧的分类",
+        "可配置类型",
+        "自定义类型",
+        "自定义状态",
+        "新增审批类型",
+        "新增假别",
+        "预置和自建",
+        "新旧不一致",
+        "原来的不一样",
+        "只显示旧",
+        "没有同步",
+        "功能联动",
+        "公共组件",
+        "共享组件",
+        "改一个漏一个",
+        "漏了一个入口"
+      ],
+      "intents": [
+        "create",
+        "write"
+      ],
+      "useWhen": "新增可配置类型、修改多处使用的功能，或排查新旧行为不一致时",
+      "notFor": "单页独有的文字样式修改，或只查询资料的位置",
+      "acceptance": "从真实入口追到最终使用处，给出发现的分支和实测差异，换一个未预设的样本复验",
+      "evidence": "system/repository/observations.md",
+      "confirmedAt": "2026-11-27",
+      "entryPoints": [
+        "work/domains/development/README.md",
+        "work/domains/development/experience/README.md"
+      ],
+      "source": "建委要求从个人作品网站连续返修提炼为通用方法",
+      "excludeAny": [
+        "只改错字",
+        "仅改文案"
+      ]
+    },
+    {
       "id": "frontend-ui-quality",
       "label": "前端 UI 质量标准",
       "status": "active",
@@ -2600,7 +2652,9 @@
         "移动端",
         "编辑器",
         "设计感",
-        "页面改版"
+        "页面改版",
+        "加载动画",
+        "空状态界面"
       ],
       "excludeAny": [
         "纯后端",
