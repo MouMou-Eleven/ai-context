@@ -18,7 +18,7 @@
 | 设计一个教育智能体（任何平台） | [学科融合方法](./subject-integration/classroom-agent-design.md) |
 | 新学科、新场景，想借鉴已有案例 | [学科融合](./subject-integration/README.md)的融合案例对照 |
 | 在天津比赛指定平台上搭建或修改 | [平台能力体系](./tianjin-agent-contest/platform/capabilities.md) + [搭建流程](./tianjin-agent-contest/platform/build-sop.md) |
-| 准备天津大赛赛道二参赛材料（申报书、技术报告、逐字稿、视频、提交包） | [大赛入口](./tianjin-agent-contest/README.md)，按其中顺序读；所有评审材料都读[文档规范](./tianjin-agent-contest/document-format.md)第一至三节 |
+| 准备天津大赛赛道二参赛材料（申报书、技术报告、逐字稿、视频、提交包） | [大赛入口](./tianjin-agent-contest/README.md)，按其中顺序读；所有评审材料都读[文档规范](./tianjin-agent-contest/document-format.md)第一至三节（共用规则） |
 | 接续某个已做作品 | 该作品案例，列表见[天津智能体比赛 · 已做的作品](./tianjin-agent-contest/README.md#已做的作品作品方案样本) |
 
 ## 写入规则（默认）

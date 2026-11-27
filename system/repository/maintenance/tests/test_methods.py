@@ -91,11 +91,24 @@ class MethodRouting(unittest.TestCase):
                      '给审批小程序新增假别，审批和导出都要可用',
                      '修复网站分类有但全部没有，顶部搜索不到这件作品',
                      '修复采购系统汇总列表漏单据的功能',
-                     '秒哒修改共享组件，原有页面和新建页面都要能用']:
+                     '秒哒修改共享组件，原有页面和新建页面都要能用',
+                     # 建委的口语说法（2026-11-27 对抗测试），报问题的说法也要读到
+                     '给网站加个作品集模块',
+                     '新加的页面和原来的不一样，又变丑了',
+                     '后台加了个分类前台搜不到',
+                     '在 Codex 里给小程序加会员',
+                     '首页导航再加一个栏目叫课程',
+                     '秒嗒上那个后台发布了作品，前台全部里面没有',
+                     '订单列表加一列物流状态，导出也要有',
+                     '新做的弹窗和别的弹窗风格不统一',
+                     '接着改言剪，加一个导出字幕功能']:
             with self.subTest(task=task):
                 result = router.resolve(task, 'auto')
                 self.assertIn(method, method_ids(result))
                 self.assertIn('work/domains/development/experience/delivery-and-testing.md', result['read'])
+        for task in ['写一篇介绍秒哒的公众号文章', '解释 React 的 useEffect', '帮我做一个培训课程大纲']:
+            with self.subTest(task=task):
+                self.assertNotIn(method, method_ids(router.resolve(task, 'auto')))
         visual = router.resolve('修改网站公共组件，加载动画在小卡片里太大了', 'auto')
         self.assertTrue({method, 'frontend-ui-quality'} <= method_ids(visual))
         backend = router.resolve('修复网站纯后端共享组件的缓存', 'auto')

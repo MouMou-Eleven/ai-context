@@ -42,7 +42,7 @@ await crypto.subtle.digest("MD5", data)
 ```
 但很多老 AI 生成的"MD5 签名"代码用了这个 API，所以一上来就死。
 
-**修复**：用纯 JS 实现 MD5（无依赖），或者在 Python 技能里用 `hashlib.md5`。本仓库 `references/edge_function_notify.ts` 文件里有验证过的纯 JS MD5 实现，可直接复制。
+**修复**：用纯 JS 实现 MD5（无依赖），或者在 Python 技能里用 `hashlib.md5`。YunGouOS 支付技能包的 `references/edge_function_notify.ts` 里带有验证过的纯 JS MD5 实现（技能包文件，本仓库没有收录）；手边没有技能包时，用成熟的纯 JS MD5 库，并拿官方文档的签名样例先对一次结果。
 
 **预防**：写到提示词里——"禁止调用 `crypto.subtle.digest('MD5', ...)`"。
 
@@ -422,7 +422,7 @@ curl -i https://域名/<file>.txt
 
 ## #23 把 Next.js 源码直接导入秒哒 Web 项目 → 构建后黑屏
 
-**实战边界**：2026-08-09「混世魔牛」源码交接中确认。它是当前环境的交付红线，不代表秒哒未来版本永久不支持 Next.js。
+**实战边界**：2026-08-09「混世魔牛」源码交接中确认。它是当前环境的硬性限制，不代表秒哒未来版本永久不支持 Next.js。
 
 **症状**：附件能上传，秒哒也显示创建完成，但 Web 预览或部署页面黑屏；构建链找不到 Next.js 运行时、SSR 入口或 API Routes。
 

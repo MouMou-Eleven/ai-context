@@ -31,8 +31,8 @@
 | 视频：宣传片、微课、故事片、AI 视频提示词 | [视频入口](work/domains/design/video/README.md) → 对应片型目录；要写视频提示词再读 [Seedance](work/domains/design/video/common/ai-generation/seedance/README.md) |
 | AI 自己动手做视频：剪辑、包装、加特效 / 字幕 / 标题 / 标注、做动画、出成片（不管用户提没提代码，不管用哪种做法） | [视频通用设计与验收](work/domains/design/video/common/video-craft/README.md)（含[出片检查](work/domains/design/video/common/video-craft/verification.md)）+ [设计原则与审美](work/domains/design/common/design-principles/README.md)；再按做法加读视频共用方法里对应的文件夹（ai-generation、code-generation、blender，AE 读下一行）；片型照常读上一行，比赛视频再读该比赛目录 |
 | AI 操作 After Effects：改 AE 模板、在 AE 里做动画或包装、渲染 AE 工程（任何片型，不管用户提没提 MCP） | [AI 与 AE 协作](work/domains/design/video/common/ae/ai-ae-collaboration.md)：本机有两个 AE MCP，AI 自己挑；先用自带工具，不自己写脚本；开工先查是否最新版。用现成模板加读[改 AE 模板的设计判断](work/domains/design/video/common/ae/ae-template-design.md)。片型和设计照常读上两行 |
-| 用百度秒哒开发 | [秒哒入口](work/domains/development/tools/miaoda/README.md)（先看顶部平台识别）→ 按其中的流程表选一条 |
-| 其他网站 / 应用 / 编程 | [开发入口](work/domains/development/README.md) + [通用开发经验](work/domains/development/experience/README.md)；有界面时加读[设计原则与审美](work/domains/design/common/design-principles/README.md) |
+| 用百度秒哒开发 | [秒哒入口](work/domains/development/tools/miaoda/README.md)（先看顶部平台识别）→ 按其中的流程表选一条；测试、交付、界面照样读下一行的[通用开发经验](work/domains/development/experience/README.md)；加功能、改功能、加一种类型或页面，或报告新旧不一致、某个入口看不到或搜不到、新页面变丑时，必读[加功能、改功能的影响面](work/domains/development/experience/delivery-and-testing.md#加功能改功能先列影响面新界面沿用同级的旧样式默认) |
+| 其他网站 / 应用 / 编程 | [开发入口](work/domains/development/README.md) + [通用开发经验](work/domains/development/experience/README.md)；加功能、改功能、加一种类型或页面，或报告新旧不一致、某个入口看不到或搜不到、新页面变丑时，必读[加功能、改功能的影响面](work/domains/development/experience/delivery-and-testing.md#加功能改功能先列影响面新界面沿用同级的旧样式默认)；有界面时加读[设计原则与审美](work/domains/design/common/design-principles/README.md) |
 | 教育智能体 / 学科应用 / 课堂业务系统开发（任何平台） | [教育行业入口](work/domains/development/industry-cases/education/README.md) + [学科融合方法](work/domains/development/industry-cases/education/subject-integration/classroom-agent-design.md)；教师课件和微课制作仍走设计 |
 | 在天津智能体平台（aiagent.tjtc，近似扣子）上搭建、修改、导入导出 | [平台能力体系](work/domains/development/industry-cases/education/tianjin-agent-contest/platform/capabilities.md) + [搭建流程](work/domains/development/industry-cases/education/tianjin-agent-contest/platform/build-sop.md) + 上一行的学科融合方法 |
 | 天津 AI 教育大赛赛道二材料：申报书、技术说明与验证报告、逐字稿、演示视频、提交包 | [大赛入口](work/domains/development/industry-cases/education/tianjin-agent-contest/README.md) → 按任务读；评审材料都要读[文档规范](work/domains/development/industry-cases/education/tianjin-agent-contest/document-format.md) |
@@ -40,7 +40,7 @@
 | 路演、答辩、比赛申报、商业计划、融资（台下有评委或投资人） | [商业化入口](work/domains/other/commercial/README.md) → [赛事和投资人材料](work/domains/other/commercial/experience/competition-and-investor-materials.md) |
 | 合同、正式文书、对外表达标准 | [商业化入口](work/domains/other/commercial/README.md) |
 | 某一场培训（济南干部培训、济南市图书馆等） | [AI 培训项目](work/projects/ai-training/README.md) → [场次索引](work/projects/ai-training/sessions-index.md) → 该场次 README；委托方是万融的加读[万融委托培训](work/projects/ai-training/wanrong-commissioned/README.md)（植入企业版推广），其他场次不读 |
-| 某个具体项目（社群、言剪、飞书书、六十甲子） | [项目列表](work/projects/README.md) → 该项目 README |
+| 某个具体项目（社群、言剪、飞书书、六十甲子） | [项目列表](work/projects/README.md) → 该项目 README；开发类项目（言剪、网站、小程序）同时按上面的秒哒或编程行读 |
 | 个人简介、讲师介绍、简历 | [个人信息](personal/README.md)；荣誉和数字只按[背书表](personal/credentials.md)写；要做成 PPT、海报、视频时，结构按那个成品的行走，这里只提供事实 |
 | 建委的想法、偏好、判断方式；把建委自己的资料整理成文档（电话或会议录音、笔记，给他自己看） | [建委大脑](brain/README.md)；做任何成品前都值得先看一眼[做事与表达偏好](brain/preferences.md)；整理资料时尤其看“例子以小见大”：建委拿一个例子问，问的是一类情况 |
 | 用 Skill | [Skill 库](work/domains/other/skills/README.md) |

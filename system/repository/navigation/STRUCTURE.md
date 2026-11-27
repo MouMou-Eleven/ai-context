@@ -338,19 +338,16 @@ ai-context/
 │   │   │   │   ├── delivery-and-testing.md  AI 编程通用交付与测试：证据分级、干净复建、跨层契约
 │   │   │   │   ├── frontend-ui-quality-standards.md  按布局、响应式和交互状态检查前端成品
 │   │   │   │   ├── README.md  经验索引
-│   │   │   │   ├── reference-materials/  编程参考资料
-│   │   │   │   │   ├── creative-frontend-prompts/  按需查看创意界面提示词原文，避免直接当通用规则
-│   │   │   │   │   │   ├── raw/  未经提炼的原文
-│   │   │   │   │   │   │   ├── dark-editorial-portfolio.txt  文本资料
-│   │   │   │   │   │   │   ├── jack-3d-creator-portfolio.txt  文本资料
-│   │   │   │   │   │   │   ├── prmpt-fashion-archive.txt  文本资料
-│   │   │   │   │   │   │   ├── sentinel-spline-3d-hero.txt  文本资料
-│   │   │   │   │   │   │   └── synapsex-video-scrub.txt  文本资料
-│   │   │   │   │   │   └── README.md  创意前端原始提示词索引
-│   │   │   │   │   └── README.md  参考资料索引
-│   │   │   │   └── revisions/  追溯开发方法的重要纠正与适用范围变化
-│   │   │   │       ├── 2026-09-15-mobile-ui-verification.md  追溯“移动端 UI：纠正“记录了规则但成品仍遗漏””的调整原因与适用范围
-│   │   │   │       └── README.md  开发经验修订记录
+│   │   │   │   └── reference-materials/  编程参考资料
+│   │   │   │       ├── creative-frontend-prompts/  按需查看创意界面提示词原文，避免直接当通用规则
+│   │   │   │       │   ├── raw/  未经提炼的原文
+│   │   │   │       │   │   ├── dark-editorial-portfolio.txt  文本资料
+│   │   │   │       │   │   ├── jack-3d-creator-portfolio.txt  文本资料
+│   │   │   │       │   │   ├── prmpt-fashion-archive.txt  文本资料
+│   │   │   │       │   │   ├── sentinel-spline-3d-hero.txt  文本资料
+│   │   │   │       │   │   └── synapsex-video-scrub.txt  文本资料
+│   │   │   │       │   └── README.md  创意前端原始提示词索引
+│   │   │   │       └── README.md  参考资料索引
 │   │   │   ├── industry-cases/  按行业保存应用开发方法和真实实践案例
 │   │   │   │   ├── education/  教育智能体：学科融合（通用）＋一个比赛一个文件夹（天津智能体比赛）
 │   │   │   │   │   ├── README.md  教育行业三块板块的入口、任务路由与写入规则

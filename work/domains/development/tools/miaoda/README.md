@@ -24,6 +24,7 @@
 
 | 任务 | 读 |
 |---|---|
+| 任何开发任务的测试、交付、界面验收；**加功能、改功能、加一种类型或页面**（不分平台，本目录不重复写） | [通用开发经验](../../experience/README.md)，加改功能必读[影响面与同级样式](../../experience/delivery-and-testing.md#加功能改功能先列影响面新界面沿用同级的旧样式默认) |
 | 查秒哒现在能不能做某事、限额、会员、价格 | [facts.md](./facts.md)（唯一的当前事实表） |
 | 用 Codex 或其他 AI 开发秒哒项目（新项目、迭代、修问题） | [workflow.md](./workflow.md)：先按顶部表格选路径 A/B/C |
 | 要写给秒哒的提示词 | [prompt-templates.md](./prompt-templates.md) |

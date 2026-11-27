@@ -16,6 +16,8 @@
 |---|---|---|---|
 | [文有回声](../tianjin-agent-contest/case-wenyouhuisheng-chinese.md) | 语文阅读 · 学、评 | 学生自然表达 → 原文依据核验 → 一次追问 → 知识卡 → 教师报告 | 建委作品 |
 | [空间与图形探究助手](../tianjin-agent-contest/case-geometry-helper-math.md) | 数学几何 · 学 | 原话提取条件 → 代码核对数值单位 → 三维交互网页 / 示意图 | 建委作品 |
+| [幼儿自主游戏观察助手](../tianjin-agent-contest/case-kindergarten-play-observation.md) | 学前教育 · 教师观察（使用者是教师，不是学生） | 教师图文记录幼儿动作和原话 → 识图取可见事实 → 检索保教依据 → 给最多 3 项支持 → 回访记录写入工作台 | 建委作品 |
+| [慧评善改](../tianjin-agent-contest/case-huipingshangai-chinese.md) | 语文习作 · 评、改 | 拍照识别习作 → 学生确认后按知识库量规批改 → 修改反馈 → 教师讲评报告；改量规只改知识库、不改程序 | 建委作品 |
 | [A02 寓言整本书伴读](./case-external-a02-a08-chinese.md) | 语文整本书 · 学、评 | 伴读追问、分层任务、表达成卡、后台记录反哺讲评 | 外部分析 |
 | [A08 革命传统课文](./case-external-a02-a08-chinese.md) | 语文 · 学、育 | 受控史料 + 不同人物视角访谈 | 外部分析 |
 | [B11 南极科考站](./case-external-b11-b02-math.md) | 数学项目式 · 学 | 多方案测算 + 实物试验比较 | 外部分析 |
