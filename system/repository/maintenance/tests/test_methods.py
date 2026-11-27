@@ -89,6 +89,8 @@ class MethodRouting(unittest.TestCase):
         method = 'shared-feature-impact'
         for task in ['修复网站新建二级分类后，发布页只显示旧的分类',
                      '给审批小程序新增假别，审批和导出都要可用',
+                     '修复网站分类有但全部没有，顶部搜索不到这件作品',
+                     '修复采购系统汇总列表漏单据的功能',
                      '秒哒修改共享组件，原有页面和新建页面都要能用']:
             with self.subTest(task=task):
                 result = router.resolve(task, 'auto')
@@ -100,6 +102,7 @@ class MethodRouting(unittest.TestCase):
         self.assertIn(method, method_ids(backend))
         self.assertNotIn('frontend-ui-quality', method_ids(backend))
         for task, intent in [('修改网站首页独有的一句文案', 'create'),
+                             ('网站顶部搜索框仅改文案', 'create'),
                              ('给培训课件新增分类练习', 'create'),
                              ('查询网站新增分类的方法放在哪', 'read')]:
             with self.subTest(task=task):
