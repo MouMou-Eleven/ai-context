@@ -42,7 +42,7 @@
 | 某一场培训（济南干部培训、济南市图书馆等） | [AI 培训项目](work/projects/ai-training/README.md) → [场次索引](work/projects/ai-training/sessions-index.md) → 该场次 README；委托方是万融的加读[万融委托培训](work/projects/ai-training/wanrong-commissioned/README.md)（植入企业版推广），其他场次不读 |
 | 某个具体项目（社群、言剪、飞书书、六十甲子） | [项目列表](work/projects/README.md) → 该项目 README |
 | 个人简介、讲师介绍、简历 | [个人信息](personal/README.md)；荣誉和数字只按[背书表](personal/credentials.md)写；要做成 PPT、海报、视频时，结构按那个成品的行走，这里只提供事实 |
-| 建委的想法、偏好、判断方式 | [建委大脑](brain/README.md)；做任何成品前都值得先看一眼[做事与表达偏好](brain/preferences.md) |
+| 建委的想法、偏好、判断方式；把建委自己的资料整理成文档（电话或会议录音、笔记，给他自己看） | [建委大脑](brain/README.md)；做任何成品前都值得先看一眼[做事与表达偏好](brain/preferences.md)；整理资料时尤其看“例子以小见大”：建委拿一个例子问，问的是一类情况 |
 | 用 Skill | [Skill 库](work/domains/other/skills/README.md) |
 | 访问网站、查看在线对话、浏览器操作或网站验收 | [本机浏览器调用约定](system/environment/computers/desktop-1/README.md#浏览器调用约定2026-11-05建委明确要求) |
 | 电脑、网络、本机工具 | [设备环境](system/environment/README.md) |
