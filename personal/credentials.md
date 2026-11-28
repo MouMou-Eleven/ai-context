@@ -15,7 +15,7 @@
 | 未标注 | 微课设计作品 | 国家级、省级、市级一等奖；部级精品微课 |
 | 未标注 | 安徽省环境设计大赛 | 二等奖 |
 | 2026 | 2026年山东省青年创新创意大赛暨人工智能OPC创业挑战赛 | 一等奖（2026-11-13 本人告知，证书照片未收录） |
-| 2026-05 | “创赢未来”第六届“创业威海”创业大赛 | “人工智能OPC”赛道一等奖（VideoAI 项目；比赛 2026-05-08 至 05-09，威海市人力资源和社会保障局 2026 年 7 月发证，[证书照片](evidence/lecturer-certificates-and-teaching.jpg)；[威海人社发布官方报道](https://mp.weixin.qq.com/s/jM43Qk8DLsZ6HZId6eSjMQ)为2026-05-09，全文确认9部门单位联合主办、201项目报名、60项目决赛及全赛事8个一等奖，不把这些数字写成OPC赛道单独规模；2026-11-28本人提供独立证书及现场照并授权[官网荣誉案例](https://jianwei.appmiaoda.com/boards/07b2b855-9f50-4103-8763-895718fa0208/entries/d67e85ff-8112-41d3-ae84-d1c2edf7e70d)发布） |
+| 2026-05 | “创赢未来”第六届“创业威海”创业大赛 | “人工智能OPC”赛道一等奖（VideoAI 项目；比赛 2026-05-08 至 05-09，威海市人力资源和社会保障局 2026 年 7 月发证，[证书照片](evidence/lecturer-certificates-and-teaching.jpg)；[威海人社发布官方报道](https://mp.weixin.qq.com/s/jM43Qk8DLsZ6HZId6eSjMQ)为2026-05-09，全文确认9部门单位联合主办、201项目报名、60项目决赛及全赛事8个一等奖，不把这些数字写成OPC赛道单独规模；2026-11-28本人提供独立证书及现场照并授权[官网荣誉案例](https://jianwei.appmiaoda.com/works/z0nmqDnpRQawgGtFlE8d6A)发布） |
 
 ## 学术与教育成果
 
