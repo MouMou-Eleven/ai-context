@@ -104,6 +104,7 @@
 | 自媒体、个人IP与渠道表达 | 推广、营销、报名页、介绍页、产品介绍、宣传、招生 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/marketing-copy/README.md) |
 | 自媒体、个人IP与渠道表达 | 标题、选题 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/titles/README.md) |
 | 自媒体、个人IP与渠道表达 | 运营、复盘、账号规划、涨粉 | 创作/修改/沉淀 | [正文](../../../work/domains/self-media/experience/README.md) |
+| 自媒体、个人IP与渠道表达 | 网站、后台、发布到、发到 | 按所查问题 | [正文](../../../work/domains/development/experience/delivery-and-testing.md) |
 
 ## 条件组合
 
